@@ -265,7 +265,7 @@ Required fixture: every component scenario, plus interacting item, allocation, U
 
 ## Five built-in CN fixes: independent applicability backlog
 
-The [original package README](../../README.md) names these five fixes, while the [source catalog](../reference/upstream/docs/PATCH_CATALOG.md) excludes them from selectable features. No individual definition/pre-image for them is present in the inventoried directory. All EU discovery/audit/runtime/acceptance states are **not started / not started / not run / not recorded**. Establish the same EU fault and intended correction before creating an EU patch; the localization fix may be inapplicable.
+The [original package README](../../README_CN_VERSION.md) names these five fixes, while the [source catalog](../reference/upstream/docs/PATCH_CATALOG.md) excludes them from selectable features. No individual definition/pre-image for them is present in the inventoried directory. All EU discovery/audit/runtime/acceptance states are **not started / not started / not run / not recorded**. Establish the same EU fault and intended correction before creating an EU patch; the localization fix may be inapplicable.
 
 ### ore_money_bag_limits
 
