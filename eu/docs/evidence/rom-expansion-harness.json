@@ -1,0 +1,649 @@
+{
+  "schema_version": 1,
+  "result": "PASS",
+  "checks": [
+    {
+      "scenario": "baseline",
+      "check": "loaded player pointer",
+      "passed": true,
+      "player": "0x2003bd0"
+    },
+    {
+      "scenario": "baseline",
+      "check": "right and left change actor position",
+      "passed": true
+    },
+    {
+      "scenario": "expanded",
+      "check": "loaded player pointer",
+      "passed": true,
+      "player": "0x2003bd0"
+    },
+    {
+      "scenario": "expanded",
+      "check": "right and left change actor position",
+      "passed": true
+    },
+    {
+      "scenario": "expanded",
+      "check": "appended ROM bus bytes read FF",
+      "passed": true,
+      "address": "0x9000000"
+    },
+    {
+      "scenario": "expanded",
+      "check": "appended ROM bus bytes read FF",
+      "passed": true,
+      "address": "0x9000100"
+    },
+    {
+      "scenario": "expanded",
+      "check": "appended ROM bus bytes read FF",
+      "passed": true,
+      "address": "0x9fffffc"
+    },
+    {
+      "scenario": "expanded state roundtrip",
+      "check": "baseline and expanded match at town",
+      "passed": true
+    },
+    {
+      "scenario": "expanded",
+      "check": "ordinary game Save writes updated data",
+      "passed": true,
+      "dialogue_presses": 7
+    },
+    {
+      "scenario": "reload",
+      "check": "separate process normal-save reload",
+      "passed": true
+    },
+    {
+      "scenario": "normal save A/B",
+      "check": "baseline and expanded match at inn",
+      "passed": true
+    },
+    {
+      "scenario": "normal save A/B",
+      "check": "baseline and expanded match at town",
+      "passed": true
+    },
+    {
+      "scenario": "normal save A/B",
+      "check": "baseline and expanded match at before_left",
+      "passed": true
+    },
+    {
+      "scenario": "normal save A/B",
+      "check": "baseline and expanded match at after_left",
+      "passed": true
+    },
+    {
+      "scenario": "normal save A/B",
+      "check": "baseline and expanded match at after_right",
+      "passed": true
+    },
+    {
+      "scenario": "normal save A/B",
+      "check": "baseline and expanded match at lap_1",
+      "passed": true
+    },
+    {
+      "scenario": "normal save A/B",
+      "check": "baseline and expanded match at lap_2",
+      "passed": true
+    },
+    {
+      "scenario": "normal save A/B",
+      "check": "baseline and expanded match at lap_3",
+      "passed": true
+    },
+    {
+      "scenario": "normal save A/B",
+      "check": "baseline and expanded match at menu",
+      "passed": true
+    },
+    {
+      "scenario": "normal save A/B",
+      "check": "baseline and expanded match at after_minute",
+      "passed": true
+    },
+    {
+      "scenario": "old_state_baseline",
+      "check": "old state restores original frame",
+      "passed": true
+    },
+    {
+      "scenario": "old_state_baseline",
+      "check": "right and left change actor position",
+      "passed": true
+    },
+    {
+      "scenario": "old_state_expanded",
+      "check": "public harness accepts unchanged original state on exact padded ROM",
+      "passed": true
+    },
+    {
+      "scenario": "old_state_expanded",
+      "check": "old state restores original frame",
+      "passed": true
+    },
+    {
+      "scenario": "old_state_expanded",
+      "check": "right and left change actor position",
+      "passed": true
+    },
+    {
+      "scenario": "old state A/B",
+      "check": "baseline and expanded match at inn",
+      "passed": true
+    },
+    {
+      "scenario": "old state A/B",
+      "check": "baseline and expanded match at town",
+      "passed": true
+    },
+    {
+      "scenario": "old state A/B",
+      "check": "baseline and expanded match at before_left",
+      "passed": true
+    },
+    {
+      "scenario": "old state A/B",
+      "check": "baseline and expanded match at after_left",
+      "passed": true
+    },
+    {
+      "scenario": "old state A/B",
+      "check": "baseline and expanded match at after_right",
+      "passed": true
+    },
+    {
+      "scenario": "old state A/B",
+      "check": "baseline and expanded match at lap_1",
+      "passed": true
+    },
+    {
+      "scenario": "old state A/B",
+      "check": "baseline and expanded match at lap_2",
+      "passed": true
+    },
+    {
+      "scenario": "old state A/B",
+      "check": "baseline and expanded match at lap_3",
+      "passed": true
+    },
+    {
+      "scenario": "old state A/B",
+      "check": "baseline and expanded match at menu",
+      "passed": true
+    },
+    {
+      "scenario": "old state A/B",
+      "check": "baseline and expanded match at after_minute",
+      "passed": true
+    }
+  ],
+  "build": {
+    "kind": "append_only_rom_expansion",
+    "evidence": "static_verified",
+    "source": "/home/david/Documents/SS2_Modding/ROMs/Shining_Soul_II_EU.gba",
+    "input_identity": {
+      "size": 16777216,
+      "md5": "49aa688745111aaa51076a345f8f18c3",
+      "sha256": "e5c64a1740263e9b26120e487f3688fbbf7b3954a2c043c0d84c333df467e0b2",
+      "crc32": "55E503C1"
+    },
+    "output_identity": {
+      "size": 33554432,
+      "md5": "9e5c1c4e1afbf9745f050f29822519b6",
+      "sha256": "085009a8b4867a1533da124af43f6d69b044183d998bc1e91e3c10f82b5d632b",
+      "crc32": "2CBD850B"
+    },
+    "fill_byte": "0xFF",
+    "append_offset": "0x01000000",
+    "append_size": 16777216,
+    "appended_cpu_range": [
+      "0x09000000",
+      "0x0A000000"
+    ],
+    "ownership": "All appended bytes reserved for this empty-space test; no injections",
+    "original_16m_unchanged": true,
+    "code_or_pointer_changes": false
+  },
+  "source_sha256": {
+    "/home/david/Documents/SS2_Modding/ROMs/Shining_Soul_II_EU.gba": "e5c64a1740263e9b26120e487f3688fbbf7b3954a2c043c0d84c333df467e0b2",
+    "/home/david/Documents/SS2_Modding/ROMs/saves/Shining_Soul_II.sav": "c33cc290d3c44b977b2dc84fedd31539d48d7739252f2086f9c39196b63f45b7",
+    "/home/david/Documents/SS2_Modding/eu/runs/resistance-call-explore-001/states/boot.ss1": "59dfdbb5ecf64f79da5d9e8c4d900633d21b81f5929a72eb4b066c03d19aa7c9",
+    "/home/david/Documents/SS2_Modding/eu/runs/resistance-call-explore-001/states/boot.ss1.json": "095335f66e9f29895feec990b85d45293ab378a087eba0718a5366a1910fcca6"
+  },
+  "backend": "mGBA 0.10.5",
+  "backend_revision": "26b7884bc25a5933960f3cdcd98bac1ae14d42e2",
+  "process_id": 2,
+  "ram_or_register_writes": false,
+  "observations": {
+    "baseline": {
+      "inn": {
+        "frame": 1175,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/baseline/screenshots/inn.png",
+        "png_sha256": "486e45161ee8e76bf773a83283f69b9ceb1303e38dfce5ac0e3a2ef6f04196fb",
+        "ewram_sha256": "6fb4ce17ab49a41a86bfbe7740605fc22e4c105bd79822b6c10d863e84b35279",
+        "iwram_sha256": "6d7e0329f2701fbeb906e611d68928bec798cc2292a089b1182092061bf77dcf",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 72704
+      },
+      "town": {
+        "frame": 2820,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/baseline/screenshots/town.png",
+        "png_sha256": "6c22b8cd4390912a3a629fbabd13fe2fc8c0df72b0bb67833b3a33db5e322b14",
+        "ewram_sha256": "36091a2fe79959020ee0f2353355380e59564a47a59464324b744ab3c6b5c50d",
+        "iwram_sha256": "43c54957fe5487f4d51605fe75ac2b1a73ba22d38407eac41a9e2a3c67b0354c",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 51196
+      },
+      "before_left": {
+        "frame": 2820,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/baseline/screenshots/before-left.png",
+        "png_sha256": "6c22b8cd4390912a3a629fbabd13fe2fc8c0df72b0bb67833b3a33db5e322b14",
+        "ewram_sha256": "36091a2fe79959020ee0f2353355380e59564a47a59464324b744ab3c6b5c50d",
+        "iwram_sha256": "43c54957fe5487f4d51605fe75ac2b1a73ba22d38407eac41a9e2a3c67b0354c",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 51196
+      },
+      "after_left": {
+        "frame": 2837,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/baseline/screenshots/after-left.png",
+        "png_sha256": "d4c619ff8c573f52d6c74ab72f5e49efd398d4e48b44279abcba6f4395ef83d3",
+        "ewram_sha256": "cc1996a0d7348c1a4a28e42caf3e3101b5b70e9c600f3f0cc4ffe44d93c50b35",
+        "iwram_sha256": "9c06220aac4e173ea615f9576885dd2c279d5a403f9fc483e056e74113a1dd6b",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 45198
+      },
+      "after_right": {
+        "frame": 2854,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/baseline/screenshots/after-right.png",
+        "png_sha256": "a152e75f8fa4fcebf9e7163fbddeb87a79b42d393210a85a60cf95e0528ad89f",
+        "ewram_sha256": "9653c60f6edeaa96b7add0ab3bfbd230e1df9ea13298648ca36e575ab6c7b490",
+        "iwram_sha256": "84e262c720c7c3fe60b1eb0682f352ca4f18b2410bacddcf2f4ee2d5314c3e71",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 49598
+      },
+      "lap_1": {
+        "frame": 2998,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/baseline/screenshots/town-lap-1.png",
+        "png_sha256": "99ea4f0d820390e2b9d63e01d8f44432d2df700c90d7877c28dceedd92b1931d",
+        "ewram_sha256": "0e9a170c818b88c6a1d927a898fb4c035f78a5a766554eb97154d055c58de895",
+        "iwram_sha256": "f8d6b189a4d1134c9ac59e88202229e905ef44e771ee646cca460cb205994724",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 53458
+      },
+      "lap_2": {
+        "frame": 3142,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/baseline/screenshots/town-lap-2.png",
+        "png_sha256": "1ddea6381332c36e1bd16d6ac580e3f3a2ddec4b3e57e24e67690b099f5a2d13",
+        "ewram_sha256": "e8bfa520bd77c4a1cb0792405bfdbf395d72d62e44b6a40792910bc468b3a2e1",
+        "iwram_sha256": "3771a874cb63225fbc84509373cd20edb1936a4c0a0bdf6d8ca3c149ded6b30c",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 53458
+      },
+      "lap_3": {
+        "frame": 3286,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/baseline/screenshots/town-lap-3.png",
+        "png_sha256": "854f5c2a0a15dea65164bf6f31a7bebbc003702684199c55df66fc45c5081e84",
+        "ewram_sha256": "ba737ff8487e7959612727e0eaadaea3cc2ff75161e59705964fee36040031b7",
+        "iwram_sha256": "87cfc9d5e838bc9158aea0b42bb27976eb5965f04264a60d3d986bbaf0bae6cf",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 53458
+      },
+      "menu": {
+        "frame": 3307,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/baseline/screenshots/town-menu.png",
+        "png_sha256": "b1dc704031273d0484ab3c60977607d4678a66b520f5d7fb2512d91bb0190b73",
+        "ewram_sha256": "41fe8b45f5ab30d4b23bc1015d64c5a18eccebf9cc43ab5c05b23aa27ec21fd1",
+        "iwram_sha256": "13041ca10dc7dbea6e47f4f2b4f69e14ba9ecf04a6cd1339bdccf736bbd86479",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 53458
+      },
+      "after_minute": {
+        "frame": 6968,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/baseline/screenshots/town-after-minute.png",
+        "png_sha256": "fb22eb4bec8b60dad07bc098b85e8a76b6e16c0bc7a2dbc81ef3fee20c9b5d4f",
+        "ewram_sha256": "73668ddc08a0f6443f763f453485307143bbf223b06399bd000dd515f26d3046",
+        "iwram_sha256": "8862ad5ca19c56d9373614c9250a4e4adf0bbb1560f5681ef73a3b4925ee8a0f",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 53458
+      }
+    },
+    "expanded": {
+      "inn": {
+        "frame": 1175,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/expanded/screenshots/inn.png",
+        "png_sha256": "486e45161ee8e76bf773a83283f69b9ceb1303e38dfce5ac0e3a2ef6f04196fb",
+        "ewram_sha256": "6fb4ce17ab49a41a86bfbe7740605fc22e4c105bd79822b6c10d863e84b35279",
+        "iwram_sha256": "6d7e0329f2701fbeb906e611d68928bec798cc2292a089b1182092061bf77dcf",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 72704
+      },
+      "town": {
+        "frame": 2820,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/expanded/screenshots/town.png",
+        "png_sha256": "6c22b8cd4390912a3a629fbabd13fe2fc8c0df72b0bb67833b3a33db5e322b14",
+        "ewram_sha256": "36091a2fe79959020ee0f2353355380e59564a47a59464324b744ab3c6b5c50d",
+        "iwram_sha256": "43c54957fe5487f4d51605fe75ac2b1a73ba22d38407eac41a9e2a3c67b0354c",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 51196
+      },
+      "before_left": {
+        "frame": 2820,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/expanded/screenshots/before-left.png",
+        "png_sha256": "6c22b8cd4390912a3a629fbabd13fe2fc8c0df72b0bb67833b3a33db5e322b14",
+        "ewram_sha256": "36091a2fe79959020ee0f2353355380e59564a47a59464324b744ab3c6b5c50d",
+        "iwram_sha256": "43c54957fe5487f4d51605fe75ac2b1a73ba22d38407eac41a9e2a3c67b0354c",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 51196
+      },
+      "after_left": {
+        "frame": 2837,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/expanded/screenshots/after-left.png",
+        "png_sha256": "d4c619ff8c573f52d6c74ab72f5e49efd398d4e48b44279abcba6f4395ef83d3",
+        "ewram_sha256": "cc1996a0d7348c1a4a28e42caf3e3101b5b70e9c600f3f0cc4ffe44d93c50b35",
+        "iwram_sha256": "9c06220aac4e173ea615f9576885dd2c279d5a403f9fc483e056e74113a1dd6b",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 45198
+      },
+      "after_right": {
+        "frame": 2854,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/expanded/screenshots/after-right.png",
+        "png_sha256": "a152e75f8fa4fcebf9e7163fbddeb87a79b42d393210a85a60cf95e0528ad89f",
+        "ewram_sha256": "9653c60f6edeaa96b7add0ab3bfbd230e1df9ea13298648ca36e575ab6c7b490",
+        "iwram_sha256": "84e262c720c7c3fe60b1eb0682f352ca4f18b2410bacddcf2f4ee2d5314c3e71",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 49598
+      },
+      "lap_1": {
+        "frame": 2998,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/expanded/screenshots/town-lap-1.png",
+        "png_sha256": "99ea4f0d820390e2b9d63e01d8f44432d2df700c90d7877c28dceedd92b1931d",
+        "ewram_sha256": "0e9a170c818b88c6a1d927a898fb4c035f78a5a766554eb97154d055c58de895",
+        "iwram_sha256": "f8d6b189a4d1134c9ac59e88202229e905ef44e771ee646cca460cb205994724",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 53458
+      },
+      "lap_2": {
+        "frame": 3142,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/expanded/screenshots/town-lap-2.png",
+        "png_sha256": "1ddea6381332c36e1bd16d6ac580e3f3a2ddec4b3e57e24e67690b099f5a2d13",
+        "ewram_sha256": "e8bfa520bd77c4a1cb0792405bfdbf395d72d62e44b6a40792910bc468b3a2e1",
+        "iwram_sha256": "3771a874cb63225fbc84509373cd20edb1936a4c0a0bdf6d8ca3c149ded6b30c",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 53458
+      },
+      "lap_3": {
+        "frame": 3286,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/expanded/screenshots/town-lap-3.png",
+        "png_sha256": "854f5c2a0a15dea65164bf6f31a7bebbc003702684199c55df66fc45c5081e84",
+        "ewram_sha256": "ba737ff8487e7959612727e0eaadaea3cc2ff75161e59705964fee36040031b7",
+        "iwram_sha256": "87cfc9d5e838bc9158aea0b42bb27976eb5965f04264a60d3d986bbaf0bae6cf",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 53458
+      },
+      "menu": {
+        "frame": 3307,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/expanded/screenshots/town-menu.png",
+        "png_sha256": "b1dc704031273d0484ab3c60977607d4678a66b520f5d7fb2512d91bb0190b73",
+        "ewram_sha256": "41fe8b45f5ab30d4b23bc1015d64c5a18eccebf9cc43ab5c05b23aa27ec21fd1",
+        "iwram_sha256": "13041ca10dc7dbea6e47f4f2b4f69e14ba9ecf04a6cd1339bdccf736bbd86479",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 53458
+      },
+      "after_minute": {
+        "frame": 6968,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/expanded/screenshots/town-after-minute.png",
+        "png_sha256": "fb22eb4bec8b60dad07bc098b85e8a76b6e16c0bc7a2dbc81ef3fee20c9b5d4f",
+        "ewram_sha256": "73668ddc08a0f6443f763f453485307143bbf223b06399bd000dd515f26d3046",
+        "iwram_sha256": "8862ad5ca19c56d9373614c9250a4e4adf0bbb1560f5681ef73a3b4925ee8a0f",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 53458
+      }
+    },
+    "old_state_baseline": {
+      "inn": {
+        "frame": 1175,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/old_state_baseline/screenshots/inn.png",
+        "png_sha256": "486e45161ee8e76bf773a83283f69b9ceb1303e38dfce5ac0e3a2ef6f04196fb",
+        "ewram_sha256": "6fb4ce17ab49a41a86bfbe7740605fc22e4c105bd79822b6c10d863e84b35279",
+        "iwram_sha256": "6d7e0329f2701fbeb906e611d68928bec798cc2292a089b1182092061bf77dcf",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 72704
+      },
+      "town": {
+        "frame": 2820,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/old_state_baseline/screenshots/town.png",
+        "png_sha256": "6c22b8cd4390912a3a629fbabd13fe2fc8c0df72b0bb67833b3a33db5e322b14",
+        "ewram_sha256": "36091a2fe79959020ee0f2353355380e59564a47a59464324b744ab3c6b5c50d",
+        "iwram_sha256": "43c54957fe5487f4d51605fe75ac2b1a73ba22d38407eac41a9e2a3c67b0354c",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 51196
+      },
+      "before_left": {
+        "frame": 2820,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/old_state_baseline/screenshots/before-left.png",
+        "png_sha256": "6c22b8cd4390912a3a629fbabd13fe2fc8c0df72b0bb67833b3a33db5e322b14",
+        "ewram_sha256": "36091a2fe79959020ee0f2353355380e59564a47a59464324b744ab3c6b5c50d",
+        "iwram_sha256": "43c54957fe5487f4d51605fe75ac2b1a73ba22d38407eac41a9e2a3c67b0354c",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 51196
+      },
+      "after_left": {
+        "frame": 2837,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/old_state_baseline/screenshots/after-left.png",
+        "png_sha256": "d4c619ff8c573f52d6c74ab72f5e49efd398d4e48b44279abcba6f4395ef83d3",
+        "ewram_sha256": "cc1996a0d7348c1a4a28e42caf3e3101b5b70e9c600f3f0cc4ffe44d93c50b35",
+        "iwram_sha256": "9c06220aac4e173ea615f9576885dd2c279d5a403f9fc483e056e74113a1dd6b",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 45198
+      },
+      "after_right": {
+        "frame": 2854,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/old_state_baseline/screenshots/after-right.png",
+        "png_sha256": "a152e75f8fa4fcebf9e7163fbddeb87a79b42d393210a85a60cf95e0528ad89f",
+        "ewram_sha256": "9653c60f6edeaa96b7add0ab3bfbd230e1df9ea13298648ca36e575ab6c7b490",
+        "iwram_sha256": "84e262c720c7c3fe60b1eb0682f352ca4f18b2410bacddcf2f4ee2d5314c3e71",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 49598
+      },
+      "lap_1": {
+        "frame": 2998,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/old_state_baseline/screenshots/town-lap-1.png",
+        "png_sha256": "99ea4f0d820390e2b9d63e01d8f44432d2df700c90d7877c28dceedd92b1931d",
+        "ewram_sha256": "0e9a170c818b88c6a1d927a898fb4c035f78a5a766554eb97154d055c58de895",
+        "iwram_sha256": "f8d6b189a4d1134c9ac59e88202229e905ef44e771ee646cca460cb205994724",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 53458
+      },
+      "lap_2": {
+        "frame": 3142,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/old_state_baseline/screenshots/town-lap-2.png",
+        "png_sha256": "1ddea6381332c36e1bd16d6ac580e3f3a2ddec4b3e57e24e67690b099f5a2d13",
+        "ewram_sha256": "e8bfa520bd77c4a1cb0792405bfdbf395d72d62e44b6a40792910bc468b3a2e1",
+        "iwram_sha256": "3771a874cb63225fbc84509373cd20edb1936a4c0a0bdf6d8ca3c149ded6b30c",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 53458
+      },
+      "lap_3": {
+        "frame": 3286,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/old_state_baseline/screenshots/town-lap-3.png",
+        "png_sha256": "854f5c2a0a15dea65164bf6f31a7bebbc003702684199c55df66fc45c5081e84",
+        "ewram_sha256": "ba737ff8487e7959612727e0eaadaea3cc2ff75161e59705964fee36040031b7",
+        "iwram_sha256": "87cfc9d5e838bc9158aea0b42bb27976eb5965f04264a60d3d986bbaf0bae6cf",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 53458
+      },
+      "menu": {
+        "frame": 3307,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/old_state_baseline/screenshots/town-menu.png",
+        "png_sha256": "b1dc704031273d0484ab3c60977607d4678a66b520f5d7fb2512d91bb0190b73",
+        "ewram_sha256": "41fe8b45f5ab30d4b23bc1015d64c5a18eccebf9cc43ab5c05b23aa27ec21fd1",
+        "iwram_sha256": "13041ca10dc7dbea6e47f4f2b4f69e14ba9ecf04a6cd1339bdccf736bbd86479",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 53458
+      },
+      "after_minute": {
+        "frame": 6968,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/old_state_baseline/screenshots/town-after-minute.png",
+        "png_sha256": "fb22eb4bec8b60dad07bc098b85e8a76b6e16c0bc7a2dbc81ef3fee20c9b5d4f",
+        "ewram_sha256": "73668ddc08a0f6443f763f453485307143bbf223b06399bd000dd515f26d3046",
+        "iwram_sha256": "8862ad5ca19c56d9373614c9250a4e4adf0bbb1560f5681ef73a3b4925ee8a0f",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 53458
+      }
+    },
+    "old_state_expanded": {
+      "inn": {
+        "frame": 1175,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/old_state_expanded/screenshots/inn.png",
+        "png_sha256": "486e45161ee8e76bf773a83283f69b9ceb1303e38dfce5ac0e3a2ef6f04196fb",
+        "ewram_sha256": "6fb4ce17ab49a41a86bfbe7740605fc22e4c105bd79822b6c10d863e84b35279",
+        "iwram_sha256": "6d7e0329f2701fbeb906e611d68928bec798cc2292a089b1182092061bf77dcf",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 72704
+      },
+      "town": {
+        "frame": 2820,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/old_state_expanded/screenshots/town.png",
+        "png_sha256": "6c22b8cd4390912a3a629fbabd13fe2fc8c0df72b0bb67833b3a33db5e322b14",
+        "ewram_sha256": "36091a2fe79959020ee0f2353355380e59564a47a59464324b744ab3c6b5c50d",
+        "iwram_sha256": "43c54957fe5487f4d51605fe75ac2b1a73ba22d38407eac41a9e2a3c67b0354c",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 51196
+      },
+      "before_left": {
+        "frame": 2820,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/old_state_expanded/screenshots/before-left.png",
+        "png_sha256": "6c22b8cd4390912a3a629fbabd13fe2fc8c0df72b0bb67833b3a33db5e322b14",
+        "ewram_sha256": "36091a2fe79959020ee0f2353355380e59564a47a59464324b744ab3c6b5c50d",
+        "iwram_sha256": "43c54957fe5487f4d51605fe75ac2b1a73ba22d38407eac41a9e2a3c67b0354c",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 51196
+      },
+      "after_left": {
+        "frame": 2837,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/old_state_expanded/screenshots/after-left.png",
+        "png_sha256": "d4c619ff8c573f52d6c74ab72f5e49efd398d4e48b44279abcba6f4395ef83d3",
+        "ewram_sha256": "cc1996a0d7348c1a4a28e42caf3e3101b5b70e9c600f3f0cc4ffe44d93c50b35",
+        "iwram_sha256": "9c06220aac4e173ea615f9576885dd2c279d5a403f9fc483e056e74113a1dd6b",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 45198
+      },
+      "after_right": {
+        "frame": 2854,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/old_state_expanded/screenshots/after-right.png",
+        "png_sha256": "a152e75f8fa4fcebf9e7163fbddeb87a79b42d393210a85a60cf95e0528ad89f",
+        "ewram_sha256": "9653c60f6edeaa96b7add0ab3bfbd230e1df9ea13298648ca36e575ab6c7b490",
+        "iwram_sha256": "84e262c720c7c3fe60b1eb0682f352ca4f18b2410bacddcf2f4ee2d5314c3e71",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 49598
+      },
+      "lap_1": {
+        "frame": 2998,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/old_state_expanded/screenshots/town-lap-1.png",
+        "png_sha256": "99ea4f0d820390e2b9d63e01d8f44432d2df700c90d7877c28dceedd92b1931d",
+        "ewram_sha256": "0e9a170c818b88c6a1d927a898fb4c035f78a5a766554eb97154d055c58de895",
+        "iwram_sha256": "f8d6b189a4d1134c9ac59e88202229e905ef44e771ee646cca460cb205994724",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 53458
+      },
+      "lap_2": {
+        "frame": 3142,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/old_state_expanded/screenshots/town-lap-2.png",
+        "png_sha256": "1ddea6381332c36e1bd16d6ac580e3f3a2ddec4b3e57e24e67690b099f5a2d13",
+        "ewram_sha256": "e8bfa520bd77c4a1cb0792405bfdbf395d72d62e44b6a40792910bc468b3a2e1",
+        "iwram_sha256": "3771a874cb63225fbc84509373cd20edb1936a4c0a0bdf6d8ca3c149ded6b30c",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 53458
+      },
+      "lap_3": {
+        "frame": 3286,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/old_state_expanded/screenshots/town-lap-3.png",
+        "png_sha256": "854f5c2a0a15dea65164bf6f31a7bebbc003702684199c55df66fc45c5081e84",
+        "ewram_sha256": "ba737ff8487e7959612727e0eaadaea3cc2ff75161e59705964fee36040031b7",
+        "iwram_sha256": "87cfc9d5e838bc9158aea0b42bb27976eb5965f04264a60d3d986bbaf0bae6cf",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 53458
+      },
+      "menu": {
+        "frame": 3307,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/old_state_expanded/screenshots/town-menu.png",
+        "png_sha256": "b1dc704031273d0484ab3c60977607d4678a66b520f5d7fb2512d91bb0190b73",
+        "ewram_sha256": "41fe8b45f5ab30d4b23bc1015d64c5a18eccebf9cc43ab5c05b23aa27ec21fd1",
+        "iwram_sha256": "13041ca10dc7dbea6e47f4f2b4f69e14ba9ecf04a6cd1339bdccf736bbd86479",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 53458
+      },
+      "after_minute": {
+        "frame": 6968,
+        "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/expansion-32m-harness-001/old_state_expanded/screenshots/town-after-minute.png",
+        "png_sha256": "fb22eb4bec8b60dad07bc098b85e8a76b6e16c0bc7a2dbc81ef3fee20c9b5d4f",
+        "ewram_sha256": "73668ddc08a0f6443f763f453485307143bbf223b06399bd000dd515f26d3046",
+        "iwram_sha256": "8862ad5ca19c56d9373614c9250a4e4adf0bbb1560f5681ef73a3b4925ee8a0f",
+        "pc": 504,
+        "player": 33569744,
+        "actor_x_observation": 53458
+      }
+    }
+  },
+  "old_state_binding": {
+    "format": "ss2-mgba-state-v1",
+    "rom_sha256": "e5c64a1740263e9b26120e487f3688fbbf7b3954a2c043c0d84c333df467e0b2",
+    "state_sha256": "59dfdbb5ecf64f79da5d9e8c4d900633d21b81f5929a72eb4b066c03d19aa7c9",
+    "backend_revision": "26b7884bc25a5933960f3cdcd98bac1ae14d42e2",
+    "frame": 1175
+  },
+  "reload_process": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "harness_old_state_load": true,
+  "evidence": "runtime_verified for the recorded normal-save/town/state scenarios",
+  "source_inputs_unchanged": true
+}

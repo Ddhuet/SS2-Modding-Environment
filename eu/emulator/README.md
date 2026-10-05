@@ -43,8 +43,12 @@ open. A savestate includes CPU/RAM, screenshot, cartridge save, and RTC; it
 does not replace a game-level save operation.
 Each state also has a `.ss1.json` sidecar binding it to the exact ROM SHA-256,
 state SHA-256, and backend revision. Loading requires that sidecar and verifies
-all three before touching the core. External, cross-ROM, altered, or old states
-without metadata are rejected. Keep the sidecar with the state file.
+all three before touching the core. One tested, directional exception accepts
+original clean EU states (`e5c64a17…467e0b2`) on the exact append-only 32 MiB FF
+ROM (`085009a8…5d632b`), as documented in
+[the expansion test](../docs/rom-expansion-test.md). Its original sidecar stays
+unchanged. Reverse loading and other cross-ROM states are rejected, as are
+altered states or states without metadata. Keep the sidecar with the state file.
 
 `run_frames(n, keys=0)` holds the given keys for exactly n frames; the next
 call defaults to releasing them. `press(keys, frames=1, release_frames=1)`

@@ -12,6 +12,15 @@ import uuid
 KEYS = {"A": 1, "B": 2, "SELECT": 4, "START": 8, "RIGHT": 16,
         "LEFT": 32, "UP": 64, "DOWN": 128, "R": 256, "L": 512}
 
+# Directional, exact-hash exception verified by docs/rom-expansion-test.md.
+# Original EU states work on this append-only FF expansion. Reverse loading
+# and other expanded/modded ROMs have not been approved or tested here.
+SAVESTATE_ROM_COMPATIBILITY = {
+    "085009a8b4867a1533da124af43f6d69b044183d998bc1e91e3c10f82b5d632b": frozenset({
+        "e5c64a1740263e9b26120e487f3688fbbf7b3954a2c043c0d84c333df467e0b2",
+    }),
+}
+
 def key_mask(keys=0):
     if isinstance(keys, int):
         if not 0 <= keys <= 1023:
@@ -264,7 +273,9 @@ class Session:
             raise ValueError("Unsupported savestate metadata format")
         if metadata.get("backend_revision") != "26b7884bc25a5933960f3cdcd98bac1ae14d42e2":
             raise ValueError("Savestate backend revision mismatch")
-        if metadata.get("rom_sha256") != self.rom_sha256:
+        state_rom = metadata.get("rom_sha256")
+        compatible = SAVESTATE_ROM_COMPATIBILITY.get(self.rom_sha256, ())
+        if not isinstance(state_rom, str) or (state_rom != self.rom_sha256 and state_rom not in compatible):
             raise ValueError("Savestate ROM SHA-256 mismatch")
         if metadata.get("state_sha256") != sha256(path):
             raise ValueError("Savestate content SHA-256 mismatch")
