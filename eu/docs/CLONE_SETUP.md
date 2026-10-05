@@ -5,12 +5,13 @@ original Chinese research/tooling as well as `eu/`. Work from `eu/` and follow
 `eu/AGENTS.md`; parent documentation is historical reference, not EU agent
 instructions. Run the commands below from `eu/`.
 
-## Supply and verify private inputs
+## Supply and verify ROM inputs
 
-ROMs, patched ROMs, saves and emulator states are deliberately absent from Git.
-Ignoring them does not remove existing local files or stop the tools reading
-them. Do not force-add them. All `.gba`/`.GBA` paths are ignored, even outside
-the normal input/output directories.
+ROMs and patched ROMs are deliberately absent from Git. All `.gba`/`.GBA`
+paths are ignored, even outside the normal input/output directories. Normal
+saves and emulator states are tracked test fixtures at their existing paths;
+every `.ss1` fixture includes its required `.ss1.json` binding. These fixtures
+ship with the clone and should be treated as immutable inputs.
 
 Supply your own exact inputs. [The ROM checklist](../../ROMs/REQUIRED_ROMS.md)
 records the supplied EU and JP-named files' hashes. Copy the EU ROM from
@@ -30,13 +31,16 @@ The existing local copy came from `../workspace/input/光明之魂2.gba`; neithe
 copy ships with Git. Verify it with `profiles/ss2-cn-baseline.json`. Do not
 substitute the 16 MiB comparison source or an arbitrary Japanese ROM.
 
-The default player and recorded gameplay tests also expect
-`inputs/ss2-eu.sav`. The owner's Paige save is private and is not recreatable
-from source; its SHA-256 is in [inputs/README.md](../inputs/README.md). You can
-play with your own normal EU save via `scripts/play.py --save /path/to/save.sav`.
-Exact recorded regression scenarios require the documented save/progress
-fixture; a different save does not reproduce those assertions. Synthetic unit
-tests and the patch builder do not require that save.
+The default player and recorded gameplay tests use the tracked Paige fixture at
+`inputs/ss2-eu.sav`; its SHA-256 is in [inputs/README.md](../inputs/README.md).
+The original EU save at `../ROMs/saves/Shining_Soul_II.sav`, the Chinese save
+at `../workspace/input/光明之魂2.sav`, and the normal-save files under `runs/`
+are also tracked fixtures. All checked-in `.ss1` states and matching sidecars
+are included in a clone. Exact recorded scenarios use their documented
+save/progress fixtures and ROM-bound states. Use a new, unused `runs/`
+directory for each test so committed fixtures remain unchanged. You can play
+with another normal EU save via `scripts/play.py --save /path/to/save.sav`.
+Synthetic unit tests and the patch builder do not require a save.
 
 ## Restore the research snapshot and dependencies
 
@@ -93,8 +97,10 @@ python -m unittest discover -s tests -v
 python scripts/play.py
 ```
 
-`runs/` and private states are also absent on a clone. Regenerate scenarios
-using the tracked scripts, transcripts and [fixture notes](fixtures/README.md),
-with the required private inputs. Historical reports/screenshots under
-`docs/evidence/` remain tracked; their old local `runs/` paths are evidence
-references, not files promised by the checkout.
+Tracked `.sav`, `.ss1` and `.ss1.json` fixtures under `runs/` are included in a
+clone. Other generated run output remains ignored. Existing run directories
+are fixtures, so create fresh runs at unused paths. Savestates load only with
+their exact ROM identity and backend; provide the corresponding ROM and rebuild
+the native harness. Use the tracked scripts and [fixture notes](fixtures/README.md)
+to reproduce a scenario from a normal save when needed. Historical
+reports/screenshots under `docs/evidence/` remain tracked.

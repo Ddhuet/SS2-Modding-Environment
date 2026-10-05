@@ -2,10 +2,11 @@
 
 This is an EU-first workspace with a local historical reference library. Open the `eu/` directory as the project root for subsequent AI tasks. Original Chinese tooling is preserved in the parent directory but is not required for ordinary EU builds.
 
-The Git repository root is the parent directory. A clone includes both trees,
-while ROMs/saves, build outputs and dependencies remain local. Follow
-[clone setup](CLONE_SETUP.md) to restore the ignored research snapshot and
-rebuild missing artifacts. Active project instructions remain under `eu/`.
+The Git repository root is the parent directory. A clone includes both trees
+and the tracked normal-save/state fixtures. ROMs, generated build/runtime
+outputs and dependencies remain local. Follow [clone setup](CLONE_SETUP.md) to
+restore the ignored research snapshot, supply ROMs and rebuild missing
+artifacts. Active project instructions remain under `eu/`.
 
 ## Components
 
@@ -17,9 +18,9 @@ rebuild missing artifacts. Active project instructions remain under `eu/`.
 - `scripts/`: reproducible emulator scenarios and setup commands.
 - `docs/`: authoritative EU findings, controls, symbol map and test limits.
 - `reference/upstream/`: archived Chinese docs/pseudocode/patches for research, not active EU rules.
-- `inputs/`: ignored immutable game inputs.
+- `inputs/`: ignored immutable ROM copies and tracked normal-save fixture.
 - `artifacts/`: ignored build outputs and manifests.
-- `runs/`: ignored isolated emulator runs, screenshots, normal saves and states.
+- `runs/`: tracked `.sav`, `.ss1` and `.ss1.json` fixtures alongside ignored generated emulator output.
 
 ## Division of responsibilities
 

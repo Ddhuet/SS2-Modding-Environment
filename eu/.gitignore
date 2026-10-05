@@ -1,8 +1,21 @@
-# User-owned game data and generated outputs
+# ROM inputs/generated outputs stay local; saves/states are shared test fixtures.
 inputs/*
 !inputs/README.md
+!inputs/*.[sS][aA][vV]
+!inputs/*.[sS][rR][mM]
+!inputs/*.[sS][sS][0-9]
+!inputs/*.[sS][sS][0-9].json
+!inputs/*.[sS][tT][aA][tT][eE]
+!inputs/*.[sS][tT][aA][tT][eE].json
 artifacts/
-runs/
+runs/**
+!runs/**/
+!runs/**/*.[sS][aA][vV]
+!runs/**/*.[sS][rR][mM]
+!runs/**/*.[sS][sS][0-9]
+!runs/**/*.[sS][sS][0-9].json
+!runs/**/*.[sS][tT][aA][tT][eE]
+!runs/**/*.[sS][tT][aA][tT][eE].json
 .venv/
 .deps/
 __pycache__/

@@ -1,0 +1,5 @@
+# Preserve fixture bytes on every platform; never apply text newline conversion.
+*.[sS][aA][vV] binary
+*.[sS][rR][mM] binary
+*.[sS][sS][0-9] binary
+*.[sS][tT][aA][tT][eE] binary

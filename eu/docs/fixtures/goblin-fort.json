@@ -13,10 +13,10 @@
   },
   "location": "Goblin Fort, initial goblins after their dialogue",
   "prerequisites": [
-    "Exact AU2P profile and supplied normal save",
+    "Exact AU2P profile and tracked normal-save fixture",
     "Pinned native mGBA 0.10.5 and current project adapter",
     "Inputs stay immutable; new isolated sessions",
-    "No need to save over the owner normal save"
+    "Keep tracked fixtures immutable; save only in an isolated run"
   ],
   "creation": {
     "script": "scripts/test_status_resistance_gameplay.py",
@@ -89,7 +89,7 @@
     "infrastructure": "docs/evidence/resistance-emulator-infrastructure.json"
   },
   "limits": [
-    "States and sidecars contain private game data and stay ignored under runs/. Regenerate them using the tracked transcript.",
+    "Normal saves, states and sidecars are tracked fixtures at their existing paths and ship with a clone. Use fresh runs for new tests; the transcript can regenerate this scenario.",
     "A state loads only with its own exact ROM hash and pinned backend; no cross-ROM states.",
     "Boundary effect-kind/resistance changes are synthetic and are separate from state creation.",
     "Naturally equipped kind1/kind4 over100 combat, player-path landing and human acceptance remain unverified."

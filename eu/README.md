@@ -2,7 +2,7 @@
 
 An EU-first, AI-friendly workspace with a working **skill-point refund** port, native mGBA automation, exact-identity patch builds, and Chinese-to-EU candidate tools. Open this `eu/` directory as the project root for future work.
 
-Git tracks the whole parent directory, including the original Chinese package. Its useful research is archived locally under `reference/upstream/`, separate from the authoritative EU docs. A fresh clone excludes ROMs, saves, patched outputs and installed dependencies: follow [clone setup](docs/CLONE_SETUP.md) to supply inputs, reconstruct the archive and rebuild.
+Git tracks the whole parent directory, including the original Chinese package. Its useful research is archived locally under `reference/upstream/`, separate from the authoritative EU docs. A fresh clone includes the normal-save and savestate test fixtures, including each state's required sidecar. ROMs, patched outputs and installed dependencies remain excluded: follow [clone setup](docs/CLONE_SETUP.md) to supply ROMs, reconstruct the archive and rebuild.
 
 ## Try the finished feature
 
@@ -18,7 +18,7 @@ From this directory:
 python scripts/play.py
 ```
 
-This opens the locally built native mGBA player with fresh copies of the patched ROM and your original EU save. **X is GBA A, Z is GBA B, Enter is Start, and arrows are the D-pad.** The launcher prints the new save location. Quit with the window close button. To continue that play-session save later, pass `--save runs/<your-session>/game.sav`; a new isolated session is created each time.
+This opens the locally built native mGBA player with fresh copies of the patched ROM and the tracked EU test save. **X is GBA A, Z is GBA B, Enter is Start, and arrows are the D-pad.** The launcher prints the new save location. Quit with the window close button. To continue that play-session save later, pass `--save runs/<your-session>/game.sav`; a new isolated session is created each time.
 
 1. Choose your language, select Single Player, and continue Paige.
 2. In-game: **Enter → Left (Status) → X**. Wait for the status screen.
@@ -72,16 +72,16 @@ This is a working porting foundation, not a claim that every Chinese mod convert
 | `emulator/`, `scripts/` | Native frame/input/memory/screenshot control and reproducible scenarios |
 | `docs/` | EU findings, evidence, limits, and commands |
 | `reference/upstream/` | Local historical Chinese research archive |
-| `inputs/` | Immutable, ignored ROM/save copies |
-| `artifacts/`, `runs/` | Ignored builds and isolated emulator sessions |
+| `inputs/` | Ignored immutable ROM copies and tracked normal-save fixture |
+| `artifacts/`, `runs/` | Ignored builds and new emulator output; `runs/` also contains tracked save/state fixtures |
 
-Local game data, vendor clones, environments, runtime logs and research snapshot are excluded from Git. [Provenance](docs/PROVENANCE.md) explains their origins. Run `python scripts/setup_reference.py` to reconstruct the snapshot from the tracked parent research; preserve an existing reviewed local snapshot when moving this workspace.
+ROM files, vendor clones, environments, generated runtime output and research snapshot are excluded from Git. Normal saves and savestates (with required sidecars) are tracked testing fixtures and ship with the clone. [Provenance](docs/PROVENANCE.md) explains their origins. Run `python scripts/setup_reference.py` to reconstruct the snapshot from the tracked parent research; preserve an existing reviewed local snapshot when moving this workspace.
 
 ## First port milestone
 
 The [port inventory](docs/PORT_STATUS.md) catalogs 18 source features, two combinations and five baseline-fix investigations. The [EU resistance audit](docs/status-resistance-audit.md) reproduces the signed-division overflow and tests the gate/event queue independently of CN documentation. The candidate remains experimental because a separate stale payload can dispatch after a failed gate.
 
-The [Goblin Fort fixture](docs/fixtures/README.md) contains a button-only route and private, ROM-bound combat-ready states after the goblin dialogue. The resistance tests disclose every synthetic mutation; naturally equipped immunity and human acceptance remain pending. The confirmed skill-refund build is preserved and its shared-helper regression passes.
+The [Goblin Fort fixture](docs/fixtures/README.md) contains a button-only route and tracked, ROM-bound combat-ready states after the goblin dialogue. The resistance tests disclose every synthetic mutation; naturally equipped immunity and human acceptance remain pending. The confirmed skill-refund build is preserved and its shared-helper regression passes.
 
 ## Rebuild the environment
 

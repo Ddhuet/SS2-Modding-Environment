@@ -1,29 +1,42 @@
-# Game data: all regions and patched copies, at every depth and in any case.
+# ROMs and generated patches: every depth and in any case.
 *.[gG][bB][aA]
 *.[gG][bB]
 *.[gG][bB][cC]
 *.[nN][dD][sS]
 *.[rR][oO][mM]
-*.[sS][aA][vV]
-*.[sS][rR][mM]
-*.[sS][sS][0-9]*
-*.[sS][tT][aA][tT][eE]
-*.[sS][tT][aA][tT][eE][0-9]*
 *.[iI][pP][sS]
 *.[bB][pP][sS]
 *.[uU][pP][sS]
-/ROMs/saves/
 /workspace/input/*
 !/workspace/input/README.md
+!/workspace/input/*.[sS][aA][vV]
+!/workspace/input/*.[sS][rR][mM]
+!/workspace/input/*.[sS][sS][0-9]
+!/workspace/input/*.[sS][sS][0-9].json
+!/workspace/input/*.[sS][tT][aA][tT][eE]
+!/workspace/input/*.[sS][tT][aA][tT][eE].json
 /workspace/output/*
 !/workspace/output/README.md
 /workspace/runtime/
 
-# EU inputs, builds, emulator sessions and reconstructed research snapshot.
+# EU ROM inputs/builds stay local; saves and ROM-bound states are test fixtures.
 /eu/inputs/*
 !/eu/inputs/README.md
+!/eu/inputs/*.[sS][aA][vV]
+!/eu/inputs/*.[sS][rR][mM]
+!/eu/inputs/*.[sS][sS][0-9]
+!/eu/inputs/*.[sS][sS][0-9].json
+!/eu/inputs/*.[sS][tT][aA][tT][eE]
+!/eu/inputs/*.[sS][tT][aA][tT][eE].json
 /eu/artifacts/
-/eu/runs/
+/eu/runs/**
+!/eu/runs/**/
+!/eu/runs/**/*.[sS][aA][vV]
+!/eu/runs/**/*.[sS][rR][mM]
+!/eu/runs/**/*.[sS][sS][0-9]
+!/eu/runs/**/*.[sS][sS][0-9].json
+!/eu/runs/**/*.[sS][tT][aA][tT][eE]
+!/eu/runs/**/*.[sS][tT][aA][tT][eE].json
 /eu/reference/upstream/
 
 # Installed Python packages, vendor clones, native build trees and caches.

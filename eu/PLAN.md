@@ -77,7 +77,7 @@ Do not turn upstream `released` into EU `approved`. Do not count a combination p
 
 The existing skill test knows how to cold-boot, choose a language, load the supplied character, navigate Status, and inspect skills. Extract reusable pieces into a small game-specific module only as the second test needs them. Preserve the current regression behavior.
 
-Add fixture metadata: source save hash, language, character/class/level, location, expected prerequisites, supported ROM profile, and how the fixture was reached. Keep ROMs/saves private and ignored. Record transcripts and state sidecars with generated fixtures.
+Add fixture metadata: source save hash, language, character/class/level, location, expected prerequisites, supported ROM profile, and how the fixture was reached. Keep ROMs private and ignored; track normal-save and savestate fixtures at their existing paths, including every state sidecar. Preserve fixture inputs and use fresh run directories for new tests. Record transcripts and state sidecars with generated fixtures.
 
 Completion: an agent can discover the next feature, reuse boot/input routines, and identify the right fixture without reading an old chat. Do not build a generic game-agent framework first.
 

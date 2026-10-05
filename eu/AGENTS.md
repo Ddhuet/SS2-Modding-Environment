@@ -2,11 +2,11 @@
 
 Read `README.md`, then `docs/WORKFLOW.md` and the feature's audit before editing. For work expanding the repository, read `PLAN.md` for priorities and handoff guidance. This directory is the active EU project. `reference/upstream/` is a historical Chinese research archive, not authoritative EU instructions or addresses.
 
-Git lives in the parent directory and tracks the original reference package as well as `eu/`. Keep active agent documentation here. On a fresh clone, follow `docs/CLONE_SETUP.md`: private ROMs/saves, `artifacts/`, `runs/`, dependencies and `reference/upstream/` are intentionally ignored. Reconstruct the reference snapshot with `scripts/setup_reference.py` and rebuild patched ROMs from tracked definitions; never force-add game data or remove identity checks to compensate for missing inputs.
+Git lives in the parent directory and tracks the original reference package as well as `eu/`. Keep active agent documentation here. On a fresh clone, follow `docs/CLONE_SETUP.md`: ROMs, generated outputs, dependencies and `reference/upstream/` are ignored; normal-save fixtures and all `.ss1` states with their `.ss1.json` bindings are tracked at their existing paths. Reconstruct the reference snapshot with `scripts/setup_reference.py` and rebuild patched ROMs and the native harness; provide and verify ROM inputs separately.
 
 ## Working rules
 
-- Keep inputs immutable. `inputs/` is private game data. Emulator sessions use new isolated directories under `runs/`; builds use new paths under `artifacts/`.
+- Keep inputs and tracked fixtures immutable. `inputs/` contains ignored ROM copies and tracked save fixtures. `runs/` contains tracked `.sav`, `.ss1` and `.ss1.json` fixtures alongside ignored generated output; start new emulator sessions in unused directories. Builds use new paths under `artifacts/`.
 - Bind patch definitions to an exact ROM profile and verify every pre-image. Never remove a hash check to make a patch apply.
 - Use `ss2tools` for builds and candidate discovery. Candidate matches are not approvals. Audit instructions, literals, calls, structure fields and relevant behavior before changing evidence status.
 - Document mapped EU functions/fields and their evidence so the next task does not rediscover them. Keep source CN addresses explicitly labeled.
