@@ -1,0 +1,5184 @@
+{
+  "schema_version": 1,
+  "id": "four_digit_ui_display",
+  "name": "四位数显示与相关界面优化",
+  "stage": "released",
+  "baseline": {
+    "filename": "SS2_SC_bug_fixed.GBA",
+    "size": 33554432,
+    "md5": "35eb6567d94f855480c5d7ba2dff4389",
+    "sha256": "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989",
+    "crc32": "AFCFC96D"
+  },
+  "source_provenance": {
+    "kind": "official_offline_builder_bundle",
+    "source": "光明之魂2_离线补丁构建器_0830.html",
+    "generated_from_current_baseline": true
+  },
+  "evidence": {
+    "static_rebuild": "passed upstream",
+    "dynamic_combination_test": "not_run"
+  },
+  "writes": [
+    {
+      "address": "0x0800343C",
+      "offset": "0x0000343C",
+      "before_hex": "15",
+      "after_hex": "16",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x08003490",
+      "offset": "0x00003490",
+      "before_hex": "6e",
+      "after_hex": "72",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x080034D0",
+      "offset": "0x000034D0",
+      "before_hex": "6e",
+      "after_hex": "72",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x08003506",
+      "offset": "0x00003506",
+      "before_hex": "15",
+      "after_hex": "16",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x08003518",
+      "offset": "0x00003518",
+      "before_hex": "15",
+      "after_hex": "16",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x08003526",
+      "offset": "0x00003526",
+      "before_hex": "15",
+      "after_hex": "16",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x08003534",
+      "offset": "0x00003534",
+      "before_hex": "15",
+      "after_hex": "16",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x08003542",
+      "offset": "0x00003542",
+      "before_hex": "15",
+      "after_hex": "16",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x08003550",
+      "offset": "0x00003550",
+      "before_hex": "15",
+      "after_hex": "16",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x080035DC",
+      "offset": "0x000035DC",
+      "before_hex": "6e",
+      "after_hex": "72",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x08014454",
+      "offset": "0x00014454",
+      "before_hex": "06",
+      "after_hex": "0f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x08014456",
+      "offset": "0x00014456",
+      "before_hex": "01",
+      "after_hex": "00",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x08014464",
+      "offset": "0x00014464",
+      "before_hex": "02",
+      "after_hex": "0a",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x08014466",
+      "offset": "0x00014466",
+      "before_hex": "01",
+      "after_hex": "00",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x08014480",
+      "offset": "0x00014480",
+      "before_hex": "0e",
+      "after_hex": "0f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x08019D04",
+      "offset": "0x00019D04",
+      "before_hex": "e703",
+      "after_hex": "0f27",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0806028E",
+      "offset": "0x0006028E",
+      "before_hex": "64",
+      "after_hex": "fa",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x08060290",
+      "offset": "0x00060290",
+      "before_hex": "a0f702f969460880201c0a21a0f7fcf869464880029888803018288068460088002806d0291f3018088068460088002803d168464088002804d0a91e6846408830180880",
+      "after_hex": "8900a0f701f969460880201c6421a0f7fbf869464880201c0a21a0f7f5f8694688800298c880083d023900220232082a02d0885a0028f9d0885a3018a85202320a2af9d1",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x080602E4",
+      "offset": "0x000602E4",
+      "before_hex": "e703",
+      "after_hex": "0f27",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x08081B40",
+      "offset": "0x00081B40",
+      "before_hex": "06",
+      "after_hex": "07",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x08081B68",
+      "offset": "0x00081B68",
+      "before_hex": "06",
+      "after_hex": "07",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x08081C76",
+      "offset": "0x00081C76",
+      "before_hex": "0f",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x08081CA0",
+      "offset": "0x00081CA0",
+      "before_hex": "06",
+      "after_hex": "07",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x08081CCA",
+      "offset": "0x00081CCA",
+      "before_hex": "0f",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x08081CF6",
+      "offset": "0x00081CF6",
+      "before_hex": "0f",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x08528F88",
+      "offset": "0x00528F88",
+      "before_hex": "01",
+      "after_hex": "02",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x08528F8A",
+      "offset": "0x00528F8A",
+      "before_hex": "02",
+      "after_hex": "03",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x08528F8C",
+      "offset": "0x00528F8C",
+      "before_hex": "03",
+      "after_hex": "04",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x08528F8E",
+      "offset": "0x00528F8E",
+      "before_hex": "04",
+      "after_hex": "05",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x08528F90",
+      "offset": "0x00528F90",
+      "before_hex": "05",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x08528F92",
+      "offset": "0x00528F92",
+      "before_hex": "06",
+      "after_hex": "07",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x08528F94",
+      "offset": "0x00528F94",
+      "before_hex": "07",
+      "after_hex": "08",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x08528F96",
+      "offset": "0x00528F96",
+      "before_hex": "08f009f00af00bf00cf00df00ef00ff010f011f0",
+      "after_hex": "00000000000000005ef100000000000000000000",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x08528FC8",
+      "offset": "0x00528FC8",
+      "before_hex": "0000000000005ef1000000000000",
+      "after_hex": "0af00bf00cf00df00ef00ff010f0",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B32E",
+      "offset": "0x0052B32E",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B330",
+      "offset": "0x0052B330",
+      "before_hex": "01",
+      "after_hex": "25",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B332",
+      "offset": "0x0052B332",
+      "before_hex": "01",
+      "after_hex": "37",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B334",
+      "offset": "0x0052B334",
+      "before_hex": "01",
+      "after_hex": "49",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B336",
+      "offset": "0x0052B336",
+      "before_hex": "01",
+      "after_hex": "5b",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B33C",
+      "offset": "0x0052B33C",
+      "before_hex": "14",
+      "after_hex": "66",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B33E",
+      "offset": "0x0052B33E",
+      "before_hex": "01",
+      "after_hex": "78",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B340",
+      "offset": "0x0052B340",
+      "before_hex": "01",
+      "after_hex": "8a",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B342",
+      "offset": "0x0052B342",
+      "before_hex": "01",
+      "after_hex": "9c",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B344",
+      "offset": "0x0052B344",
+      "before_hex": "01",
+      "after_hex": "ae",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B350",
+      "offset": "0x0052B350",
+      "before_hex": "0d",
+      "after_hex": "c8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B35C",
+      "offset": "0x0052B35C",
+      "before_hex": "0b",
+      "after_hex": "d8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B36A",
+      "offset": "0x0052B36A",
+      "before_hex": "36",
+      "after_hex": "e6",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B36C",
+      "offset": "0x0052B36C",
+      "before_hex": "01",
+      "after_hex": "f8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B36E",
+      "offset": "0x0052B36E",
+      "before_hex": "f001f001f001",
+      "after_hex": "f10af11cf12e",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B37B",
+      "offset": "0x0052B37B",
+      "before_hex": "f0160001",
+      "after_hex": "f1460158",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B38E",
+      "offset": "0x0052B38E",
+      "before_hex": "000f",
+      "after_hex": "0168",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B393",
+      "offset": "0x0052B393",
+      "before_hex": "5025",
+      "after_hex": "5179",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B39B",
+      "offset": "0x0052B39B",
+      "before_hex": "f03c0001",
+      "after_hex": "f1860198",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B3AD",
+      "offset": "0x0052B3AD",
+      "before_hex": "6025",
+      "after_hex": "61b8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B3B5",
+      "offset": "0x0052B3B5",
+      "before_hex": "f03c0001",
+      "after_hex": "f1c601d8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B3C7",
+      "offset": "0x0052B3C7",
+      "before_hex": "3f6025",
+      "after_hex": "7f61f8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B3D0",
+      "offset": "0x0052B3D0",
+      "before_hex": "f03c0001",
+      "after_hex": "f2060218",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B3E1",
+      "offset": "0x0052B3E1",
+      "before_hex": "3ff02e",
+      "after_hex": "bff238",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B3E5",
+      "offset": "0x0052B3E5",
+      "before_hex": "f001",
+      "after_hex": "f24a",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B3F4",
+      "offset": "0x0052B3F4",
+      "before_hex": "3f5024",
+      "after_hex": "ff5279",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B3F9",
+      "offset": "0x0052B3F9",
+      "before_hex": "04",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B3FD",
+      "offset": "0x0052B3FD",
+      "before_hex": "0020803653",
+      "after_hex": "a286530054",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B403",
+      "offset": "0x0052B403",
+      "before_hex": "10540055000720",
+      "after_hex": "40550298200121",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B40B",
+      "offset": "0x0052B40B",
+      "before_hex": "21",
+      "after_hex": "22",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B40D",
+      "offset": "0x0052B40D",
+      "before_hex": "0122",
+      "after_hex": "0623",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B410",
+      "offset": "0x0052B410",
+      "before_hex": "23",
+      "after_hex": "24",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B412",
+      "offset": "0x0052B412",
+      "before_hex": "240125f03f83602d26",
+      "after_hex": "25f03f62b8260c0024",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B41C",
+      "offset": "0x0052B41C",
+      "before_hex": "240025a03f50",
+      "after_hex": "25f2c602d840",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B424",
+      "offset": "0x0052B424",
+      "before_hex": "40",
+      "after_hex": "41",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B426",
+      "offset": "0x0052B426",
+      "before_hex": "41",
+      "after_hex": "42",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B428",
+      "offset": "0x0052B428",
+      "before_hex": "42",
+      "after_hex": "43",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B42A",
+      "offset": "0x0052B42A",
+      "before_hex": "43",
+      "after_hex": "44",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B42C",
+      "offset": "0x0052B42C",
+      "before_hex": "1c440145f03ff02ee0",
+      "after_hex": "7045f07ff2f8e30a60",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B436",
+      "offset": "0x0052B436",
+      "before_hex": "60",
+      "after_hex": "61",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B438",
+      "offset": "0x0052B438",
+      "before_hex": "0061",
+      "after_hex": "0162",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B43B",
+      "offset": "0x0052B43B",
+      "before_hex": "62",
+      "after_hex": "63",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B43D",
+      "offset": "0x0052B43D",
+      "before_hex": "63",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B43F",
+      "offset": "0x0052B43F",
+      "before_hex": "64016b65f03f602542a07b",
+      "after_hex": "65f0bf8b63384200208344",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B44B",
+      "offset": "0x0052B44B",
+      "before_hex": "f089f001",
+      "after_hex": "a00df35d",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B450",
+      "offset": "0x0052B450",
+      "before_hex": "a001",
+      "after_hex": "f36f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B454",
+      "offset": "0x0052B454",
+      "before_hex": "31",
+      "after_hex": "3f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B457",
+      "offset": "0x0052B457",
+      "before_hex": "0d",
+      "after_hex": "4d",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B45E",
+      "offset": "0x0052B45E",
+      "before_hex": "f030c001",
+      "after_hex": "f3a0c3b2",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B464",
+      "offset": "0x0052B464",
+      "before_hex": "3f",
+      "after_hex": "7f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B467",
+      "offset": "0x0052B467",
+      "before_hex": "0d",
+      "after_hex": "8d",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B46E",
+      "offset": "0x0052B46E",
+      "before_hex": "f030",
+      "after_hex": "f3e0",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B478",
+      "offset": "0x0052B478",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B47A",
+      "offset": "0x0052B47A",
+      "before_hex": "01",
+      "after_hex": "25",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B47E",
+      "offset": "0x0052B47E",
+      "before_hex": "103f",
+      "after_hex": "143b",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B487",
+      "offset": "0x0052B487",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B489",
+      "offset": "0x0052B489",
+      "before_hex": "01",
+      "after_hex": "25",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B490",
+      "offset": "0x0052B490",
+      "before_hex": "01",
+      "after_hex": "4b",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B492",
+      "offset": "0x0052B492",
+      "before_hex": "01",
+      "after_hex": "5d",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B49A",
+      "offset": "0x0052B49A",
+      "before_hex": "cf",
+      "after_hex": "c7",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B49C",
+      "offset": "0x0052B49C",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B49E",
+      "offset": "0x0052B49E",
+      "before_hex": "01",
+      "after_hex": "25",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B4A1",
+      "offset": "0x0052B4A1",
+      "before_hex": "203ff001f001f001fff001f001f001f001f001f001f001f001fff001f001f001f001f001f001f001f001fff001f001f001f001f001f001f001f001fff001f001f001f001f001f001f001f001fff001f001f001f001f001f001f001a47d094c5246800007",
+      "after_hex": "f0f4faf50df51ffff531f543f555f567f579f58bf59df5affff5c1f5d3f5e5f5f7f609f61bf62df63ffff651f663f675f687f699f6abf6bdf6cffff6e1f6f3f705f717f729f73bf74df75ffff771f783f795f7a7f7b9f7cbf7dde47d094c5246800804ff",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B506",
+      "offset": "0x0052B506",
+      "before_hex": "ff100144f32005e120f02007f13f2920e09003ff0003e123000380400bf9fc",
+      "after_hex": "100144f32006e120f0200ef13f2920e09003ff000fe123000380400bf9fcff",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B526",
+      "offset": "0x0052B526",
+      "before_hex": "fff93c",
+      "after_hex": "f93cfe",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B52A",
+      "offset": "0x0052B52A",
+      "before_hex": "fe2003266e8003304ff001f00130014c08494e4b0b0038737461007475732e6163670004434d4e541016450e8300528381839383679604a290dd92e800b243028220bc4d4f44450416282001000256455220",
+      "after_hex": "2003266e8003304ff005f01730794c08494e4b0b088c737461007475732e6163670004434d4e541016450e8300528381839383679604a290dd92e800b243028228b74d4f4445041628200100025645522008",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B57D",
+      "offset": "0x0052B57D",
+      "before_hex": "000b0049532d415343303310454e4425",
+      "after_hex": "cd0049532d415343303310454e442597",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B59E",
+      "offset": "0x0052B59E",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B5A0",
+      "offset": "0x0052B5A0",
+      "before_hex": "01",
+      "after_hex": "25",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B5A2",
+      "offset": "0x0052B5A2",
+      "before_hex": "01",
+      "after_hex": "37",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B5A4",
+      "offset": "0x0052B5A4",
+      "before_hex": "01",
+      "after_hex": "49",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B5A6",
+      "offset": "0x0052B5A6",
+      "before_hex": "01",
+      "after_hex": "5b",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B5AC",
+      "offset": "0x0052B5AC",
+      "before_hex": "14",
+      "after_hex": "66",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B5AE",
+      "offset": "0x0052B5AE",
+      "before_hex": "01",
+      "after_hex": "78",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B5B0",
+      "offset": "0x0052B5B0",
+      "before_hex": "01",
+      "after_hex": "8a",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B5B2",
+      "offset": "0x0052B5B2",
+      "before_hex": "01",
+      "after_hex": "9c",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B5B4",
+      "offset": "0x0052B5B4",
+      "before_hex": "01",
+      "after_hex": "ae",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B5C0",
+      "offset": "0x0052B5C0",
+      "before_hex": "0d",
+      "after_hex": "c8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B5CC",
+      "offset": "0x0052B5CC",
+      "before_hex": "0b",
+      "after_hex": "d8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B5DA",
+      "offset": "0x0052B5DA",
+      "before_hex": "36",
+      "after_hex": "e6",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B5DC",
+      "offset": "0x0052B5DC",
+      "before_hex": "01",
+      "after_hex": "f8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B5DE",
+      "offset": "0x0052B5DE",
+      "before_hex": "f001f001f001",
+      "after_hex": "f10af11cf12e",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B5EB",
+      "offset": "0x0052B5EB",
+      "before_hex": "f0160001",
+      "after_hex": "f1460158",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B5FE",
+      "offset": "0x0052B5FE",
+      "before_hex": "000f",
+      "after_hex": "0168",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B603",
+      "offset": "0x0052B603",
+      "before_hex": "5025",
+      "after_hex": "5179",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B60B",
+      "offset": "0x0052B60B",
+      "before_hex": "f03c0001",
+      "after_hex": "f1860198",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B61D",
+      "offset": "0x0052B61D",
+      "before_hex": "6025",
+      "after_hex": "61b8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B625",
+      "offset": "0x0052B625",
+      "before_hex": "f03c0001",
+      "after_hex": "f1c601d8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B637",
+      "offset": "0x0052B637",
+      "before_hex": "3f6025",
+      "after_hex": "7f61f8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B640",
+      "offset": "0x0052B640",
+      "before_hex": "f03c0001",
+      "after_hex": "f2060218",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B651",
+      "offset": "0x0052B651",
+      "before_hex": "3ff02e",
+      "after_hex": "bff238",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B655",
+      "offset": "0x0052B655",
+      "before_hex": "e001",
+      "after_hex": "e24a",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B665",
+      "offset": "0x0052B665",
+      "before_hex": "3f5025",
+      "after_hex": "ff5279",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B669",
+      "offset": "0x0052B669",
+      "before_hex": "02",
+      "after_hex": "08",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B66E",
+      "offset": "0x0052B66E",
+      "before_hex": "002080375308",
+      "after_hex": "a28653005420",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B675",
+      "offset": "0x0052B675",
+      "before_hex": "540055000726",
+      "after_hex": "550298260127",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B67C",
+      "offset": "0x0052B67C",
+      "before_hex": "2700",
+      "after_hex": "2803",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B67F",
+      "offset": "0x0052B67F",
+      "before_hex": "28",
+      "after_hex": "29",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B681",
+      "offset": "0x0052B681",
+      "before_hex": "29",
+      "after_hex": "2a",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B683",
+      "offset": "0x0052B683",
+      "before_hex": "2a012bc1f03f602d26",
+      "after_hex": "2bf03f62b806260024",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B68D",
+      "offset": "0x0052B68D",
+      "before_hex": "240025a03f8050",
+      "after_hex": "25f2c602d84600",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B695",
+      "offset": "0x0052B695",
+      "before_hex": "46",
+      "after_hex": "47",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B697",
+      "offset": "0x0052B697",
+      "before_hex": "47",
+      "after_hex": "48",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B699",
+      "offset": "0x0052B699",
+      "before_hex": "48",
+      "after_hex": "49",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B69B",
+      "offset": "0x0052B69B",
+      "before_hex": "490e",
+      "after_hex": "4a38",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B69E",
+      "offset": "0x0052B69E",
+      "before_hex": "4a014bf03ff02ee0",
+      "after_hex": "4bf07ff2f8e30a66",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B6A7",
+      "offset": "0x0052B6A7",
+      "before_hex": "66",
+      "after_hex": "67",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B6AA",
+      "offset": "0x0052B6AA",
+      "before_hex": "67",
+      "after_hex": "68",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B6AC",
+      "offset": "0x0052B6AC",
+      "before_hex": "68",
+      "after_hex": "69",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B6AE",
+      "offset": "0x0052B6AE",
+      "before_hex": "69",
+      "after_hex": "6a",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B6B0",
+      "offset": "0x0052B6B0",
+      "before_hex": "6a35016bf03f602542a07b",
+      "after_hex": "6bc5f0bf63384200208344",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B6BC",
+      "offset": "0x0052B6BC",
+      "before_hex": "f089",
+      "after_hex": "a00d",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B6BF",
+      "offset": "0x0052B6BF",
+      "before_hex": "f001a001",
+      "after_hex": "f35df36f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B6C5",
+      "offset": "0x0052B6C5",
+      "before_hex": "31",
+      "after_hex": "3f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B6C8",
+      "offset": "0x0052B6C8",
+      "before_hex": "0d",
+      "after_hex": "4d",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B6CF",
+      "offset": "0x0052B6CF",
+      "before_hex": "f030c001",
+      "after_hex": "f3a0c3b2",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B6D5",
+      "offset": "0x0052B6D5",
+      "before_hex": "3f",
+      "after_hex": "7f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B6D9",
+      "offset": "0x0052B6D9",
+      "before_hex": "0d",
+      "after_hex": "8d",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B6DF",
+      "offset": "0x0052B6DF",
+      "before_hex": "f030a001",
+      "after_hex": "f3e0a3f2",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B6EA",
+      "offset": "0x0052B6EA",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B6EC",
+      "offset": "0x0052B6EC",
+      "before_hex": "01",
+      "after_hex": "25",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B6F1",
+      "offset": "0x0052B6F1",
+      "before_hex": "103f",
+      "after_hex": "143b",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B6F9",
+      "offset": "0x0052B6F9",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B6FB",
+      "offset": "0x0052B6FB",
+      "before_hex": "01",
+      "after_hex": "25",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B702",
+      "offset": "0x0052B702",
+      "before_hex": "01",
+      "after_hex": "4b",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B704",
+      "offset": "0x0052B704",
+      "before_hex": "01",
+      "after_hex": "5d",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B709",
+      "offset": "0x0052B709",
+      "before_hex": "73",
+      "after_hex": "71",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B70E",
+      "offset": "0x0052B70E",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B710",
+      "offset": "0x0052B710",
+      "before_hex": "01",
+      "after_hex": "25",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B713",
+      "offset": "0x0052B713",
+      "before_hex": "203ff001fff001f001f001f001f001f001f001f001fff001f001f001f001f001f001f001f001fff001f001f001f001f001f001f001f001fff001f001f001f001f001f001f001f001fff001f001f001f001f001f001f001f001c2f001a47d4c5246800007ff51ff1001f32005e120f020070af13f20e09003ff0003e160230003400bf9fc",
+      "after_hex": "f0f4fafff50df51ff531f543f555f567f579f58bfff59df5aff5c1f5d3f5e5f5f7f609f61bfff62df63ff651f663f675f687f699f6abfff6bdf6cff6e1f6f3f705f717f729f73bfff74df75ff771f783f795f7a7f7b9f7cbc2f7dde47d4c5246800804ff51ff1001f32006e120f0200e0af13f20e09003ff000fe160230003400bf9fcff",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B798",
+      "offset": "0x0052B798",
+      "before_hex": "fff9373cfe20030042c09003304ff001c1f00130014c494e4b0b0038007374617475732e6100636700434d4e5410800012010e83528381830093836796a290dd9248e800b2430220bc4d4f442045040007",
+      "after_hex": "f9373cfe20030847c09003304ff005c1f01730794c494e4b0b088c007374617475732e6100636700434d4e541080089f010e83528381830093836796a290dd9248e800b2430228b74d4f4420450408c120",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B7EA",
+      "offset": "0x0052B7EA",
+      "before_hex": "2000025608455220",
+      "after_hex": "0002560845522008",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B7F3",
+      "offset": "0x0052B7F3",
+      "before_hex": "000b49532d004153433033454e448025",
+      "after_hex": "cd49532d004153433033454e44802597",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B812",
+      "offset": "0x0052B812",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B814",
+      "offset": "0x0052B814",
+      "before_hex": "01",
+      "after_hex": "25",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B816",
+      "offset": "0x0052B816",
+      "before_hex": "01",
+      "after_hex": "37",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B818",
+      "offset": "0x0052B818",
+      "before_hex": "01",
+      "after_hex": "49",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B81A",
+      "offset": "0x0052B81A",
+      "before_hex": "01",
+      "after_hex": "5b",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B820",
+      "offset": "0x0052B820",
+      "before_hex": "14",
+      "after_hex": "66",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B822",
+      "offset": "0x0052B822",
+      "before_hex": "01",
+      "after_hex": "78",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B824",
+      "offset": "0x0052B824",
+      "before_hex": "01",
+      "after_hex": "8a",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B826",
+      "offset": "0x0052B826",
+      "before_hex": "01",
+      "after_hex": "9c",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B828",
+      "offset": "0x0052B828",
+      "before_hex": "01",
+      "after_hex": "ae",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B834",
+      "offset": "0x0052B834",
+      "before_hex": "0d",
+      "after_hex": "c8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B840",
+      "offset": "0x0052B840",
+      "before_hex": "0b",
+      "after_hex": "d8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B84E",
+      "offset": "0x0052B84E",
+      "before_hex": "36",
+      "after_hex": "e6",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B850",
+      "offset": "0x0052B850",
+      "before_hex": "01",
+      "after_hex": "f8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B852",
+      "offset": "0x0052B852",
+      "before_hex": "f001f001f001",
+      "after_hex": "f10af11cf12e",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B85F",
+      "offset": "0x0052B85F",
+      "before_hex": "f0160001",
+      "after_hex": "f1460158",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B872",
+      "offset": "0x0052B872",
+      "before_hex": "000f",
+      "after_hex": "0168",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B877",
+      "offset": "0x0052B877",
+      "before_hex": "5025",
+      "after_hex": "5179",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B87F",
+      "offset": "0x0052B87F",
+      "before_hex": "f03c0001",
+      "after_hex": "f1860198",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B891",
+      "offset": "0x0052B891",
+      "before_hex": "6025",
+      "after_hex": "61b8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B899",
+      "offset": "0x0052B899",
+      "before_hex": "f03c0001",
+      "after_hex": "f1c601d8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B8AB",
+      "offset": "0x0052B8AB",
+      "before_hex": "3f6025",
+      "after_hex": "7f61f8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B8B4",
+      "offset": "0x0052B8B4",
+      "before_hex": "f03c0001",
+      "after_hex": "f2060218",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B8C5",
+      "offset": "0x0052B8C5",
+      "before_hex": "3ff02e",
+      "after_hex": "bff238",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B8C9",
+      "offset": "0x0052B8C9",
+      "before_hex": "e001",
+      "after_hex": "e24a",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B8D9",
+      "offset": "0x0052B8D9",
+      "before_hex": "3f5025",
+      "after_hex": "ff5279",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B8DD",
+      "offset": "0x0052B8DD",
+      "before_hex": "02",
+      "after_hex": "08",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B8E2",
+      "offset": "0x0052B8E2",
+      "before_hex": "002080375308",
+      "after_hex": "a28653005420",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B8E9",
+      "offset": "0x0052B8E9",
+      "before_hex": "5400551119",
+      "after_hex": "551119012d",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B8EF",
+      "offset": "0x0052B8EF",
+      "before_hex": "2d",
+      "after_hex": "2e",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B8F1",
+      "offset": "0x0052B8F1",
+      "before_hex": "012e",
+      "after_hex": "062f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B8F4",
+      "offset": "0x0052B8F4",
+      "before_hex": "2f",
+      "after_hex": "30",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B8F6",
+      "offset": "0x0052B8F6",
+      "before_hex": "300131f03f83602d26",
+      "after_hex": "31f03f62b8260c0024",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B900",
+      "offset": "0x0052B900",
+      "before_hex": "240025a03f50",
+      "after_hex": "25f2c602d84c",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B908",
+      "offset": "0x0052B908",
+      "before_hex": "4c",
+      "after_hex": "4d",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B90A",
+      "offset": "0x0052B90A",
+      "before_hex": "4d",
+      "after_hex": "4e",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B90C",
+      "offset": "0x0052B90C",
+      "before_hex": "4e",
+      "after_hex": "4f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B90E",
+      "offset": "0x0052B90E",
+      "before_hex": "4f",
+      "after_hex": "50",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B910",
+      "offset": "0x0052B910",
+      "before_hex": "1c500151f03ff02ee0",
+      "after_hex": "7051f07ff2f8e30a6c",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B91A",
+      "offset": "0x0052B91A",
+      "before_hex": "6c",
+      "after_hex": "6d",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B91C",
+      "offset": "0x0052B91C",
+      "before_hex": "006d",
+      "after_hex": "016e",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B91F",
+      "offset": "0x0052B91F",
+      "before_hex": "6e",
+      "after_hex": "6f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B921",
+      "offset": "0x0052B921",
+      "before_hex": "6f",
+      "after_hex": "70",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B923",
+      "offset": "0x0052B923",
+      "before_hex": "70016b71f03f602542a07b",
+      "after_hex": "71f0bf8b63384200208344",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B92F",
+      "offset": "0x0052B92F",
+      "before_hex": "f089f001",
+      "after_hex": "a00df35d",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B934",
+      "offset": "0x0052B934",
+      "before_hex": "a001",
+      "after_hex": "f36f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B938",
+      "offset": "0x0052B938",
+      "before_hex": "31",
+      "after_hex": "3f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B93B",
+      "offset": "0x0052B93B",
+      "before_hex": "0d",
+      "after_hex": "4d",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B942",
+      "offset": "0x0052B942",
+      "before_hex": "f030c001",
+      "after_hex": "f3a0c3b2",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B948",
+      "offset": "0x0052B948",
+      "before_hex": "3f",
+      "after_hex": "7f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B94B",
+      "offset": "0x0052B94B",
+      "before_hex": "0d",
+      "after_hex": "8d",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B952",
+      "offset": "0x0052B952",
+      "before_hex": "f030a001",
+      "after_hex": "f3e0a3f2",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B95D",
+      "offset": "0x0052B95D",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B95F",
+      "offset": "0x0052B95F",
+      "before_hex": "01",
+      "after_hex": "25",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B964",
+      "offset": "0x0052B964",
+      "before_hex": "103f",
+      "after_hex": "143b",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B96C",
+      "offset": "0x0052B96C",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B96E",
+      "offset": "0x0052B96E",
+      "before_hex": "01",
+      "after_hex": "25",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B975",
+      "offset": "0x0052B975",
+      "before_hex": "01",
+      "after_hex": "4b",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B977",
+      "offset": "0x0052B977",
+      "before_hex": "01",
+      "after_hex": "5d",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B97D",
+      "offset": "0x0052B97D",
+      "before_hex": "e7",
+      "after_hex": "e3",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B981",
+      "offset": "0x0052B981",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B983",
+      "offset": "0x0052B983",
+      "before_hex": "01",
+      "after_hex": "25",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B986",
+      "offset": "0x0052B986",
+      "before_hex": "203ff001f001fff001f001f001f001f001f001f001f001fff001f001f001f001f001f001f001f001fff001f001f001f001f001f001f001f001fff001f001f001f001f001f001f001f001fff001f001f001f001f001f001f001f00184a47d4c5246800007",
+      "after_hex": "f0f4faf50dfff51ff531f543f555f567f579f58bf59dfff5aff5c1f5d3f5e5f5f7f609f61bf62dfff63ff651f663f675f687f699f6abf6bdfff6cff6e1f6f3f705f717f729f73bf74dfff75ff771f783f795f7a7f7b9f7cbf7dd84e47d4c5246800804ff",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852B9EB",
+      "offset": "0x0052B9EB",
+      "before_hex": "ffa21001f32005e120f02007f1143f20e09003ff0003e123c00003400bf9fc",
+      "after_hex": "a21001f32006e120f0200ef1143f20e09003ff000fe123c00003400bf9fcff",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BA0B",
+      "offset": "0x0052BA0B",
+      "before_hex": "fff93c6ffe20030042c09003304ff001f0018230014c494e4b0b0038730074617475732e6163016700434d4e5410001200010e83528381839300836796a290dd92e89000b2430220bc4d4f444540040007",
+      "after_hex": "f93c6ffe20030847c09003304ff005f0178230794c494e4b0b088c730074617475732e6163016700434d4e5410089f00010e83528381839300836796a290dd92e89000b2430228b74d4f4445400408c120",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BA5D",
+      "offset": "0x0052BA5D",
+      "before_hex": "2000025645105220",
+      "after_hex": "0002564510522008",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BA66",
+      "offset": "0x0052BA66",
+      "before_hex": "000b49532d410153433033454e4425",
+      "after_hex": "cd49532d410153433033454e442597",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BA86",
+      "offset": "0x0052BA86",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BA88",
+      "offset": "0x0052BA88",
+      "before_hex": "01",
+      "after_hex": "25",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BA8A",
+      "offset": "0x0052BA8A",
+      "before_hex": "01",
+      "after_hex": "37",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BA8C",
+      "offset": "0x0052BA8C",
+      "before_hex": "01",
+      "after_hex": "49",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BA8E",
+      "offset": "0x0052BA8E",
+      "before_hex": "01",
+      "after_hex": "5b",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BA94",
+      "offset": "0x0052BA94",
+      "before_hex": "14",
+      "after_hex": "66",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BA96",
+      "offset": "0x0052BA96",
+      "before_hex": "01",
+      "after_hex": "78",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BA98",
+      "offset": "0x0052BA98",
+      "before_hex": "01",
+      "after_hex": "8a",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BA9A",
+      "offset": "0x0052BA9A",
+      "before_hex": "01",
+      "after_hex": "9c",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BA9C",
+      "offset": "0x0052BA9C",
+      "before_hex": "01",
+      "after_hex": "ae",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BAA8",
+      "offset": "0x0052BAA8",
+      "before_hex": "0d",
+      "after_hex": "c8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BAB4",
+      "offset": "0x0052BAB4",
+      "before_hex": "0b",
+      "after_hex": "d8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BAC2",
+      "offset": "0x0052BAC2",
+      "before_hex": "36",
+      "after_hex": "e6",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BAC4",
+      "offset": "0x0052BAC4",
+      "before_hex": "01",
+      "after_hex": "f8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BAC6",
+      "offset": "0x0052BAC6",
+      "before_hex": "f001f001f001",
+      "after_hex": "f10af11cf12e",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BAD3",
+      "offset": "0x0052BAD3",
+      "before_hex": "f0160001",
+      "after_hex": "f1460158",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BAE6",
+      "offset": "0x0052BAE6",
+      "before_hex": "000f",
+      "after_hex": "0168",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BAEB",
+      "offset": "0x0052BAEB",
+      "before_hex": "5025",
+      "after_hex": "5179",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BAF3",
+      "offset": "0x0052BAF3",
+      "before_hex": "f03c0001",
+      "after_hex": "f1860198",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BB05",
+      "offset": "0x0052BB05",
+      "before_hex": "6025",
+      "after_hex": "61b8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BB0D",
+      "offset": "0x0052BB0D",
+      "before_hex": "f03c0001",
+      "after_hex": "f1c601d8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BB1F",
+      "offset": "0x0052BB1F",
+      "before_hex": "3f6025",
+      "after_hex": "7f61f8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BB28",
+      "offset": "0x0052BB28",
+      "before_hex": "f03c1001",
+      "after_hex": "f2061218",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BB39",
+      "offset": "0x0052BB39",
+      "before_hex": "3ff02e",
+      "after_hex": "bff239",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BB3D",
+      "offset": "0x0052BB3D",
+      "before_hex": "d001",
+      "after_hex": "d24b",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BB4D",
+      "offset": "0x0052BB4D",
+      "before_hex": "6025",
+      "after_hex": "6278",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BB51",
+      "offset": "0x0052BB51",
+      "before_hex": "04",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BB55",
+      "offset": "0x0052BB55",
+      "before_hex": "0020803753",
+      "after_hex": "a286530054",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BB5B",
+      "offset": "0x0052BB5B",
+      "before_hex": "105400551099",
+      "after_hex": "405510990133",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BB62",
+      "offset": "0x0052BB62",
+      "before_hex": "33",
+      "after_hex": "34",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BB64",
+      "offset": "0x0052BB64",
+      "before_hex": "3403",
+      "after_hex": "350c",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BB67",
+      "offset": "0x0052BB67",
+      "before_hex": "35",
+      "after_hex": "36",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BB69",
+      "offset": "0x0052BB69",
+      "before_hex": "360137f03f602d0626",
+      "after_hex": "37f07f62b826001824",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BB73",
+      "offset": "0x0052BB73",
+      "before_hex": "240025a03f50",
+      "after_hex": "25f2c602d852",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BB7A",
+      "offset": "0x0052BB7A",
+      "before_hex": "52",
+      "after_hex": "53",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BB7D",
+      "offset": "0x0052BB7D",
+      "before_hex": "53",
+      "after_hex": "54",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BB7F",
+      "offset": "0x0052BB7F",
+      "before_hex": "54",
+      "after_hex": "55",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BB81",
+      "offset": "0x0052BB81",
+      "before_hex": "55",
+      "after_hex": "56",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BB83",
+      "offset": "0x0052BB83",
+      "before_hex": "56380157f03ff02ee0",
+      "after_hex": "57e0f0bff2f8e30a72",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BB8D",
+      "offset": "0x0052BB8D",
+      "before_hex": "72",
+      "after_hex": "73",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BB8F",
+      "offset": "0x0052BB8F",
+      "before_hex": "7300",
+      "after_hex": "7403",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BB92",
+      "offset": "0x0052BB92",
+      "before_hex": "74",
+      "after_hex": "75",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BB94",
+      "offset": "0x0052BB94",
+      "before_hex": "75",
+      "after_hex": "76",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BB96",
+      "offset": "0x0052BB96",
+      "before_hex": "760177d7f03f602542a07b",
+      "after_hex": "77f0ff6338174200208344",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BBA2",
+      "offset": "0x0052BBA2",
+      "before_hex": "f089f001a001",
+      "after_hex": "a00df35df36f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BBAB",
+      "offset": "0x0052BBAB",
+      "before_hex": "31",
+      "after_hex": "3f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BBAE",
+      "offset": "0x0052BBAE",
+      "before_hex": "0d",
+      "after_hex": "4d",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BBB5",
+      "offset": "0x0052BBB5",
+      "before_hex": "f030c001",
+      "after_hex": "f3a0c3b2",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BBBB",
+      "offset": "0x0052BBBB",
+      "before_hex": "3f",
+      "after_hex": "7f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BBBE",
+      "offset": "0x0052BBBE",
+      "before_hex": "0d",
+      "after_hex": "8d",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BBC5",
+      "offset": "0x0052BBC5",
+      "before_hex": "f030a001",
+      "after_hex": "f3e0a3f2",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BBD0",
+      "offset": "0x0052BBD0",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BBD2",
+      "offset": "0x0052BBD2",
+      "before_hex": "01",
+      "after_hex": "25",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BBD6",
+      "offset": "0x0052BBD6",
+      "before_hex": "103f",
+      "after_hex": "143b",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BBDF",
+      "offset": "0x0052BBDF",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BBE1",
+      "offset": "0x0052BBE1",
+      "before_hex": "01",
+      "after_hex": "25",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BBE8",
+      "offset": "0x0052BBE8",
+      "before_hex": "01",
+      "after_hex": "4b",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BBEA",
+      "offset": "0x0052BBEA",
+      "before_hex": "01",
+      "after_hex": "5d",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BBF2",
+      "offset": "0x0052BBF2",
+      "before_hex": "cf",
+      "after_hex": "c7",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BBF4",
+      "offset": "0x0052BBF4",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BBF6",
+      "offset": "0x0052BBF6",
+      "before_hex": "01",
+      "after_hex": "25",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BBF9",
+      "offset": "0x0052BBF9",
+      "before_hex": "203ff001f001f001fff001f001f001f001f001f001f001f001fff001f001f001f001f001f001f001f001fff001f001f001f001f001f001f001f001fff001f001f001f001f001f001f001f001fff001f001f001f001f001f001f001a47d094c5246800007",
+      "after_hex": "f0f4faf50df51ffff531f543f555f567f579f58bf59df5affff5c1f5d3f5e5f5f7f609f61bf62df63ffff651f663f675f687f699f6abf6bdf6cffff6e1f6f3f705f717f729f73bf74df75ffff771f783f795f7a7f7b9f7cbf7dde47d094c5246800804ff",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BC5E",
+      "offset": "0x0052BC5E",
+      "before_hex": "ff100144f32005e120f02007f13f2920e09003ff0003e123000380400bf9fc",
+      "after_hex": "100144f32006e120f0200ef13f2920e09003ff000fe123000380400bf9fcff",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BC7E",
+      "offset": "0x0052BC7E",
+      "before_hex": "fff93cfedf20030042c09003304ff001f0013001044c494e4b0b0038737400617475732e6163670200434d4e541016850e0083528381839383670296a290dd92e800b243410220bc4d4f444504000700",
+      "after_hex": "f93cfedf20030847c09003304ff005f0173079044c494e4b0b088c737400617475732e6163670200434d4e541016850e0083528381839383670296a290dd92e800b243410228b74d4f44450408c10020",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BCCF",
+      "offset": "0x0052BCCF",
+      "before_hex": "2000025645522040",
+      "after_hex": "0002564552204008",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BCD8",
+      "offset": "0x0052BCD8",
+      "before_hex": "000b49532d415343043033454e4425",
+      "after_hex": "cd49532d415343043033454e442597",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BCF6",
+      "offset": "0x0052BCF6",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BCF8",
+      "offset": "0x0052BCF8",
+      "before_hex": "01",
+      "after_hex": "25",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BCFA",
+      "offset": "0x0052BCFA",
+      "before_hex": "01",
+      "after_hex": "37",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BCFC",
+      "offset": "0x0052BCFC",
+      "before_hex": "01",
+      "after_hex": "49",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BCFE",
+      "offset": "0x0052BCFE",
+      "before_hex": "01",
+      "after_hex": "5b",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BD04",
+      "offset": "0x0052BD04",
+      "before_hex": "14",
+      "after_hex": "66",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BD06",
+      "offset": "0x0052BD06",
+      "before_hex": "01",
+      "after_hex": "78",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BD08",
+      "offset": "0x0052BD08",
+      "before_hex": "01",
+      "after_hex": "8a",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BD0A",
+      "offset": "0x0052BD0A",
+      "before_hex": "01",
+      "after_hex": "9c",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BD0C",
+      "offset": "0x0052BD0C",
+      "before_hex": "01",
+      "after_hex": "ae",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BD18",
+      "offset": "0x0052BD18",
+      "before_hex": "0d",
+      "after_hex": "c8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BD24",
+      "offset": "0x0052BD24",
+      "before_hex": "0b",
+      "after_hex": "d8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BD32",
+      "offset": "0x0052BD32",
+      "before_hex": "36",
+      "after_hex": "e6",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BD34",
+      "offset": "0x0052BD34",
+      "before_hex": "01",
+      "after_hex": "f8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BD36",
+      "offset": "0x0052BD36",
+      "before_hex": "f001f001f001",
+      "after_hex": "f10af11cf12e",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BD43",
+      "offset": "0x0052BD43",
+      "before_hex": "f0160001",
+      "after_hex": "f1460158",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BD56",
+      "offset": "0x0052BD56",
+      "before_hex": "000f",
+      "after_hex": "0168",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BD5B",
+      "offset": "0x0052BD5B",
+      "before_hex": "5025",
+      "after_hex": "5179",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BD63",
+      "offset": "0x0052BD63",
+      "before_hex": "f03c0001",
+      "after_hex": "f1860198",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BD75",
+      "offset": "0x0052BD75",
+      "before_hex": "6025",
+      "after_hex": "61b8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BD7D",
+      "offset": "0x0052BD7D",
+      "before_hex": "f03c0001",
+      "after_hex": "f1c601d8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BD8F",
+      "offset": "0x0052BD8F",
+      "before_hex": "3f6025",
+      "after_hex": "7f61f8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BD98",
+      "offset": "0x0052BD98",
+      "before_hex": "f03c0001",
+      "after_hex": "f2060218",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BDA9",
+      "offset": "0x0052BDA9",
+      "before_hex": "3ff02e",
+      "after_hex": "bff238",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BDAD",
+      "offset": "0x0052BDAD",
+      "before_hex": "e001",
+      "after_hex": "e24a",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BDBD",
+      "offset": "0x0052BDBD",
+      "before_hex": "3f5025",
+      "after_hex": "ff5279",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BDC1",
+      "offset": "0x0052BDC1",
+      "before_hex": "02",
+      "after_hex": "08",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BDC6",
+      "offset": "0x0052BDC6",
+      "before_hex": "002080375308",
+      "after_hex": "a28653005420",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BDCD",
+      "offset": "0x0052BDCD",
+      "before_hex": "540055000738",
+      "after_hex": "550298380139",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BDD4",
+      "offset": "0x0052BDD4",
+      "before_hex": "3900",
+      "after_hex": "3a03",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BDD7",
+      "offset": "0x0052BDD7",
+      "before_hex": "3a",
+      "after_hex": "3b",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BDD9",
+      "offset": "0x0052BDD9",
+      "before_hex": "3b",
+      "after_hex": "3c",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BDDB",
+      "offset": "0x0052BDDB",
+      "before_hex": "3c013dc1f03f602d26",
+      "after_hex": "3df03f62b806260024",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BDE5",
+      "offset": "0x0052BDE5",
+      "before_hex": "240025a03f8050",
+      "after_hex": "25f2c602d85800",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BDED",
+      "offset": "0x0052BDED",
+      "before_hex": "58",
+      "after_hex": "59",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BDEF",
+      "offset": "0x0052BDEF",
+      "before_hex": "59",
+      "after_hex": "5a",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BDF1",
+      "offset": "0x0052BDF1",
+      "before_hex": "5a",
+      "after_hex": "5b",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BDF3",
+      "offset": "0x0052BDF3",
+      "before_hex": "5b0e",
+      "after_hex": "5c38",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BDF6",
+      "offset": "0x0052BDF6",
+      "before_hex": "5c015df03ff02ee0",
+      "after_hex": "5df07ff2f8e30a66",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BDFF",
+      "offset": "0x0052BDFF",
+      "before_hex": "66",
+      "after_hex": "67",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BE02",
+      "offset": "0x0052BE02",
+      "before_hex": "67",
+      "after_hex": "68",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BE04",
+      "offset": "0x0052BE04",
+      "before_hex": "68",
+      "after_hex": "69",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BE06",
+      "offset": "0x0052BE06",
+      "before_hex": "69",
+      "after_hex": "6a",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BE08",
+      "offset": "0x0052BE08",
+      "before_hex": "6a35017df03f602542a07b",
+      "after_hex": "7dc5f0bf63384200208344",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BE14",
+      "offset": "0x0052BE14",
+      "before_hex": "f089",
+      "after_hex": "a00d",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BE17",
+      "offset": "0x0052BE17",
+      "before_hex": "f001a001",
+      "after_hex": "f35df36f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BE1D",
+      "offset": "0x0052BE1D",
+      "before_hex": "31",
+      "after_hex": "3f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BE20",
+      "offset": "0x0052BE20",
+      "before_hex": "0d",
+      "after_hex": "4d",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BE27",
+      "offset": "0x0052BE27",
+      "before_hex": "f030c001",
+      "after_hex": "f3a0c3b2",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BE2D",
+      "offset": "0x0052BE2D",
+      "before_hex": "3f",
+      "after_hex": "7f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BE31",
+      "offset": "0x0052BE31",
+      "before_hex": "0d",
+      "after_hex": "8d",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BE37",
+      "offset": "0x0052BE37",
+      "before_hex": "f030a001",
+      "after_hex": "f3e0a3f2",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BE42",
+      "offset": "0x0052BE42",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BE44",
+      "offset": "0x0052BE44",
+      "before_hex": "01",
+      "after_hex": "25",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BE49",
+      "offset": "0x0052BE49",
+      "before_hex": "103f",
+      "after_hex": "143b",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BE51",
+      "offset": "0x0052BE51",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BE53",
+      "offset": "0x0052BE53",
+      "before_hex": "01",
+      "after_hex": "25",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BE5A",
+      "offset": "0x0052BE5A",
+      "before_hex": "01",
+      "after_hex": "4b",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BE5C",
+      "offset": "0x0052BE5C",
+      "before_hex": "01",
+      "after_hex": "5d",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BE61",
+      "offset": "0x0052BE61",
+      "before_hex": "73",
+      "after_hex": "71",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BE66",
+      "offset": "0x0052BE66",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BE68",
+      "offset": "0x0052BE68",
+      "before_hex": "01",
+      "after_hex": "25",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BE6B",
+      "offset": "0x0052BE6B",
+      "before_hex": "203ff001fff001f001f001f001f001f001f001f001fff001f001f001f001f001f001f001f001fff001f001f001f001f001f001f001f001fff001f001f001f001f001f001f001f001fff001f001f001f001f001f001f001f001c2f001a47d4c5246800007ff51ff1001f32005e120f020070af13f20e09003ff0003e160230003400bf9fc",
+      "after_hex": "f0f4fafff50df51ff531f543f555f567f579f58bfff59df5aff5c1f5d3f5e5f5f7f609f61bfff62df63ff651f663f675f687f699f6abfff6bdf6cff6e1f6f3f705f717f729f73bfff74df75ff771f783f795f7a7f7b9f7cbc2f7dde47d4c5246800804ff51ff1001f32006e120f0200e0af13f20e09003ff000fe160230003400bf9fcff",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BEF0",
+      "offset": "0x0052BEF0",
+      "before_hex": "fff9373cfe20030042c09003304ff001c1f00130014c494e4b0b0038007374617475732e6100636700434d4e5410800012010e83528381830093836796a290dd9248e800b2430220bc4d4f442045040007",
+      "after_hex": "f9373cfe20030847c09003304ff005c1f01730794c494e4b0b088c007374617475732e6100636700434d4e541080089f010e83528381830093836796a290dd9248e800b2430228b74d4f4420450408c120",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BF42",
+      "offset": "0x0052BF42",
+      "before_hex": "2000025608455220",
+      "after_hex": "0002560845522008",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BF4B",
+      "offset": "0x0052BF4B",
+      "before_hex": "000b49532d004153433033454e448025",
+      "after_hex": "cd49532d004153433033454e44802597",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BF6A",
+      "offset": "0x0052BF6A",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BF6C",
+      "offset": "0x0052BF6C",
+      "before_hex": "01",
+      "after_hex": "25",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BF6E",
+      "offset": "0x0052BF6E",
+      "before_hex": "01",
+      "after_hex": "37",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BF70",
+      "offset": "0x0052BF70",
+      "before_hex": "01",
+      "after_hex": "49",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BF72",
+      "offset": "0x0052BF72",
+      "before_hex": "01",
+      "after_hex": "5b",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BF78",
+      "offset": "0x0052BF78",
+      "before_hex": "14",
+      "after_hex": "66",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BF7A",
+      "offset": "0x0052BF7A",
+      "before_hex": "01",
+      "after_hex": "78",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BF7C",
+      "offset": "0x0052BF7C",
+      "before_hex": "01",
+      "after_hex": "8a",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BF7E",
+      "offset": "0x0052BF7E",
+      "before_hex": "01",
+      "after_hex": "9c",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BF80",
+      "offset": "0x0052BF80",
+      "before_hex": "01",
+      "after_hex": "ae",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BF8C",
+      "offset": "0x0052BF8C",
+      "before_hex": "0d",
+      "after_hex": "c8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BF98",
+      "offset": "0x0052BF98",
+      "before_hex": "0b",
+      "after_hex": "d8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BFA6",
+      "offset": "0x0052BFA6",
+      "before_hex": "36",
+      "after_hex": "e6",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BFA8",
+      "offset": "0x0052BFA8",
+      "before_hex": "01",
+      "after_hex": "f8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BFAA",
+      "offset": "0x0052BFAA",
+      "before_hex": "f001f001f001",
+      "after_hex": "f10af11cf12e",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BFB7",
+      "offset": "0x0052BFB7",
+      "before_hex": "f0160001",
+      "after_hex": "f1460158",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BFCA",
+      "offset": "0x0052BFCA",
+      "before_hex": "000f",
+      "after_hex": "0168",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BFCF",
+      "offset": "0x0052BFCF",
+      "before_hex": "5025",
+      "after_hex": "5179",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BFD7",
+      "offset": "0x0052BFD7",
+      "before_hex": "f03c0001",
+      "after_hex": "f1860198",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BFE9",
+      "offset": "0x0052BFE9",
+      "before_hex": "6025",
+      "after_hex": "61b8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852BFF1",
+      "offset": "0x0052BFF1",
+      "before_hex": "f03c0001",
+      "after_hex": "f1c601d8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C003",
+      "offset": "0x0052C003",
+      "before_hex": "3f6025",
+      "after_hex": "7f61f8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C00C",
+      "offset": "0x0052C00C",
+      "before_hex": "f03c0001",
+      "after_hex": "f2060218",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C01D",
+      "offset": "0x0052C01D",
+      "before_hex": "3ff02e",
+      "after_hex": "bff238",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C021",
+      "offset": "0x0052C021",
+      "before_hex": "e001",
+      "after_hex": "e24a",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C030",
+      "offset": "0x0052C030",
+      "before_hex": "3f6025",
+      "after_hex": "ff6278",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C035",
+      "offset": "0x0052C035",
+      "before_hex": "04",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C039",
+      "offset": "0x0052C039",
+      "before_hex": "0020803753",
+      "after_hex": "a286530054",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C03F",
+      "offset": "0x0052C03F",
+      "before_hex": "10540055000786",
+      "after_hex": "40550298860187",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C047",
+      "offset": "0x0052C047",
+      "before_hex": "87",
+      "after_hex": "88",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C049",
+      "offset": "0x0052C049",
+      "before_hex": "0188",
+      "after_hex": "0689",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C04C",
+      "offset": "0x0052C04C",
+      "before_hex": "89",
+      "after_hex": "8a",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C04E",
+      "offset": "0x0052C04E",
+      "before_hex": "8a018bf03f83602d26",
+      "after_hex": "8bf13f62b8260c0024",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C058",
+      "offset": "0x0052C058",
+      "before_hex": "240025a03f50",
+      "after_hex": "25f2c602d8a6",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C060",
+      "offset": "0x0052C060",
+      "before_hex": "a6",
+      "after_hex": "a7",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C062",
+      "offset": "0x0052C062",
+      "before_hex": "a7",
+      "after_hex": "a8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C064",
+      "offset": "0x0052C064",
+      "before_hex": "a8",
+      "after_hex": "a9",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C066",
+      "offset": "0x0052C066",
+      "before_hex": "a9",
+      "after_hex": "aa",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C068",
+      "offset": "0x0052C068",
+      "before_hex": "1caa01abf03ff02ee0",
+      "after_hex": "70abf17ff2f8e30a6c",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C072",
+      "offset": "0x0052C072",
+      "before_hex": "6c",
+      "after_hex": "6d",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C075",
+      "offset": "0x0052C075",
+      "before_hex": "6d",
+      "after_hex": "6e",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C077",
+      "offset": "0x0052C077",
+      "before_hex": "6e",
+      "after_hex": "6f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C079",
+      "offset": "0x0052C079",
+      "before_hex": "6f",
+      "after_hex": "70",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C07B",
+      "offset": "0x0052C07B",
+      "before_hex": "7001350000f03f502542a07b",
+      "after_hex": "0000c5f1bf53394200208344",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C088",
+      "offset": "0x0052C088",
+      "before_hex": "f089",
+      "after_hex": "a00d",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C08B",
+      "offset": "0x0052C08B",
+      "before_hex": "f001a001",
+      "after_hex": "f35df36f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C091",
+      "offset": "0x0052C091",
+      "before_hex": "31",
+      "after_hex": "3f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C094",
+      "offset": "0x0052C094",
+      "before_hex": "0d",
+      "after_hex": "4d",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C09B",
+      "offset": "0x0052C09B",
+      "before_hex": "f030c001",
+      "after_hex": "f3a0c3b2",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C0A1",
+      "offset": "0x0052C0A1",
+      "before_hex": "3f",
+      "after_hex": "7f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C0A5",
+      "offset": "0x0052C0A5",
+      "before_hex": "0d",
+      "after_hex": "8d",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C0AB",
+      "offset": "0x0052C0AB",
+      "before_hex": "f030a001",
+      "after_hex": "f3e0a3f2",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C0B6",
+      "offset": "0x0052C0B6",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C0B8",
+      "offset": "0x0052C0B8",
+      "before_hex": "01",
+      "after_hex": "25",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C0BD",
+      "offset": "0x0052C0BD",
+      "before_hex": "103f",
+      "after_hex": "143b",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C0C5",
+      "offset": "0x0052C0C5",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C0C7",
+      "offset": "0x0052C0C7",
+      "before_hex": "01",
+      "after_hex": "25",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C0CE",
+      "offset": "0x0052C0CE",
+      "before_hex": "01",
+      "after_hex": "4b",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C0D0",
+      "offset": "0x0052C0D0",
+      "before_hex": "01",
+      "after_hex": "5d",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C0D5",
+      "offset": "0x0052C0D5",
+      "before_hex": "73",
+      "after_hex": "71",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C0DA",
+      "offset": "0x0052C0DA",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C0DC",
+      "offset": "0x0052C0DC",
+      "before_hex": "01",
+      "after_hex": "25",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C0DF",
+      "offset": "0x0052C0DF",
+      "before_hex": "203ff001fff001f001f001f001f001f001f001f001fff001f001f001f001f001f001f001f001fff001f001f001f001f001f001f001f001fff001f001f001f001f001f001f001f001fff001f001f001f001f001f001f001f001c2f001a47d4c5246800007ff51ff1001f32005e120f020070af13f20e09003ff0003e160230003200b28e0f9fcff0ffff93cfe2003166e9003304fe0f001f00130014c494e4b0b8000387374617475732e0061636700434d4e5440100012010e83528381008393836796a290dd2492e800b2430220bc4d4f104445040007",
+      "after_hex": "f0f4fafff50df51ff531f543f555f567f579f58bfff59df5aff5c1f5d3f5e5f5f7f609f61bfff62df63ff651f663f675f687f699f6abfff6bdf6cff6e1f6f3f705f717f729f73bfff74df75ff771f783f795f7a7f7b9f7cbc2f7dde47d4c5246800804ff51ff1001f32006e120f0200e0af13f20e09003ff000fe160230003200b28e0f9fcff0ffff93cfe2003166e9003304fe0f005f01730794c494e4b0b80088c7374617475732e0061636700434d4e544010089f010e83528381008393836796a290dd2492e800b2430228b74d4f1044450408c120",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C1B7",
+      "offset": "0x0052C1B7",
+      "before_hex": "2000020456455220",
+      "after_hex": "0002045645522008",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C1C0",
+      "offset": "0x0052C1C0",
+      "before_hex": "000b4953002d4153433033454e404425",
+      "after_hex": "cd4953002d4153433033454e40442597",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C1E2",
+      "offset": "0x0052C1E2",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C1E4",
+      "offset": "0x0052C1E4",
+      "before_hex": "01",
+      "after_hex": "25",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C1E6",
+      "offset": "0x0052C1E6",
+      "before_hex": "01",
+      "after_hex": "37",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C1E8",
+      "offset": "0x0052C1E8",
+      "before_hex": "01",
+      "after_hex": "49",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C1EA",
+      "offset": "0x0052C1EA",
+      "before_hex": "01",
+      "after_hex": "5b",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C1F0",
+      "offset": "0x0052C1F0",
+      "before_hex": "14",
+      "after_hex": "66",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C1F2",
+      "offset": "0x0052C1F2",
+      "before_hex": "01",
+      "after_hex": "78",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C1F4",
+      "offset": "0x0052C1F4",
+      "before_hex": "01",
+      "after_hex": "8a",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C1F6",
+      "offset": "0x0052C1F6",
+      "before_hex": "01",
+      "after_hex": "9c",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C1F8",
+      "offset": "0x0052C1F8",
+      "before_hex": "01",
+      "after_hex": "ae",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C204",
+      "offset": "0x0052C204",
+      "before_hex": "0d",
+      "after_hex": "c8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C210",
+      "offset": "0x0052C210",
+      "before_hex": "0b",
+      "after_hex": "d8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C21E",
+      "offset": "0x0052C21E",
+      "before_hex": "36",
+      "after_hex": "e6",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C220",
+      "offset": "0x0052C220",
+      "before_hex": "01",
+      "after_hex": "f8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C222",
+      "offset": "0x0052C222",
+      "before_hex": "f001f001f001",
+      "after_hex": "f10af11cf12e",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C22F",
+      "offset": "0x0052C22F",
+      "before_hex": "f0160001",
+      "after_hex": "f1460158",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C242",
+      "offset": "0x0052C242",
+      "before_hex": "000f",
+      "after_hex": "0168",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C247",
+      "offset": "0x0052C247",
+      "before_hex": "5025",
+      "after_hex": "5179",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C24F",
+      "offset": "0x0052C24F",
+      "before_hex": "f03c0001",
+      "after_hex": "f1860198",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C263",
+      "offset": "0x0052C263",
+      "before_hex": "5025",
+      "after_hex": "51b9",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C26A",
+      "offset": "0x0052C26A",
+      "before_hex": "f03c0001",
+      "after_hex": "f1c601d8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C27D",
+      "offset": "0x0052C27D",
+      "before_hex": "6025",
+      "after_hex": "61f8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C285",
+      "offset": "0x0052C285",
+      "before_hex": "f03c0001",
+      "after_hex": "f2060218",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C296",
+      "offset": "0x0052C296",
+      "before_hex": "3f",
+      "after_hex": "7f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C298",
+      "offset": "0x0052C298",
+      "before_hex": "f02ee001",
+      "after_hex": "f238e24a",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C2A9",
+      "offset": "0x0052C2A9",
+      "before_hex": "3f6025",
+      "after_hex": "bf6278",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C2AD",
+      "offset": "0x0052C2AD",
+      "before_hex": "02",
+      "after_hex": "08",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C2B2",
+      "offset": "0x0052C2B2",
+      "before_hex": "002080375308",
+      "after_hex": "a28653005420",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C2B9",
+      "offset": "0x0052C2B9",
+      "before_hex": "5400550007cc",
+      "after_hex": "550298cc01cd",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C2C0",
+      "offset": "0x0052C2C0",
+      "before_hex": "cd00",
+      "after_hex": "ce03",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C2C3",
+      "offset": "0x0052C2C3",
+      "before_hex": "ce",
+      "after_hex": "cf",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C2C5",
+      "offset": "0x0052C2C5",
+      "before_hex": "cf",
+      "after_hex": "d0",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C2C7",
+      "offset": "0x0052C2C7",
+      "before_hex": "d001d1c1f03f602d26",
+      "after_hex": "d1f0ff62b806260024",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C2D1",
+      "offset": "0x0052C2D1",
+      "before_hex": "240025a03f8050",
+      "after_hex": "25f2c602d8ec00",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C2D9",
+      "offset": "0x0052C2D9",
+      "before_hex": "ec",
+      "after_hex": "ed",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C2DB",
+      "offset": "0x0052C2DB",
+      "before_hex": "ed",
+      "after_hex": "ee",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C2DD",
+      "offset": "0x0052C2DD",
+      "before_hex": "ee",
+      "after_hex": "ef",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C2DF",
+      "offset": "0x0052C2DF",
+      "before_hex": "ef0e",
+      "after_hex": "f038",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C2E2",
+      "offset": "0x0052C2E2",
+      "before_hex": "f001f1f03ff02ee0",
+      "after_hex": "f1f13ff2f8e30a66",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C2EB",
+      "offset": "0x0052C2EB",
+      "before_hex": "66",
+      "after_hex": "67",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C2EE",
+      "offset": "0x0052C2EE",
+      "before_hex": "67",
+      "after_hex": "68",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C2F0",
+      "offset": "0x0052C2F0",
+      "before_hex": "68",
+      "after_hex": "69",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C2F2",
+      "offset": "0x0052C2F2",
+      "before_hex": "69",
+      "after_hex": "6a",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C2F4",
+      "offset": "0x0052C2F4",
+      "before_hex": "6a35016bf03f602542a07b",
+      "after_hex": "6bc5f17f63384200208344",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C300",
+      "offset": "0x0052C300",
+      "before_hex": "f089",
+      "after_hex": "a00d",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C303",
+      "offset": "0x0052C303",
+      "before_hex": "f001a001",
+      "after_hex": "f35df36f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C309",
+      "offset": "0x0052C309",
+      "before_hex": "31",
+      "after_hex": "3f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C30C",
+      "offset": "0x0052C30C",
+      "before_hex": "0d",
+      "after_hex": "4d",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C313",
+      "offset": "0x0052C313",
+      "before_hex": "f030c001",
+      "after_hex": "f3a0c3b2",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C319",
+      "offset": "0x0052C319",
+      "before_hex": "3f",
+      "after_hex": "7f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C31D",
+      "offset": "0x0052C31D",
+      "before_hex": "0d",
+      "after_hex": "8d",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C323",
+      "offset": "0x0052C323",
+      "before_hex": "f030a001",
+      "after_hex": "f3e0a3f2",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C32E",
+      "offset": "0x0052C32E",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C330",
+      "offset": "0x0052C330",
+      "before_hex": "01",
+      "after_hex": "25",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C335",
+      "offset": "0x0052C335",
+      "before_hex": "103f",
+      "after_hex": "143b",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C33D",
+      "offset": "0x0052C33D",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C33F",
+      "offset": "0x0052C33F",
+      "before_hex": "01",
+      "after_hex": "25",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C346",
+      "offset": "0x0052C346",
+      "before_hex": "01",
+      "after_hex": "4b",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C348",
+      "offset": "0x0052C348",
+      "before_hex": "01",
+      "after_hex": "5d",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C34D",
+      "offset": "0x0052C34D",
+      "before_hex": "73",
+      "after_hex": "71",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C352",
+      "offset": "0x0052C352",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C354",
+      "offset": "0x0052C354",
+      "before_hex": "01",
+      "after_hex": "25",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C357",
+      "offset": "0x0052C357",
+      "before_hex": "203ff001fff001f001f001f001f001f001f001f001fff001f001f001f001f001f001f001f001fff001f001f001f001f001f001f001f001fff001f001f001f001f001f001f001f001fff001f001f001f001f001f001f001f001c2f001a47d4c5246800007ff51ff1001f32005e120f020070af13f20e09003ff0003e160230003400bf9fc",
+      "after_hex": "f0f4fafff50df51ff531f543f555f567f579f58bfff59df5aff5c1f5d3f5e5f5f7f609f61bfff62df63ff651f663f675f687f699f6abfff6bdf6cff6e1f6f3f705f717f729f73bfff74df75ff771f783f795f7a7f7b9f7cbc2f7dde47d4c5246800804ff51ff1001f32006e120f0200e0af13f20e09003ff000fe160230003400bf9fcff",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C3DC",
+      "offset": "0x0052C3DC",
+      "before_hex": "fff9373cfe20030042c09003304ff001c1f00130014c494e4b0b0038007374617475732e6100636700434d4e5410800012010e83528381830093836796a290dd9248e800b2430220bc4d4f442045040007",
+      "after_hex": "f9373cfe20030847c09003304ff005c1f01730794c494e4b0b088c007374617475732e6100636700434d4e541080089f010e83528381830093836796a290dd9248e800b2430228b74d4f4420450408c120",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C42E",
+      "offset": "0x0052C42E",
+      "before_hex": "2000025608455220",
+      "after_hex": "0002560845522008",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C437",
+      "offset": "0x0052C437",
+      "before_hex": "000b49532d004153433033454e448025",
+      "after_hex": "cd49532d004153433033454e44802597",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C456",
+      "offset": "0x0052C456",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C458",
+      "offset": "0x0052C458",
+      "before_hex": "01",
+      "after_hex": "25",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C45A",
+      "offset": "0x0052C45A",
+      "before_hex": "01",
+      "after_hex": "37",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C45C",
+      "offset": "0x0052C45C",
+      "before_hex": "01",
+      "after_hex": "49",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C45E",
+      "offset": "0x0052C45E",
+      "before_hex": "01",
+      "after_hex": "5b",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C464",
+      "offset": "0x0052C464",
+      "before_hex": "14",
+      "after_hex": "66",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C466",
+      "offset": "0x0052C466",
+      "before_hex": "01",
+      "after_hex": "78",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C468",
+      "offset": "0x0052C468",
+      "before_hex": "01",
+      "after_hex": "8a",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C46A",
+      "offset": "0x0052C46A",
+      "before_hex": "01",
+      "after_hex": "9c",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C46C",
+      "offset": "0x0052C46C",
+      "before_hex": "01",
+      "after_hex": "ae",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C478",
+      "offset": "0x0052C478",
+      "before_hex": "0d",
+      "after_hex": "c8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C484",
+      "offset": "0x0052C484",
+      "before_hex": "0b",
+      "after_hex": "d8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C492",
+      "offset": "0x0052C492",
+      "before_hex": "36",
+      "after_hex": "e6",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C494",
+      "offset": "0x0052C494",
+      "before_hex": "01",
+      "after_hex": "f8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C496",
+      "offset": "0x0052C496",
+      "before_hex": "f001f001f001",
+      "after_hex": "f10af11cf12e",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C4A3",
+      "offset": "0x0052C4A3",
+      "before_hex": "f0160001",
+      "after_hex": "f1460158",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C4B6",
+      "offset": "0x0052C4B6",
+      "before_hex": "000f",
+      "after_hex": "0168",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C4BB",
+      "offset": "0x0052C4BB",
+      "before_hex": "5025",
+      "after_hex": "5179",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C4C3",
+      "offset": "0x0052C4C3",
+      "before_hex": "f03c0001",
+      "after_hex": "f1860198",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C4D7",
+      "offset": "0x0052C4D7",
+      "before_hex": "5025",
+      "after_hex": "51b9",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C4DE",
+      "offset": "0x0052C4DE",
+      "before_hex": "f03c0001",
+      "after_hex": "f1c601d8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C4F1",
+      "offset": "0x0052C4F1",
+      "before_hex": "6025",
+      "after_hex": "61f8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C4F9",
+      "offset": "0x0052C4F9",
+      "before_hex": "f03c0001",
+      "after_hex": "f2060218",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C50A",
+      "offset": "0x0052C50A",
+      "before_hex": "3f",
+      "after_hex": "7f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C50C",
+      "offset": "0x0052C50C",
+      "before_hex": "f02ee001",
+      "after_hex": "f238e24a",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C51D",
+      "offset": "0x0052C51D",
+      "before_hex": "3f6025",
+      "after_hex": "bf6278",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C521",
+      "offset": "0x0052C521",
+      "before_hex": "02",
+      "after_hex": "08",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C526",
+      "offset": "0x0052C526",
+      "before_hex": "002080375308",
+      "after_hex": "a28653005420",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C52D",
+      "offset": "0x0052C52D",
+      "before_hex": "5400550007d2",
+      "after_hex": "550298d201d3",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C534",
+      "offset": "0x0052C534",
+      "before_hex": "d300",
+      "after_hex": "d403",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C537",
+      "offset": "0x0052C537",
+      "before_hex": "d4",
+      "after_hex": "d5",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C539",
+      "offset": "0x0052C539",
+      "before_hex": "d5",
+      "after_hex": "d6",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C53B",
+      "offset": "0x0052C53B",
+      "before_hex": "d601d7c1f03f602d26",
+      "after_hex": "d7f0ff62b806260024",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C545",
+      "offset": "0x0052C545",
+      "before_hex": "240025a03f8050",
+      "after_hex": "25f2c602d8f200",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C54D",
+      "offset": "0x0052C54D",
+      "before_hex": "f2",
+      "after_hex": "f3",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C54F",
+      "offset": "0x0052C54F",
+      "before_hex": "f3",
+      "after_hex": "f4",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C551",
+      "offset": "0x0052C551",
+      "before_hex": "f4",
+      "after_hex": "f5",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C553",
+      "offset": "0x0052C553",
+      "before_hex": "f50e",
+      "after_hex": "f638",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C556",
+      "offset": "0x0052C556",
+      "before_hex": "f601f7f03ff02ef259",
+      "after_hex": "f7f13ff2f8f2590179",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C560",
+      "offset": "0x0052C560",
+      "before_hex": "0079",
+      "after_hex": "017a",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C563",
+      "offset": "0x0052C563",
+      "before_hex": "7a",
+      "after_hex": "7b",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C565",
+      "offset": "0x0052C565",
+      "before_hex": "7b",
+      "after_hex": "7c",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C567",
+      "offset": "0x0052C567",
+      "before_hex": "7c016b7df03f602542a07b",
+      "after_hex": "7df17f8b63384200208344",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C573",
+      "offset": "0x0052C573",
+      "before_hex": "f089f001",
+      "after_hex": "a00df35d",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C578",
+      "offset": "0x0052C578",
+      "before_hex": "a001",
+      "after_hex": "f36f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C57C",
+      "offset": "0x0052C57C",
+      "before_hex": "31",
+      "after_hex": "3f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C57F",
+      "offset": "0x0052C57F",
+      "before_hex": "0d",
+      "after_hex": "4d",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C586",
+      "offset": "0x0052C586",
+      "before_hex": "f030c001",
+      "after_hex": "f3a0c3b2",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C58C",
+      "offset": "0x0052C58C",
+      "before_hex": "3f",
+      "after_hex": "7f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C58F",
+      "offset": "0x0052C58F",
+      "before_hex": "0d",
+      "after_hex": "8d",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C596",
+      "offset": "0x0052C596",
+      "before_hex": "f030a001",
+      "after_hex": "f3e0a3f2",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C5A1",
+      "offset": "0x0052C5A1",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C5A3",
+      "offset": "0x0052C5A3",
+      "before_hex": "01",
+      "after_hex": "25",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C5A8",
+      "offset": "0x0052C5A8",
+      "before_hex": "103f",
+      "after_hex": "143b",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C5B0",
+      "offset": "0x0052C5B0",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C5B2",
+      "offset": "0x0052C5B2",
+      "before_hex": "01",
+      "after_hex": "25",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C5B9",
+      "offset": "0x0052C5B9",
+      "before_hex": "01",
+      "after_hex": "4b",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C5BB",
+      "offset": "0x0052C5BB",
+      "before_hex": "01",
+      "after_hex": "5d",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C5C1",
+      "offset": "0x0052C5C1",
+      "before_hex": "e7",
+      "after_hex": "e3",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C5C5",
+      "offset": "0x0052C5C5",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C5C7",
+      "offset": "0x0052C5C7",
+      "before_hex": "01",
+      "after_hex": "25",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C5CA",
+      "offset": "0x0052C5CA",
+      "before_hex": "203ff001f001fff001f001f001f001f001f001f001f001fff001f001f001f001f001f001f001f001fff001f001f001f001f001f001f001f001fff001f001f001f001f001f001f001f001fff001f001f001f001f001f001f001f00184a47d4c5246800007",
+      "after_hex": "f0f4faf50dfff51ff531f543f555f567f579f58bf59dfff5aff5c1f5d3f5e5f5f7f609f61bf62dfff63ff651f663f675f687f699f6abf6bdfff6cff6e1f6f3f705f717f729f73bf74dfff75ff771f783f795f7a7f7b9f7cbf7dd84e47d4c5246800804ff",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C62F",
+      "offset": "0x0052C62F",
+      "before_hex": "ffa21001f32005e120f02007f1143f20e09003ff0003e123c00003400bf9fc",
+      "after_hex": "a21001f32006e120f0200ef1143f20e09003ff000fe123c00003400bf9fcff",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C64F",
+      "offset": "0x0052C64F",
+      "before_hex": "fff93c6ffe20030042c09003304ff001f0018230014c494e4b0b0038730074617475732e6163016700434d4e5410001200010e83528381839300836796a290dd92e89000b2430220bc4d4f444540040007",
+      "after_hex": "f93c6ffe20030847c09003304ff005f0178230794c494e4b0b088c730074617475732e6163016700434d4e5410089f00010e83528381839300836796a290dd92e89000b2430228b74d4f4445400408c120",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C6A1",
+      "offset": "0x0052C6A1",
+      "before_hex": "2000025645105220",
+      "after_hex": "0002564510522008",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852C6AA",
+      "offset": "0x0052C6AA",
+      "before_hex": "000b49532d410153433033454e4425",
+      "after_hex": "cd49532d410153433033454e442597",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D582",
+      "offset": "0x0052D582",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D584",
+      "offset": "0x0052D584",
+      "before_hex": "01",
+      "after_hex": "25",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D586",
+      "offset": "0x0052D586",
+      "before_hex": "01",
+      "after_hex": "37",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D588",
+      "offset": "0x0052D588",
+      "before_hex": "01",
+      "after_hex": "49",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D591",
+      "offset": "0x0052D591",
+      "before_hex": "600d",
+      "after_hex": "a062",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D596",
+      "offset": "0x0052D596",
+      "before_hex": "20",
+      "after_hex": "70",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D598",
+      "offset": "0x0052D598",
+      "before_hex": "01",
+      "after_hex": "82",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D59A",
+      "offset": "0x0052D59A",
+      "before_hex": "01",
+      "after_hex": "94",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D59C",
+      "offset": "0x0052D59C",
+      "before_hex": "01a001",
+      "after_hex": "a660b8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D5A1",
+      "offset": "0x0052D5A1",
+      "before_hex": "0d",
+      "after_hex": "c2",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D5A5",
+      "offset": "0x0052D5A5",
+      "before_hex": "20",
+      "after_hex": "d0",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D5A7",
+      "offset": "0x0052D5A7",
+      "before_hex": "01",
+      "after_hex": "e2",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D5A9",
+      "offset": "0x0052D5A9",
+      "before_hex": "01f001f001f001f001c001",
+      "after_hex": "f4f106f118f12af13cc14e",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D5BC",
+      "offset": "0x0052D5BC",
+      "before_hex": "8011",
+      "after_hex": "8164",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D5C2",
+      "offset": "0x0052D5C2",
+      "before_hex": "f001f001f001d001",
+      "after_hex": "f17df18ff1a1d1b3",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D5CB",
+      "offset": "0x0052D5CB",
+      "before_hex": "a00d",
+      "after_hex": "a1c4",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D5CF",
+      "offset": "0x0052D5CF",
+      "before_hex": "800b",
+      "after_hex": "81d2",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D5D7",
+      "offset": "0x0052D5D7",
+      "before_hex": "71",
+      "after_hex": "7f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D5DC",
+      "offset": "0x0052D5DC",
+      "before_hex": "f001f001f001f001f001",
+      "after_hex": "f202f214f226f238f24a",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D5EE",
+      "offset": "0x0052D5EE",
+      "before_hex": "71",
+      "after_hex": "ff",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D5F1",
+      "offset": "0x0052D5F1",
+      "before_hex": "7f",
+      "after_hex": "ff",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D5F3",
+      "offset": "0x0052D5F3",
+      "before_hex": "f001f001f0016001",
+      "after_hex": "f282f294f2a662b8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D5FC",
+      "offset": "0x0052D5FC",
+      "before_hex": "a00d",
+      "after_hex": "a2c2",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D5FF",
+      "offset": "0x0052D5FF",
+      "before_hex": "a00d",
+      "after_hex": "a2d0",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D607",
+      "offset": "0x0052D607",
+      "before_hex": "a071",
+      "after_hex": "a17f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D60A",
+      "offset": "0x0052D60A",
+      "before_hex": "f0",
+      "after_hex": "f1",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D60D",
+      "offset": "0x0052D60D",
+      "before_hex": "f001f001f001f001f001",
+      "after_hex": "f302f314f326f338f34a",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D61E",
+      "offset": "0x0052D61E",
+      "before_hex": "a071",
+      "after_hex": "a1ff",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D621",
+      "offset": "0x0052D621",
+      "before_hex": "f07ff001f001",
+      "after_hex": "f1fff382f394",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D628",
+      "offset": "0x0052D628",
+      "before_hex": "f0018001",
+      "after_hex": "f3a683b8",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D62D",
+      "offset": "0x0052D62D",
+      "before_hex": "a00d",
+      "after_hex": "a3c4",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D630",
+      "offset": "0x0052D630",
+      "before_hex": "800b",
+      "after_hex": "83d2",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D638",
+      "offset": "0x0052D638",
+      "before_hex": "a071",
+      "after_hex": "a27f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D63B",
+      "offset": "0x0052D63B",
+      "before_hex": "f0",
+      "after_hex": "f2",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D63D",
+      "offset": "0x0052D63D",
+      "before_hex": "f001f001",
+      "after_hex": "f402f414",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D642",
+      "offset": "0x0052D642",
+      "before_hex": "f0014001",
+      "after_hex": "f4264438",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D64C",
+      "offset": "0x0052D64C",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D64E",
+      "offset": "0x0052D64E",
+      "before_hex": "01",
+      "after_hex": "25",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D653",
+      "offset": "0x0052D653",
+      "before_hex": "103f",
+      "after_hex": "147b",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D65C",
+      "offset": "0x0052D65C",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D65E",
+      "offset": "0x0052D65E",
+      "before_hex": "01",
+      "after_hex": "25",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D662",
+      "offset": "0x0052D662",
+      "before_hex": "103f",
+      "after_hex": "14bb",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D666",
+      "offset": "0x0052D666",
+      "before_hex": "73",
+      "after_hex": "71",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D66B",
+      "offset": "0x0052D66B",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D66D",
+      "offset": "0x0052D66D",
+      "before_hex": "01",
+      "after_hex": "25",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D670",
+      "offset": "0x0052D670",
+      "before_hex": "207ff001fff001f001f001f001f001f001f001f001fff001f001f001f001f001f001f001f001fff001f001f001f001f001f001f001f001fff001f001f001f001f001f001f001f001fff001f001f001f001f001f001f001f001c1f0019001434c524680000724",
+      "after_hex": "f1f4fafff50df51ff531f543f555f567f579f58bfff59df5aff5c1f5d3f5e5f5f7f609f61bfff62df63ff651f663f675f687f699f6abfff6bdf6cff6e1f6f3f705f717f729f73bfff74df75ff771f783f795f7a7f7b9f7cbc1f7ddd7ef434c524680080424ff",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D6D7",
+      "offset": "0x0052D6D7",
+      "before_hex": "ff00017fbc2006fdfec92006000ff8fc1006fb7d30079d500ffd7eb00f501f0046c05003f04041f001f00120014c494e4b40130038",
+      "after_hex": "00017fbc2006fdfec9200d000ff8fc1017fb7d30079d500ffd7eb00f501f084bc05003f04041f006f018207a4c494e4b4013088c2e",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D70D",
+      "offset": "0x0052D70D",
+      "before_hex": "2e5c6d656e00755c737461747573002e61636700434d4e205410001a010e83528300818393836796a29014dd92e800ba4337fc4d4f2044451606",
+      "after_hex": "5c6d656e00755c737461747573002e61636700434d4e20541008a7010e83528300818393836796a29014dd92e800ba4337fc4d4f204445160620",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0852D748",
+      "offset": "0x0052D748",
+      "before_hex": "2000025610455220160449532d410153433033454e4424",
+      "after_hex": "00025610455220160449532d410153433033454e44277f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0855BBF4",
+      "offset": "0x0055BBF4",
+      "before_hex": "30333333333133313331333133111131333133313331333130333333",
+      "after_hex": "00000000000000000000000000000000000000000000000000000000",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0855BC14",
+      "offset": "0x0055BC14",
+      "before_hex": "33",
+      "after_hex": "30",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0855BC18",
+      "offset": "0x0055BC18",
+      "before_hex": "111133",
+      "after_hex": "133331",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0855BC1C",
+      "offset": "0x0055BC1C",
+      "before_hex": "31",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0855BC20",
+      "offset": "0x0055BC20",
+      "before_hex": "3133",
+      "after_hex": "1311",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0855BC24",
+      "offset": "0x0055BC24",
+      "before_hex": "111133",
+      "after_hex": "133331",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0855BC28",
+      "offset": "0x0055BC28",
+      "before_hex": "31",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0855BC2A",
+      "offset": "0x0055BC2A",
+      "before_hex": "33",
+      "after_hex": "31",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0855BC2C",
+      "offset": "0x0055BC2C",
+      "before_hex": "33",
+      "after_hex": "30",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0855BCF4",
+      "offset": "0x0055BCF4",
+      "before_hex": "30333333331311313331333333131133333333313311113330333333",
+      "after_hex": "00000000000000000000000000000000000000000000000000000000",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0855BD14",
+      "offset": "0x0055BD14",
+      "before_hex": "33",
+      "after_hex": "30",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0855BD18",
+      "offset": "0x0055BD18",
+      "before_hex": "11",
+      "after_hex": "33",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0855BD1A",
+      "offset": "0x0055BD1A",
+      "before_hex": "33",
+      "after_hex": "31",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0855BD1C",
+      "offset": "0x0055BD1C",
+      "before_hex": "31",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0855BD1E",
+      "offset": "0x0055BD1E",
+      "before_hex": "31",
+      "after_hex": "33",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0855BD20",
+      "offset": "0x0055BD20",
+      "before_hex": "313331",
+      "after_hex": "331133",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0855BD24",
+      "offset": "0x0055BD24",
+      "before_hex": "111133",
+      "after_hex": "333331",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0855BD28",
+      "offset": "0x0055BD28",
+      "before_hex": "3133",
+      "after_hex": "1311",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0855BD2C",
+      "offset": "0x0055BD2C",
+      "before_hex": "33",
+      "after_hex": "30",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0855BDDB",
+      "offset": "0x0055BDDB",
+      "before_hex": "30",
+      "after_hex": "00",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0855BDDF",
+      "offset": "0x0055BDDF",
+      "before_hex": "33",
+      "after_hex": "00",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0855BDE3",
+      "offset": "0x0055BDE3",
+      "before_hex": "33",
+      "after_hex": "00",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0855BDE7",
+      "offset": "0x0055BDE7",
+      "before_hex": "33",
+      "after_hex": "00",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0855BDEB",
+      "offset": "0x0055BDEB",
+      "before_hex": "33",
+      "after_hex": "00",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0855BDEF",
+      "offset": "0x0055BDEF",
+      "before_hex": "30",
+      "after_hex": "00",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0855BDF8",
+      "offset": "0x0055BDF8",
+      "before_hex": "33333333fff3fff33ff3f3f3f3f3f3f3fff3fff333333333",
+      "after_hex": "000000000000000000000000000000000000000000000000",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0855BE18",
+      "offset": "0x0055BE18",
+      "before_hex": "33",
+      "after_hex": "00",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0855BE1C",
+      "offset": "0x0055BE1C",
+      "before_hex": "f3",
+      "after_hex": "30",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0855BE1E",
+      "offset": "0x0055BE1E",
+      "before_hex": "33",
+      "after_hex": "3f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0855BE20",
+      "offset": "0x0055BE20",
+      "before_hex": "f3",
+      "after_hex": "30",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0855BE24",
+      "offset": "0x0055BE24",
+      "before_hex": "f3f333",
+      "after_hex": "30333f",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0855BE28",
+      "offset": "0x0055BE28",
+      "before_hex": "ff",
+      "after_hex": "30",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    },
+    {
+      "address": "0x0855BE2C",
+      "offset": "0x0055BE2C",
+      "before_hex": "33",
+      "after_hex": "00",
+      "mode": "unknown",
+      "note": "official_builder_0830:four_digit_ui_display"
+    }
+  ]
+}

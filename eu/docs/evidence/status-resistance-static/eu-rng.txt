@@ -1,0 +1,60 @@
+; SHA-256 e5c64a1740263e9b26120e487f3688fbbf7b3954a2c043c0d84c333df467e0b2
+; Disassembly is not proof that this range is code; literal pools may decode as instructions.
+080008C8  f0b5       push     {r4, r5, r6, r7, lr}
+080008CA  1b4a       ldr      r2, [pc, #0x6c]
+080008CC  1178       ldrb     r1, [r2]
+080008CE  5078       ldrb     r0, [r2, #1]
+080008D0  4140       eors     r1, r0
+080008D2  0220       movs     r0, #2
+080008D4  0140       ands     r1, r0
+080008D6  0806       lsls     r0, r1, #0x18
+080008D8  010e       lsrs     r1, r0, #0x18
+080008DA  4842       rsbs     r0, r1, #0
+080008DC  c00f       lsrs     r0, r0, #0x1f
+080008DE  0024       movs     r4, #0
+080008E0  151c       adds     r5, r2, #0
+080008E2  2e1c       adds     r6, r5, #0
+080008E4  0127       movs     r7, #1
+080008E6  a319       adds     r3, r4, r6
+080008E8  1a78       ldrb     r2, [r3]
+080008EA  5108       lsrs     r1, r2, #1
+080008EC  c001       lsls     r0, r0, #7
+080008EE  0143       orrs     r1, r0
+080008F0  381c       adds     r0, r7, #0
+080008F2  1040       ands     r0, r2
+080008F4  1970       strb     r1, [r3]
+080008F6  0134       adds     r4, #1
+080008F8  072c       cmp      r4, #7
+080008FA  f4dd       ble      #0x80008e6
+080008FC  a978       ldrb     r1, [r5, #2]
+080008FE  0722       movs     r2, #7
+08000900  101c       adds     r0, r2, #0
+08000902  0840       ands     r0, r1
+08000904  4019       adds     r0, r0, r5
+08000906  0078       ldrb     r0, [r0]
+08000908  eb78       ldrb     r3, [r5, #3]
+0800090A  111c       adds     r1, r2, #0
+0800090C  1940       ands     r1, r3
+0800090E  4919       adds     r1, r1, r5
+08000910  0978       ldrb     r1, [r1]
+08000912  0902       lsls     r1, r1, #8
+08000914  0843       orrs     r0, r1
+08000916  2b78       ldrb     r3, [r5]
+08000918  111c       adds     r1, r2, #0
+0800091A  1940       ands     r1, r3
+0800091C  4919       adds     r1, r1, r5
+0800091E  0978       ldrb     r1, [r1]
+08000920  0904       lsls     r1, r1, #0x10
+08000922  0843       orrs     r0, r1
+08000924  6978       ldrb     r1, [r5, #1]
+08000926  0a40       ands     r2, r1
+08000928  5219       adds     r2, r2, r5
+0800092A  1178       ldrb     r1, [r2]
+0800092C  0906       lsls     r1, r1, #0x18
+0800092E  0843       orrs     r0, r1
+08000930  f0bc       pop      {r4, r5, r6, r7}
+08000932  02bc       pop      {r1}
+08000934  0847       bx       r1
+08000936  0000       movs     r0, r0
+08000938  1813       asrs     r0, r3, #0xc
+0800093A  0003       lsls     r0, r0, #0xc

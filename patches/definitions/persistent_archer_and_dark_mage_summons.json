@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "id": "persistent_archer_and_dark_mage_summons",
+  "name": "弓箭手与暗黑魔法师召唤永久化",
+  "stage": "released",
+  "baseline": {
+    "filename": "SS2_SC_bug_fixed.GBA",
+    "size": 33554432,
+    "md5": "35eb6567d94f855480c5d7ba2dff4389",
+    "sha256": "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989",
+    "crc32": "AFCFC96D"
+  },
+  "source_provenance": {
+    "kind": "official_offline_builder_bundle",
+    "source": "光明之魂2_离线补丁构建器_0830.html",
+    "generated_from_current_baseline": true
+  },
+  "evidence": {
+    "static_rebuild": "passed upstream",
+    "dynamic_combination_test": "not_run"
+  },
+  "writes": [
+    {
+      "address": "0x080713C4",
+      "offset": "0x000713C4",
+      "before_hex": "01",
+      "after_hex": "00",
+      "mode": "unknown",
+      "note": "official_builder_0830:persistent_archer_and_dark_mage_summons"
+    },
+    {
+      "address": "0x08072788",
+      "offset": "0x00072788",
+      "before_hex": "01",
+      "after_hex": "00",
+      "mode": "unknown",
+      "note": "official_builder_0830:persistent_archer_and_dark_mage_summons"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+; SHA-256 e5c64a1740263e9b26120e487f3688fbbf7b3954a2c043c0d84c333df467e0b2
+; Disassembly is not proof that this range is code; literal pools may decode as instructions.
+08069144  97f7c0fb   bl       #0x80008c8
+08069148  6421       movs     r1, #0x64
+0806914A  50f04bfa   bl       #0x80b95e4
+0806914E  e122       movs     r2, #0xe1
+08069150  5200       lsls     r2, r2, #1
+08069152  8518       adds     r5, r0, r2
+08069154  07e0       b        #0x8069166
+08069156  97f7b7fb   bl       #0x80008c8
+0806915A  6421       movs     r1, #0x64
+0806915C  50f042fa   bl       #0x80b95e4
+08069160  af21       movs     r1, #0xaf
+08069162  8900       lsls     r1, r1, #2
+08069164  4518       adds     r5, r0, r1
+08069166  4846       mov      r0, sb
+08069168  6843       muls     r0, r5, r0
+0806916A  fa21       movs     r1, #0xfa
+0806916C  8900       lsls     r1, r1, #2
+0806916E  50f011f9   bl       #0x80b9394
+08069172  0004       lsls     r0, r0, #0x10
+08069174  000c       lsrs     r0, r0, #0x10
+08069176  8146       mov      sb, r0
+08069178  4246       mov      r2, r8
+0806917A  032a       cmp      r2, #3
+0806917C  0ad8       bhi      #0x8069194
+0806917E  a620       movs     r0, #0xa6
+08069180  4000       lsls     r0, r0, #1
+08069182  4146       mov      r1, r8
+08069184  4143       muls     r1, r0, r1
+08069186  0248       ldr      r0, [pc, #8]
+08069188  0918       adds     r1, r1, r0
+0806918A  8a46       mov      sl, r1
+0806918C  0a78       ldrb     r2, [r1]
+0806918E  12e0       b        #0x80691b6

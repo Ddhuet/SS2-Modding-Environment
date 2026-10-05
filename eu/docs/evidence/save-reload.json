@@ -1,0 +1,127 @@
+{
+  "kind": "independent_process_normal_save_reload",
+  "process_id": 3,
+  "parent_process_id": 2,
+  "rom_sha256": "6148261c3430879cd26a3969adda853407bb98477cc8b8d0b6d4d8389c8b17c7",
+  "source_save_sha256": "68a1e0a6b8cbdbcbe10576dcfecb33c662c62cf385adbe9403c91feb963b2ba8",
+  "ram_or_register_writes": false,
+  "savestates_used": false,
+  "checks": [
+    {
+      "scenario": "new-process-reload",
+      "check": "loaded player pointer",
+      "passed": true,
+      "player": "0x2003bd0"
+    },
+    {
+      "scenario": "new-process-reload",
+      "check": "normal save reload retains refund",
+      "passed": true,
+      "actual": {
+        "pool": 1,
+        "header": 0,
+        "skills": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ]
+      },
+      "expected": {
+        "pool": 1,
+        "header": 0,
+        "skills": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "scenario": "new-process-reload",
+      "check": "status overview",
+      "passed": true
+    },
+    {
+      "scenario": "new-process-reload",
+      "check": "skill allocation entered",
+      "passed": true
+    },
+    {
+      "scenario": "new-process-reload",
+      "check": "unique menu snapshot/edit pair",
+      "passed": true,
+      "hits": [
+        "0x20308e4"
+      ]
+    },
+    {
+      "scenario": "new-process-reload",
+      "check": "edit equals live on entry",
+      "passed": true
+    },
+    {
+      "scenario": "new-process-reload",
+      "check": "reload leaves source ROM and save unchanged",
+      "passed": true
+    }
+  ],
+  "result": "PASS"
+}

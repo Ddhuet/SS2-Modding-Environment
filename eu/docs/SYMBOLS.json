@@ -1,0 +1,158 @@
+{
+  "profile": "ss2-eu",
+  "rom_sha256": "e5c64a1740263e9b26120e487f3688fbbf7b3954a2c043c0d84c333df467e0b2",
+  "evidence": "static analysis; runtime checks recorded separately",
+  "globals": {
+    "player_pointer": {
+      "address": "0x030034E0",
+      "width": 4
+    },
+    "menu_pointer": {
+      "address": "0x03006440",
+      "width": 4
+    }
+  },
+  "player": {
+    "skill_pool": {
+      "offset": "0x30",
+      "width": 2
+    },
+    "skill_rows": {
+      "offset": "0x34",
+      "count": 8,
+      "stride": 4,
+      "level_offset": 0,
+      "progress_offset": 2,
+      "width": 2
+    }
+  },
+  "notes": [
+    "Addresses are CPU addresses; player fields are relative to the dereferenced player pointer.",
+    "Skill point conservation: pool + sum(level*(level+1)/2 + progress).",
+    "Only the skill block layout has been audited here. Do not infer other player offsets from CN."
+  ],
+  "status_resistance": {
+    "evidence": [
+      "docs/status-resistance-audit.md",
+      "docs/evidence/status-resistance-static/report.json",
+      "docs/evidence/status-resistance-diagnostic.json",
+      "docs/evidence/status-resistance-gameplay.json"
+    ],
+    "status": "static_verified; runtime scope is the named gate/queue diagnostics, not universal immunity",
+    "functions": {
+      "outer_status_chance": {
+        "address": "0x08069080",
+        "file_offset": "0x00069080",
+        "mode": "thumb",
+        "evidence_status": "runtime_verified"
+      },
+      "unsigned_division": {
+        "address": "0x080B956C",
+        "file_offset": "0x000B956C",
+        "mode": "thumb",
+        "evidence_status": "runtime_verified"
+      },
+      "signed_division": {
+        "address": "0x080B9394",
+        "file_offset": "0x000B9394",
+        "mode": "thumb",
+        "evidence_status": "runtime_verified"
+      },
+      "status_event_queue": {
+        "address": "0x08067D28",
+        "file_offset": "0x00067D28",
+        "mode": "thumb",
+        "evidence_status": "runtime_verified"
+      },
+      "inner_local_application": {
+        "address": "0x08069224",
+        "file_offset": "0x00069224",
+        "mode": "thumb",
+        "evidence_status": "static_verified"
+      },
+      "player_damage_caller": {
+        "address": "0x08029A7C",
+        "file_offset": "0x00029A7C",
+        "mode": "thumb",
+        "evidence_status": "static_verified"
+      }
+    },
+    "fields": {
+      "player_combat_resistance_block": {
+        "base": "0x03003CE0 + playerID*0x14C",
+        "offset": "0x4C",
+        "kind1_offset": "0x00",
+        "kind4_offset": "0x06",
+        "width": 2,
+        "signed": true,
+        "evidence_status": "static_verified"
+      },
+      "enemy_resistance_block": {
+        "base": "enemy entity",
+        "offset": "0x218",
+        "kind1_offset": "0x00",
+        "kind4_offset": "0x06",
+        "width": 2,
+        "signed": true,
+        "evidence_status": "runtime_verified",
+        "scope": "Goblin Fort target ID4 synthetic boundary variants at natural call"
+      },
+      "base_player_resistance_block": {
+        "base": "[0x030034E0]",
+        "offset": "0x24",
+        "width": 2,
+        "signed": true,
+        "evidence_status": "static_verified",
+        "scope": "Inner application 0x08069224; named type labels unresolved"
+      },
+      "player_chance_scaling": {
+        "base": "0x03003CE0 + playerID*0x14C",
+        "offset": "0x73",
+        "width": 1,
+        "signed": true,
+        "evidence_status": "runtime_verified",
+        "scope": "Synthetic outer player scaling; actual Paige snapshot reads100"
+      },
+      "outer_payload": {
+        "base": "entrySP - 0x28",
+        "size": 8,
+        "target_kind_byte": 0,
+        "effect_kind_byte": 1,
+        "duration_u16_offset": 4,
+        "evidence_status": "runtime_verified",
+        "warning": "Not initialized at entry. Failed gate preserves prior effect byte."
+      }
+    },
+    "globals": {
+      "enemy_array_pointer": {
+        "address": "0x030056F4",
+        "width": 4
+      },
+      "event_queue_pointer": {
+        "address": "0x03006300",
+        "width": 4
+      },
+      "event_queue_count": {
+        "address": "0x03006338",
+        "width": 4
+      },
+      "rng_state_bytes": {
+        "address": "0x03001318",
+        "size": 8
+      }
+    },
+    "unresolved": [
+      "Localized effect names for numeric kinds1/4",
+      "Natural stack histories and safe initialization repair",
+      "Natural over100 equipment and local-player application/landing"
+    ],
+    "cn_correspondence": {
+      "profile": "ss2-cn-baseline",
+      "rom_sha256": "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989",
+      "outer_status_chance": "0x080696DC",
+      "unsigned_division": "0x080BAA7C",
+      "signed_division": "0x080BA8A4",
+      "evidence": "Exact 128-byte helper prefixes, independently decoded calls; no global offset assumption"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+# User-owned game data and generated outputs
+inputs/*
+!inputs/README.md
+artifacts/
+runs/
+.venv/
+.deps/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+# Research snapshot remains local; origin/provenance documented.
+reference/upstream/

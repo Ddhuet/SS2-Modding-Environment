@@ -1,0 +1,193 @@
+; SHA-256 45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989
+; Disassembly is not proof that this range is code; literal pools may decode as instructions.
+080696DC  f0b5       push     {r4, r5, r6, r7, lr}
+080696DE  5746       mov      r7, sl
+080696E0  4e46       mov      r6, sb
+080696E2  4546       mov      r5, r8
+080696E4  e0b4       push     {r5, r6, r7}
+080696E6  82b0       sub      sp, #8
+080696E8  061c       adds     r6, r0, #0
+080696EA  141c       adds     r4, r2, #0
+080696EC  0a98       ldr      r0, [sp, #0x28]
+080696EE  8046       mov      r8, r0
+080696F0  0904       lsls     r1, r1, #0x10
+080696F2  090c       lsrs     r1, r1, #0x10
+080696F4  8946       mov      sb, r1
+080696F6  97f7e7f8   bl       #0x80008c8
+080696FA  6427       movs     r7, #0x64
+080696FC  6421       movs     r1, #0x64
+080696FE  51f0f9f9   bl       #0x80baaf4
+08069702  051c       adds     r5, r0, #0
+08069704  0b99       ldr      r1, [sp, #0x2c]
+08069706  0129       cmp      r1, #1
+08069708  02d0       beq      #0x8069710
+0806970A  0429       cmp      r1, #4
+0806970C  0ad0       beq      #0x8069724
+0806970E  a4e0       b        #0x806985a
+08069710  0022       movs     r2, #0
+08069712  b05e       ldrsh    r0, [r6, r2]
+08069714  381a       subs     r0, r7, r0
+08069716  a100       lsls     r1, r4, #2
+08069718  0919       adds     r1, r1, r4
+0806971A  4900       lsls     r1, r1, #1
+0806971C  0531       adds     r1, #5
+0806971E  4843       muls     r0, r1, r0
+08069720  1921       movs     r1, #0x19
+08069722  08e0       b        #0x8069736
+08069724  0621       movs     r1, #6
+08069726  705e       ldrsh    r0, [r6, r1]
+08069728  381a       subs     r0, r7, r0
+0806972A  a100       lsls     r1, r4, #2
+0806972C  0919       adds     r1, r1, r4
+0806972E  4900       lsls     r1, r1, #1
+08069730  0531       adds     r1, #5
+08069732  4843       muls     r0, r1, r0
+08069734  3221       movs     r1, #0x32
+08069736  51f0a1f9   bl       #0x80baa7c
+0806973A  041c       adds     r4, r0, #0
+0806973C  98f7dafc   bl       #0x80020f4
+08069740  8045       cmp      r8, r0
+08069742  06d0       beq      #0x8069752
+08069744  a3f7c4f8   bl       #0x800c8d0
+08069748  0028       cmp      r0, #0
+0806974A  13d0       beq      #0x8069774
+0806974C  4246       mov      r2, r8
+0806974E  032a       cmp      r2, #3
+08069750  10d8       bhi      #0x8069774
+08069752  124a       ldr      r2, [pc, #0x48]
+08069754  4146       mov      r1, r8
+08069756  8800       lsls     r0, r1, #2
+08069758  4044       add      r0, r8
+0806975A  0101       lsls     r1, r0, #4
+0806975C  4018       adds     r0, r0, r1
+0806975E  8000       lsls     r0, r0, #2
+08069760  8018       adds     r0, r0, r2
+08069762  7b30       adds     r0, #0x7b
+08069764  0078       ldrb     r0, [r0]
+08069766  0006       lsls     r0, r0, #0x18
+08069768  0016       asrs     r0, r0, #0x18
+0806976A  6043       muls     r0, r4, r0
+0806976C  6421       movs     r1, #0x64
+0806976E  51f099f8   bl       #0x80ba8a4
+08069772  041c       adds     r4, r0, #0
+08069774  ac42       cmp      r4, r5
+08069776  07dd       ble      #0x8069788
+08069778  0b9a       ldr      r2, [sp, #0x2c]
+0806977A  1006       lsls     r0, r2, #0x18
+0806977C  000c       lsrs     r0, r0, #0x10
+0806977E  084a       ldr      r2, [pc, #0x20]
+08069780  0099       ldr      r1, [sp]
+08069782  1140       ands     r1, r2
+08069784  0143       orrs     r1, r0
+08069786  0091       str      r1, [sp]
+08069788  0098       ldr      r0, [sp]
+0806978A  000a       lsrs     r0, r0, #8
+0806978C  0006       lsls     r0, r0, #0x18
+0806978E  000e       lsrs     r0, r0, #0x18
+08069790  0128       cmp      r0, #1
+08069792  07d0       beq      #0x80697a4
+08069794  0428       cmp      r0, #4
+08069796  0ed0       beq      #0x80697b6
+08069798  5fe0       b        #0x806985a
+0806979A  0000       movs     r0, r0
+0806979C  803d       subs     r5, #0x80
+0806979E  0003       lsls     r0, r0, #0xc
+080697A0  ff00       lsls     r7, r7, #3
+080697A2  ffff97f7   vqshl.u64 d31, d7, #0x3f
+080697A6  90f86421   ldrb.w   r2, [r0, #0x164]
+080697AA  51f0a3f9   bl       #0x80baaf4
+080697AE  e121       movs     r1, #0xe1
+080697B0  4900       lsls     r1, r1, #1
+080697B2  4518       adds     r5, r0, r1
+080697B4  07e0       b        #0x80697c6
+080697B6  97f787f8   bl       #0x80008c8
+080697BA  6421       movs     r1, #0x64
+080697BC  51f09af9   bl       #0x80baaf4
+080697C0  af22       movs     r2, #0xaf
+080697C2  9200       lsls     r2, r2, #2
+080697C4  8518       adds     r5, r0, r2
+080697C6  4846       mov      r0, sb
+080697C8  6843       muls     r0, r5, r0
+080697CA  fa21       movs     r1, #0xfa
+080697CC  8900       lsls     r1, r1, #2
+080697CE  51f069f8   bl       #0x80ba8a4
+080697D2  0004       lsls     r0, r0, #0x10
+080697D4  000c       lsrs     r0, r0, #0x10
+080697D6  8146       mov      sb, r0
+080697D8  4046       mov      r0, r8
+080697DA  0328       cmp      r0, #3
+080697DC  0cd8       bhi      #0x80697f8
+080697DE  8000       lsls     r0, r0, #2
+080697E0  4044       add      r0, r8
+080697E2  0101       lsls     r1, r0, #4
+080697E4  4018       adds     r0, r0, r1
+080697E6  8000       lsls     r0, r0, #2
+080697E8  0249       ldr      r1, [pc, #8]
+080697EA  4018       adds     r0, r0, r1
+080697EC  8246       mov      sl, r0
+080697EE  0278       ldrb     r2, [r0]
+080697F0  11e0       b        #0x8069816
+080697F2  0000       movs     r0, r0
+080697F4  803d       subs     r5, #0x80
+080697F6  0003       lsls     r0, r0, #0xc
+080697F8  1c49       ldr      r1, [pc, #0x70]
+080697FA  1d48       ldr      r0, [pc, #0x74]
+080697FC  4246       mov      r2, r8
+080697FE  4243       muls     r2, r0, r2
+08069800  101c       adds     r0, r2, #0
+08069802  1c4a       ldr      r2, [pc, #0x70]
+08069804  8018       adds     r0, r0, r2
+08069806  0968       ldr      r1, [r1]
+08069808  0918       adds     r1, r1, r0
+0806980A  1b4a       ldr      r2, [pc, #0x6c]
+0806980C  8818       adds     r0, r1, r2
+0806980E  0078       ldrb     r0, [r0]
+08069810  0328       cmp      r0, #3
+08069812  22d0       beq      #0x806985a
+08069814  8a78       ldrb     r2, [r1, #2]
+08069816  1949       ldr      r1, [pc, #0x64]
+08069818  0098       ldr      r0, [sp]
+0806981A  0840       ands     r0, r1
+0806981C  1043       orrs     r0, r2
+0806981E  0090       str      r0, [sp]
+08069820  1748       ldr      r0, [pc, #0x5c]
+08069822  6c46       mov      r4, sp
+08069824  0199       ldr      r1, [sp, #4]
+08069826  0140       ands     r1, r0
+08069828  4846       mov      r0, sb
+0806982A  0143       orrs     r1, r0
+0806982C  0191       str      r1, [sp, #4]
+0806982E  6846       mov      r0, sp
+08069830  fef798fd   bl       #0x8068364
+08069834  98f75efc   bl       #0x80020f4
+08069838  8045       cmp      r8, r0
+0806983A  0ed1       bne      #0x806985a
+0806983C  a3f748f8   bl       #0x800c8d0
+08069840  0028       cmp      r0, #0
+08069842  0ad1       bne      #0x806985a
+08069844  6078       ldrb     r0, [r4, #1]
+08069846  0f49       ldr      r1, [pc, #0x3c]
+08069848  0a68       ldr      r2, [r1]
+0806984A  2c32       adds     r2, #0x2c
+0806984C  4946       mov      r1, sb
+0806984E  00f01bf8   bl       #0x8069888
+08069852  5046       mov      r0, sl
+08069854  e830       adds     r0, #0xe8
+08069856  0b99       ldr      r1, [sp, #0x2c]
+08069858  0160       str      r1, [r0]
+0806985A  02b0       add      sp, #8
+0806985C  38bc       pop      {r3, r4, r5}
+0806985E  9846       mov      r8, r3
+08069860  a146       mov      sb, r4
+08069862  aa46       mov      sl, r5
+08069864  f0bc       pop      {r4, r5, r6, r7}
+08069866  01bc       pop      {r0}
+08069868  0047       bx       r0
+0806986A  0000       movs     r0, r0
+0806986C  b457       ldrsb    r4, [r6, r6]
+0806986E  0003       lsls     r0, r0, #0xc
+08069870  5404       lsls     r4, r2, #0x11
+08069872  0000       movs     r0, r0
+08069874  b0eeffff   mrc      p15, #5, apsr_nzcv, c0, c15, #7
+08069878  9a03       lsls     r2, r3, #0xe
+0806987A  0000       movs     r0, r0

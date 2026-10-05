@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "id": "skill_point_refund_eu",
+  "name": "EU skill-point refund",
+  "stage": "approved",
+  "profile_id": "ss2-eu",
+  "baseline": {
+    "size": 16777216,
+    "md5": "49aa688745111aaa51076a345f8f18c3",
+    "sha256": "e5c64a1740263e9b26120e487f3688fbbf7b3954a2c043c0d84c333df467e0b2",
+    "crc32": "55E503C1"
+  },
+  "source_provenance": {
+    "kind": "independently_audited_and_runtime_tested_port",
+    "definition": "reference/upstream/patches/definitions/respec.json",
+    "source_id": "respec",
+    "source_profile_id": "ss2-cn-baseline",
+    "comparison_profile_id": "ss2-cn-source",
+    "source_offsets": [
+      "0x0007B662",
+      "0x0007B66E",
+      "0x0007B68A"
+    ]
+  },
+  "evidence": {
+    "status": "runtime_verified",
+    "semantics": "Skill allocation Left refunds one spent point; Right spends one; A commits; B cancels. Earlier-session investments are refundable.",
+    "static_audit": "docs/respec-audit.md",
+    "runtime_report": "docs/evidence/refund-regression.json",
+    "scope": "Paige level 19, supplied normal save; all eight rows and five EU languages; separate-process normal-save reload.",
+    "user_acceptance": "not_run",
+    "build_approval": "Reviewed static semantics and recorded automated scenarios; not a claim of all-class/combo validation.",
+    "max_level_boundary": "docs/evidence/max-level-boundary.json (synthetic RAM fixture, separately labeled)"
+  },
+  "writes": [
+    {
+      "address": "0x0807AE5E",
+      "offset": "0x0007AE5E",
+      "before_hex": "2e",
+      "after_hex": "40",
+      "mode": "thumb",
+      "note": "Use current editable skill table instead of per-visit change table."
+    },
+    {
+      "address": "0x0807AE6A",
+      "offset": "0x0007AE6A",
+      "before_hex": "c0",
+      "after_hex": "80",
+      "mode": "thumb",
+      "note": "Gate refund on learned level instead of per-visit progress."
+    },
+    {
+      "address": "0x0807AE86",
+      "offset": "0x0007AE86",
+      "before_hex": "d96889006918c8880138c880",
+      "after_hex": "c046c046c046c046c046c046",
+      "mode": "thumb",
+      "note": "Remove redundant second progress decrement because both pointers now name the same table."
+    }
+  ]
+}

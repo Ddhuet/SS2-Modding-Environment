@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "id": "ring_balance_rework",
+  "name": "戒指属性调整",
+  "stage": "released",
+  "baseline": {
+    "filename": "SS2_SC_bug_fixed.GBA",
+    "size": 33554432,
+    "md5": "35eb6567d94f855480c5d7ba2dff4389",
+    "sha256": "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989",
+    "crc32": "AFCFC96D"
+  },
+  "source_provenance": {
+    "kind": "official_offline_builder_bundle",
+    "source": "光明之魂2_离线补丁构建器_0830.html",
+    "generated_from_current_baseline": true
+  },
+  "evidence": {
+    "static_rebuild": "passed upstream",
+    "dynamic_combination_test": "not_run"
+  },
+  "writes": [
+    {
+      "address": "0x083A4490",
+      "offset": "0x003A4490",
+      "before_hex": "00",
+      "after_hex": "23",
+      "mode": "unknown",
+      "note": "official_builder_0830:ring_balance_rework"
+    },
+    {
+      "address": "0x083A4492",
+      "offset": "0x003A4492",
+      "before_hex": "000000",
+      "after_hex": "ffff22",
+      "mode": "unknown",
+      "note": "official_builder_0830:ring_balance_rework"
+    },
+    {
+      "address": "0x083A4496",
+      "offset": "0x003A4496",
+      "before_hex": "0000",
+      "after_hex": "9cff",
+      "mode": "unknown",
+      "note": "official_builder_0830:ring_balance_rework"
+    },
+    {
+      "address": "0x083A6822",
+      "offset": "0x003A6822",
+      "before_hex": "01",
+      "after_hex": "32",
+      "mode": "unknown",
+      "note": "official_builder_0830:ring_balance_rework"
+    },
+    {
+      "address": "0x083A6824",
+      "offset": "0x003A6824",
+      "before_hex": "05",
+      "after_hex": "22",
+      "mode": "unknown",
+      "note": "official_builder_0830:ring_balance_rework"
+    },
+    {
+      "address": "0x083A6826",
+      "offset": "0x003A6826",
+      "before_hex": "1e0006",
+      "after_hex": "9cff18",
+      "mode": "unknown",
+      "note": "official_builder_0830:ring_balance_rework"
+    },
+    {
+      "address": "0x083A682A",
+      "offset": "0x003A682A",
+      "before_hex": "1e",
+      "after_hex": "0a",
+      "mode": "unknown",
+      "note": "official_builder_0830:ring_balance_rework"
+    },
+    {
+      "address": "0x083ABA1E",
+      "offset": "0x003ABA1E",
+      "before_hex": "01",
+      "after_hex": "0a",
+      "mode": "unknown",
+      "note": "official_builder_0830:ring_balance_rework"
+    },
+    {
+      "address": "0x083ABA20",
+      "offset": "0x003ABA20",
+      "before_hex": "00",
+      "after_hex": "18",
+      "mode": "unknown",
+      "note": "official_builder_0830:ring_balance_rework"
+    },
+    {
+      "address": "0x083ABA22",
+      "offset": "0x003ABA22",
+      "before_hex": "00",
+      "after_hex": "05",
+      "mode": "unknown",
+      "note": "official_builder_0830:ring_balance_rework"
+    },
+    {
+      "address": "0x083ABBA8",
+      "offset": "0x003ABBA8",
+      "before_hex": "0f",
+      "after_hex": "07",
+      "mode": "unknown",
+      "note": "official_builder_0830:ring_balance_rework"
+    },
+    {
+      "address": "0x083ABBAA",
+      "offset": "0x003ABBAA",
+      "before_hex": "01",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:ring_balance_rework"
+    },
+    {
+      "address": "0x083ABBAC",
+      "offset": "0x003ABBAC",
+      "before_hex": "00",
+      "after_hex": "18",
+      "mode": "unknown",
+      "note": "official_builder_0830:ring_balance_rework"
+    },
+    {
+      "address": "0x083ABBAE",
+      "offset": "0x003ABBAE",
+      "before_hex": "00",
+      "after_hex": "0a",
+      "mode": "unknown",
+      "note": "official_builder_0830:ring_balance_rework"
+    },
+    {
+      "address": "0x083ABBB0",
+      "offset": "0x003ABBB0",
+      "before_hex": "00",
+      "after_hex": "19",
+      "mode": "unknown",
+      "note": "official_builder_0830:ring_balance_rework"
+    },
+    {
+      "address": "0x083ABBB2",
+      "offset": "0x003ABBB2",
+      "before_hex": "00",
+      "after_hex": "0a",
+      "mode": "unknown",
+      "note": "official_builder_0830:ring_balance_rework"
+    }
+  ]
+}

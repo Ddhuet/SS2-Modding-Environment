@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "id": "ss2-cn-baseline",
+  "name": "Chinese offline-builder baseline",
+  "role": "32 MiB original patch definition baseline",
+  "identity": {
+    "size": 33554432,
+    "md5": "35eb6567d94f855480c5d7ba2dff4389",
+    "sha256": "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989",
+    "crc32": "AFCFC96D"
+  },
+  "gba_header": {
+    "title": "SHININGSOUL2",
+    "game_code": "AU2J",
+    "maker_code": "8P",
+    "revision": 0,
+    "checksum_valid": true
+  },
+  "provenance": {
+    "kind": "local_file_hash_verification",
+    "filename_hint": "ss2-cn-baseline.gba",
+    "verified_utc": "2026-10-04",
+    "note": "Hashes computed from supplied ROM bytes; region/language labels are descriptive, not inferred from filename or header alone."
+  }
+}

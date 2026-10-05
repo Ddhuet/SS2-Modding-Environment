@@ -1,0 +1,16 @@
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void FUN_081ef5de(void)
+
+{
+  char in_NG;
+  char in_OV;
+  
+  if (in_NG == in_OV) {
+    software_interrupt(0xb2b5b8);
+  }
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
+}
+

@@ -1,0 +1,1104 @@
+{
+  "schema_version": 1,
+  "id": "temple_soul_fusion_rework",
+  "name": "神庙魂合成调整",
+  "stage": "released",
+  "baseline": {
+    "filename": "SS2_SC_bug_fixed.GBA",
+    "size": 33554432,
+    "md5": "35eb6567d94f855480c5d7ba2dff4389",
+    "sha256": "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989",
+    "crc32": "AFCFC96D"
+  },
+  "source_provenance": {
+    "kind": "official_offline_builder_bundle",
+    "source": "光明之魂2_离线补丁构建器_0830.html",
+    "generated_from_current_baseline": true
+  },
+  "evidence": {
+    "static_rebuild": "passed upstream",
+    "dynamic_combination_test": "not_run"
+  },
+  "writes": [
+    {
+      "address": "0x084F9574",
+      "offset": "0x004F9574",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9576",
+      "offset": "0x004F9576",
+      "before_hex": "00",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9578",
+      "offset": "0x004F9578",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F957A",
+      "offset": "0x004F957A",
+      "before_hex": "00",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9588",
+      "offset": "0x004F9588",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F958A",
+      "offset": "0x004F958A",
+      "before_hex": "01",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F958C",
+      "offset": "0x004F958C",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F958E",
+      "offset": "0x004F958E",
+      "before_hex": "01",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F959C",
+      "offset": "0x004F959C",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F959E",
+      "offset": "0x004F959E",
+      "before_hex": "02",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F95A0",
+      "offset": "0x004F95A0",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F95A2",
+      "offset": "0x004F95A2",
+      "before_hex": "02",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F95B0",
+      "offset": "0x004F95B0",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F95B2",
+      "offset": "0x004F95B2",
+      "before_hex": "03",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F95B4",
+      "offset": "0x004F95B4",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F95B6",
+      "offset": "0x004F95B6",
+      "before_hex": "03",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F95C4",
+      "offset": "0x004F95C4",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F95C6",
+      "offset": "0x004F95C6",
+      "before_hex": "05",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F95C8",
+      "offset": "0x004F95C8",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F95CA",
+      "offset": "0x004F95CA",
+      "before_hex": "05",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F95D8",
+      "offset": "0x004F95D8",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F95DC",
+      "offset": "0x004F95DC",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F95EC",
+      "offset": "0x004F95EC",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F95EE",
+      "offset": "0x004F95EE",
+      "before_hex": "07",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F95F0",
+      "offset": "0x004F95F0",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F95F2",
+      "offset": "0x004F95F2",
+      "before_hex": "07",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9600",
+      "offset": "0x004F9600",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9602",
+      "offset": "0x004F9602",
+      "before_hex": "08",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9604",
+      "offset": "0x004F9604",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9606",
+      "offset": "0x004F9606",
+      "before_hex": "08",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9614",
+      "offset": "0x004F9614",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9616",
+      "offset": "0x004F9616",
+      "before_hex": "0a",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9618",
+      "offset": "0x004F9618",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F961A",
+      "offset": "0x004F961A",
+      "before_hex": "0a",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9628",
+      "offset": "0x004F9628",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F962A",
+      "offset": "0x004F962A",
+      "before_hex": "0b",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F962C",
+      "offset": "0x004F962C",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F962E",
+      "offset": "0x004F962E",
+      "before_hex": "0b",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F963C",
+      "offset": "0x004F963C",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F963E",
+      "offset": "0x004F963E",
+      "before_hex": "0c",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9640",
+      "offset": "0x004F9640",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9642",
+      "offset": "0x004F9642",
+      "before_hex": "0c",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9650",
+      "offset": "0x004F9650",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9652",
+      "offset": "0x004F9652",
+      "before_hex": "0d",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9654",
+      "offset": "0x004F9654",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9656",
+      "offset": "0x004F9656",
+      "before_hex": "0d",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9664",
+      "offset": "0x004F9664",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9666",
+      "offset": "0x004F9666",
+      "before_hex": "0f",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9668",
+      "offset": "0x004F9668",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F966A",
+      "offset": "0x004F966A",
+      "before_hex": "0f",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9678",
+      "offset": "0x004F9678",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F967A",
+      "offset": "0x004F967A",
+      "before_hex": "10",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F967C",
+      "offset": "0x004F967C",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F967E",
+      "offset": "0x004F967E",
+      "before_hex": "10",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F968C",
+      "offset": "0x004F968C",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F968E",
+      "offset": "0x004F968E",
+      "before_hex": "11",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9690",
+      "offset": "0x004F9690",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9692",
+      "offset": "0x004F9692",
+      "before_hex": "11",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F96A0",
+      "offset": "0x004F96A0",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F96A2",
+      "offset": "0x004F96A2",
+      "before_hex": "12",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F96A4",
+      "offset": "0x004F96A4",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F96A6",
+      "offset": "0x004F96A6",
+      "before_hex": "12",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F96B4",
+      "offset": "0x004F96B4",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F96B6",
+      "offset": "0x004F96B6",
+      "before_hex": "14",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F96B8",
+      "offset": "0x004F96B8",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F96BA",
+      "offset": "0x004F96BA",
+      "before_hex": "14",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F96C8",
+      "offset": "0x004F96C8",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F96CA",
+      "offset": "0x004F96CA",
+      "before_hex": "15",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F96CC",
+      "offset": "0x004F96CC",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F96CE",
+      "offset": "0x004F96CE",
+      "before_hex": "15",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F96DC",
+      "offset": "0x004F96DC",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F96DE",
+      "offset": "0x004F96DE",
+      "before_hex": "16",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F96E0",
+      "offset": "0x004F96E0",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F96E2",
+      "offset": "0x004F96E2",
+      "before_hex": "16",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F96F0",
+      "offset": "0x004F96F0",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F96F2",
+      "offset": "0x004F96F2",
+      "before_hex": "17",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F96F4",
+      "offset": "0x004F96F4",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F96F6",
+      "offset": "0x004F96F6",
+      "before_hex": "17",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9704",
+      "offset": "0x004F9704",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9706",
+      "offset": "0x004F9706",
+      "before_hex": "19",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9708",
+      "offset": "0x004F9708",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F970A",
+      "offset": "0x004F970A",
+      "before_hex": "19",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9718",
+      "offset": "0x004F9718",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F971A",
+      "offset": "0x004F971A",
+      "before_hex": "1a",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F971C",
+      "offset": "0x004F971C",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F971E",
+      "offset": "0x004F971E",
+      "before_hex": "1a",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F972C",
+      "offset": "0x004F972C",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F972E",
+      "offset": "0x004F972E",
+      "before_hex": "1b",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9730",
+      "offset": "0x004F9730",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9732",
+      "offset": "0x004F9732",
+      "before_hex": "1b",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9740",
+      "offset": "0x004F9740",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9742",
+      "offset": "0x004F9742",
+      "before_hex": "1c",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9744",
+      "offset": "0x004F9744",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9746",
+      "offset": "0x004F9746",
+      "before_hex": "1c",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9754",
+      "offset": "0x004F9754",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9756",
+      "offset": "0x004F9756",
+      "before_hex": "1e",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9758",
+      "offset": "0x004F9758",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F975A",
+      "offset": "0x004F975A",
+      "before_hex": "1e",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9768",
+      "offset": "0x004F9768",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F976A",
+      "offset": "0x004F976A",
+      "before_hex": "1f",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F976C",
+      "offset": "0x004F976C",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F976E",
+      "offset": "0x004F976E",
+      "before_hex": "1f",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F977C",
+      "offset": "0x004F977C",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F977E",
+      "offset": "0x004F977E",
+      "before_hex": "20",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9780",
+      "offset": "0x004F9780",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9782",
+      "offset": "0x004F9782",
+      "before_hex": "20",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9790",
+      "offset": "0x004F9790",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9792",
+      "offset": "0x004F9792",
+      "before_hex": "21",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9794",
+      "offset": "0x004F9794",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9796",
+      "offset": "0x004F9796",
+      "before_hex": "21",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F97A4",
+      "offset": "0x004F97A4",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F97A6",
+      "offset": "0x004F97A6",
+      "before_hex": "23",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F97A8",
+      "offset": "0x004F97A8",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F97AA",
+      "offset": "0x004F97AA",
+      "before_hex": "23",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F97B8",
+      "offset": "0x004F97B8",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F97BA",
+      "offset": "0x004F97BA",
+      "before_hex": "24",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F97BC",
+      "offset": "0x004F97BC",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F97BE",
+      "offset": "0x004F97BE",
+      "before_hex": "24",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F97CC",
+      "offset": "0x004F97CC",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F97CE",
+      "offset": "0x004F97CE",
+      "before_hex": "25",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F97D0",
+      "offset": "0x004F97D0",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F97D2",
+      "offset": "0x004F97D2",
+      "before_hex": "25",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F97E0",
+      "offset": "0x004F97E0",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F97E2",
+      "offset": "0x004F97E2",
+      "before_hex": "26",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F97E4",
+      "offset": "0x004F97E4",
+      "before_hex": "07",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F97E6",
+      "offset": "0x004F97E6",
+      "before_hex": "26",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F980A",
+      "offset": "0x004F980A",
+      "before_hex": "03",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F980E",
+      "offset": "0x004F980E",
+      "before_hex": "01",
+      "after_hex": "07",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9810",
+      "offset": "0x004F9810",
+      "before_hex": "01",
+      "after_hex": "0a",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9812",
+      "offset": "0x004F9812",
+      "before_hex": "0700",
+      "after_hex": "3075",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9816",
+      "offset": "0x004F9816",
+      "before_hex": "11",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F981A",
+      "offset": "0x004F981A",
+      "before_hex": "10",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F981E",
+      "offset": "0x004F981E",
+      "before_hex": "00",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9822",
+      "offset": "0x004F9822",
+      "before_hex": "00",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    },
+    {
+      "address": "0x084F9826",
+      "offset": "0x004F9826",
+      "before_hex": "05",
+      "after_hex": "21",
+      "mode": "unknown",
+      "note": "official_builder_0830:temple_soul_fusion_rework"
+    }
+  ]
+}

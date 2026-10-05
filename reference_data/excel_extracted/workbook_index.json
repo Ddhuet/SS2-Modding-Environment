@@ -1,0 +1,354 @@
+{
+  "schema_version": 1,
+  "source_kind": "historical_original_reference_workbook",
+  "source_filename": "source.xlsx",
+  "source_sha256": "ff939a8fe7f2cf89b3813ca7e71d52ace208fd60c2bb23032531b4659e46f47a",
+  "evidence": "secondary historical reference; verify against current ROM",
+  "sheet_count": 28,
+  "sheets": [
+    {
+      "index": 1,
+      "name": "全物品查询",
+      "dimension": "A1:K7",
+      "merged_ranges": [
+        "A1:K1",
+        "J2:K2"
+      ],
+      "nonempty_rows": 5,
+      "nonempty_cells": 26,
+      "formula_cells": 2,
+      "file": "sheets/01_全物品查询.jsonl"
+    },
+    {
+      "index": 2,
+      "name": "怪物查询",
+      "dimension": "A1:L16",
+      "merged_ranges": [
+        "A1:J1",
+        "A2:B2",
+        "C2:F2",
+        "G2:J2",
+        "E10:F10",
+        "I10:J10",
+        "E11:F11",
+        "I11:J11",
+        "E12:F12",
+        "I12:J12",
+        "A6:A7",
+        "B6:B7",
+        "C10:C12",
+        "G10:G12",
+        "A3:B5"
+      ],
+      "nonempty_rows": 12,
+      "nonempty_cells": 87,
+      "formula_cells": 51,
+      "file": "sheets/02_怪物查询.jsonl"
+    },
+    {
+      "index": 3,
+      "name": "矿石打造",
+      "dimension": "A1:K22",
+      "merged_ranges": [
+        "A1:J1",
+        "B7:G7",
+        "A2:A3",
+        "A5:A6",
+        "B5:G6",
+        "A9:F17"
+      ],
+      "nonempty_rows": 10,
+      "nonempty_cells": 53,
+      "formula_cells": 6,
+      "file": "sheets/03_矿石打造.jsonl"
+    },
+    {
+      "index": 4,
+      "name": "套装查询",
+      "dimension": "A1:K21",
+      "merged_ranges": [
+        "A1:K1",
+        "A2:B2",
+        "H2:I2",
+        "H3:I3",
+        "J3:K3",
+        "H4:I4",
+        "J4:K4",
+        "H5:I5",
+        "J5:K5",
+        "H6:I6",
+        "J6:K6",
+        "H7:I7",
+        "J7:K7",
+        "C8:E8",
+        "H8:K8",
+        "A10:K10",
+        "A11:B11",
+        "C11:D11",
+        "E11:G11",
+        "H11:I11",
+        "J11:K11",
+        "A3:B8"
+      ],
+      "nonempty_rows": 14,
+      "nonempty_cells": 76,
+      "formula_cells": 31,
+      "file": "sheets/04_套装查询.jsonl"
+    },
+    {
+      "index": 5,
+      "name": "NOR怪物",
+      "dimension": "A1:XFA165",
+      "merged_ranges": [
+        "Q1:S1",
+        "T1:X1"
+      ],
+      "nonempty_rows": 165,
+      "nonempty_cells": 3162,
+      "formula_cells": 327,
+      "file": "sheets/05_NOR怪物.jsonl"
+    },
+    {
+      "index": 6,
+      "name": "ADV怪物",
+      "dimension": "A1:XFD165",
+      "merged_ranges": [
+        "Q1:S1",
+        "T1:X1"
+      ],
+      "nonempty_rows": 165,
+      "nonempty_cells": 2663,
+      "formula_cells": 163,
+      "file": "sheets/06_ADV怪物.jsonl"
+    },
+    {
+      "index": 7,
+      "name": "神殿合成",
+      "dimension": "A1:J20",
+      "merged_ranges": [
+        "A1:J1",
+        "A2:B2",
+        "C2:D2",
+        "E2:F2",
+        "G2:H2",
+        "I2:J2"
+      ],
+      "nonempty_rows": 20,
+      "nonempty_cells": 186,
+      "formula_cells": 68,
+      "file": "sheets/07_神殿合成.jsonl"
+    },
+    {
+      "index": 8,
+      "name": "套装",
+      "dimension": "A1:H148",
+      "merged_ranges": [
+        "B1:F1"
+      ],
+      "nonempty_rows": 148,
+      "nonempty_cells": 900,
+      "formula_cells": 147,
+      "file": "sheets/08_套装.jsonl"
+    },
+    {
+      "index": 9,
+      "name": "剑",
+      "dimension": "A1:H58",
+      "merged_ranges": [],
+      "nonempty_rows": 58,
+      "nonempty_cells": 464,
+      "formula_cells": 88,
+      "file": "sheets/09_剑.jsonl"
+    },
+    {
+      "index": 10,
+      "name": "斧",
+      "dimension": "A1:H55",
+      "merged_ranges": [],
+      "nonempty_rows": 55,
+      "nonempty_cells": 440,
+      "formula_cells": 78,
+      "file": "sheets/10_斧.jsonl"
+    },
+    {
+      "index": 11,
+      "name": "矛",
+      "dimension": "A1:K52",
+      "merged_ranges": [],
+      "nonempty_rows": 52,
+      "nonempty_cells": 416,
+      "formula_cells": 77,
+      "file": "sheets/11_矛.jsonl"
+    },
+    {
+      "index": 12,
+      "name": "弓",
+      "dimension": "A1:H54",
+      "merged_ranges": [],
+      "nonempty_rows": 54,
+      "nonempty_cells": 432,
+      "formula_cells": 76,
+      "file": "sheets/12_弓.jsonl"
+    },
+    {
+      "index": 13,
+      "name": "链",
+      "dimension": "A1:H53",
+      "merged_ranges": [],
+      "nonempty_rows": 53,
+      "nonempty_cells": 424,
+      "formula_cells": 80,
+      "file": "sheets/13_链.jsonl"
+    },
+    {
+      "index": 14,
+      "name": "杖",
+      "dimension": "A1:H55",
+      "merged_ranges": [],
+      "nonempty_rows": 55,
+      "nonempty_cells": 440,
+      "formula_cells": 80,
+      "file": "sheets/14_杖.jsonl"
+    },
+    {
+      "index": 15,
+      "name": "刀",
+      "dimension": "A1:H53",
+      "merged_ranges": [],
+      "nonempty_rows": 53,
+      "nonempty_cells": 424,
+      "formula_cells": 80,
+      "file": "sheets/15_刀.jsonl"
+    },
+    {
+      "index": 16,
+      "name": "爪",
+      "dimension": "A1:H53",
+      "merged_ranges": [],
+      "nonempty_rows": 53,
+      "nonempty_cells": 424,
+      "formula_cells": 78,
+      "file": "sheets/16_爪.jsonl"
+    },
+    {
+      "index": 17,
+      "name": "书",
+      "dimension": "A1:H148",
+      "merged_ranges": [],
+      "nonempty_rows": 148,
+      "nonempty_cells": 1184,
+      "formula_cells": 32,
+      "file": "sheets/17_书.jsonl"
+    },
+    {
+      "index": 18,
+      "name": "戒指",
+      "dimension": "A1:G97",
+      "merged_ranges": [],
+      "nonempty_rows": 97,
+      "nonempty_cells": 676,
+      "formula_cells": 192,
+      "file": "sheets/18_戒指.jsonl"
+    },
+    {
+      "index": 19,
+      "name": "头",
+      "dimension": "A1:H137",
+      "merged_ranges": [],
+      "nonempty_rows": 137,
+      "nonempty_cells": 1095,
+      "formula_cells": 276,
+      "file": "sheets/19_头.jsonl"
+    },
+    {
+      "index": 20,
+      "name": "身",
+      "dimension": "A1:H140",
+      "merged_ranges": [],
+      "nonempty_rows": 140,
+      "nonempty_cells": 1119,
+      "formula_cells": 282,
+      "file": "sheets/20_身.jsonl"
+    },
+    {
+      "index": 21,
+      "name": "手",
+      "dimension": "A1:H143",
+      "merged_ranges": [],
+      "nonempty_rows": 143,
+      "nonempty_cells": 1143,
+      "formula_cells": 290,
+      "file": "sheets/21_手.jsonl"
+    },
+    {
+      "index": 22,
+      "name": "道具",
+      "dimension": "A1:G95",
+      "merged_ranges": [],
+      "nonempty_rows": 95,
+      "nonempty_cells": 662,
+      "formula_cells": 188,
+      "file": "sheets/22_道具.jsonl"
+    },
+    {
+      "index": 23,
+      "name": "魂矿石",
+      "dimension": "A1:H46",
+      "merged_ranges": [],
+      "nonempty_rows": 46,
+      "nonempty_cells": 325,
+      "formula_cells": 58,
+      "file": "sheets/23_魂矿石.jsonl"
+    },
+    {
+      "index": 24,
+      "name": "后台数据",
+      "dimension": "A1:AU435",
+      "merged_ranges": [],
+      "nonempty_rows": 235,
+      "nonempty_cells": 3256,
+      "formula_cells": 383,
+      "file": "sheets/24_后台数据.jsonl"
+    },
+    {
+      "index": 25,
+      "name": "0-99",
+      "dimension": "A1:H489",
+      "merged_ranges": [],
+      "nonempty_rows": 489,
+      "nonempty_cells": 3912,
+      "formula_cells": 1026,
+      "file": "sheets/25_0-99.jsonl"
+    },
+    {
+      "index": 26,
+      "name": "100-299",
+      "dimension": "A1:I699",
+      "merged_ranges": [],
+      "nonempty_rows": 699,
+      "nonempty_cells": 5810,
+      "formula_cells": 1308,
+      "file": "sheets/26_100-299.jsonl"
+    },
+    {
+      "index": 27,
+      "name": "300-499",
+      "dimension": "A1:I699",
+      "merged_ranges": [],
+      "nonempty_rows": 699,
+      "nonempty_cells": 5810,
+      "formula_cells": 1306,
+      "file": "sheets/27_300-499.jsonl"
+    },
+    {
+      "index": 28,
+      "name": "500+",
+      "dimension": "A1:I699",
+      "merged_ranges": [],
+      "nonempty_rows": 699,
+      "nonempty_cells": 5810,
+      "formula_cells": 1311,
+      "file": "sheets/28_500+.jsonl"
+    }
+  ]
+}

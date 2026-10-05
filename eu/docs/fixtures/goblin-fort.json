@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "id": "paige-goblin-fort-combat-ready",
+  "source_save": {
+    "path": "inputs/ss2-eu.sav",
+    "sha256": "c33cc290d3c44b977b2dc84fedd31539d48d7739252f2086f9c39196b63f45b7"
+  },
+  "language": "English",
+  "character": {
+    "name": "Paige",
+    "class": "Priestess",
+    "level": 19
+  },
+  "location": "Goblin Fort, initial goblins after their dialogue",
+  "prerequisites": [
+    "Exact AU2P profile and supplied normal save",
+    "Pinned native mGBA 0.10.5 and current project adapter",
+    "Inputs stay immutable; new isolated sessions",
+    "No need to save over the owner normal save"
+  ],
+  "creation": {
+    "script": "scripts/test_status_resistance_gameplay.py",
+    "transcript": "docs/fixtures/goblin-fort-buttons.json",
+    "transcript_sha256": "64d58ad6864d96390d06358d0b123ae546c6fde642eff37ed2c1fc90d59613bc",
+    "reproduce": "python scripts/test_status_resistance_gameplay.py --output runs/new-combat-fixture",
+    "ram_or_register_writes": false,
+    "normal_save_persistence": "not tested or needed for native fixture"
+  },
+  "observations": [
+    "All goblin dialogue finished; no textbox in screenshot",
+    "Right button changes scene in retained movement screenshots",
+    "Button-only combat reaches 0x08069080 from 0x0801F738 with original kind5",
+    "Original and candidate independently reach identical EWRAM/IWRAM at natural event",
+    "After90 released frames settle the original attack, opposite buttons produce opposite changes in indexed player record +0x8C (position encoding remains unaudited)."
+  ],
+  "variants": {
+    "original": {
+      "profile": "ss2-eu",
+      "rom_sha256": "e5c64a1740263e9b26120e487f3688fbbf7b3954a2c043c0d84c333df467e0b2",
+      "state": "runs/resistance-gameplay-003/original/states/combat-ready.ss1",
+      "sidecar": "runs/resistance-gameplay-003/original/states/combat-ready.ss1.json",
+      "binding": {
+        "format": "ss2-mgba-state-v1",
+        "rom_sha256": "e5c64a1740263e9b26120e487f3688fbbf7b3954a2c043c0d84c333df467e0b2",
+        "state_sha256": "b4a14fc03686492f5f97469d040b95f1297b550649f3d586a22bca950372c401",
+        "backend_revision": "26b7884bc25a5933960f3cdcd98bac1ae14d42e2",
+        "frame": 13702
+      },
+      "natural_call_state": "runs/resistance-gameplay-003/original/states/natural-combat-call.ss1",
+      "screenshot": "docs/evidence/goblin-fort-original-combat-ready.png",
+      "directional_coordinate_observation": {
+        "address": "0x3003d6c",
+        "width": 4,
+        "entry": 16603,
+        "after_16_right": 22201,
+        "after_16_left": 11005,
+        "scope": "Observed directionally opposite responses in indexed player record +0x8C; full position encoding not audited"
+      }
+    },
+    "signed": {
+      "profile": "ss2-eu",
+      "rom_sha256": "3e62e1035485b5fe3e4af1040625626686cb886d5680cfb8f2e4a2a721467d5e",
+      "state": "runs/resistance-gameplay-003/signed/states/combat-ready.ss1",
+      "sidecar": "runs/resistance-gameplay-003/signed/states/combat-ready.ss1.json",
+      "binding": {
+        "format": "ss2-mgba-state-v1",
+        "rom_sha256": "3e62e1035485b5fe3e4af1040625626686cb886d5680cfb8f2e4a2a721467d5e",
+        "state_sha256": "dfebe678dceace2577ddfc517da65564d585544fb5bd17ad2405573e160eaee8",
+        "backend_revision": "26b7884bc25a5933960f3cdcd98bac1ae14d42e2",
+        "frame": 13702
+      },
+      "natural_call_state": "runs/resistance-gameplay-003/signed/states/natural-combat-call.ss1",
+      "screenshot": "docs/evidence/goblin-fort-signed-combat-ready.png",
+      "directional_coordinate_observation": {
+        "address": "0x3003d6c",
+        "width": 4,
+        "entry": 16603,
+        "after_16_right": 22201,
+        "after_16_left": 11005,
+        "scope": "Observed directionally opposite responses in indexed player record +0x8C; full position encoding not audited"
+      }
+    }
+  },
+  "reports": {
+    "combat": "docs/evidence/status-resistance-gameplay.json",
+    "diagnostic": "docs/evidence/status-resistance-diagnostic.json",
+    "refund_shared_helper": "docs/evidence/refund-shared-helper-regression.json",
+    "refund_boundary": "docs/evidence/refund-shared-helper-boundary.json",
+    "infrastructure": "docs/evidence/resistance-emulator-infrastructure.json"
+  },
+  "limits": [
+    "States and sidecars contain private game data and stay ignored under runs/. Regenerate them using the tracked transcript.",
+    "A state loads only with its own exact ROM hash and pinned backend; no cross-ROM states.",
+    "Boundary effect-kind/resistance changes are synthetic and are separate from state creation.",
+    "Naturally equipped kind1/kind4 over100 combat, player-path landing and human acceptance remain unverified."
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "id": "life_leech",
+  "name": "吸血/吸蓝",
+  "stage": "released",
+  "baseline": {
+    "filename": "SS2_SC_bug_fixed.GBA",
+    "size": 33554432,
+    "md5": "35eb6567d94f855480c5d7ba2dff4389",
+    "sha256": "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989",
+    "crc32": "AFCFC96D"
+  },
+  "source_provenance": {
+    "kind": "official_offline_builder_bundle",
+    "source": "光明之魂2_离线补丁构建器_0830.html",
+    "generated_from_current_baseline": true
+  },
+  "evidence": {
+    "static_rebuild": "passed upstream",
+    "dynamic_combination_test": "not_run"
+  },
+  "writes": [
+    {
+      "address": "0x08019826",
+      "offset": "0x00019826",
+      "before_hex": "031c1a1c",
+      "after_hex": "a1f07bfc",
+      "mode": "unknown",
+      "note": "official_builder_0830:life_leech"
+    },
+    {
+      "address": "0x0801F3B4",
+      "offset": "0x0001F3B4",
+      "before_hex": "3980",
+      "after_hex": "c046",
+      "mode": "unknown",
+      "note": "official_builder_0830:life_leech"
+    },
+    {
+      "address": "0x080BB120",
+      "offset": "0x000BB120",
+      "before_hex": "00000000000000000000000000000000000000000000",
+      "after_hex": "f0b5071c1a4daf422ed04a243c5b6404640c281c7230",
+      "mode": "unknown",
+      "note": "official_builder_0830:life_leech"
+    },
+    {
+      "address": "0x080BB137",
+      "offset": "0x000BB137",
+      "before_hex": "00",
+      "after_hex": "78",
+      "mode": "unknown",
+      "note": "official_builder_0830:life_leech"
+    },
+    {
+      "address": "0x080BB139",
+      "offset": "0x000BB139",
+      "before_hex": "00",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:life_leech"
+    },
+    {
+      "address": "0x080BB13B",
+      "offset": "0x000BB13B",
+      "before_hex": "0000000000000000000000000000000000000000000000",
+      "after_hex": "1660436421fff7b0fb2e1ccc36318809183180281c6a30",
+      "mode": "unknown",
+      "note": "official_builder_0830:life_leech"
+    },
+    {
+      "address": "0x080BB153",
+      "offset": "0x000BB153",
+      "before_hex": "000000",
+      "after_hex": "888142",
+      "mode": "unknown",
+      "note": "official_builder_0830:life_leech"
+    },
+    {
+      "address": "0x080BB157",
+      "offset": "0x000BB157",
+      "before_hex": "00000000000000",
+      "after_hex": "d93080281c7330",
+      "mode": "unknown",
+      "note": "official_builder_0830:life_leech"
+    },
+    {
+      "address": "0x080BB15F",
+      "offset": "0x000BB15F",
+      "before_hex": "00",
+      "after_hex": "78",
+      "mode": "unknown",
+      "note": "official_builder_0830:life_leech"
+    },
+    {
+      "address": "0x080BB161",
+      "offset": "0x000BB161",
+      "before_hex": "00",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:life_leech"
+    },
+    {
+      "address": "0x080BB163",
+      "offset": "0x000BB163",
+      "before_hex": "00000000000000000000",
+      "after_hex": "1660436421fff79cfb81",
+      "mode": "unknown",
+      "note": "official_builder_0830:life_leech"
+    },
+    {
+      "address": "0x080BB16E",
+      "offset": "0x000BB16E",
+      "before_hex": "000000",
+      "after_hex": "091849",
+      "mode": "unknown",
+      "note": "official_builder_0830:life_leech"
+    },
+    {
+      "address": "0x080BB172",
+      "offset": "0x000BB172",
+      "before_hex": "0000000000000000000000000000",
+      "after_hex": "2e1cca36328889183180281c6830",
+      "mode": "unknown",
+      "note": "official_builder_0830:life_leech"
+    },
+    {
+      "address": "0x080BB181",
+      "offset": "0x000BB181",
+      "before_hex": "000000",
+      "after_hex": "888142",
+      "mode": "unknown",
+      "note": "official_builder_0830:life_leech"
+    },
+    {
+      "address": "0x080BB185",
+      "offset": "0x000BB185",
+      "before_hex": "00000000000000000000000000",
+      "after_hex": "d93080381c031c1a1cf0bd803d",
+      "mode": "unknown",
+      "note": "official_builder_0830:life_leech"
+    },
+    {
+      "address": "0x080BB193",
+      "offset": "0x000BB193",
+      "before_hex": "00",
+      "after_hex": "03",
+      "mode": "unknown",
+      "note": "official_builder_0830:life_leech"
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "id": "soul_ring",
+  "name": "魂槽装备戒指",
+  "stage": "released",
+  "baseline": {
+    "filename": "SS2_SC_bug_fixed.GBA",
+    "size": 33554432,
+    "md5": "35eb6567d94f855480c5d7ba2dff4389",
+    "sha256": "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989",
+    "crc32": "AFCFC96D"
+  },
+  "source_provenance": {
+    "kind": "official_offline_builder_bundle",
+    "source": "光明之魂2_离线补丁构建器_0830.html",
+    "generated_from_current_baseline": true
+  },
+  "evidence": {
+    "static_rebuild": "passed upstream",
+    "dynamic_combination_test": "not_run"
+  },
+  "writes": [
+    {
+      "address": "0x0801B81A",
+      "offset": "0x0001B81A",
+      "before_hex": "5246",
+      "after_hex": "0148",
+      "mode": "unknown",
+      "note": "official_builder_0830:soul_ring"
+    },
+    {
+      "address": "0x0801B81D",
+      "offset": "0x0001B81D",
+      "before_hex": "2a02d01088072813d005480068054b",
+      "after_hex": "47c0468100f008c046c046c046c046",
+      "mode": "unknown",
+      "note": "official_builder_0830:soul_ring"
+    },
+    {
+      "address": "0x0801B82D",
+      "offset": "0x0001B82D",
+      "before_hex": "180078002807d100240d9411e00000",
+      "after_hex": "46c046c046c046c046c046c046c046",
+      "mode": "unknown",
+      "note": "official_builder_0830:soul_ring"
+    },
+    {
+      "address": "0x0801B844",
+      "offset": "0x0001B844",
+      "before_hex": "9d2149006018008801e052",
+      "after_hex": "c046c046c046c046c046c0",
+      "mode": "unknown",
+      "note": "official_builder_0830:soul_ring"
+    },
+    {
+      "address": "0x0801B850",
+      "offset": "0x0001B850",
+      "before_hex": "5088882149030843ebf79efa0d90",
+      "after_hex": "c046c046c046c046c046c046c046",
+      "mode": "unknown",
+      "note": "official_builder_0830:soul_ring"
+    },
+    {
+      "address": "0x0801BB12",
+      "offset": "0x0001BB12",
+      "before_hex": "00220e92",
+      "after_hex": "01480047",
+      "mode": "unknown",
+      "note": "official_builder_0830:soul_ring"
+    },
+    {
+      "address": "0x0801BB18",
+      "offset": "0x0001BB18",
+      "before_hex": "40004844",
+      "after_hex": "4101f008",
+      "mode": "unknown",
+      "note": "official_builder_0830:soul_ring"
+    },
+    {
+      "address": "0x0807D26C",
+      "offset": "0x0007D26C",
+      "before_hex": "a84201d002f044fe",
+      "after_hex": "004e30476100f008",
+      "mode": "unknown",
+      "note": "official_builder_0830:soul_ring"
+    },
+    {
+      "address": "0x0807E1A2",
+      "offset": "0x0007E1A2",
+      "before_hex": "162801d002f0c3f8",
+      "after_hex": "c046c046c046c046",
+      "mode": "unknown",
+      "note": "official_builder_0830:soul_ring"
+    },
+    {
+      "address": "0x0807E1D2",
+      "offset": "0x0007E1D2",
+      "before_hex": "162801d002f0abf8",
+      "after_hex": "c046c046c046c046",
+      "mode": "unknown",
+      "note": "official_builder_0830:soul_ring"
+    },
+    {
+      "address": "0x0807E402",
+      "offset": "0x0007E402",
+      "before_hex": "162801d001f093ff",
+      "after_hex": "c046c046c046c046",
+      "mode": "unknown",
+      "note": "official_builder_0830:soul_ring"
+    },
+    {
+      "address": "0x0807E43A",
+      "offset": "0x0007E43A",
+      "before_hex": "162801d001f077ff",
+      "after_hex": "c046c046c046c046",
+      "mode": "unknown",
+      "note": "official_builder_0830:soul_ring"
+    },
+    {
+      "address": "0x08F00060",
+      "offset": "0x00F00060",
+      "before_hex": "11111111111111111111111111111111111111111111111111111111",
+      "after_hex": "1888072801d1062d01d002490847002501490847fdfe070877d20708",
+      "mode": "unknown",
+      "note": "official_builder_0830:soul_ring"
+    },
+    {
+      "address": "0x08F00080",
+      "offset": "0x00F00080",
+      "before_hex": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111110000000000000000",
+      "after_hex": "5246002a02d01088072808d01a4804689c2149006018018806291cd001e050880ee0a02149000131615c002903d100200d900e901de09d21490060180088ffe78821490308430d498e460d4908470d90",
+      "mode": "unknown",
+      "note": "official_builder_0830:soul_ring"
+    },
+    {
+      "address": "0x08F000D1",
+      "offset": "0x00F000D1",
+      "before_hex": "0000000000000000",
+      "after_hex": "200e900de09d2149",
+      "mode": "unknown",
+      "note": "official_builder_0830:soul_ring"
+    },
+    {
+      "address": "0x08F000DA",
+      "offset": "0x00F000DA",
+      "before_hex": "0000",
+      "after_hex": "6018",
+      "mode": "unknown",
+      "note": "official_builder_0830:soul_ring"
+    },
+    {
+      "address": "0x08F000DD",
+      "offset": "0x00F000DD",
+      "before_hex": "000010000010110000111100000010000010110010111100111111111111111111111111111111111111111111111111111111",
+      "after_hex": "88f0210903084307498e46074908470e9000200d900649084700bf80350003cf00f008996d0008ed00f008996d00085fb80108",
+      "mode": "unknown",
+      "note": "official_builder_0830:soul_ring"
+    },
+    {
+      "address": "0x08F00140",
+      "offset": "0x00F00140",
+      "before_hex": "111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111",
+      "after_hex": "0e98002807d08030f8304146321c054b9e46054b184700220e929d2040004844024908475701f00865ae01081dbb0108",
+      "mode": "unknown",
+      "note": "official_builder_0830:soul_ring"
+    }
+  ]
+}

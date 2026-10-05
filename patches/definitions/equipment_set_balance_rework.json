@@ -1,0 +1,2328 @@
+{
+  "schema_version": 1,
+  "id": "equipment_set_balance_rework",
+  "name": "套装与套装部件调整",
+  "stage": "released",
+  "baseline": {
+    "filename": "SS2_SC_bug_fixed.GBA",
+    "size": 33554432,
+    "md5": "35eb6567d94f855480c5d7ba2dff4389",
+    "sha256": "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989",
+    "crc32": "AFCFC96D"
+  },
+  "source_provenance": {
+    "kind": "official_offline_builder_bundle",
+    "source": "光明之魂2_离线补丁构建器_0830.html",
+    "generated_from_current_baseline": true
+  },
+  "evidence": {
+    "static_rebuild": "passed upstream",
+    "dynamic_combination_test": "not_run"
+  },
+  "writes": [
+    {
+      "address": "0x083B3504",
+      "offset": "0x003B3504",
+      "before_hex": "00",
+      "after_hex": "0f",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083B3506",
+      "offset": "0x003B3506",
+      "before_hex": "00",
+      "after_hex": "32",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083B3510",
+      "offset": "0x003B3510",
+      "before_hex": "5306",
+      "after_hex": "6c04",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083B3698",
+      "offset": "0x003B3698",
+      "before_hex": "00",
+      "after_hex": "0f",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083B369A",
+      "offset": "0x003B369A",
+      "before_hex": "00",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083B382C",
+      "offset": "0x003B382C",
+      "before_hex": "00",
+      "after_hex": "0f",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083B382E",
+      "offset": "0x003B382E",
+      "before_hex": "00",
+      "after_hex": "c8",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BAEA0",
+      "offset": "0x003BAEA0",
+      "before_hex": "65",
+      "after_hex": "00",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB008",
+      "offset": "0x003BB008",
+      "before_hex": "2a",
+      "after_hex": "32",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB014",
+      "offset": "0x003BB014",
+      "before_hex": "0e",
+      "after_hex": "02",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB016",
+      "offset": "0x003BB016",
+      "before_hex": "02",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB018",
+      "offset": "0x003BB018",
+      "before_hex": "00",
+      "after_hex": "0f",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB01A",
+      "offset": "0x003BB01A",
+      "before_hex": "00",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB01C",
+      "offset": "0x003BB01C",
+      "before_hex": "00",
+      "after_hex": "21",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB01E",
+      "offset": "0x003BB01E",
+      "before_hex": "00",
+      "after_hex": "23",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB032",
+      "offset": "0x003BB032",
+      "before_hex": "91",
+      "after_hex": "00",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB1A8",
+      "offset": "0x003BB1A8",
+      "before_hex": "03",
+      "after_hex": "02",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB1AA",
+      "offset": "0x003BB1AA",
+      "before_hex": "02",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB1AC",
+      "offset": "0x003BB1AC",
+      "before_hex": "00",
+      "after_hex": "0f",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB1AE",
+      "offset": "0x003BB1AE",
+      "before_hex": "00",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB1B0",
+      "offset": "0x003BB1B0",
+      "before_hex": "00",
+      "after_hex": "21",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB1B2",
+      "offset": "0x003BB1B2",
+      "before_hex": "00",
+      "after_hex": "23",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB330",
+      "offset": "0x003BB330",
+      "before_hex": "24",
+      "after_hex": "28",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB33E",
+      "offset": "0x003BB33E",
+      "before_hex": "02",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB340",
+      "offset": "0x003BB340",
+      "before_hex": "00",
+      "after_hex": "0f",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB342",
+      "offset": "0x003BB342",
+      "before_hex": "00",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB344",
+      "offset": "0x003BB344",
+      "before_hex": "00",
+      "after_hex": "21",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB346",
+      "offset": "0x003BB346",
+      "before_hex": "00",
+      "after_hex": "23",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB35A",
+      "offset": "0x003BB35A",
+      "before_hex": "03",
+      "after_hex": "00",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB4C4",
+      "offset": "0x003BB4C4",
+      "before_hex": "2b",
+      "after_hex": "32",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB4D0",
+      "offset": "0x003BB4D0",
+      "before_hex": "04",
+      "after_hex": "02",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB4D2",
+      "offset": "0x003BB4D2",
+      "before_hex": "02",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB4D4",
+      "offset": "0x003BB4D4",
+      "before_hex": "00",
+      "after_hex": "0f",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB4D6",
+      "offset": "0x003BB4D6",
+      "before_hex": "00",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB4D8",
+      "offset": "0x003BB4D8",
+      "before_hex": "00",
+      "after_hex": "21",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB4DA",
+      "offset": "0x003BB4DA",
+      "before_hex": "00",
+      "after_hex": "23",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB4EE",
+      "offset": "0x003BB4EE",
+      "before_hex": "f9",
+      "after_hex": "00",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB4F0",
+      "offset": "0x003BB4F0",
+      "before_hex": "91",
+      "after_hex": "00",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB658",
+      "offset": "0x003BB658",
+      "before_hex": "20",
+      "after_hex": "28",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB664",
+      "offset": "0x003BB664",
+      "before_hex": "0b",
+      "after_hex": "02",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB666",
+      "offset": "0x003BB666",
+      "before_hex": "0a",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB668",
+      "offset": "0x003BB668",
+      "before_hex": "00",
+      "after_hex": "0f",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB66A",
+      "offset": "0x003BB66A",
+      "before_hex": "00",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB66C",
+      "offset": "0x003BB66C",
+      "before_hex": "00",
+      "after_hex": "21",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB66E",
+      "offset": "0x003BB66E",
+      "before_hex": "00",
+      "after_hex": "23",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB7EC",
+      "offset": "0x003BB7EC",
+      "before_hex": "27",
+      "after_hex": "28",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB7F8",
+      "offset": "0x003BB7F8",
+      "before_hex": "01",
+      "after_hex": "02",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB7FA",
+      "offset": "0x003BB7FA",
+      "before_hex": "02",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB7FC",
+      "offset": "0x003BB7FC",
+      "before_hex": "00",
+      "after_hex": "0f",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB7FE",
+      "offset": "0x003BB7FE",
+      "before_hex": "00",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB800",
+      "offset": "0x003BB800",
+      "before_hex": "00",
+      "after_hex": "21",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB802",
+      "offset": "0x003BB802",
+      "before_hex": "00",
+      "after_hex": "23",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB816",
+      "offset": "0x003BB816",
+      "before_hex": "7c",
+      "after_hex": "00",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB818",
+      "offset": "0x003BB818",
+      "before_hex": "f9",
+      "after_hex": "00",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB81A",
+      "offset": "0x003BB81A",
+      "before_hex": "91",
+      "after_hex": "00",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB980",
+      "offset": "0x003BB980",
+      "before_hex": "23",
+      "after_hex": "28",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB98C",
+      "offset": "0x003BB98C",
+      "before_hex": "0c",
+      "after_hex": "02",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB98E",
+      "offset": "0x003BB98E",
+      "before_hex": "0a",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB990",
+      "offset": "0x003BB990",
+      "before_hex": "00",
+      "after_hex": "0f",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB992",
+      "offset": "0x003BB992",
+      "before_hex": "00",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB994",
+      "offset": "0x003BB994",
+      "before_hex": "00",
+      "after_hex": "21",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BB996",
+      "offset": "0x003BB996",
+      "before_hex": "00",
+      "after_hex": "23",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BBB22",
+      "offset": "0x003BBB22",
+      "before_hex": "02",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BBB24",
+      "offset": "0x003BBB24",
+      "before_hex": "00",
+      "after_hex": "0f",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BBB26",
+      "offset": "0x003BBB26",
+      "before_hex": "00",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BBB28",
+      "offset": "0x003BBB28",
+      "before_hex": "00",
+      "after_hex": "21",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083BBB2A",
+      "offset": "0x003BBB2A",
+      "before_hex": "00",
+      "after_hex": "23",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C2CC8",
+      "offset": "0x003C2CC8",
+      "before_hex": "00",
+      "after_hex": "23",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C2CCA",
+      "offset": "0x003C2CCA",
+      "before_hex": "0000",
+      "after_hex": "ffff",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C2CD4",
+      "offset": "0x003C2CD4",
+      "before_hex": "5306",
+      "after_hex": "6c04",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C2E5C",
+      "offset": "0x003C2E5C",
+      "before_hex": "00",
+      "after_hex": "23",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C2E5E",
+      "offset": "0x003C2E5E",
+      "before_hex": "0000",
+      "after_hex": "ffff",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C2E74",
+      "offset": "0x003C2E74",
+      "before_hex": "f9",
+      "after_hex": "00",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C2E76",
+      "offset": "0x003C2E76",
+      "before_hex": "8e",
+      "after_hex": "00",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C2FF0",
+      "offset": "0x003C2FF0",
+      "before_hex": "00",
+      "after_hex": "23",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C2FF2",
+      "offset": "0x003C2FF2",
+      "before_hex": "0000",
+      "after_hex": "ffff",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9670",
+      "offset": "0x003C9670",
+      "before_hex": "25",
+      "after_hex": "28",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C967C",
+      "offset": "0x003C967C",
+      "before_hex": "0e",
+      "after_hex": "02",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C967E",
+      "offset": "0x003C967E",
+      "before_hex": "02",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9680",
+      "offset": "0x003C9680",
+      "before_hex": "00",
+      "after_hex": "0f",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9682",
+      "offset": "0x003C9682",
+      "before_hex": "00",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9684",
+      "offset": "0x003C9684",
+      "before_hex": "00",
+      "after_hex": "21",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9686",
+      "offset": "0x003C9686",
+      "before_hex": "00",
+      "after_hex": "23",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9804",
+      "offset": "0x003C9804",
+      "before_hex": "20",
+      "after_hex": "28",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9810",
+      "offset": "0x003C9810",
+      "before_hex": "03",
+      "after_hex": "02",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9812",
+      "offset": "0x003C9812",
+      "before_hex": "02",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9814",
+      "offset": "0x003C9814",
+      "before_hex": "00",
+      "after_hex": "0f",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9816",
+      "offset": "0x003C9816",
+      "before_hex": "00",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9818",
+      "offset": "0x003C9818",
+      "before_hex": "00",
+      "after_hex": "21",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C981A",
+      "offset": "0x003C981A",
+      "before_hex": "00",
+      "after_hex": "23",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9998",
+      "offset": "0x003C9998",
+      "before_hex": "13",
+      "after_hex": "14",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C99A6",
+      "offset": "0x003C99A6",
+      "before_hex": "02",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C99A8",
+      "offset": "0x003C99A8",
+      "before_hex": "00",
+      "after_hex": "0f",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C99AA",
+      "offset": "0x003C99AA",
+      "before_hex": "00",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C99AC",
+      "offset": "0x003C99AC",
+      "before_hex": "00",
+      "after_hex": "21",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C99AE",
+      "offset": "0x003C99AE",
+      "before_hex": "00",
+      "after_hex": "23",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9B2C",
+      "offset": "0x003C9B2C",
+      "before_hex": "1d",
+      "after_hex": "1e",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9B38",
+      "offset": "0x003C9B38",
+      "before_hex": "04",
+      "after_hex": "02",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9B3A",
+      "offset": "0x003C9B3A",
+      "before_hex": "02",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9B3C",
+      "offset": "0x003C9B3C",
+      "before_hex": "00",
+      "after_hex": "0f",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9B3E",
+      "offset": "0x003C9B3E",
+      "before_hex": "00",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9B40",
+      "offset": "0x003C9B40",
+      "before_hex": "00",
+      "after_hex": "21",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9B42",
+      "offset": "0x003C9B42",
+      "before_hex": "00",
+      "after_hex": "23",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9CC0",
+      "offset": "0x003C9CC0",
+      "before_hex": "1c",
+      "after_hex": "1e",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9CCC",
+      "offset": "0x003C9CCC",
+      "before_hex": "0b",
+      "after_hex": "02",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9CCE",
+      "offset": "0x003C9CCE",
+      "before_hex": "0a",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9CD0",
+      "offset": "0x003C9CD0",
+      "before_hex": "00",
+      "after_hex": "0f",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9CD2",
+      "offset": "0x003C9CD2",
+      "before_hex": "00",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9CD4",
+      "offset": "0x003C9CD4",
+      "before_hex": "00",
+      "after_hex": "21",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9CD6",
+      "offset": "0x003C9CD6",
+      "before_hex": "00",
+      "after_hex": "23",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9E54",
+      "offset": "0x003C9E54",
+      "before_hex": "1b",
+      "after_hex": "1e",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9E60",
+      "offset": "0x003C9E60",
+      "before_hex": "01",
+      "after_hex": "02",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9E62",
+      "offset": "0x003C9E62",
+      "before_hex": "02",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9E64",
+      "offset": "0x003C9E64",
+      "before_hex": "00",
+      "after_hex": "0f",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9E66",
+      "offset": "0x003C9E66",
+      "before_hex": "00",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9E68",
+      "offset": "0x003C9E68",
+      "before_hex": "00",
+      "after_hex": "21",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9E6A",
+      "offset": "0x003C9E6A",
+      "before_hex": "00",
+      "after_hex": "23",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9FE8",
+      "offset": "0x003C9FE8",
+      "before_hex": "12",
+      "after_hex": "14",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9FF4",
+      "offset": "0x003C9FF4",
+      "before_hex": "0c",
+      "after_hex": "02",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9FF6",
+      "offset": "0x003C9FF6",
+      "before_hex": "0a",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9FF8",
+      "offset": "0x003C9FF8",
+      "before_hex": "00",
+      "after_hex": "0f",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9FFA",
+      "offset": "0x003C9FFA",
+      "before_hex": "00",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9FFC",
+      "offset": "0x003C9FFC",
+      "before_hex": "00",
+      "after_hex": "21",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083C9FFE",
+      "offset": "0x003C9FFE",
+      "before_hex": "00",
+      "after_hex": "23",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CA17C",
+      "offset": "0x003CA17C",
+      "before_hex": "16",
+      "after_hex": "1e",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CA18A",
+      "offset": "0x003CA18A",
+      "before_hex": "02",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CA18C",
+      "offset": "0x003CA18C",
+      "before_hex": "00",
+      "after_hex": "0f",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CA18E",
+      "offset": "0x003CA18E",
+      "before_hex": "00",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CA190",
+      "offset": "0x003CA190",
+      "before_hex": "00",
+      "after_hex": "21",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CA192",
+      "offset": "0x003CA192",
+      "before_hex": "00",
+      "after_hex": "23",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CE2B8",
+      "offset": "0x003CE2B8",
+      "before_hex": "0c",
+      "after_hex": "14",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CE2C8",
+      "offset": "0x003CE2C8",
+      "before_hex": "03",
+      "after_hex": "02",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CE2CA",
+      "offset": "0x003CE2CA",
+      "before_hex": "02",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CE2CC",
+      "offset": "0x003CE2CC",
+      "before_hex": "00",
+      "after_hex": "0f",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CE2CE",
+      "offset": "0x003CE2CE",
+      "before_hex": "00",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CE2D0",
+      "offset": "0x003CE2D0",
+      "before_hex": "00",
+      "after_hex": "21",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CE2D2",
+      "offset": "0x003CE2D2",
+      "before_hex": "00",
+      "after_hex": "23",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CE450",
+      "offset": "0x003CE450",
+      "before_hex": "0c",
+      "after_hex": "14",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CE462",
+      "offset": "0x003CE462",
+      "before_hex": "02",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CE464",
+      "offset": "0x003CE464",
+      "before_hex": "00",
+      "after_hex": "0f",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CE466",
+      "offset": "0x003CE466",
+      "before_hex": "00",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CE468",
+      "offset": "0x003CE468",
+      "before_hex": "00",
+      "after_hex": "21",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CE46A",
+      "offset": "0x003CE46A",
+      "before_hex": "00",
+      "after_hex": "23",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CE5E8",
+      "offset": "0x003CE5E8",
+      "before_hex": "0a",
+      "after_hex": "14",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CE5F8",
+      "offset": "0x003CE5F8",
+      "before_hex": "04",
+      "after_hex": "02",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CE5FA",
+      "offset": "0x003CE5FA",
+      "before_hex": "02",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CE5FC",
+      "offset": "0x003CE5FC",
+      "before_hex": "00",
+      "after_hex": "0f",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CE5FE",
+      "offset": "0x003CE5FE",
+      "before_hex": "00",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CE600",
+      "offset": "0x003CE600",
+      "before_hex": "00",
+      "after_hex": "21",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CE602",
+      "offset": "0x003CE602",
+      "before_hex": "00",
+      "after_hex": "23",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CE780",
+      "offset": "0x003CE780",
+      "before_hex": "0e",
+      "after_hex": "14",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CE790",
+      "offset": "0x003CE790",
+      "before_hex": "0b",
+      "after_hex": "02",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CE792",
+      "offset": "0x003CE792",
+      "before_hex": "0a",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CE794",
+      "offset": "0x003CE794",
+      "before_hex": "00",
+      "after_hex": "0f",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CE796",
+      "offset": "0x003CE796",
+      "before_hex": "00",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CE798",
+      "offset": "0x003CE798",
+      "before_hex": "00",
+      "after_hex": "21",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CE79A",
+      "offset": "0x003CE79A",
+      "before_hex": "00",
+      "after_hex": "23",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CE918",
+      "offset": "0x003CE918",
+      "before_hex": "09",
+      "after_hex": "0a",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CE928",
+      "offset": "0x003CE928",
+      "before_hex": "01",
+      "after_hex": "02",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CE92A",
+      "offset": "0x003CE92A",
+      "before_hex": "02",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CE92C",
+      "offset": "0x003CE92C",
+      "before_hex": "00",
+      "after_hex": "0f",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CE92E",
+      "offset": "0x003CE92E",
+      "before_hex": "00",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CE930",
+      "offset": "0x003CE930",
+      "before_hex": "00",
+      "after_hex": "21",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CE932",
+      "offset": "0x003CE932",
+      "before_hex": "00",
+      "after_hex": "23",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CEAB0",
+      "offset": "0x003CEAB0",
+      "before_hex": "09",
+      "after_hex": "0a",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CEAC0",
+      "offset": "0x003CEAC0",
+      "before_hex": "0c",
+      "after_hex": "02",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CEAC2",
+      "offset": "0x003CEAC2",
+      "before_hex": "0a",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CEAC4",
+      "offset": "0x003CEAC4",
+      "before_hex": "00",
+      "after_hex": "0f",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CEAC6",
+      "offset": "0x003CEAC6",
+      "before_hex": "00",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CEAC8",
+      "offset": "0x003CEAC8",
+      "before_hex": "00",
+      "after_hex": "21",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CEACA",
+      "offset": "0x003CEACA",
+      "before_hex": "00",
+      "after_hex": "23",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CEC48",
+      "offset": "0x003CEC48",
+      "before_hex": "0f",
+      "after_hex": "14",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CEC5A",
+      "offset": "0x003CEC5A",
+      "before_hex": "02",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CEC5C",
+      "offset": "0x003CEC5C",
+      "before_hex": "00",
+      "after_hex": "0f",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CEC5E",
+      "offset": "0x003CEC5E",
+      "before_hex": "00",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CEC60",
+      "offset": "0x003CEC60",
+      "before_hex": "00",
+      "after_hex": "21",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083CEC62",
+      "offset": "0x003CEC62",
+      "before_hex": "00",
+      "after_hex": "23",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083D5728",
+      "offset": "0x003D5728",
+      "before_hex": "00",
+      "after_hex": "02",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083D572A",
+      "offset": "0x003D572A",
+      "before_hex": "00",
+      "after_hex": "32",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083D5734",
+      "offset": "0x003D5734",
+      "before_hex": "5306",
+      "after_hex": "6c04",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083D58C0",
+      "offset": "0x003D58C0",
+      "before_hex": "00",
+      "after_hex": "02",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083D58C2",
+      "offset": "0x003D58C2",
+      "before_hex": "00",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083D5A58",
+      "offset": "0x003D5A58",
+      "before_hex": "00",
+      "after_hex": "02",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083D5A5A",
+      "offset": "0x003D5A5A",
+      "before_hex": "00",
+      "after_hex": "c8",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083DCE98",
+      "offset": "0x003DCE98",
+      "before_hex": "13",
+      "after_hex": "14",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083DCEA8",
+      "offset": "0x003DCEA8",
+      "before_hex": "0e",
+      "after_hex": "02",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083DCEAA",
+      "offset": "0x003DCEAA",
+      "before_hex": "02",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083DCEAC",
+      "offset": "0x003DCEAC",
+      "before_hex": "00",
+      "after_hex": "0f",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083DCEAE",
+      "offset": "0x003DCEAE",
+      "before_hex": "00",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083DCEB0",
+      "offset": "0x003DCEB0",
+      "before_hex": "00",
+      "after_hex": "21",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x083DCEB2",
+      "offset": "0x003DCEB2",
+      "before_hex": "00",
+      "after_hex": "23",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0843B00A",
+      "offset": "0x0043B00A",
+      "before_hex": "050000",
+      "after_hex": "900117",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0843B00E",
+      "offset": "0x0043B00E",
+      "before_hex": "000000",
+      "after_hex": "9cff05",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0843B012",
+      "offset": "0x0043B012",
+      "before_hex": "00",
+      "after_hex": "c8",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0843B7B0",
+      "offset": "0x0043B7B0",
+      "before_hex": "0e",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0843B7B2",
+      "offset": "0x0043B7B2",
+      "before_hex": "07",
+      "after_hex": "23",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0843B7B4",
+      "offset": "0x0043B7B4",
+      "before_hex": "0f",
+      "after_hex": "21",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0843B7B6",
+      "offset": "0x0043B7B6",
+      "before_hex": "07",
+      "after_hex": "23",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0843B7B8",
+      "offset": "0x0043B7B8",
+      "before_hex": "00",
+      "after_hex": "07",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0843B7BA",
+      "offset": "0x0043B7BA",
+      "before_hex": "00",
+      "after_hex": "1e",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0843BAC0",
+      "offset": "0x0043BAC0",
+      "before_hex": "00",
+      "after_hex": "07",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0843BAC2",
+      "offset": "0x0043BAC2",
+      "before_hex": "00",
+      "after_hex": "1e",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0843BAC4",
+      "offset": "0x0043BAC4",
+      "before_hex": "00",
+      "after_hex": "0f",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0843BAC6",
+      "offset": "0x0043BAC6",
+      "before_hex": "00",
+      "after_hex": "3c",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0843BAC8",
+      "offset": "0x0043BAC8",
+      "before_hex": "00",
+      "after_hex": "21",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0843BACA",
+      "offset": "0x0043BACA",
+      "before_hex": "00",
+      "after_hex": "23",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x08495E9A",
+      "offset": "0x00495E9A",
+      "before_hex": "65",
+      "after_hex": "00",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x08496004",
+      "offset": "0x00496004",
+      "before_hex": "1700",
+      "after_hex": "ffff",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x08496010",
+      "offset": "0x00496010",
+      "before_hex": "0e",
+      "after_hex": "07",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x08496012",
+      "offset": "0x00496012",
+      "before_hex": "14",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x08496014",
+      "offset": "0x00496014",
+      "before_hex": "0f",
+      "after_hex": "18",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x08496016",
+      "offset": "0x00496016",
+      "before_hex": "3c",
+      "after_hex": "0a",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x08496018",
+      "offset": "0x00496018",
+      "before_hex": "21",
+      "after_hex": "19",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0849601A",
+      "offset": "0x0049601A",
+      "before_hex": "14",
+      "after_hex": "0a",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x08496190",
+      "offset": "0x00496190",
+      "before_hex": "bd00",
+      "after_hex": "ffff",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0849619C",
+      "offset": "0x0049619C",
+      "before_hex": "0e",
+      "after_hex": "07",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0849619E",
+      "offset": "0x0049619E",
+      "before_hex": "14",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x084961A0",
+      "offset": "0x004961A0",
+      "before_hex": "0f",
+      "after_hex": "03",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x084961A2",
+      "offset": "0x004961A2",
+      "before_hex": "3c",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x084961A4",
+      "offset": "0x004961A4",
+      "before_hex": "03",
+      "after_hex": "0f",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x084961A6",
+      "offset": "0x004961A6",
+      "before_hex": "32",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0849631C",
+      "offset": "0x0049631C",
+      "before_hex": "7d00",
+      "after_hex": "ffff",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x08496328",
+      "offset": "0x00496328",
+      "before_hex": "0e",
+      "after_hex": "07",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0849632A",
+      "offset": "0x0049632A",
+      "before_hex": "14",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0849632C",
+      "offset": "0x0049632C",
+      "before_hex": "0f",
+      "after_hex": "18",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0849632E",
+      "offset": "0x0049632E",
+      "before_hex": "3c",
+      "after_hex": "0a",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x08496330",
+      "offset": "0x00496330",
+      "before_hex": "10",
+      "after_hex": "19",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x08496332",
+      "offset": "0x00496332",
+      "before_hex": "fbff",
+      "after_hex": "0a00",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x084964A8",
+      "offset": "0x004964A8",
+      "before_hex": "3b00",
+      "after_hex": "ffff",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x084964B4",
+      "offset": "0x004964B4",
+      "before_hex": "0e",
+      "after_hex": "07",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x084964B6",
+      "offset": "0x004964B6",
+      "before_hex": "14",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x084964B8",
+      "offset": "0x004964B8",
+      "before_hex": "0f",
+      "after_hex": "18",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x084964BA",
+      "offset": "0x004964BA",
+      "before_hex": "3c",
+      "after_hex": "0a",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x084964BC",
+      "offset": "0x004964BC",
+      "before_hex": "04",
+      "after_hex": "19",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x084964BE",
+      "offset": "0x004964BE",
+      "before_hex": "32",
+      "after_hex": "0a",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x084964CA",
+      "offset": "0x004964CA",
+      "before_hex": "fa",
+      "after_hex": "00",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x084964CC",
+      "offset": "0x004964CC",
+      "before_hex": "65",
+      "after_hex": "00",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x08496634",
+      "offset": "0x00496634",
+      "before_hex": "9d00",
+      "after_hex": "ffff",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x08496640",
+      "offset": "0x00496640",
+      "before_hex": "0e",
+      "after_hex": "07",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x08496642",
+      "offset": "0x00496642",
+      "before_hex": "14",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x08496644",
+      "offset": "0x00496644",
+      "before_hex": "0f",
+      "after_hex": "18",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x08496646",
+      "offset": "0x00496646",
+      "before_hex": "3c",
+      "after_hex": "0a",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x08496648",
+      "offset": "0x00496648",
+      "before_hex": "17",
+      "after_hex": "19",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0849664A",
+      "offset": "0x0049664A",
+      "before_hex": "fcff",
+      "after_hex": "0a00",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x084967C1",
+      "offset": "0x004967C1",
+      "before_hex": "00",
+      "after_hex": "ff",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x084967CC",
+      "offset": "0x004967CC",
+      "before_hex": "0e",
+      "after_hex": "07",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x084967CE",
+      "offset": "0x004967CE",
+      "before_hex": "14",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x084967D0",
+      "offset": "0x004967D0",
+      "before_hex": "0f",
+      "after_hex": "18",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x084967D2",
+      "offset": "0x004967D2",
+      "before_hex": "3c",
+      "after_hex": "0a",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x084967D4",
+      "offset": "0x004967D4",
+      "before_hex": "02",
+      "after_hex": "19",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x084967D6",
+      "offset": "0x004967D6",
+      "before_hex": "32",
+      "after_hex": "0a",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x084967E2",
+      "offset": "0x004967E2",
+      "before_hex": "5f",
+      "after_hex": "00",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x084967E4",
+      "offset": "0x004967E4",
+      "before_hex": "fa",
+      "after_hex": "00",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x084967E6",
+      "offset": "0x004967E6",
+      "before_hex": "65",
+      "after_hex": "00",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0849694C",
+      "offset": "0x0049694C",
+      "before_hex": "be00",
+      "after_hex": "ffff",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x08496958",
+      "offset": "0x00496958",
+      "before_hex": "0e",
+      "after_hex": "07",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0849695A",
+      "offset": "0x0049695A",
+      "before_hex": "0f",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0849695C",
+      "offset": "0x0049695C",
+      "before_hex": "0f",
+      "after_hex": "03",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0849695E",
+      "offset": "0x0049695E",
+      "before_hex": "3c",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x08496960",
+      "offset": "0x00496960",
+      "before_hex": "18",
+      "after_hex": "0f",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x08496962",
+      "offset": "0x00496962",
+      "before_hex": "32",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x08496AD8",
+      "offset": "0x00496AD8",
+      "before_hex": "de00",
+      "after_hex": "ffff",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x08496AE4",
+      "offset": "0x00496AE4",
+      "before_hex": "0e",
+      "after_hex": "07",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x08496AE6",
+      "offset": "0x00496AE6",
+      "before_hex": "14",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x08496AE8",
+      "offset": "0x00496AE8",
+      "before_hex": "0f",
+      "after_hex": "18",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x08496AEA",
+      "offset": "0x00496AEA",
+      "before_hex": "3c",
+      "after_hex": "0a",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x08496AEC",
+      "offset": "0x00496AEC",
+      "before_hex": "13",
+      "after_hex": "19",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x08496AEE",
+      "offset": "0x00496AEE",
+      "before_hex": "10",
+      "after_hex": "0a",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0849CDFA",
+      "offset": "0x0049CDFA",
+      "before_hex": "fa",
+      "after_hex": "00",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0849CDFC",
+      "offset": "0x0049CDFC",
+      "before_hex": "65",
+      "after_hex": "00",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0849CF70",
+      "offset": "0x0049CF70",
+      "before_hex": "0b",
+      "after_hex": "02",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0849CF72",
+      "offset": "0x0049CF72",
+      "before_hex": "0a",
+      "after_hex": "32",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0849CF74",
+      "offset": "0x0049CF74",
+      "before_hex": "0c",
+      "after_hex": "0f",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0849CF76",
+      "offset": "0x0049CF76",
+      "before_hex": "0a",
+      "after_hex": "32",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0849D420",
+      "offset": "0x0049D420",
+      "before_hex": "5306",
+      "after_hex": "6c04",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0849D42A",
+      "offset": "0x0049D42A",
+      "before_hex": "fa",
+      "after_hex": "00",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0849D42C",
+      "offset": "0x0049D42C",
+      "before_hex": "65",
+      "after_hex": "00",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0849D5A0",
+      "offset": "0x0049D5A0",
+      "before_hex": "0b",
+      "after_hex": "02",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0849D5A2",
+      "offset": "0x0049D5A2",
+      "before_hex": "0f",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0849D5A4",
+      "offset": "0x0049D5A4",
+      "before_hex": "0c",
+      "after_hex": "0f",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0849D5A6",
+      "offset": "0x0049D5A6",
+      "before_hex": "0f",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0849DA5A",
+      "offset": "0x0049DA5A",
+      "before_hex": "5f",
+      "after_hex": "00",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0849DA5C",
+      "offset": "0x0049DA5C",
+      "before_hex": "fa",
+      "after_hex": "00",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0849DA5E",
+      "offset": "0x0049DA5E",
+      "before_hex": "65",
+      "after_hex": "00",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0849DBD0",
+      "offset": "0x0049DBD0",
+      "before_hex": "0b",
+      "after_hex": "02",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0849DBD2",
+      "offset": "0x0049DBD2",
+      "before_hex": "14",
+      "after_hex": "c8",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0849DBD4",
+      "offset": "0x0049DBD4",
+      "before_hex": "0c",
+      "after_hex": "0f",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    },
+    {
+      "address": "0x0849DBD6",
+      "offset": "0x0049DBD6",
+      "before_hex": "14",
+      "after_hex": "c8",
+      "mode": "unknown",
+      "note": "official_builder_0830:equipment_set_balance_rework"
+    }
+  ]
+}

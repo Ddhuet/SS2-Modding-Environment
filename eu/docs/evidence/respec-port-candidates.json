@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "kind": "read_only_port_candidates",
+  "approval": "not_approved",
+  "patch_id": "respec",
+  "source_profile_id": "ss2-cn-baseline",
+  "target_profile_id": "ss2-eu",
+  "source_identity": {
+    "size": 33554432,
+    "md5": "35eb6567d94f855480c5d7ba2dff4389",
+    "sha256": "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989",
+    "crc32": "AFCFC96D"
+  },
+  "target_identity": {
+    "size": 16777216,
+    "md5": "49aa688745111aaa51076a345f8f18c3",
+    "sha256": "e5c64a1740263e9b26120e487f3688fbbf7b3954a2c043c0d84c333df467e0b2",
+    "crc32": "55E503C1"
+  },
+  "source_patch_baseline_matches": true,
+  "source_relationship": "Exact source profile verified; every write preimage checked separately. A baseline mismatch does not establish whole-ROM equivalence.",
+  "limitations": [
+    "Context similarity is a location hypothesis, not feature equivalence or a port approval.",
+    "Thumb BL masking is an instruction hypothesis; data can resemble instructions.",
+    "Changed BL destinations require independent callee and calling-convention audit.",
+    "No address, pointer, literal, relocation, save-layout, or runtime semantics are inferred.",
+    "No patch is emitted and no ROM is modified."
+  ],
+  "writes": [
+    {
+      "write_index": 0,
+      "source_offset": "0x0007B662",
+      "source_preimage_hex": "2e",
+      "status": "unique_static_candidate",
+      "approval": "not_approved",
+      "window_start": "0x0007B642",
+      "window_bytes": 96,
+      "matching_mode": "thumb-bl",
+      "candidates": [
+        {
+          "offset": "0x0007AE5E",
+          "address": "0x0807AE5E",
+          "delta": -2052,
+          "approval": "not_approved",
+          "target_preimage_hex": "2e",
+          "target_preimage_matches": true,
+          "bl_correspondences": [
+            {
+              "source_call_offset": "0x0007B676",
+              "target_call_offset": "0x0007AE72",
+              "source_target": "0x08059A8C",
+              "target_target": "0x0805865C",
+              "callee_equivalence": "not_established"
+            }
+          ]
+        }
+      ],
+      "normalized_bl_pairs": 1,
+      "fixed_bytes": 92,
+      "truncated": false
+    },
+    {
+      "write_index": 1,
+      "source_offset": "0x0007B66E",
+      "source_preimage_hex": "c0",
+      "status": "unique_static_candidate",
+      "approval": "not_approved",
+      "window_start": "0x0007B64E",
+      "window_bytes": 96,
+      "matching_mode": "thumb-bl",
+      "candidates": [
+        {
+          "offset": "0x0007AE6A",
+          "address": "0x0807AE6A",
+          "delta": -2052,
+          "approval": "not_approved",
+          "target_preimage_hex": "c0",
+          "target_preimage_matches": true,
+          "bl_correspondences": [
+            {
+              "source_call_offset": "0x0007B676",
+              "target_call_offset": "0x0007AE72",
+              "source_target": "0x08059A8C",
+              "target_target": "0x0805865C",
+              "callee_equivalence": "not_established"
+            }
+          ]
+        }
+      ],
+      "normalized_bl_pairs": 1,
+      "fixed_bytes": 92,
+      "truncated": false
+    },
+    {
+      "write_index": 2,
+      "source_offset": "0x0007B68A",
+      "source_preimage_hex": "d96889006918c8880138c880",
+      "status": "unique_static_candidate",
+      "approval": "not_approved",
+      "window_start": "0x0007B66A",
+      "window_bytes": 96,
+      "matching_mode": "thumb-bl",
+      "candidates": [
+        {
+          "offset": "0x0007AE86",
+          "address": "0x0807AE86",
+          "delta": -2052,
+          "approval": "not_approved",
+          "target_preimage_hex": "d96889006918c8880138c880",
+          "target_preimage_matches": true,
+          "bl_correspondences": [
+            {
+              "source_call_offset": "0x0007B676",
+              "target_call_offset": "0x0007AE72",
+              "source_target": "0x08059A8C",
+              "target_target": "0x0805865C",
+              "callee_equivalence": "not_established"
+            }
+          ]
+        }
+      ],
+      "normalized_bl_pairs": 1,
+      "fixed_bytes": 92,
+      "truncated": false
+    }
+  ]
+}

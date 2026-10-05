@@ -1,0 +1,4188 @@
+{
+  "schema_version": 1,
+  "scope": "Replay normal-save combat, then resistance diagnostics at the actual call.\n\nThe route and original kind-5 combat event use buttons and read-only native\nstops. Save a combat-ready state separately for each ROM. Boundary variants\nchange only the caller's effect-kind word and the corresponding enemy RAM\nresistance halfword; no PC/register writes or artificial stack are used.\nThese variants are synthetic, not naturally equipped immunity acceptance.\n",
+  "checks": [
+    {
+      "scenario": "original",
+      "check": "button-only replay has expected bounded call hit",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "button-only replay has expected bounded call hit",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "button-only replay has expected bounded call hit",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "button-only replay has expected bounded call hit",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "button-only replay has expected bounded call hit",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "button-only replay has expected bounded call hit",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "button-only replay has expected bounded call hit",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "button-only replay has expected bounded call hit",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "actual enemy combat call and original effect",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "original kind-5 combat call returns",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "button movement changes rendered scene after dialogue",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "opposite buttons produce opposite actor coordinate changes",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x80690da"
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x8069116"
+    },
+    {
+      "scenario": "original",
+      "check": "real caller boundary chance agrees with model",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x806912a"
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x801f73c"
+    },
+    {
+      "scenario": "original",
+      "check": "actual stack payload and dispatch follow gate",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "outer diagnostic preserves neighboring resistance fields",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x80690da"
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x8069116"
+    },
+    {
+      "scenario": "original",
+      "check": "real caller boundary chance agrees with model",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x806912a"
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x801f73c"
+    },
+    {
+      "scenario": "original",
+      "check": "actual stack payload and dispatch follow gate",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "outer diagnostic preserves neighboring resistance fields",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x80690da"
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x8069116"
+    },
+    {
+      "scenario": "original",
+      "check": "real caller boundary chance agrees with model",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x806912a"
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x801f73c"
+    },
+    {
+      "scenario": "original",
+      "check": "actual stack payload and dispatch follow gate",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "outer diagnostic preserves neighboring resistance fields",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x80690da"
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x8069116"
+    },
+    {
+      "scenario": "original",
+      "check": "real caller boundary chance agrees with model",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x806912a"
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x801f73c"
+    },
+    {
+      "scenario": "original",
+      "check": "actual stack payload and dispatch follow gate",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "outer diagnostic preserves neighboring resistance fields",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x80690da"
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x8069116"
+    },
+    {
+      "scenario": "original",
+      "check": "real caller boundary chance agrees with model",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x806912a"
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x801f73c"
+    },
+    {
+      "scenario": "original",
+      "check": "actual stack payload and dispatch follow gate",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "outer diagnostic preserves neighboring resistance fields",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x80690da"
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x8069116"
+    },
+    {
+      "scenario": "original",
+      "check": "real caller boundary chance agrees with model",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x806912a"
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x801f73c"
+    },
+    {
+      "scenario": "original",
+      "check": "actual stack payload and dispatch follow gate",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "outer diagnostic preserves neighboring resistance fields",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x80690da"
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x8069116"
+    },
+    {
+      "scenario": "original",
+      "check": "real caller boundary chance agrees with model",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x806912a"
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x801f73c"
+    },
+    {
+      "scenario": "original",
+      "check": "actual stack payload and dispatch follow gate",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "outer diagnostic preserves neighboring resistance fields",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x80690da"
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x8069116"
+    },
+    {
+      "scenario": "original",
+      "check": "real caller boundary chance agrees with model",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x806912a"
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x801f73c"
+    },
+    {
+      "scenario": "original",
+      "check": "actual stack payload and dispatch follow gate",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "outer diagnostic preserves neighboring resistance fields",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x80690da"
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x8069116"
+    },
+    {
+      "scenario": "original",
+      "check": "real caller boundary chance agrees with model",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x806912a"
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x801f73c"
+    },
+    {
+      "scenario": "original",
+      "check": "actual stack payload and dispatch follow gate",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "outer diagnostic preserves neighboring resistance fields",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x80690da"
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x8069116"
+    },
+    {
+      "scenario": "original",
+      "check": "real caller boundary chance agrees with model",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x806912a"
+    },
+    {
+      "scenario": "original",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x801f73c"
+    },
+    {
+      "scenario": "original",
+      "check": "actual stack payload and dispatch follow gate",
+      "passed": true
+    },
+    {
+      "scenario": "original",
+      "check": "outer diagnostic preserves neighboring resistance fields",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "button-only replay has expected bounded call hit",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "button-only replay has expected bounded call hit",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "button-only replay has expected bounded call hit",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "button-only replay has expected bounded call hit",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "button-only replay has expected bounded call hit",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "button-only replay has expected bounded call hit",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "button-only replay has expected bounded call hit",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "button-only replay has expected bounded call hit",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "actual enemy combat call and original effect",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "original kind-5 combat call returns",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "button movement changes rendered scene after dialogue",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "opposite buttons produce opposite actor coordinate changes",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x80690da"
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x8069116"
+    },
+    {
+      "scenario": "signed",
+      "check": "real caller boundary chance agrees with model",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x806912a"
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x801f73c"
+    },
+    {
+      "scenario": "signed",
+      "check": "actual stack payload and dispatch follow gate",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "outer diagnostic preserves neighboring resistance fields",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x80690da"
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x8069116"
+    },
+    {
+      "scenario": "signed",
+      "check": "real caller boundary chance agrees with model",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x806912a"
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x801f73c"
+    },
+    {
+      "scenario": "signed",
+      "check": "actual stack payload and dispatch follow gate",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "outer diagnostic preserves neighboring resistance fields",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x80690da"
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x8069116"
+    },
+    {
+      "scenario": "signed",
+      "check": "real caller boundary chance agrees with model",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x806912a"
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x801f73c"
+    },
+    {
+      "scenario": "signed",
+      "check": "actual stack payload and dispatch follow gate",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "outer diagnostic preserves neighboring resistance fields",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x80690da"
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x8069116"
+    },
+    {
+      "scenario": "signed",
+      "check": "real caller boundary chance agrees with model",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x806912a"
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x801f73c"
+    },
+    {
+      "scenario": "signed",
+      "check": "actual stack payload and dispatch follow gate",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "outer diagnostic preserves neighboring resistance fields",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x80690da"
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x8069116"
+    },
+    {
+      "scenario": "signed",
+      "check": "real caller boundary chance agrees with model",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x806912a"
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x801f73c"
+    },
+    {
+      "scenario": "signed",
+      "check": "actual stack payload and dispatch follow gate",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "outer diagnostic preserves neighboring resistance fields",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x80690da"
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x8069116"
+    },
+    {
+      "scenario": "signed",
+      "check": "real caller boundary chance agrees with model",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x806912a"
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x801f73c"
+    },
+    {
+      "scenario": "signed",
+      "check": "actual stack payload and dispatch follow gate",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "outer diagnostic preserves neighboring resistance fields",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x80690da"
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x8069116"
+    },
+    {
+      "scenario": "signed",
+      "check": "real caller boundary chance agrees with model",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x806912a"
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x801f73c"
+    },
+    {
+      "scenario": "signed",
+      "check": "actual stack payload and dispatch follow gate",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "outer diagnostic preserves neighboring resistance fields",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x80690da"
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x8069116"
+    },
+    {
+      "scenario": "signed",
+      "check": "real caller boundary chance agrees with model",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x806912a"
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x801f73c"
+    },
+    {
+      "scenario": "signed",
+      "check": "actual stack payload and dispatch follow gate",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "outer diagnostic preserves neighboring resistance fields",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x80690da"
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x8069116"
+    },
+    {
+      "scenario": "signed",
+      "check": "real caller boundary chance agrees with model",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x806912a"
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x801f73c"
+    },
+    {
+      "scenario": "signed",
+      "check": "actual stack payload and dispatch follow gate",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "outer diagnostic preserves neighboring resistance fields",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x80690da"
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x8069116"
+    },
+    {
+      "scenario": "signed",
+      "check": "real caller boundary chance agrees with model",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x806912a"
+    },
+    {
+      "scenario": "signed",
+      "check": "natural-stack diagnostic reaches bounded observation",
+      "passed": true,
+      "address": "0x801f73c"
+    },
+    {
+      "scenario": "signed",
+      "check": "actual stack payload and dispatch follow gate",
+      "passed": true
+    },
+    {
+      "scenario": "signed",
+      "check": "outer diagnostic preserves neighboring resistance fields",
+      "passed": true
+    },
+    {
+      "scenario": "A/B",
+      "check": "independent natural combat entries have identical RAM",
+      "passed": true
+    },
+    {
+      "scenario": "A/B",
+      "check": "same original RNG at actual caller",
+      "passed": true
+    },
+    {
+      "scenario": "A/B",
+      "check": "below/equal100 actual caller behavior unchanged",
+      "passed": true
+    },
+    {
+      "scenario": "A/B",
+      "check": "same original RNG at actual caller",
+      "passed": true
+    },
+    {
+      "scenario": "A/B",
+      "check": "below/equal100 actual caller behavior unchanged",
+      "passed": true
+    },
+    {
+      "scenario": "A/B",
+      "check": "same original RNG at actual caller",
+      "passed": true
+    },
+    {
+      "scenario": "A/B",
+      "check": "below/equal100 actual caller behavior unchanged",
+      "passed": true
+    },
+    {
+      "scenario": "A/B",
+      "check": "same original RNG at actual caller",
+      "passed": true
+    },
+    {
+      "scenario": "A/B",
+      "check": "above100 real-stack A/B gate and dispatch difference",
+      "passed": true
+    },
+    {
+      "scenario": "A/B",
+      "check": "same original RNG at actual caller",
+      "passed": true
+    },
+    {
+      "scenario": "A/B",
+      "check": "above100 real-stack A/B gate and dispatch difference",
+      "passed": true
+    },
+    {
+      "scenario": "A/B",
+      "check": "same original RNG at actual caller",
+      "passed": true
+    },
+    {
+      "scenario": "A/B",
+      "check": "below/equal100 actual caller behavior unchanged",
+      "passed": true
+    },
+    {
+      "scenario": "A/B",
+      "check": "same original RNG at actual caller",
+      "passed": true
+    },
+    {
+      "scenario": "A/B",
+      "check": "below/equal100 actual caller behavior unchanged",
+      "passed": true
+    },
+    {
+      "scenario": "A/B",
+      "check": "same original RNG at actual caller",
+      "passed": true
+    },
+    {
+      "scenario": "A/B",
+      "check": "below/equal100 actual caller behavior unchanged",
+      "passed": true
+    },
+    {
+      "scenario": "A/B",
+      "check": "same original RNG at actual caller",
+      "passed": true
+    },
+    {
+      "scenario": "A/B",
+      "check": "above100 real-stack A/B gate and dispatch difference",
+      "passed": true
+    },
+    {
+      "scenario": "A/B",
+      "check": "same original RNG at actual caller",
+      "passed": true
+    },
+    {
+      "scenario": "A/B",
+      "check": "above100 real-stack A/B gate and dispatch difference",
+      "passed": true
+    },
+    {
+      "scenario": "inputs",
+      "check": "source ROMs and normal save unchanged",
+      "passed": true
+    }
+  ],
+  "source_sha256": {
+    "/home/david/Documents/SS2_Modding/eu/inputs/ss2-eu.gba": "e5c64a1740263e9b26120e487f3688fbbf7b3954a2c043c0d84c333df467e0b2",
+    "/home/david/Documents/SS2_Modding/eu/artifacts/ss2-eu-resistance-candidate-001.gba": "3e62e1035485b5fe3e4af1040625626686cb886d5680cfb8f2e4a2a721467d5e",
+    "/home/david/Documents/SS2_Modding/eu/inputs/ss2-eu.sav": "c33cc290d3c44b977b2dc84fedd31539d48d7739252f2086f9c39196b63f45b7"
+  },
+  "transcript_sha256": "64d58ad6864d96390d06358d0b123ae546c6fde642eff37ed2c1fc90d59613bc",
+  "roms": {
+    "original": {
+      "observations": [
+        {
+          "hit": false,
+          "stop": "frame_budget",
+          "address": 134647936,
+          "instructions": 5474256,
+          "frames": 90,
+          "registers": {
+            "r0": 0,
+            "r1": 1,
+            "r2": 1,
+            "r3": 0,
+            "r4": 50336316,
+            "r5": 0,
+            "r6": 0,
+            "r7": 0,
+            "r8": 0,
+            "r9": 0,
+            "r10": 0,
+            "r11": 31,
+            "r12": 67108864,
+            "sp": 50364320,
+            "lr": 504,
+            "pc": 392,
+            "cpsr": 536871058
+          }
+        },
+        {
+          "hit": false,
+          "stop": "frame_budget",
+          "address": 134647936,
+          "instructions": 5704529,
+          "frames": 90,
+          "registers": {
+            "r0": 0,
+            "r1": 1,
+            "r2": 1,
+            "r3": 0,
+            "r4": 50336316,
+            "r5": 0,
+            "r6": 0,
+            "r7": 0,
+            "r8": 0,
+            "r9": 0,
+            "r10": 0,
+            "r11": 31,
+            "r12": 67108864,
+            "sp": 50364320,
+            "lr": 504,
+            "pc": 392,
+            "cpsr": 536871058
+          }
+        },
+        {
+          "hit": false,
+          "stop": "frame_budget",
+          "address": 134647936,
+          "instructions": 4992593,
+          "frames": 90,
+          "registers": {
+            "r0": 0,
+            "r1": 1,
+            "r2": 1,
+            "r3": 0,
+            "r4": 50336316,
+            "r5": 0,
+            "r6": 0,
+            "r7": 0,
+            "r8": 0,
+            "r9": 0,
+            "r10": 0,
+            "r11": 31,
+            "r12": 67108864,
+            "sp": 50364320,
+            "lr": 504,
+            "pc": 392,
+            "cpsr": 536871058
+          }
+        },
+        {
+          "hit": false,
+          "stop": "frame_budget",
+          "address": 134647936,
+          "instructions": 4547160,
+          "frames": 90,
+          "registers": {
+            "r0": 0,
+            "r1": 1,
+            "r2": 1,
+            "r3": 0,
+            "r4": 50336316,
+            "r5": 0,
+            "r6": 0,
+            "r7": 0,
+            "r8": 0,
+            "r9": 0,
+            "r10": 0,
+            "r11": 31,
+            "r12": 67108864,
+            "sp": 50364320,
+            "lr": 504,
+            "pc": 392,
+            "cpsr": 536871058
+          }
+        },
+        {
+          "hit": false,
+          "stop": "frame_budget",
+          "address": 134647936,
+          "instructions": 4284713,
+          "frames": 90,
+          "registers": {
+            "r0": 0,
+            "r1": 1,
+            "r2": 1,
+            "r3": 0,
+            "r4": 50336316,
+            "r5": 0,
+            "r6": 0,
+            "r7": 0,
+            "r8": 0,
+            "r9": 0,
+            "r10": 0,
+            "r11": 31,
+            "r12": 67108864,
+            "sp": 50364320,
+            "lr": 504,
+            "pc": 392,
+            "cpsr": 536871058
+          }
+        },
+        {
+          "hit": false,
+          "stop": "frame_budget",
+          "address": 134647936,
+          "instructions": 4648892,
+          "frames": 90,
+          "registers": {
+            "r0": 0,
+            "r1": 1,
+            "r2": 1,
+            "r3": 0,
+            "r4": 50336316,
+            "r5": 0,
+            "r6": 0,
+            "r7": 0,
+            "r8": 0,
+            "r9": 0,
+            "r10": 0,
+            "r11": 31,
+            "r12": 67108864,
+            "sp": 50364320,
+            "lr": 504,
+            "pc": 392,
+            "cpsr": 536871058
+          }
+        },
+        {
+          "hit": false,
+          "stop": "frame_budget",
+          "address": 134647936,
+          "instructions": 4760377,
+          "frames": 90,
+          "registers": {
+            "r0": 0,
+            "r1": 1,
+            "r2": 1,
+            "r3": 0,
+            "r4": 50336316,
+            "r5": 0,
+            "r6": 0,
+            "r7": 0,
+            "r8": 0,
+            "r9": 0,
+            "r10": 0,
+            "r11": 31,
+            "r12": 67108864,
+            "sp": 50364320,
+            "lr": 504,
+            "pc": 392,
+            "cpsr": 536871058
+          }
+        },
+        {
+          "hit": true,
+          "stop": "hit",
+          "address": 134647936,
+          "instructions": 43303,
+          "frames": 0,
+          "registers": {
+            "r0": 33582712,
+            "r1": 85,
+            "r2": 0,
+            "r3": 0,
+            "r4": 50331932,
+            "r5": 33582176,
+            "r6": 50346396,
+            "r7": 33582250,
+            "r8": 50347232,
+            "r9": 50331932,
+            "r10": 4294901760,
+            "r11": 0,
+            "r12": 50356992,
+            "sp": 50346388,
+            "lr": 134346557,
+            "pc": 134647938,
+            "cpsr": 1073741887
+          }
+        }
+      ],
+      "entry_state": "runs/resistance-gameplay-003/original/states/natural-combat-call.ss1",
+      "original_effect_kind": 5,
+      "target_id": 4,
+      "resistance_block": "0x2006e78",
+      "entry_sp": "0x3003994",
+      "natural_ram_or_register_writes": false,
+      "entry_ram_sha256": {
+        "0x2000000": "1c35e16874bacbb440a9b0329f9e2908164aac008646e15d24d2bebfb693d843",
+        "0x3000000": "0cf0b00fca7003546536009748b6abef621813a845f7dd3e37a56c8fbc30e53f"
+      },
+      "variants": [
+        {
+          "kind": 1,
+          "resistance": 0,
+          "synthetic": true,
+          "mutations": [
+            {
+              "space": "ram",
+              "address": "0x3003998",
+              "width": 4,
+              "before": 5,
+              "after": 1
+            },
+            {
+              "space": "ram",
+              "address": "0x2006e78",
+              "width": 2,
+              "before": 45,
+              "after": 0
+            }
+          ],
+          "stops": [
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648026,
+              "instructions": 446,
+              "frames": 0,
+              "registers": {
+                "r0": 500,
+                "r1": 25,
+                "r2": 0,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134647975,
+                "pc": 134648028,
+                "cpsr": 63
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648086,
+              "instructions": 95,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 1,
+                "r2": 20,
+                "r3": 16,
+                "r4": 20,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648088,
+                "cpsr": 1610612799
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648106,
+              "instructions": 2,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 1,
+                "r2": 20,
+                "r3": 16,
+                "r4": 20,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648108,
+                "cpsr": 2147483711
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134346556,
+              "instructions": 17,
+              "frames": 0,
+              "registers": {
+                "r0": 134346557,
+                "r1": 1,
+                "r2": 20,
+                "r3": 50347232,
+                "r4": 50331932,
+                "r5": 33582176,
+                "r6": 50346396,
+                "r7": 33582250,
+                "r8": 50347232,
+                "r9": 50331932,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346388,
+                "lr": 134648045,
+                "pc": 134346558,
+                "cpsr": 2147483711
+              }
+            }
+          ],
+          "chance": 20,
+          "rng_draw": 91,
+          "gate_passed": false,
+          "stale_payload_kind": 0,
+          "rng_after": "3c067e728e6b77a1",
+          "payload_kind": 0,
+          "queue_delta": 0
+        },
+        {
+          "kind": 1,
+          "resistance": 99,
+          "synthetic": true,
+          "mutations": [
+            {
+              "space": "ram",
+              "address": "0x3003998",
+              "width": 4,
+              "before": 5,
+              "after": 1
+            },
+            {
+              "space": "ram",
+              "address": "0x2006e78",
+              "width": 2,
+              "before": 45,
+              "after": 99
+            }
+          ],
+          "stops": [
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648026,
+              "instructions": 446,
+              "frames": 0,
+              "registers": {
+                "r0": 5,
+                "r1": 25,
+                "r2": 0,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134647975,
+                "pc": 134648028,
+                "cpsr": 63
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648086,
+              "instructions": 35,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 1,
+                "r2": 0,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648088,
+                "cpsr": 1610612799
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648106,
+              "instructions": 2,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 1,
+                "r2": 0,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648108,
+                "cpsr": 2147483711
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134346556,
+              "instructions": 17,
+              "frames": 0,
+              "registers": {
+                "r0": 134346557,
+                "r1": 1,
+                "r2": 0,
+                "r3": 50347232,
+                "r4": 50331932,
+                "r5": 33582176,
+                "r6": 50346396,
+                "r7": 33582250,
+                "r8": 50347232,
+                "r9": 50331932,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346388,
+                "lr": 134648045,
+                "pc": 134346558,
+                "cpsr": 2147483711
+              }
+            }
+          ],
+          "chance": 0,
+          "rng_draw": 91,
+          "gate_passed": false,
+          "stale_payload_kind": 0,
+          "rng_after": "3c067e728e6b77a1",
+          "payload_kind": 0,
+          "queue_delta": 0
+        },
+        {
+          "kind": 1,
+          "resistance": 100,
+          "synthetic": true,
+          "mutations": [
+            {
+              "space": "ram",
+              "address": "0x3003998",
+              "width": 4,
+              "before": 5,
+              "after": 1
+            },
+            {
+              "space": "ram",
+              "address": "0x2006e78",
+              "width": 2,
+              "before": 45,
+              "after": 100
+            }
+          ],
+          "stops": [
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648026,
+              "instructions": 446,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 25,
+                "r2": 0,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134647975,
+                "pc": 134648028,
+                "cpsr": 63
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648086,
+              "instructions": 35,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 1,
+                "r2": 0,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648088,
+                "cpsr": 1610612799
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648106,
+              "instructions": 2,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 1,
+                "r2": 0,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648108,
+                "cpsr": 2147483711
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134346556,
+              "instructions": 17,
+              "frames": 0,
+              "registers": {
+                "r0": 134346557,
+                "r1": 1,
+                "r2": 0,
+                "r3": 50347232,
+                "r4": 50331932,
+                "r5": 33582176,
+                "r6": 50346396,
+                "r7": 33582250,
+                "r8": 50347232,
+                "r9": 50331932,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346388,
+                "lr": 134648045,
+                "pc": 134346558,
+                "cpsr": 2147483711
+              }
+            }
+          ],
+          "chance": 0,
+          "rng_draw": 91,
+          "gate_passed": false,
+          "stale_payload_kind": 0,
+          "rng_after": "3c067e728e6b77a1",
+          "payload_kind": 0,
+          "queue_delta": 0
+        },
+        {
+          "kind": 1,
+          "resistance": 101,
+          "synthetic": true,
+          "mutations": [
+            {
+              "space": "ram",
+              "address": "0x3003998",
+              "width": 4,
+              "before": 5,
+              "after": 1
+            },
+            {
+              "space": "ram",
+              "address": "0x2006e78",
+              "width": 2,
+              "before": 45,
+              "after": 101
+            }
+          ],
+          "stops": [
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648026,
+              "instructions": 446,
+              "frames": 0,
+              "registers": {
+                "r0": 4294967291,
+                "r1": 25,
+                "r2": 0,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134647975,
+                "pc": 134648028,
+                "cpsr": 63
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648086,
+              "instructions": 261,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 1,
+                "r2": 171798691,
+                "r3": 0,
+                "r4": 171798691,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648088,
+                "cpsr": 1610612799
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648106,
+              "instructions": 10,
+              "frames": 0,
+              "registers": {
+                "r0": 256,
+                "r1": 257,
+                "r2": 4294902015,
+                "r3": 0,
+                "r4": 171798691,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648108,
+                "cpsr": 63
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134346556,
+              "instructions": 691,
+              "frames": 0,
+              "registers": {
+                "r0": 134346557,
+                "r1": 2,
+                "r2": 67108866,
+                "r3": 50347232,
+                "r4": 50331932,
+                "r5": 33582176,
+                "r6": 50346396,
+                "r7": 33582250,
+                "r8": 50347232,
+                "r9": 50331932,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 40934,
+                "sp": 50346388,
+                "lr": 134648281,
+                "pc": 134346558,
+                "cpsr": 536870975
+              }
+            }
+          ],
+          "chance": 171798691,
+          "rng_draw": 91,
+          "gate_passed": true,
+          "stale_payload_kind": 0,
+          "rng_after": "3c067e728e6b77a1",
+          "payload_kind": 1,
+          "queue_delta": 1
+        },
+        {
+          "kind": 1,
+          "resistance": 125,
+          "synthetic": true,
+          "mutations": [
+            {
+              "space": "ram",
+              "address": "0x3003998",
+              "width": 4,
+              "before": 5,
+              "after": 1
+            },
+            {
+              "space": "ram",
+              "address": "0x2006e78",
+              "width": 2,
+              "before": 45,
+              "after": 125
+            }
+          ],
+          "stops": [
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648026,
+              "instructions": 446,
+              "frames": 0,
+              "registers": {
+                "r0": 4294967171,
+                "r1": 25,
+                "r2": 0,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134647975,
+                "pc": 134648028,
+                "cpsr": 63
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648086,
+              "instructions": 263,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 1,
+                "r2": 171798686,
+                "r3": 0,
+                "r4": 171798686,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648088,
+                "cpsr": 1610612799
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648106,
+              "instructions": 10,
+              "frames": 0,
+              "registers": {
+                "r0": 256,
+                "r1": 257,
+                "r2": 4294902015,
+                "r3": 0,
+                "r4": 171798686,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648108,
+                "cpsr": 63
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134346556,
+              "instructions": 691,
+              "frames": 0,
+              "registers": {
+                "r0": 134346557,
+                "r1": 2,
+                "r2": 67108866,
+                "r3": 50347232,
+                "r4": 50331932,
+                "r5": 33582176,
+                "r6": 50346396,
+                "r7": 33582250,
+                "r8": 50347232,
+                "r9": 50331932,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 40934,
+                "sp": 50346388,
+                "lr": 134648281,
+                "pc": 134346558,
+                "cpsr": 536870975
+              }
+            }
+          ],
+          "chance": 171798686,
+          "rng_draw": 91,
+          "gate_passed": true,
+          "stale_payload_kind": 0,
+          "rng_after": "3c067e728e6b77a1",
+          "payload_kind": 1,
+          "queue_delta": 1
+        },
+        {
+          "kind": 4,
+          "resistance": 0,
+          "synthetic": true,
+          "mutations": [
+            {
+              "space": "ram",
+              "address": "0x3003998",
+              "width": 4,
+              "before": 5,
+              "after": 4
+            },
+            {
+              "space": "ram",
+              "address": "0x2006e7e",
+              "width": 2,
+              "before": 45,
+              "after": 0
+            }
+          ],
+          "stops": [
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648026,
+              "instructions": 447,
+              "frames": 0,
+              "registers": {
+                "r0": 500,
+                "r1": 50,
+                "r2": 3221225472,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134647975,
+                "pc": 134648028,
+                "cpsr": 63
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648086,
+              "instructions": 72,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 1,
+                "r2": 10,
+                "r3": 16,
+                "r4": 10,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648088,
+                "cpsr": 1610612799
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648106,
+              "instructions": 2,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 1,
+                "r2": 10,
+                "r3": 16,
+                "r4": 10,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648108,
+                "cpsr": 2147483711
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134346556,
+              "instructions": 17,
+              "frames": 0,
+              "registers": {
+                "r0": 134346557,
+                "r1": 1,
+                "r2": 10,
+                "r3": 50347232,
+                "r4": 50331932,
+                "r5": 33582176,
+                "r6": 50346396,
+                "r7": 33582250,
+                "r8": 50347232,
+                "r9": 50331932,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346388,
+                "lr": 134648045,
+                "pc": 134346558,
+                "cpsr": 2147483711
+              }
+            }
+          ],
+          "chance": 10,
+          "rng_draw": 91,
+          "gate_passed": false,
+          "stale_payload_kind": 0,
+          "rng_after": "3c067e728e6b77a1",
+          "payload_kind": 0,
+          "queue_delta": 0
+        },
+        {
+          "kind": 4,
+          "resistance": 99,
+          "synthetic": true,
+          "mutations": [
+            {
+              "space": "ram",
+              "address": "0x3003998",
+              "width": 4,
+              "before": 5,
+              "after": 4
+            },
+            {
+              "space": "ram",
+              "address": "0x2006e7e",
+              "width": 2,
+              "before": 45,
+              "after": 99
+            }
+          ],
+          "stops": [
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648026,
+              "instructions": 447,
+              "frames": 0,
+              "registers": {
+                "r0": 5,
+                "r1": 50,
+                "r2": 3221225472,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134647975,
+                "pc": 134648028,
+                "cpsr": 63
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648086,
+              "instructions": 35,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 1,
+                "r2": 0,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648088,
+                "cpsr": 1610612799
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648106,
+              "instructions": 2,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 1,
+                "r2": 0,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648108,
+                "cpsr": 2147483711
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134346556,
+              "instructions": 17,
+              "frames": 0,
+              "registers": {
+                "r0": 134346557,
+                "r1": 1,
+                "r2": 0,
+                "r3": 50347232,
+                "r4": 50331932,
+                "r5": 33582176,
+                "r6": 50346396,
+                "r7": 33582250,
+                "r8": 50347232,
+                "r9": 50331932,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346388,
+                "lr": 134648045,
+                "pc": 134346558,
+                "cpsr": 2147483711
+              }
+            }
+          ],
+          "chance": 0,
+          "rng_draw": 91,
+          "gate_passed": false,
+          "stale_payload_kind": 0,
+          "rng_after": "3c067e728e6b77a1",
+          "payload_kind": 0,
+          "queue_delta": 0
+        },
+        {
+          "kind": 4,
+          "resistance": 100,
+          "synthetic": true,
+          "mutations": [
+            {
+              "space": "ram",
+              "address": "0x3003998",
+              "width": 4,
+              "before": 5,
+              "after": 4
+            },
+            {
+              "space": "ram",
+              "address": "0x2006e7e",
+              "width": 2,
+              "before": 45,
+              "after": 100
+            }
+          ],
+          "stops": [
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648026,
+              "instructions": 447,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 50,
+                "r2": 3221225472,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134647975,
+                "pc": 134648028,
+                "cpsr": 63
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648086,
+              "instructions": 35,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 1,
+                "r2": 0,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648088,
+                "cpsr": 1610612799
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648106,
+              "instructions": 2,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 1,
+                "r2": 0,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648108,
+                "cpsr": 2147483711
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134346556,
+              "instructions": 17,
+              "frames": 0,
+              "registers": {
+                "r0": 134346557,
+                "r1": 1,
+                "r2": 0,
+                "r3": 50347232,
+                "r4": 50331932,
+                "r5": 33582176,
+                "r6": 50346396,
+                "r7": 33582250,
+                "r8": 50347232,
+                "r9": 50331932,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346388,
+                "lr": 134648045,
+                "pc": 134346558,
+                "cpsr": 2147483711
+              }
+            }
+          ],
+          "chance": 0,
+          "rng_draw": 91,
+          "gate_passed": false,
+          "stale_payload_kind": 0,
+          "rng_after": "3c067e728e6b77a1",
+          "payload_kind": 0,
+          "queue_delta": 0
+        },
+        {
+          "kind": 4,
+          "resistance": 101,
+          "synthetic": true,
+          "mutations": [
+            {
+              "space": "ram",
+              "address": "0x3003998",
+              "width": 4,
+              "before": 5,
+              "after": 4
+            },
+            {
+              "space": "ram",
+              "address": "0x2006e7e",
+              "width": 2,
+              "before": 45,
+              "after": 101
+            }
+          ],
+          "stops": [
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648026,
+              "instructions": 447,
+              "frames": 0,
+              "registers": {
+                "r0": 4294967291,
+                "r1": 50,
+                "r2": 3221225472,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134647975,
+                "pc": 134648028,
+                "cpsr": 63
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648086,
+              "instructions": 254,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 1,
+                "r2": 85899345,
+                "r3": 0,
+                "r4": 85899345,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648088,
+                "cpsr": 1610612799
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648106,
+              "instructions": 10,
+              "frames": 0,
+              "registers": {
+                "r0": 1024,
+                "r1": 1025,
+                "r2": 4294902015,
+                "r3": 0,
+                "r4": 85899345,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648108,
+                "cpsr": 63
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134346556,
+              "instructions": 688,
+              "frames": 0,
+              "registers": {
+                "r0": 134346557,
+                "r1": 2,
+                "r2": 67108866,
+                "r3": 50347232,
+                "r4": 50331932,
+                "r5": 33582176,
+                "r6": 50346396,
+                "r7": 33582250,
+                "r8": 50347232,
+                "r9": 50331932,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 60664,
+                "sp": 50346388,
+                "lr": 134648281,
+                "pc": 134346558,
+                "cpsr": 536870975
+              }
+            }
+          ],
+          "chance": 85899345,
+          "rng_draw": 91,
+          "gate_passed": true,
+          "stale_payload_kind": 0,
+          "rng_after": "3c067e728e6b77a1",
+          "payload_kind": 4,
+          "queue_delta": 1
+        },
+        {
+          "kind": 4,
+          "resistance": 125,
+          "synthetic": true,
+          "mutations": [
+            {
+              "space": "ram",
+              "address": "0x3003998",
+              "width": 4,
+              "before": 5,
+              "after": 4
+            },
+            {
+              "space": "ram",
+              "address": "0x2006e7e",
+              "width": 2,
+              "before": 45,
+              "after": 125
+            }
+          ],
+          "stops": [
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648026,
+              "instructions": 447,
+              "frames": 0,
+              "registers": {
+                "r0": 4294967171,
+                "r1": 50,
+                "r2": 3221225472,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134647975,
+                "pc": 134648028,
+                "cpsr": 63
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648086,
+              "instructions": 256,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 1,
+                "r2": 85899343,
+                "r3": 0,
+                "r4": 85899343,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648088,
+                "cpsr": 1610612799
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648106,
+              "instructions": 10,
+              "frames": 0,
+              "registers": {
+                "r0": 1024,
+                "r1": 1025,
+                "r2": 4294902015,
+                "r3": 0,
+                "r4": 85899343,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648108,
+                "cpsr": 63
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134346556,
+              "instructions": 688,
+              "frames": 0,
+              "registers": {
+                "r0": 134346557,
+                "r1": 2,
+                "r2": 67108866,
+                "r3": 50347232,
+                "r4": 50331932,
+                "r5": 33582176,
+                "r6": 50346396,
+                "r7": 33582250,
+                "r8": 50347232,
+                "r9": 50331932,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 60664,
+                "sp": 50346388,
+                "lr": 134648281,
+                "pc": 134346558,
+                "cpsr": 536870975
+              }
+            }
+          ],
+          "chance": 85899343,
+          "rng_draw": 91,
+          "gate_passed": true,
+          "stale_payload_kind": 0,
+          "rng_after": "3c067e728e6b77a1",
+          "payload_kind": 4,
+          "queue_delta": 1
+        }
+      ],
+      "combat_ready_state": "runs/resistance-gameplay-003/original/states/combat-ready.ss1",
+      "combat_ready_sidecar": {
+        "format": "ss2-mgba-state-v1",
+        "rom_sha256": "e5c64a1740263e9b26120e487f3688fbbf7b3954a2c043c0d84c333df467e0b2",
+        "state_sha256": "b4a14fc03686492f5f97469d040b95f1297b550649f3d586a22bca950372c401",
+        "backend_revision": "26b7884bc25a5933960f3cdcd98bac1ae14d42e2",
+        "frame": 13702
+      },
+      "directional_coordinate_observation": {
+        "address": "0x3003d6c",
+        "width": 4,
+        "entry": 16603,
+        "after_16_right": 22201,
+        "after_16_left": 11005,
+        "scope": "Observed directionally opposite responses in indexed player record +0x8C; full position encoding not audited"
+      }
+    },
+    "signed": {
+      "observations": [
+        {
+          "hit": false,
+          "stop": "frame_budget",
+          "address": 134647936,
+          "instructions": 5474256,
+          "frames": 90,
+          "registers": {
+            "r0": 0,
+            "r1": 1,
+            "r2": 1,
+            "r3": 0,
+            "r4": 50336316,
+            "r5": 0,
+            "r6": 0,
+            "r7": 0,
+            "r8": 0,
+            "r9": 0,
+            "r10": 0,
+            "r11": 31,
+            "r12": 67108864,
+            "sp": 50364320,
+            "lr": 504,
+            "pc": 392,
+            "cpsr": 536871058
+          }
+        },
+        {
+          "hit": false,
+          "stop": "frame_budget",
+          "address": 134647936,
+          "instructions": 5704529,
+          "frames": 90,
+          "registers": {
+            "r0": 0,
+            "r1": 1,
+            "r2": 1,
+            "r3": 0,
+            "r4": 50336316,
+            "r5": 0,
+            "r6": 0,
+            "r7": 0,
+            "r8": 0,
+            "r9": 0,
+            "r10": 0,
+            "r11": 31,
+            "r12": 67108864,
+            "sp": 50364320,
+            "lr": 504,
+            "pc": 392,
+            "cpsr": 536871058
+          }
+        },
+        {
+          "hit": false,
+          "stop": "frame_budget",
+          "address": 134647936,
+          "instructions": 4992593,
+          "frames": 90,
+          "registers": {
+            "r0": 0,
+            "r1": 1,
+            "r2": 1,
+            "r3": 0,
+            "r4": 50336316,
+            "r5": 0,
+            "r6": 0,
+            "r7": 0,
+            "r8": 0,
+            "r9": 0,
+            "r10": 0,
+            "r11": 31,
+            "r12": 67108864,
+            "sp": 50364320,
+            "lr": 504,
+            "pc": 392,
+            "cpsr": 536871058
+          }
+        },
+        {
+          "hit": false,
+          "stop": "frame_budget",
+          "address": 134647936,
+          "instructions": 4547160,
+          "frames": 90,
+          "registers": {
+            "r0": 0,
+            "r1": 1,
+            "r2": 1,
+            "r3": 0,
+            "r4": 50336316,
+            "r5": 0,
+            "r6": 0,
+            "r7": 0,
+            "r8": 0,
+            "r9": 0,
+            "r10": 0,
+            "r11": 31,
+            "r12": 67108864,
+            "sp": 50364320,
+            "lr": 504,
+            "pc": 392,
+            "cpsr": 536871058
+          }
+        },
+        {
+          "hit": false,
+          "stop": "frame_budget",
+          "address": 134647936,
+          "instructions": 4284713,
+          "frames": 90,
+          "registers": {
+            "r0": 0,
+            "r1": 1,
+            "r2": 1,
+            "r3": 0,
+            "r4": 50336316,
+            "r5": 0,
+            "r6": 0,
+            "r7": 0,
+            "r8": 0,
+            "r9": 0,
+            "r10": 0,
+            "r11": 31,
+            "r12": 67108864,
+            "sp": 50364320,
+            "lr": 504,
+            "pc": 392,
+            "cpsr": 536871058
+          }
+        },
+        {
+          "hit": false,
+          "stop": "frame_budget",
+          "address": 134647936,
+          "instructions": 4648892,
+          "frames": 90,
+          "registers": {
+            "r0": 0,
+            "r1": 1,
+            "r2": 1,
+            "r3": 0,
+            "r4": 50336316,
+            "r5": 0,
+            "r6": 0,
+            "r7": 0,
+            "r8": 0,
+            "r9": 0,
+            "r10": 0,
+            "r11": 31,
+            "r12": 67108864,
+            "sp": 50364320,
+            "lr": 504,
+            "pc": 392,
+            "cpsr": 536871058
+          }
+        },
+        {
+          "hit": false,
+          "stop": "frame_budget",
+          "address": 134647936,
+          "instructions": 4760377,
+          "frames": 90,
+          "registers": {
+            "r0": 0,
+            "r1": 1,
+            "r2": 1,
+            "r3": 0,
+            "r4": 50336316,
+            "r5": 0,
+            "r6": 0,
+            "r7": 0,
+            "r8": 0,
+            "r9": 0,
+            "r10": 0,
+            "r11": 31,
+            "r12": 67108864,
+            "sp": 50364320,
+            "lr": 504,
+            "pc": 392,
+            "cpsr": 536871058
+          }
+        },
+        {
+          "hit": true,
+          "stop": "hit",
+          "address": 134647936,
+          "instructions": 43303,
+          "frames": 0,
+          "registers": {
+            "r0": 33582712,
+            "r1": 85,
+            "r2": 0,
+            "r3": 0,
+            "r4": 50331932,
+            "r5": 33582176,
+            "r6": 50346396,
+            "r7": 33582250,
+            "r8": 50347232,
+            "r9": 50331932,
+            "r10": 4294901760,
+            "r11": 0,
+            "r12": 50356992,
+            "sp": 50346388,
+            "lr": 134346557,
+            "pc": 134647938,
+            "cpsr": 1073741887
+          }
+        }
+      ],
+      "entry_state": "runs/resistance-gameplay-003/signed/states/natural-combat-call.ss1",
+      "original_effect_kind": 5,
+      "target_id": 4,
+      "resistance_block": "0x2006e78",
+      "entry_sp": "0x3003994",
+      "natural_ram_or_register_writes": false,
+      "entry_ram_sha256": {
+        "0x2000000": "1c35e16874bacbb440a9b0329f9e2908164aac008646e15d24d2bebfb693d843",
+        "0x3000000": "0cf0b00fca7003546536009748b6abef621813a845f7dd3e37a56c8fbc30e53f"
+      },
+      "variants": [
+        {
+          "kind": 1,
+          "resistance": 0,
+          "synthetic": true,
+          "mutations": [
+            {
+              "space": "ram",
+              "address": "0x3003998",
+              "width": 4,
+              "before": 5,
+              "after": 1
+            },
+            {
+              "space": "ram",
+              "address": "0x2006e78",
+              "width": 2,
+              "before": 45,
+              "after": 0
+            }
+          ],
+          "stops": [
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648026,
+              "instructions": 446,
+              "frames": 0,
+              "registers": {
+                "r0": 500,
+                "r1": 25,
+                "r2": 0,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134647975,
+                "pc": 134648028,
+                "cpsr": 63
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648086,
+              "instructions": 105,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 1,
+                "r2": 20,
+                "r3": 16,
+                "r4": 20,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 493,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648088,
+                "cpsr": 1610612799
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648106,
+              "instructions": 2,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 1,
+                "r2": 20,
+                "r3": 16,
+                "r4": 20,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 493,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648108,
+                "cpsr": 2147483711
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134346556,
+              "instructions": 17,
+              "frames": 0,
+              "registers": {
+                "r0": 134346557,
+                "r1": 1,
+                "r2": 20,
+                "r3": 50347232,
+                "r4": 50331932,
+                "r5": 33582176,
+                "r6": 50346396,
+                "r7": 33582250,
+                "r8": 50347232,
+                "r9": 50331932,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 493,
+                "sp": 50346388,
+                "lr": 134648045,
+                "pc": 134346558,
+                "cpsr": 2147483711
+              }
+            }
+          ],
+          "chance": 20,
+          "rng_draw": 91,
+          "gate_passed": false,
+          "stale_payload_kind": 0,
+          "rng_after": "3c067e728e6b77a1",
+          "payload_kind": 0,
+          "queue_delta": 0
+        },
+        {
+          "kind": 1,
+          "resistance": 99,
+          "synthetic": true,
+          "mutations": [
+            {
+              "space": "ram",
+              "address": "0x3003998",
+              "width": 4,
+              "before": 5,
+              "after": 1
+            },
+            {
+              "space": "ram",
+              "address": "0x2006e78",
+              "width": 2,
+              "before": 45,
+              "after": 99
+            }
+          ],
+          "stops": [
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648026,
+              "instructions": 446,
+              "frames": 0,
+              "registers": {
+                "r0": 5,
+                "r1": 25,
+                "r2": 0,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134647975,
+                "pc": 134648028,
+                "cpsr": 63
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648086,
+              "instructions": 45,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 1,
+                "r2": 0,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 28,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648088,
+                "cpsr": 1610612799
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648106,
+              "instructions": 2,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 1,
+                "r2": 0,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 28,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648108,
+                "cpsr": 2147483711
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134346556,
+              "instructions": 17,
+              "frames": 0,
+              "registers": {
+                "r0": 134346557,
+                "r1": 1,
+                "r2": 0,
+                "r3": 50347232,
+                "r4": 50331932,
+                "r5": 33582176,
+                "r6": 50346396,
+                "r7": 33582250,
+                "r8": 50347232,
+                "r9": 50331932,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 28,
+                "sp": 50346388,
+                "lr": 134648045,
+                "pc": 134346558,
+                "cpsr": 2147483711
+              }
+            }
+          ],
+          "chance": 0,
+          "rng_draw": 91,
+          "gate_passed": false,
+          "stale_payload_kind": 0,
+          "rng_after": "3c067e728e6b77a1",
+          "payload_kind": 0,
+          "queue_delta": 0
+        },
+        {
+          "kind": 1,
+          "resistance": 100,
+          "synthetic": true,
+          "mutations": [
+            {
+              "space": "ram",
+              "address": "0x3003998",
+              "width": 4,
+              "before": 5,
+              "after": 1
+            },
+            {
+              "space": "ram",
+              "address": "0x2006e78",
+              "width": 2,
+              "before": 45,
+              "after": 100
+            }
+          ],
+          "stops": [
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648026,
+              "instructions": 446,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 25,
+                "r2": 0,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134647975,
+                "pc": 134648028,
+                "cpsr": 63
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648086,
+              "instructions": 45,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 1,
+                "r2": 0,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 25,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648088,
+                "cpsr": 1610612799
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648106,
+              "instructions": 2,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 1,
+                "r2": 0,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 25,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648108,
+                "cpsr": 2147483711
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134346556,
+              "instructions": 17,
+              "frames": 0,
+              "registers": {
+                "r0": 134346557,
+                "r1": 1,
+                "r2": 0,
+                "r3": 50347232,
+                "r4": 50331932,
+                "r5": 33582176,
+                "r6": 50346396,
+                "r7": 33582250,
+                "r8": 50347232,
+                "r9": 50331932,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 25,
+                "sp": 50346388,
+                "lr": 134648045,
+                "pc": 134346558,
+                "cpsr": 2147483711
+              }
+            }
+          ],
+          "chance": 0,
+          "rng_draw": 91,
+          "gate_passed": false,
+          "stale_payload_kind": 0,
+          "rng_after": "3c067e728e6b77a1",
+          "payload_kind": 0,
+          "queue_delta": 0
+        },
+        {
+          "kind": 1,
+          "resistance": 101,
+          "synthetic": true,
+          "mutations": [
+            {
+              "space": "ram",
+              "address": "0x3003998",
+              "width": 4,
+              "before": 5,
+              "after": 1
+            },
+            {
+              "space": "ram",
+              "address": "0x2006e78",
+              "width": 2,
+              "before": 45,
+              "after": 101
+            }
+          ],
+          "stops": [
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648026,
+              "instructions": 446,
+              "frames": 0,
+              "registers": {
+                "r0": 4294967291,
+                "r1": 25,
+                "r2": 0,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134647975,
+                "pc": 134648028,
+                "cpsr": 63
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648086,
+              "instructions": 47,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 1,
+                "r2": 0,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 4294967266,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648088,
+                "cpsr": 1610612799
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648106,
+              "instructions": 2,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 1,
+                "r2": 0,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 4294967266,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648108,
+                "cpsr": 2147483711
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134346556,
+              "instructions": 17,
+              "frames": 0,
+              "registers": {
+                "r0": 134346557,
+                "r1": 1,
+                "r2": 0,
+                "r3": 50347232,
+                "r4": 50331932,
+                "r5": 33582176,
+                "r6": 50346396,
+                "r7": 33582250,
+                "r8": 50347232,
+                "r9": 50331932,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 4294967266,
+                "sp": 50346388,
+                "lr": 134648045,
+                "pc": 134346558,
+                "cpsr": 2147483711
+              }
+            }
+          ],
+          "chance": 0,
+          "rng_draw": 91,
+          "gate_passed": false,
+          "stale_payload_kind": 0,
+          "rng_after": "3c067e728e6b77a1",
+          "payload_kind": 0,
+          "queue_delta": 0
+        },
+        {
+          "kind": 1,
+          "resistance": 125,
+          "synthetic": true,
+          "mutations": [
+            {
+              "space": "ram",
+              "address": "0x3003998",
+              "width": 4,
+              "before": 5,
+              "after": 1
+            },
+            {
+              "space": "ram",
+              "address": "0x2006e78",
+              "width": 2,
+              "before": 45,
+              "after": 125
+            }
+          ],
+          "stops": [
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648026,
+              "instructions": 446,
+              "frames": 0,
+              "registers": {
+                "r0": 4294967171,
+                "r1": 25,
+                "r2": 0,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134647975,
+                "pc": 134648028,
+                "cpsr": 63
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648086,
+              "instructions": 100,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 1,
+                "r2": 5,
+                "r3": 1,
+                "r4": 4294967291,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 4294967194,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648088,
+                "cpsr": 1610612799
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648106,
+              "instructions": 2,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 1,
+                "r2": 5,
+                "r3": 1,
+                "r4": 4294967291,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 4294967194,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648108,
+                "cpsr": 2684354623
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134346556,
+              "instructions": 17,
+              "frames": 0,
+              "registers": {
+                "r0": 134346557,
+                "r1": 1,
+                "r2": 5,
+                "r3": 50347232,
+                "r4": 50331932,
+                "r5": 33582176,
+                "r6": 50346396,
+                "r7": 33582250,
+                "r8": 50347232,
+                "r9": 50331932,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 4294967194,
+                "sp": 50346388,
+                "lr": 134648045,
+                "pc": 134346558,
+                "cpsr": 2147483711
+              }
+            }
+          ],
+          "chance": -5,
+          "rng_draw": 91,
+          "gate_passed": false,
+          "stale_payload_kind": 0,
+          "rng_after": "3c067e728e6b77a1",
+          "payload_kind": 0,
+          "queue_delta": 0
+        },
+        {
+          "kind": 4,
+          "resistance": 0,
+          "synthetic": true,
+          "mutations": [
+            {
+              "space": "ram",
+              "address": "0x3003998",
+              "width": 4,
+              "before": 5,
+              "after": 4
+            },
+            {
+              "space": "ram",
+              "address": "0x2006e7e",
+              "width": 2,
+              "before": 45,
+              "after": 0
+            }
+          ],
+          "stops": [
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648026,
+              "instructions": 447,
+              "frames": 0,
+              "registers": {
+                "r0": 500,
+                "r1": 50,
+                "r2": 3221225472,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134647975,
+                "pc": 134648028,
+                "cpsr": 63
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648086,
+              "instructions": 82,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 1,
+                "r2": 10,
+                "r3": 16,
+                "r4": 10,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 454,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648088,
+                "cpsr": 1610612799
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648106,
+              "instructions": 2,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 1,
+                "r2": 10,
+                "r3": 16,
+                "r4": 10,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 454,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648108,
+                "cpsr": 2147483711
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134346556,
+              "instructions": 17,
+              "frames": 0,
+              "registers": {
+                "r0": 134346557,
+                "r1": 1,
+                "r2": 10,
+                "r3": 50347232,
+                "r4": 50331932,
+                "r5": 33582176,
+                "r6": 50346396,
+                "r7": 33582250,
+                "r8": 50347232,
+                "r9": 50331932,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 454,
+                "sp": 50346388,
+                "lr": 134648045,
+                "pc": 134346558,
+                "cpsr": 2147483711
+              }
+            }
+          ],
+          "chance": 10,
+          "rng_draw": 91,
+          "gate_passed": false,
+          "stale_payload_kind": 0,
+          "rng_after": "3c067e728e6b77a1",
+          "payload_kind": 0,
+          "queue_delta": 0
+        },
+        {
+          "kind": 4,
+          "resistance": 99,
+          "synthetic": true,
+          "mutations": [
+            {
+              "space": "ram",
+              "address": "0x3003998",
+              "width": 4,
+              "before": 5,
+              "after": 4
+            },
+            {
+              "space": "ram",
+              "address": "0x2006e7e",
+              "width": 2,
+              "before": 45,
+              "after": 99
+            }
+          ],
+          "stops": [
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648026,
+              "instructions": 447,
+              "frames": 0,
+              "registers": {
+                "r0": 5,
+                "r1": 50,
+                "r2": 3221225472,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134647975,
+                "pc": 134648028,
+                "cpsr": 63
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648086,
+              "instructions": 45,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 1,
+                "r2": 0,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 55,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648088,
+                "cpsr": 1610612799
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648106,
+              "instructions": 2,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 1,
+                "r2": 0,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 55,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648108,
+                "cpsr": 2147483711
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134346556,
+              "instructions": 17,
+              "frames": 0,
+              "registers": {
+                "r0": 134346557,
+                "r1": 1,
+                "r2": 0,
+                "r3": 50347232,
+                "r4": 50331932,
+                "r5": 33582176,
+                "r6": 50346396,
+                "r7": 33582250,
+                "r8": 50347232,
+                "r9": 50331932,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 55,
+                "sp": 50346388,
+                "lr": 134648045,
+                "pc": 134346558,
+                "cpsr": 2147483711
+              }
+            }
+          ],
+          "chance": 0,
+          "rng_draw": 91,
+          "gate_passed": false,
+          "stale_payload_kind": 0,
+          "rng_after": "3c067e728e6b77a1",
+          "payload_kind": 0,
+          "queue_delta": 0
+        },
+        {
+          "kind": 4,
+          "resistance": 100,
+          "synthetic": true,
+          "mutations": [
+            {
+              "space": "ram",
+              "address": "0x3003998",
+              "width": 4,
+              "before": 5,
+              "after": 4
+            },
+            {
+              "space": "ram",
+              "address": "0x2006e7e",
+              "width": 2,
+              "before": 45,
+              "after": 100
+            }
+          ],
+          "stops": [
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648026,
+              "instructions": 447,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 50,
+                "r2": 3221225472,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134647975,
+                "pc": 134648028,
+                "cpsr": 63
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648086,
+              "instructions": 45,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 1,
+                "r2": 0,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 50,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648088,
+                "cpsr": 1610612799
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648106,
+              "instructions": 2,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 1,
+                "r2": 0,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 50,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648108,
+                "cpsr": 2147483711
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134346556,
+              "instructions": 17,
+              "frames": 0,
+              "registers": {
+                "r0": 134346557,
+                "r1": 1,
+                "r2": 0,
+                "r3": 50347232,
+                "r4": 50331932,
+                "r5": 33582176,
+                "r6": 50346396,
+                "r7": 33582250,
+                "r8": 50347232,
+                "r9": 50331932,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 50,
+                "sp": 50346388,
+                "lr": 134648045,
+                "pc": 134346558,
+                "cpsr": 2147483711
+              }
+            }
+          ],
+          "chance": 0,
+          "rng_draw": 91,
+          "gate_passed": false,
+          "stale_payload_kind": 0,
+          "rng_after": "3c067e728e6b77a1",
+          "payload_kind": 0,
+          "queue_delta": 0
+        },
+        {
+          "kind": 4,
+          "resistance": 101,
+          "synthetic": true,
+          "mutations": [
+            {
+              "space": "ram",
+              "address": "0x3003998",
+              "width": 4,
+              "before": 5,
+              "after": 4
+            },
+            {
+              "space": "ram",
+              "address": "0x2006e7e",
+              "width": 2,
+              "before": 45,
+              "after": 101
+            }
+          ],
+          "stops": [
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648026,
+              "instructions": 447,
+              "frames": 0,
+              "registers": {
+                "r0": 4294967291,
+                "r1": 50,
+                "r2": 3221225472,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134647975,
+                "pc": 134648028,
+                "cpsr": 63
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648086,
+              "instructions": 47,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 1,
+                "r2": 0,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 4294967241,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648088,
+                "cpsr": 1610612799
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648106,
+              "instructions": 2,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 1,
+                "r2": 0,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 4294967241,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648108,
+                "cpsr": 2147483711
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134346556,
+              "instructions": 17,
+              "frames": 0,
+              "registers": {
+                "r0": 134346557,
+                "r1": 1,
+                "r2": 0,
+                "r3": 50347232,
+                "r4": 50331932,
+                "r5": 33582176,
+                "r6": 50346396,
+                "r7": 33582250,
+                "r8": 50347232,
+                "r9": 50331932,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 4294967241,
+                "sp": 50346388,
+                "lr": 134648045,
+                "pc": 134346558,
+                "cpsr": 2147483711
+              }
+            }
+          ],
+          "chance": 0,
+          "rng_draw": 91,
+          "gate_passed": false,
+          "stale_payload_kind": 0,
+          "rng_after": "3c067e728e6b77a1",
+          "payload_kind": 0,
+          "queue_delta": 0
+        },
+        {
+          "kind": 4,
+          "resistance": 125,
+          "synthetic": true,
+          "mutations": [
+            {
+              "space": "ram",
+              "address": "0x3003998",
+              "width": 4,
+              "before": 5,
+              "after": 4
+            },
+            {
+              "space": "ram",
+              "address": "0x2006e7e",
+              "width": 2,
+              "before": 45,
+              "after": 125
+            }
+          ],
+          "stops": [
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648026,
+              "instructions": 447,
+              "frames": 0,
+              "registers": {
+                "r0": 4294967171,
+                "r1": 50,
+                "r2": 3221225472,
+                "r3": 1,
+                "r4": 0,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 2,
+                "sp": 50346348,
+                "lr": 134647975,
+                "pc": 134648028,
+                "cpsr": 63
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648086,
+              "instructions": 101,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 1,
+                "r2": 2,
+                "r3": 1,
+                "r4": 4294967294,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 4294967217,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648088,
+                "cpsr": 1610612799
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134648106,
+              "instructions": 2,
+              "frames": 0,
+              "registers": {
+                "r0": 0,
+                "r1": 1,
+                "r2": 2,
+                "r3": 1,
+                "r4": 4294967294,
+                "r5": 91,
+                "r6": 33582712,
+                "r7": 100,
+                "r8": 4,
+                "r9": 85,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 4294967217,
+                "sp": 50346348,
+                "lr": 134648045,
+                "pc": 134648108,
+                "cpsr": 2684354623
+              }
+            },
+            {
+              "hit": true,
+              "stop": "hit",
+              "address": 134346556,
+              "instructions": 17,
+              "frames": 0,
+              "registers": {
+                "r0": 134346557,
+                "r1": 1,
+                "r2": 2,
+                "r3": 50347232,
+                "r4": 50331932,
+                "r5": 33582176,
+                "r6": 50346396,
+                "r7": 33582250,
+                "r8": 50347232,
+                "r9": 50331932,
+                "r10": 4294901760,
+                "r11": 0,
+                "r12": 4294967217,
+                "sp": 50346388,
+                "lr": 134648045,
+                "pc": 134346558,
+                "cpsr": 2147483711
+              }
+            }
+          ],
+          "chance": -2,
+          "rng_draw": 91,
+          "gate_passed": false,
+          "stale_payload_kind": 0,
+          "rng_after": "3c067e728e6b77a1",
+          "payload_kind": 0,
+          "queue_delta": 0
+        }
+      ],
+      "combat_ready_state": "runs/resistance-gameplay-003/signed/states/combat-ready.ss1",
+      "combat_ready_sidecar": {
+        "format": "ss2-mgba-state-v1",
+        "rom_sha256": "3e62e1035485b5fe3e4af1040625626686cb886d5680cfb8f2e4a2a721467d5e",
+        "state_sha256": "dfebe678dceace2577ddfc517da65564d585544fb5bd17ad2405573e160eaee8",
+        "backend_revision": "26b7884bc25a5933960f3cdcd98bac1ae14d42e2",
+        "frame": 13702
+      },
+      "directional_coordinate_observation": {
+        "address": "0x3003d6c",
+        "width": 4,
+        "entry": 16603,
+        "after_16_right": 22201,
+        "after_16_left": 11005,
+        "scope": "Observed directionally opposite responses in indexed player record +0x8C; full position encoding not audited"
+      }
+    }
+  },
+  "result": "PASS",
+  "source_inputs_unchanged": true,
+  "assertion_count": 186,
+  "passed_assertions": 186
+}

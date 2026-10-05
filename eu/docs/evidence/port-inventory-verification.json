@@ -1,0 +1,106 @@
+{
+  "result": "PASS",
+  "definitions": [
+    {
+      "id": "counter_fix",
+      "source_preimages": 2,
+      "comparison_preimages": 2
+    },
+    {
+      "id": "equipment_set_balance_rework",
+      "source_preimages": 288,
+      "comparison_preimages": 288
+    },
+    {
+      "id": "four_digit_ui_display",
+      "source_preimages": 645,
+      "comparison_preimages": 645
+    },
+    {
+      "id": "level_250",
+      "source_preimages": 227,
+      "comparison_preimages": 3
+    },
+    {
+      "id": "life_leech",
+      "source_preimages": 16,
+      "comparison_preimages": 16
+    },
+    {
+      "id": "money_drop_control",
+      "source_preimages": 8,
+      "comparison_preimages": 8
+    },
+    {
+      "id": "per_character_attribute_caps",
+      "source_preimages": 11,
+      "comparison_preimages": 11
+    },
+    {
+      "id": "persistent_archer_and_dark_mage_summons",
+      "source_preimages": 2,
+      "comparison_preimages": 2
+    },
+    {
+      "id": "respec",
+      "source_preimages": 3,
+      "comparison_preimages": 3
+    },
+    {
+      "id": "ring_balance_rework",
+      "source_preimages": 16,
+      "comparison_preimages": 16
+    },
+    {
+      "id": "shared_character_warehouses",
+      "source_preimages": 525,
+      "comparison_preimages": 42
+    },
+    {
+      "id": "soul_return_auto_revive",
+      "source_preimages": 13,
+      "comparison_preimages": 13
+    },
+    {
+      "id": "soul_ring",
+      "source_preimages": 18,
+      "comparison_preimages": 18
+    },
+    {
+      "id": "stackable_consumables",
+      "source_preimages": 125,
+      "comparison_preimages": 125
+    },
+    {
+      "id": "status_resistance_overflow_fix",
+      "source_preimages": 1,
+      "comparison_preimages": 1
+    },
+    {
+      "id": "temple_soul_fusion_rework",
+      "source_preimages": 135,
+      "comparison_preimages": 135
+    },
+    {
+      "id": "weapon_balance_rework",
+      "source_preimages": 48,
+      "comparison_preimages": 48
+    },
+    {
+      "id": "world_map_warehouse",
+      "source_preimages": 1,
+      "comparison_preimages": 1
+    },
+    {
+      "id": "all_17_released",
+      "source_preimages": 1559,
+      "comparison_preimages": 1335
+    },
+    {
+      "id": "all_18_beta",
+      "source_preimages": 2084,
+      "comparison_preimages": 1377
+    }
+  ],
+  "source_inputs_unchanged": true
+}

@@ -1,0 +1,16 @@
+{
+  "runtime": {
+    "repository": "https://github.com/mgba-emu/mgba",
+    "release": "0.10.5",
+    "revision": "26b7884bc25a5933960f3cdcd98bac1ae14d42e2",
+    "license": "MPL-2.0",
+    "source_subdir": "vendor/mgba",
+    "modified_upstream_files": []
+  },
+  "evaluated_binding": {
+    "repository": "https://github.com/tangobattle/mgba-rs",
+    "revision": "2edba1ed2cfb3f54ab3b941d944ea1f82cc1f4b6",
+    "used_at_runtime": false,
+    "reason": "Rust and Cargo are absent; the public C core provides the required automation with a small adapter and existing toolchain."
+  }
+}

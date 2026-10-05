@@ -1,0 +1,20 @@
+[
+  {
+    "source_offset": "0xbaa7c",
+    "eu_offset": "0xb956c",
+    "length": 128,
+    "prefix_sha256": "489a73608ef1df5d50ddb342636e0bf4bc75f12039ec84558562c29388fd4302",
+    "aligned_hits": [
+      "0xb956c"
+    ]
+  },
+  {
+    "source_offset": "0xba8a4",
+    "eu_offset": "0xb9394",
+    "length": 128,
+    "prefix_sha256": "c45a54a8220840e15be2ce679dcfbc4e0622099cd8e7e8c26e5db4d5bb77a91a",
+    "aligned_hits": [
+      "0xb9394"
+    ]
+  }
+]

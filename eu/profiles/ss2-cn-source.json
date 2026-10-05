@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "id": "ss2-cn-source",
+  "name": "Chinese translated source (AU2J header)",
+  "role": "16 MiB source comparison only",
+  "identity": {
+    "size": 16777216,
+    "md5": "f0fcaea675a008979846bcb5e381c49c",
+    "sha256": "8a7ebaa88682995fd7bf1bf8dc8e77a3f4fc4a9893a7639af953c553821d9ab9",
+    "crc32": "0DFB6770"
+  },
+  "gba_header": {
+    "title": "SHININGSOUL2",
+    "game_code": "AU2J",
+    "maker_code": "8P",
+    "revision": 0,
+    "checksum_valid": true
+  },
+  "provenance": {
+    "kind": "local_file_hash_verification",
+    "filename_hint": "ss2-cn-source.gba",
+    "verified_utc": "2026-10-04",
+    "note": "Hashes computed from supplied ROM bytes; region/language labels are descriptive, not inferred from filename or header alone."
+  }
+}

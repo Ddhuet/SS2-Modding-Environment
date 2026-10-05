@@ -1,0 +1,4224 @@
+{
+  "schema_version": 1,
+  "id": "shared_character_warehouses",
+  "name": "多角色共享访问仓库",
+  "stage": "beta",
+  "baseline": {
+    "filename": "SS2_SC_bug_fixed.GBA",
+    "size": 33554432,
+    "md5": "35eb6567d94f855480c5d7ba2dff4389",
+    "sha256": "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989",
+    "crc32": "AFCFC96D"
+  },
+  "source_provenance": {
+    "kind": "official_offline_builder_bundle",
+    "source": "光明之魂2_离线补丁构建器_0830.html",
+    "generated_from_current_baseline": true
+  },
+  "evidence": {
+    "static_rebuild": "passed upstream",
+    "dynamic_combination_test": "not_run"
+  },
+  "writes": [
+    {
+      "address": "0x08002E7A",
+      "offset": "0x00002E7A",
+      "before_hex": "9698c000a7909699989a",
+      "after_hex": "01480047000001c00b08",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080836F8",
+      "offset": "0x000836F8",
+      "before_hex": "7cf77afe",
+      "after_hex": "38f0fcfc",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080838A8",
+      "offset": "0x000838A8",
+      "before_hex": "114a1068",
+      "after_hex": "38f038fc",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080851BC",
+      "offset": "0x000851BC",
+      "before_hex": "05",
+      "after_hex": "00",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080851BE",
+      "offset": "0x000851BE",
+      "before_hex": "7cf769f92060",
+      "after_hex": "004771c00b08",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC000",
+      "offset": "0x000BC000",
+      "before_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "fcb5164a1388082003421ed19d9c072c1bd8201cbef73efd012816d1201c07a90f4b104a96461847",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC029",
+      "offset": "0x000BC029",
+      "before_hex": "0000000000000000000000000000000000000000000000",
+      "after_hex": "2802d00e49086004e00d48211c80221143016076f7def8",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC041",
+      "offset": "0x000BC041",
+      "before_hex": "00000000000000",
+      "after_hex": "f092f8bef7b2fc",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC049",
+      "offset": "0x000BC049",
+      "before_hex": "00000000000000000000",
+      "after_hex": "dffcbc01bc86469698c0",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC054",
+      "offset": "0x000BC054",
+      "before_hex": "00000000000000000000",
+      "after_hex": "a7909699044b18473001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC05F",
+      "offset": "0x000BC05F",
+      "before_hex": "000000",
+      "after_hex": "040110",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC063",
+      "offset": "0x000BC063",
+      "before_hex": "00000000000000",
+      "after_hex": "0929c00b08e037",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC06B",
+      "offset": "0x000BC06B",
+      "before_hex": "000000",
+      "after_hex": "02832e",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC06F",
+      "offset": "0x000BC06F",
+      "before_hex": "00000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "0840b5072d0cd117490968174b994202d30a78a92a02d08022114201d01348",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC08F",
+      "offset": "0x000BC08F",
+      "before_hex": "0000000000000000000000",
+      "after_hex": "e0134845f7fff92060061c",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC09B",
+      "offset": "0x000BC09B",
+      "before_hex": "00000000000000",
+      "after_hex": "2815d011490918",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC0A3",
+      "offset": "0x000BC0A3",
+      "before_hex": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "220a70072d0fd10a4909680a4b994202d30a78a92a02d08022114204d0094b0a4a96461847301c40bc04bc9646074a1047e037",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC0D7",
+      "offset": "0x000BC0D7",
+      "before_hex": "00",
+      "after_hex": "02",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC0DB",
+      "offset": "0x000BC0DB",
+      "before_hex": "000000",
+      "after_hex": "02502a",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC0E0",
+      "offset": "0x000BC0E0",
+      "before_hex": "0000",
+      "after_hex": "2806",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC0E4",
+      "offset": "0x000BC0E4",
+      "before_hex": "0000",
+      "after_hex": "2406",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC0E8",
+      "offset": "0x000BC0E8",
+      "before_hex": "0000",
+      "after_hex": "c511",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC0EB",
+      "offset": "0x000BC0EB",
+      "before_hex": "000000000000000000",
+      "after_hex": "09c9c00b08c5510808",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC0F5",
+      "offset": "0x000BC0F5",
+      "before_hex": "000000000000000000000000000000000000000000",
+      "after_hex": "b5054b054a9646184744f777f9044b044a96461847",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC10B",
+      "offset": "0x000BC10B",
+      "before_hex": "000000",
+      "after_hex": "bda913",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC10F",
+      "offset": "0x000BC10F",
+      "before_hex": "00000000000000",
+      "after_hex": "09ffc00b08dd12",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC117",
+      "offset": "0x000BC117",
+      "before_hex": "0000000000",
+      "after_hex": "090bc10b08",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC11D",
+      "offset": "0x000BC11D",
+      "before_hex": "000000",
+      "after_hex": "b50b48",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC121",
+      "offset": "0x000BC121",
+      "before_hex": "00",
+      "after_hex": "68",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC123",
+      "offset": "0x000BC123",
+      "before_hex": "00000000000000",
+      "after_hex": "280cd00a494018",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC12B",
+      "offset": "0x000BC12B",
+      "before_hex": "000000000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "78a72807d1084b094a9646184704bc9646074b184704bc9646064a1068064b1847",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC14D",
+      "offset": "0x000BC14D",
+      "before_hex": "00",
+      "after_hex": "65",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC14F",
+      "offset": "0x000BC14F",
+      "before_hex": "000000",
+      "after_hex": "032406",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC154",
+      "offset": "0x000BC154",
+      "before_hex": "0000",
+      "after_hex": "c115",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC157",
+      "offset": "0x000BC157",
+      "before_hex": "0000000000000000000000",
+      "after_hex": "0939c10b087b3908088035",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC163",
+      "offset": "0x000BC163",
+      "before_hex": "0000000000000000000000000000000000",
+      "after_hex": "03ad38080820b4211c09030d4809180d48",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC175",
+      "offset": "0x000BC175",
+      "before_hex": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "680d4a8018221c12030c4bd21813785578084a1268723213705570084a0b78037001300131013af9d120bc7047",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC1A4",
+      "offset": "0x000BC1A4",
+      "before_hex": "0000",
+      "after_hex": "e802",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC1A7",
+      "offset": "0x000BC1A7",
+      "before_hex": "000000",
+      "after_hex": "0e8035",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC1AB",
+      "offset": "0x000BC1AB",
+      "before_hex": "000000",
+      "after_hex": "03e802",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC1B0",
+      "offset": "0x000BC1B0",
+      "before_hex": "00",
+      "after_hex": "72",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x080BC1B3",
+      "offset": "0x000BC1B3",
+      "before_hex": "000000",
+      "after_hex": "0eb004",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001000",
+      "offset": "0x01001000",
+      "before_hex": "0000000000000000",
+      "after_hex": "f0b5041c0f1c6248",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001009",
+      "offset": "0x01001009",
+      "before_hex": "000000",
+      "after_hex": "f066ff",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900100D",
+      "offset": "0x0100100D",
+      "before_hex": "00000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "2802d1f0bc02bc0847061ca9213170747034216143c9191031301c04303422",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900102D",
+      "offset": "0x0100102D",
+      "before_hex": "000000000000",
+      "after_hex": "f026fb251c6d",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001034",
+      "offset": "0x01001034",
+      "before_hex": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "381c5749401840190188321c38321180381c5449401840190188321c3a321180381c5149401840190188321c3c3211800120321c3e321070381c4c494018",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001073",
+      "offset": "0x01001073",
+      "before_hex": "00000000000000",
+      "after_hex": "68342161434018",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900107B",
+      "offset": "0x0100107B",
+      "before_hex": "000000000000000000",
+      "after_hex": "68321c403210600125",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001085",
+      "offset": "0x01001085",
+      "before_hex": "00000000000000",
+      "after_hex": "23381c46494018",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900108D",
+      "offset": "0x0100108D",
+      "before_hex": "00000000000000",
+      "after_hex": "68a34208d20178",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001095",
+      "offset": "0x01001095",
+      "before_hex": "0000000000",
+      "after_hex": "2901d00135",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900109B",
+      "offset": "0x0100109B",
+      "before_hex": "00000000000000000000",
+      "after_hex": "e0043570300133f4e7ed",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090010A6",
+      "offset": "0x010010A6",
+      "before_hex": "00000000000000000000000000000000",
+      "after_hex": "40484019051c291c0439301c64300822",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090010B7",
+      "offset": "0x010010B7",
+      "before_hex": "000000000000000000000000000000000000000000",
+      "after_hex": "f0e1fa29888905890d49013a480918301c6c30394a",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090010CD",
+      "offset": "0x010010CD",
+      "before_hex": "0000000000",
+      "after_hex": "f0d6fa2888",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090010D3",
+      "offset": "0x010010D3",
+      "before_hex": "00000000000000000000000000",
+      "after_hex": "0b400137490918301c44302022",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090010E1",
+      "offset": "0x010010E1",
+      "before_hex": "000000000000000000000000000000000000000000000000000000",
+      "after_hex": "f0ccfa301c20300f21102201700130013afbd1381c2b4940180768",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090010FD",
+      "offset": "0x010010FD",
+      "before_hex": "000000000000000000",
+      "after_hex": "240125201c23214843",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001107",
+      "offset": "0x01001107",
+      "before_hex": "00000000000000",
+      "after_hex": "0180192b494018",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900110F",
+      "offset": "0x0100110F",
+      "before_hex": "0000000000",
+      "after_hex": "2101703978",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001115",
+      "offset": "0x01001115",
+      "before_hex": "000000000000000000000000",
+      "after_hex": "2932d0012101700430291cc9",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001122",
+      "offset": "0x01001122",
+      "before_hex": "000000000000",
+      "after_hex": "264a89180822",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001129",
+      "offset": "0x01001129",
+      "before_hex": "000000000000",
+      "after_hex": "f0a8fa291cc9",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001130",
+      "offset": "0x01001130",
+      "before_hex": "0000000000000000000000000000000000000000",
+      "after_hex": "1d4809180988090b49011e480918201c23225043",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001145",
+      "offset": "0x01001145",
+      "before_hex": "000000000000000000",
+      "after_hex": "018019164a80182022",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900114F",
+      "offset": "0x0100114F",
+      "before_hex": "000000000000",
+      "after_hex": "f095fa291cc9",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001156",
+      "offset": "0x01001156",
+      "before_hex": "00000000000000000000000000000000000000000000",
+      "after_hex": "1448091809888905890d490112480918201c23225043",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900116D",
+      "offset": "0x0100116D",
+      "before_hex": "000000000000000000",
+      "after_hex": "018019134a80180e4a",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001177",
+      "offset": "0x01001177",
+      "before_hex": "0000000000",
+      "after_hex": "f081fa0135",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900117D",
+      "offset": "0x0100117D",
+      "before_hex": "000000000000000000000000000000000000000000",
+      "after_hex": "e0043570370134082cbbd3301cf0bc02bc08471014",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001194",
+      "offset": "0x01001194",
+      "before_hex": "0000",
+      "after_hex": "3802",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001198",
+      "offset": "0x01001198",
+      "before_hex": "0000",
+      "after_hex": "1802",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900119C",
+      "offset": "0x0100119C",
+      "before_hex": "0000",
+      "after_hex": "2802",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090011A0",
+      "offset": "0x010011A0",
+      "before_hex": "0000",
+      "after_hex": "9802",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090011A4",
+      "offset": "0x010011A4",
+      "before_hex": "0000",
+      "after_hex": "8c02",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090011A8",
+      "offset": "0x010011A8",
+      "before_hex": "00",
+      "after_hex": "04",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090011AB",
+      "offset": "0x010011AB",
+      "before_hex": "00",
+      "after_hex": "07",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090011AE",
+      "offset": "0x010011AE",
+      "before_hex": "0000",
+      "after_hex": "0106",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090011B1",
+      "offset": "0x010011B1",
+      "before_hex": "00",
+      "after_hex": "02",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090011B5",
+      "offset": "0x010011B5",
+      "before_hex": "00",
+      "after_hex": "02",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090011B7",
+      "offset": "0x010011B7",
+      "before_hex": "000000",
+      "after_hex": "058002",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090011BF",
+      "offset": "0x010011BF",
+      "before_hex": "000000",
+      "after_hex": "07ac02",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090011C4",
+      "offset": "0x010011C4",
+      "before_hex": "000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "f0b5061c38480568384a954204d32878a92801d1697803e0291c07200140",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090011E3",
+      "offset": "0x010011E3",
+      "before_hex": "000000000000000000000000000000",
+      "after_hex": "2531480160324fbf19a72038717971",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090011F3",
+      "offset": "0x010011F3",
+      "before_hex": "0000000000000000000000",
+      "after_hex": "20b871f87138727872b972",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090011FF",
+      "offset": "0x010011FF",
+      "before_hex": "000000000000000000000000000000",
+      "after_hex": "2d0bd0301c2c494018291c04312b4a",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900120F",
+      "offset": "0x0100120F",
+      "before_hex": "0000000000",
+      "after_hex": "f035fa281c",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001215",
+      "offset": "0x01001215",
+      "before_hex": "0000000000000000000000",
+      "after_hex": "f062fe04e0301c28494018",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001221",
+      "offset": "0x01001221",
+      "before_hex": "000000",
+      "after_hex": "210170",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001225",
+      "offset": "0x01001225",
+      "before_hex": "000000",
+      "after_hex": "24201c",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001229",
+      "offset": "0x01001229",
+      "before_hex": "000000000000000000",
+      "after_hex": "03264d2d18281c2549",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001233",
+      "offset": "0x01001233",
+      "before_hex": "00000000000000000000000000000000000000",
+      "after_hex": "f035fa2449695c884210d123484019071c2249",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001247",
+      "offset": "0x01001247",
+      "before_hex": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "f02bfa2149795c884206d1184b9b1999790120a040014399710134082cdfd3134b9b195c7999790120a040014209d1",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001277",
+      "offset": "0x01001277",
+      "before_hex": "0000000000000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "240120a040014203d10134082cf8d30ee05c71211c09030d480918301c0f4a80180f4a",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900129B",
+      "offset": "0x0100129B",
+      "before_hex": "00000000000000",
+      "after_hex": "f0f8f9301c211c",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090012A3",
+      "offset": "0x010012A3",
+      "before_hex": "00000000000000",
+      "after_hex": "f03ff9f0bc01bc",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090012AB",
+      "offset": "0x010012AB",
+      "before_hex": "000000",
+      "after_hex": "47e037",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090012AF",
+      "offset": "0x010012AF",
+      "before_hex": "00",
+      "after_hex": "02",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090012B3",
+      "offset": "0x010012B3",
+      "before_hex": "000000",
+      "after_hex": "022006",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090012B8",
+      "offset": "0x010012B8",
+      "before_hex": "0000",
+      "after_hex": "3016",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090012BC",
+      "offset": "0x010012BC",
+      "before_hex": "0000",
+      "after_hex": "fc13",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090012C0",
+      "offset": "0x010012C0",
+      "before_hex": "0000",
+      "after_hex": "6a16",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090012C7",
+      "offset": "0x010012C7",
+      "before_hex": "000000",
+      "after_hex": "0eac0c",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090012CD",
+      "offset": "0x010012CD",
+      "before_hex": "00",
+      "after_hex": "80",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090012D0",
+      "offset": "0x010012D0",
+      "before_hex": "0000",
+      "after_hex": "1c05",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090012D4",
+      "offset": "0x010012D4",
+      "before_hex": "0000",
+      "after_hex": "3006",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090012D9",
+      "offset": "0x010012D9",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090012DC",
+      "offset": "0x010012DC",
+      "before_hex": "000000000000",
+      "after_hex": "f0b527480668",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090012E3",
+      "offset": "0x010012E3",
+      "before_hex": "000000000000000000000000000000",
+      "after_hex": "2e47d0264fbf193879a72842d12448",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090012F3",
+      "offset": "0x010012F3",
+      "before_hex": "00000000000000",
+      "after_hex": "880821084202d0",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090012FB",
+      "offset": "0x010012FB",
+      "before_hex": "00000000000000",
+      "after_hex": "2038723ae0387a",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001303",
+      "offset": "0x01001303",
+      "before_hex": "000000000000000000000000000000000000000000000000000000",
+      "after_hex": "2837d1012038721f4a10880821884310801d4a108888431080301c",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900131F",
+      "offset": "0x0100131F",
+      "before_hex": "00000000000000",
+      "after_hex": "f05df97c79bd79",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001327",
+      "offset": "0x01001327",
+      "before_hex": "000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "230134072004400133082b20d80120a0400542f5d07c71211c090313480918301c124a8018124a",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900134F",
+      "offset": "0x0100134F",
+      "before_hex": "00000000000000",
+      "after_hex": "f09ef9301c211c",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001357",
+      "offset": "0x01001357",
+      "before_hex": "000000",
+      "after_hex": "f0e5f8",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900135B",
+      "offset": "0x0100135B",
+      "before_hex": "0000000000000000000000000000000000",
+      "after_hex": "207064311c0e480918301c0e4a80180e4a",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900136D",
+      "offset": "0x0100136D",
+      "before_hex": "0000000000",
+      "after_hex": "f086f90e20",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001373",
+      "offset": "0x01001373",
+      "before_hex": "00000000000000",
+      "after_hex": "f0bbfdf0bc01bc",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900137B",
+      "offset": "0x0100137B",
+      "before_hex": "00",
+      "after_hex": "47",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900137D",
+      "offset": "0x0100137D",
+      "before_hex": "00",
+      "after_hex": "65",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900137F",
+      "offset": "0x0100137F",
+      "before_hex": "000000",
+      "after_hex": "032006",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001384",
+      "offset": "0x01001384",
+      "before_hex": "0000",
+      "after_hex": "3001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001387",
+      "offset": "0x01001387",
+      "before_hex": "000000",
+      "after_hex": "04a813",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900138B",
+      "offset": "0x0100138B",
+      "before_hex": "000000",
+      "after_hex": "03c413",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900138F",
+      "offset": "0x0100138F",
+      "before_hex": "00",
+      "after_hex": "03",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001393",
+      "offset": "0x01001393",
+      "before_hex": "000000",
+      "after_hex": "0e3006",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001399",
+      "offset": "0x01001399",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900139C",
+      "offset": "0x0100139C",
+      "before_hex": "0000",
+      "after_hex": "1809",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090013A0",
+      "offset": "0x010013A0",
+      "before_hex": "0000",
+      "after_hex": "0401",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090013A4",
+      "offset": "0x010013A4",
+      "before_hex": "0000",
+      "after_hex": "b004",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090013A8",
+      "offset": "0x010013A8",
+      "before_hex": "000000000000",
+      "after_hex": "f0b552480668",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090013AF",
+      "offset": "0x010013AF",
+      "before_hex": "00000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "2e0bd0514fbf193879a72806d14f4ca419251c3435a879012802d0f0bc01bc",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090013CF",
+      "offset": "0x010013CF",
+      "before_hex": "000000000000000000",
+      "after_hex": "474b48211c40312022",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090013D9",
+      "offset": "0x010013D9",
+      "before_hex": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "f050f9371c49483f18387a012808d047480168396047480168796001203872ffe77a68101c400143494018211c6831424b1a1c",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900140D",
+      "offset": "0x0100140D",
+      "before_hex": "0000000000000000",
+      "after_hex": "f036f93a68101cc0",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001416",
+      "offset": "0x01001416",
+      "before_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "40494018211c60310b881b0a1b023a22134303804b885b0a5b021622134343808b881b059b0f9b027a6813430f22120313438380",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900144B",
+      "offset": "0x0100144B",
+      "before_hex": "000000000000000000000000000000",
+      "after_hex": "21c180351c29488019407923214843",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900145B",
+      "offset": "0x0100145B",
+      "before_hex": "000000000000000000000000000000000000000000",
+      "after_hex": "012d182f482d18287801283ad12d48291c0c312022",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001471",
+      "offset": "0x01001471",
+      "before_hex": "000000000000000000000000000000000000000000",
+      "after_hex": "f004f97a681032101c400124494018291c2c31234a",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001487",
+      "offset": "0x01001487",
+      "before_hex": "00000000000000000000",
+      "after_hex": "f0f9f83a680132101cc0",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001492",
+      "offset": "0x01001492",
+      "before_hex": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "21494018291c04310b881b0a1b027e22134303804b885b0a5b02be22134343808b881b059b0f9b027a68103213430d22120313438380",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090014C9",
+      "offset": "0x010014C9",
+      "before_hex": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "21c1800e483968023101600d4879682031016007e00a483968013101600948796810310160f0bc01bc",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090014F3",
+      "offset": "0x010014F3",
+      "before_hex": "00",
+      "after_hex": "47",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090014F5",
+      "offset": "0x010014F5",
+      "before_hex": "00",
+      "after_hex": "65",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090014F7",
+      "offset": "0x010014F7",
+      "before_hex": "000000",
+      "after_hex": "032006",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090014FC",
+      "offset": "0x010014FC",
+      "before_hex": "0000",
+      "after_hex": "3016",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001500",
+      "offset": "0x01001500",
+      "before_hex": "0000",
+      "after_hex": "e003",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001503",
+      "offset": "0x01001503",
+      "before_hex": "000000",
+      "after_hex": "05302a",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001508",
+      "offset": "0x01001508",
+      "before_hex": "0000",
+      "after_hex": "5429",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900150B",
+      "offset": "0x0100150B",
+      "before_hex": "000000",
+      "after_hex": "035829",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900150F",
+      "offset": "0x0100150F",
+      "before_hex": "00",
+      "after_hex": "03",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001512",
+      "offset": "0x01001512",
+      "before_hex": "0000",
+      "after_hex": "0106",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001515",
+      "offset": "0x01001515",
+      "before_hex": "00",
+      "after_hex": "02",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001518",
+      "offset": "0x01001518",
+      "before_hex": "0000",
+      "after_hex": "d013",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900151B",
+      "offset": "0x0100151B",
+      "before_hex": "000000",
+      "after_hex": "03ac18",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001520",
+      "offset": "0x01001520",
+      "before_hex": "0000",
+      "after_hex": "a003",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001523",
+      "offset": "0x01001523",
+      "before_hex": "0000000000000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "0530b5041c0903074a89180b784d78064a12687232137055702d022b43a36430bc01bc",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001547",
+      "offset": "0x01001547",
+      "before_hex": "0000",
+      "after_hex": "4772",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900154B",
+      "offset": "0x0100154B",
+      "before_hex": "000000",
+      "after_hex": "0e8035",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900154F",
+      "offset": "0x0100154F",
+      "before_hex": "0000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "0370b5041c184d28880126360230420fd0616c0131221c483212789142",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900156D",
+      "offset": "0x0100156D",
+      "before_hex": "00",
+      "after_hex": "d3",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900156F",
+      "offset": "0x0100156F",
+      "before_hex": "000000000000000000000000000000000000000000000000000000",
+      "after_hex": "216164b0432880114d2888b043288015e002263602304214d0616c",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900158B",
+      "offset": "0x0100158B",
+      "before_hex": "000000000000000000",
+      "after_hex": "2906d1211c48310978",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001595",
+      "offset": "0x01001595",
+      "before_hex": "0000000000",
+      "after_hex": "290cd00139",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900159B",
+      "offset": "0x0100159B",
+      "before_hex": "00000000000000000000000000000000000000",
+      "after_hex": "e001396164b0432880054d2888b04328800e20",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090015AF",
+      "offset": "0x010015AF",
+      "before_hex": "00000000000000",
+      "after_hex": "f09dfc70bc01bc",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090015B7",
+      "offset": "0x010015B7",
+      "before_hex": "000000",
+      "after_hex": "47c413",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090015BB",
+      "offset": "0x010015BB",
+      "before_hex": "000000",
+      "after_hex": "03a813",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090015BF",
+      "offset": "0x010015BF",
+      "before_hex": "00000000000000",
+      "after_hex": "03f0b505480668",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090015C7",
+      "offset": "0x010015C7",
+      "before_hex": "0000000000",
+      "after_hex": "2e02d0301c",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090015CD",
+      "offset": "0x010015CD",
+      "before_hex": "00000000000000",
+      "after_hex": "f006f8f0bc01bc",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090015D5",
+      "offset": "0x010015D5",
+      "before_hex": "00",
+      "after_hex": "47",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090015D9",
+      "offset": "0x010015D9",
+      "before_hex": "00",
+      "after_hex": "65",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090015DB",
+      "offset": "0x010015DB",
+      "before_hex": "0000000000000000000000000000000000000000",
+      "after_hex": "03f0b5061c1a4fbf191a4dad191a4ca4194b2292",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090015F0",
+      "offset": "0x010015F0",
+      "before_hex": "000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "20682968884204d104340435013af7d121e0144ca41912488019211c124a",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900160F",
+      "offset": "0x0100160F",
+      "before_hex": "0000000000000000000000",
+      "after_hex": "f035f8124dad19281c1149",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900161B",
+      "offset": "0x0100161B",
+      "before_hex": "00000000000000000000000000",
+      "after_hex": "f041f8104968547c79201c291c",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001629",
+      "offset": "0x01001629",
+      "before_hex": "000000",
+      "after_hex": "f05cfc",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900162D",
+      "offset": "0x0100162D",
+      "before_hex": "00000000000000",
+      "after_hex": "2805d1201c291c",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001635",
+      "offset": "0x01001635",
+      "before_hex": "000000",
+      "after_hex": "f058fc",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001639",
+      "offset": "0x01001639",
+      "before_hex": "0000000000000000000000000000000000",
+      "after_hex": "2804d00120a040797a01437972f0bc01bc",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900164B",
+      "offset": "0x0100164B",
+      "before_hex": "000000",
+      "after_hex": "472006",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001650",
+      "offset": "0x01001650",
+      "before_hex": "0000",
+      "after_hex": "1809",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001654",
+      "offset": "0x01001654",
+      "before_hex": "0000",
+      "after_hex": "0401",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001658",
+      "offset": "0x01001658",
+      "before_hex": "0000",
+      "after_hex": "b004",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900165C",
+      "offset": "0x0100165C",
+      "before_hex": "0000",
+      "after_hex": "3006",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001660",
+      "offset": "0x01001660",
+      "before_hex": "0000",
+      "after_hex": "ac0c",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001664",
+      "offset": "0x01001664",
+      "before_hex": "000000000000000000000000000000000000",
+      "after_hex": "04b44b22514309014018024a801804bc7047",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001678",
+      "offset": "0x01001678",
+      "before_hex": "0000",
+      "after_hex": "3006",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900167D",
+      "offset": "0x0100167D",
+      "before_hex": "0000000000000000000000000000000000",
+      "after_hex": "2a05d00b68036004300431043af9d17047",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900168F",
+      "offset": "0x0100168F",
+      "before_hex": "0000000000000000000000000000000000",
+      "after_hex": "2a05d00b78037001300131013af9d17047",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090016A1",
+      "offset": "0x010016A1",
+      "before_hex": "000000000000000000000000000000",
+      "after_hex": "220378d21801300139fad1101cc043",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090016B1",
+      "offset": "0x010016B1",
+      "before_hex": "00",
+      "after_hex": "06",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090016B3",
+      "offset": "0x010016B3",
+      "before_hex": "000000",
+      "after_hex": "0e7047",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090016B8",
+      "offset": "0x010016B8",
+      "before_hex": "00000000000000000000",
+      "after_hex": "f0b5061c184819490180",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090016C3",
+      "offset": "0x010016C3",
+      "before_hex": "0000000000",
+      "after_hex": "214180184c",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090016C9",
+      "offset": "0x010016C9",
+      "before_hex": "0000000000000000000000000000000000000000000000",
+      "after_hex": "20082220600434013afbd115481649164afff7cfff164c",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090016E1",
+      "offset": "0x010016E1",
+      "before_hex": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "20164a20800234013afbd1124c144d3c2225800234013afbd10227381c80010d4c2418092225800234013afbd10137122ff3d3301c",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001717",
+      "offset": "0x01001717",
+      "before_hex": "00000000000000",
+      "after_hex": "f015f8f0bc01bc",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900171F",
+      "offset": "0x0100171F",
+      "before_hex": "000000",
+      "after_hex": "47e201",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001723",
+      "offset": "0x01001723",
+      "before_hex": "000000",
+      "after_hex": "05ff7f",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001729",
+      "offset": "0x01001729",
+      "before_hex": "00",
+      "after_hex": "c0",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900172B",
+      "offset": "0x0100172B",
+      "before_hex": "000000",
+      "after_hex": "0620c0",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900172F",
+      "offset": "0x0100172F",
+      "before_hex": "000000",
+      "after_hex": "06581d",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001733",
+      "offset": "0x01001733",
+      "before_hex": "000000",
+      "after_hex": "098001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001738",
+      "offset": "0x01001738",
+      "before_hex": "0000",
+      "after_hex": "286c",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900173B",
+      "offset": "0x0100173B",
+      "before_hex": "00",
+      "after_hex": "02",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900173D",
+      "offset": "0x0100173D",
+      "before_hex": "00",
+      "after_hex": "04",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001740",
+      "offset": "0x01001740",
+      "before_hex": "0000",
+      "after_hex": "0cf0",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001744",
+      "offset": "0x01001744",
+      "before_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "70b5061c0a4c14340a4d25800a488019817a0331094d29436180094c094d258041790331054d2943618070bc01bc",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001773",
+      "offset": "0x01001773",
+      "before_hex": "000000",
+      "after_hex": "47286c",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001777",
+      "offset": "0x01001777",
+      "before_hex": "000000",
+      "after_hex": "0201f0",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900177C",
+      "offset": "0x0100177C",
+      "before_hex": "0000",
+      "after_hex": "2006",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001781",
+      "offset": "0x01001781",
+      "before_hex": "00",
+      "after_hex": "f0",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001784",
+      "offset": "0x01001784",
+      "before_hex": "0000",
+      "after_hex": "546c",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001787",
+      "offset": "0x01001787",
+      "before_hex": "000000",
+      "after_hex": "0202f0",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900178C",
+      "offset": "0x0100178C",
+      "before_hex": "00000000",
+      "after_hex": "f0b50c4c",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001791",
+      "offset": "0x01001791",
+      "before_hex": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "25042d0bd320880106090e102906d3902906d26288d205d20d482a01d2a020208008340135802debd3f0bc01bc",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090017BF",
+      "offset": "0x010017BF",
+      "before_hex": "000000",
+      "after_hex": "47d013",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090017C3",
+      "offset": "0x010017C3",
+      "before_hex": "0000000000000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "03f0b5061c1b481c4901801c481c491d4afff752ff1c4c04202080502060801b48a080",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090017E7",
+      "offset": "0x010017E7",
+      "before_hex": "000000000000000000000000000000000000000000000000000000",
+      "after_hex": "20e08008340420208058206080174fbf19b87a013016494018a080",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001803",
+      "offset": "0x01001803",
+      "before_hex": "0000000000000000000000000000000000",
+      "after_hex": "20e080083404202080b02060801148a080",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001815",
+      "offset": "0x01001815",
+      "before_hex": "0000000000000000000000000000000000000000000000",
+      "after_hex": "20e080083404202080b8206080787901300c494018a080",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900182D",
+      "offset": "0x0100182D",
+      "before_hex": "00000000000000",
+      "after_hex": "20e080f0bc01bc",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001835",
+      "offset": "0x01001835",
+      "before_hex": "00",
+      "after_hex": "47",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001838",
+      "offset": "0x01001838",
+      "before_hex": "0000",
+      "after_hex": "e203",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900183B",
+      "offset": "0x0100183B",
+      "before_hex": "000000",
+      "after_hex": "05ff7f",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001841",
+      "offset": "0x01001841",
+      "before_hex": "0000000000",
+      "after_hex": "7e0106581d",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001847",
+      "offset": "0x01001847",
+      "before_hex": "000000",
+      "after_hex": "094001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900184C",
+      "offset": "0x0100184C",
+      "before_hex": "0000",
+      "after_hex": "b017",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900184F",
+      "offset": "0x0100184F",
+      "before_hex": "000000",
+      "after_hex": "03f0f3",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001854",
+      "offset": "0x01001854",
+      "before_hex": "0000",
+      "after_hex": "2006",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001858",
+      "offset": "0x01001858",
+      "before_hex": "0000",
+      "after_hex": "f1f3",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900185C",
+      "offset": "0x0100185C",
+      "before_hex": "000000000000",
+      "after_hex": "f0b510480668",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001863",
+      "offset": "0x01001863",
+      "before_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "2e18d00f4fbf193879a72813d10d480e490180746c64010d4909190d482022fff7fbfe0c4c04202080ae2060800a48a080",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001895",
+      "offset": "0x01001895",
+      "before_hex": "00000000000000",
+      "after_hex": "20e080f0bc01bc",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900189D",
+      "offset": "0x0100189D",
+      "before_hex": "00",
+      "after_hex": "47",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090018A1",
+      "offset": "0x010018A1",
+      "before_hex": "00",
+      "after_hex": "65",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090018A3",
+      "offset": "0x010018A3",
+      "before_hex": "000000",
+      "after_hex": "032006",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090018A8",
+      "offset": "0x010018A8",
+      "before_hex": "0000",
+      "after_hex": "e203",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090018AB",
+      "offset": "0x010018AB",
+      "before_hex": "000000",
+      "after_hex": "05ff7f",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090018B0",
+      "offset": "0x010018B0",
+      "before_hex": "0000",
+      "after_hex": "981d",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090018B3",
+      "offset": "0x010018B3",
+      "before_hex": "00000000000000",
+      "after_hex": "09e07f0106c817",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090018BB",
+      "offset": "0x010018BB",
+      "before_hex": "000000",
+      "after_hex": "03fff3",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090018C0",
+      "offset": "0x010018C0",
+      "before_hex": "000000000000",
+      "after_hex": "f0b518480668",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090018C7",
+      "offset": "0x010018C7",
+      "before_hex": "000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "2e28d0174fbf193879a72823d1154a1088154b9843154909880223194201d1124b18431080124a",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090018EF",
+      "offset": "0x010018EF",
+      "before_hex": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "2010801248124901807c79201cc0011149091811488022fff7b9fe104c442020800f4860800f48a080",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001919",
+      "offset": "0x01001919",
+      "before_hex": "00000000000000",
+      "after_hex": "20e080f0bc01bc",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001921",
+      "offset": "0x01001921",
+      "before_hex": "00",
+      "after_hex": "47",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001925",
+      "offset": "0x01001925",
+      "before_hex": "00",
+      "after_hex": "65",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001927",
+      "offset": "0x01001927",
+      "before_hex": "000000",
+      "after_hex": "032006",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900192F",
+      "offset": "0x0100192F",
+      "before_hex": "00",
+      "after_hex": "04",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001931",
+      "offset": "0x01001931",
+      "before_hex": "00",
+      "after_hex": "08",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001934",
+      "offset": "0x01001934",
+      "before_hex": "0000",
+      "after_hex": "3001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001937",
+      "offset": "0x01001937",
+      "before_hex": "00",
+      "after_hex": "04",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900193B",
+      "offset": "0x0100193B",
+      "before_hex": "000000",
+      "after_hex": "05e203",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900193F",
+      "offset": "0x0100193F",
+      "before_hex": "000000",
+      "after_hex": "05ff7f",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001944",
+      "offset": "0x01001944",
+      "before_hex": "0000",
+      "after_hex": "5819",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001947",
+      "offset": "0x01001947",
+      "before_hex": "00000000000000",
+      "after_hex": "09807f0106c817",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900194F",
+      "offset": "0x0100194F",
+      "before_hex": "000000",
+      "after_hex": "032040",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001954",
+      "offset": "0x01001954",
+      "before_hex": "0000",
+      "after_hex": "fcf3",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900195E",
+      "offset": "0x0100195E",
+      "before_hex": "0000",
+      "after_hex": "1011",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001962",
+      "offset": "0x01001962",
+      "before_hex": "0000",
+      "after_hex": "1011",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001967",
+      "offset": "0x01001967",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900196B",
+      "offset": "0x0100196B",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900196F",
+      "offset": "0x0100196F",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001973",
+      "offset": "0x01001973",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001977",
+      "offset": "0x01001977",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900197C",
+      "offset": "0x0100197C",
+      "before_hex": "0000",
+      "after_hex": "1101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001980",
+      "offset": "0x01001980",
+      "before_hex": "0000",
+      "after_hex": "1101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001984",
+      "offset": "0x01001984",
+      "before_hex": "00",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001988",
+      "offset": "0x01001988",
+      "before_hex": "00",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900198C",
+      "offset": "0x0100198C",
+      "before_hex": "00",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001990",
+      "offset": "0x01001990",
+      "before_hex": "00",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001994",
+      "offset": "0x01001994",
+      "before_hex": "00",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900199B",
+      "offset": "0x0100199B",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x0900199F",
+      "offset": "0x0100199F",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090019A3",
+      "offset": "0x010019A3",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090019A7",
+      "offset": "0x010019A7",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090019AB",
+      "offset": "0x010019AB",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090019AE",
+      "offset": "0x010019AE",
+      "before_hex": "0000",
+      "after_hex": "1011",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090019B2",
+      "offset": "0x010019B2",
+      "before_hex": "0000",
+      "after_hex": "1011",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090019B8",
+      "offset": "0x010019B8",
+      "before_hex": "00",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090019BC",
+      "offset": "0x010019BC",
+      "before_hex": "00",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090019C0",
+      "offset": "0x010019C0",
+      "before_hex": "00",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090019C4",
+      "offset": "0x010019C4",
+      "before_hex": "00",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090019C8",
+      "offset": "0x010019C8",
+      "before_hex": "00",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090019CC",
+      "offset": "0x010019CC",
+      "before_hex": "0000",
+      "after_hex": "1101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090019D0",
+      "offset": "0x010019D0",
+      "before_hex": "0000",
+      "after_hex": "1101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090019DD",
+      "offset": "0x010019DD",
+      "before_hex": "000000",
+      "after_hex": "101111",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090019E1",
+      "offset": "0x010019E1",
+      "before_hex": "000000",
+      "after_hex": "101111",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090019F5",
+      "offset": "0x010019F5",
+      "before_hex": "000000",
+      "after_hex": "101111",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x090019FC",
+      "offset": "0x010019FC",
+      "before_hex": "0000",
+      "after_hex": "1101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001A00",
+      "offset": "0x01001A00",
+      "before_hex": "0000",
+      "after_hex": "1101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001A05",
+      "offset": "0x01001A05",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001A09",
+      "offset": "0x01001A09",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001A0D",
+      "offset": "0x01001A0D",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001A11",
+      "offset": "0x01001A11",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001A14",
+      "offset": "0x01001A14",
+      "before_hex": "0000",
+      "after_hex": "1101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001A19",
+      "offset": "0x01001A19",
+      "before_hex": "000000",
+      "after_hex": "101111",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001A1D",
+      "offset": "0x01001A1D",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001A21",
+      "offset": "0x01001A21",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001A25",
+      "offset": "0x01001A25",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001A29",
+      "offset": "0x01001A29",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001A2D",
+      "offset": "0x01001A2D",
+      "before_hex": "000000",
+      "after_hex": "101111",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001A31",
+      "offset": "0x01001A31",
+      "before_hex": "000000",
+      "after_hex": "101111",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001A38",
+      "offset": "0x01001A38",
+      "before_hex": "0000",
+      "after_hex": "1101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001A4C",
+      "offset": "0x01001A4C",
+      "before_hex": "000000",
+      "after_hex": "111101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001A50",
+      "offset": "0x01001A50",
+      "before_hex": "000000",
+      "after_hex": "111101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001A5D",
+      "offset": "0x01001A5D",
+      "before_hex": "000000",
+      "after_hex": "101111",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001A61",
+      "offset": "0x01001A61",
+      "before_hex": "000000",
+      "after_hex": "101111",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001A76",
+      "offset": "0x01001A76",
+      "before_hex": "0000",
+      "after_hex": "1011",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001A7C",
+      "offset": "0x01001A7C",
+      "before_hex": "0000",
+      "after_hex": "1101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001A80",
+      "offset": "0x01001A80",
+      "before_hex": "0000",
+      "after_hex": "1101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001A85",
+      "offset": "0x01001A85",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001A89",
+      "offset": "0x01001A89",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001A8D",
+      "offset": "0x01001A8D",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001A91",
+      "offset": "0x01001A91",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001A94",
+      "offset": "0x01001A94",
+      "before_hex": "0000",
+      "after_hex": "1101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001A9A",
+      "offset": "0x01001A9A",
+      "before_hex": "0000",
+      "after_hex": "1011",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001AAD",
+      "offset": "0x01001AAD",
+      "before_hex": "000000",
+      "after_hex": "101111",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001AB1",
+      "offset": "0x01001AB1",
+      "before_hex": "000000",
+      "after_hex": "101111",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001AB8",
+      "offset": "0x01001AB8",
+      "before_hex": "0000",
+      "after_hex": "1101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001ABD",
+      "offset": "0x01001ABD",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001AC1",
+      "offset": "0x01001AC1",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001AC5",
+      "offset": "0x01001AC5",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001AC9",
+      "offset": "0x01001AC9",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001ACC",
+      "offset": "0x01001ACC",
+      "before_hex": "0000",
+      "after_hex": "1101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001AD0",
+      "offset": "0x01001AD0",
+      "before_hex": "0000",
+      "after_hex": "1101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001ADD",
+      "offset": "0x01001ADD",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001AE1",
+      "offset": "0x01001AE1",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001AE5",
+      "offset": "0x01001AE5",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001AE9",
+      "offset": "0x01001AE9",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001AED",
+      "offset": "0x01001AED",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001AF1",
+      "offset": "0x01001AF1",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001AF5",
+      "offset": "0x01001AF5",
+      "before_hex": "000000",
+      "after_hex": "101111",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001AFC",
+      "offset": "0x01001AFC",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001B00",
+      "offset": "0x01001B00",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001B04",
+      "offset": "0x01001B04",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001B08",
+      "offset": "0x01001B08",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001B0C",
+      "offset": "0x01001B0C",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001B10",
+      "offset": "0x01001B10",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001B14",
+      "offset": "0x01001B14",
+      "before_hex": "000000",
+      "after_hex": "111101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001B19",
+      "offset": "0x01001B19",
+      "before_hex": "000000",
+      "after_hex": "101111",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001B38",
+      "offset": "0x01001B38",
+      "before_hex": "000000",
+      "after_hex": "111101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001B3C",
+      "offset": "0x01001B3C",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001B40",
+      "offset": "0x01001B40",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001B44",
+      "offset": "0x01001B44",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001B48",
+      "offset": "0x01001B48",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001B4C",
+      "offset": "0x01001B4C",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001B50",
+      "offset": "0x01001B50",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001B5D",
+      "offset": "0x01001B5D",
+      "before_hex": "000000",
+      "after_hex": "101111",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001B61",
+      "offset": "0x01001B61",
+      "before_hex": "000000",
+      "after_hex": "101111",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001B65",
+      "offset": "0x01001B65",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001B69",
+      "offset": "0x01001B69",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001B6D",
+      "offset": "0x01001B6D",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001B71",
+      "offset": "0x01001B71",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001B75",
+      "offset": "0x01001B75",
+      "before_hex": "000000",
+      "after_hex": "101111",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001B7C",
+      "offset": "0x01001B7C",
+      "before_hex": "000000",
+      "after_hex": "111101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001B80",
+      "offset": "0x01001B80",
+      "before_hex": "000000",
+      "after_hex": "111101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001B94",
+      "offset": "0x01001B94",
+      "before_hex": "0000",
+      "after_hex": "1101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001B99",
+      "offset": "0x01001B99",
+      "before_hex": "000000",
+      "after_hex": "101111",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001BAD",
+      "offset": "0x01001BAD",
+      "before_hex": "000000",
+      "after_hex": "101111",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001BB1",
+      "offset": "0x01001BB1",
+      "before_hex": "000000",
+      "after_hex": "101111",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001BB8",
+      "offset": "0x01001BB8",
+      "before_hex": "0000",
+      "after_hex": "1101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001BBD",
+      "offset": "0x01001BBD",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001BC1",
+      "offset": "0x01001BC1",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001BC5",
+      "offset": "0x01001BC5",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001BC9",
+      "offset": "0x01001BC9",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001BCC",
+      "offset": "0x01001BCC",
+      "before_hex": "0000",
+      "after_hex": "1101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001BD0",
+      "offset": "0x01001BD0",
+      "before_hex": "0000",
+      "after_hex": "1101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001BDE",
+      "offset": "0x01001BDE",
+      "before_hex": "0000",
+      "after_hex": "1011",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001BE2",
+      "offset": "0x01001BE2",
+      "before_hex": "0000",
+      "after_hex": "1011",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001BE5",
+      "offset": "0x01001BE5",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001BE9",
+      "offset": "0x01001BE9",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001BED",
+      "offset": "0x01001BED",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001BF1",
+      "offset": "0x01001BF1",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001BF5",
+      "offset": "0x01001BF5",
+      "before_hex": "000000",
+      "after_hex": "101111",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001BFC",
+      "offset": "0x01001BFC",
+      "before_hex": "000000",
+      "after_hex": "111101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001C00",
+      "offset": "0x01001C00",
+      "before_hex": "000000",
+      "after_hex": "111101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001C14",
+      "offset": "0x01001C14",
+      "before_hex": "0000",
+      "after_hex": "1101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001C19",
+      "offset": "0x01001C19",
+      "before_hex": "000000",
+      "after_hex": "101111",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001C1D",
+      "offset": "0x01001C1D",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001C21",
+      "offset": "0x01001C21",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001C25",
+      "offset": "0x01001C25",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001C29",
+      "offset": "0x01001C29",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001C2E",
+      "offset": "0x01001C2E",
+      "before_hex": "0000",
+      "after_hex": "1011",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001C32",
+      "offset": "0x01001C32",
+      "before_hex": "0000",
+      "after_hex": "1011",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001C38",
+      "offset": "0x01001C38",
+      "before_hex": "0000",
+      "after_hex": "1101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001C3D",
+      "offset": "0x01001C3D",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001C41",
+      "offset": "0x01001C41",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001C45",
+      "offset": "0x01001C45",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001C49",
+      "offset": "0x01001C49",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001C4C",
+      "offset": "0x01001C4C",
+      "before_hex": "0000",
+      "after_hex": "1101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001C50",
+      "offset": "0x01001C50",
+      "before_hex": "0000",
+      "after_hex": "1101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001C5D",
+      "offset": "0x01001C5D",
+      "before_hex": "000000",
+      "after_hex": "101111",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001C61",
+      "offset": "0x01001C61",
+      "before_hex": "000000",
+      "after_hex": "101111",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001C77",
+      "offset": "0x01001C77",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001C7C",
+      "offset": "0x01001C7C",
+      "before_hex": "000000",
+      "after_hex": "111101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001C80",
+      "offset": "0x01001C80",
+      "before_hex": "000000",
+      "after_hex": "111101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001C85",
+      "offset": "0x01001C85",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001C89",
+      "offset": "0x01001C89",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001C8C",
+      "offset": "0x01001C8C",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001C90",
+      "offset": "0x01001C90",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001C94",
+      "offset": "0x01001C94",
+      "before_hex": "00",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001C9B",
+      "offset": "0x01001C9B",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001C9E",
+      "offset": "0x01001C9E",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001CA2",
+      "offset": "0x01001CA2",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001CA6",
+      "offset": "0x01001CA6",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001CAA",
+      "offset": "0x01001CAA",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001CAE",
+      "offset": "0x01001CAE",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001CB2",
+      "offset": "0x01001CB2",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001CB8",
+      "offset": "0x01001CB8",
+      "before_hex": "00",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001CDE",
+      "offset": "0x01001CDE",
+      "before_hex": "0000",
+      "after_hex": "1011",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001CE2",
+      "offset": "0x01001CE2",
+      "before_hex": "0000",
+      "after_hex": "1011",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001CE5",
+      "offset": "0x01001CE5",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001CE9",
+      "offset": "0x01001CE9",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001CED",
+      "offset": "0x01001CED",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001CF1",
+      "offset": "0x01001CF1",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001CF6",
+      "offset": "0x01001CF6",
+      "before_hex": "0000",
+      "after_hex": "1011",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001CFC",
+      "offset": "0x01001CFC",
+      "before_hex": "0000",
+      "after_hex": "1101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001D00",
+      "offset": "0x01001D00",
+      "before_hex": "0000",
+      "after_hex": "1101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001D05",
+      "offset": "0x01001D05",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001D09",
+      "offset": "0x01001D09",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001D0D",
+      "offset": "0x01001D0D",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001D11",
+      "offset": "0x01001D11",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001D14",
+      "offset": "0x01001D14",
+      "before_hex": "0000",
+      "after_hex": "1101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001D1A",
+      "offset": "0x01001D1A",
+      "before_hex": "0000",
+      "after_hex": "1011",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001D1D",
+      "offset": "0x01001D1D",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001D21",
+      "offset": "0x01001D21",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001D25",
+      "offset": "0x01001D25",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001D29",
+      "offset": "0x01001D29",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001D2E",
+      "offset": "0x01001D2E",
+      "before_hex": "0000",
+      "after_hex": "1011",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001D32",
+      "offset": "0x01001D32",
+      "before_hex": "0000",
+      "after_hex": "1011",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001D38",
+      "offset": "0x01001D38",
+      "before_hex": "0000",
+      "after_hex": "1101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001D3D",
+      "offset": "0x01001D3D",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001D41",
+      "offset": "0x01001D41",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001D45",
+      "offset": "0x01001D45",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001D49",
+      "offset": "0x01001D49",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001D4C",
+      "offset": "0x01001D4C",
+      "before_hex": "0000",
+      "after_hex": "1101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001D50",
+      "offset": "0x01001D50",
+      "before_hex": "0000",
+      "after_hex": "1101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001D5C",
+      "offset": "0x01001D5C",
+      "before_hex": "000000",
+      "after_hex": "101101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001D60",
+      "offset": "0x01001D60",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001D62",
+      "offset": "0x01001D62",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001D64",
+      "offset": "0x01001D64",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001D66",
+      "offset": "0x01001D66",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001D68",
+      "offset": "0x01001D68",
+      "before_hex": "000000",
+      "after_hex": "101101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001D6C",
+      "offset": "0x01001D6C",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001D70",
+      "offset": "0x01001D70",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001D7C",
+      "offset": "0x01001D7C",
+      "before_hex": "00",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001D7F",
+      "offset": "0x01001D7F",
+      "before_hex": "0000",
+      "after_hex": "0101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001D83",
+      "offset": "0x01001D83",
+      "before_hex": "0000000000000000",
+      "after_hex": "0101010101101010",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001D8C",
+      "offset": "0x01001D8C",
+      "before_hex": "000000",
+      "after_hex": "101010",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001D91",
+      "offset": "0x01001D91",
+      "before_hex": "00",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001D9D",
+      "offset": "0x01001D9D",
+      "before_hex": "00",
+      "after_hex": "11",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001DA0",
+      "offset": "0x01001DA0",
+      "before_hex": "0000",
+      "after_hex": "1011",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001DA5",
+      "offset": "0x01001DA5",
+      "before_hex": "00",
+      "after_hex": "11",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001DA9",
+      "offset": "0x01001DA9",
+      "before_hex": "00",
+      "after_hex": "11",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001DAD",
+      "offset": "0x01001DAD",
+      "before_hex": "00",
+      "after_hex": "11",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001DB0",
+      "offset": "0x01001DB0",
+      "before_hex": "000000",
+      "after_hex": "101101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001DBC",
+      "offset": "0x01001DBC",
+      "before_hex": "000000",
+      "after_hex": "101101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001DC0",
+      "offset": "0x01001DC0",
+      "before_hex": "00",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001DC2",
+      "offset": "0x01001DC2",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001DC6",
+      "offset": "0x01001DC6",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001DC9",
+      "offset": "0x01001DC9",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001DCD",
+      "offset": "0x01001DCD",
+      "before_hex": "00",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001DD0",
+      "offset": "0x01001DD0",
+      "before_hex": "000000",
+      "after_hex": "111111",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001DDC",
+      "offset": "0x01001DDC",
+      "before_hex": "000000",
+      "after_hex": "101101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001DE0",
+      "offset": "0x01001DE0",
+      "before_hex": "00",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001DE2",
+      "offset": "0x01001DE2",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001DE5",
+      "offset": "0x01001DE5",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001DEA",
+      "offset": "0x01001DEA",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001DEC",
+      "offset": "0x01001DEC",
+      "before_hex": "00",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001DEE",
+      "offset": "0x01001DEE",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001DF0",
+      "offset": "0x01001DF0",
+      "before_hex": "000000",
+      "after_hex": "101101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001DFE",
+      "offset": "0x01001DFE",
+      "before_hex": "00",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001E01",
+      "offset": "0x01001E01",
+      "before_hex": "0000",
+      "after_hex": "1001",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001E05",
+      "offset": "0x01001E05",
+      "before_hex": "0000",
+      "after_hex": "0101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001E08",
+      "offset": "0x01001E08",
+      "before_hex": "000000",
+      "after_hex": "111111",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001E0E",
+      "offset": "0x01001E0E",
+      "before_hex": "00",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001E12",
+      "offset": "0x01001E12",
+      "before_hex": "00",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001E1C",
+      "offset": "0x01001E1C",
+      "before_hex": "000000",
+      "after_hex": "111111",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001E20",
+      "offset": "0x01001E20",
+      "before_hex": "00",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001E24",
+      "offset": "0x01001E24",
+      "before_hex": "000000",
+      "after_hex": "111101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001E2A",
+      "offset": "0x01001E2A",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001E2C",
+      "offset": "0x01001E2C",
+      "before_hex": "00",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001E2E",
+      "offset": "0x01001E2E",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001E30",
+      "offset": "0x01001E30",
+      "before_hex": "000000",
+      "after_hex": "101101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001E3D",
+      "offset": "0x01001E3D",
+      "before_hex": "0000",
+      "after_hex": "1101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001E40",
+      "offset": "0x01001E40",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001E44",
+      "offset": "0x01001E44",
+      "before_hex": "000000",
+      "after_hex": "111101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001E48",
+      "offset": "0x01001E48",
+      "before_hex": "00",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001E4A",
+      "offset": "0x01001E4A",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001E4C",
+      "offset": "0x01001E4C",
+      "before_hex": "00",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001E4E",
+      "offset": "0x01001E4E",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001E50",
+      "offset": "0x01001E50",
+      "before_hex": "000000",
+      "after_hex": "101101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001E5C",
+      "offset": "0x01001E5C",
+      "before_hex": "000000",
+      "after_hex": "111111",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001E62",
+      "offset": "0x01001E62",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001E66",
+      "offset": "0x01001E66",
+      "before_hex": "00",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001E69",
+      "offset": "0x01001E69",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001E6D",
+      "offset": "0x01001E6D",
+      "before_hex": "00",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001E71",
+      "offset": "0x01001E71",
+      "before_hex": "00",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001E7C",
+      "offset": "0x01001E7C",
+      "before_hex": "000000",
+      "after_hex": "101101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001E80",
+      "offset": "0x01001E80",
+      "before_hex": "00",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001E82",
+      "offset": "0x01001E82",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001E84",
+      "offset": "0x01001E84",
+      "before_hex": "000000",
+      "after_hex": "101101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001E88",
+      "offset": "0x01001E88",
+      "before_hex": "00",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001E8A",
+      "offset": "0x01001E8A",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001E8C",
+      "offset": "0x01001E8C",
+      "before_hex": "00",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001E8E",
+      "offset": "0x01001E8E",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001E90",
+      "offset": "0x01001E90",
+      "before_hex": "000000",
+      "after_hex": "101101",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001E9D",
+      "offset": "0x01001E9D",
+      "before_hex": "00",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001EA1",
+      "offset": "0x01001EA1",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001EA4",
+      "offset": "0x01001EA4",
+      "before_hex": "000000",
+      "after_hex": "111111",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001EA9",
+      "offset": "0x01001EA9",
+      "before_hex": "00",
+      "after_hex": "10",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001EAD",
+      "offset": "0x01001EAD",
+      "before_hex": "00",
+      "after_hex": "01",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001EB8",
+      "offset": "0x01001EB8",
+      "before_hex": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "2222222222222222222222222222222222222222222222222222222222222222074b1847074b1847074b1847074b1847074b1847074b1847074b1847074b18479514",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001EFB",
+      "offset": "0x01001EFB",
+      "before_hex": "000000",
+      "after_hex": "083915",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001EFF",
+      "offset": "0x01001EFF",
+      "before_hex": "000000",
+      "after_hex": "08051b",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001F03",
+      "offset": "0x01001F03",
+      "before_hex": "000000",
+      "after_hex": "08151b",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001F07",
+      "offset": "0x01001F07",
+      "before_hex": "000000",
+      "after_hex": "08551b",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001F0B",
+      "offset": "0x01001F0B",
+      "before_hex": "0000000000000000000000",
+      "after_hex": "088d9a05089d590608f977",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    },
+    {
+      "address": "0x09001F17",
+      "offset": "0x01001F17",
+      "before_hex": "00",
+      "after_hex": "08",
+      "mode": "unknown",
+      "note": "official_builder_0830:shared_character_warehouses"
+    }
+  ]
+}

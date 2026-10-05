@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "id": "per_character_attribute_caps",
+  "name": "角色独立基础属性上限",
+  "stage": "released",
+  "baseline": {
+    "filename": "SS2_SC_bug_fixed.GBA",
+    "size": 33554432,
+    "md5": "35eb6567d94f855480c5d7ba2dff4389",
+    "sha256": "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989",
+    "crc32": "AFCFC96D"
+  },
+  "source_provenance": {
+    "kind": "official_offline_builder_bundle",
+    "source": "光明之魂2_离线补丁构建器_0830.html",
+    "generated_from_current_baseline": true
+  },
+  "evidence": {
+    "static_rebuild": "passed upstream",
+    "dynamic_combination_test": "not_run"
+  },
+  "writes": [
+    {
+      "address": "0x0807B32A",
+      "offset": "0x0007B32A",
+      "before_hex": "06",
+      "after_hex": "0f",
+      "mode": "unknown",
+      "note": "official_builder_0830:per_character_attribute_caps"
+    },
+    {
+      "address": "0x0807B330",
+      "offset": "0x0007B330",
+      "before_hex": "012851d0012807d3022834d003281bd0c8e10000",
+      "after_hex": "43000e480068008ac1000d484018c05ad15a8142",
+      "mode": "unknown",
+      "note": "official_builder_0830:per_character_attribute_caps"
+    },
+    {
+      "address": "0x0807B345",
+      "offset": "0x0007B345",
+      "before_hex": "6500030020115e0948814200ddbfe102a9081c0088",
+      "after_hex": "dbc5e102a9081cc05a0130c852d05a0130d0525089",
+      "mode": "unknown",
+      "note": "official_builder_0830:per_character_attribute_caps"
+    },
+    {
+      "address": "0x0807B35B",
+      "offset": "0x0007B35B",
+      "before_hex": "300880108801301080508901385081081c408901304881f5e0f301",
+      "after_hex": "385081081c408901304881fbe0006500038035000380b307080000",
+      "mode": "unknown",
+      "note": "official_builder_0830:per_character_attribute_caps"
+    },
+    {
+      "address": "0x0807B378",
+      "offset": "0x0007B378",
+      "before_hex": "0623d15ea62040",
+      "after_hex": "00000000000000",
+      "mode": "unknown",
+      "note": "official_builder_0830:per_character_attribute_caps"
+    },
+    {
+      "address": "0x0807B380",
+      "offset": "0x0007B380",
+      "before_hex": "814200dda6e102a9081cc0880130c880d0880130d080508901385081081c408901304881dce00420115e0a48814200dd90e102a9081c808801308880908801309080508901385081081c408901304881c6e0",
+      "after_hex": "f401f401f4014d01f401f401f4014d01f401f401f4014d01f401f401f4014d01f401f401f4014d01f401f401f4014d01f401f401f4014d01f401f401f4014d01f401f401f4014d0100000000000000000000",
+      "mode": "unknown",
+      "note": "official_builder_0830:per_character_attribute_caps"
+    },
+    {
+      "address": "0x0807B3D4",
+      "offset": "0x0007B3D4",
+      "before_hex": "f301",
+      "after_hex": "0000",
+      "mode": "unknown",
+      "note": "official_builder_0830:per_character_attribute_caps"
+    },
+    {
+      "address": "0x0807B3D8",
+      "offset": "0x0007B3D8",
+      "before_hex": "5088",
+      "after_hex": "0000",
+      "mode": "unknown",
+      "note": "official_builder_0830:per_character_attribute_caps"
+    },
+    {
+      "address": "0x0807B3DB",
+      "offset": "0x0007B3DB",
+      "before_hex": "0409498842",
+      "after_hex": "0000000000",
+      "mode": "unknown",
+      "note": "official_builder_0830:per_character_attribute_caps"
+    },
+    {
+      "address": "0x0807B3E1",
+      "offset": "0x0007B3E1",
+      "before_hex": "dd77e102a9081c408801304880508801305080508901385081081c408901304881ade0",
+      "after_hex": "0000000000000000000000000000000000000000000000000000000000000000000000",
+      "mode": "unknown",
+      "note": "official_builder_0830:per_character_attribute_caps"
+    },
+    {
+      "address": "0x0807B406",
+      "offset": "0x0007B406",
+      "before_hex": "f301",
+      "after_hex": "0000",
+      "mode": "unknown",
+      "note": "official_builder_0830:per_character_attribute_caps"
+    }
+  ]
+}

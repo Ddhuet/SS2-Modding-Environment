@@ -1,0 +1,560 @@
+{
+  "identities": {
+    "cn": {
+      "size": 16777216,
+      "sha256": "8a7ebaa88682995fd7bf1bf8dc8e77a3f4fc4a9893a7639af953c553821d9ab9",
+      "crc32": "0DFB6770",
+      "game_code": "AU2J"
+    },
+    "eu": {
+      "size": 16777216,
+      "sha256": "e5c64a1740263e9b26120e487f3688fbbf7b3954a2c043c0d84c333df467e0b2",
+      "crc32": "55E503C1",
+      "game_code": "AU2P"
+    }
+  },
+  "code_candidates": [
+    {
+      "name": "respec_1",
+      "cn_offset": "0x7b662",
+      "eu_candidates": [
+        "0x7ae5e"
+      ],
+      "window_bytes": 96,
+      "masked": "Thumb BL pairs only",
+      "delta": "-0x804",
+      "cn_bytes": "2ead214e3068c06880002818c0880028",
+      "eu_bytes": "2ead214e3068c06880002818c0880028",
+      "cn_bl_target": null,
+      "eu_bl_target": null
+    },
+    {
+      "name": "respec_2",
+      "cn_offset": "0x7b66e",
+      "eu_candidates": [
+        "0x7ae6a"
+      ],
+      "window_bytes": 96,
+      "masked": "Thumb BL pairs only",
+      "delta": "-0x804",
+      "cn_bytes": "c08800282fd03c20def709fa40ac3368",
+      "eu_bytes": "c08800282fd03c20ddf7f3fb40ac3368",
+      "cn_bl_target": null,
+      "eu_bl_target": null
+    },
+    {
+      "name": "respec_3",
+      "cn_offset": "0x7b68a",
+      "eu_candidates": [
+        "0x7ae86"
+      ],
+      "window_bytes": 96,
+      "masked": "Thumb BL pairs only",
+      "delta": "-0x804",
+      "cn_bytes": "d96889006918c8880138c88020880130",
+      "eu_bytes": "d96889006918c8880138c88020880130",
+      "cn_bl_target": null,
+      "eu_bl_target": null
+    },
+    {
+      "name": "resistance_call",
+      "cn_offset": "0x69736",
+      "eu_candidates": [],
+      "window_bytes": 96,
+      "masked": "Thumb BL pairs only"
+    },
+    {
+      "name": "counter",
+      "cn_offset": "0x1f1c0",
+      "eu_candidates": [],
+      "window_bytes": 96,
+      "masked": "Thumb BL pairs only"
+    },
+    {
+      "name": "rng",
+      "cn_offset": "0x8c8",
+      "eu_candidates": [],
+      "window_bytes": 96,
+      "masked": "Thumb BL pairs only"
+    },
+    {
+      "name": "flash_erase",
+      "cn_offset": "0x1b14",
+      "eu_candidates": [],
+      "window_bytes": 96,
+      "masked": "Thumb BL pairs only"
+    },
+    {
+      "name": "damage",
+      "cn_offset": "0x19824",
+      "eu_candidates": [],
+      "window_bytes": 96,
+      "masked": "Thumb BL pairs only"
+    },
+    {
+      "name": "monster_drop",
+      "cn_offset": "0x5ccc8",
+      "eu_candidates": [],
+      "window_bytes": 96,
+      "masked": "Thumb BL pairs only"
+    },
+    {
+      "name": "forging",
+      "cn_offset": "0x845dc",
+      "eu_candidates": [],
+      "window_bytes": 96,
+      "masked": "Thumb BL pairs only"
+    },
+    {
+      "name": "summon_1",
+      "cn_offset": "0x713c4",
+      "eu_candidates": [],
+      "window_bytes": 96,
+      "masked": "Thumb BL pairs only"
+    },
+    {
+      "name": "summon_2",
+      "cn_offset": "0x72788",
+      "eu_candidates": [],
+      "window_bytes": 96,
+      "masked": "Thumb BL pairs only"
+    }
+  ],
+  "patch_preimages": [
+    {
+      "id": "counter_fix",
+      "writes": 2,
+      "cn_matching": 2,
+      "beyond_16MiB": 0
+    },
+    {
+      "id": "equipment_set_balance_rework",
+      "writes": 288,
+      "cn_matching": 288,
+      "beyond_16MiB": 0
+    },
+    {
+      "id": "four_digit_ui_display",
+      "writes": 645,
+      "cn_matching": 645,
+      "beyond_16MiB": 0
+    },
+    {
+      "id": "level_250",
+      "writes": 227,
+      "cn_matching": 3,
+      "beyond_16MiB": 224
+    },
+    {
+      "id": "life_leech",
+      "writes": 16,
+      "cn_matching": 16,
+      "beyond_16MiB": 0
+    },
+    {
+      "id": "money_drop_control",
+      "writes": 8,
+      "cn_matching": 8,
+      "beyond_16MiB": 0
+    },
+    {
+      "id": "per_character_attribute_caps",
+      "writes": 11,
+      "cn_matching": 11,
+      "beyond_16MiB": 0
+    },
+    {
+      "id": "persistent_archer_and_dark_mage_summons",
+      "writes": 2,
+      "cn_matching": 2,
+      "beyond_16MiB": 0
+    },
+    {
+      "id": "respec",
+      "writes": 3,
+      "cn_matching": 3,
+      "beyond_16MiB": 0
+    },
+    {
+      "id": "ring_balance_rework",
+      "writes": 16,
+      "cn_matching": 16,
+      "beyond_16MiB": 0
+    },
+    {
+      "id": "shared_character_warehouses",
+      "writes": 525,
+      "cn_matching": 42,
+      "beyond_16MiB": 483
+    },
+    {
+      "id": "soul_return_auto_revive",
+      "writes": 13,
+      "cn_matching": 13,
+      "beyond_16MiB": 0
+    },
+    {
+      "id": "soul_ring",
+      "writes": 18,
+      "cn_matching": 18,
+      "beyond_16MiB": 0
+    },
+    {
+      "id": "stackable_consumables",
+      "writes": 125,
+      "cn_matching": 125,
+      "beyond_16MiB": 0
+    },
+    {
+      "id": "status_resistance_overflow_fix",
+      "writes": 1,
+      "cn_matching": 1,
+      "beyond_16MiB": 0
+    },
+    {
+      "id": "temple_soul_fusion_rework",
+      "writes": 135,
+      "cn_matching": 135,
+      "beyond_16MiB": 0
+    },
+    {
+      "id": "weapon_balance_rework",
+      "writes": 48,
+      "cn_matching": 48,
+      "beyond_16MiB": 0
+    },
+    {
+      "id": "world_map_warehouse",
+      "writes": 1,
+      "cn_matching": 1,
+      "beyond_16MiB": 0
+    }
+  ],
+  "baseline_identity": {
+    "size": 33554432,
+    "sha256": "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989",
+    "crc32": "AFCFC96D",
+    "game_code": "AU2J"
+  },
+  "short_window_candidates": [
+    {
+      "cn_offset": "0x69736",
+      "before": 8,
+      "size": 32,
+      "eu_candidates": []
+    },
+    {
+      "cn_offset": "0x69736",
+      "before": 0,
+      "size": 32,
+      "eu_candidates": []
+    },
+    {
+      "cn_offset": "0x69736",
+      "before": 16,
+      "size": 48,
+      "eu_candidates": []
+    },
+    {
+      "cn_offset": "0x1f1c0",
+      "before": 8,
+      "size": 32,
+      "eu_candidates": [
+        "0x1f3e4"
+      ]
+    },
+    {
+      "cn_offset": "0x1f1c0",
+      "before": 0,
+      "size": 32,
+      "eu_candidates": [
+        "0x1f3e4"
+      ]
+    },
+    {
+      "cn_offset": "0x1f1c0",
+      "before": 16,
+      "size": 48,
+      "eu_candidates": [
+        "0x1f3e4"
+      ]
+    },
+    {
+      "cn_offset": "0x8c8",
+      "before": 8,
+      "size": 32,
+      "eu_candidates": []
+    },
+    {
+      "cn_offset": "0x8c8",
+      "before": 0,
+      "size": 32,
+      "eu_candidates": [
+        "0x8c8"
+      ]
+    },
+    {
+      "cn_offset": "0x8c8",
+      "before": 16,
+      "size": 48,
+      "eu_candidates": []
+    },
+    {
+      "cn_offset": "0x1b14",
+      "before": 8,
+      "size": 32,
+      "eu_candidates": []
+    },
+    {
+      "cn_offset": "0x1b14",
+      "before": 0,
+      "size": 32,
+      "eu_candidates": [
+        "0x1b14"
+      ]
+    },
+    {
+      "cn_offset": "0x1b14",
+      "before": 16,
+      "size": 48,
+      "eu_candidates": [
+        "0x1b14"
+      ]
+    },
+    {
+      "cn_offset": "0x19824",
+      "before": 8,
+      "size": 32,
+      "eu_candidates": [
+        "0x19ce8"
+      ]
+    },
+    {
+      "cn_offset": "0x19824",
+      "before": 0,
+      "size": 32,
+      "eu_candidates": [
+        "0x19ce8"
+      ]
+    },
+    {
+      "cn_offset": "0x19824",
+      "before": 16,
+      "size": 48,
+      "eu_candidates": []
+    },
+    {
+      "cn_offset": "0x5ccc8",
+      "before": 8,
+      "size": 32,
+      "eu_candidates": []
+    },
+    {
+      "cn_offset": "0x5ccc8",
+      "before": 0,
+      "size": 32,
+      "eu_candidates": []
+    },
+    {
+      "cn_offset": "0x5ccc8",
+      "before": 16,
+      "size": 48,
+      "eu_candidates": []
+    },
+    {
+      "cn_offset": "0x845dc",
+      "before": 8,
+      "size": 32,
+      "eu_candidates": [
+        "0x8441c"
+      ]
+    },
+    {
+      "cn_offset": "0x845dc",
+      "before": 0,
+      "size": 32,
+      "eu_candidates": [
+        "0x8441c"
+      ]
+    },
+    {
+      "cn_offset": "0x845dc",
+      "before": 16,
+      "size": 48,
+      "eu_candidates": [
+        "0x8441c"
+      ]
+    },
+    {
+      "cn_offset": "0x713c4",
+      "before": 8,
+      "size": 32,
+      "eu_candidates": []
+    },
+    {
+      "cn_offset": "0x713c4",
+      "before": 0,
+      "size": 32,
+      "eu_candidates": []
+    },
+    {
+      "cn_offset": "0x713c4",
+      "before": 16,
+      "size": 48,
+      "eu_candidates": []
+    },
+    {
+      "cn_offset": "0x72788",
+      "before": 8,
+      "size": 32,
+      "eu_candidates": []
+    },
+    {
+      "cn_offset": "0x72788",
+      "before": 0,
+      "size": 32,
+      "eu_candidates": []
+    },
+    {
+      "cn_offset": "0x72788",
+      "before": 16,
+      "size": 48,
+      "eu_candidates": []
+    }
+  ],
+  "anchor_votes": [
+    {
+      "cn_offset": "0x69736",
+      "method": "unique exact 12-byte anchors; overlapping votes are not independent evidence",
+      "candidates": [
+        {
+          "eu_offset": "0x690da",
+          "votes": 13
+        }
+      ]
+    },
+    {
+      "cn_offset": "0x713c4",
+      "method": "unique exact 12-byte anchors; overlapping votes are not independent evidence",
+      "candidates": [
+        {
+          "eu_offset": "0x7207c",
+          "votes": 2
+        },
+        {
+          "eu_offset": "0x70bea",
+          "votes": 1
+        }
+      ]
+    },
+    {
+      "cn_offset": "0x72788",
+      "method": "unique exact 12-byte anchors; overlapping votes are not independent evidence",
+      "candidates": [
+        {
+          "eu_offset": "0x70cf0",
+          "votes": 4
+        },
+        {
+          "eu_offset": "0x71bd2",
+          "votes": 1
+        }
+      ]
+    },
+    {
+      "cn_offset": "0x5ccc8",
+      "method": "unique exact 12-byte anchors; overlapping votes are not independent evidence",
+      "candidates": [
+        {
+          "eu_offset": "0x5c620",
+          "votes": 9
+        },
+        {
+          "eu_offset": "0x9138",
+          "votes": 1
+        }
+      ]
+    }
+  ],
+  "division_routine_prefix_matches": [
+    {
+      "cn_offset": "0xbaa7c",
+      "exact_prefix_bytes": 128,
+      "eu_candidates": [
+        "0xb956c"
+      ]
+    },
+    {
+      "cn_offset": "0xba8a4",
+      "exact_prefix_bytes": 128,
+      "eu_candidates": [
+        "0xb9394"
+      ]
+    }
+  ],
+  "decoded_calls": [
+    {
+      "cn_offset": "0x69736",
+      "cn_target": "0x080BAA7C",
+      "eu_offset": "0x690da",
+      "eu_target": "0x080B956C"
+    },
+    {
+      "cn_offset": "0x1f1cc",
+      "cn_target": "0x0801E358",
+      "eu_offset": "0x1f3f0",
+      "eu_target": "0x0801E5B0"
+    }
+  ],
+  "table_candidates": [
+    {
+      "id": "ring_balance_rework",
+      "candidates": []
+    },
+    {
+      "id": "temple_soul_fusion_rework",
+      "candidates": [
+        {
+          "delta": "-0xdb7c",
+          "unique_48_byte_context_matches": 135,
+          "matching_preimages": 135,
+          "total_writes": 135
+        }
+      ]
+    },
+    {
+      "id": "weapon_balance_rework",
+      "candidates": [
+        {
+          "delta": "0x630a4",
+          "unique_48_byte_context_matches": 5,
+          "matching_preimages": 20,
+          "total_writes": 48
+        },
+        {
+          "delta": "0x5f8f4",
+          "unique_48_byte_context_matches": 5,
+          "matching_preimages": 16,
+          "total_writes": 48
+        },
+        {
+          "delta": "0x5ddf4",
+          "unique_48_byte_context_matches": 5,
+          "matching_preimages": 25,
+          "total_writes": 48
+        }
+      ]
+    },
+    {
+      "id": "equipment_set_balance_rework",
+      "candidates": [
+        {
+          "delta": "0x77eac",
+          "unique_48_byte_context_matches": 2,
+          "matching_preimages": 75,
+          "total_writes": 288
+        }
+      ]
+    }
+  ]
+}

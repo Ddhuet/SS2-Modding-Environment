@@ -1,0 +1,158 @@
+[
+  {
+    "command": [
+      "/home/david/Documents/SS2_Modding/eu/.venv/bin/python",
+      "/home/david/Documents/SS2_Modding/eu/scripts/disassemble.py",
+      "/home/david/Documents/SS2_Modding/eu/inputs/ss2-eu.gba",
+      "--offset",
+      "0x69080",
+      "--length",
+      "0x1a4"
+    ],
+    "output": "eu-outer.txt"
+  },
+  {
+    "command": [
+      "/home/david/Documents/SS2_Modding/eu/.venv/bin/python",
+      "/home/david/Documents/SS2_Modding/eu/scripts/disassemble.py",
+      "/home/david/Documents/SS2_Modding/eu/inputs/ss2-eu.gba",
+      "--offset",
+      "0x69224",
+      "--length",
+      "0x164"
+    ],
+    "output": "eu-inner.txt"
+  },
+  {
+    "command": [
+      "/home/david/Documents/SS2_Modding/eu/.venv/bin/python",
+      "/home/david/Documents/SS2_Modding/eu/scripts/disassemble.py",
+      "/home/david/Documents/SS2_Modding/eu/inputs/ss2-eu.gba",
+      "--offset",
+      "0x69144",
+      "--length",
+      "0x4c"
+    ],
+    "output": "eu-outer-duration.txt"
+  },
+  {
+    "command": [
+      "/home/david/Documents/SS2_Modding/eu/.venv/bin/python",
+      "/home/david/Documents/SS2_Modding/eu/scripts/disassemble.py",
+      "/home/david/Documents/SS2_Modding/eu/inputs/ss2-eu.gba",
+      "--offset",
+      "0x69194",
+      "--length",
+      "0x76"
+    ],
+    "output": "eu-outer-dispatch.txt"
+  },
+  {
+    "command": [
+      "/home/david/Documents/SS2_Modding/eu/.venv/bin/python",
+      "/home/david/Documents/SS2_Modding/eu/scripts/disassemble.py",
+      "/home/david/Documents/SS2_Modding/eu/inputs/ss2-eu.gba",
+      "--offset",
+      "0x29a7c",
+      "--length",
+      "0x120"
+    ],
+    "output": "eu-player-caller.txt"
+  },
+  {
+    "command": [
+      "/home/david/Documents/SS2_Modding/eu/.venv/bin/python",
+      "/home/david/Documents/SS2_Modding/eu/scripts/disassemble.py",
+      "/home/david/Documents/SS2_Modding/eu/inputs/ss2-eu.gba",
+      "--offset",
+      "0x1f650",
+      "--length",
+      "0x150"
+    ],
+    "output": "eu-enemy-caller.txt"
+  },
+  {
+    "command": [
+      "/home/david/Documents/SS2_Modding/eu/.venv/bin/python",
+      "/home/david/Documents/SS2_Modding/eu/scripts/disassemble.py",
+      "/home/david/Documents/SS2_Modding/eu/inputs/ss2-eu.gba",
+      "--offset",
+      "0x64a90",
+      "--length",
+      "0x120"
+    ],
+    "output": "eu-second-enemy-caller.txt"
+  },
+  {
+    "command": [
+      "/home/david/Documents/SS2_Modding/eu/.venv/bin/python",
+      "/home/david/Documents/SS2_Modding/eu/scripts/disassemble.py",
+      "/home/david/Documents/SS2_Modding/eu/inputs/ss2-eu.gba",
+      "--offset",
+      "0x67d28",
+      "--length",
+      "0x4c"
+    ],
+    "output": "eu-queue.txt"
+  },
+  {
+    "command": [
+      "/home/david/Documents/SS2_Modding/eu/.venv/bin/python",
+      "/home/david/Documents/SS2_Modding/eu/scripts/disassemble.py",
+      "/home/david/Documents/SS2_Modding/eu/inputs/ss2-eu.gba",
+      "--offset",
+      "0x8c8",
+      "--length",
+      "0x74"
+    ],
+    "output": "eu-rng.txt"
+  },
+  {
+    "command": [
+      "/home/david/Documents/SS2_Modding/eu/.venv/bin/python",
+      "/home/david/Documents/SS2_Modding/eu/scripts/disassemble.py",
+      "/home/david/Documents/SS2_Modding/eu/inputs/ss2-eu.gba",
+      "--offset",
+      "0x20f4",
+      "--length",
+      "0x24"
+    ],
+    "output": "eu-current-player.txt"
+  },
+  {
+    "command": [
+      "/home/david/Documents/SS2_Modding/eu/.venv/bin/python",
+      "/home/david/Documents/SS2_Modding/eu/scripts/disassemble.py",
+      "/home/david/Documents/SS2_Modding/eu/inputs/ss2-eu.gba",
+      "--offset",
+      "0xb956c",
+      "--length",
+      "0x78"
+    ],
+    "output": "eu-udiv.txt"
+  },
+  {
+    "command": [
+      "/home/david/Documents/SS2_Modding/eu/.venv/bin/python",
+      "/home/david/Documents/SS2_Modding/eu/scripts/disassemble.py",
+      "/home/david/Documents/SS2_Modding/eu/inputs/ss2-eu.gba",
+      "--offset",
+      "0xb9394",
+      "--length",
+      "0x1d8"
+    ],
+    "output": "eu-sdiv.txt"
+  },
+  {
+    "command": [
+      "/home/david/Documents/SS2_Modding/eu/.venv/bin/python",
+      "/home/david/Documents/SS2_Modding/eu/scripts/disassemble.py",
+      "/home/david/Documents/SS2_Modding/eu/inputs/ss2-cn-baseline.gba",
+      "--offset",
+      "0x696dc",
+      "--length",
+      "0x1a4"
+    ],
+    "output": "cn-outer.txt"
+  }
+]

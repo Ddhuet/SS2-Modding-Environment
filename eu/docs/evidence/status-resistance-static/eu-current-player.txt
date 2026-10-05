@@ -1,0 +1,20 @@
+; SHA-256 e5c64a1740263e9b26120e487f3688fbbf7b3954a2c043c0d84c333df467e0b2
+; Disassembly is not proof that this range is code; literal pools may decode as instructions.
+080020F4  0348       ldr      r0, [pc, #0xc]
+080020F6  0068       ldr      r0, [r0]
+080020F8  0221       movs     r1, #2
+080020FA  0840       ands     r0, r1
+080020FC  0028       cmp      r0, #0
+080020FE  03d1       bne      #0x8002108
+08002100  0020       movs     r0, #0
+08002102  05e0       b        #0x8002110
+08002104  d027       movs     r7, #0xd0
+08002106  0003       lsls     r0, r0, #0xc
+08002108  0248       ldr      r0, [pc, #8]
+0800210A  0068       ldr      r0, [r0]
+0800210C  8006       lsls     r0, r0, #0x1a
+0800210E  800f       lsrs     r0, r0, #0x1e
+08002110  7047       bx       lr
+08002112  0000       movs     r0, r0
+08002114  2801       lsls     r0, r5, #4
+08002116  0004       lsls     r0, r0, #0x10

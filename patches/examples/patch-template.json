@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "replace_me",
+  "name": "请填写一个小功能",
+  "stage": "research",
+  "baseline": {
+    "filename": "SS2_SC_bug_fixed.GBA",
+    "size": 33554432,
+    "md5": "35eb6567d94f855480c5d7ba2dff4389",
+    "sha256": "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989"
+  },
+  "writes": []
+}

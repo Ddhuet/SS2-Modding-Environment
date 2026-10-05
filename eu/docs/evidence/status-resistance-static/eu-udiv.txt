@@ -1,0 +1,61 @@
+; SHA-256 e5c64a1740263e9b26120e487f3688fbbf7b3954a2c043c0d84c333df467e0b2
+; Disassembly is not proof that this range is code; literal pools may decode as instructions.
+080B956C  0029       cmp      r1, #0
+080B956E  34d0       beq      #0x80b95da
+080B9570  0123       movs     r3, #1
+080B9572  0022       movs     r2, #0
+080B9574  10b4       push     {r4}
+080B9576  8842       cmp      r0, r1
+080B9578  2cd3       blo      #0x80b95d4
+080B957A  0124       movs     r4, #1
+080B957C  2407       lsls     r4, r4, #0x1c
+080B957E  a142       cmp      r1, r4
+080B9580  04d2       bhs      #0x80b958c
+080B9582  8142       cmp      r1, r0
+080B9584  02d2       bhs      #0x80b958c
+080B9586  0901       lsls     r1, r1, #4
+080B9588  1b01       lsls     r3, r3, #4
+080B958A  f8e7       b        #0x80b957e
+080B958C  e400       lsls     r4, r4, #3
+080B958E  a142       cmp      r1, r4
+080B9590  04d2       bhs      #0x80b959c
+080B9592  8142       cmp      r1, r0
+080B9594  02d2       bhs      #0x80b959c
+080B9596  4900       lsls     r1, r1, #1
+080B9598  5b00       lsls     r3, r3, #1
+080B959A  f8e7       b        #0x80b958e
+080B959C  8842       cmp      r0, r1
+080B959E  01d3       blo      #0x80b95a4
+080B95A0  401a       subs     r0, r0, r1
+080B95A2  1a43       orrs     r2, r3
+080B95A4  4c08       lsrs     r4, r1, #1
+080B95A6  a042       cmp      r0, r4
+080B95A8  02d3       blo      #0x80b95b0
+080B95AA  001b       subs     r0, r0, r4
+080B95AC  5c08       lsrs     r4, r3, #1
+080B95AE  2243       orrs     r2, r4
+080B95B0  8c08       lsrs     r4, r1, #2
+080B95B2  a042       cmp      r0, r4
+080B95B4  02d3       blo      #0x80b95bc
+080B95B6  001b       subs     r0, r0, r4
+080B95B8  9c08       lsrs     r4, r3, #2
+080B95BA  2243       orrs     r2, r4
+080B95BC  cc08       lsrs     r4, r1, #3
+080B95BE  a042       cmp      r0, r4
+080B95C0  02d3       blo      #0x80b95c8
+080B95C2  001b       subs     r0, r0, r4
+080B95C4  dc08       lsrs     r4, r3, #3
+080B95C6  2243       orrs     r2, r4
+080B95C8  0028       cmp      r0, #0
+080B95CA  03d0       beq      #0x80b95d4
+080B95CC  1b09       lsrs     r3, r3, #4
+080B95CE  01d0       beq      #0x80b95d4
+080B95D0  0909       lsrs     r1, r1, #4
+080B95D2  e3e7       b        #0x80b959c
+080B95D4  101c       adds     r0, r2, #0
+080B95D6  10bc       pop      {r4}
+080B95D8  f746       mov      pc, lr
+080B95DA  00b5       push     {lr}
+080B95DC  fff724ff   bl       #0x80b9428
+080B95E0  0020       movs     r0, #0
+080B95E2  00bd       pop      {pc}

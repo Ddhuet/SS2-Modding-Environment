@@ -1,0 +1,1485 @@
+{
+  "fixture_sha256": "c33cc290d3c44b977b2dc84fedd31539d48d7739252f2086f9c39196b63f45b7",
+  "baseline_sha256": "e5c64a1740263e9b26120e487f3688fbbf7b3954a2c043c0d84c333df467e0b2",
+  "patched_sha256": "6148261c3430879cd26a3969adda853407bb98477cc8b8d0b6d4d8389c8b17c7",
+  "evidence": "button-driven runtime observations",
+  "ram_or_register_writes": false,
+  "cross_rom_savestates": false,
+  "process_id": 10,
+  "checks": [
+    {
+      "scenario": "baseline",
+      "check": "loaded player pointer",
+      "passed": true,
+      "player": "0x2003bd0"
+    },
+    {
+      "scenario": "baseline",
+      "check": "status overview",
+      "passed": true
+    },
+    {
+      "scenario": "baseline",
+      "check": "skill allocation entered",
+      "passed": true
+    },
+    {
+      "scenario": "baseline",
+      "check": "unique menu snapshot/edit pair",
+      "passed": true,
+      "hits": [
+        "0x20308e4"
+      ]
+    },
+    {
+      "scenario": "baseline",
+      "check": "edit equals live on entry",
+      "passed": true
+    },
+    {
+      "scenario": "baseline",
+      "check": "selected skill",
+      "passed": true,
+      "row": 1
+    },
+    {
+      "scenario": "baseline",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "baseline",
+      "check": "original cannot refund earlier Flail investment",
+      "passed": true
+    },
+    {
+      "scenario": "baseline",
+      "check": "baseline live unchanged",
+      "passed": true
+    },
+    {
+      "scenario": "refund",
+      "check": "loaded player pointer",
+      "passed": true,
+      "player": "0x2003bd0"
+    },
+    {
+      "scenario": "refund",
+      "check": "equivalent independent cold boot",
+      "passed": true
+    },
+    {
+      "scenario": "refund",
+      "check": "status overview",
+      "passed": true
+    },
+    {
+      "scenario": "refund",
+      "check": "skill allocation entered",
+      "passed": true
+    },
+    {
+      "scenario": "refund",
+      "check": "unique menu snapshot/edit pair",
+      "passed": true,
+      "hits": [
+        "0x20308e4"
+      ]
+    },
+    {
+      "scenario": "refund",
+      "check": "edit equals live on entry",
+      "passed": true
+    },
+    {
+      "scenario": "refund",
+      "check": "selected skill",
+      "passed": true,
+      "row": 1
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "refund one previously invested point",
+      "passed": true,
+      "actual": {
+        "pool": 1,
+        "header": 0,
+        "skills": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "scenario": "refund",
+      "check": "uncommitted live block unchanged",
+      "passed": true
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "reallocation exactly restores editable block",
+      "passed": true
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "B cancels live changes",
+      "passed": true
+    },
+    {
+      "scenario": "refund",
+      "check": "B returns to overview",
+      "passed": true
+    },
+    {
+      "scenario": "refund",
+      "check": "skill allocation entered",
+      "passed": true
+    },
+    {
+      "scenario": "refund",
+      "check": "unique menu snapshot/edit pair",
+      "passed": true,
+      "hits": [
+        "0x20308e4"
+      ]
+    },
+    {
+      "scenario": "refund",
+      "check": "edit equals live on entry",
+      "passed": true
+    },
+    {
+      "scenario": "refund",
+      "check": "selected skill",
+      "passed": true,
+      "row": 1
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "refund skill to zero",
+      "passed": true,
+      "actual": {
+        "pool": 3,
+        "header": 0,
+        "skills": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "zero skill refund is no-op",
+      "passed": true
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "three re-spends restore original",
+      "passed": true
+    },
+    {
+      "scenario": "refund",
+      "check": "selected skill",
+      "passed": true,
+      "row": 0
+    },
+    {
+      "scenario": "refund",
+      "check": "row fully refunded",
+      "passed": true,
+      "row": 0
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "empty row no-op",
+      "passed": true,
+      "row": 0
+    },
+    {
+      "scenario": "refund",
+      "check": "selected skill",
+      "passed": true,
+      "row": 1
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "row fully refunded",
+      "passed": true,
+      "row": 1
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "empty row no-op",
+      "passed": true,
+      "row": 1
+    },
+    {
+      "scenario": "refund",
+      "check": "selected skill",
+      "passed": true,
+      "row": 2
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "row fully refunded",
+      "passed": true,
+      "row": 2
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "empty row no-op",
+      "passed": true,
+      "row": 2
+    },
+    {
+      "scenario": "refund",
+      "check": "selected skill",
+      "passed": true,
+      "row": 3
+    },
+    {
+      "scenario": "refund",
+      "check": "row fully refunded",
+      "passed": true,
+      "row": 3
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "empty row no-op",
+      "passed": true,
+      "row": 3
+    },
+    {
+      "scenario": "refund",
+      "check": "selected skill",
+      "passed": true,
+      "row": 4
+    },
+    {
+      "scenario": "refund",
+      "check": "row fully refunded",
+      "passed": true,
+      "row": 4
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "empty row no-op",
+      "passed": true,
+      "row": 4
+    },
+    {
+      "scenario": "refund",
+      "check": "selected skill",
+      "passed": true,
+      "row": 5
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "row fully refunded",
+      "passed": true,
+      "row": 5
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "empty row no-op",
+      "passed": true,
+      "row": 5
+    },
+    {
+      "scenario": "refund",
+      "check": "selected skill",
+      "passed": true,
+      "row": 6
+    },
+    {
+      "scenario": "refund",
+      "check": "row fully refunded",
+      "passed": true,
+      "row": 6
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "empty row no-op",
+      "passed": true,
+      "row": 6
+    },
+    {
+      "scenario": "refund",
+      "check": "selected skill",
+      "passed": true,
+      "row": 7
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "row fully refunded",
+      "passed": true,
+      "row": 7
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "empty row no-op",
+      "passed": true,
+      "row": 7
+    },
+    {
+      "scenario": "refund",
+      "check": "all invested points refundable",
+      "passed": true,
+      "actual": {
+        "pool": 18,
+        "header": 0,
+        "skills": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "scenario": "refund",
+      "check": "selected skill",
+      "passed": true,
+      "row": 0
+    },
+    {
+      "scenario": "refund",
+      "check": "selected skill",
+      "passed": true,
+      "row": 1
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "selected skill",
+      "passed": true,
+      "row": 2
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "selected skill",
+      "passed": true,
+      "row": 3
+    },
+    {
+      "scenario": "refund",
+      "check": "selected skill",
+      "passed": true,
+      "row": 4
+    },
+    {
+      "scenario": "refund",
+      "check": "selected skill",
+      "passed": true,
+      "row": 5
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "selected skill",
+      "passed": true,
+      "row": 6
+    },
+    {
+      "scenario": "refund",
+      "check": "selected skill",
+      "passed": true,
+      "row": 7
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "full reallocation restores original",
+      "passed": true
+    },
+    {
+      "scenario": "refund",
+      "check": "selected skill",
+      "passed": true,
+      "row": 1
+    },
+    {
+      "scenario": "refund",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "refund",
+      "check": "A commits exact edited block",
+      "passed": true
+    },
+    {
+      "scenario": "refund",
+      "check": "skill allocation entered",
+      "passed": true
+    },
+    {
+      "scenario": "refund",
+      "check": "unique menu snapshot/edit pair",
+      "passed": true,
+      "hits": [
+        "0x20308e4"
+      ]
+    },
+    {
+      "scenario": "refund",
+      "check": "edit equals live on entry",
+      "passed": true
+    },
+    {
+      "scenario": "refund",
+      "check": "committed data survives reopening",
+      "passed": true
+    },
+    {
+      "scenario": "refund",
+      "check": "game wrote changed normal save",
+      "passed": true,
+      "dialogue_presses": 7
+    },
+    {
+      "scenario": "new-process-reload",
+      "check": "normal save reload subprocess succeeded",
+      "passed": true,
+      "returncode": 0
+    },
+    {
+      "scenario": "new-process-reload",
+      "check": "loaded player pointer",
+      "passed": true,
+      "player": "0x2003bd0"
+    },
+    {
+      "scenario": "new-process-reload",
+      "check": "normal save reload retains refund",
+      "passed": true,
+      "actual": {
+        "pool": 1,
+        "header": 0,
+        "skills": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ]
+      },
+      "expected": {
+        "pool": 1,
+        "header": 0,
+        "skills": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "scenario": "new-process-reload",
+      "check": "status overview",
+      "passed": true
+    },
+    {
+      "scenario": "new-process-reload",
+      "check": "skill allocation entered",
+      "passed": true
+    },
+    {
+      "scenario": "new-process-reload",
+      "check": "unique menu snapshot/edit pair",
+      "passed": true,
+      "hits": [
+        "0x20308e4"
+      ]
+    },
+    {
+      "scenario": "new-process-reload",
+      "check": "edit equals live on entry",
+      "passed": true
+    },
+    {
+      "scenario": "new-process-reload",
+      "check": "reload leaves source ROM and save unchanged",
+      "passed": true
+    },
+    {
+      "scenario": "new-process-reload",
+      "check": "reload used a separate Python process",
+      "passed": true,
+      "parent_process_id": 10,
+      "child_process_id": 11
+    },
+    {
+      "scenario": "german",
+      "check": "loaded player pointer",
+      "passed": true,
+      "player": "0x2003bd0"
+    },
+    {
+      "scenario": "german",
+      "check": "language uses same saved skills",
+      "passed": true
+    },
+    {
+      "scenario": "german",
+      "check": "status overview",
+      "passed": true
+    },
+    {
+      "scenario": "german",
+      "check": "skill allocation entered",
+      "passed": true
+    },
+    {
+      "scenario": "german",
+      "check": "unique menu snapshot/edit pair",
+      "passed": true,
+      "hits": [
+        "0x20308e4"
+      ]
+    },
+    {
+      "scenario": "german",
+      "check": "edit equals live on entry",
+      "passed": true
+    },
+    {
+      "scenario": "german",
+      "check": "selected skill",
+      "passed": true,
+      "row": 1
+    },
+    {
+      "scenario": "german",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "german",
+      "check": "language refund equivalent",
+      "passed": true,
+      "language": "German"
+    },
+    {
+      "scenario": "german",
+      "check": "language commit",
+      "passed": true
+    },
+    {
+      "scenario": "french",
+      "check": "loaded player pointer",
+      "passed": true,
+      "player": "0x2003bd0"
+    },
+    {
+      "scenario": "french",
+      "check": "language uses same saved skills",
+      "passed": true
+    },
+    {
+      "scenario": "french",
+      "check": "status overview",
+      "passed": true
+    },
+    {
+      "scenario": "french",
+      "check": "skill allocation entered",
+      "passed": true
+    },
+    {
+      "scenario": "french",
+      "check": "unique menu snapshot/edit pair",
+      "passed": true,
+      "hits": [
+        "0x20308e4"
+      ]
+    },
+    {
+      "scenario": "french",
+      "check": "edit equals live on entry",
+      "passed": true
+    },
+    {
+      "scenario": "french",
+      "check": "selected skill",
+      "passed": true,
+      "row": 1
+    },
+    {
+      "scenario": "french",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "french",
+      "check": "language refund equivalent",
+      "passed": true,
+      "language": "French"
+    },
+    {
+      "scenario": "french",
+      "check": "language commit",
+      "passed": true
+    },
+    {
+      "scenario": "italian",
+      "check": "loaded player pointer",
+      "passed": true,
+      "player": "0x2003bd0"
+    },
+    {
+      "scenario": "italian",
+      "check": "language uses same saved skills",
+      "passed": true
+    },
+    {
+      "scenario": "italian",
+      "check": "status overview",
+      "passed": true
+    },
+    {
+      "scenario": "italian",
+      "check": "skill allocation entered",
+      "passed": true
+    },
+    {
+      "scenario": "italian",
+      "check": "unique menu snapshot/edit pair",
+      "passed": true,
+      "hits": [
+        "0x20308e4"
+      ]
+    },
+    {
+      "scenario": "italian",
+      "check": "edit equals live on entry",
+      "passed": true
+    },
+    {
+      "scenario": "italian",
+      "check": "selected skill",
+      "passed": true,
+      "row": 1
+    },
+    {
+      "scenario": "italian",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "italian",
+      "check": "language refund equivalent",
+      "passed": true,
+      "language": "Italian"
+    },
+    {
+      "scenario": "italian",
+      "check": "language commit",
+      "passed": true
+    },
+    {
+      "scenario": "spanish",
+      "check": "loaded player pointer",
+      "passed": true,
+      "player": "0x2003bd0"
+    },
+    {
+      "scenario": "spanish",
+      "check": "language uses same saved skills",
+      "passed": true
+    },
+    {
+      "scenario": "spanish",
+      "check": "status overview",
+      "passed": true
+    },
+    {
+      "scenario": "spanish",
+      "check": "skill allocation entered",
+      "passed": true
+    },
+    {
+      "scenario": "spanish",
+      "check": "unique menu snapshot/edit pair",
+      "passed": true,
+      "hits": [
+        "0x20308e4"
+      ]
+    },
+    {
+      "scenario": "spanish",
+      "check": "edit equals live on entry",
+      "passed": true
+    },
+    {
+      "scenario": "spanish",
+      "check": "selected skill",
+      "passed": true,
+      "row": 1
+    },
+    {
+      "scenario": "spanish",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 18
+    },
+    {
+      "scenario": "spanish",
+      "check": "language refund equivalent",
+      "passed": true,
+      "language": "Spanish"
+    },
+    {
+      "scenario": "spanish",
+      "check": "language commit",
+      "passed": true
+    },
+    {
+      "scenario": "input-preservation",
+      "check": "source ROMs and save hashes remain unchanged",
+      "passed": true,
+      "actual_sha256": {
+        "/home/david/Documents/SS2_Modding/eu/inputs/ss2-eu.gba": "e5c64a1740263e9b26120e487f3688fbbf7b3954a2c043c0d84c333df467e0b2",
+        "/home/david/Documents/SS2_Modding/eu/artifacts/ss2-eu-skill-refund.gba": "6148261c3430879cd26a3969adda853407bb98477cc8b8d0b6d4d8389c8b17c7",
+        "/home/david/Documents/SS2_Modding/eu/inputs/ss2-eu.sav": "c33cc290d3c44b977b2dc84fedd31539d48d7739252f2086f9c39196b63f45b7"
+      }
+    }
+  ],
+  "initial_skills": {
+    "pool": 0,
+    "header": 0,
+    "skills": [
+      [
+        0,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        2,
+        0
+      ]
+    ]
+  },
+  "committed_skills": {
+    "pool": 1,
+    "header": 0,
+    "skills": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        2,
+        0
+      ]
+    ]
+  },
+  "reload_subprocess": {
+    "kind": "independent_process_normal_save_reload",
+    "process_id": 11,
+    "parent_process_id": 10,
+    "rom_sha256": "6148261c3430879cd26a3969adda853407bb98477cc8b8d0b6d4d8389c8b17c7",
+    "source_save_sha256": "68a1e0a6b8cbdbcbe10576dcfecb33c662c62cf385adbe9403c91feb963b2ba8",
+    "ram_or_register_writes": false,
+    "savestates_used": false,
+    "checks": [
+      {
+        "scenario": "new-process-reload",
+        "check": "loaded player pointer",
+        "passed": true,
+        "player": "0x2003bd0"
+      },
+      {
+        "scenario": "new-process-reload",
+        "check": "normal save reload retains refund",
+        "passed": true,
+        "actual": {
+          "pool": 1,
+          "header": 0,
+          "skills": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              2,
+              0
+            ]
+          ]
+        },
+        "expected": {
+          "pool": 1,
+          "header": 0,
+          "skills": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              2,
+              0
+            ]
+          ]
+        }
+      },
+      {
+        "scenario": "new-process-reload",
+        "check": "status overview",
+        "passed": true
+      },
+      {
+        "scenario": "new-process-reload",
+        "check": "skill allocation entered",
+        "passed": true
+      },
+      {
+        "scenario": "new-process-reload",
+        "check": "unique menu snapshot/edit pair",
+        "passed": true,
+        "hits": [
+          "0x20308e4"
+        ]
+      },
+      {
+        "scenario": "new-process-reload",
+        "check": "edit equals live on entry",
+        "passed": true
+      },
+      {
+        "scenario": "new-process-reload",
+        "check": "reload leaves source ROM and save unchanged",
+        "passed": true
+      }
+    ],
+    "result": "PASS"
+  },
+  "result": "PASS",
+  "source_inputs_unchanged": true,
+  "assertion_count": 174,
+  "passed_assertions": 174
+}

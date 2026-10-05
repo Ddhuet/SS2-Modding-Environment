@@ -1,0 +1,5 @@
+build/
+play-build/
+vendor/
+references/
+__pycache__/

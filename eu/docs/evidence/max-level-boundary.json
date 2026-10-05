@@ -1,0 +1,633 @@
+{
+  "scope": "synthetic valid max-level skill RAM fixture, not naturally earned on this save",
+  "ram_or_register_writes": true,
+  "checks": [
+    {
+      "scenario": "level-seven",
+      "check": "loaded player pointer",
+      "passed": true,
+      "player": "0x2003bd0"
+    },
+    {
+      "scenario": "level-seven",
+      "check": "status overview",
+      "passed": true
+    },
+    {
+      "scenario": "level-seven",
+      "check": "skill allocation entered",
+      "passed": true
+    },
+    {
+      "scenario": "level-seven",
+      "check": "unique menu snapshot/edit pair",
+      "passed": true,
+      "hits": [
+        "0x20308e4"
+      ]
+    },
+    {
+      "scenario": "level-seven",
+      "check": "edit equals live on entry",
+      "passed": true
+    },
+    {
+      "scenario": "level-seven",
+      "check": "selected skill",
+      "passed": true,
+      "row": 1
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "max level refuses further investment",
+      "passed": true
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "max-level refund crosses boundary correctly",
+      "passed": true,
+      "actual": {
+        "pool": 2,
+        "header": 0,
+        "skills": [
+          [
+            0,
+            0
+          ],
+          [
+            6,
+            6
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "reinvestment restores max level exactly",
+      "passed": true
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "all 28 max-level points refundable",
+      "passed": true,
+      "actual": {
+        "pool": 29,
+        "header": 0,
+        "skills": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "LEFT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "zero bound remains no-op",
+      "passed": true
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "point conservation",
+      "passed": true,
+      "key": "RIGHT",
+      "total": 44
+    },
+    {
+      "scenario": "level-seven",
+      "check": "28 re-spends restore exact max-level block",
+      "passed": true
+    },
+    {
+      "scenario": "level-seven",
+      "check": "cancel preserves synthetic entry block",
+      "passed": true
+    },
+    {
+      "scenario": "level-seven",
+      "check": "source normal save unchanged",
+      "passed": true
+    }
+  ],
+  "original": {
+    "pool": 0,
+    "header": 0,
+    "skills": [
+      [
+        0,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        2,
+        0
+      ]
+    ]
+  },
+  "setup_writes": [
+    {
+      "address": "0x2003c00",
+      "before": 0,
+      "after": 1
+    },
+    {
+      "address": "0x2003c08",
+      "before": 2,
+      "after": 7
+    },
+    {
+      "address": "0x2003c0a",
+      "before": 0,
+      "after": 0
+    }
+  ],
+  "result": "PASS"
+}

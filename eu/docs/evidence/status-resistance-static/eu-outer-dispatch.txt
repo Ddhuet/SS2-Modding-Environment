@@ -1,0 +1,57 @@
+; SHA-256 e5c64a1740263e9b26120e487f3688fbbf7b3954a2c043c0d84c333df467e0b2
+; Disassembly is not proof that this range is code; literal pools may decode as instructions.
+08069194  1d49       ldr      r1, [pc, #0x74]
+08069196  4246       mov      r2, r8
+08069198  5000       lsls     r0, r2, #1
+0806919A  4044       add      r0, r8
+0806919C  c000       lsls     r0, r0, #3
+0806919E  801a       subs     r0, r0, r2
+080691A0  4001       lsls     r0, r0, #5
+080691A2  1b4a       ldr      r2, [pc, #0x6c]
+080691A4  8018       adds     r0, r0, r2
+080691A6  0968       ldr      r1, [r1]
+080691A8  0918       adds     r1, r1, r0
+080691AA  1a4a       ldr      r2, [pc, #0x68]
+080691AC  8818       adds     r0, r1, r2
+080691AE  0078       ldrb     r0, [r0]
+080691B0  0328       cmp      r0, #3
+080691B2  22d0       beq      #0x80691fa
+080691B4  8a78       ldrb     r2, [r1, #2]
+080691B6  1849       ldr      r1, [pc, #0x60]
+080691B8  0098       ldr      r0, [sp]
+080691BA  0840       ands     r0, r1
+080691BC  1043       orrs     r0, r2
+080691BE  0090       str      r0, [sp]
+080691C0  1648       ldr      r0, [pc, #0x58]
+080691C2  6c46       mov      r4, sp
+080691C4  0199       ldr      r1, [sp, #4]
+080691C6  0140       ands     r1, r0
+080691C8  4846       mov      r0, sb
+080691CA  0143       orrs     r1, r0
+080691CC  0191       str      r1, [sp, #4]
+080691CE  6846       mov      r0, sp
+080691D0  fef7aafd   bl       #0x8067d28
+080691D4  98f78eff   bl       #0x80020f4
+080691D8  8045       cmp      r8, r0
+080691DA  0ed1       bne      #0x80691fa
+080691DC  a3f7d0fe   bl       #0x800cf80
+080691E0  0028       cmp      r0, #0
+080691E2  0ad1       bne      #0x80691fa
+080691E4  6078       ldrb     r0, [r4, #1]
+080691E6  0e49       ldr      r1, [pc, #0x38]
+080691E8  0a68       ldr      r2, [r1]
+080691EA  2432       adds     r2, #0x24
+080691EC  4946       mov      r1, sb
+080691EE  00f019f8   bl       #0x8069224
+080691F2  5046       mov      r0, sl
+080691F4  e030       adds     r0, #0xe0
+080691F6  0b99       ldr      r1, [sp, #0x2c]
+080691F8  0160       str      r1, [r0]
+080691FA  02b0       add      sp, #8
+080691FC  38bc       pop      {r3, r4, r5}
+080691FE  9846       mov      r8, r3
+08069200  a146       mov      sb, r4
+08069202  aa46       mov      sl, r5
+08069204  f0bc       pop      {r4, r5, r6, r7}
+08069206  01bc       pop      {r0}
+08069208  0047       bx       r0

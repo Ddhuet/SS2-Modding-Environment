@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "id": "ss2-eu",
+  "name": "Shining Soul II Europe",
+  "role": "EU experiment target",
+  "identity": {
+    "size": 16777216,
+    "md5": "49aa688745111aaa51076a345f8f18c3",
+    "sha256": "e5c64a1740263e9b26120e487f3688fbbf7b3954a2c043c0d84c333df467e0b2",
+    "crc32": "55E503C1"
+  },
+  "gba_header": {
+    "title": "SHINING SOUL",
+    "game_code": "AU2P",
+    "maker_code": "8P",
+    "revision": 0,
+    "checksum_valid": true
+  },
+  "provenance": {
+    "kind": "local_file_hash_verification",
+    "filename_hint": "ss2-eu.gba",
+    "verified_utc": "2026-10-04",
+    "note": "Hashes computed from supplied ROM bytes; region/language labels are descriptive, not inferred from filename or header alone."
+  }
+}

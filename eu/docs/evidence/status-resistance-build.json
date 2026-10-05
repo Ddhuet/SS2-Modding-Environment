@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "kind": "ss2_build_manifest",
+  "created_utc": "2026-10-04T14:43:26.075380+00:00",
+  "profile_id": "ss2-eu",
+  "patch_id": "status_resistance_signed_division_eu",
+  "patch_sha256": "2a1ad219bbd4150c8a3577eb0230db5f2a602828b85ff201f8258ae69a22fb5c",
+  "stage": "static_candidate",
+  "semantic_approval": false,
+  "static_candidate_opt_in": true,
+  "input_identity": {
+    "size": 16777216,
+    "md5": "49aa688745111aaa51076a345f8f18c3",
+    "sha256": "e5c64a1740263e9b26120e487f3688fbbf7b3954a2c043c0d84c333df467e0b2",
+    "crc32": "55E503C1"
+  },
+  "output_identity": {
+    "size": 16777216,
+    "md5": "00c7c3d37156d9be5eea73f481e3e1aa",
+    "sha256": "3e62e1035485b5fe3e4af1040625626686cb886d5680cfb8f2e4a2a721467d5e",
+    "crc32": "34A29F40"
+  },
+  "output_filename": "ss2-eu-resistance-candidate-001.gba",
+  "writes": [
+    {
+      "offset": "0x000690DA",
+      "before_hex": "50f047fa",
+      "after_hex": "50f05bf9"
+    }
+  ],
+  "ips": {
+    "filename": "ss2-eu-resistance-candidate-001.ips",
+    "identity": {
+      "size": 17,
+      "md5": "73bd79b7fe0c047657f1923f594a129c",
+      "sha256": "0085fd7c72898b277b7410a1884c9f61b33f37988c3256e6e588e689e529f322",
+      "crc32": "3BEB9131"
+    },
+    "warning": "IPS alone has no identity or preimage enforcement"
+  }
+}

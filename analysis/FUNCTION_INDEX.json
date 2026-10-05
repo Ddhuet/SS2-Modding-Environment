@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "historical_analysis_baseline_sha256": "12c0c32b4e770d0f0d25d237f4cc0a89114ad784d01e6889af998dbe927ea380",
+  "current_baseline_sha256": "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989",
+  "migration_note": "Addresses are historical navigation clues; reread bytes and control flow on the current baseline.",
+  "entries": [
+    {"address":"0x080008C8","mode":"thumb","system":"random","name":"RNG32","keywords":["random","RNG"],"evidence":"confirmed/static"},
+    {"address":"0x0800CCBC","mode":"thumb","system":"player_life","name":"player_action_life_state_machine","keywords":["death","state","life"],"evidence":"confirmed/static"},
+    {"address":"0x08013594","mode":"thumb","system":"player_life","name":"apply_pending_player_damage_and_test_lethal","keywords":["damage","lethal","death","HP","revive"],"evidence":"confirmed/static"},
+    {"address":"0x080135C4","mode":"thumb_code_point","system":"player_life","name":"soul_return_auto_revive_hook","keywords":["Soul Return","auto-revive","lethal","item"],"evidence":"released; historical user accepted; current combination not retested"},
+    {"address":"0x08019824","mode":"thumb","system":"combat","name":"object_take_damage","keywords":["damage","take damage","HP","object"],"evidence":"confirmed/static"},
+    {"address":"0x0801B690","mode":"thumb","system":"attributes","name":"rebuild_player_equipment_status","keywords":["attributes","equipment","status rebuild"],"evidence":"inferred/static"},
+    {"address":"0x0801B18C","mode":"thumb","system":"combat_attributes","name":"weapon_skill_attack_bonus_dispatch","keywords":["weapon","skill","attack power"],"evidence":"confirmed/static"},
+    {"address":"0x0801C87C","mode":"thumb","system":"level","name":"level_up_func","keywords":["level","EXP","cap"],"evidence":"confirmed/static"},
+    {"address":"0x0801DD8C","mode":"thumb","system":"player_life","name":"is_local_player_incapacitated_or_pending_death","keywords":["incapacitated","death","HP"],"evidence":"confirmed/static"},
+    {"address":"0x0801E358","mode":"thumb","system":"combat","name":"physical_damage_calc_with_counter","keywords":["physical damage","COUNTER","counterattack"],"evidence":"confirmed/static"},
+    {"address":"0x0801F150","mode":"thumb","system":"combat","name":"attack_process","keywords":["attack","life steal","hit"],"evidence":"confirmed/static"},
+    {"address":"0x08022D78","mode":"thumb","system":"map","name":"map_entry","keywords":["map","area","floor"],"evidence":"confirmed/static"},
+    {"address":"0x08023EB0","mode":"thumb","system":"map","name":"map_load_by_area","keywords":["map","load","area"],"evidence":"confirmed/static"},
+    {"address":"0x08026F88","mode":"thumb","system":"map","name":"map_init_after_entry","keywords":["map","initialization","spawn"],"evidence":"confirmed/static"},
+    {"address":"0x0805CCC8","mode":"thumb","system":"drop","name":"drop_roll","keywords":["drop","random","monster"],"evidence":"confirmed/static"},
+    {"address":"0x0805DAA4","mode":"thumb","system":"items","name":"bag_money_count","keywords":["bag","money","item"],"evidence":"confirmed/static"},
+    {"address":"0x0805DAD4","mode":"thumb","system":"warehouse","name":"warehouse_money_count","keywords":["warehouse","money","item"],"evidence":"confirmed/static"},
+    {"address":"0x08068364","mode":"thumb","system":"status_sync","name":"enqueue_status_sync_message_8b","keywords":["status","status effect","sync","message"],"evidence":"confirmed/static"},
+    {"address":"0x0806A094","mode":"thumb","system":"skill_visual","name":"create_skill_visual_action_object","keywords":["skill","visual effect","object"],"evidence":"confirmed/static"},
+    {"address":"0x08073FD4","mode":"thumb","system":"skill_effect","name":"create_timed_effect_entity","keywords":["status","effect","duration","status effect"],"evidence":"confirmed/static"},
+    {"address":"0x08077374","mode":"thumb","system":"hit","name":"attack_hit_target_loop","keywords":["hit","target","attack loop"],"evidence":"inferred/static"},
+    {"address":"0x0807D268","mode":"thumb","system":"items","name":"item_type_dispatch","keywords":["item","type","dispatch"],"evidence":"confirmed/static"},
+    {"address":"0x080836FC","mode":"thumb","system":"warehouse_ui","name":"warehouse_ui_dispatch","keywords":["warehouse","UI","state machine"],"evidence":"confirmed/static"},
+    {"address":"0x080B9CD8","mode":"thumb","system":"flash","name":"flash_cmd","keywords":["Flash","save data","write"],"evidence":"confirmed/static"}
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "id": "soul_return_auto_revive",
+  "name": "魂之回归自动复活",
+  "stage": "released",
+  "baseline": {
+    "filename": "SS2_SC_bug_fixed.GBA",
+    "size": 33554432,
+    "md5": "35eb6567d94f855480c5d7ba2dff4389",
+    "sha256": "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989",
+    "crc32": "AFCFC96D"
+  },
+  "source_provenance": {
+    "kind": "official_offline_builder_bundle",
+    "source": "光明之魂2_离线补丁构建器_0830.html",
+    "generated_from_current_baseline": true
+  },
+  "evidence": {
+    "static_rebuild": "passed upstream",
+    "dynamic_combination_test": "not_run"
+  },
+  "writes": [
+    {
+      "address": "0x080135C4",
+      "offset": "0x000135C4",
+      "before_hex": "0026995f",
+      "after_hex": "29f37cf9",
+      "mode": "unknown",
+      "note": "official_builder_0830:soul_return_auto_revive"
+    },
+    {
+      "address": "0x0833C8C1",
+      "offset": "0x0033C8C1",
+      "before_hex": "000000",
+      "after_hex": "26995f",
+      "mode": "unknown",
+      "note": "official_builder_0830:soul_return_auto_revive"
+    },
+    {
+      "address": "0x0833C8C5",
+      "offset": "0x0033C8C5",
+      "before_hex": "000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "2939dcf0b51f1cc5f412fc1b4948431b494018a04228d11a480568ac2040",
+      "mode": "unknown",
+      "note": "official_builder_0830:soul_return_auto_revive"
+    },
+    {
+      "address": "0x0833C8E4",
+      "offset": "0x0033C8E4",
+      "before_hex": "000000000000000000000000000000000000000000000000",
+      "after_hex": "2d1819262888012802d16888072803d01035013ef6d118e0",
+      "mode": "unknown",
+      "note": "official_builder_0830:soul_return_auto_revive"
+    },
+    {
+      "address": "0x0833C8FD",
+      "offset": "0x0033C8FD",
+      "before_hex": "00000000000000000000000000000000",
+      "after_hex": "262e606e60ae60ee60211c6a31088880",
+      "mode": "unknown",
+      "note": "official_builder_0830:soul_return_auto_revive"
+    },
+    {
+      "address": "0x0833C90E",
+      "offset": "0x0033C90E",
+      "before_hex": "00000000000000000000000000000000000000",
+      "after_hex": "05217df5c8ff211ccc310880211c6831088880",
+      "mode": "unknown",
+      "note": "official_builder_0830:soul_return_auto_revive"
+    },
+    {
+      "address": "0x0833C922",
+      "offset": "0x0033C922",
+      "before_hex": "00000000000000000000000000000000",
+      "after_hex": "05217df5beff211cca310880f0bc01bc",
+      "mode": "unknown",
+      "note": "official_builder_0830:soul_return_auto_revive"
+    },
+    {
+      "address": "0x0833C933",
+      "offset": "0x0033C933",
+      "before_hex": "00000000000000",
+      "after_hex": "26231ccc33995f",
+      "mode": "unknown",
+      "note": "official_builder_0830:soul_return_auto_revive"
+    },
+    {
+      "address": "0x0833C93B",
+      "offset": "0x0033C93B",
+      "before_hex": "000000",
+      "after_hex": "477047",
+      "mode": "unknown",
+      "note": "official_builder_0830:soul_return_auto_revive"
+    },
+    {
+      "address": "0x0833C940",
+      "offset": "0x0033C940",
+      "before_hex": "0000",
+      "after_hex": "5403",
+      "mode": "unknown",
+      "note": "official_builder_0830:soul_return_auto_revive"
+    },
+    {
+      "address": "0x0833C944",
+      "offset": "0x0033C944",
+      "before_hex": "0000",
+      "after_hex": "803d",
+      "mode": "unknown",
+      "note": "official_builder_0830:soul_return_auto_revive"
+    },
+    {
+      "address": "0x0833C947",
+      "offset": "0x0033C947",
+      "before_hex": "000000",
+      "after_hex": "038035",
+      "mode": "unknown",
+      "note": "official_builder_0830:soul_return_auto_revive"
+    },
+    {
+      "address": "0x0833C94B",
+      "offset": "0x0033C94B",
+      "before_hex": "00",
+      "after_hex": "03",
+      "mode": "unknown",
+      "note": "official_builder_0830:soul_return_auto_revive"
+    }
+  ]
+}

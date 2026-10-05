@@ -1,0 +1,24 @@
+{
+  "result": "PASS",
+  "identities": {
+    "ss2-cn-baseline": {
+      "size": 33554432,
+      "md5": "35eb6567d94f855480c5d7ba2dff4389",
+      "sha256": "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989",
+      "crc32": "AFCFC96D"
+    },
+    "ss2-eu": {
+      "size": 16777216,
+      "md5": "49aa688745111aaa51076a345f8f18c3",
+      "sha256": "e5c64a1740263e9b26120e487f3688fbbf7b3954a2c043c0d84c333df467e0b2",
+      "crc32": "55E503C1"
+    }
+  },
+  "source_preimages_verified": true,
+  "source_original_target": "0x080BAA7C",
+  "source_replacement_target": "0x080BA8A4",
+  "eu_original_target": "0x080B956C",
+  "eu_replacement_target": "0x080B9394",
+  "eu_complete_replacement_hex": "50f05bf9",
+  "source_inputs_unchanged": true
+}

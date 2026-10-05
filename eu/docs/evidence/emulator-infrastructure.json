@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "scope": "emulator infrastructure only",
+  "checks": [
+    "preexisting_symlink_hardlink_run_dirs_rejected",
+    "live_manifest_export_source_aliases_rejected",
+    "paused_startup",
+    "rom_bus_read",
+    "button_wiring",
+    "exact_frame_count",
+    "png_240x160",
+    "savestate_restores_frame_cpu_ram_pixels",
+    "deterministic_state_replay",
+    "output_and_ram_write_limits",
+    "protected_source_alias_outputs_rejected",
+    "mismatched_corrupt_unbound_states_rejected_without_mutation",
+    "close_flushes_save_copy",
+    "real_cross_rom_state_rejected_without_mutation",
+    "fresh_core_reload_deterministic",
+    "source_rom_save_hashes_unchanged"
+  ],
+  "source_sha256": {
+    "/home/david/Documents/SS2_Modding/eu/inputs/ss2-eu.gba": "e5c64a1740263e9b26120e487f3688fbbf7b3954a2c043c0d84c333df467e0b2",
+    "/home/david/Documents/SS2_Modding/eu/inputs/ss2-eu.sav": "c33cc290d3c44b977b2dc84fedd31539d48d7739252f2086f9c39196b63f45b7"
+  },
+  "snapshot": {
+    "ewram": "7a49085b65b5296ba2a3b427569dedd86cc0f961fe6b9a528d1d040197e9e892",
+    "iwram": "9dea8c6128770a8bb599a909e8f5aa76a6e7318b14f6af9ee4a021729c3ccc92",
+    "pc": 504,
+    "screenshot": "c8519aaa83c0bfef05fc9a5dc31618ddb2db680db045030d64060e85b630602b"
+  },
+  "run_dir": "/home/david/Documents/SS2_Modding/eu/runs/harness-final"
+}

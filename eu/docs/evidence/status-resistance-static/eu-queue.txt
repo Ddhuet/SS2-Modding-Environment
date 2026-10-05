@@ -1,0 +1,39 @@
+; SHA-256 e5c64a1740263e9b26120e487f3688fbbf7b3954a2c043c0d84c333df467e0b2
+; Disassembly is not proof that this range is code; literal pools may decode as instructions.
+08067D28  70b5       push     {r4, r5, r6, lr}
+08067D2A  031c       adds     r3, r0, #0
+08067D2C  024e       ldr      r6, [pc, #8]
+08067D2E  3268       ldr      r2, [r6]
+08067D30  312a       cmp      r2, #0x31
+08067D32  03d9       bls      #0x8067d3c
+08067D34  0020       movs     r0, #0
+08067D36  16e0       b        #0x8067d66
+08067D38  3863       str      r0, [r7, #0x30]
+08067D3A  0003       lsls     r0, r0, #0xc
+08067D3C  0b49       ldr      r1, [pc, #0x2c]
+08067D3E  1001       lsls     r0, r2, #4
+08067D40  8018       adds     r0, r0, r2
+08067D42  c000       lsls     r0, r0, #3
+08067D44  0c68       ldr      r4, [r1]
+08067D46  2418       adds     r4, r4, r0
+08067D48  0125       movs     r5, #1
+08067D4A  6560       str      r5, [r4, #4]
+08067D4C  8b20       movs     r0, #0x8b
+08067D4E  2070       strb     r0, [r4]
+08067D50  211c       adds     r1, r4, #0
+08067D52  0831       adds     r1, #8
+08067D54  064a       ldr      r2, [pc, #0x18]
+08067D56  181c       adds     r0, r3, #0
+08067D58  50f00efc   bl       #0x80b8578
+08067D5C  6570       strb     r5, [r4, #1]
+08067D5E  3068       ldr      r0, [r6]
+08067D60  0130       adds     r0, #1
+08067D62  3060       str      r0, [r6]
+08067D64  0120       movs     r0, #1
+08067D66  70bc       pop      {r4, r5, r6}
+08067D68  02bc       pop      {r1}
+08067D6A  0847       bx       r1
+08067D6C  0063       str      r0, [r0, #0x30]
+08067D6E  0003       lsls     r0, r0, #0xc
+08067D70  0200       movs     r2, r0
+08067D72  0004       lsls     r0, r0, #0x10

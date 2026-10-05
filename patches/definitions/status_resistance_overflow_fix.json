@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "id": "status_resistance_overflow_fix",
+  "name": "异常状态抗性溢出修复",
+  "stage": "released",
+  "baseline": {
+    "filename": "SS2_SC_bug_fixed.GBA",
+    "size": 33554432,
+    "md5": "35eb6567d94f855480c5d7ba2dff4389",
+    "sha256": "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989",
+    "crc32": "AFCFC96D"
+  },
+  "source_provenance": {
+    "kind": "official_offline_builder_bundle",
+    "source": "光明之魂2_离线补丁构建器_0830.html",
+    "generated_from_current_baseline": true
+  },
+  "evidence": {
+    "static_rebuild": "passed upstream",
+    "dynamic_combination_test": "not_run"
+  },
+  "writes": [
+    {
+      "address": "0x08069738",
+      "offset": "0x00069738",
+      "before_hex": "a1f9",
+      "after_hex": "b5f8",
+      "mode": "unknown",
+      "note": "official_builder_0830:status_resistance_overflow_fix"
+    }
+  ]
+}

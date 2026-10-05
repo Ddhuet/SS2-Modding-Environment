@@ -1,0 +1,408 @@
+{
+  "schema_version": 1,
+  "id": "weapon_balance_rework",
+  "name": "武器属性调整",
+  "stage": "released",
+  "baseline": {
+    "filename": "SS2_SC_bug_fixed.GBA",
+    "size": 33554432,
+    "md5": "35eb6567d94f855480c5d7ba2dff4389",
+    "sha256": "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989",
+    "crc32": "AFCFC96D"
+  },
+  "source_provenance": {
+    "kind": "official_offline_builder_bundle",
+    "source": "光明之魂2_离线补丁构建器_0830.html",
+    "generated_from_current_baseline": true
+  },
+  "evidence": {
+    "static_rebuild": "passed upstream",
+    "dynamic_combination_test": "not_run"
+  },
+  "writes": [
+    {
+      "address": "0x083ECA06",
+      "offset": "0x003ECA06",
+      "before_hex": "29",
+      "after_hex": "32",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x083ECA18",
+      "offset": "0x003ECA18",
+      "before_hex": "0e",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x083ECA1A",
+      "offset": "0x003ECA1A",
+      "before_hex": "02",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x083ECA1C",
+      "offset": "0x003ECA1C",
+      "before_hex": "00",
+      "after_hex": "17",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x083ECA1E",
+      "offset": "0x003ECA1E",
+      "before_hex": "000000",
+      "after_hex": "9cff1e",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x083ECA22",
+      "offset": "0x003ECA22",
+      "before_hex": "0000",
+      "after_hex": "9001",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x083F03F6",
+      "offset": "0x003F03F6",
+      "before_hex": "35",
+      "after_hex": "1e",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x083F0408",
+      "offset": "0x003F0408",
+      "before_hex": "04",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x083F040A",
+      "offset": "0x003F040A",
+      "before_hex": "02",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x083F040C",
+      "offset": "0x003F040C",
+      "before_hex": "00",
+      "after_hex": "17",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x083F040E",
+      "offset": "0x003F040E",
+      "before_hex": "000000",
+      "after_hex": "9cff1e",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x083F0412",
+      "offset": "0x003F0412",
+      "before_hex": "0000",
+      "after_hex": "9001",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x083F6E2E",
+      "offset": "0x003F6E2E",
+      "before_hex": "23",
+      "after_hex": "28",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x083F6E40",
+      "offset": "0x003F6E40",
+      "before_hex": "02",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x083F6E42",
+      "offset": "0x003F6E42",
+      "before_hex": "02",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x083F6E44",
+      "offset": "0x003F6E44",
+      "before_hex": "00",
+      "after_hex": "17",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x083F6E46",
+      "offset": "0x003F6E46",
+      "before_hex": "000000",
+      "after_hex": "9cff1e",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x083F6E4A",
+      "offset": "0x003F6E4A",
+      "before_hex": "0000",
+      "after_hex": "9001",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x083FA1C0",
+      "offset": "0x003FA1C0",
+      "before_hex": "0b",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x083FA1C2",
+      "offset": "0x003FA1C2",
+      "before_hex": "0a",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x083FA1C4",
+      "offset": "0x003FA1C4",
+      "before_hex": "00",
+      "after_hex": "17",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x083FA1C6",
+      "offset": "0x003FA1C6",
+      "before_hex": "000000",
+      "after_hex": "9cff1e",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x083FA1CA",
+      "offset": "0x003FA1CA",
+      "before_hex": "000004",
+      "after_hex": "900100",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x083FD52E",
+      "offset": "0x003FD52E",
+      "before_hex": "1a",
+      "after_hex": "1e",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x083FD540",
+      "offset": "0x003FD540",
+      "before_hex": "03",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x083FD542",
+      "offset": "0x003FD542",
+      "before_hex": "02",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x083FD544",
+      "offset": "0x003FD544",
+      "before_hex": "00",
+      "after_hex": "17",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x083FD546",
+      "offset": "0x003FD546",
+      "before_hex": "000000",
+      "after_hex": "9cff1e",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x083FD54A",
+      "offset": "0x003FD54A",
+      "before_hex": "0000",
+      "after_hex": "9001",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x083FD6DC",
+      "offset": "0x003FD6DC",
+      "before_hex": "0c",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x083FD6DE",
+      "offset": "0x003FD6DE",
+      "before_hex": "0a",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x083FD6E0",
+      "offset": "0x003FD6E0",
+      "before_hex": "00",
+      "after_hex": "17",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x083FD6E2",
+      "offset": "0x003FD6E2",
+      "before_hex": "000000",
+      "after_hex": "9cff1e",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x083FD6E6",
+      "offset": "0x003FD6E6",
+      "before_hex": "000005",
+      "after_hex": "900100",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x08400A4A",
+      "offset": "0x00400A4A",
+      "before_hex": "20",
+      "after_hex": "28",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x08400A5C",
+      "offset": "0x00400A5C",
+      "before_hex": "02",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x08400A5E",
+      "offset": "0x00400A5E",
+      "before_hex": "02",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x08400A60",
+      "offset": "0x00400A60",
+      "before_hex": "00",
+      "after_hex": "17",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x08400A62",
+      "offset": "0x00400A62",
+      "before_hex": "000000",
+      "after_hex": "9cff1e",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x08400A66",
+      "offset": "0x00400A66",
+      "before_hex": "0000",
+      "after_hex": "9001",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x08403DF6",
+      "offset": "0x00403DF6",
+      "before_hex": "9101",
+      "after_hex": "d406",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x08403F64",
+      "offset": "0x00403F64",
+      "before_hex": "06",
+      "after_hex": "08",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x08403F66",
+      "offset": "0x00403F66",
+      "before_hex": "1f",
+      "after_hex": "28",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x08403F78",
+      "offset": "0x00403F78",
+      "before_hex": "01",
+      "after_hex": "13",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x08403F7A",
+      "offset": "0x00403F7A",
+      "before_hex": "02",
+      "after_hex": "64",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x08403F7C",
+      "offset": "0x00403F7C",
+      "before_hex": "00",
+      "after_hex": "17",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x08403F7E",
+      "offset": "0x00403F7E",
+      "before_hex": "000000",
+      "after_hex": "9cff1e",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    },
+    {
+      "address": "0x08403F82",
+      "offset": "0x00403F82",
+      "before_hex": "000001",
+      "after_hex": "900100",
+      "mode": "unknown",
+      "note": "official_builder_0830:weapon_balance_rework"
+    }
+  ]
+}

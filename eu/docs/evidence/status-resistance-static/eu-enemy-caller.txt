@@ -1,0 +1,10 @@
+; SHA-256 e5c64a1740263e9b26120e487f3688fbbf7b3954a2c043c0d84c333df467e0b2
+; Disassembly is not proof that this range is code; literal pools may decode as instructions.
+0801F650  0029       cmp      r1, #0
+0801F652  11d0       beq      #0x801f678
+0801F654  2888       ldrh     r0, [r5]
+0801F656  0430       adds     r0, #4
+0801F658  7278       ldrb     r2, [r6, #1]
+0801F65A  fef79bfa   bl       #0x801db94
+0801F65E  17e0       b        #0x801f690
+0801F660  0000       movs     r0, r0

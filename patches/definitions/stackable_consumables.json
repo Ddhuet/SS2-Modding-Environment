@@ -1,0 +1,1024 @@
+{
+  "schema_version": 1,
+  "id": "stackable_consumables",
+  "name": "消耗品可堆叠",
+  "stage": "released",
+  "baseline": {
+    "filename": "SS2_SC_bug_fixed.GBA",
+    "size": 33554432,
+    "md5": "35eb6567d94f855480c5d7ba2dff4389",
+    "sha256": "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989",
+    "crc32": "AFCFC96D"
+  },
+  "source_provenance": {
+    "kind": "official_offline_builder_bundle",
+    "source": "光明之魂2_离线补丁构建器_0830.html",
+    "generated_from_current_baseline": true
+  },
+  "evidence": {
+    "static_rebuild": "passed upstream",
+    "dynamic_combination_test": "not_run"
+  },
+  "writes": [
+    {
+      "address": "0x0805B11C",
+      "offset": "0x0005B11C",
+      "before_hex": "f0b5071c38880349",
+      "after_hex": "004b18474bcf3308",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0805B696",
+      "offset": "0x0005B696",
+      "before_hex": "051c05e0",
+      "after_hex": "e1f273fd",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0805DC50",
+      "offset": "0x0005DC50",
+      "before_hex": "011c",
+      "after_hex": "004b",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0805DC53",
+      "offset": "0x0005DC53",
+      "before_hex": "2908d80548",
+      "after_hex": "4741cd3308",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x080606DC",
+      "offset": "0x000606DC",
+      "before_hex": "151c1693",
+      "after_hex": "dcf202fc",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x08060D04",
+      "offset": "0x00060D04",
+      "before_hex": "08800020",
+      "after_hex": "dcf2f2f8",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x08061910",
+      "offset": "0x00061910",
+      "before_hex": "38048023",
+      "after_hex": "dbf2a3fc",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0807CED8",
+      "offset": "0x0007CED8",
+      "before_hex": "0a2a11d0",
+      "after_hex": "bff267ff",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0807CF7A",
+      "offset": "0x0007CF7A",
+      "before_hex": "0a284ed0",
+      "after_hex": "bff226ff",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0807D110",
+      "offset": "0x0007D110",
+      "before_hex": "0a2800d1",
+      "after_hex": "bff266fe",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0807D42E",
+      "offset": "0x0007D42E",
+      "before_hex": "0a284cd1",
+      "after_hex": "bff2e3fc",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0807D43A",
+      "offset": "0x0007D43A",
+      "before_hex": "0e4b9842",
+      "after_hex": "bff20dfd",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0807D484",
+      "offset": "0x0007D484",
+      "before_hex": "0e4e8019",
+      "after_hex": "bff2fcfc",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0807D51A",
+      "offset": "0x0007D51A",
+      "before_hex": "0a2801d0",
+      "after_hex": "bff286fc",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0807D52C",
+      "offset": "0x0007D52C",
+      "before_hex": "03488142",
+      "after_hex": "bff29bfc",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0807D5E0",
+      "offset": "0x0007D5E0",
+      "before_hex": "03480d18",
+      "after_hex": "bff258fc",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0807EC16",
+      "offset": "0x0007EC16",
+      "before_hex": "fdf761fc",
+      "after_hex": "bef248f9",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x08081632",
+      "offset": "0x00081632",
+      "before_hex": "00220023",
+      "after_hex": "bbf265fe",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CD40",
+      "offset": "0x0033CD40",
+      "before_hex": "00000000000000000000000000000000000000",
+      "after_hex": "70b5041c182c13d80b48056820012d18ac2040",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CD54",
+      "offset": "0x0033CD54",
+      "before_hex": "00000000",
+      "after_hex": "2d18281c",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CD59",
+      "offset": "0x0033CD59",
+      "before_hex": "000000",
+      "after_hex": "f010f8",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CD5D",
+      "offset": "0x0033CD5D",
+      "before_hex": "000000000000000000000000000000",
+      "after_hex": "2805d0a888012802d90138a88001e0",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CD6D",
+      "offset": "0x0033CD6D",
+      "before_hex": "00000000000000",
+      "after_hex": "20288070bc01bc",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CD75",
+      "offset": "0x0033CD75",
+      "before_hex": "00",
+      "after_hex": "47",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CD78",
+      "offset": "0x0033CD78",
+      "before_hex": "0000",
+      "after_hex": "8035",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CD7B",
+      "offset": "0x0033CD7B",
+      "before_hex": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "0329e2018801290fd14188132909d915290ad31d2905d9242903d0542904d3582902d8012002bc7047",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CDA5",
+      "offset": "0x0033CDA5",
+      "before_hex": "000000000000000000000000000000",
+      "after_hex": "2002bc70470a2a09d0201cfff7e4ff",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CDB5",
+      "offset": "0x0033CDB5",
+      "before_hex": "0000000000",
+      "after_hex": "2806d0a088",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CDBB",
+      "offset": "0x0033CDBB",
+      "before_hex": "00000000000000",
+      "after_hex": "2801d10120a080",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CDC3",
+      "offset": "0x0033CDC3",
+      "before_hex": "0000000000",
+      "after_hex": "f04af9aa48",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CDC9",
+      "offset": "0x0033CDC9",
+      "before_hex": "0000000000000000000000",
+      "after_hex": "470a2804d0081cfff7d4ff",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CDD5",
+      "offset": "0x0033CDD5",
+      "before_hex": "000000",
+      "after_hex": "2801d0",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CDD9",
+      "offset": "0x0033CDD9",
+      "before_hex": "0000000000",
+      "after_hex": "f027f9a548",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CDDF",
+      "offset": "0x0033CDDF",
+      "before_hex": "00000000000000000000000000",
+      "after_hex": "470a2805d0281cf430fff7c8ff",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CDED",
+      "offset": "0x0033CDED",
+      "before_hex": "000000",
+      "after_hex": "2801d0",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CDF1",
+      "offset": "0x0033CDF1",
+      "before_hex": "0000000000",
+      "after_hex": "f02af9a048",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CDF7",
+      "offset": "0x0033CDF7",
+      "before_hex": "00000000000000000000000000",
+      "after_hex": "470a2811d00eb4101cfff7bcff",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CE05",
+      "offset": "0x0033CE05",
+      "before_hex": "0000000000000000000000000000000000",
+      "after_hex": "280dd05088291cf4314988884207d19088",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CE17",
+      "offset": "0x0033CE17",
+      "before_hex": "0000000000000000000000",
+      "after_hex": "2801d1012090800ebc9648",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CE23",
+      "offset": "0x0033CE23",
+      "before_hex": "0000000000",
+      "after_hex": "470ebc9648",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CE29",
+      "offset": "0x0033CE29",
+      "before_hex": "000000000000000000000000000000",
+      "after_hex": "470a280fd00cb4281cf430fff7a2ff",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CE39",
+      "offset": "0x0033CE39",
+      "before_hex": "0000000000000000000000000000000000000000000000",
+      "after_hex": "280ad01299023908882b1cf4335b88984202d10cbc8d48",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CE51",
+      "offset": "0x0033CE51",
+      "before_hex": "0000000000",
+      "after_hex": "470cbc8c48",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CE57",
+      "offset": "0x0033CE57",
+      "before_hex": "000000",
+      "after_hex": "4707b5",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CE5B",
+      "offset": "0x0033CE5B",
+      "before_hex": "000000000000000000",
+      "after_hex": "f00af8031c07bc9842",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CE65",
+      "offset": "0x0033CE65",
+      "before_hex": "000000",
+      "after_hex": "bd0eb5",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CE69",
+      "offset": "0x0033CE69",
+      "before_hex": "00000000000000",
+      "after_hex": "f003f80ebc8142",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CE71",
+      "offset": "0x0033CE71",
+      "before_hex": "000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "bd4846012801d084487047642070474e46012e02d0824ec018704764267642c01a704750460438",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CE99",
+      "offset": "0x0033CE99",
+      "before_hex": "00000000000000",
+      "after_hex": "88012801d16420",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CEA1",
+      "offset": "0x0033CEA1",
+      "before_hex": "000000000000000000000000000000000000000000000000000000",
+      "after_hex": "e07a4840420d18704770b5041c0d1c784e3668f436301cfff760ff",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CEBD",
+      "offset": "0x0033CEBD",
+      "before_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "280ad0b088012807d90138b080201c291c321c3ff598fb03e0201c291c3ff5fffa70bc01bc",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CEE3",
+      "offset": "0x0033CEE3",
+      "before_hex": "000000000000000000000000000000",
+      "after_hex": "47151c92461693704710b5041c5046",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CEF3",
+      "offset": "0x0033CEF3",
+      "before_hex": "000000",
+      "after_hex": "f053f9",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CEF7",
+      "offset": "0x0033CEF7",
+      "before_hex": "00000000000000",
+      "after_hex": "2820d052469288",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CEFF",
+      "offset": "0x0033CEFF",
+      "before_hex": "00",
+      "after_hex": "2a",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CF01",
+      "offset": "0x0033CF01",
+      "before_hex": "000000000000000000000000000000000000000000000000000000",
+      "after_hex": "d10122c8230b800231642a06d1f0230b80ef234b808b8006310de0",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CF1D",
+      "offset": "0x0033CF1D",
+      "before_hex": "0000000000000000000000",
+      "after_hex": "230a2a02d30a3a0133fae7",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CF29",
+      "offset": "0x0033CF29",
+      "before_hex": "0000000000000000000000000000000000",
+      "after_hex": "2b02d0ef330b800231ef320a800231201c",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CF3B",
+      "offset": "0x0033CF3B",
+      "before_hex": "0000000000000000000000",
+      "after_hex": "e0201c088010bc01bc8446",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CF47",
+      "offset": "0x0033CF47",
+      "before_hex": "0000000000000000000000",
+      "after_hex": "206047f0b5071cfff715ff",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CF53",
+      "offset": "0x0033CF53",
+      "before_hex": "00000000000000000000000000",
+      "after_hex": "2803d138884f49504b1847be88",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CF61",
+      "offset": "0x0033CF61",
+      "before_hex": "00",
+      "after_hex": "2e",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CF63",
+      "offset": "0x0033CF63",
+      "before_hex": "000000000000000000000000",
+      "after_hex": "d101267a884b480568ac2040",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CF70",
+      "offset": "0x0033CF70",
+      "before_hex": "0000",
+      "after_hex": "2d18",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CF73",
+      "offset": "0x0033CF73",
+      "before_hex": "00",
+      "after_hex": "24",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CF75",
+      "offset": "0x0033CF75",
+      "before_hex": "000000",
+      "after_hex": "232888",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CF79",
+      "offset": "0x0033CF79",
+      "before_hex": "000000000000000000000000000000",
+      "after_hex": "280ed001280fd1688890420cd1a888",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CF89",
+      "offset": "0x0033CF89",
+      "before_hex": "00",
+      "after_hex": "28",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CF8B",
+      "offset": "0x0033CF8B",
+      "before_hex": "00000000000000000000000000",
+      "after_hex": "d10120642806d26421091a5b18",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CF99",
+      "offset": "0x0033CF99",
+      "before_hex": "000000000000000000000000000000",
+      "after_hex": "e06433b34205d210350134192ce6d3",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CFA9",
+      "offset": "0x0033CFA9",
+      "before_hex": "00000000000000",
+      "after_hex": "203be020012d1a",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CFB1",
+      "offset": "0x0033CFB1",
+      "before_hex": "000000000000000000000000000000",
+      "after_hex": "242888012814d16888904211d1a888",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CFC1",
+      "offset": "0x0033CFC1",
+      "before_hex": "00",
+      "after_hex": "28",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CFC3",
+      "offset": "0x0033CFC3",
+      "before_hex": "000000000000000000000000000000000000000000000000000000",
+      "after_hex": "d1012064280bd26421091a8e4203d94018a880761a03e08019a880",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CFDF",
+      "offset": "0x0033CFDF",
+      "before_hex": "000000000000000000000000000000",
+      "after_hex": "261fe010350134192ce3d320012d1a",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CFEF",
+      "offset": "0x0033CFEF",
+      "before_hex": "000000",
+      "after_hex": "242888",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CFF3",
+      "offset": "0x0033CFF3",
+      "before_hex": "0000000000000000000000",
+      "after_hex": "2805d010350134192cf8d3",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833CFFF",
+      "offset": "0x0033CFFF",
+      "before_hex": "000000000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "2010e0642e07d96420b880201c391c20f54dfb643eefe7be80201c391c20f546fb",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D021",
+      "offset": "0x0033D021",
+      "before_hex": "0000000000000000000000000000000000",
+      "after_hex": "260120f0bc02bc08470888012809d18888",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D033",
+      "offset": "0x0033D033",
+      "before_hex": "000000000000000000000000000000",
+      "after_hex": "2806d1012088802868032801d10c48",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D043",
+      "offset": "0x0033D043",
+      "before_hex": "000000",
+      "after_hex": "471648",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D047",
+      "offset": "0x0033D047",
+      "before_hex": "000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "47b4e0c046c046c046c046c046c046c046c04602b42088012803d16188281cf430418002bc0d48",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D06F",
+      "offset": "0x0033D06F",
+      "before_hex": "0000000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "47ddce07087fcf070817d1070833d40708cdd4070823d507081fd50708a08601",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D090",
+      "offset": "0x0033D090",
+      "before_hex": "00000000",
+      "after_hex": "6079feff",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D095",
+      "offset": "0x0033D095",
+      "before_hex": "00",
+      "after_hex": "65",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D097",
+      "offset": "0x0033D097",
+      "before_hex": "000000",
+      "after_hex": "038035",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D09B",
+      "offset": "0x0033D09B",
+      "before_hex": "00000000000000000000000000",
+      "after_hex": "0325b105081dd0070801cf0708",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D180",
+      "offset": "0x0033D180",
+      "before_hex": "0000000000000000",
+      "after_hex": "051c201cfff7fafd",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D189",
+      "offset": "0x0033D189",
+      "before_hex": "0000000000",
+      "after_hex": "2804d0a088",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D18F",
+      "offset": "0x0033D18F",
+      "before_hex": "00",
+      "after_hex": "28",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D191",
+      "offset": "0x0033D191",
+      "before_hex": "0000000000000000000000000000000000",
+      "after_hex": "d101204543281c3c49084702b53c490968",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D1A3",
+      "offset": "0x0033D1A3",
+      "before_hex": "00000000000000",
+      "after_hex": "2902d0fff7e9fd",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D1AB",
+      "offset": "0x0033D1AB",
+      "before_hex": "00",
+      "after_hex": "e0",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D1AD",
+      "offset": "0x0033D1AD",
+      "before_hex": "00000000000000000000000000000000000000",
+      "after_hex": "2002bc04bc1047281cf4300188012904d18188",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D1C1",
+      "offset": "0x0033D1C1",
+      "before_hex": "00000000000000000000000000",
+      "after_hex": "2901d1012181800b2e01d03148",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D1CF",
+      "offset": "0x0033D1CF",
+      "before_hex": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "4718e002b40188012911d1418807290ed0132909d915290ad31d2905d9242903d0542904d3582902d8012002bc7047",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D1FF",
+      "offset": "0x0033D1FF",
+      "before_hex": "000000000000000000",
+      "after_hex": "2002bc7047281cf030",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D209",
+      "offset": "0x0033D209",
+      "before_hex": "000000000000000000000000000000000000000000",
+      "after_hex": "680188012921d141882a1cf432538899421bd18188",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D21F",
+      "offset": "0x0033D21F",
+      "before_hex": "00",
+      "after_hex": "29",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D221",
+      "offset": "0x0033D221",
+      "before_hex": "00000000000000000000000000000000000000",
+      "after_hex": "d1012193885b18642b13d8d0b5041c1e1c0f1c",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D235",
+      "offset": "0x0033D235",
+      "before_hex": "00000000000000",
+      "after_hex": "212180101c174b",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D23D",
+      "offset": "0x0033D23D",
+      "before_hex": "0000000000000000000000",
+      "after_hex": "f00cf82a1cf4329680154b",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D249",
+      "offset": "0x0033D249",
+      "before_hex": "000000000000000000",
+      "after_hex": "f006f8d0bc01bc1348",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D253",
+      "offset": "0x0033D253",
+      "before_hex": "000000",
+      "after_hex": "471348",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D257",
+      "offset": "0x0033D257",
+      "before_hex": "00000000000000000000",
+      "after_hex": "4718470fb5201cac2149",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D262",
+      "offset": "0x0033D262",
+      "before_hex": "000000000000",
+      "after_hex": "4018fff78afd",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D269",
+      "offset": "0x0033D269",
+      "before_hex": "0000000000000000",
+      "after_hex": "2809d0201cac2149",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D272",
+      "offset": "0x0033D272",
+      "before_hex": "00000000",
+      "after_hex": "40188088",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D277",
+      "offset": "0x0033D277",
+      "before_hex": "00",
+      "after_hex": "28",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D279",
+      "offset": "0x0033D279",
+      "before_hex": "0000000000",
+      "after_hex": "d101203f18",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D27F",
+      "offset": "0x0033D27F",
+      "before_hex": "000000000000000000",
+      "after_hex": "e001370fbc01bc0848",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D289",
+      "offset": "0x0033D289",
+      "before_hex": "00",
+      "after_hex": "47",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D28C",
+      "offset": "0x0033D28C",
+      "before_hex": "00000000",
+      "after_hex": "a7b60508",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D291",
+      "offset": "0x0033D291",
+      "before_hex": "00",
+      "after_hex": "65",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D293",
+      "offset": "0x0033D293",
+      "before_hex": "00000000000000000000000000000000000000000000000000",
+      "after_hex": "03f9d30708c1b4050879c70708cfcf070817d1070825190608",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D300",
+      "offset": "0x0033D300",
+      "before_hex": "000000000000000000000000000000000000000000",
+      "after_hex": "f0b5301cfff73afd071c358876880f4c2468ac2040",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D316",
+      "offset": "0x0033D316",
+      "before_hex": "0000",
+      "after_hex": "2418",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D319",
+      "offset": "0x0033D319",
+      "before_hex": "00",
+      "after_hex": "22",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D31B",
+      "offset": "0x0033D31B",
+      "before_hex": "00000000000000000000000000",
+      "after_hex": "232088a8420bd16088b04208d1",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D329",
+      "offset": "0x0033D329",
+      "before_hex": "0000000000",
+      "after_hex": "2f05d0a088",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D32F",
+      "offset": "0x0033D32F",
+      "before_hex": "00",
+      "after_hex": "28",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D331",
+      "offset": "0x0033D331",
+      "before_hex": "0000000000",
+      "after_hex": "d101201218",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D337",
+      "offset": "0x0033D337",
+      "before_hex": "00000000000000000000000000000000000000",
+      "after_hex": "e0013210340133192becd3f0bc01bc02490847",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D34C",
+      "offset": "0x0033D34C",
+      "before_hex": "0000",
+      "after_hex": "8035",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    },
+    {
+      "address": "0x0833D34F",
+      "offset": "0x0033D34F",
+      "before_hex": "0000000000",
+      "after_hex": "0359160808",
+      "mode": "unknown",
+      "note": "official_builder_0830:stackable_consumables"
+    }
+  ]
+}

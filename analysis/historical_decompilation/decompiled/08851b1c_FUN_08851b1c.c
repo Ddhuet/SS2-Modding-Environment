@@ -1,0 +1,23 @@
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void FUN_08851b1c(void)
+
+{
+  char in_NG;
+  undefined1 in_ZR;
+  char in_OV;
+  
+  if (in_NG == in_OV) {
+    func_0x0773f018();
+  }
+  if (in_NG != in_OV) {
+    func_0x0773f018();
+  }
+  if (!(bool)in_ZR && in_NG == in_OV) {
+    func_0x07743028();
+  }
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
+}
+
