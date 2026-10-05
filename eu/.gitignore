@@ -25,3 +25,6 @@ build/
 dist/
 # Research snapshot remains local; origin/provenance documented.
 reference/upstream/
+
+# Local maintainer roadmap; not part of the shared workspace.
+/PLAN.md

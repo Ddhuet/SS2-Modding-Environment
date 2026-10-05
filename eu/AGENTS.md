@@ -1,6 +1,6 @@
 # EU Shining Soul II workspace
 
-Read `README.md`, then `docs/WORKFLOW.md` and the feature's audit before editing. For work expanding the repository, read `PLAN.md` for priorities and handoff guidance. This directory is the active EU project. `reference/upstream/` is a historical Chinese research archive, not authoritative EU instructions or addresses.
+Read `README.md`, then `docs/WORKFLOW.md` and the feature's audit before editing. Follow the user’s requested feature; existing research and port inventories are references, not an automatic work queue. This directory is the active EU project. `reference/upstream/` is a historical Chinese research archive, not authoritative EU instructions or addresses.
 
 Git lives in the parent directory and tracks the original reference package as well as `eu/`. Keep active agent documentation here. On a fresh clone, follow `docs/CLONE_SETUP.md`: ROMs, generated outputs, dependencies and `reference/upstream/` are ignored; normal-save fixtures and all `.ss1` states with their `.ss1.json` bindings are tracked at their existing paths. Reconstruct the reference snapshot with `scripts/setup_reference.py` and rebuild patched ROMs and the native harness; provide and verify ROM inputs separately.
 
