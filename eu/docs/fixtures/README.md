@@ -32,3 +32,16 @@ python scripts/test_status_resistance_gameplay.py --output runs/new-combat-fixtu
 ```
 
 The test records the original unaffected kind-5 combat event, then separately labels the affected-kind/resistance variants as synthetic. It saves combat-ready states **before** those variants. The longer direct-call diagnostic uses a separate synthetic stack, CPU setup and draw overrides; see [the audit](../status-resistance-audit.md). Neither kind of boundary experiment is naturally equipped gameplay acceptance.
+
+The released `artifacts/ss2-eu-status-resistance.gba` has exactly the same bytes/hash as the candidate ROM, so it can also load the signed variant state above.
+
+## Persistent summons diagnostics
+
+`runs/persistent-summons-regression-005/{original,patched}/states/` contains
+independently replayed clean combat bases and ROM-bound first-activation states
+for producer types 17 and 7 at parameters 1 and 7. The combat base is button-only;
+first-activation states include the fully recorded synthetic producer call on
+Paige. Keep every `.ss1` with its adjacent `.ss1.json` binding. These fixtures
+verify engine counter/cleanup behavior, not naturally learned class abilities.
+See [the audit](../persistent-summons-audit.md) and
+[report](../evidence/persistent-summons-runtime.json) for exact hashes and scope.

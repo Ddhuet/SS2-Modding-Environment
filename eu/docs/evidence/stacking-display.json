@@ -1,0 +1,2740 @@
+{
+  "result": "PASS",
+  "checks": [
+    {
+      "scenario": "English",
+      "check": "loaded player pointer",
+      "passed": true,
+      "player": "0x2003bd0"
+    },
+    {
+      "scenario": "English",
+      "check": "real EU name terminator instruction reached",
+      "passed": true,
+      "language": "English",
+      "quantity": 0
+    },
+    {
+      "scenario": "English",
+      "check": "suffix helper returns to EU renderer",
+      "passed": true
+    },
+    {
+      "scenario": "English",
+      "check": "exact custom glyph suffix and preserved terminator",
+      "passed": true,
+      "language": "English",
+      "quantity": 0,
+      "actual": "08253222513842fd",
+      "expected": "08253222513842fd"
+    },
+    {
+      "scenario": "English",
+      "check": "renderer returns zero and keeps its stack",
+      "passed": true
+    },
+    {
+      "scenario": "English",
+      "check": "real EU name terminator instruction reached",
+      "passed": true,
+      "language": "English",
+      "quantity": 1
+    },
+    {
+      "scenario": "English",
+      "check": "suffix helper returns to EU renderer",
+      "passed": true
+    },
+    {
+      "scenario": "English",
+      "check": "exact custom glyph suffix and preserved terminator",
+      "passed": true,
+      "language": "English",
+      "quantity": 1,
+      "actual": "08253222513842fd",
+      "expected": "08253222513842fd"
+    },
+    {
+      "scenario": "English",
+      "check": "renderer returns zero and keeps its stack",
+      "passed": true
+    },
+    {
+      "scenario": "English",
+      "check": "real EU name terminator instruction reached",
+      "passed": true,
+      "language": "English",
+      "quantity": 9
+    },
+    {
+      "scenario": "English",
+      "check": "suffix helper returns to EU renderer",
+      "passed": true
+    },
+    {
+      "scenario": "English",
+      "check": "exact custom glyph suffix and preserved terminator",
+      "passed": true,
+      "language": "English",
+      "quantity": 9,
+      "actual": "0825322251384afd",
+      "expected": "0825322251384afd"
+    },
+    {
+      "scenario": "English",
+      "check": "renderer returns zero and keeps its stack",
+      "passed": true
+    },
+    {
+      "scenario": "English",
+      "check": "real EU name terminator instruction reached",
+      "passed": true,
+      "language": "English",
+      "quantity": 10
+    },
+    {
+      "scenario": "English",
+      "check": "suffix helper returns to EU renderer",
+      "passed": true
+    },
+    {
+      "scenario": "English",
+      "check": "exact custom glyph suffix and preserved terminator",
+      "passed": true,
+      "language": "English",
+      "quantity": 10,
+      "actual": "0825322251384241fd",
+      "expected": "0825322251384241fd"
+    },
+    {
+      "scenario": "English",
+      "check": "renderer returns zero and keeps its stack",
+      "passed": true
+    },
+    {
+      "scenario": "English",
+      "check": "real EU name terminator instruction reached",
+      "passed": true,
+      "language": "English",
+      "quantity": 99
+    },
+    {
+      "scenario": "English",
+      "check": "suffix helper returns to EU renderer",
+      "passed": true
+    },
+    {
+      "scenario": "English",
+      "check": "exact custom glyph suffix and preserved terminator",
+      "passed": true,
+      "language": "English",
+      "quantity": 99,
+      "actual": "0825322251384a4afd",
+      "expected": "0825322251384a4afd"
+    },
+    {
+      "scenario": "English",
+      "check": "renderer returns zero and keeps its stack",
+      "passed": true
+    },
+    {
+      "scenario": "English",
+      "check": "real EU name terminator instruction reached",
+      "passed": true,
+      "language": "English",
+      "quantity": 100
+    },
+    {
+      "scenario": "English",
+      "check": "suffix helper returns to EU renderer",
+      "passed": true
+    },
+    {
+      "scenario": "English",
+      "check": "exact custom glyph suffix and preserved terminator",
+      "passed": true,
+      "language": "English",
+      "quantity": 100,
+      "actual": "082532225138424141fd",
+      "expected": "082532225138424141fd"
+    },
+    {
+      "scenario": "English",
+      "check": "renderer returns zero and keeps its stack",
+      "passed": true
+    },
+    {
+      "scenario": "German",
+      "check": "loaded player pointer",
+      "passed": true,
+      "player": "0x2003bd0"
+    },
+    {
+      "scenario": "German",
+      "check": "real EU name terminator instruction reached",
+      "passed": true,
+      "language": "German",
+      "quantity": 0
+    },
+    {
+      "scenario": "German",
+      "check": "suffix helper returns to EU renderer",
+      "passed": true
+    },
+    {
+      "scenario": "German",
+      "check": "exact custom glyph suffix and preserved terminator",
+      "passed": true,
+      "language": "German",
+      "quantity": 0,
+      "actual": "0b328335342532513842fd",
+      "expected": "0b328335342532513842fd"
+    },
+    {
+      "scenario": "German",
+      "check": "renderer returns zero and keeps its stack",
+      "passed": true
+    },
+    {
+      "scenario": "German",
+      "check": "real EU name terminator instruction reached",
+      "passed": true,
+      "language": "German",
+      "quantity": 1
+    },
+    {
+      "scenario": "German",
+      "check": "suffix helper returns to EU renderer",
+      "passed": true
+    },
+    {
+      "scenario": "German",
+      "check": "exact custom glyph suffix and preserved terminator",
+      "passed": true,
+      "language": "German",
+      "quantity": 1,
+      "actual": "0b328335342532513842fd",
+      "expected": "0b328335342532513842fd"
+    },
+    {
+      "scenario": "German",
+      "check": "renderer returns zero and keeps its stack",
+      "passed": true
+    },
+    {
+      "scenario": "German",
+      "check": "real EU name terminator instruction reached",
+      "passed": true,
+      "language": "German",
+      "quantity": 9
+    },
+    {
+      "scenario": "German",
+      "check": "suffix helper returns to EU renderer",
+      "passed": true
+    },
+    {
+      "scenario": "German",
+      "check": "exact custom glyph suffix and preserved terminator",
+      "passed": true,
+      "language": "German",
+      "quantity": 9,
+      "actual": "0b32833534253251384afd",
+      "expected": "0b32833534253251384afd"
+    },
+    {
+      "scenario": "German",
+      "check": "renderer returns zero and keeps its stack",
+      "passed": true
+    },
+    {
+      "scenario": "German",
+      "check": "real EU name terminator instruction reached",
+      "passed": true,
+      "language": "German",
+      "quantity": 10
+    },
+    {
+      "scenario": "German",
+      "check": "suffix helper returns to EU renderer",
+      "passed": true
+    },
+    {
+      "scenario": "German",
+      "check": "exact custom glyph suffix and preserved terminator",
+      "passed": true,
+      "language": "German",
+      "quantity": 10,
+      "actual": "0b32833534253251384241fd",
+      "expected": "0b32833534253251384241fd"
+    },
+    {
+      "scenario": "German",
+      "check": "renderer returns zero and keeps its stack",
+      "passed": true
+    },
+    {
+      "scenario": "German",
+      "check": "real EU name terminator instruction reached",
+      "passed": true,
+      "language": "German",
+      "quantity": 99
+    },
+    {
+      "scenario": "German",
+      "check": "suffix helper returns to EU renderer",
+      "passed": true
+    },
+    {
+      "scenario": "German",
+      "check": "exact custom glyph suffix and preserved terminator",
+      "passed": true,
+      "language": "German",
+      "quantity": 99,
+      "actual": "0b32833534253251384a4afd",
+      "expected": "0b32833534253251384a4afd"
+    },
+    {
+      "scenario": "German",
+      "check": "renderer returns zero and keeps its stack",
+      "passed": true
+    },
+    {
+      "scenario": "German",
+      "check": "real EU name terminator instruction reached",
+      "passed": true,
+      "language": "German",
+      "quantity": 100
+    },
+    {
+      "scenario": "German",
+      "check": "suffix helper returns to EU renderer",
+      "passed": true
+    },
+    {
+      "scenario": "German",
+      "check": "exact custom glyph suffix and preserved terminator",
+      "passed": true,
+      "language": "German",
+      "quantity": 100,
+      "actual": "0b3283353425325138424141fd",
+      "expected": "0b3283353425325138424141fd"
+    },
+    {
+      "scenario": "German",
+      "check": "renderer returns zero and keeps its stack",
+      "passed": true
+    },
+    {
+      "scenario": "French",
+      "check": "loaded player pointer",
+      "passed": true,
+      "player": "0x2003bd0"
+    },
+    {
+      "scenario": "French",
+      "check": "real EU name terminator instruction reached",
+      "passed": true,
+      "language": "French",
+      "quantity": 0
+    },
+    {
+      "scenario": "French",
+      "check": "suffix helper returns to EU renderer",
+      "passed": true
+    },
+    {
+      "scenario": "French",
+      "check": "exact custom glyph suffix and preserved terminator",
+      "passed": true,
+      "language": "French",
+      "quantity": 0,
+      "actual": "0825322225513842fd",
+      "expected": "0825322225513842fd"
+    },
+    {
+      "scenario": "French",
+      "check": "renderer returns zero and keeps its stack",
+      "passed": true
+    },
+    {
+      "scenario": "French",
+      "check": "real EU name terminator instruction reached",
+      "passed": true,
+      "language": "French",
+      "quantity": 1
+    },
+    {
+      "scenario": "French",
+      "check": "suffix helper returns to EU renderer",
+      "passed": true
+    },
+    {
+      "scenario": "French",
+      "check": "exact custom glyph suffix and preserved terminator",
+      "passed": true,
+      "language": "French",
+      "quantity": 1,
+      "actual": "0825322225513842fd",
+      "expected": "0825322225513842fd"
+    },
+    {
+      "scenario": "French",
+      "check": "renderer returns zero and keeps its stack",
+      "passed": true
+    },
+    {
+      "scenario": "French",
+      "check": "real EU name terminator instruction reached",
+      "passed": true,
+      "language": "French",
+      "quantity": 9
+    },
+    {
+      "scenario": "French",
+      "check": "suffix helper returns to EU renderer",
+      "passed": true
+    },
+    {
+      "scenario": "French",
+      "check": "exact custom glyph suffix and preserved terminator",
+      "passed": true,
+      "language": "French",
+      "quantity": 9,
+      "actual": "082532222551384afd",
+      "expected": "082532222551384afd"
+    },
+    {
+      "scenario": "French",
+      "check": "renderer returns zero and keeps its stack",
+      "passed": true
+    },
+    {
+      "scenario": "French",
+      "check": "real EU name terminator instruction reached",
+      "passed": true,
+      "language": "French",
+      "quantity": 10
+    },
+    {
+      "scenario": "French",
+      "check": "suffix helper returns to EU renderer",
+      "passed": true
+    },
+    {
+      "scenario": "French",
+      "check": "exact custom glyph suffix and preserved terminator",
+      "passed": true,
+      "language": "French",
+      "quantity": 10,
+      "actual": "082532222551384241fd",
+      "expected": "082532222551384241fd"
+    },
+    {
+      "scenario": "French",
+      "check": "renderer returns zero and keeps its stack",
+      "passed": true
+    },
+    {
+      "scenario": "French",
+      "check": "real EU name terminator instruction reached",
+      "passed": true,
+      "language": "French",
+      "quantity": 99
+    },
+    {
+      "scenario": "French",
+      "check": "suffix helper returns to EU renderer",
+      "passed": true
+    },
+    {
+      "scenario": "French",
+      "check": "exact custom glyph suffix and preserved terminator",
+      "passed": true,
+      "language": "French",
+      "quantity": 99,
+      "actual": "082532222551384a4afd",
+      "expected": "082532222551384a4afd"
+    },
+    {
+      "scenario": "French",
+      "check": "renderer returns zero and keeps its stack",
+      "passed": true
+    },
+    {
+      "scenario": "French",
+      "check": "real EU name terminator instruction reached",
+      "passed": true,
+      "language": "French",
+      "quantity": 100
+    },
+    {
+      "scenario": "French",
+      "check": "suffix helper returns to EU renderer",
+      "passed": true
+    },
+    {
+      "scenario": "French",
+      "check": "exact custom glyph suffix and preserved terminator",
+      "passed": true,
+      "language": "French",
+      "quantity": 100,
+      "actual": "08253222255138424141fd",
+      "expected": "08253222255138424141fd"
+    },
+    {
+      "scenario": "French",
+      "check": "renderer returns zero and keeps its stack",
+      "passed": true
+    },
+    {
+      "scenario": "Italian",
+      "check": "loaded player pointer",
+      "passed": true,
+      "player": "0x2003bd0"
+    },
+    {
+      "scenario": "Italian",
+      "check": "real EU name terminator instruction reached",
+      "passed": true,
+      "language": "Italian",
+      "quantity": 0
+    },
+    {
+      "scenario": "Italian",
+      "check": "suffix helper returns to EU renderer",
+      "passed": true
+    },
+    {
+      "scenario": "Italian",
+      "check": "exact custom glyph suffix and preserved terminator",
+      "passed": true,
+      "language": "Italian",
+      "quantity": 0,
+      "actual": "05322221513842fd",
+      "expected": "05322221513842fd"
+    },
+    {
+      "scenario": "Italian",
+      "check": "renderer returns zero and keeps its stack",
+      "passed": true
+    },
+    {
+      "scenario": "Italian",
+      "check": "real EU name terminator instruction reached",
+      "passed": true,
+      "language": "Italian",
+      "quantity": 1
+    },
+    {
+      "scenario": "Italian",
+      "check": "suffix helper returns to EU renderer",
+      "passed": true
+    },
+    {
+      "scenario": "Italian",
+      "check": "exact custom glyph suffix and preserved terminator",
+      "passed": true,
+      "language": "Italian",
+      "quantity": 1,
+      "actual": "05322221513842fd",
+      "expected": "05322221513842fd"
+    },
+    {
+      "scenario": "Italian",
+      "check": "renderer returns zero and keeps its stack",
+      "passed": true
+    },
+    {
+      "scenario": "Italian",
+      "check": "real EU name terminator instruction reached",
+      "passed": true,
+      "language": "Italian",
+      "quantity": 9
+    },
+    {
+      "scenario": "Italian",
+      "check": "suffix helper returns to EU renderer",
+      "passed": true
+    },
+    {
+      "scenario": "Italian",
+      "check": "exact custom glyph suffix and preserved terminator",
+      "passed": true,
+      "language": "Italian",
+      "quantity": 9,
+      "actual": "0532222151384afd",
+      "expected": "0532222151384afd"
+    },
+    {
+      "scenario": "Italian",
+      "check": "renderer returns zero and keeps its stack",
+      "passed": true
+    },
+    {
+      "scenario": "Italian",
+      "check": "real EU name terminator instruction reached",
+      "passed": true,
+      "language": "Italian",
+      "quantity": 10
+    },
+    {
+      "scenario": "Italian",
+      "check": "suffix helper returns to EU renderer",
+      "passed": true
+    },
+    {
+      "scenario": "Italian",
+      "check": "exact custom glyph suffix and preserved terminator",
+      "passed": true,
+      "language": "Italian",
+      "quantity": 10,
+      "actual": "0532222151384241fd",
+      "expected": "0532222151384241fd"
+    },
+    {
+      "scenario": "Italian",
+      "check": "renderer returns zero and keeps its stack",
+      "passed": true
+    },
+    {
+      "scenario": "Italian",
+      "check": "real EU name terminator instruction reached",
+      "passed": true,
+      "language": "Italian",
+      "quantity": 99
+    },
+    {
+      "scenario": "Italian",
+      "check": "suffix helper returns to EU renderer",
+      "passed": true
+    },
+    {
+      "scenario": "Italian",
+      "check": "exact custom glyph suffix and preserved terminator",
+      "passed": true,
+      "language": "Italian",
+      "quantity": 99,
+      "actual": "0532222151384a4afd",
+      "expected": "0532222151384a4afd"
+    },
+    {
+      "scenario": "Italian",
+      "check": "renderer returns zero and keeps its stack",
+      "passed": true
+    },
+    {
+      "scenario": "Italian",
+      "check": "real EU name terminator instruction reached",
+      "passed": true,
+      "language": "Italian",
+      "quantity": 100
+    },
+    {
+      "scenario": "Italian",
+      "check": "suffix helper returns to EU renderer",
+      "passed": true
+    },
+    {
+      "scenario": "Italian",
+      "check": "exact custom glyph suffix and preserved terminator",
+      "passed": true,
+      "language": "Italian",
+      "quantity": 100,
+      "actual": "053222215138424141fd",
+      "expected": "053222215138424141fd"
+    },
+    {
+      "scenario": "Italian",
+      "check": "renderer returns zero and keeps its stack",
+      "passed": true
+    },
+    {
+      "scenario": "Spanish",
+      "check": "loaded player pointer",
+      "passed": true,
+      "player": "0x2003bd0"
+    },
+    {
+      "scenario": "Spanish",
+      "check": "real EU name terminator instruction reached",
+      "passed": true,
+      "language": "Spanish",
+      "quantity": 0
+    },
+    {
+      "scenario": "Spanish",
+      "check": "suffix helper returns to EU renderer",
+      "passed": true
+    },
+    {
+      "scenario": "Spanish",
+      "check": "exact custom glyph suffix and preserved terminator",
+      "passed": true,
+      "language": "Spanish",
+      "quantity": 0,
+      "actual": "08292532222151513842fd",
+      "expected": "08292532222151513842fd"
+    },
+    {
+      "scenario": "Spanish",
+      "check": "renderer returns zero and keeps its stack",
+      "passed": true
+    },
+    {
+      "scenario": "Spanish",
+      "check": "real EU name terminator instruction reached",
+      "passed": true,
+      "language": "Spanish",
+      "quantity": 1
+    },
+    {
+      "scenario": "Spanish",
+      "check": "suffix helper returns to EU renderer",
+      "passed": true
+    },
+    {
+      "scenario": "Spanish",
+      "check": "exact custom glyph suffix and preserved terminator",
+      "passed": true,
+      "language": "Spanish",
+      "quantity": 1,
+      "actual": "08292532222151513842fd",
+      "expected": "08292532222151513842fd"
+    },
+    {
+      "scenario": "Spanish",
+      "check": "renderer returns zero and keeps its stack",
+      "passed": true
+    },
+    {
+      "scenario": "Spanish",
+      "check": "real EU name terminator instruction reached",
+      "passed": true,
+      "language": "Spanish",
+      "quantity": 9
+    },
+    {
+      "scenario": "Spanish",
+      "check": "suffix helper returns to EU renderer",
+      "passed": true
+    },
+    {
+      "scenario": "Spanish",
+      "check": "exact custom glyph suffix and preserved terminator",
+      "passed": true,
+      "language": "Spanish",
+      "quantity": 9,
+      "actual": "0829253222215151384afd",
+      "expected": "0829253222215151384afd"
+    },
+    {
+      "scenario": "Spanish",
+      "check": "renderer returns zero and keeps its stack",
+      "passed": true
+    },
+    {
+      "scenario": "Spanish",
+      "check": "real EU name terminator instruction reached",
+      "passed": true,
+      "language": "Spanish",
+      "quantity": 10
+    },
+    {
+      "scenario": "Spanish",
+      "check": "suffix helper returns to EU renderer",
+      "passed": true
+    },
+    {
+      "scenario": "Spanish",
+      "check": "exact custom glyph suffix and preserved terminator",
+      "passed": true,
+      "language": "Spanish",
+      "quantity": 10,
+      "actual": "0829253222215151384241fd",
+      "expected": "0829253222215151384241fd"
+    },
+    {
+      "scenario": "Spanish",
+      "check": "renderer returns zero and keeps its stack",
+      "passed": true
+    },
+    {
+      "scenario": "Spanish",
+      "check": "real EU name terminator instruction reached",
+      "passed": true,
+      "language": "Spanish",
+      "quantity": 99
+    },
+    {
+      "scenario": "Spanish",
+      "check": "suffix helper returns to EU renderer",
+      "passed": true
+    },
+    {
+      "scenario": "Spanish",
+      "check": "exact custom glyph suffix and preserved terminator",
+      "passed": true,
+      "language": "Spanish",
+      "quantity": 99,
+      "actual": "0829253222215151384a4afd",
+      "expected": "0829253222215151384a4afd"
+    },
+    {
+      "scenario": "Spanish",
+      "check": "renderer returns zero and keeps its stack",
+      "passed": true
+    },
+    {
+      "scenario": "Spanish",
+      "check": "real EU name terminator instruction reached",
+      "passed": true,
+      "language": "Spanish",
+      "quantity": 100
+    },
+    {
+      "scenario": "Spanish",
+      "check": "suffix helper returns to EU renderer",
+      "passed": true
+    },
+    {
+      "scenario": "Spanish",
+      "check": "exact custom glyph suffix and preserved terminator",
+      "passed": true,
+      "language": "Spanish",
+      "quantity": 100,
+      "actual": "082925322221515138424141fd",
+      "expected": "082925322221515138424141fd"
+    },
+    {
+      "scenario": "Spanish",
+      "check": "renderer returns zero and keeps its stack",
+      "passed": true
+    }
+  ],
+  "cases": [
+    {
+      "language": "English",
+      "quantity": 0,
+      "mutation": {
+        "address": "0x2003d34",
+        "width": 2,
+        "before": 0,
+        "after": 0
+      },
+      "before_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612370,
+        "instructions": 245304,
+        "frames": 6,
+        "registers": {
+          "r0": 253,
+          "r1": 33754552,
+          "r2": 33754548,
+          "r3": 33754548,
+          "r4": 4,
+          "r5": 4,
+          "r6": 138717216,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 16890,
+          "sp": 33754548,
+          "lr": 134247065,
+          "pc": 134612372,
+          "cpsr": 63
+        }
+      },
+      "after_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612374,
+        "instructions": 60,
+        "frames": 0,
+        "registers": {
+          "r0": 0,
+          "r1": 33754555,
+          "r2": 66,
+          "r3": 0,
+          "r4": 4,
+          "r5": 4,
+          "r6": 138717216,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 134612375,
+          "sp": 33754548,
+          "lr": 137608311,
+          "pc": 134612376,
+          "cpsr": 1073741887
+        }
+      },
+      "text_hex": "08253222513842fd",
+      "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/stacking-display-001/English/screenshots/quantity-0.png"
+    },
+    {
+      "language": "English",
+      "quantity": 1,
+      "mutation": {
+        "address": "0x2003d34",
+        "width": 2,
+        "before": 0,
+        "after": 1
+      },
+      "before_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612370,
+        "instructions": 245298,
+        "frames": 6,
+        "registers": {
+          "r0": 253,
+          "r1": 33754552,
+          "r2": 33754548,
+          "r3": 33754548,
+          "r4": 4,
+          "r5": 4,
+          "r6": 138717216,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 16890,
+          "sp": 33754548,
+          "lr": 134247065,
+          "pc": 134612372,
+          "cpsr": 63
+        }
+      },
+      "after_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612374,
+        "instructions": 59,
+        "frames": 0,
+        "registers": {
+          "r0": 0,
+          "r1": 33754555,
+          "r2": 66,
+          "r3": 0,
+          "r4": 4,
+          "r5": 4,
+          "r6": 138717216,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 134612375,
+          "sp": 33754548,
+          "lr": 137608311,
+          "pc": 134612376,
+          "cpsr": 1073741887
+        }
+      },
+      "text_hex": "08253222513842fd",
+      "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/stacking-display-001/English/screenshots/quantity-1.png"
+    },
+    {
+      "language": "English",
+      "quantity": 9,
+      "mutation": {
+        "address": "0x2003d34",
+        "width": 2,
+        "before": 0,
+        "after": 9
+      },
+      "before_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612370,
+        "instructions": 245304,
+        "frames": 6,
+        "registers": {
+          "r0": 253,
+          "r1": 33754552,
+          "r2": 33754548,
+          "r3": 33754548,
+          "r4": 4,
+          "r5": 4,
+          "r6": 138717216,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 16890,
+          "sp": 33754548,
+          "lr": 134247065,
+          "pc": 134612372,
+          "cpsr": 63
+        }
+      },
+      "after_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612374,
+        "instructions": 59,
+        "frames": 0,
+        "registers": {
+          "r0": 0,
+          "r1": 33754555,
+          "r2": 74,
+          "r3": 0,
+          "r4": 4,
+          "r5": 4,
+          "r6": 138717216,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 134612375,
+          "sp": 33754548,
+          "lr": 137608311,
+          "pc": 134612376,
+          "cpsr": 1073741887
+        }
+      },
+      "text_hex": "0825322251384afd",
+      "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/stacking-display-001/English/screenshots/quantity-9.png"
+    },
+    {
+      "language": "English",
+      "quantity": 10,
+      "mutation": {
+        "address": "0x2003d34",
+        "width": 2,
+        "before": 0,
+        "after": 10
+      },
+      "before_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612370,
+        "instructions": 245304,
+        "frames": 6,
+        "registers": {
+          "r0": 253,
+          "r1": 33754552,
+          "r2": 33754548,
+          "r3": 33754548,
+          "r4": 4,
+          "r5": 4,
+          "r6": 138717216,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 16890,
+          "sp": 33754548,
+          "lr": 134247065,
+          "pc": 134612372,
+          "cpsr": 63
+        }
+      },
+      "after_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612374,
+        "instructions": 67,
+        "frames": 0,
+        "registers": {
+          "r0": 0,
+          "r1": 33754556,
+          "r2": 65,
+          "r3": 66,
+          "r4": 4,
+          "r5": 4,
+          "r6": 138717216,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 134612375,
+          "sp": 33754548,
+          "lr": 137608311,
+          "pc": 134612376,
+          "cpsr": 1073741887
+        }
+      },
+      "text_hex": "0825322251384241fd",
+      "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/stacking-display-001/English/screenshots/quantity-10.png"
+    },
+    {
+      "language": "English",
+      "quantity": 99,
+      "mutation": {
+        "address": "0x2003d34",
+        "width": 2,
+        "before": 0,
+        "after": 99
+      },
+      "before_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612370,
+        "instructions": 249192,
+        "frames": 6,
+        "registers": {
+          "r0": 253,
+          "r1": 33754552,
+          "r2": 33754548,
+          "r3": 33754548,
+          "r4": 4,
+          "r5": 4,
+          "r6": 138717216,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 16890,
+          "sp": 33754548,
+          "lr": 134247065,
+          "pc": 134612372,
+          "cpsr": 63
+        }
+      },
+      "after_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612374,
+        "instructions": 107,
+        "frames": 0,
+        "registers": {
+          "r0": 0,
+          "r1": 33754556,
+          "r2": 74,
+          "r3": 74,
+          "r4": 4,
+          "r5": 4,
+          "r6": 138717216,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 134612375,
+          "sp": 33754548,
+          "lr": 137608311,
+          "pc": 134612376,
+          "cpsr": 1073741887
+        }
+      },
+      "text_hex": "0825322251384a4afd",
+      "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/stacking-display-001/English/screenshots/quantity-99.png"
+    },
+    {
+      "language": "English",
+      "quantity": 100,
+      "mutation": {
+        "address": "0x2003d34",
+        "width": 2,
+        "before": 0,
+        "after": 100
+      },
+      "before_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612370,
+        "instructions": 249192,
+        "frames": 6,
+        "registers": {
+          "r0": 253,
+          "r1": 33754552,
+          "r2": 33754548,
+          "r3": 33754548,
+          "r4": 4,
+          "r5": 4,
+          "r6": 138717216,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 16890,
+          "sp": 33754548,
+          "lr": 134247065,
+          "pc": 134612372,
+          "cpsr": 63
+        }
+      },
+      "after_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612374,
+        "instructions": 58,
+        "frames": 0,
+        "registers": {
+          "r0": 0,
+          "r1": 33754557,
+          "r2": 100,
+          "r3": 65,
+          "r4": 4,
+          "r5": 4,
+          "r6": 138717216,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 134612375,
+          "sp": 33754548,
+          "lr": 137608311,
+          "pc": 134612376,
+          "cpsr": 1073741887
+        }
+      },
+      "text_hex": "082532225138424141fd",
+      "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/stacking-display-001/English/screenshots/quantity-100.png"
+    },
+    {
+      "language": "German",
+      "quantity": 0,
+      "mutation": {
+        "address": "0x2003d34",
+        "width": 2,
+        "before": 0,
+        "after": 0
+      },
+      "before_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612370,
+        "instructions": 245354,
+        "frames": 6,
+        "registers": {
+          "r0": 253,
+          "r1": 33754555,
+          "r2": 33754548,
+          "r3": 0,
+          "r4": 7,
+          "r5": 0,
+          "r6": 138717278,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 16890,
+          "sp": 33754548,
+          "lr": 134247065,
+          "pc": 134612372,
+          "cpsr": 63
+        }
+      },
+      "after_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612374,
+        "instructions": 60,
+        "frames": 0,
+        "registers": {
+          "r0": 0,
+          "r1": 33754558,
+          "r2": 66,
+          "r3": 0,
+          "r4": 7,
+          "r5": 0,
+          "r6": 138717278,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 134612375,
+          "sp": 33754548,
+          "lr": 137608311,
+          "pc": 134612376,
+          "cpsr": 1073741887
+        }
+      },
+      "text_hex": "0b328335342532513842fd",
+      "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/stacking-display-001/German/screenshots/quantity-0.png"
+    },
+    {
+      "language": "German",
+      "quantity": 1,
+      "mutation": {
+        "address": "0x2003d34",
+        "width": 2,
+        "before": 0,
+        "after": 1
+      },
+      "before_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612370,
+        "instructions": 245348,
+        "frames": 6,
+        "registers": {
+          "r0": 253,
+          "r1": 33754555,
+          "r2": 33754548,
+          "r3": 0,
+          "r4": 7,
+          "r5": 0,
+          "r6": 138717278,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 16890,
+          "sp": 33754548,
+          "lr": 134247065,
+          "pc": 134612372,
+          "cpsr": 63
+        }
+      },
+      "after_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612374,
+        "instructions": 59,
+        "frames": 0,
+        "registers": {
+          "r0": 0,
+          "r1": 33754558,
+          "r2": 66,
+          "r3": 0,
+          "r4": 7,
+          "r5": 0,
+          "r6": 138717278,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 134612375,
+          "sp": 33754548,
+          "lr": 137608311,
+          "pc": 134612376,
+          "cpsr": 1073741887
+        }
+      },
+      "text_hex": "0b328335342532513842fd",
+      "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/stacking-display-001/German/screenshots/quantity-1.png"
+    },
+    {
+      "language": "German",
+      "quantity": 9,
+      "mutation": {
+        "address": "0x2003d34",
+        "width": 2,
+        "before": 0,
+        "after": 9
+      },
+      "before_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612370,
+        "instructions": 245354,
+        "frames": 6,
+        "registers": {
+          "r0": 253,
+          "r1": 33754555,
+          "r2": 33754548,
+          "r3": 0,
+          "r4": 7,
+          "r5": 0,
+          "r6": 138717278,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 16890,
+          "sp": 33754548,
+          "lr": 134247065,
+          "pc": 134612372,
+          "cpsr": 63
+        }
+      },
+      "after_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612374,
+        "instructions": 59,
+        "frames": 0,
+        "registers": {
+          "r0": 0,
+          "r1": 33754558,
+          "r2": 74,
+          "r3": 0,
+          "r4": 7,
+          "r5": 0,
+          "r6": 138717278,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 134612375,
+          "sp": 33754548,
+          "lr": 137608311,
+          "pc": 134612376,
+          "cpsr": 1073741887
+        }
+      },
+      "text_hex": "0b32833534253251384afd",
+      "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/stacking-display-001/German/screenshots/quantity-9.png"
+    },
+    {
+      "language": "German",
+      "quantity": 10,
+      "mutation": {
+        "address": "0x2003d34",
+        "width": 2,
+        "before": 0,
+        "after": 10
+      },
+      "before_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612370,
+        "instructions": 245354,
+        "frames": 6,
+        "registers": {
+          "r0": 253,
+          "r1": 33754555,
+          "r2": 33754548,
+          "r3": 0,
+          "r4": 7,
+          "r5": 0,
+          "r6": 138717278,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 16890,
+          "sp": 33754548,
+          "lr": 134247065,
+          "pc": 134612372,
+          "cpsr": 63
+        }
+      },
+      "after_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612374,
+        "instructions": 67,
+        "frames": 0,
+        "registers": {
+          "r0": 0,
+          "r1": 33754559,
+          "r2": 65,
+          "r3": 66,
+          "r4": 7,
+          "r5": 0,
+          "r6": 138717278,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 134612375,
+          "sp": 33754548,
+          "lr": 137608311,
+          "pc": 134612376,
+          "cpsr": 1073741887
+        }
+      },
+      "text_hex": "0b32833534253251384241fd",
+      "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/stacking-display-001/German/screenshots/quantity-10.png"
+    },
+    {
+      "language": "German",
+      "quantity": 99,
+      "mutation": {
+        "address": "0x2003d34",
+        "width": 2,
+        "before": 0,
+        "after": 99
+      },
+      "before_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612370,
+        "instructions": 249242,
+        "frames": 6,
+        "registers": {
+          "r0": 253,
+          "r1": 33754555,
+          "r2": 33754548,
+          "r3": 0,
+          "r4": 7,
+          "r5": 0,
+          "r6": 138717278,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 16890,
+          "sp": 33754548,
+          "lr": 134247065,
+          "pc": 134612372,
+          "cpsr": 63
+        }
+      },
+      "after_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612374,
+        "instructions": 107,
+        "frames": 0,
+        "registers": {
+          "r0": 0,
+          "r1": 33754559,
+          "r2": 74,
+          "r3": 74,
+          "r4": 7,
+          "r5": 0,
+          "r6": 138717278,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 134612375,
+          "sp": 33754548,
+          "lr": 137608311,
+          "pc": 134612376,
+          "cpsr": 1073741887
+        }
+      },
+      "text_hex": "0b32833534253251384a4afd",
+      "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/stacking-display-001/German/screenshots/quantity-99.png"
+    },
+    {
+      "language": "German",
+      "quantity": 100,
+      "mutation": {
+        "address": "0x2003d34",
+        "width": 2,
+        "before": 0,
+        "after": 100
+      },
+      "before_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612370,
+        "instructions": 249242,
+        "frames": 6,
+        "registers": {
+          "r0": 253,
+          "r1": 33754555,
+          "r2": 33754548,
+          "r3": 0,
+          "r4": 7,
+          "r5": 0,
+          "r6": 138717278,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 16890,
+          "sp": 33754548,
+          "lr": 134247065,
+          "pc": 134612372,
+          "cpsr": 63
+        }
+      },
+      "after_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612374,
+        "instructions": 58,
+        "frames": 0,
+        "registers": {
+          "r0": 0,
+          "r1": 33754560,
+          "r2": 100,
+          "r3": 65,
+          "r4": 7,
+          "r5": 0,
+          "r6": 138717278,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 134612375,
+          "sp": 33754548,
+          "lr": 137608311,
+          "pc": 134612376,
+          "cpsr": 1073741887
+        }
+      },
+      "text_hex": "0b3283353425325138424141fd",
+      "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/stacking-display-001/German/screenshots/quantity-100.png"
+    },
+    {
+      "language": "French",
+      "quantity": 0,
+      "mutation": {
+        "address": "0x2003d34",
+        "width": 2,
+        "before": 0,
+        "after": 0
+      },
+      "before_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612370,
+        "instructions": 245337,
+        "frames": 6,
+        "registers": {
+          "r0": 253,
+          "r1": 33754553,
+          "r2": 33754548,
+          "r3": 33754548,
+          "r4": 5,
+          "r5": 5,
+          "r6": 138717247,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 16890,
+          "sp": 33754548,
+          "lr": 134247065,
+          "pc": 134612372,
+          "cpsr": 63
+        }
+      },
+      "after_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612374,
+        "instructions": 60,
+        "frames": 0,
+        "registers": {
+          "r0": 0,
+          "r1": 33754556,
+          "r2": 66,
+          "r3": 0,
+          "r4": 5,
+          "r5": 5,
+          "r6": 138717247,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 134612375,
+          "sp": 33754548,
+          "lr": 137608311,
+          "pc": 134612376,
+          "cpsr": 1073741887
+        }
+      },
+      "text_hex": "0825322225513842fd",
+      "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/stacking-display-001/French/screenshots/quantity-0.png"
+    },
+    {
+      "language": "French",
+      "quantity": 1,
+      "mutation": {
+        "address": "0x2003d34",
+        "width": 2,
+        "before": 0,
+        "after": 1
+      },
+      "before_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612370,
+        "instructions": 245331,
+        "frames": 6,
+        "registers": {
+          "r0": 253,
+          "r1": 33754553,
+          "r2": 33754548,
+          "r3": 33754548,
+          "r4": 5,
+          "r5": 5,
+          "r6": 138717247,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 16890,
+          "sp": 33754548,
+          "lr": 134247065,
+          "pc": 134612372,
+          "cpsr": 63
+        }
+      },
+      "after_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612374,
+        "instructions": 59,
+        "frames": 0,
+        "registers": {
+          "r0": 0,
+          "r1": 33754556,
+          "r2": 66,
+          "r3": 0,
+          "r4": 5,
+          "r5": 5,
+          "r6": 138717247,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 134612375,
+          "sp": 33754548,
+          "lr": 137608311,
+          "pc": 134612376,
+          "cpsr": 1073741887
+        }
+      },
+      "text_hex": "0825322225513842fd",
+      "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/stacking-display-001/French/screenshots/quantity-1.png"
+    },
+    {
+      "language": "French",
+      "quantity": 9,
+      "mutation": {
+        "address": "0x2003d34",
+        "width": 2,
+        "before": 0,
+        "after": 9
+      },
+      "before_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612370,
+        "instructions": 245337,
+        "frames": 6,
+        "registers": {
+          "r0": 253,
+          "r1": 33754553,
+          "r2": 33754548,
+          "r3": 33754548,
+          "r4": 5,
+          "r5": 5,
+          "r6": 138717247,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 16890,
+          "sp": 33754548,
+          "lr": 134247065,
+          "pc": 134612372,
+          "cpsr": 63
+        }
+      },
+      "after_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612374,
+        "instructions": 59,
+        "frames": 0,
+        "registers": {
+          "r0": 0,
+          "r1": 33754556,
+          "r2": 74,
+          "r3": 0,
+          "r4": 5,
+          "r5": 5,
+          "r6": 138717247,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 134612375,
+          "sp": 33754548,
+          "lr": 137608311,
+          "pc": 134612376,
+          "cpsr": 1073741887
+        }
+      },
+      "text_hex": "082532222551384afd",
+      "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/stacking-display-001/French/screenshots/quantity-9.png"
+    },
+    {
+      "language": "French",
+      "quantity": 10,
+      "mutation": {
+        "address": "0x2003d34",
+        "width": 2,
+        "before": 0,
+        "after": 10
+      },
+      "before_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612370,
+        "instructions": 245337,
+        "frames": 6,
+        "registers": {
+          "r0": 253,
+          "r1": 33754553,
+          "r2": 33754548,
+          "r3": 33754548,
+          "r4": 5,
+          "r5": 5,
+          "r6": 138717247,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 16890,
+          "sp": 33754548,
+          "lr": 134247065,
+          "pc": 134612372,
+          "cpsr": 63
+        }
+      },
+      "after_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612374,
+        "instructions": 67,
+        "frames": 0,
+        "registers": {
+          "r0": 0,
+          "r1": 33754557,
+          "r2": 65,
+          "r3": 66,
+          "r4": 5,
+          "r5": 5,
+          "r6": 138717247,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 134612375,
+          "sp": 33754548,
+          "lr": 137608311,
+          "pc": 134612376,
+          "cpsr": 1073741887
+        }
+      },
+      "text_hex": "082532222551384241fd",
+      "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/stacking-display-001/French/screenshots/quantity-10.png"
+    },
+    {
+      "language": "French",
+      "quantity": 99,
+      "mutation": {
+        "address": "0x2003d34",
+        "width": 2,
+        "before": 0,
+        "after": 99
+      },
+      "before_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612370,
+        "instructions": 249225,
+        "frames": 6,
+        "registers": {
+          "r0": 253,
+          "r1": 33754553,
+          "r2": 33754548,
+          "r3": 33754548,
+          "r4": 5,
+          "r5": 5,
+          "r6": 138717247,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 16890,
+          "sp": 33754548,
+          "lr": 134247065,
+          "pc": 134612372,
+          "cpsr": 63
+        }
+      },
+      "after_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612374,
+        "instructions": 107,
+        "frames": 0,
+        "registers": {
+          "r0": 0,
+          "r1": 33754557,
+          "r2": 74,
+          "r3": 74,
+          "r4": 5,
+          "r5": 5,
+          "r6": 138717247,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 134612375,
+          "sp": 33754548,
+          "lr": 137608311,
+          "pc": 134612376,
+          "cpsr": 1073741887
+        }
+      },
+      "text_hex": "082532222551384a4afd",
+      "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/stacking-display-001/French/screenshots/quantity-99.png"
+    },
+    {
+      "language": "French",
+      "quantity": 100,
+      "mutation": {
+        "address": "0x2003d34",
+        "width": 2,
+        "before": 0,
+        "after": 100
+      },
+      "before_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612370,
+        "instructions": 249225,
+        "frames": 6,
+        "registers": {
+          "r0": 253,
+          "r1": 33754553,
+          "r2": 33754548,
+          "r3": 33754548,
+          "r4": 5,
+          "r5": 5,
+          "r6": 138717247,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 16890,
+          "sp": 33754548,
+          "lr": 134247065,
+          "pc": 134612372,
+          "cpsr": 63
+        }
+      },
+      "after_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612374,
+        "instructions": 58,
+        "frames": 0,
+        "registers": {
+          "r0": 0,
+          "r1": 33754558,
+          "r2": 100,
+          "r3": 65,
+          "r4": 5,
+          "r5": 5,
+          "r6": 138717247,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 134612375,
+          "sp": 33754548,
+          "lr": 137608311,
+          "pc": 134612376,
+          "cpsr": 1073741887
+        }
+      },
+      "text_hex": "08253222255138424141fd",
+      "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/stacking-display-001/French/screenshots/quantity-100.png"
+    },
+    {
+      "language": "Italian",
+      "quantity": 0,
+      "mutation": {
+        "address": "0x2003d34",
+        "width": 2,
+        "before": 0,
+        "after": 0
+      },
+      "before_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612370,
+        "instructions": 245311,
+        "frames": 6,
+        "registers": {
+          "r0": 253,
+          "r1": 33754552,
+          "r2": 33754548,
+          "r3": 33754548,
+          "r4": 4,
+          "r5": 4,
+          "r6": 138717309,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 16890,
+          "sp": 33754548,
+          "lr": 134247065,
+          "pc": 134612372,
+          "cpsr": 63
+        }
+      },
+      "after_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612374,
+        "instructions": 60,
+        "frames": 0,
+        "registers": {
+          "r0": 0,
+          "r1": 33754555,
+          "r2": 66,
+          "r3": 0,
+          "r4": 4,
+          "r5": 4,
+          "r6": 138717309,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 134612375,
+          "sp": 33754548,
+          "lr": 137608311,
+          "pc": 134612376,
+          "cpsr": 1073741887
+        }
+      },
+      "text_hex": "05322221513842fd",
+      "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/stacking-display-001/Italian/screenshots/quantity-0.png"
+    },
+    {
+      "language": "Italian",
+      "quantity": 1,
+      "mutation": {
+        "address": "0x2003d34",
+        "width": 2,
+        "before": 0,
+        "after": 1
+      },
+      "before_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612370,
+        "instructions": 245305,
+        "frames": 6,
+        "registers": {
+          "r0": 253,
+          "r1": 33754552,
+          "r2": 33754548,
+          "r3": 33754548,
+          "r4": 4,
+          "r5": 4,
+          "r6": 138717309,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 16890,
+          "sp": 33754548,
+          "lr": 134247065,
+          "pc": 134612372,
+          "cpsr": 63
+        }
+      },
+      "after_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612374,
+        "instructions": 59,
+        "frames": 0,
+        "registers": {
+          "r0": 0,
+          "r1": 33754555,
+          "r2": 66,
+          "r3": 0,
+          "r4": 4,
+          "r5": 4,
+          "r6": 138717309,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 134612375,
+          "sp": 33754548,
+          "lr": 137608311,
+          "pc": 134612376,
+          "cpsr": 1073741887
+        }
+      },
+      "text_hex": "05322221513842fd",
+      "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/stacking-display-001/Italian/screenshots/quantity-1.png"
+    },
+    {
+      "language": "Italian",
+      "quantity": 9,
+      "mutation": {
+        "address": "0x2003d34",
+        "width": 2,
+        "before": 0,
+        "after": 9
+      },
+      "before_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612370,
+        "instructions": 245311,
+        "frames": 6,
+        "registers": {
+          "r0": 253,
+          "r1": 33754552,
+          "r2": 33754548,
+          "r3": 33754548,
+          "r4": 4,
+          "r5": 4,
+          "r6": 138717309,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 16890,
+          "sp": 33754548,
+          "lr": 134247065,
+          "pc": 134612372,
+          "cpsr": 63
+        }
+      },
+      "after_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612374,
+        "instructions": 59,
+        "frames": 0,
+        "registers": {
+          "r0": 0,
+          "r1": 33754555,
+          "r2": 74,
+          "r3": 0,
+          "r4": 4,
+          "r5": 4,
+          "r6": 138717309,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 134612375,
+          "sp": 33754548,
+          "lr": 137608311,
+          "pc": 134612376,
+          "cpsr": 1073741887
+        }
+      },
+      "text_hex": "0532222151384afd",
+      "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/stacking-display-001/Italian/screenshots/quantity-9.png"
+    },
+    {
+      "language": "Italian",
+      "quantity": 10,
+      "mutation": {
+        "address": "0x2003d34",
+        "width": 2,
+        "before": 0,
+        "after": 10
+      },
+      "before_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612370,
+        "instructions": 245311,
+        "frames": 6,
+        "registers": {
+          "r0": 253,
+          "r1": 33754552,
+          "r2": 33754548,
+          "r3": 33754548,
+          "r4": 4,
+          "r5": 4,
+          "r6": 138717309,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 16890,
+          "sp": 33754548,
+          "lr": 134247065,
+          "pc": 134612372,
+          "cpsr": 63
+        }
+      },
+      "after_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612374,
+        "instructions": 67,
+        "frames": 0,
+        "registers": {
+          "r0": 0,
+          "r1": 33754556,
+          "r2": 65,
+          "r3": 66,
+          "r4": 4,
+          "r5": 4,
+          "r6": 138717309,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 134612375,
+          "sp": 33754548,
+          "lr": 137608311,
+          "pc": 134612376,
+          "cpsr": 1073741887
+        }
+      },
+      "text_hex": "0532222151384241fd",
+      "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/stacking-display-001/Italian/screenshots/quantity-10.png"
+    },
+    {
+      "language": "Italian",
+      "quantity": 99,
+      "mutation": {
+        "address": "0x2003d34",
+        "width": 2,
+        "before": 0,
+        "after": 99
+      },
+      "before_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612370,
+        "instructions": 249199,
+        "frames": 6,
+        "registers": {
+          "r0": 253,
+          "r1": 33754552,
+          "r2": 33754548,
+          "r3": 33754548,
+          "r4": 4,
+          "r5": 4,
+          "r6": 138717309,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 16890,
+          "sp": 33754548,
+          "lr": 134247065,
+          "pc": 134612372,
+          "cpsr": 63
+        }
+      },
+      "after_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612374,
+        "instructions": 107,
+        "frames": 0,
+        "registers": {
+          "r0": 0,
+          "r1": 33754556,
+          "r2": 74,
+          "r3": 74,
+          "r4": 4,
+          "r5": 4,
+          "r6": 138717309,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 134612375,
+          "sp": 33754548,
+          "lr": 137608311,
+          "pc": 134612376,
+          "cpsr": 1073741887
+        }
+      },
+      "text_hex": "0532222151384a4afd",
+      "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/stacking-display-001/Italian/screenshots/quantity-99.png"
+    },
+    {
+      "language": "Italian",
+      "quantity": 100,
+      "mutation": {
+        "address": "0x2003d34",
+        "width": 2,
+        "before": 0,
+        "after": 100
+      },
+      "before_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612370,
+        "instructions": 249199,
+        "frames": 6,
+        "registers": {
+          "r0": 253,
+          "r1": 33754552,
+          "r2": 33754548,
+          "r3": 33754548,
+          "r4": 4,
+          "r5": 4,
+          "r6": 138717309,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 16890,
+          "sp": 33754548,
+          "lr": 134247065,
+          "pc": 134612372,
+          "cpsr": 63
+        }
+      },
+      "after_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612374,
+        "instructions": 58,
+        "frames": 0,
+        "registers": {
+          "r0": 0,
+          "r1": 33754557,
+          "r2": 100,
+          "r3": 65,
+          "r4": 4,
+          "r5": 4,
+          "r6": 138717309,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 134612375,
+          "sp": 33754548,
+          "lr": 137608311,
+          "pc": 134612376,
+          "cpsr": 1073741887
+        }
+      },
+      "text_hex": "053222215138424141fd",
+      "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/stacking-display-001/Italian/screenshots/quantity-100.png"
+    },
+    {
+      "language": "Spanish",
+      "quantity": 0,
+      "mutation": {
+        "address": "0x2003d34",
+        "width": 2,
+        "before": 0,
+        "after": 0
+      },
+      "before_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612370,
+        "instructions": 245367,
+        "frames": 6,
+        "registers": {
+          "r0": 253,
+          "r1": 33754555,
+          "r2": 33754548,
+          "r3": 33754548,
+          "r4": 7,
+          "r5": 7,
+          "r6": 138717340,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 16890,
+          "sp": 33754548,
+          "lr": 134247065,
+          "pc": 134612372,
+          "cpsr": 63
+        }
+      },
+      "after_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612374,
+        "instructions": 60,
+        "frames": 0,
+        "registers": {
+          "r0": 0,
+          "r1": 33754558,
+          "r2": 66,
+          "r3": 0,
+          "r4": 7,
+          "r5": 7,
+          "r6": 138717340,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 134612375,
+          "sp": 33754548,
+          "lr": 137608311,
+          "pc": 134612376,
+          "cpsr": 1073741887
+        }
+      },
+      "text_hex": "08292532222151513842fd",
+      "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/stacking-display-001/Spanish/screenshots/quantity-0.png"
+    },
+    {
+      "language": "Spanish",
+      "quantity": 1,
+      "mutation": {
+        "address": "0x2003d34",
+        "width": 2,
+        "before": 0,
+        "after": 1
+      },
+      "before_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612370,
+        "instructions": 245361,
+        "frames": 6,
+        "registers": {
+          "r0": 253,
+          "r1": 33754555,
+          "r2": 33754548,
+          "r3": 33754548,
+          "r4": 7,
+          "r5": 7,
+          "r6": 138717340,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 16890,
+          "sp": 33754548,
+          "lr": 134247065,
+          "pc": 134612372,
+          "cpsr": 63
+        }
+      },
+      "after_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612374,
+        "instructions": 59,
+        "frames": 0,
+        "registers": {
+          "r0": 0,
+          "r1": 33754558,
+          "r2": 66,
+          "r3": 0,
+          "r4": 7,
+          "r5": 7,
+          "r6": 138717340,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 134612375,
+          "sp": 33754548,
+          "lr": 137608311,
+          "pc": 134612376,
+          "cpsr": 1073741887
+        }
+      },
+      "text_hex": "08292532222151513842fd",
+      "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/stacking-display-001/Spanish/screenshots/quantity-1.png"
+    },
+    {
+      "language": "Spanish",
+      "quantity": 9,
+      "mutation": {
+        "address": "0x2003d34",
+        "width": 2,
+        "before": 0,
+        "after": 9
+      },
+      "before_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612370,
+        "instructions": 245367,
+        "frames": 6,
+        "registers": {
+          "r0": 253,
+          "r1": 33754555,
+          "r2": 33754548,
+          "r3": 33754548,
+          "r4": 7,
+          "r5": 7,
+          "r6": 138717340,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 16890,
+          "sp": 33754548,
+          "lr": 134247065,
+          "pc": 134612372,
+          "cpsr": 63
+        }
+      },
+      "after_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612374,
+        "instructions": 59,
+        "frames": 0,
+        "registers": {
+          "r0": 0,
+          "r1": 33754558,
+          "r2": 74,
+          "r3": 0,
+          "r4": 7,
+          "r5": 7,
+          "r6": 138717340,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 134612375,
+          "sp": 33754548,
+          "lr": 137608311,
+          "pc": 134612376,
+          "cpsr": 1073741887
+        }
+      },
+      "text_hex": "0829253222215151384afd",
+      "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/stacking-display-001/Spanish/screenshots/quantity-9.png"
+    },
+    {
+      "language": "Spanish",
+      "quantity": 10,
+      "mutation": {
+        "address": "0x2003d34",
+        "width": 2,
+        "before": 0,
+        "after": 10
+      },
+      "before_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612370,
+        "instructions": 245367,
+        "frames": 6,
+        "registers": {
+          "r0": 253,
+          "r1": 33754555,
+          "r2": 33754548,
+          "r3": 33754548,
+          "r4": 7,
+          "r5": 7,
+          "r6": 138717340,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 16890,
+          "sp": 33754548,
+          "lr": 134247065,
+          "pc": 134612372,
+          "cpsr": 63
+        }
+      },
+      "after_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612374,
+        "instructions": 67,
+        "frames": 0,
+        "registers": {
+          "r0": 0,
+          "r1": 33754559,
+          "r2": 65,
+          "r3": 66,
+          "r4": 7,
+          "r5": 7,
+          "r6": 138717340,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 134612375,
+          "sp": 33754548,
+          "lr": 137608311,
+          "pc": 134612376,
+          "cpsr": 1073741887
+        }
+      },
+      "text_hex": "0829253222215151384241fd",
+      "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/stacking-display-001/Spanish/screenshots/quantity-10.png"
+    },
+    {
+      "language": "Spanish",
+      "quantity": 99,
+      "mutation": {
+        "address": "0x2003d34",
+        "width": 2,
+        "before": 0,
+        "after": 99
+      },
+      "before_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612370,
+        "instructions": 249255,
+        "frames": 6,
+        "registers": {
+          "r0": 253,
+          "r1": 33754555,
+          "r2": 33754548,
+          "r3": 33754548,
+          "r4": 7,
+          "r5": 7,
+          "r6": 138717340,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 16890,
+          "sp": 33754548,
+          "lr": 134247065,
+          "pc": 134612372,
+          "cpsr": 63
+        }
+      },
+      "after_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612374,
+        "instructions": 107,
+        "frames": 0,
+        "registers": {
+          "r0": 0,
+          "r1": 33754559,
+          "r2": 74,
+          "r3": 74,
+          "r4": 7,
+          "r5": 7,
+          "r6": 138717340,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 134612375,
+          "sp": 33754548,
+          "lr": 137608311,
+          "pc": 134612376,
+          "cpsr": 1073741887
+        }
+      },
+      "text_hex": "0829253222215151384a4afd",
+      "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/stacking-display-001/Spanish/screenshots/quantity-99.png"
+    },
+    {
+      "language": "Spanish",
+      "quantity": 100,
+      "mutation": {
+        "address": "0x2003d34",
+        "width": 2,
+        "before": 0,
+        "after": 100
+      },
+      "before_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612370,
+        "instructions": 249255,
+        "frames": 6,
+        "registers": {
+          "r0": 253,
+          "r1": 33754555,
+          "r2": 33754548,
+          "r3": 33754548,
+          "r4": 7,
+          "r5": 7,
+          "r6": 138717340,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 16890,
+          "sp": 33754548,
+          "lr": 134247065,
+          "pc": 134612372,
+          "cpsr": 63
+        }
+      },
+      "after_stop": {
+        "hit": true,
+        "stop": "hit",
+        "address": 134612374,
+        "instructions": 58,
+        "frames": 0,
+        "registers": {
+          "r0": 0,
+          "r1": 33754560,
+          "r2": 100,
+          "r3": 65,
+          "r4": 7,
+          "r5": 7,
+          "r6": 138717340,
+          "r7": 50347280,
+          "r8": 4,
+          "r9": 1179648,
+          "r10": 50347280,
+          "r11": 0,
+          "r12": 134612375,
+          "sp": 33754548,
+          "lr": 137608311,
+          "pc": 134612376,
+          "cpsr": 1073741887
+        }
+      },
+      "text_hex": "082925322221515138424141fd",
+      "screenshot": "/home/david/Documents/SS2_Modding/eu/runs/stacking-display-001/Spanish/screenshots/quantity-100.png"
+    }
+  ],
+  "rom_sha256": "8057383d6184597412ec33abe7d7c1c3645555e8d56bc89ee790656aef3e4cb9",
+  "synthetic": true,
+  "source_save_unchanged": true
+}

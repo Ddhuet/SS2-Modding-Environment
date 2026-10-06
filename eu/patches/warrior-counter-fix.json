@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "id": "warrior_counter_fix_eu",
+  "name": "EU Warrior COUNTER state timing fix",
+  "stage": "static_candidate",
+  "profile_id": "ss2-eu",
+  "baseline": {
+    "size": 16777216,
+    "md5": "49aa688745111aaa51076a345f8f18c3",
+    "sha256": "e5c64a1740263e9b26120e487f3688fbbf7b3954a2c043c0d84c333df467e0b2",
+    "crc32": "55E503C1"
+  },
+  "source_provenance": {
+    "kind": "independently_audited_port",
+    "definition": "reference/upstream/patches/definitions/counter_fix.json",
+    "source_profile_id": "ss2-cn-baseline",
+    "source_definition_sha256": "2777a738167da3e51bec9a37bfbe1e58b13beacd09ad167015a2351e4587152e"
+  },
+  "evidence": {
+    "status": "static_verified",
+    "static_audit": "docs/counter-audit.md",
+    "static_report": "docs/evidence/counter-static/report.json",
+    "scope": "Exact-profile rewrite, EU damage callee/state gate, preserved arguments and return value; no executable behavior verified.",
+    "runtime": "not_run_at_owner_request",
+    "user_acceptance": "not_recorded"
+  },
+  "writes": [
+    {
+      "offset": "0x0001F3E4",
+      "address": "0x0801F3E4",
+      "before_hex": "0a20a8814046291c4a460023fff7def8",
+      "after_hex": "4046291c4a460023fff7e0f80a23ab81",
+      "mode": "thumb",
+      "note": "Move target +0x0C = 10 after damage computation; re-encode complete moved BL at 0x0801F3EC to 0x0801E5B0, preserve returned r0."
+    }
+  ]
+}

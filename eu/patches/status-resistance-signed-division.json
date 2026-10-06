@@ -2,7 +2,7 @@
   "schema_version": 1,
   "id": "status_resistance_signed_division_eu",
   "name": "EU status-resistance signed division",
-  "stage": "static_candidate",
+  "stage": "approved",
   "profile_id": "ss2-eu",
   "baseline": {
     "size": 16777216,
@@ -16,9 +16,15 @@
     "source_profile_id": "ss2-cn-baseline"
   },
   "evidence": {
-    "status": "static_verified",
+    "status": "runtime_verified",
     "static_audit": "docs/status-resistance-audit.md",
-    "scope": "Experimental boundary tests; no user acceptance"
+    "scope": "Outer status chance and event queue: 3645 controlled assertions and 186 button-reached combat-fixture assertions. Separate stale payload defect remains documented.",
+    "runtime_report": "docs/evidence/status-resistance-diagnostic.json",
+    "gameplay_fixture_report": "docs/evidence/status-resistance-gameplay.json",
+    "build_approval": "Audited EU semantics and named executable scenarios pass; owner requested treating the tested fix as usable with later bug fixes. Approval covers the division fix, not universal immunity.",
+    "user_acceptance": "not_recorded",
+    "release_record": "releases/README.md",
+    "previous_definition_snapshot": "docs/evidence/status-resistance-candidate-definition.json"
   },
   "writes": [
     {

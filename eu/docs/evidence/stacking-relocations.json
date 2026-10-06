@@ -1,0 +1,269 @@
+{
+  "definition": "patches/stackable-consumables.json",
+  "relocations": [
+    {
+      "source_offset": "0x33cd78",
+      "eu_offset": "0x33b844",
+      "before_hex": "80350003",
+      "after_hex": "e0340003",
+      "reason": "audited EU pointer/continuation"
+    },
+    {
+      "source_offset": "0x33d070",
+      "eu_offset": "0x33bb3c",
+      "before_hex": "ddce0708",
+      "after_hex": "75c70708",
+      "reason": "audited EU pointer/continuation"
+    },
+    {
+      "source_offset": "0x33d074",
+      "eu_offset": "0x33bb40",
+      "before_hex": "7fcf0708",
+      "after_hex": "17c80708",
+      "reason": "audited EU pointer/continuation"
+    },
+    {
+      "source_offset": "0x33d078",
+      "eu_offset": "0x33bb44",
+      "before_hex": "17d10708",
+      "after_hex": "afc90708",
+      "reason": "audited EU pointer/continuation"
+    },
+    {
+      "source_offset": "0x33d07c",
+      "eu_offset": "0x33bb48",
+      "before_hex": "33d40708",
+      "after_hex": "cbcc0708",
+      "reason": "audited EU pointer/continuation"
+    },
+    {
+      "source_offset": "0x33d080",
+      "eu_offset": "0x33bb4c",
+      "before_hex": "cdd40708",
+      "after_hex": "65cd0708",
+      "reason": "audited EU pointer/continuation"
+    },
+    {
+      "source_offset": "0x33d084",
+      "eu_offset": "0x33bb50",
+      "before_hex": "23d50708",
+      "after_hex": "bbcd0708",
+      "reason": "audited EU pointer/continuation"
+    },
+    {
+      "source_offset": "0x33d088",
+      "eu_offset": "0x33bb54",
+      "before_hex": "1fd50708",
+      "after_hex": "b7cd0708",
+      "reason": "audited EU pointer/continuation"
+    },
+    {
+      "source_offset": "0x33d094",
+      "eu_offset": "0x33bb60",
+      "before_hex": "00650003",
+      "after_hex": "40640003",
+      "reason": "audited EU pointer/continuation"
+    },
+    {
+      "source_offset": "0x33d098",
+      "eu_offset": "0x33bb64",
+      "before_hex": "80350003",
+      "after_hex": "e0340003",
+      "reason": "audited EU pointer/continuation"
+    },
+    {
+      "source_offset": "0x33d09c",
+      "eu_offset": "0x33bb68",
+      "before_hex": "25b10508",
+      "after_hex": "29ab0508",
+      "reason": "audited EU pointer/continuation"
+    },
+    {
+      "source_offset": "0x33d0a0",
+      "eu_offset": "0x33bb6c",
+      "before_hex": "1dd00708",
+      "after_hex": "b5c80708",
+      "reason": "audited EU pointer/continuation"
+    },
+    {
+      "source_offset": "0x33d0a4",
+      "eu_offset": "0x33bb70",
+      "before_hex": "01cf0708",
+      "after_hex": "99c70708",
+      "reason": "audited EU pointer/continuation"
+    },
+    {
+      "source_offset": "0x33d28c",
+      "eu_offset": "0x33bd58",
+      "before_hex": "a7b60508",
+      "after_hex": "5bb00508",
+      "reason": "audited EU pointer/continuation"
+    },
+    {
+      "source_offset": "0x33d290",
+      "eu_offset": "0x33bd5c",
+      "before_hex": "00650003",
+      "after_hex": "40640003",
+      "reason": "audited EU pointer/continuation"
+    },
+    {
+      "source_offset": "0x33d294",
+      "eu_offset": "0x33bd60",
+      "before_hex": "f9d30708",
+      "after_hex": "91cc0708",
+      "reason": "audited EU pointer/continuation"
+    },
+    {
+      "source_offset": "0x33d298",
+      "eu_offset": "0x33bd64",
+      "before_hex": "c1b40508",
+      "after_hex": "95ae0508",
+      "reason": "audited EU pointer/continuation"
+    },
+    {
+      "source_offset": "0x33d29c",
+      "eu_offset": "0x33bd68",
+      "before_hex": "79c70708",
+      "after_hex": "15c00708",
+      "reason": "audited EU pointer/continuation"
+    },
+    {
+      "source_offset": "0x33d2a0",
+      "eu_offset": "0x33bd6c",
+      "before_hex": "cfcf0708",
+      "after_hex": "63c80708",
+      "reason": "audited EU pointer/continuation"
+    },
+    {
+      "source_offset": "0x33d2a4",
+      "eu_offset": "0x33bd70",
+      "before_hex": "17d10708",
+      "after_hex": "afc90708",
+      "reason": "audited EU pointer/continuation"
+    },
+    {
+      "source_offset": "0x33d2a8",
+      "eu_offset": "0x33bd74",
+      "before_hex": "25190608",
+      "after_hex": "a5110608",
+      "reason": "audited EU pointer/continuation"
+    },
+    {
+      "source_offset": "0x33d34c",
+      "eu_offset": "0x33be18",
+      "before_hex": "80350003",
+      "after_hex": "e0340003",
+      "reason": "audited EU pointer/continuation"
+    },
+    {
+      "source_offset": "0x33d350",
+      "eu_offset": "0x33be1c",
+      "before_hex": "59160808",
+      "after_hex": "750e0808",
+      "reason": "audited EU pointer/continuation"
+    },
+    {
+      "source_offset": "0x33cd50",
+      "eu_offset": "0x33b81c",
+      "before_hex": "ac",
+      "after_hex": "a8",
+      "reason": "EU inventory base 0x150"
+    },
+    {
+      "source_offset": "0x33cf6c",
+      "eu_offset": "0x33ba38",
+      "before_hex": "ac",
+      "after_hex": "a8",
+      "reason": "EU inventory base 0x150"
+    },
+    {
+      "source_offset": "0x33d25e",
+      "eu_offset": "0x33bd2a",
+      "before_hex": "ac",
+      "after_hex": "a8",
+      "reason": "EU inventory base 0x150"
+    },
+    {
+      "source_offset": "0x33d26e",
+      "eu_offset": "0x33bd3a",
+      "before_hex": "ac",
+      "after_hex": "a8",
+      "reason": "EU inventory base 0x150"
+    },
+    {
+      "source_offset": "0x33d312",
+      "eu_offset": "0x33bdde",
+      "before_hex": "ac",
+      "after_hex": "a8",
+      "reason": "EU inventory base 0x150"
+    },
+    {
+      "source_offset": "0x33cee6",
+      "eu_offset": "0x33b9b2",
+      "before_hex": "9246",
+      "after_hex": "1a92",
+      "reason": "capture item pointer at caller sp+0x68"
+    },
+    {
+      "source_offset": "0x33cee8",
+      "eu_offset": "0x33b9b4",
+      "before_hex": "1693",
+      "after_hex": "1293",
+      "reason": "replay EU str r3,[sp,#0x48]"
+    },
+    {
+      "source_offset": "0x33ceec",
+      "eu_offset": "0x33b9b8",
+      "before_hex": "10b5041c504600f053f9002820d052469288002a00d10122c8230b800231642a06d1f0230b80ef234b808b8006310de000230a2a02d30a3a0133fae7002b02d0ef330b800231ef320a800231201c00e0201c088010bc01bc844600206047",
+      "after_hex": "10b504001c9800f053f9002821d01c9a9288002a00d1012251230b70013138230b700131642a06d142230b7041234b708b7003310de000230a2a02d30a3a0133fae7002b02d041330b70013141320a7001310c7010bc01bc844600206047",
+      "reason": "EU glyph-encoded byte-string quantity suffix; original pointer from reserved stack word"
+    },
+    {
+      "source_offset": "0x33ced0",
+      "eu_offset": "0x33b99c",
+      "before_hex": "3ff598fb",
+      "after_hex": "40f580fa",
+      "reason": "EU external callee"
+    },
+    {
+      "source_offset": "0x33ceda",
+      "eu_offset": "0x33b9a6",
+      "before_hex": "3ff5fffa",
+      "after_hex": "40f5e7f9",
+      "reason": "EU external callee"
+    },
+    {
+      "source_offset": "0x33d00e",
+      "eu_offset": "0x33bada",
+      "before_hex": "20f54dfb",
+      "after_hex": "21f58dfa",
+      "reason": "EU external callee"
+    },
+    {
+      "source_offset": "0x33d01c",
+      "eu_offset": "0x33bae8",
+      "before_hex": "20f546fb",
+      "after_hex": "21f586fa",
+      "reason": "EU external callee"
+    }
+  ],
+  "hooks": {
+    "0x5b11c": "0x5ab20",
+    "0x5b696": "0x5b04a",
+    "0x5dc50": "0x5d580",
+    "0x606dc": "0x5ffcc",
+    "0x60d04": "0x60592",
+    "0x61910": "0x61190",
+    "0x7ced8": "0x7c770",
+    "0x7cf7a": "0x7c812",
+    "0x7d110": "0x7c9a8",
+    "0x7d42e": "0x7ccc6",
+    "0x7d43a": "0x7ccd2",
+    "0x7d484": "0x7cd1c",
+    "0x7d51a": "0x7cdb2",
+    "0x7d52c": "0x7cdc4",
+    "0x7d5e0": "0x7ce78",
+    "0x7ec16": "0x7e46a",
+    "0x81632": "0x80e4e"
+  }
+}

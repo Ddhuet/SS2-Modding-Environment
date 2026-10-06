@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "id": "status_resistance_signed_division_eu",
+  "name": "EU status-resistance signed division",
+  "stage": "static_candidate",
+  "profile_id": "ss2-eu",
+  "baseline": {
+    "size": 16777216,
+    "md5": "49aa688745111aaa51076a345f8f18c3",
+    "sha256": "e5c64a1740263e9b26120e487f3688fbbf7b3954a2c043c0d84c333df467e0b2",
+    "crc32": "55E503C1"
+  },
+  "source_provenance": {
+    "kind": "independently_audited_port",
+    "definition": "reference/upstream/patches/definitions/status_resistance_overflow_fix.json",
+    "source_profile_id": "ss2-cn-baseline"
+  },
+  "evidence": {
+    "status": "static_verified",
+    "static_audit": "docs/status-resistance-audit.md",
+    "scope": "Experimental boundary tests; no user acceptance"
+  },
+  "writes": [
+    {
+      "offset": "0x000690DA",
+      "address": "0x080690DA",
+      "before_hex": "50f047fa",
+      "after_hex": "50f05bf9",
+      "mode": "thumb",
+      "note": "Re-encoded complete EU BL pair: unsigned to signed divide; preserve negative chance at resistance above 100."
+    }
+  ]
+}

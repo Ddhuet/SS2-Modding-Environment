@@ -1,0 +1,62 @@
+0801E5B0  f0b5       push     {r4, r5, r6, r7, lr}
+0801E5B2  5746       mov      r7, sl
+0801E5B4  4e46       mov      r6, sb
+0801E5B6  4546       mov      r5, r8
+0801E5B8  e0b4       push     {r5, r6, r7}
+0801E5BA  82b0       sub      sp, #8
+0801E5BC  071c       adds     r7, r0, #0
+0801E5BE  8846       mov      r8, r1
+0801E5C0  0092       str      r2, [sp]
+0801E5C2  a021       movs     r1, #0xa0
+0801E5C4  4900       lsls     r1, r1, #1
+0801E5C6  7818       adds     r0, r7, r1
+0801E5C8  0068       ldr      r0, [r0]
+0801E5CA  8246       mov      sl, r0
+0801E5CC  e720       movs     r0, #0xe7
+0801E5CE  4000       lsls     r0, r0, #1
+0801E5D0  4044       add      r0, r8
+0801E5D2  0088       ldrh     r0, [r0]
+0801E5D4  0190       str      r0, [sp, #4]
+0801E5D6  002b       cmp      r3, #0
+0801E5D8  1bd1       bne      #0x801e612
+0801E5DA  e2f775f9   bl       #0x80008c8
+0801E5DE  7f21       movs     r1, #0x7f
+0801E5E0  0140       ands     r1, r0
+0801E5E2  381c       adds     r0, r7, #0
+0801E5E4  5c30       adds     r0, #0x5c
+0801E5E6  0022       movs     r2, #0
+0801E5E8  805e       ldrsh    r0, [r0, r2]
+0801E5EA  0130       adds     r0, #1
+0801E5EC  8142       cmp      r1, r0
+0801E5EE  0adc       bgt      #0x801e606
+0801E5F0  2720       movs     r0, #0x27
+0801E5F2  3af033f8   bl       #0x805865c
+0801E5F6  4446       mov      r4, r8
+0801E5F8  6069       ldr      r0, [r4, #0x14]
+0801E5FA  a169       ldr      r1, [r4, #0x18]
+0801E5FC  03f03eff   bl       #0x802247c
+0801E600  6420       movs     r0, #0x64
+0801E602  8146       mov      sb, r0
+0801E604  08e0       b        #0x801e618
+0801E606  1a20       movs     r0, #0x1a
+0801E608  3af028f8   bl       #0x805865c
+0801E60C  c821       movs     r1, #0xc8
+0801E60E  8946       mov      sb, r1
+0801E610  02e0       b        #0x801e618
+0801E612  fa22       movs     r2, #0xfa
+0801E614  9200       lsls     r2, r2, #2
+0801E616  9146       mov      sb, r2
+0801E618  388c       ldrh     r0, [r7, #0x20]
+0801E61A  0528       cmp      r0, #5
+0801E61C  00d0       beq      #0x801e620
+0801E61E  89e0       b        #0x801e734
+0801E620  0024       movs     r4, #0
+0801E622  fff71dfc   bl       #0x801de60
+0801E626  0006       lsls     r0, r0, #0x18
+0801E628  000e       lsrs     r0, r0, #0x18
+0801E62A  0928       cmp      r0, #9
+0801E62C  45d8       bhi      #0x801e6ba
+0801E62E  8000       lsls     r0, r0, #2
+0801E630  0149       ldr      r1, [pc, #4]
+0801E632  4018       adds     r0, r0, r1
+0801E634  0068       ldr      r0, [r0]

@@ -35,6 +35,7 @@ def parser() -> argparse.ArgumentParser:
     command.add_argument("--profile", required=True, type=Path)
     command.add_argument("--manifest", type=Path, help="Default: OUTPUT.manifest.json")
     command.add_argument("--ips", type=Path, help="Optional classic IPS (no hash enforcement in IPS itself)")
+    command.add_argument("--bps", type=Path, help="Optional BPS patch with source, target, and patch CRCs")
     command.add_argument("--allow-static-candidate", action="store_true", help="Explicit experimental build; never promotes approval")
     command = commands.add_parser("inspect", help="Read-only hex, halfwords, and Thumb BL targets")
     command.add_argument("rom", type=Path)
@@ -71,7 +72,7 @@ def main(argv: list[str] | None = None) -> int:
             result = {"status": "verified", "profile_id": profile["id"], "identity": verify(args.rom.read_bytes(), profile)}
         elif args.command == "build":
             result = build(args.rom, args.patch, args.profile, args.output,
-                           args.manifest, args.ips, args.allow_static_candidate)
+                           args.manifest, args.ips, args.allow_static_candidate, args.bps)
         elif args.command == "inspect":
             data = args.rom.read_bytes()
             if not 1 <= args.length <= 4096 or args.offset + args.length > len(data):

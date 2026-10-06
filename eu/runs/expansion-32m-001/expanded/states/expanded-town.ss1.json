@@ -1,0 +1,7 @@
+{
+  "format": "ss2-mgba-state-v1",
+  "rom_sha256": "085009a8b4867a1533da124af43f6d69b044183d998bc1e91e3c10f82b5d632b",
+  "state_sha256": "146629ed9eb22c6486db3ee82beb59b7723b2cfb94a06874147f83820495720a",
+  "backend_revision": "26b7884bc25a5933960f3cdcd98bac1ae14d42e2",
+  "frame": 6313
+}

@@ -18,7 +18,7 @@ An audit then establishes what the instructions do and whether the new location 
 
 - Small in-place code edits: this matcher is a useful first step. `--window` and `--before` adjust context for investigation; shortening a window can increase ambiguity and is not approval.
 - Data tables: use record layout, IDs and neighboring entries. Repeated item values are weak anchors. The first assessment found promising temple-fusion correspondence, but this workspace has not approved or gameplay-tested that port.
-- Injected code/expanded ROMs: current builder deliberately accepts same-size writes only. Add explicit allocation and relocation support with checks when implementing the first such mod. Do not bypass bounds or pretend the Chinese injected blob is position-independent.
+- Injected code/expanded ROMs: the builder supports explicit expansion with a declared size, fill and owner, plus source/destination hash-bound resource copies. Code allocations and relocations still require feature-specific audits. Expanded targets use `--bps`; `--ips` is rejected. See [the stacking audit](stacking-audit.md) for the first implementation. Do not bypass bounds or assume the Chinese injected blob is position-independent.
 - Different structures: define EU fields based on EU code. Even this first feature uses different globals and a different player skill-block offset from CN.
 
 Read-only ARM/Thumb inspection:

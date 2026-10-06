@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-04",
+  "updated": "2026-10-06",
   "scope": "18 individual definitions, 2 combinations and 5 baseline-fix investigations; source stage is never EU approval.",
   "verification": {
     "method": "ss2tools.core verify + parse_writes + assert_preimages on read-only inputs; every definition baseline validated against the 32 MiB profile.",
@@ -54,21 +54,28 @@
       "edit_types": [
         "in_place_code"
       ],
-      "baseline_dependency_review": "No individual dependency declared; verify EU conditions/fields and re-encode the moved BL. Combat semantics cannot be inherited from CN.",
+      "baseline_dependency_review": "EU caller/callee and state/skill fields statically audited; complete moved BL re-encoded. Standalone exact-EU experimental build delivered; gameplay remains untested.",
       "eu": {
-        "discovery": "candidate",
-        "audit": "not_started",
+        "discovery": "static_verified",
+        "audit": "static_verified",
         "runtime": "not_run",
-        "user_acceptance": "not_recorded"
+        "user_acceptance": "not_recorded",
+        "definition": "patches/warrior-counter-fix.json",
+        "build_stage": "static_candidate",
+        "runtime_note": "Owner explicitly requested no agent testing; owner will test the delivered ability fix."
       },
-      "required_fixture": "Warrior with learned COUNTER and a controlled incoming attack; control target state and RNG where applicable.",
-      "decisive_observation": "Compare counter eligibility and visible counter damage/event for the same attack, including skill-zero, wrong class, and invalid-target controls.",
+      "required_fixture": "Owner Warrior normal save with learned COUNTER and the owner's known ability-trigger setup; supplied Priestess fixture is unsuitable.",
+      "decisive_observation": "Owner comparison with clean EU using their known COUNTER setup; record trigger and observed ability result rather than inferring an incoming-hit mechanic from the name.",
       "evidence": [
         "reference/upstream/EU_MODDING_ASSESSMENT.md",
         "reference/upstream/docs/code_audits/counter_fix.md",
-        "reference/upstream/analysis/tracing_cases/05_COUNTER_PATCH_TO_DATAFLOW.md"
+        "reference/upstream/analysis/tracing_cases/05_COUNTER_PATCH_TO_DATAFLOW.md",
+        "docs/counter-audit.md",
+        "docs/evidence/counter-static/report.json",
+        "docs/evidence/counter-build.json",
+        "releases/WARRIOR_COUNTER_TEST.md"
       ],
-      "next_action": "Audit EU candidate 0x1F3E4 and callee 0x0801E5B0 with EU fields, then obtain the Warrior fixture."
+      "next_action": "Await owner gameplay observations for ss2-eu-warrior-counter-test.gba; append acceptance only after explicit confirmation."
     },
     {
       "id": "equipment_set_balance_rework",
@@ -332,24 +339,31 @@
         "out_of_range_write_count": 0,
         "identity_compatible": false
       },
-      "behavior": "Freeze natural lifespan decrement for Archer/Dark Mage summon entity types; destruction and transitions may still remove them.",
+      "behavior": "Freeze the two summon expiration counters at qualified activations; other cleanup remains. EU producer IDs are 17 and 7, not the historical type18/type20 labels.",
       "edit_types": [
         "in_place_code"
       ],
-      "baseline_dependency_review": "No individual dependency declared. Correct lifecycle siblings and EU lifespan field must be identified before porting two immediate bytes.",
+      "baseline_dependency_review": "No source dependency declared; EU producer dispatch, counter and cleanup independently verified on pristine EU. No injected code or baseline-fix dependency demonstrated.",
       "eu": {
-        "discovery": "candidate_ambiguous",
-        "audit": "not_started",
-        "runtime": "not_run",
-        "user_acceptance": "not_recorded"
+        "discovery": "static_verified",
+        "audit": "static_verified",
+        "runtime": "runtime_verified_scoped_diagnostics",
+        "user_acceptance": "not_recorded",
+        "definition": "patches/persistent-archer-and-dark-wizard-summons.json",
+        "build_stage": "static_candidate",
+        "runtime_scope": "329 assertions across independent cold boots and 56 synthetic engine scenarios; scheduled activations, one-count expiration, max counter, existing zero/shared flag/owner-state cleanup and duplicate resummon. Normal class casting and actual transitions/death remain pending."
       },
       "required_fixture": "Archer and Dark Mage with summons; waiting, damage/destruction, room/town transition, death, re-summon and reload scenarios.",
-      "decisive_observation": "Lifespan does not decrement naturally while original cleanup conditions still execute; record entity identity and lifecycle exit reason.",
+      "decisive_observation": "Counter is frozen at qualified activations; one-count original expiration and patched survival, plus unchanged zero/shared-flag/owner-state/duplicate cleanup observed in explicitly synthetic engine cases.",
       "evidence": [
         "reference/upstream/EU_MODDING_ASSESSMENT.md",
-        "reference/upstream/analysis/tracing_cases/03_SUMMON_PATCH_TO_LIFECYCLE.md"
+        "reference/upstream/analysis/tracing_cases/03_SUMMON_PATCH_TO_LIFECYCLE.md",
+        "docs/persistent-summons-audit.md",
+        "docs/evidence/persistent-summons-static/report.json",
+        "docs/evidence/persistent-summons-runtime.json",
+        "docs/evidence/persistent-summons-build.json"
       ],
-      "next_action": "Resolve conflicting short-anchor lifecycle candidates through callers, field producers and runtime entity observations."
+      "next_action": "Test normal Archer and Dark Wizard casting/combat on class saves, then actual scene/death/save-reload cleanup; owner acceptance remains pending."
     },
     {
       "id": "respec",
@@ -585,19 +599,28 @@
       ],
       "baseline_dependency_review": "No individual dependency declared. Ore/money limits and withdrawal fix are relevant baseline investigations. Auto-revive/shared storage need separate record-semantic combination tests.",
       "eu": {
-        "discovery": "not_started",
-        "audit": "not_started",
-        "runtime": "not_run",
-        "user_acceptance": "not_recorded"
+        "discovery": "static_verified",
+        "audit": "in_progress",
+        "runtime": "runtime_verified (named bag/persistence and diagnostics)",
+        "user_acceptance": "user_accepted",
+        "user_acceptance_scope": "Owner reports generally works except for one niche bug; trigger and reproduction pending. Specific gameplay paths and languages tested are not stated. Build remains experimental.",
+        "user_acceptance_record": "docs/USER_ACCEPTANCE.md",
+        "build_status": "static_candidate",
+        "definition": "patches/stackable-consumables.json",
+        "evidence_scope": "320 baseline/patched checks: acquisition, full capacity/atomic refusal, 100 cap, legacy normalization, Soul Return/ore acquisition controls, direct consume and Herb valuation; real bag cancel/merge/split and fresh-process save reload. 125 glyph/display checks in five languages. Not shop/warehouse/quick-slot gameplay acceptance."
       },
       "required_fixture": "Whitelisted items at counts 0/1/99/100, excluded Soul Return, ore and gold; shop, bag and warehouse operations.",
       "decisive_observation": "Acquire/merge/split/use/sell/cancel conserve quantity; cap and legacy handling; adjacent categories unaffected; separate-process persistence.",
       "evidence": [
         "reference/upstream/docs/RESEARCH_TOPICS.md",
         "reference/upstream/docs/ITEM_AND_WAREHOUSE.md",
-        "reference/upstream/docs/PATCH_CATALOG.md"
+        "reference/upstream/docs/PATCH_CATALOG.md",
+        "docs/stacking-audit.md",
+        "docs/evidence/stacking-regression.json",
+        "docs/evidence/stacking-display.json",
+        "docs/evidence/stacking-build.json"
       ],
-      "next_action": "Verify EU 16-byte records/category fields and enumerate consumers before any hooks/save mutations."
+      "next_action": "Await the owner's reproduction of the reported niche bug. Test shop buy/sell/cancel, warehouse round-trip, and quick-slot item use on the experimental expanded build; complete resource descriptor consumer audit before promoting it."
     },
     {
       "id": "status_resistance_overflow_fix",
@@ -629,7 +652,7 @@
         "audit": "static_verified",
         "runtime": "runtime_verified",
         "runtime_scope": "258 synthetic cases per ROM and 10 two-write boundary variants per ROM at a normal button-reached enemy combat call. Not universal immunity, inner landing, natural gear or user acceptance.",
-        "build_stage": "static_candidate",
+        "build_stage": "approved",
         "user_acceptance": "not_recorded"
       },
       "required_fixture": "Equivalent below/at/above-100 resistance inputs and a reachable status-application event; disclose synthetic setup separately.",
@@ -641,9 +664,11 @@
         "docs/evidence/status-resistance-static/report.json",
         "docs/evidence/status-resistance-diagnostic.json",
         "docs/evidence/status-resistance-gameplay.json",
-        "docs/fixtures/goblin-fort.json"
+        "docs/fixtures/goblin-fort.json",
+        "releases/README.md",
+        "docs/evidence/status-resistance-release-build.json"
       ],
-      "next_action": "Trace failed-gate payload byte through real kind1/kind4 caller stack histories and status consumers, then decide a safe initialization repair and naturally equipped over100 combat acceptance. Candidate remains experimental."
+      "next_action": "Trace failed-gate payload byte through real kind1/kind4 caller stack histories and status consumers, then decide a safe initialization repair and naturally equipped over100 combat acceptance. The division fix is released; investigate the separate payload issue as follow-up."
     },
     {
       "id": "temple_soul_fusion_rework",

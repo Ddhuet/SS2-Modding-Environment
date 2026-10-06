@@ -24,12 +24,24 @@
       "level_offset": 0,
       "progress_offset": 2,
       "width": 2
+    },
+    "inventory": {
+      "offset": "0x150",
+      "count": 25,
+      "stride": 16,
+      "type_offset": 0,
+      "code_offset": 2,
+      "quantity_offset": 4,
+      "width": 2,
+      "quantity_scope": "Eligible type-1 records only; zero means one. Empty records have no valid trailing fields.",
+      "evidence": "docs/stacking-audit.md",
+      "evidence_status": "runtime_verified for named bag scenarios"
     }
   },
   "notes": [
     "Addresses are CPU addresses; player fields are relative to the dereferenced player pointer.",
     "Skill point conservation: pool + sum(level*(level+1)/2 + progress).",
-    "Only the skill block layout has been audited here. Do not infer other player offsets from CN."
+    "Only specifically recorded fields have EU evidence. Do not infer other player offsets from CN."
   ],
   "status_resistance": {
     "evidence": [
@@ -154,5 +166,240 @@
       "signed_division": "0x080BA8A4",
       "evidence": "Exact 128-byte helper prefixes, independently decoded calls; no global offset assumption"
     }
+  },
+  "inventory_stacking": {
+    "evidence": [
+      "docs/stacking-audit.md",
+      "docs/evidence/stacking-regression.json",
+      "docs/evidence/stacking-display.json"
+    ],
+    "profile": "ss2-eu",
+    "status": "experimental; scope-specific runtime evidence",
+    "menu_selected_record": {
+      "base": "dereferenced menu_pointer",
+      "offset": "0xF4",
+      "size": 16,
+      "evidence_status": "runtime_verified for bag controls"
+    },
+    "functions": {
+      "acquire_bag_item": {
+        "address": "0x0805AB20",
+        "file_offset": "0x0005AB20",
+        "mode": "thumb",
+        "evidence_status": "runtime_verified"
+      },
+      "copy_bag_record": {
+        "address": "0x0805CFF8",
+        "file_offset": "0x0005CFF8",
+        "mode": "thumb",
+        "evidence_status": "runtime_verified through acquisition"
+      },
+      "consume_bag_slot": {
+        "address": "0x0805D580",
+        "file_offset": "0x0005D580",
+        "mode": "thumb",
+        "evidence_status": "runtime_verified diagnostic"
+      },
+      "item_valuation": {
+        "address": "0x0805AE94",
+        "file_offset": "0x0005AE94",
+        "mode": "thumb",
+        "evidence_status": "runtime_verified diagnostic"
+      },
+      "remove_menu_item": {
+        "address": "0x0807BD78",
+        "file_offset": "0x0007BD78",
+        "mode": "thumb",
+        "evidence_status": "static_verified calling correspondence"
+      },
+      "copy_menu_item": {
+        "address": "0x0807BEA0",
+        "file_offset": "0x0007BEA0",
+        "mode": "thumb",
+        "evidence_status": "runtime_verified through bag merge/split"
+      },
+      "item_name_renderer": {
+        "address": "0x0805FFBC",
+        "file_offset": "0x0005FFBC",
+        "mode": "thumb",
+        "evidence_status": "runtime_verified five-language quantity display"
+      }
+    },
+    "glyphs": {
+      "space": "0x51",
+      "lowercase_x": "0x38",
+      "digits_0_to_9": "0x41..0x4A",
+      "evidence_status": "runtime_verified"
+    },
+    "allocation": "patches/stackable-consumables.json (expanded build only)"
+  },
+  "warrior_counter": {
+    "evidence_status": "static_verified",
+    "evidence": [
+      "docs/counter-audit.md",
+      "docs/evidence/counter-static/report.json"
+    ],
+    "runtime": "not_run_at_owner_request",
+    "functions": {
+      "attack_result_caller": {
+        "address": "0x0801F374",
+        "file_offset": "0x0001F374",
+        "mode": "thumb",
+        "cn_reference": "0x0801F150"
+      },
+      "damage_calculation": {
+        "address": "0x0801E5B0",
+        "file_offset": "0x0001E5B0",
+        "mode": "thumb",
+        "cn_reference": "0x0801E358"
+      },
+      "current_class": {
+        "address": "0x0801DE60",
+        "file_offset": "0x0001DE60",
+        "mode": "thumb",
+        "behavior": "Current player +0x0A low byte; raw class 8 maps to 6."
+      },
+      "effective_skill_level": {
+        "address": "0x0801E0AC",
+        "file_offset": "0x0001E0AC",
+        "mode": "thumb",
+        "behavior": "u16(base + 4 + 4*index), mapping level 7 to 8; COUNTER caller uses player +0x30, index 6."
+      }
+    },
+    "rewrite": {
+      "address": "0x0801F3E4",
+      "file_offset": "0x0001F3E4",
+      "length": 16,
+      "original_call": "0x0801F3F0",
+      "moved_call": "0x0801F3EC",
+      "callee": "0x0801E5B0"
+    },
+    "fields": {
+      "target_state": {
+        "base": "Damage callee argument r1 (callee r8)",
+        "offset": "0x0C",
+        "width": 2,
+        "behavior": "COUNTER block requires state 2; attack-result caller writes state 10."
+      },
+      "current_player_class": {
+        "base": "*(0x030034E0)",
+        "offset": "0x0A",
+        "width": 2,
+        "behavior": "Class helper returns low byte, remaps 8 to 6; COUNTER block requires class 0."
+      },
+      "current_player_counter_level": {
+        "base": "*(0x030034E0)",
+        "offset": "0x4C",
+        "width": 2,
+        "behavior": "Skill row 6 level; nonzero gate in COUNTER block."
+      }
+    },
+    "class_skill_naming": "Warrior/COUNTER names from matching CN class-zero/slot-six code and explicit source patch title; no independent EU string-table naming claim."
+  },
+  "persistent_summons": {
+    "evidence": [
+      "docs/persistent-summons-audit.md",
+      "docs/evidence/persistent-summons-static/report.json",
+      "docs/evidence/persistent-summons-runtime.json"
+    ],
+    "scope": "Runtime verification is synthetic producer calls followed by real scheduled callbacks on Paige; class casting and actual transitions/death remain pending.",
+    "producer": {
+      "address": "0x0807386C",
+      "file_offset": "0x0007386C",
+      "mode": "thumb",
+      "evidence_status": "runtime_verified",
+      "arguments": {
+        "r0": "owner",
+        "r1": "effect type (not historical lifecycle label)",
+        "r2": "target",
+        "r3": "packed parameter",
+        "stack_0": "fifth argument"
+      }
+    },
+    "producer_jump_table": {
+      "address": "0x080738FC",
+      "entries": 21,
+      "index": "effect_type - 1",
+      "width": 4,
+      "evidence_status": "static_verified"
+    },
+    "descriptor": {
+      "base": "[0x03006380 + 4*owner]",
+      "stride": 24,
+      "fields": {
+        "owner": {
+          "offset": "0x00",
+          "width": 4
+        },
+        "slot": {
+          "offset": "0x04",
+          "width": 4
+        },
+        "target": {
+          "offset": "0x08",
+          "width": 4
+        },
+        "effect_type": {
+          "offset": "0x0C",
+          "width": 4
+        },
+        "fifth_argument": {
+          "offset": "0x10",
+          "width": 4
+        },
+        "packed_parameter": {
+          "offset": "0x14",
+          "width": 4,
+          "note": "Affected lifecycles read low halfword; not a counter written back each tick."
+        }
+      },
+      "evidence_status": "runtime_verified"
+    },
+    "allocation_mask": {
+      "address": "0x030063E0",
+      "owner_stride": 4,
+      "slots": 16,
+      "width": 4,
+      "evidence_status": "runtime_verified"
+    },
+    "lifecycles": {
+      "producer_type_17": {
+        "address": "0x0806FF1C",
+        "file_offset": "0x0006FF1C",
+        "source_cn_address": "0x080705E8",
+        "source_cn_profile": "ss2-cn-baseline",
+        "historical_cn_label": "type18",
+        "decrement": "0x08070CF0",
+        "counter_local": "sp+0x68",
+        "counter_storage_width": 4,
+        "counter_value_width": 2,
+        "player_owner_initial_counter": "low_parameter_halfword+2",
+        "zero_gate": "0x08070D0A",
+        "cleanup": "0x080710A8",
+        "live_latch_base": "0x03006430",
+        "evidence_status": "runtime_verified"
+      },
+      "producer_type_7": {
+        "address": "0x080710DC",
+        "file_offset": "0x000710DC",
+        "source_cn_address": "0x080717B4",
+        "source_cn_profile": "ss2-cn-baseline",
+        "historical_cn_label": "type20",
+        "decrement": "0x0807207C",
+        "counter_local": "sp+0x68",
+        "counter_storage_width": 4,
+        "counter_value_width": 2,
+        "player_owner_initial_counter": "low_parameter_halfword+4",
+        "zero_gate": "0x08072090",
+        "cleanup": "0x0807235A",
+        "live_latch_base": "0x03006410",
+        "evidence_status": "runtime_verified"
+      }
+    },
+    "notes": [
+      "Counter consumption is gated by qualified activation results, not elapsed frames.",
+      "Live latch address is base+owner; owner 0 was runtime tested.",
+      "Source patch associates the two functions with Archer and Dark Wizard; supplied fixture does not verify class skill/equipment acquisition."
+    ]
   }
 }

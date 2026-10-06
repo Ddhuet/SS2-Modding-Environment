@@ -1,0 +1,8 @@
+0801E0AC  0904       lsls     r1, r1, #0x10
+0801E0AE  890b       lsrs     r1, r1, #0xe
+0801E0B0  4018       adds     r0, r0, r1
+0801E0B2  8088       ldrh     r0, [r0, #4]
+0801E0B4  0728       cmp      r0, #7
+0801E0B6  00d1       bne      #0x801e0ba
+0801E0B8  0820       movs     r0, #8
+0801E0BA  7047       bx       lr

@@ -67,7 +67,7 @@ See [test results and limitations](docs/TEST_RESULTS.md), [instruction/data-flow
 
 [Porting guide](docs/PORTING.md) contains the actual command used to locate the three respec sites. `ss2tools port-candidates` supports arbitrary upstream patch definitions, verifies source/target profiles, normalizes Thumb calls, and reports candidates plus original bytes and call destinations. Reviewed ports become fixed EU definitions, so subsequent builds do not repeat the research.
 
-This is a working porting foundation, not a claim that every Chinese mod converts automatically. Table changes, different structures, and injected code require their own audits. ROM expansion is intentionally not yet implemented in the same-size patch builder.
+This is a working porting foundation, not a claim that every Chinese mod converts automatically. Table changes, different structures, and injected code require their own audits. The builder now supports explicit, owned ROM expansion and hash-bound resource copies for experimental ports. Expanded builds use BPS; see [the stacking audit](docs/stacking-audit.md).
 
 ## Layout
 
@@ -101,3 +101,15 @@ python scripts/build_player.py
 ```
 
 Capstone/Pillow are analysis conveniences; the core patch tools and runtime tests use Python's standard library plus the built native adapter. [Emulator API](emulator/README.md) explains controls, verified savestates and source pinning. The alternative Rust bindings were evaluated and have Windows build support in their source; this implementation uses the same kind of native-core access through a small C/Python adapter and currently targets Linux.
+
+## Experimental inventory stacking
+
+[The stacking test build](releases/INVENTORY_STACKING_TEST.md) ports eligible consumables to stacks of 100. Bag merge/split/cancel and fresh-process normal-save reload pass; shop, warehouse and quick-slot gameplay remain pending. Its 32 MiB output uses BPS and remains a candidate, separate from approved mods. [Audit and reproducible tests](docs/stacking-audit.md).
+
+## Experimental Warrior COUNTER fix
+
+[The COUNTER test build](releases/WARRIOR_COUNTER_TEST.md) moves the target state write after damage calculation, with the EU call re-encoded and existing ability gates preserved. The 16 MiB standalone ROM is `artifacts/ss2-eu-warrior-counter-test.gba`; BPS and IPS patches are available. [Static audit](docs/counter-audit.md) is complete. Gameplay testing is left to the owner as requested; the definition remains a candidate.
+
+## Experimental persistent summons
+
+[The persistent summons test build](releases/PERSISTENT_SUMMONS_TEST.md) freezes the Archer/Dark Wizard summon expiration counters at qualified activations. The standalone ROM is `artifacts/ss2-eu-persistent-summons-test.gba`, with BPS/IPS patches. [Audit](docs/persistent-summons-audit.md) and 329 runtime assertions cover the two scheduled lifecycles, boundaries, cleanup gates and re-summoning through disclosed synthetic setups. Normal class casting and actual scene/death/save-reload gameplay remain pending; the build is a candidate.

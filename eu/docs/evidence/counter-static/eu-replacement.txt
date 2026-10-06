@@ -1,0 +1,7 @@
+0801F3E4  4046       mov      r0, r8
+0801F3E6  291c       adds     r1, r5, #0
+0801F3E8  4a46       mov      r2, sb
+0801F3EA  0023       movs     r3, #0
+0801F3EC  fff7e0f8   bl       #0x801e5b0
+0801F3F0  0a23       movs     r3, #0xa
+0801F3F2  ab81       strh     r3, [r5, #0xc]

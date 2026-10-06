@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "kind": "read_only_port_candidates",
+  "approval": "not_approved",
+  "patch_id": "persistent_archer_and_dark_mage_summons",
+  "source_profile_id": "ss2-cn-baseline",
+  "target_profile_id": "ss2-eu",
+  "source_identity": {
+    "size": 33554432,
+    "md5": "35eb6567d94f855480c5d7ba2dff4389",
+    "sha256": "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989",
+    "crc32": "AFCFC96D"
+  },
+  "target_identity": {
+    "size": 16777216,
+    "md5": "49aa688745111aaa51076a345f8f18c3",
+    "sha256": "e5c64a1740263e9b26120e487f3688fbbf7b3954a2c043c0d84c333df467e0b2",
+    "crc32": "55E503C1"
+  },
+  "source_patch_baseline_matches": true,
+  "source_relationship": "Exact source profile verified; every write preimage checked separately. A baseline mismatch does not establish whole-ROM equivalence.",
+  "limitations": [
+    "Context similarity is a location hypothesis, not feature equivalence or a port approval.",
+    "Thumb BL masking is an instruction hypothesis; data can resemble instructions.",
+    "Changed BL destinations require independent callee and calling-convention audit.",
+    "No address, pointer, literal, relocation, save-layout, or runtime semantics are inferred.",
+    "No patch is emitted and no ROM is modified."
+  ],
+  "writes": [
+    {
+      "write_index": 0,
+      "source_offset": "0x000713C4",
+      "source_preimage_hex": "01",
+      "status": "no_candidate",
+      "approval": "not_approved",
+      "window_start": "0x000713A4",
+      "window_bytes": 96,
+      "matching_mode": "thumb-bl",
+      "candidates": [],
+      "normalized_bl_pairs": 2,
+      "fixed_bytes": 88,
+      "truncated": false
+    },
+    {
+      "write_index": 1,
+      "source_offset": "0x00072788",
+      "source_preimage_hex": "01",
+      "status": "no_candidate",
+      "approval": "not_approved",
+      "window_start": "0x00072768",
+      "window_bytes": 96,
+      "matching_mode": "thumb-bl",
+      "candidates": [],
+      "normalized_bl_pairs": 0,
+      "fixed_bytes": 96,
+      "truncated": false
+    }
+  ]
+}

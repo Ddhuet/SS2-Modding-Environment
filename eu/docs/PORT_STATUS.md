@@ -1,6 +1,6 @@
 # EU port inventory
 
-Updated 2026-10-04. The source has **18 individual definitions** (17 `released`, one `beta`), **two combinations**, and **five built-in baseline-fix investigations**. Only the skill-point refund has EU runtime evidence and owner confirmation. Source release labels are provenance, never EU approval.
+Updated 2026-10-05. The source has **18 individual definitions** (17 `released`, one `beta`), **two combinations**, and **five built-in baseline-fix investigations**. Only the skill-point refund has EU runtime evidence and owner confirmation. Source release labels are provenance, never EU approval.
 
 The machine catalog is [PORT_STATUS.json](PORT_STATUS.json). It records source definition hashes, exact counts/extents, profile identities, evidence states, fixtures and next actions. This file is a human-readable view of the same catalog. Preserve the local ignored [reference archive](../reference/README.md), or reconstruct it from the tracked parent sources with `python scripts/setup_reference.py` on a fresh clone.
 
@@ -47,20 +47,20 @@ Level 250 and shared warehouses require deliberate EU ROM expansion. Other injec
 
 | Feature | Discovery | Audit | Runtime | Owner acceptance |
 | --- | --- | --- | --- | --- |
-| `counter_fix` | candidate | not_started | not_run | not_recorded |
+| `counter_fix` | static_verified | static_verified | not_run (owner will test) | not_recorded |
 | `equipment_set_balance_rework` | candidate_ambiguous | not_started | not_run | not_recorded |
 | `four_digit_ui_display` | not_started | not_started | not_run | not_recorded |
 | `level_250` | not_started | not_started | not_run | not_recorded |
 | `life_leech` | not_started | not_started | not_run | not_recorded |
 | `money_drop_control` | not_started | not_started | not_run | not_recorded |
 | `per_character_attribute_caps` | not_started | not_started | not_run | not_recorded |
-| `persistent_archer_and_dark_mage_summons` | candidate_ambiguous | not_started | not_run | not_recorded |
+| `persistent_archer_and_dark_mage_summons` | static_verified | static_verified | runtime_verified_scoped_diagnostics | not_recorded |
 | `respec` | static_verified | static_verified | runtime_verified | user_accepted |
 | `ring_balance_rework` | searched_no_unique_mapping | not_started | not_run | not_recorded |
 | `shared_character_warehouses` | not_started | not_started | not_run | not_recorded |
 | `soul_return_auto_revive` | not_started | not_started | not_run | not_recorded |
 | `soul_ring` | not_started | not_started | not_run | not_recorded |
-| `stackable_consumables` | not_started | not_started | not_run | not_recorded |
+| `stackable_consumables` | static_verified | in_progress | runtime_verified (bag/persistence + diagnostics) | user_accepted (one reported niche bug) |
 | `status_resistance_overflow_fix` | static_verified | static_verified | runtime_verified (diagnostic gate/queue) | not_recorded |
 | `temple_soul_fusion_rework` | candidate | not_started | not_run | not_recorded |
 | `weapon_balance_rework` | candidate_ambiguous | not_started | not_run | not_recorded |
@@ -76,11 +76,11 @@ Refund owner confirmation remains [recorded separately](USER_ACCEPTANCE.md): “
 
 Allow Warrior COUNTER to see the target state before the state write that otherwise suppresses counter processing.
 
-- **Baseline/dependency review:** No individual dependency declared; verify EU conditions/fields and re-encode the moved BL. Combat semantics cannot be inherited from CN.
-- **Required fixture:** Warrior with learned COUNTER and a controlled incoming attack; control target state and RNG where applicable.
-- **Decisive observation:** Compare counter eligibility and visible counter damage/event for the same attack, including skill-zero, wrong class, and invalid-target controls.
-- **Evidence:** [EU_MODDING_ASSESSMENT.md](../reference/upstream/EU_MODDING_ASSESSMENT.md); [counter_fix.md](../reference/upstream/docs/code_audits/counter_fix.md); [05_COUNTER_PATCH_TO_DATAFLOW.md](../reference/upstream/analysis/tracing_cases/05_COUNTER_PATCH_TO_DATAFLOW.md).
-- **Next action:** Audit EU candidate 0x1F3E4 and callee 0x0801E5B0 with EU fields, then obtain the Warrior fixture.
+- **Baseline/dependency review:** EU caller/callee, state and skill fields statically audited; complete moved BL re-encoded. The standalone exact-EU experimental build remains a `static_candidate`.
+- **Required fixture:** Owner Warrior normal save with learned COUNTER and their known ability setup. The supplied Priestess fixture is unsuitable.
+- **Decisive observation:** Owner comparison with clean EU using their known COUNTER setup; record the trigger and ability result without inferring an incoming-hit mechanic from the name.
+- **Evidence:** [EU audit](counter-audit.md), [static report](evidence/counter-static/report.json), [build manifest](evidence/counter-build.json), [test build handoff](../releases/WARRIOR_COUNTER_TEST.md). Historical references remain linked in the JSON catalog.
+- **Next action:** Await owner gameplay observations for `ss2-eu-warrior-counter-test.gba`. No agent tests were run, as explicitly requested. Append acceptance only after owner confirmation.
 
 ### equipment_set_balance_rework
 
@@ -144,13 +144,15 @@ Use class-specific base attribute caps; default source parameters only, not arbi
 
 ### persistent_archer_and_dark_mage_summons
 
-Freeze natural lifespan decrement for Archer/Dark Mage summon entity types; destruction and transitions may still remove them.
+EU candidate: [definition](../patches/persistent-archer-and-dark-wizard-summons.json), [audit](persistent-summons-audit.md), [test build](../releases/PERSISTENT_SUMMONS_TEST.md). 329 assertions pass across 56 synthetic engine scenarios; actual class casting and scene/death/save-reload acceptance remain pending.
 
-- **Baseline/dependency review:** No individual dependency declared. Correct lifecycle siblings and EU lifespan field must be identified before porting two immediate bytes.
+Freeze summon counter consumption at qualified activations for the two source lifecycles; other cleanup remains. EU producer IDs are 17 and 7; historical type18/type20 labels are not their producer IDs.
+
+- **Baseline/dependency review:** No source dependency declared; EU dispatch, counter and cleanup verified independently on pristine EU. No injected code or baseline-fix dependency demonstrated.
 - **Required fixture:** Archer and Dark Mage with summons; waiting, damage/destruction, room/town transition, death, re-summon and reload scenarios.
-- **Decisive observation:** Lifespan does not decrement naturally while original cleanup conditions still execute; record entity identity and lifecycle exit reason.
+- **Decisive observation:** Counter is frozen at qualified activations; one-count original expiration and patched survival, plus zero/shared-flag/owner-state/duplicate cleanup observed in disclosed synthetic cases.
 - **Evidence:** [EU_MODDING_ASSESSMENT.md](../reference/upstream/EU_MODDING_ASSESSMENT.md); [03_SUMMON_PATCH_TO_LIFECYCLE.md](../reference/upstream/analysis/tracing_cases/03_SUMMON_PATCH_TO_LIFECYCLE.md).
-- **Next action:** Resolve conflicting short-anchor lifecycle candidates through callers, field producers and runtime entity observations.
+- **Next action:** Test normal Archer and Dark Wizard casting/combat on class saves, then actual transitions/death/save-reload cleanup; owner acceptance remains pending.
 
 ### respec
 
@@ -210,17 +212,19 @@ Stack whitelisted consumables to 100; treat legacy zero count as one while prese
 - **Required fixture:** Whitelisted items at counts 0/1/99/100, excluded Soul Return, ore and gold; shop, bag and warehouse operations.
 - **Decisive observation:** Acquire/merge/split/use/sell/cancel conserve quantity; cap and legacy handling; adjacent categories unaffected; separate-process persistence.
 - **Evidence:** [RESEARCH_TOPICS.md](../reference/upstream/docs/RESEARCH_TOPICS.md); [ITEM_AND_WAREHOUSE.md](../reference/upstream/docs/ITEM_AND_WAREHOUSE.md); [PATCH_CATALOG.md](../reference/upstream/docs/PATCH_CATALOG.md).
-- **Next action:** Verify EU 16-byte records/category fields and enumerate consumers before any hooks/save mutations.
+- **EU result:** [Experimental expanded port](stacking-audit.md), [definition](../patches/stackable-consumables.json), and [BPS test patch](../releases/inventory-stacking-test.bps). 320 core checks and 125 display checks passed; real bag merge/split/cancel and separate-process normal-save reload are covered. Shop/warehouse/quick-slot gameplay and full resource consumer audit remain pending.
+- **Owner feedback:** [Scoped acceptance, 2026-10-05](USER_ACCEPTANCE.md#inventory--consumable-stacking--2026-10-05): generally works, with one niche bug awaiting reproduction. Specific paths/languages tested were not stated; the build remains experimental.
+- **Next action:** Await the owner's reproduction of the reported bug. Test shop buy/sell/cancel, warehouse round-trip and quick-slot use, then complete the resource consumer audit before promotion.
 
 ### status_resistance_overflow_fix
 
-Prevent the negative status-probability numerator above 100 resistance from becoming a large unsigned quotient. EU gate/queue diagnostics confirm this behavior. A failed-gate stale payload can still dispatch; the build remains experimental.
+Prevent the negative status-probability numerator above 100 resistance from becoming a large unsigned quotient. EU gate/queue diagnostics confirm this behavior. A failed-gate stale payload can still dispatch; the division fix is approved for use.
 
 - **Baseline/dependency review:** No individual dependency declared. EU signed division is justified and tested for the outer gate/queue. The baseline fixes are not automatically required. No combination built.
 - **Required fixture:** Equivalent below/at/above-100 resistance inputs and a reachable status-application event; disclose synthetic setup separately.
 - **Decisive observation:** Original versus proposed signed calculation and actual application outcome at resistance 99, 100, and above 100, including signed negative outputs and unaffected low resistance.
 - **Evidence:** [EU audit and limits](status-resistance-audit.md); [controlled report](evidence/status-resistance-diagnostic.json); [button-reached combat report](evidence/status-resistance-gameplay.json); [combat fixture](fixtures/goblin-fort.json).
-- **Next action:** Trace failed-gate payload byte across real kind-1/kind-4 caller stack histories and event consumers. Decide a safe initialization repair and a naturally equipped over-100 combat scenario before release approval.
+- **Next action:** Trace failed-gate payload byte across real kind-1/kind-4 caller stack histories and event consumers. Decide a safe initialization repair and a naturally equipped over-100 combat scenario as follow-up to the released division fix.
 
 ### temple_soul_fusion_rework
 

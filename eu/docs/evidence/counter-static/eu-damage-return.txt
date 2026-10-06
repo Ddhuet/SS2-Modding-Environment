@@ -1,0 +1,9 @@
+0801E976  281c       adds     r0, r5, #0
+0801E978  02b0       add      sp, #8
+0801E97A  38bc       pop      {r3, r4, r5}
+0801E97C  9846       mov      r8, r3
+0801E97E  a146       mov      sb, r4
+0801E980  aa46       mov      sl, r5
+0801E982  f0bc       pop      {r4, r5, r6, r7}
+0801E984  02bc       pop      {r1}
+0801E986  0847       bx       r1

@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "kind": "ss2_build_manifest",
+  "created_utc": "2026-10-06T15:30:45.548807+00:00",
+  "profile_id": "ss2-eu",
+  "patch_id": "persistent_archer_and_dark_wizard_summons_eu",
+  "patch_sha256": "011451d4e174ba7e27da160ab709cf336cf5621684941b21e52ddd14d6f00e83",
+  "stage": "static_candidate",
+  "semantic_approval": false,
+  "static_candidate_opt_in": true,
+  "input_identity": {
+    "size": 16777216,
+    "md5": "49aa688745111aaa51076a345f8f18c3",
+    "sha256": "e5c64a1740263e9b26120e487f3688fbbf7b3954a2c043c0d84c333df467e0b2",
+    "crc32": "55E503C1"
+  },
+  "output_identity": {
+    "size": 16777216,
+    "md5": "234bd39ecbfe5304a6b1dddba07b6787",
+    "sha256": "6f790b89b6f9131577e9a7424adfd2f178171d8a0c20f9f385e61471d1832a6a",
+    "crc32": "BE08CF8C"
+  },
+  "output_filename": "ss2-eu-persistent-summons-test.gba",
+  "writes": [
+    {
+      "offset": "0x00070CF0",
+      "before_hex": "0138",
+      "after_hex": "0038"
+    },
+    {
+      "offset": "0x0007207C",
+      "before_hex": "0138",
+      "after_hex": "0038"
+    }
+  ],
+  "ips": {
+    "filename": "persistent-summons-test.ips",
+    "identity": {
+      "size": 22,
+      "md5": "6aecebda99285751354575213081471d",
+      "sha256": "675a5de330d7ebfbaf3a447f37abf1328ad1e8f8704112aa99d081342d283b16",
+      "crc32": "38EE4C0C"
+    },
+    "warning": "IPS alone has no identity or preimage enforcement"
+  },
+  "bps": {
+    "filename": "persistent-summons-test.bps",
+    "identity": {
+      "size": 41,
+      "md5": "667458127325348dd6d5861bc3f2a8e8",
+      "sha256": "092549b54c3605b004d6f0a0f3f3f07734aa9181b49a095ec051b1cb77baf0c6",
+      "crc32": "2144DF1C"
+    },
+    "source_size": 16777216,
+    "target_size": 16777216,
+    "warning": "BPS CRCs detect corruption but do not replace the manifest's cryptographic ROM identity"
+  }
+}

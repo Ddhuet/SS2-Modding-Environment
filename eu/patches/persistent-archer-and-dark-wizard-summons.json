@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "id": "persistent_archer_and_dark_wizard_summons_eu",
+  "name": "EU persistent Archer and Dark Wizard summons",
+  "stage": "static_candidate",
+  "profile_id": "ss2-eu",
+  "baseline": {
+    "size": 16777216,
+    "md5": "49aa688745111aaa51076a345f8f18c3",
+    "sha256": "e5c64a1740263e9b26120e487f3688fbbf7b3954a2c043c0d84c333df467e0b2",
+    "crc32": "55E503C1"
+  },
+  "source_provenance": {
+    "kind": "independently_audited_port",
+    "definition": "reference/upstream/patches/definitions/persistent_archer_and_dark_mage_summons.json",
+    "source_profile_id": "ss2-cn-baseline",
+    "source_definition_sha256": "1b4216eae7e62d21986de8f8810a9ca5f4a49572b06aeea74f02e916df9e3c0f"
+  },
+  "evidence": {
+    "status": "static_verified",
+    "static_audit": "docs/persistent-summons-audit.md",
+    "static_report": "docs/evidence/persistent-summons-static/report.json",
+    "runtime_report": "docs/evidence/persistent-summons-runtime.json",
+    "scope": "Freeze the two existing lifetime counter decrements; all other gates and cleanup instructions retained. Runtime evidence and limitations recorded separately.",
+    "user_acceptance": "not_recorded"
+  },
+  "writes": [
+    {
+      "offset": "0x00070CF0",
+      "address": "0x08070CF0",
+      "before_hex": "0138",
+      "after_hex": "0038",
+      "mode": "thumb",
+      "note": "Archer lifecycle (producer type 17; historical CN label type18): subs r0,#1 becomes subs r0,#0; complete instruction preimage checked."
+    },
+    {
+      "offset": "0x0007207C",
+      "address": "0x0807207C",
+      "before_hex": "0138",
+      "after_hex": "0038",
+      "mode": "thumb",
+      "note": "Dark Wizard lifecycle (producer type 7; historical CN label type20): subs r0,#1 becomes subs r0,#0; complete instruction preimage checked."
+    }
+  ]
+}

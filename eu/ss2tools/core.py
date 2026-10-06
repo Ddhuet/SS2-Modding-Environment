@@ -10,8 +10,11 @@ import zlib
 from datetime import datetime, timezone
 from pathlib import Path
 
+from .bps import decode_bps, encode_bps
+
 ROM_BASE = 0x08000000
 IDENTITY_KEYS = ("size", "md5", "sha256", "crc32")
+MAX_EXPANDED_SIZE = 32 * 1024 * 1024
 
 
 def identity(data: bytes) -> dict:
@@ -116,6 +119,89 @@ def assert_preimages(data: bytes, writes: list[dict]) -> None:
             raise ValueError(f"Full preimage mismatch at offset 0x{off:08X}")
 
 
+def parse_expansion(patch: dict, input_size: int) -> dict | None:
+    """Validate the optional expansion allocation against the exact input size."""
+    if "expansion" not in patch:
+        return None
+    raw = patch["expansion"]
+    if not isinstance(raw, dict):
+        raise ValueError("expansion must be an object")
+    size = raw.get("size")
+    if type(size) is not int or size <= input_size or size > MAX_EXPANDED_SIZE:
+        raise ValueError("expansion.size must be larger than input and at most 32 MiB")
+    fill = hex_int(raw.get("fill_byte"), "expansion.fill_byte")
+    if fill > 0xFF:
+        raise ValueError("expansion.fill_byte must fit in one byte")
+    owner = raw.get("owner")
+    if not isinstance(owner, str) or not owner.strip():
+        raise ValueError("expansion.owner must be a nonempty string")
+    return {"size": size, "fill_byte": fill, "owner": owner.strip()}
+
+
+def parse_copies(patch: dict, source: bytes, expansion: dict | None) -> list[dict]:
+    """Validate hash-bound copies from pristine source into expanded fill space."""
+    raw_copies = patch.get("copies", [])
+    if not isinstance(raw_copies, list):
+        raise ValueError("copies must be a list")
+    if raw_copies and expansion is None:
+        raise ValueError("copies require a declared expansion")
+    copies = []
+    expanded_size = expansion["size"] if expansion is not None else len(source)
+    fill_byte = expansion["fill_byte"] if expansion is not None else None
+    for index, raw in enumerate(raw_copies):
+        if not isinstance(raw, dict):
+            raise ValueError(f"copies[{index}] must be an object")
+        source_offset = hex_int(raw.get("source_offset"), "source_offset")
+        offset = hex_int(raw.get("offset"), "offset")
+        length = raw.get("length")
+        if type(length) is not int or length <= 0:
+            raise ValueError(f"copies[{index}].length must be a positive integer")
+        if source_offset + length > len(source):
+            raise ValueError(f"Copy source extends outside pristine input at 0x{source_offset:08X}")
+        if offset < len(source) or offset + length > expanded_size:
+            raise ValueError(f"Copy destination must be in expanded space at 0x{offset:08X}")
+        owner = raw.get("owner")
+        if not isinstance(owner, str) or not owner.strip():
+            raise ValueError(f"copies[{index}].owner must be a nonempty string")
+        source_sha = raw.get("source_sha256")
+        destination_sha = raw.get("destination_sha256")
+        for field, value in (("source_sha256", source_sha), ("destination_sha256", destination_sha)):
+            if not isinstance(value, str) or not re.fullmatch(r"[0-9a-fA-F]{64}", value):
+                raise ValueError(f"copies[{index}].{field} must be a complete SHA-256")
+        payload = source[source_offset:source_offset + length]
+        source_actual_sha = hashlib.sha256(payload).hexdigest()
+        destination_preimage_sha = hashlib.sha256(bytes([fill_byte]) * length).hexdigest()
+        if source_actual_sha != source_sha.lower():
+            raise ValueError(f"Copy source SHA-256 mismatch at 0x{source_offset:08X}")
+        if destination_preimage_sha != destination_sha.lower():
+            raise ValueError(f"Copy destination preimage SHA-256 mismatch at 0x{offset:08X}")
+        copies.append({"index": index, "source_offset": source_offset, "offset": offset,
+                       "length": length, "source_sha256": source_actual_sha,
+                       "destination_sha256": destination_preimage_sha, "owner": owner.strip(),
+                       "after": payload})
+    copies.sort(key=lambda copy: copy["offset"])
+    return copies
+
+
+def assert_disjoint_writes_copies(writes: list[dict], copies: list[dict]) -> None:
+    intervals = [(w["offset"], w["offset"] + len(w["before"]), "write") for w in writes]
+    intervals.extend((c["offset"], c["offset"] + c["length"], "copy") for c in copies)
+    intervals.sort()
+    for left, right in zip(intervals, intervals[1:]):
+        if left[1] > right[0]:
+            raise ValueError(f"Patch {left[2]}/copy destination ranges overlap at offset 0x{right[0]:08X}")
+
+
+def assert_copy_preimages(expanded_baseline: bytes, copies: list[dict], fill_byte: int) -> None:
+    fill = bytes([fill_byte])
+    for copy in copies:
+        off, length = copy["offset"], copy["length"]
+        actual = expanded_baseline[off:off + length]
+        if (actual != fill * length or
+                hashlib.sha256(actual).hexdigest() != copy["destination_sha256"]):
+            raise ValueError(f"Full copy destination preimage mismatch at offset 0x{off:08X}")
+
+
 def ips_bytes(writes: list[dict]) -> bytes:
     result = bytearray(b"PATCH")
     for write in writes:
@@ -183,7 +269,7 @@ def publish_new(artifacts: dict[Path, bytes], protected: tuple[Path, ...] = ()) 
 
 def build(input_path: Path, patch_path: Path, profile_path: Path, output: Path,
           manifest: Path | None = None, ips: Path | None = None,
-          allow_static_candidate: bool = False) -> dict:
+          allow_static_candidate: bool = False, bps: Path | None = None) -> dict:
     data = input_path.read_bytes()
     profile = load_profile(profile_path)
     actual = verify(data, profile)
@@ -203,12 +289,26 @@ def build(input_path: Path, patch_path: Path, profile_path: Path, output: Path,
             raise ValueError("Static candidate is pending semantics audit; experimental build requires --allow-static-candidate")
     elif stage != "approved":
         raise ValueError("Build accepts only approved or explicitly enabled static_candidate patches")
-    writes = parse_writes(patch, len(data))
-    assert_preimages(data, writes)
-    modified = bytearray(data)
+    expansion = parse_expansion(patch, len(data))
+    if expansion is not None and ips is not None:
+        raise ValueError("IPS cannot represent an expanded ROM's target size or fill bytes")
+    writes = parse_writes(patch, expansion["size"] if expansion else len(data))
+    copies = parse_copies(patch, data, expansion)
+    assert_disjoint_writes_copies(writes, copies)
+    if expansion is not None:
+        expanded_baseline = data + bytes([expansion["fill_byte"]]) * (expansion["size"] - len(data))
+        assert_preimages(expanded_baseline, writes)
+        assert_copy_preimages(expanded_baseline, copies, expansion["fill_byte"])
+    else:
+        expanded_baseline = data
+        assert_preimages(expanded_baseline, writes)
+    modified = bytearray(expanded_baseline)
     for write in writes:
         off = write["offset"]
         modified[off:off + len(write["after"])] = write["after"]
+    for copy in copies:
+        off = copy["offset"]
+        modified[off:off + copy["length"]] = copy["after"]
     output_data = bytes(modified)
     report = {"schema_version": 1, "kind": "ss2_build_manifest",
               "created_utc": datetime.now(timezone.utc).isoformat(),
@@ -220,6 +320,17 @@ def build(input_path: Path, patch_path: Path, profile_path: Path, output: Path,
               "output_filename": output.name,
               "writes": [{"offset": f"0x{w['offset']:08X}",
                           "before_hex": w["before"].hex(), "after_hex": w["after"].hex()} for w in writes]}
+    if expansion is not None:
+        report["expansion"] = {"size": expansion["size"],
+                                "fill_byte": f"0x{expansion['fill_byte']:02X}",
+                                "owner": expansion["owner"]}
+    if copies:
+        report["copies"] = [{"source_offset": f"0x{copy['source_offset']:08X}",
+                             "offset": f"0x{copy['offset']:08X}",
+                             "length": copy["length"],
+                             "source_sha256": copy["source_sha256"],
+                             "destination_sha256": copy["destination_sha256"],
+                             "owner": copy["owner"]} for copy in copies]
     # Lists preserve two different lexical paths until alias checking is complete.
     artifact_pairs = [(output, output_data)]
     if ips is not None:
@@ -227,6 +338,21 @@ def build(input_path: Path, patch_path: Path, profile_path: Path, output: Path,
         report["ips"] = {"filename": ips.name, "identity": identity(encoded),
                          "warning": "IPS alone has no identity or preimage enforcement"}
         artifact_pairs.append((ips, encoded))
+    if bps is not None:
+        bps_writes = list(writes)
+        copy_fill = bytes([expansion["fill_byte"]]) if expansion else b""
+        bps_writes.extend({"offset": copy["offset"], "before": copy_fill * copy["length"],
+                           "after": copy["after"],
+                           "source_offset": copy["source_offset"]} for copy in copies)
+        encoded_bps = encode_bps(data, output_data, bps_writes,
+                                 fill_byte=expansion["fill_byte"] if expansion else None)
+        round_trip = decode_bps(data, encoded_bps)
+        if round_trip != output_data:
+            raise ValueError("BPS round-trip did not reproduce the exact built ROM")
+        report["bps"] = {"filename": bps.name, "identity": identity(encoded_bps),
+                         "source_size": len(data), "target_size": len(output_data),
+                         "warning": "BPS CRCs detect corruption but do not replace the manifest's cryptographic ROM identity"}
+        artifact_pairs.append((bps, encoded_bps))
     manifest = manifest or Path(str(output) + ".manifest.json")
     artifact_pairs.append((manifest, (json.dumps(report, indent=2) + "\n").encode()))
     if len({p.resolve() for p, _ in artifact_pairs}) != len(artifact_pairs):

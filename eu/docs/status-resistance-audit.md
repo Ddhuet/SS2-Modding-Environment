@@ -1,6 +1,6 @@
 # EU status-resistance audit and fixtures
 
-2026-10-04. **The signed-division change is justified for the outer chance calculation and runtime verified in the named diagnostic scenarios. The patch remains `static_candidate`, with no human acceptance or release approval.** The owner-confirmed refund patch, ROM, manifest and acceptance record are unchanged. No combined patch was built.
+2026-10-04. **The signed-division change is justified for the outer chance calculation and runtime verified in the named diagnostic scenarios. The patch is now `approved` for building/use, with no resistance gameplay acceptance claimed. On 2026-10-04 the owner requested using the tested fix and addressing later bugs separately; see [current releases](../releases/README.md).** The owner-confirmed refund patch, ROM, manifest and acceptance record are unchanged. No combined patch was built.
 
 The original EU routine demonstrably treats a negative numerator as unsigned. Changing the complete division call to the EU signed helper prevents the above-100 chance overflow for positive scaling. A separate uninitialized payload byte can still dispatch a status event after a failed gate. That finding limits the claim: this candidate fixes the division; it does not establish universal status immunity.
 
@@ -26,7 +26,7 @@ python scripts/verify_port_inventory.py
 .venv/bin/python scripts/audit_status_resistance.py --output runs/resistance-static-new
 python -m ss2tools build inputs/ss2-eu.gba patches/status-resistance-signed-division.json \
   artifacts/resistance-new.gba --profile profiles/ss2-eu.json \
-  --ips artifacts/resistance-new.ips --allow-static-candidate
+  --ips artifacts/resistance-new.ips
 python scripts/test_status_resistance.py --patched artifacts/resistance-new.gba \
   --output runs/resistance-diagnostic-new
 python scripts/test_status_resistance_gameplay.py --patched artifacts/resistance-new.gba \
@@ -89,4 +89,6 @@ Normal saves and native states under `runs/`, including every required `.ss1.jso
 
 ## Next bounded action
 
-Use the combat-ready fixture to trace the outer local payload byte across repeated real attacks and status dispatch consumption. Identify a natural kind-1 or kind-4 attack and trace the player path as well. Establish whether stale byte reuse can occur in those callers, and only then decide on a safe EU fix and a naturally equipped over-100 resistance acceptance scenario. The signed candidate is ready for reproducible research, but asking the owner to judge universal immunity now would overstate the evidence. No gameplay check is requested yet.
+Use the combat-ready fixture to trace the outer local payload byte across repeated real attacks and status dispatch consumption. Identify a natural kind-1 or kind-4 attack and trace the player path as well. Establish whether stale byte reuse can occur in those callers, and only then decide on a safe EU fix and a naturally equipped over-100 resistance acceptance scenario. The division fix is released for use with its recorded test scope. Follow-up research should address payload reuse and naturally equipped affected-kind combat; no additional owner check is needed to use the current fix.
+
+The historical candidate build manifest binds the [preserved candidate definition](evidence/status-resistance-candidate-definition.json). The [approved release manifest](evidence/status-resistance-release-build.json) binds the current definition; both builds have the same ROM/IPS bytes.

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "kind": "ss2_build_manifest",
+  "created_utc": "2026-10-06T13:56:49.701726+00:00",
+  "profile_id": "ss2-eu",
+  "patch_id": "warrior_counter_fix_eu",
+  "patch_sha256": "d76e9d2bce3925985cd0f3aa7e620a606d3058a702f2c1c6ee4e5d45a0a5b557",
+  "stage": "static_candidate",
+  "semantic_approval": false,
+  "static_candidate_opt_in": true,
+  "input_identity": {
+    "size": 16777216,
+    "md5": "49aa688745111aaa51076a345f8f18c3",
+    "sha256": "e5c64a1740263e9b26120e487f3688fbbf7b3954a2c043c0d84c333df467e0b2",
+    "crc32": "55E503C1"
+  },
+  "output_identity": {
+    "size": 16777216,
+    "md5": "8b737111ccc0674afa69969c31a39840",
+    "sha256": "e7f713a2185e6c161d9cbc8952e82b16ca94d6712c0cf723ec2d7da535c0e9c8",
+    "crc32": "F415F15A"
+  },
+  "output_filename": "ss2-eu-warrior-counter-test.gba",
+  "writes": [
+    {
+      "offset": "0x0001F3E4",
+      "before_hex": "0a20a8814046291c4a460023fff7def8",
+      "after_hex": "4046291c4a460023fff7e0f80a23ab81"
+    }
+  ],
+  "ips": {
+    "filename": "warrior-counter-test.ips",
+    "identity": {
+      "size": 29,
+      "md5": "9ec627712b4ebd25eaf9ba1feeb66c66",
+      "sha256": "a8af0b073b9b70af8322afd5fc94a0e58d8a73c8a1005d719c2d1aa05dfdb2d0",
+      "crc32": "7B07FDC4"
+    },
+    "warning": "IPS alone has no identity or preimage enforcement"
+  },
+  "bps": {
+    "filename": "warrior-counter-test.bps",
+    "identity": {
+      "size": 49,
+      "md5": "bffd63d2dd1e2cec8e2d018422a25fed",
+      "sha256": "00475b24c3325bb196c557fc3f536247cded38ec838576888a521d08eba43b08",
+      "crc32": "2144DF1C"
+    },
+    "source_size": 16777216,
+    "target_size": 16777216,
+    "warning": "BPS CRCs detect corruption but do not replace the manifest's cryptographic ROM identity"
+  }
+}

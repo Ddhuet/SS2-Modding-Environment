@@ -1,0 +1,19 @@
+0801F3E4  0a20       movs     r0, #0xa
+0801F3E6  a881       strh     r0, [r5, #0xc]
+0801F3E8  4046       mov      r0, r8
+0801F3EA  291c       adds     r1, r5, #0
+0801F3EC  4a46       mov      r2, sb
+0801F3EE  0023       movs     r3, #0
+0801F3F0  fff7def8   bl       #0x801e5b0
+0801F3F4  0004       lsls     r0, r0, #0x10
+0801F3F6  000c       lsrs     r0, r0, #0x10
+0801F3F8  994b       ldr      r3, [pc, #0x264]
+0801F3FA  9a46       mov      sl, r3
+0801F3FC  02af       add      r7, sp, #8
+0801F3FE  0399       ldr      r1, [sp, #0xc]
+0801F400  1940       ands     r1, r3
+0801F402  0143       orrs     r1, r0
+0801F404  0391       str      r1, [sp, #0xc]
+0801F406  4846       mov      r0, sb
+0801F408  a930       adds     r0, #0xa9
+0801F40A  0078       ldrb     r0, [r0]
