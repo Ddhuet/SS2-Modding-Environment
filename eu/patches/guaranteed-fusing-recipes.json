@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "id": "guaranteed_fusing_recipes_eu",
+  "name": "EU guaranteed fusing recipe tables",
+  "stage": "static_candidate",
+  "profile_id": "ss2-eu",
+  "baseline": {
+    "size": 16777216,
+    "md5": "49aa688745111aaa51076a345f8f18c3",
+    "sha256": "e5c64a1740263e9b26120e487f3688fbbf7b3954a2c043c0d84c333df467e0b2",
+    "crc32": "55E503C1"
+  },
+  "source_provenance": {
+    "kind": "original_eu_research",
+    "notes": "docs/fusing-audit.md"
+  },
+  "evidence": {
+    "status": "static_verified",
+    "semantics": "When the recipe matcher 0x08084200 returns a recipe, the fuse always uses that recipe's grade table instead of rolling (rng & 0xFFFF) <= player+0x6C and falling through to the random generator. No-recipe combinations are unchanged.",
+    "static_audit": "docs/fusing-audit.md",
+    "user_acceptance": "not_run"
+  },
+  "writes": [
+    {
+      "address": "0x080844E5",
+      "offset": "0x000844E5",
+      "before_hex": "d9",
+      "after_hex": "e0",
+      "mode": "thumb",
+      "note": "bls #0x080844E8 -> b #0x080844E8: recipe-table gate always passes. The RNG draw before it is kept, so later draws are unchanged."
+    }
+  ]
+}

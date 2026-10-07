@@ -1,0 +1,8 @@
+{
+  "format": "ss2-mgba-state-v1",
+  "rom_sha256": "279dfab77d5cf973083632e3aba5d5aa9bad958e5baec4591a80d0347dc8b2d2",
+  "state_sha256": "6cb3920ca9cdac86f2da0c822d06486ed700359c4f397445486ccc2c496c0b25",
+  "backend_revision": "26b7884bc25a5933960f3cdcd98bac1ae14d42e2",
+  "frame": 0,
+  "origin": "copy of dm_scale_scale.ss1 (user mGBA state on clean EU ROM) rebound to ss2-eu-guaranteed-fusing.gba; ROMs differ only at 0x844E5"
+}

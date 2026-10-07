@@ -1,0 +1,2582 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "calculator": "old_calculator/Shining Soul II Shrine - Fuse List.html",
+    "guide": "fusing_guide.md",
+    "note": "Recipe outputs and stable item IDs come from the saved calculator; the guide confirms material names, placement rules, and grade thresholds."
+  },
+  "materials": [
+    {
+      "id": "mithril",
+      "name": "Mithril"
+    },
+    {
+      "id": "orihalcon",
+      "name": "Orihalcon"
+    },
+    {
+      "id": "dark-matter",
+      "name": "Dark Matter"
+    },
+    {
+      "id": "bone",
+      "name": "Bone"
+    },
+    {
+      "id": "scale",
+      "name": "Scale"
+    }
+  ],
+  "trinityGradeThresholds": [
+    {
+      "grade": 0,
+      "minimumPoints": 0,
+      "maximumPoints": 99
+    },
+    {
+      "grade": 1,
+      "minimumPoints": 100,
+      "maximumPoints": 299
+    },
+    {
+      "grade": 2,
+      "minimumPoints": 300,
+      "maximumPoints": 499
+    },
+    {
+      "grade": 3,
+      "minimumPoints": 500,
+      "maximumPoints": null
+    }
+  ],
+  "recipes": [
+    {
+      "id": "mithril-mithril-mithril",
+      "calculatorCode": "000",
+      "materials": [
+        "mithril",
+        "mithril",
+        "mithril"
+      ],
+      "orderMatters": false,
+      "grades": [
+        {
+          "grade": 1,
+          "items": [
+            {
+              "sourceId": "01A80002",
+              "name": "Elemental Sword"
+            },
+            {
+              "sourceId": "01C60002",
+              "name": "Heat Axe"
+            },
+            {
+              "sourceId": "01E40002",
+              "name": "Gale Lance"
+            },
+            {
+              "sourceId": "02020002",
+              "name": "Gale Bow"
+            },
+            {
+              "sourceId": "02200002",
+              "name": "Lashing Flail"
+            },
+            {
+              "sourceId": "023E0002",
+              "name": "Mace Rod"
+            },
+            {
+              "sourceId": "025C0002",
+              "name": "Sharp Knife"
+            },
+            {
+              "sourceId": "027A0002",
+              "name": "Beast Claw"
+            },
+            {
+              "sourceId": "005B0003",
+              "name": "Mithril Armor"
+            },
+            {
+              "sourceId": "003D0003",
+              "name": "Mithril Robe"
+            },
+            {
+              "sourceId": "005A0004",
+              "name": "Mithril Helm"
+            },
+            {
+              "sourceId": "003C0004",
+              "name": "Mithril Hood"
+            },
+            {
+              "sourceId": "00620005",
+              "name": "Mithril Gloves"
+            },
+            {
+              "sourceId": "00800005",
+              "name": "Mithril Shield"
+            }
+          ]
+        },
+        {
+          "grade": 2,
+          "items": [
+            {
+              "sourceId": "01A90002",
+              "name": "Shiva Sword"
+            },
+            {
+              "sourceId": "01C70002",
+              "name": "Giant Axe"
+            },
+            {
+              "sourceId": "01E50002",
+              "name": "Holy Lance"
+            },
+            {
+              "sourceId": "02030002",
+              "name": "Sonic Bow"
+            },
+            {
+              "sourceId": "02210002",
+              "name": "Holy Flail"
+            },
+            {
+              "sourceId": "023F0002",
+              "name": "Milky Rod"
+            },
+            {
+              "sourceId": "025D0002",
+              "name": "Butterfly Knife"
+            },
+            {
+              "sourceId": "027B0002",
+              "name": "Tiger Claw"
+            },
+            {
+              "sourceId": "005C0003",
+              "name": "Eternal Armor"
+            },
+            {
+              "sourceId": "003E0003",
+              "name": "Tribal Robe"
+            },
+            {
+              "sourceId": "005B0004",
+              "name": "Impulse Helm"
+            },
+            {
+              "sourceId": "003D0004",
+              "name": "Zephyr Hood"
+            },
+            {
+              "sourceId": "00630005",
+              "name": "Royal Gloves"
+            },
+            {
+              "sourceId": "00810005",
+              "name": "Fortress Shield"
+            }
+          ]
+        },
+        {
+          "grade": 3,
+          "items": [
+            {
+              "sourceId": "01AA0002",
+              "name": "Levatine"
+            },
+            {
+              "sourceId": "01C80002",
+              "name": "Dragon Axe"
+            },
+            {
+              "sourceId": "01E60002",
+              "name": "Dragoon Lance"
+            },
+            {
+              "sourceId": "02040002",
+              "name": "Lunar Bow"
+            },
+            {
+              "sourceId": "02220002",
+              "name": "Crushing Flail"
+            },
+            {
+              "sourceId": "02400002",
+              "name": "Alchemy Rod"
+            },
+            {
+              "sourceId": "025E0002",
+              "name": "Assassin Knife"
+            },
+            {
+              "sourceId": "027C0002",
+              "name": "Berserk Claw"
+            },
+            {
+              "sourceId": "005D0003",
+              "name": "Crusade Armor"
+            },
+            {
+              "sourceId": "003F0003",
+              "name": "Grace Robe"
+            },
+            {
+              "sourceId": "005C0004",
+              "name": "Helm of Bravery"
+            },
+            {
+              "sourceId": "003E0004",
+              "name": "Adept Hood"
+            },
+            {
+              "sourceId": "00640005",
+              "name": "Illusion Gloves"
+            },
+            {
+              "sourceId": "00820005",
+              "name": "Hero's Shield"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "orihalcon-orihalcon-orihalcon",
+      "calculatorCode": "111",
+      "materials": [
+        "orihalcon",
+        "orihalcon",
+        "orihalcon"
+      ],
+      "orderMatters": false,
+      "grades": [
+        {
+          "grade": 1,
+          "items": [
+            {
+              "sourceId": "01AE0002",
+              "name": "Masamune"
+            },
+            {
+              "sourceId": "01CC0002",
+              "name": "Buster Halberd"
+            },
+            {
+              "sourceId": "01EA0002",
+              "name": "Mercurius Spear"
+            },
+            {
+              "sourceId": "02080002",
+              "name": "Doppler Bow"
+            },
+            {
+              "sourceId": "02260002",
+              "name": "Alabaster Flail"
+            },
+            {
+              "sourceId": "02440002",
+              "name": "Eternal Wand"
+            },
+            {
+              "sourceId": "02620002",
+              "name": "Fairy Knife"
+            },
+            {
+              "sourceId": "02800002",
+              "name": "Justice Claw"
+            },
+            {
+              "sourceId": "00610003",
+              "name": "Force Armor"
+            },
+            {
+              "sourceId": "00430003",
+              "name": "Solar Robe"
+            },
+            {
+              "sourceId": "00600004",
+              "name": "Force Helm"
+            },
+            {
+              "sourceId": "00420004",
+              "name": "Lucky Hood"
+            },
+            {
+              "sourceId": "00680005",
+              "name": "Justice Gloves"
+            },
+            {
+              "sourceId": "00860005",
+              "name": "Force Shield"
+            }
+          ]
+        },
+        {
+          "grade": 2,
+          "items": [
+            {
+              "sourceId": "01AF0002",
+              "name": "Soul Blade"
+            },
+            {
+              "sourceId": "01CD0002",
+              "name": "Soul Axe"
+            },
+            {
+              "sourceId": "01EB0002",
+              "name": "Soul Lance"
+            },
+            {
+              "sourceId": "02090002",
+              "name": "Soul Bow"
+            },
+            {
+              "sourceId": "02270002",
+              "name": "Soul Flail"
+            },
+            {
+              "sourceId": "02450002",
+              "name": "Soul Rod"
+            },
+            {
+              "sourceId": "02630002",
+              "name": "Soul Knife"
+            },
+            {
+              "sourceId": "02810002",
+              "name": "Soul Claw"
+            },
+            {
+              "sourceId": "00620003",
+              "name": "Order Armor"
+            },
+            {
+              "sourceId": "00440003",
+              "name": "Soul Robe"
+            },
+            {
+              "sourceId": "00610004",
+              "name": "Holy Light Helm"
+            },
+            {
+              "sourceId": "00430004",
+              "name": "Soul Cap"
+            },
+            {
+              "sourceId": "00690005",
+              "name": "Soul Gloves"
+            },
+            {
+              "sourceId": "00870005",
+              "name": "Reflex Shield"
+            }
+          ]
+        },
+        {
+          "grade": 3,
+          "items": [
+            {
+              "sourceId": "01B00002",
+              "name": "Lord's Sword"
+            },
+            {
+              "sourceId": "01CE0002",
+              "name": "Apollo Axe"
+            },
+            {
+              "sourceId": "01EC0002",
+              "name": "Hozon Lance"
+            },
+            {
+              "sourceId": "020A0002",
+              "name": "Sagittarius Bow"
+            },
+            {
+              "sourceId": "02280002",
+              "name": "Ark Flail"
+            },
+            {
+              "sourceId": "02460002",
+              "name": "Will Rod"
+            },
+            {
+              "sourceId": "02640002",
+              "name": "Ripper Knife"
+            },
+            {
+              "sourceId": "02820002",
+              "name": "Gehenna Claw"
+            },
+            {
+              "sourceId": "00630003",
+              "name": "Glorious Armor"
+            },
+            {
+              "sourceId": "00450003",
+              "name": "Saint Robe"
+            },
+            {
+              "sourceId": "00620004",
+              "name": "Glorious Helm"
+            },
+            {
+              "sourceId": "00440004",
+              "name": "Saint Hood"
+            },
+            {
+              "sourceId": "006A0005",
+              "name": "Saint Gloves"
+            },
+            {
+              "sourceId": "00880005",
+              "name": "Divine Shield"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dark-matter-dark-matter-dark-matter",
+      "calculatorCode": "222",
+      "materials": [
+        "dark-matter",
+        "dark-matter",
+        "dark-matter"
+      ],
+      "orderMatters": false,
+      "grades": [
+        {
+          "grade": 1,
+          "items": [
+            {
+              "sourceId": "01AB0002",
+              "name": "Murasame"
+            },
+            {
+              "sourceId": "01C90002",
+              "name": "Executioner"
+            },
+            {
+              "sourceId": "01E70002",
+              "name": "Ruinous Lance"
+            },
+            {
+              "sourceId": "02050002",
+              "name": "Diabolic Bow"
+            },
+            {
+              "sourceId": "02230002",
+              "name": "Unholy Flail"
+            },
+            {
+              "sourceId": "02410002",
+              "name": "Grave Digger"
+            },
+            {
+              "sourceId": "025F0002",
+              "name": "Will Knife"
+            },
+            {
+              "sourceId": "027D0002",
+              "name": "Deadly Claw"
+            },
+            {
+              "sourceId": "005E0003",
+              "name": "Black Armor"
+            },
+            {
+              "sourceId": "00400003",
+              "name": "Mortal Robe"
+            },
+            {
+              "sourceId": "005D0004",
+              "name": "Black Helm"
+            },
+            {
+              "sourceId": "003F0004",
+              "name": "Unlucky Hood"
+            },
+            {
+              "sourceId": "00650005",
+              "name": "Killer Gloves"
+            },
+            {
+              "sourceId": "00830005",
+              "name": "Black Shield"
+            }
+          ]
+        },
+        {
+          "grade": 2,
+          "items": [
+            {
+              "sourceId": "01AC0002",
+              "name": "Muramasa"
+            },
+            {
+              "sourceId": "01CA0002",
+              "name": "Cursed Axe"
+            },
+            {
+              "sourceId": "01E80002",
+              "name": "Dark Lord Spear"
+            },
+            {
+              "sourceId": "02060002",
+              "name": "Blood Bow"
+            },
+            {
+              "sourceId": "02240002",
+              "name": "Death Flail"
+            },
+            {
+              "sourceId": "02420002",
+              "name": "Nether Rod"
+            },
+            {
+              "sourceId": "02600002",
+              "name": "Blood Knife"
+            },
+            {
+              "sourceId": "027E0002",
+              "name": "Demon Claw"
+            },
+            {
+              "sourceId": "005F0003",
+              "name": "Malice Armor"
+            },
+            {
+              "sourceId": "00410003",
+              "name": "Greed Robe"
+            },
+            {
+              "sourceId": "005E0004",
+              "name": "Dread Helm"
+            },
+            {
+              "sourceId": "00400004",
+              "name": "Eclipse Hood"
+            },
+            {
+              "sourceId": "00660005",
+              "name": "Crypt Gloves"
+            },
+            {
+              "sourceId": "00840005",
+              "name": "Bane Shield"
+            }
+          ]
+        },
+        {
+          "grade": 3,
+          "items": [
+            {
+              "sourceId": "01AD0002",
+              "name": "Darkside Sword"
+            },
+            {
+              "sourceId": "01CB0002",
+              "name": "Evil Axe"
+            },
+            {
+              "sourceId": "01E90002",
+              "name": "Devil Lance"
+            },
+            {
+              "sourceId": "02070002",
+              "name": "Cantarela Bow"
+            },
+            {
+              "sourceId": "02250002",
+              "name": "Evil Flail"
+            },
+            {
+              "sourceId": "02430002",
+              "name": "Demon Rod"
+            },
+            {
+              "sourceId": "02610002",
+              "name": "Demon Knife"
+            },
+            {
+              "sourceId": "027F0002",
+              "name": "Foxglove Claw"
+            },
+            {
+              "sourceId": "00600003",
+              "name": "Evil Armor"
+            },
+            {
+              "sourceId": "00420003",
+              "name": "Demon Robe"
+            },
+            {
+              "sourceId": "005F0004",
+              "name": "Evil Helm"
+            },
+            {
+              "sourceId": "00410004",
+              "name": "Demon Hood"
+            },
+            {
+              "sourceId": "00670005",
+              "name": "Demon Gloves"
+            },
+            {
+              "sourceId": "00850005",
+              "name": "Banishing Shield"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mithril-orihalcon-dark-matter",
+      "calculatorCode": "012",
+      "materials": [
+        "mithril",
+        "orihalcon",
+        "dark-matter"
+      ],
+      "orderMatters": false,
+      "grades": [
+        {
+          "grade": 1,
+          "items": [
+            {
+              "sourceId": "01B10002",
+              "name": "Chaos Sword 1"
+            },
+            {
+              "sourceId": "01CF0002",
+              "name": "Chaos Axe 1"
+            },
+            {
+              "sourceId": "01ED0002",
+              "name": "Chaos Spear 1"
+            },
+            {
+              "sourceId": "020B0002",
+              "name": "Chaos Bow 1"
+            },
+            {
+              "sourceId": "02290002",
+              "name": "Chaos Flail 1"
+            },
+            {
+              "sourceId": "02470002",
+              "name": "Chaos Rod 1"
+            },
+            {
+              "sourceId": "02650002",
+              "name": "Chaos Knife 1"
+            },
+            {
+              "sourceId": "02830002",
+              "name": "Chaos Claw 1"
+            },
+            {
+              "sourceId": "00640003",
+              "name": "Burial Armor"
+            },
+            {
+              "sourceId": "00460003",
+              "name": "Burial Robe"
+            },
+            {
+              "sourceId": "00630004",
+              "name": "Burial Helm"
+            },
+            {
+              "sourceId": "00450004",
+              "name": "Burial Hood"
+            },
+            {
+              "sourceId": "006B0005",
+              "name": "Burial Gloves"
+            },
+            {
+              "sourceId": "00890005",
+              "name": "Burial Shield"
+            }
+          ]
+        },
+        {
+          "grade": 2,
+          "items": [
+            {
+              "sourceId": "01B20002",
+              "name": "Chaos Sword 2"
+            },
+            {
+              "sourceId": "01D00002",
+              "name": "Chaos Axe 2"
+            },
+            {
+              "sourceId": "01EE0002",
+              "name": "Chaos Spear 2"
+            },
+            {
+              "sourceId": "020C0002",
+              "name": "Chaos Bow 2"
+            },
+            {
+              "sourceId": "022A0002",
+              "name": "Chaos Flail 2"
+            },
+            {
+              "sourceId": "02480002",
+              "name": "Chaos Rod 2"
+            },
+            {
+              "sourceId": "02660002",
+              "name": "Chaos Knife 2"
+            },
+            {
+              "sourceId": "02840002",
+              "name": "Chaos Claw 2"
+            },
+            {
+              "sourceId": "00650003",
+              "name": "Ritual Armor"
+            },
+            {
+              "sourceId": "00470003",
+              "name": "Ritual Robe"
+            },
+            {
+              "sourceId": "00640004",
+              "name": "Ritual Helm"
+            },
+            {
+              "sourceId": "00460004",
+              "name": "Ritual Hood"
+            },
+            {
+              "sourceId": "006C0005",
+              "name": "Ritual Gloves"
+            },
+            {
+              "sourceId": "008A0005",
+              "name": "Ritual Shield"
+            }
+          ]
+        },
+        {
+          "grade": 3,
+          "items": [
+            {
+              "sourceId": "01B30002",
+              "name": "Chaos Sword 3"
+            },
+            {
+              "sourceId": "01D10002",
+              "name": "Chaos Axe 3"
+            },
+            {
+              "sourceId": "01EF0002",
+              "name": "Chaos Spear 3"
+            },
+            {
+              "sourceId": "020D0002",
+              "name": "Chaos Bow 3"
+            },
+            {
+              "sourceId": "022B0002",
+              "name": "Chaos Flail 3"
+            },
+            {
+              "sourceId": "02490002",
+              "name": "Chaos Rod 3"
+            },
+            {
+              "sourceId": "02670002",
+              "name": "Chaos Knife 3"
+            },
+            {
+              "sourceId": "02850002",
+              "name": "Chaos Claw 3"
+            },
+            {
+              "sourceId": "00660003",
+              "name": "Apostate Armor"
+            },
+            {
+              "sourceId": "00480003",
+              "name": "Apostate Robe"
+            },
+            {
+              "sourceId": "00650004",
+              "name": "Apostate Helm"
+            },
+            {
+              "sourceId": "00470004",
+              "name": "Apostate Hood"
+            },
+            {
+              "sourceId": "006D0005",
+              "name": "Apostate Gloves"
+            },
+            {
+              "sourceId": "008B0005",
+              "name": "Apostate Shield"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mithril-dark-matter-mithril",
+      "calculatorCode": "020",
+      "materials": [
+        "mithril",
+        "dark-matter",
+        "mithril"
+      ],
+      "orderMatters": true,
+      "grades": [
+        {
+          "grade": 1,
+          "items": [
+            {
+              "sourceId": "01B40002",
+              "name": "Fire Sword 1"
+            },
+            {
+              "sourceId": "01D20002",
+              "name": "Fire Axe 1"
+            },
+            {
+              "sourceId": "01F00002",
+              "name": "Fire Spear 1"
+            },
+            {
+              "sourceId": "020E0002",
+              "name": "Fire Bow 1"
+            },
+            {
+              "sourceId": "022C0002",
+              "name": "Fire Flail 1"
+            },
+            {
+              "sourceId": "024A0002",
+              "name": "Fire Rod 1"
+            },
+            {
+              "sourceId": "02680002",
+              "name": "Fire Knife 1"
+            },
+            {
+              "sourceId": "02860002",
+              "name": "Fire Claw 1"
+            }
+          ]
+        },
+        {
+          "grade": 2,
+          "items": [
+            {
+              "sourceId": "01B50002",
+              "name": "Fire Sword 2"
+            },
+            {
+              "sourceId": "01D30002",
+              "name": "Fire Axe 2"
+            },
+            {
+              "sourceId": "01F10002",
+              "name": "Fire Spear 2"
+            },
+            {
+              "sourceId": "020F0002",
+              "name": "Fire Bow 2"
+            },
+            {
+              "sourceId": "022D0002",
+              "name": "Fire Flail 2"
+            },
+            {
+              "sourceId": "024B0002",
+              "name": "Fire Rod 2"
+            },
+            {
+              "sourceId": "02690002",
+              "name": "Fire Knife 2"
+            },
+            {
+              "sourceId": "02870002",
+              "name": "Fire Claw 2"
+            }
+          ]
+        },
+        {
+          "grade": 3,
+          "items": [
+            {
+              "sourceId": "01B60002",
+              "name": "Fire Sword 3"
+            },
+            {
+              "sourceId": "01D40002",
+              "name": "Fire Axe 3"
+            },
+            {
+              "sourceId": "01F20002",
+              "name": "Fire Spear 3"
+            },
+            {
+              "sourceId": "02100002",
+              "name": "Fire Bow 3"
+            },
+            {
+              "sourceId": "022E0002",
+              "name": "Fire Flail 3"
+            },
+            {
+              "sourceId": "024C0002",
+              "name": "Fire Rod 3"
+            },
+            {
+              "sourceId": "026A0002",
+              "name": "Fire Knife 3"
+            },
+            {
+              "sourceId": "02880002",
+              "name": "Fire Claw 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mithril-mithril-dark-matter",
+      "calculatorCode": "002",
+      "materials": [
+        "mithril",
+        "mithril",
+        "dark-matter"
+      ],
+      "orderMatters": true,
+      "grades": [
+        {
+          "grade": 1,
+          "items": [
+            {
+              "sourceId": "00670003",
+              "name": "Flame Armor"
+            },
+            {
+              "sourceId": "00490003",
+              "name": "Flame Robe"
+            },
+            {
+              "sourceId": "008C0005",
+              "name": "Flame Shield"
+            }
+          ]
+        },
+        {
+          "grade": 2,
+          "items": [
+            {
+              "sourceId": "00680003",
+              "name": "Burning Armor"
+            },
+            {
+              "sourceId": "004A0003",
+              "name": "Burning Robe"
+            },
+            {
+              "sourceId": "008D0005",
+              "name": "Burning Shield"
+            }
+          ]
+        },
+        {
+          "grade": 3,
+          "items": [
+            {
+              "sourceId": "00690003",
+              "name": "Phoenix Armor"
+            },
+            {
+              "sourceId": "004B0003",
+              "name": "Phoenix Robe"
+            },
+            {
+              "sourceId": "008E0005",
+              "name": "Phoenix Shield"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dark-matter-mithril-mithril",
+      "calculatorCode": "200",
+      "materials": [
+        "dark-matter",
+        "mithril",
+        "mithril"
+      ],
+      "orderMatters": true,
+      "grades": [
+        {
+          "grade": 1,
+          "items": [
+            {
+              "sourceId": "00660004",
+              "name": "Flame Helm"
+            },
+            {
+              "sourceId": "00480004",
+              "name": "Flame Hood"
+            },
+            {
+              "sourceId": "006E0005",
+              "name": "Flame Gloves"
+            }
+          ]
+        },
+        {
+          "grade": 2,
+          "items": [
+            {
+              "sourceId": "00670004",
+              "name": "Burning Helm"
+            },
+            {
+              "sourceId": "00490004",
+              "name": "Burning Hood"
+            },
+            {
+              "sourceId": "006F0005",
+              "name": "Burning Gloves"
+            }
+          ]
+        },
+        {
+          "grade": 3,
+          "items": [
+            {
+              "sourceId": "00680004",
+              "name": "Phoenix Helm"
+            },
+            {
+              "sourceId": "004A0004",
+              "name": "Phoenix Hood"
+            },
+            {
+              "sourceId": "00700005",
+              "name": "Phoenix Gloves"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "orihalcon-mithril-orihalcon",
+      "calculatorCode": "101",
+      "materials": [
+        "orihalcon",
+        "mithril",
+        "orihalcon"
+      ],
+      "orderMatters": true,
+      "grades": [
+        {
+          "grade": 1,
+          "items": [
+            {
+              "sourceId": "01B70002",
+              "name": "Ice Blade 1"
+            },
+            {
+              "sourceId": "01D50002",
+              "name": "Ice Axe 1"
+            },
+            {
+              "sourceId": "01F30002",
+              "name": "Ice Spear 1"
+            },
+            {
+              "sourceId": "02110002",
+              "name": "Ice Bow 1"
+            },
+            {
+              "sourceId": "022F0002",
+              "name": "Ice Flail 1"
+            },
+            {
+              "sourceId": "024D0002",
+              "name": "Ice Rod 1"
+            },
+            {
+              "sourceId": "026B0002",
+              "name": "Ice Knife 1"
+            },
+            {
+              "sourceId": "02890002",
+              "name": "Ice Claw 1"
+            }
+          ]
+        },
+        {
+          "grade": 2,
+          "items": [
+            {
+              "sourceId": "01B80002",
+              "name": "Ice Blade 2"
+            },
+            {
+              "sourceId": "01D60002",
+              "name": "Ice Axe 2"
+            },
+            {
+              "sourceId": "01F40002",
+              "name": "Ice Spear 2"
+            },
+            {
+              "sourceId": "02120002",
+              "name": "Ice Bow 2"
+            },
+            {
+              "sourceId": "02300002",
+              "name": "Ice Flail 2"
+            },
+            {
+              "sourceId": "024E0002",
+              "name": "Ice Rod 2"
+            },
+            {
+              "sourceId": "026C0002",
+              "name": "Ice Knife 2"
+            },
+            {
+              "sourceId": "028A0002",
+              "name": "Ice Claw 2"
+            }
+          ]
+        },
+        {
+          "grade": 3,
+          "items": [
+            {
+              "sourceId": "01B90002",
+              "name": "Ice Blade 3"
+            },
+            {
+              "sourceId": "01D70002",
+              "name": "Ice Axe 3"
+            },
+            {
+              "sourceId": "01F50002",
+              "name": "Ice Spear 3"
+            },
+            {
+              "sourceId": "02130002",
+              "name": "Ice Bow 3"
+            },
+            {
+              "sourceId": "02310002",
+              "name": "Ice Flail 3"
+            },
+            {
+              "sourceId": "024F0002",
+              "name": "Ice Rod 3"
+            },
+            {
+              "sourceId": "026D0002",
+              "name": "Ice Knife 3"
+            },
+            {
+              "sourceId": "028B0002",
+              "name": "Ice Claw 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "orihalcon-orihalcon-mithril",
+      "calculatorCode": "110",
+      "materials": [
+        "orihalcon",
+        "orihalcon",
+        "mithril"
+      ],
+      "orderMatters": true,
+      "grades": [
+        {
+          "grade": 1,
+          "items": [
+            {
+              "sourceId": "006A0003",
+              "name": "Ice Armor"
+            },
+            {
+              "sourceId": "004C0003",
+              "name": "Ice Robe"
+            },
+            {
+              "sourceId": "008F0005",
+              "name": "Ice Shield"
+            }
+          ]
+        },
+        {
+          "grade": 2,
+          "items": [
+            {
+              "sourceId": "006B0003",
+              "name": "Frost Armor"
+            },
+            {
+              "sourceId": "004D0003",
+              "name": "Frost Robe"
+            },
+            {
+              "sourceId": "00900005",
+              "name": "Frost Shield"
+            }
+          ]
+        },
+        {
+          "grade": 3,
+          "items": [
+            {
+              "sourceId": "006C0003",
+              "name": "Blizzard Armor"
+            },
+            {
+              "sourceId": "004E0003",
+              "name": "Blizzard Robe"
+            },
+            {
+              "sourceId": "00910005",
+              "name": "Blizzard Shield"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mithril-orihalcon-orihalcon",
+      "calculatorCode": "011",
+      "materials": [
+        "mithril",
+        "orihalcon",
+        "orihalcon"
+      ],
+      "orderMatters": true,
+      "grades": [
+        {
+          "grade": 1,
+          "items": [
+            {
+              "sourceId": "00690004",
+              "name": "Ice Helm"
+            },
+            {
+              "sourceId": "004B0004",
+              "name": "Ice Hood"
+            },
+            {
+              "sourceId": "00710005",
+              "name": "Ice Gloves"
+            }
+          ]
+        },
+        {
+          "grade": 2,
+          "items": [
+            {
+              "sourceId": "006A0004",
+              "name": "Frost Helm"
+            },
+            {
+              "sourceId": "004C0004",
+              "name": "Frost Hood"
+            },
+            {
+              "sourceId": "00720005",
+              "name": "Frost Gloves"
+            }
+          ]
+        },
+        {
+          "grade": 3,
+          "items": [
+            {
+              "sourceId": "006B0004",
+              "name": "Blizzard Helm"
+            },
+            {
+              "sourceId": "004D0004",
+              "name": "Blizzard Hood"
+            },
+            {
+              "sourceId": "00730005",
+              "name": "Blizzard Gloves"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mithril-orihalcon-mithril",
+      "calculatorCode": "010",
+      "materials": [
+        "mithril",
+        "orihalcon",
+        "mithril"
+      ],
+      "orderMatters": true,
+      "grades": [
+        {
+          "grade": 1,
+          "items": [
+            {
+              "sourceId": "01BA0002",
+              "name": "Bolt Sword 1"
+            },
+            {
+              "sourceId": "01D80002",
+              "name": "Bolt Axe 1"
+            },
+            {
+              "sourceId": "01F60002",
+              "name": "Bolt Spear 1"
+            },
+            {
+              "sourceId": "02140002",
+              "name": "Bolt Bow 1"
+            },
+            {
+              "sourceId": "02320002",
+              "name": "Bolt Flail 1"
+            },
+            {
+              "sourceId": "02500002",
+              "name": "Bolt Rod 1"
+            },
+            {
+              "sourceId": "026E0002",
+              "name": "Bolt Knife 1"
+            },
+            {
+              "sourceId": "028C0002",
+              "name": "Bolt Claw 1"
+            }
+          ]
+        },
+        {
+          "grade": 2,
+          "items": [
+            {
+              "sourceId": "01BB0002",
+              "name": "Bolt Sword 2"
+            },
+            {
+              "sourceId": "01D90002",
+              "name": "Bolt Axe 2"
+            },
+            {
+              "sourceId": "01F70002",
+              "name": "Bolt Spear 2"
+            },
+            {
+              "sourceId": "02150002",
+              "name": "Bolt Bow 2"
+            },
+            {
+              "sourceId": "02330002",
+              "name": "Bolt Flail 2"
+            },
+            {
+              "sourceId": "02510002",
+              "name": "Bolt Rod 2"
+            },
+            {
+              "sourceId": "026F0002",
+              "name": "Bolt Knife 2"
+            },
+            {
+              "sourceId": "028D0002",
+              "name": "Bolt Claw 2"
+            }
+          ]
+        },
+        {
+          "grade": 3,
+          "items": [
+            {
+              "sourceId": "01BC0002",
+              "name": "Bolt Sword 3"
+            },
+            {
+              "sourceId": "01DA0002",
+              "name": "Bolt Axe 3"
+            },
+            {
+              "sourceId": "01F80002",
+              "name": "Bolt Spear 3"
+            },
+            {
+              "sourceId": "02160002",
+              "name": "Bolt Bow 3"
+            },
+            {
+              "sourceId": "02340002",
+              "name": "Bolt Flail 3"
+            },
+            {
+              "sourceId": "02520002",
+              "name": "Bolt Rod 3"
+            },
+            {
+              "sourceId": "02700002",
+              "name": "Bolt Knife 3"
+            },
+            {
+              "sourceId": "028E0002",
+              "name": "Bolt Claw 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mithril-mithril-orihalcon",
+      "calculatorCode": "001",
+      "materials": [
+        "mithril",
+        "mithril",
+        "orihalcon"
+      ],
+      "orderMatters": true,
+      "grades": [
+        {
+          "grade": 1,
+          "items": [
+            {
+              "sourceId": "006D0003",
+              "name": "Thunder Armor"
+            },
+            {
+              "sourceId": "004F0003",
+              "name": "Thunder Robe"
+            },
+            {
+              "sourceId": "00920005",
+              "name": "Thunder Shield"
+            }
+          ]
+        },
+        {
+          "grade": 2,
+          "items": [
+            {
+              "sourceId": "006E0003",
+              "name": "Plasma Armor"
+            },
+            {
+              "sourceId": "00500003",
+              "name": "Plasma Robe"
+            },
+            {
+              "sourceId": "00930005",
+              "name": "Plasma Shield"
+            }
+          ]
+        },
+        {
+          "grade": 3,
+          "items": [
+            {
+              "sourceId": "006F0003",
+              "name": "Spark Armor"
+            },
+            {
+              "sourceId": "00510003",
+              "name": "Spark Robe"
+            },
+            {
+              "sourceId": "00940005",
+              "name": "Spark Shield"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "orihalcon-mithril-mithril",
+      "calculatorCode": "100",
+      "materials": [
+        "orihalcon",
+        "mithril",
+        "mithril"
+      ],
+      "orderMatters": true,
+      "grades": [
+        {
+          "grade": 1,
+          "items": [
+            {
+              "sourceId": "006C0004",
+              "name": "Thunder Helm"
+            },
+            {
+              "sourceId": "004E0004",
+              "name": "Thunder Hood"
+            },
+            {
+              "sourceId": "00740005",
+              "name": "Thunder Gloves"
+            }
+          ]
+        },
+        {
+          "grade": 2,
+          "items": [
+            {
+              "sourceId": "006D0004",
+              "name": "Plasma Helm"
+            },
+            {
+              "sourceId": "004F0004",
+              "name": "Plasma Hood"
+            },
+            {
+              "sourceId": "00750005",
+              "name": "Plasma Gloves"
+            }
+          ]
+        },
+        {
+          "grade": 3,
+          "items": [
+            {
+              "sourceId": "006E0004",
+              "name": "Spark Helm"
+            },
+            {
+              "sourceId": "00500004",
+              "name": "Spark Hood"
+            },
+            {
+              "sourceId": "00760005",
+              "name": "Spark Gloves"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "orihalcon-dark-matter-orihalcon",
+      "calculatorCode": "121",
+      "materials": [
+        "orihalcon",
+        "dark-matter",
+        "orihalcon"
+      ],
+      "orderMatters": true,
+      "grades": [
+        {
+          "grade": 1,
+          "items": [
+            {
+              "sourceId": "01BD0002",
+              "name": "Shining Sword 1"
+            },
+            {
+              "sourceId": "01DB0002",
+              "name": "Shining Axe 1"
+            },
+            {
+              "sourceId": "01F90002",
+              "name": "Shining Spear 1"
+            },
+            {
+              "sourceId": "02170002",
+              "name": "Shining Bow 1"
+            },
+            {
+              "sourceId": "02350002",
+              "name": "Shining Flail 1"
+            },
+            {
+              "sourceId": "02530002",
+              "name": "Shining Rod 1"
+            },
+            {
+              "sourceId": "02710002",
+              "name": "Shining Knife 1"
+            },
+            {
+              "sourceId": "028F0002",
+              "name": "Shining Claw 1"
+            }
+          ]
+        },
+        {
+          "grade": 2,
+          "items": [
+            {
+              "sourceId": "01BE0002",
+              "name": "Shining Sword 2"
+            },
+            {
+              "sourceId": "01DC0002",
+              "name": "Shining Axe 2"
+            },
+            {
+              "sourceId": "01FA0002",
+              "name": "Shining Spear 2"
+            },
+            {
+              "sourceId": "02180002",
+              "name": "Shining Bow 2"
+            },
+            {
+              "sourceId": "02360002",
+              "name": "Shining Flail 2"
+            },
+            {
+              "sourceId": "02540002",
+              "name": "Shining Rod 2"
+            },
+            {
+              "sourceId": "02720002",
+              "name": "Shining Knife 2"
+            },
+            {
+              "sourceId": "02900002",
+              "name": "Shining Claw 2"
+            }
+          ]
+        },
+        {
+          "grade": 3,
+          "items": [
+            {
+              "sourceId": "01BF0002",
+              "name": "Shining Sword 3"
+            },
+            {
+              "sourceId": "01DD0002",
+              "name": "Shining Axe 3"
+            },
+            {
+              "sourceId": "01FB0002",
+              "name": "Shining Spear 3"
+            },
+            {
+              "sourceId": "02190002",
+              "name": "Shining Bow 3"
+            },
+            {
+              "sourceId": "02370002",
+              "name": "Shining Flail 3"
+            },
+            {
+              "sourceId": "02550002",
+              "name": "Shining Rod 3"
+            },
+            {
+              "sourceId": "02730002",
+              "name": "Shining Knife 3"
+            },
+            {
+              "sourceId": "02910002",
+              "name": "Shining Claw 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "orihalcon-orihalcon-dark-matter",
+      "calculatorCode": "112",
+      "materials": [
+        "orihalcon",
+        "orihalcon",
+        "dark-matter"
+      ],
+      "orderMatters": true,
+      "grades": [
+        {
+          "grade": 1,
+          "items": [
+            {
+              "sourceId": "00700003",
+              "name": "Celestial Armor"
+            },
+            {
+              "sourceId": "00520003",
+              "name": "Celestial Robe"
+            },
+            {
+              "sourceId": "00950005",
+              "name": "Celestial Shield"
+            }
+          ]
+        },
+        {
+          "grade": 2,
+          "items": [
+            {
+              "sourceId": "00710003",
+              "name": "Lunar Armor"
+            },
+            {
+              "sourceId": "00530003",
+              "name": "Lunar Robe"
+            },
+            {
+              "sourceId": "00960005",
+              "name": "Lunar Shield"
+            }
+          ]
+        },
+        {
+          "grade": 3,
+          "items": [
+            {
+              "sourceId": "00720003",
+              "name": "Solar Armor"
+            },
+            {
+              "sourceId": "00540003",
+              "name": "Solar Robe"
+            },
+            {
+              "sourceId": "00970005",
+              "name": "Solar Shield"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dark-matter-orihalcon-orihalcon",
+      "calculatorCode": "211",
+      "materials": [
+        "dark-matter",
+        "orihalcon",
+        "orihalcon"
+      ],
+      "orderMatters": true,
+      "grades": [
+        {
+          "grade": 1,
+          "items": [
+            {
+              "sourceId": "006F0004",
+              "name": "Celestial Helm"
+            },
+            {
+              "sourceId": "00510004",
+              "name": "Celestial Hood"
+            },
+            {
+              "sourceId": "00770005",
+              "name": "Celestial Gloves"
+            }
+          ]
+        },
+        {
+          "grade": 2,
+          "items": [
+            {
+              "sourceId": "00700004",
+              "name": "Lunar Helm"
+            },
+            {
+              "sourceId": "00520004",
+              "name": "Lunar Hood"
+            },
+            {
+              "sourceId": "00780005",
+              "name": "Lunar Gloves"
+            }
+          ]
+        },
+        {
+          "grade": 3,
+          "items": [
+            {
+              "sourceId": "00710004",
+              "name": "Solar Helm"
+            },
+            {
+              "sourceId": "00530004",
+              "name": "Solar Hood"
+            },
+            {
+              "sourceId": "00790005",
+              "name": "Solar Gloves"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dark-matter-orihalcon-dark-matter",
+      "calculatorCode": "212",
+      "materials": [
+        "dark-matter",
+        "orihalcon",
+        "dark-matter"
+      ],
+      "orderMatters": true,
+      "grades": [
+        {
+          "grade": 1,
+          "items": [
+            {
+              "sourceId": "01C00002",
+              "name": "Darkness Sword 1"
+            },
+            {
+              "sourceId": "01DE0002",
+              "name": "Darkness Axe 1"
+            },
+            {
+              "sourceId": "01FC0002",
+              "name": "Darkness Spear 1"
+            },
+            {
+              "sourceId": "021A0002",
+              "name": "Darkness Bow 1"
+            },
+            {
+              "sourceId": "02380002",
+              "name": "Darkness Flail 1"
+            },
+            {
+              "sourceId": "02560002",
+              "name": "Darkness Rod 1"
+            },
+            {
+              "sourceId": "02740002",
+              "name": "Darkness Knife 1"
+            },
+            {
+              "sourceId": "02920002",
+              "name": "Darkness Claw 1"
+            }
+          ]
+        },
+        {
+          "grade": 2,
+          "items": [
+            {
+              "sourceId": "01C10002",
+              "name": "Darkness Sword 2"
+            },
+            {
+              "sourceId": "01DF0002",
+              "name": "Darkness Axe 2"
+            },
+            {
+              "sourceId": "01FD0002",
+              "name": "Darkness Spear 2"
+            },
+            {
+              "sourceId": "021B0002",
+              "name": "Darkness Bow 2"
+            },
+            {
+              "sourceId": "02390002",
+              "name": "Darkness Flail 2"
+            },
+            {
+              "sourceId": "02570002",
+              "name": "Darkness Rod 2"
+            },
+            {
+              "sourceId": "02750002",
+              "name": "Darkness Knife 2"
+            },
+            {
+              "sourceId": "02930002",
+              "name": "Darkness Claw 2"
+            }
+          ]
+        },
+        {
+          "grade": 3,
+          "items": [
+            {
+              "sourceId": "01C20002",
+              "name": "Darkness Sword 3"
+            },
+            {
+              "sourceId": "01E00002",
+              "name": "Darkness Axe 3"
+            },
+            {
+              "sourceId": "01FE0002",
+              "name": "Darkness Spear 3"
+            },
+            {
+              "sourceId": "021C0002",
+              "name": "Darkness Bow 3"
+            },
+            {
+              "sourceId": "023A0002",
+              "name": "Darkness Flail 3"
+            },
+            {
+              "sourceId": "02580002",
+              "name": "Darkness Rod 3"
+            },
+            {
+              "sourceId": "02760002",
+              "name": "Darkness Knife 3"
+            },
+            {
+              "sourceId": "02940002",
+              "name": "Darkness Claw 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dark-matter-dark-matter-orihalcon",
+      "calculatorCode": "221",
+      "materials": [
+        "dark-matter",
+        "dark-matter",
+        "orihalcon"
+      ],
+      "orderMatters": true,
+      "grades": [
+        {
+          "grade": 1,
+          "items": [
+            {
+              "sourceId": "00730003",
+              "name": "Shadow Armor"
+            },
+            {
+              "sourceId": "00550003",
+              "name": "Shadow Robe"
+            },
+            {
+              "sourceId": "00980005",
+              "name": "Shadow Shield"
+            }
+          ]
+        },
+        {
+          "grade": 2,
+          "items": [
+            {
+              "sourceId": "00740003",
+              "name": "WeiB Armor"
+            },
+            {
+              "sourceId": "00560003",
+              "name": "WeiB Robe"
+            },
+            {
+              "sourceId": "00990005",
+              "name": "WeiB Shield"
+            }
+          ]
+        },
+        {
+          "grade": 3,
+          "items": [
+            {
+              "sourceId": "00750003",
+              "name": "Hatred Armor"
+            },
+            {
+              "sourceId": "00570003",
+              "name": "Hatred Robe"
+            },
+            {
+              "sourceId": "009A0005",
+              "name": "Hatred Shield"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "orihalcon-dark-matter-dark-matter",
+      "calculatorCode": "122",
+      "materials": [
+        "orihalcon",
+        "dark-matter",
+        "dark-matter"
+      ],
+      "orderMatters": true,
+      "grades": [
+        {
+          "grade": 1,
+          "items": [
+            {
+              "sourceId": "00720004",
+              "name": "Shadow Helm"
+            },
+            {
+              "sourceId": "00540004",
+              "name": "Shadow Hood"
+            },
+            {
+              "sourceId": "007A0005",
+              "name": "Shadow Gloves"
+            }
+          ]
+        },
+        {
+          "grade": 2,
+          "items": [
+            {
+              "sourceId": "00730004",
+              "name": "WeiB Helm"
+            },
+            {
+              "sourceId": "00550004",
+              "name": "WeiB Hood"
+            },
+            {
+              "sourceId": "007B0005",
+              "name": "WeiB Gloves"
+            }
+          ]
+        },
+        {
+          "grade": 3,
+          "items": [
+            {
+              "sourceId": "00740004",
+              "name": "Hatred Helm"
+            },
+            {
+              "sourceId": "00560004",
+              "name": "Hatred Hood"
+            },
+            {
+              "sourceId": "007C0005",
+              "name": "Hatred Gloves"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dark-matter-mithril-dark-matter",
+      "calculatorCode": "202",
+      "materials": [
+        "dark-matter",
+        "mithril",
+        "dark-matter"
+      ],
+      "orderMatters": true,
+      "grades": [
+        {
+          "grade": 1,
+          "items": [
+            {
+              "sourceId": "01C30002",
+              "name": "Venom Sword 1"
+            },
+            {
+              "sourceId": "01E10002",
+              "name": "Venom Axe 1"
+            },
+            {
+              "sourceId": "01FF0002",
+              "name": "Venom Spear 1"
+            },
+            {
+              "sourceId": "021D0002",
+              "name": "Venom Bow 1"
+            },
+            {
+              "sourceId": "023B0002",
+              "name": "Venom Flail 1"
+            },
+            {
+              "sourceId": "02590002",
+              "name": "Venom Rod 1"
+            },
+            {
+              "sourceId": "02770002",
+              "name": "Venom Knife 1"
+            },
+            {
+              "sourceId": "02950002",
+              "name": "Venom Claw 1"
+            }
+          ]
+        },
+        {
+          "grade": 2,
+          "items": [
+            {
+              "sourceId": "01C40002",
+              "name": "Venom Sword 2"
+            },
+            {
+              "sourceId": "01E20002",
+              "name": "Venom Axe 2"
+            },
+            {
+              "sourceId": "02000002",
+              "name": "Venom Spear 2"
+            },
+            {
+              "sourceId": "021E0002",
+              "name": "Venom Bow 2"
+            },
+            {
+              "sourceId": "023C0002",
+              "name": "Venom Flail 2"
+            },
+            {
+              "sourceId": "025A0002",
+              "name": "Venom Rod 2"
+            },
+            {
+              "sourceId": "02780002",
+              "name": "Venom Knife 2"
+            },
+            {
+              "sourceId": "02960002",
+              "name": "Venom Claw 2"
+            }
+          ]
+        },
+        {
+          "grade": 3,
+          "items": [
+            {
+              "sourceId": "01C50002",
+              "name": "Venom Sword 3"
+            },
+            {
+              "sourceId": "01E30002",
+              "name": "Venom Axe 3"
+            },
+            {
+              "sourceId": "02010002",
+              "name": "Venom Spear 3"
+            },
+            {
+              "sourceId": "021F0002",
+              "name": "Venom Bow 3"
+            },
+            {
+              "sourceId": "023D0002",
+              "name": "Venom Flail 3"
+            },
+            {
+              "sourceId": "025B0002",
+              "name": "Venom Rod 3"
+            },
+            {
+              "sourceId": "02790002",
+              "name": "Venom Knife 3"
+            },
+            {
+              "sourceId": "02970002",
+              "name": "Venom Claw 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dark-matter-dark-matter-mithril",
+      "calculatorCode": "220",
+      "materials": [
+        "dark-matter",
+        "dark-matter",
+        "mithril"
+      ],
+      "orderMatters": true,
+      "grades": [
+        {
+          "grade": 1,
+          "items": [
+            {
+              "sourceId": "00760003",
+              "name": "Poison Armor"
+            },
+            {
+              "sourceId": "00580003",
+              "name": "Poison Robe"
+            },
+            {
+              "sourceId": "009B0005",
+              "name": "Poison Shield"
+            }
+          ]
+        },
+        {
+          "grade": 2,
+          "items": [
+            {
+              "sourceId": "00770003",
+              "name": "Nox Armor"
+            },
+            {
+              "sourceId": "00590003",
+              "name": "Nox Robe"
+            },
+            {
+              "sourceId": "009C0005",
+              "name": "Nox Shield"
+            }
+          ]
+        },
+        {
+          "grade": 3,
+          "items": [
+            {
+              "sourceId": "00780003",
+              "name": "Deadly Armor"
+            },
+            {
+              "sourceId": "005A0003",
+              "name": "Deadly Robe"
+            },
+            {
+              "sourceId": "009D0005",
+              "name": "Deadly Shield"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mithril-dark-matter-dark-matter",
+      "calculatorCode": "022",
+      "materials": [
+        "mithril",
+        "dark-matter",
+        "dark-matter"
+      ],
+      "orderMatters": true,
+      "grades": [
+        {
+          "grade": 1,
+          "items": [
+            {
+              "sourceId": "00750004",
+              "name": "Poison Helm"
+            },
+            {
+              "sourceId": "00570004",
+              "name": "Poison Hood"
+            },
+            {
+              "sourceId": "007D0005",
+              "name": "Poison Gloves"
+            }
+          ]
+        },
+        {
+          "grade": 2,
+          "items": [
+            {
+              "sourceId": "00760004",
+              "name": "Nox Helm"
+            },
+            {
+              "sourceId": "00580004",
+              "name": "Nox Hood"
+            },
+            {
+              "sourceId": "007E0005",
+              "name": "Nox Gloves"
+            }
+          ]
+        },
+        {
+          "grade": 3,
+          "items": [
+            {
+              "sourceId": "00770004",
+              "name": "Deadly Helm"
+            },
+            {
+              "sourceId": "00590004",
+              "name": "Deadly Hood"
+            },
+            {
+              "sourceId": "007F0005",
+              "name": "Deadly Gloves"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bone-bone-bone",
+      "calculatorCode": "333",
+      "materials": [
+        "bone",
+        "bone",
+        "bone"
+      ],
+      "orderMatters": false,
+      "grades": [
+        {
+          "grade": 0,
+          "items": [
+            {
+              "sourceId": "00790003",
+              "name": "Bone Armor"
+            },
+            {
+              "sourceId": "00780004",
+              "name": "Bone Helm"
+            },
+            {
+              "sourceId": "009E0005",
+              "name": "Bone Gloves"
+            },
+            {
+              "sourceId": "00A60005",
+              "name": "Bone Shield"
+            }
+          ]
+        },
+        {
+          "grade": 1,
+          "items": [
+            {
+              "sourceId": "007A0003",
+              "name": "Skeletal Armor"
+            },
+            {
+              "sourceId": "00790004",
+              "name": "Skeletal Helm"
+            },
+            {
+              "sourceId": "009F0005",
+              "name": "Skeletal Gloves"
+            },
+            {
+              "sourceId": "00A70005",
+              "name": "Skeletal Shield"
+            }
+          ]
+        },
+        {
+          "grade": 2,
+          "items": [
+            {
+              "sourceId": "007B0003",
+              "name": "Ivory Armor"
+            },
+            {
+              "sourceId": "007A0004",
+              "name": "Ivory Helm"
+            },
+            {
+              "sourceId": "00A00005",
+              "name": "Ivory Gloves"
+            },
+            {
+              "sourceId": "00A80005",
+              "name": "Ivory Shield"
+            }
+          ]
+        },
+        {
+          "grade": 3,
+          "items": [
+            {
+              "sourceId": "007C0003",
+              "name": "Fiend Armor"
+            },
+            {
+              "sourceId": "007B0004",
+              "name": "Fiend Helm"
+            },
+            {
+              "sourceId": "00A10005",
+              "name": "Fiend Gloves"
+            },
+            {
+              "sourceId": "00A90005",
+              "name": "Fiend Shield"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scale-scale-scale",
+      "calculatorCode": "444",
+      "materials": [
+        "scale",
+        "scale",
+        "scale"
+      ],
+      "orderMatters": false,
+      "grades": [
+        {
+          "grade": 0,
+          "items": [
+            {
+              "sourceId": "007D0003",
+              "name": "Scale Armor"
+            },
+            {
+              "sourceId": "007C0004",
+              "name": "Scale Helm"
+            },
+            {
+              "sourceId": "00A20005",
+              "name": "Scale Gloves"
+            },
+            {
+              "sourceId": "00AA0005",
+              "name": "Scale Shield"
+            }
+          ]
+        },
+        {
+          "grade": 1,
+          "items": [
+            {
+              "sourceId": "007E0003",
+              "name": "Lizard Armor"
+            },
+            {
+              "sourceId": "007D0004",
+              "name": "Lizard Helm"
+            },
+            {
+              "sourceId": "00A30005",
+              "name": "Lizard Gloves"
+            },
+            {
+              "sourceId": "00AB0005",
+              "name": "Lizard Shield"
+            }
+          ]
+        },
+        {
+          "grade": 2,
+          "items": [
+            {
+              "sourceId": "007F0003",
+              "name": "Crocodile Armor"
+            },
+            {
+              "sourceId": "007E0004",
+              "name": "Crocodile Helm"
+            },
+            {
+              "sourceId": "00A40005",
+              "name": "Crocodile Gloves"
+            },
+            {
+              "sourceId": "00AC0005",
+              "name": "Crocodile Shield"
+            }
+          ]
+        },
+        {
+          "grade": 3,
+          "items": [
+            {
+              "sourceId": "00800003",
+              "name": "Dragon Armor"
+            },
+            {
+              "sourceId": "007F0004",
+              "name": "Dragon Helm"
+            },
+            {
+              "sourceId": "00A50005",
+              "name": "Dragon Gloves"
+            },
+            {
+              "sourceId": "00AD0005",
+              "name": "Dragon Shield"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bone-non-trinity",
+      "calculatorCode": "3FF",
+      "materials": [
+        "bone"
+      ],
+      "orderMatters": false,
+      "grades": [
+        {
+          "grade": 0,
+          "items": [
+            {
+              "sourceId": "00790003",
+              "name": "Bone Armor"
+            },
+            {
+              "sourceId": "00780004",
+              "name": "Bone Helm"
+            },
+            {
+              "sourceId": "009E0005",
+              "name": "Bone Gloves"
+            },
+            {
+              "sourceId": "00A60005",
+              "name": "Bone Shield"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scale-non-trinity",
+      "calculatorCode": "4FF",
+      "materials": [
+        "scale"
+      ],
+      "orderMatters": false,
+      "grades": [
+        {
+          "grade": 0,
+          "items": [
+            {
+              "sourceId": "007D0003",
+              "name": "Scale Armor"
+            },
+            {
+              "sourceId": "007C0004",
+              "name": "Scale Helm"
+            },
+            {
+              "sourceId": "00A20005",
+              "name": "Scale Gloves"
+            },
+            {
+              "sourceId": "00AA0005",
+              "name": "Scale Shield"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

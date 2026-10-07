@@ -103,3 +103,6 @@ Thumbs.db
 *.swp
 *.swo
 *~
+
+# Personal helper scripts
+/push.sh
