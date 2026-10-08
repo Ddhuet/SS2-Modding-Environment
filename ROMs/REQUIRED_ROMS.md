@@ -9,6 +9,8 @@ ROMs are not included in a clone. Check the exact bytes before using them.
 | `Shining_Soul_II_EU.gba` | 16,777,216 | `e5c64a1740263e9b26120e487f3688fbbf7b3954a2c043c0d84c333df467e0b2` |
 | `Shining_Soul_II_JP.GBA` | 16,777,216 | `8a7ebaa88682995fd7bf1bf8dc8e77a3f4fc4a9893a7639af953c553821d9ab9` |
 
+Ideally, use the 32MB expanded version of the EU ROM any time extra space is needed. The tools should already support that SHA too.
+
 SHA-1, for comparison with tools that use it:
 
 - EU: `aa1288be9257337abdfe3034898cf6c7aa778fbc`
