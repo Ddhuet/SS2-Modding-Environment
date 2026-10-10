@@ -17,7 +17,9 @@ offset, with a non-decreasing delta. A CN offset not seen in the pairs takes the
 the nearest seen offset below it, and only if the nearest seen offset above has the same
 delta; otherwise the port refuses. Every other byte difference must be a BL, a branch
 displacement, literal-pool data, or listed in the spec's `keep` (CN address -> reason).
-Insert/delete blocks must be listed too. Anything else refuses. Static only.
+Insert/delete blocks must be listed too. A listed jump table (`tables`: CN address -> word
+count) is accepted when every CN word points inside the CN function and the US word at the
+same index inside the US function. Anything else refuses. Static only.
 """
 import difflib
 import re
@@ -49,6 +51,28 @@ SPECS = {
             0x08083C02: "US-only lsrs r0,#1: centring redirect",
             0x08083C92: "alignment padding",
         },
+    },
+    0x08081D0C: {
+        "us": 0x080812D8, "len": 0xFC, "us_len": 0x100,
+        "what": "item detail view, formatted line with numbers: line buffer sp+0 grows 0x28 -> 0x3C",
+        "keep": {
+            0x08081D62: "number->glyph base adds #0xEF (CN digit glyphs) vs US #0x41; kept CN",
+            0x08081D72: "leading-zero test against the CN digit base 0xEF; kept CN",
+        },
+        "blocks": {
+            0x08081DD8: "US-only lsrs r0,#1 after the glyph count: centring redirect (CN 0x08081DD4)",
+            0x08081DE0: "literal 0xFFFD / alignment padding moved by the extra US instruction",
+        },
+    },
+    0x08082BF4: {
+        "us": 0x08082214, "len": 0x250, "us_len": 0x254,
+        "what": "item name/description window: name buffer sp+0x14 (copy loop allows 31 glyphs) grows 0x28 -> 0x50",
+        "keep": {},
+        "blocks": {
+            0x08082C10: "US-only lsrs r0,#1 after the glyph count: centring redirect (CN 0x08082C0C)",
+            0x08082C66: "US-only lsrs r0,#1: centring redirect (CN 0x08082C62)",
+        },
+        "tables": {0x08082CD4: 7},  # switch on r5 (0..6), `mov pc,r0` at 0x08082CC8
     },
     0x08083C9C: {
         "us": 0x080832C4, "len": 0x724, "us_len": 0x728,
@@ -143,8 +167,22 @@ def port_one(cn, us, cn_func, spec):
             after[a] = struct.pack("<H", new)
             notes[a] = f"sp offset {off:#x} -> {mapped(off):#x}: {m} {ops}"
     # 3. every other difference must be reviewed
+    table_bytes = set()
+    pair_of = {a[0]: u[0] for a, u in pairs}
+    for t, n in spec.get("tables", {}).items():
+        # The US table is where the CN table's first aligned successor says it is.
+        nxt = min(x for x in pair_of if x >= t + 4 * n)
+        ut = t + pair_of[nxt] - nxt
+        cw = struct.unpack_from(f"<{n}I", cn, t - BASE)
+        uw = struct.unpack_from(f"<{n}I", us, ut - BASE)
+        for i, (c, u) in enumerate(zip(cw, uw)):
+            if pair_of.get(c) != u:
+                raise ValueError(f"{cn_func:#x}: table {t:#x}[{i}] = {c:#x} does not align with US {ut:#x}[{i}] = {u:#x}")
+        table_bytes.update(range(t, t + 4 * n))
     unexplained = []
     for (a, b, m, ops), (ua, ub, um, uops) in pairs:
+        if a in table_bytes:
+            continue
         if b == ub or a in after or a in pa or ua in pu or m in ("bl", ".byte") or um == ".byte":
             continue
         if m == um and re.fullmatch(r"b(eq|ne|hs|lo|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al)?", m):

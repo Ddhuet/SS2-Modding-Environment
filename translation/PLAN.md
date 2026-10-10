@@ -69,6 +69,13 @@ pass (`runtime_verified`), and labels are now centred. Eight more renderer calle
 US frames and are suspects for the same class (PHASE1_BUILD.md §5). The user confirmed the
 identifier fix in play (`user_accepted` for that window only). Session notes: PHASE1_BUILD.md §6.
 
+**Status (2026-10-10, build 1c):** the item detail view (Select on an item) crashed on the
+Valuing Scroll and garbled other items. A formatted line overflowed into the renderer's x/row
+arguments (CN `0x08081D0C`, ported from US). Separately, the two description lines live in a
+CN-only stack layout with a 0x28 stride, grown to US's 0x40 by the new `tools/frame_grow.py`.
+`0x08082BF4` is also ported. Valuing Scroll and Force Ring views are correct from the user's
+state (`runtime_verified`, PHASE1_BUILD.md §5b). Equipment detail views are not yet covered.
+
 1. **Survey, read-only:**
    - Where JP initializes the language word.
    - How the item/record name renderer chooses `+0x00` vs `+0x3E` (language-gated in JP already, or a US code change?).

@@ -20,7 +20,8 @@ What the patch does (see translation/docs/PHASE1_SURVEY.md and PHASE1_BUILD.md):
      section header word 0x085286B8 repointed
   5. renderer glyph loop hook at 0x08019FCE -> half-width cell for codes >= 0x701
   6. dialogue window line buffers 0x24 -> 0x3C bytes, in place (dialogue_frame.py)
-  7. other text line buffers enlarged as in US, in place (frame_port.py)
+  7. other text line buffers enlarged as in US, in place (frame_port.py); CN-only stack
+     layouts grown by reviewed spec (frame_grow.py: item detail description lines)
   8. centring: 57 calls of the glyph counter -> width-aware helper in the dead old glyph
      loop (centering.py, translation/asm/center_width.s)
 
@@ -41,6 +42,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from name_tables import TABLES, SLOT, records  # noqa: E402
 import dialogue_frame  # noqa: E402
 import frame_port  # noqa: E402
+import frame_grow  # noqa: E402
 import centering  # noqa: E402
 from capstone import Cs, CS_ARCH_ARM, CS_MODE_THUMB  # noqa: E402
 
@@ -195,6 +197,10 @@ def main():
     for a, before, after, note in fwrites:
         write(writes, cn, a, after, "frame port: " + note)
     stats["frame_port"] = freport
+    gwrites, greport = frame_grow.grow(cn)
+    for a, before, after, note in gwrites:
+        write(writes, cn, a, after, "frame grow: " + note)
+    stats["frame_grow"] = greport
 
     # 8. centring helper in the dead old glyph loop, and the redirected call sites
     helper = assemble(ASM_CENTER, centering.CENTER_HELPER)

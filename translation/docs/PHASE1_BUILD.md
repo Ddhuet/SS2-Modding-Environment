@@ -13,10 +13,12 @@ No user acceptance yet.
 |---|---|---|---|
 | 1 | `translation/build/ss2-en-phase1.gba` | `123204b53ac417218959fb2d367c066d7827db91a1561b8bf20d9d94e69f7678` | `6c799e56…` |
 | 1b | `translation/build/ss2-en-phase1b.gba` | `f391f348f970fff7204ec0cdd25b0ce8194b1223a9c517d4060021b429d4c7c2` | `dd753a43…` |
+| 1c | `translation/build/ss2-en-phase1c.gba` | `0db73d94de4a1f0f5b58af2dd9e9a87a02c41c4798e109d223c10f8b0cc7bd3c` | `fb10e256…` |
 
 Build 1b adds §5 (identifier hard lock fix: frame port and centring). The user
 reported build 1 playable in dialogue and item names, and the identifier window
-garbling then hard-locking (2026-10-10).
+garbling then hard-locking (2026-10-10). Build 1c adds §5b (item detail view, Select on an
+item: crash on the Valuing Scroll, overlapping text on other items).
 
 ## Reproduce
 
@@ -25,12 +27,17 @@ garbling then hard-locking (2026-10-10).
 eu/.venv/bin/python translation/tools/make_english_patch.py
 cd eu
 .venv/bin/python -m ss2tools build inputs/ss2-cn-baseline.gba \
-    ../translation/build/ss2-en-phase1.patch.json ../translation/build/ss2-en-phase1b.gba \
+    ../translation/build/ss2-en-phase1.patch.json ../translation/build/ss2-en-phase1c.gba \
     --profile profiles/ss2-cn-baseline.json --allow-static-candidate \
-    --bps ../translation/build/ss2-en-phase1b.bps
+    --bps ../translation/build/ss2-en-phase1c.bps
 .venv/bin/python ../translation/tools/smoke_phase1.py inputs/ss2-cn-baseline.gba base
-.venv/bin/python ../translation/tools/smoke_phase1.py ../translation/build/ss2-en-phase1b.gba en1b
-.venv/bin/python ../translation/tools/smoke_identifier.py ../translation/build/ss2-en-phase1b.gba en1b
+.venv/bin/python ../translation/tools/smoke_phase1.py ../translation/build/ss2-en-phase1c.gba en1c
+.venv/bin/python ../translation/tools/smoke_identifier.py ../translation/build/ss2-en-phase1c.gba en1c
+# item detail view (§5b): Valuing Scroll, then Force Ring
+.venv/bin/python ../translation/tools/smoke_state.py ../translation/build/ss2-en-phase1c.gba \
+    ../translation/build/Valuing_Scroll_Crash.ss0 detail "10 2:SELECT 60 120 2:B 60"
+.venv/bin/python ../translation/tools/smoke_state.py ../translation/build/ss2-en-phase1c.gba \
+    ../translation/build/Valuing_Scroll_Crash.ss0 ring "10 2:UP 15 2:RIGHT 15 2:SELECT 90 2:B 40"
 ```
 
 `translation/build/` is git-ignored: the patch JSON (2.3 MB) and the BPS contain US text and
@@ -52,6 +59,10 @@ patch. Each build's manifest (`<output>.manifest.json`) records its patch SHA-25
 | `translation/tools/centering.py` | Reviewed table of glyph-count call sites: 57 redirected, 13 kept (§5) |
 | `translation/tools/frame_scan.py` | Lists callers of a function whose CN and US stack frames differ (§5) |
 | `translation/tools/smoke_identifier.py` | Identifier scenario from the user's desktop state (§5) |
+| `translation/tools/frame_grow.py` | Reviewed growth of a CN-only stack layout (no US frame to copy); used for the item detail view (§5b) |
+| `translation/tools/smoke_state.py` | Replays `frames[:KEYS]` tokens from any user desktop state on any build, with screenshots (§5b) |
+| `translation/tools/trace_renderer.py` | Lists every renderer call (caller, string, x, row, glyph count) after replaying input from a state (§5b) |
+| `translation/tools/disasm_addr.py` | Thumb disassembly by CPU address range, one or more ROMs |
 
 ## 1. Patch contents (build 1: 1889 + 204 writes; build 1b adds 39 + 1 + 57, §5)
 
@@ -224,13 +235,77 @@ Their diffs also show text-layout changes (line limit `cmp #0xf` → `#0x1f`, ro
 | `0x08005708`, `0x08005BC0` | `0x0800579C`, `0x08005C58` | 0xD0 → 0xF0 |
 | `0x0802A7D0` | `0x0802A500` | 0x8C → 0x10C |
 | `0x080606CC` | `0x0805FFC0` | 0x7C → 0xA4 (also the digit sites `adds #0xEF`/`#0x41`) |
-| `0x08081D0C` | `0x080812D8` | 0x3C → 0x50 |
-| `0x08082BF4` | `0x08082214` | 0x3C → 0x64 |
+| `0x08081D0C` | `0x080812D8` | 0x3C → 0x50 (ported in build 1c, §5b) |
+| `0x08082BF4` | `0x08082214` | 0x3C → 0x64 (ported in build 1c, §5b) |
 | `0x08087C68` | `0x08087258` (pairing unsure) | 0x114 → ? |
 | `0x0800B808` | `0x0800B8A4` | 0x168 → 0x160 (smaller; probably compiler noise) |
 
 User check: on 2026-10-10 the user played build 1b and reported the identifier "works". That makes the
 identifier window fix `user_accepted`, for that window only.
+
+## 5b. Item detail view (Select on an item; build 1c)
+
+User report (build 1b): Select on the Valuing Scroll crashes. Other items' detail views show
+overlapping or cut-off lines (a WindLong Sword+1: "e to flying" cut at the left, "+1 50% Dam" past
+the right edge). State: `translation/build/Valuing_Scroll_Crash.ss0` (user-made, desktop mGBA,
+romCrc32 `0xA2FE09B2` = build 1b, cursor on the Valuing Scroll in the item menu; untracked).
+
+Headless replay of that state on build 1b did **not** hard-lock: B still left the view. But
+`trace_renderer.py` showed why it can crash. The detail view is drawn every frame by CN
+`0x08081EC8` (US `0x08081498`). Its helpers:
+
+1. **CN `0x08081D0C` (US `0x080812D8`): one formatted line with number fields.** The line is
+   built at `sp+0` in a 0x28-byte buffer, with x and row saved at `sp+0x2C`/`sp+0x30`. The
+   Valuing Scroll's line 1 ("Used to appraise ? items", 24 glyphs + `0xFFFF`) overwrote them. The
+   renderer was called with `x = 0x721` and `row = 0xFFFDFFFF` (glyph codes), so it wrote outside
+   the tilemap into arbitrary RAM. That is the crash; where it lands depends on state, so it does
+   not always lock. US grew the buffer to 0x3C. **Fix:** a frame_port spec (13 writes). Its sp map
+   matches US for every offset, including the stack argument `sp+0x5C → 0x70`. Kept CN: the
+   number→glyph base `adds #0xEF` / `cmp #0xEF` (CN digit glyphs; US `#0x41`).
+2. **Description lines in CN `0x08081EC8` itself (CN-only layout).** CN keeps the two description
+   lines on the stack at `sp+0x20C` and `sp+0x234` (stride 0x28, 19 glyphs), split at `0xFFFF`
+   with no length bound. Line 2 ends at `sp+0x25C`, the saved item pointer. US has no such stack
+   buffers. It uses a static IWRAM buffer `0x03000200` (2 × 0x40), which CN removed, so every US
+   IWRAM address after it is +0x80 (survey §8). Force Ring: line 1 (24 glyphs) ran into line 2,
+   lost its terminator, and was drawn as 48 glyphs at `x = -9`. Line 2 (28 glyphs) wrote over
+   `sp+0x25C..`.
+   **Fix (`frame_grow.py`, 94 writes):** the frame goes from 0x278 to 0x2A8. Lines move to
+   `sp+0x20C`/`sp+0x24C` with stride 0x40, as US. Locals `0x25C..0x274` move by +0x30. Hand edits:
+   - the three split loops' `adds r2,#0x28` → `#0x40`;
+   - the terminator index `r8*0x28` → `lsls r0,r2,#6` (US uses the same);
+   - the first loop's `adds r6,#0x28` → `#0x40`;
+   - the epilogue `movs r3,#0x9e` → `#0xAA`;
+   - the line-init block at `0x08081F6C`. Its `strh r1,[r0,#0x28]` cannot encode `#0x40`, so it
+     is rewritten as `add r0,sp,#0x20c; add r3,sp,#0x2a0; ldrh r3,[r3]; strh r3,[r0];
+     adds r0,#0x40; strh r3,[r0]; nop`. r0, r1 and r3 are dead afterwards.
+
+   The tool refuses any sp offset outside the reviewed map. It also refuses any `add rd,sp,#a`
+   followed by `[rd,#k]` that crosses a region boundary, unless that access is a listed edit.
+   The CN and US offset histograms match one for one (CN `0x25C..0x274` ↔ US `0x20C..0x224`).
+3. **CN `0x08082BF4` (US `0x08082214`): name/description window.** The name buffer is at
+   `sp+0x14`. Its copy loop allows 31 glyphs, but CN has 0x28 bytes before the saved registers.
+   US grew the frame from 0x3C to 0x64. **Fix:** a frame_port spec (2 writes: `sub/add sp`). It
+   needed a reviewed jump table (`tables`). frame_port now accepts a table only when every CN word
+   aligns to the US word at the same index. This function was not reached in the scenarios below.
+
+Not changed: CN `0x080606CC` (US `0x0805FFC0`, 0x7C → 0xA4) draws the item name bar (row 18).
+Its name buffer at `sp+0` has 0x54 bytes (41 glyphs) before the first local, which is enough
+for English names. The function also differs in digit/symbol glyph constants (`0xA3`/`0x4C`,
+`0xEF`/`0x41`, `0xB7`/`7`) and a jump table, so it needs its own review. It is a `candidate` for
+the number-glyph work.
+
+Runtime (`runtime_verified`, build 1c, the user's state):
+- Valuing Scroll: "Used to appraise ? items" / "Many items are listed in it". The renderer gets
+  `x = 3, row = 7`. B returns to the item menu.
+- Force Ring (Up, Right, Select): "Generates Shining Force~" / "Cooperate for greater power!"
+  (24 and 28 glyphs, `x = 3` and `x = 1`). B returns.
+- Angel Wing, Prison Key, Red Shoe views open and close normally.
+- `smoke_phase1.py` and `smoke_identifier.py` on build 1c: same results as 1b.
+- Screenshot: `translation/build/detail-view-fix.png`.
+
+Not covered: equipment detail views with stat lines (the user's sword screenshot). No weapon or
+armour sits in the bag in this state. The sword's cut-off lines suggest those lines are placed
+with CN positions. They need a state with a weapon in the bag.
 
 ## 6. Working notes for the next session
 
@@ -238,8 +313,19 @@ identifier window fix `user_accepted`, for that window only.
   ROM CRC32 is at offset 8 of the decompressed state. Load one in the Session by copying it into
   the run directory and writing an `ss2-mgba-state-v1` sidecar (see `smoke_identifier.py`).
   This is a diagnostic load: the state's VRAM/RAM came from whichever build the user ran.
-- **Finding which code draws a string.** Call `Session.run_until(0x08019F30)` repeatedly. Then
-  `lr` is the caller, `r0` the string, `r1` x and `r2` the row.
+- **Finding which code draws a string.** `trace_renderer.py ROM STATE "PRE-SEQ" FRAMES` calls
+  `Session.run_until(0x08019F30)` in a loop. `run_until` stops on its 10M-instruction budget as
+  well as on a hit, so check `r["hit"]`/`r["stop"]` rather than the PC (an early version stopped
+  at the first budget stop and reported no calls). A garbage x or row (glyph-code values such as
+  `0x721` or `0xFFFD....`) means a line buffer overflowed into the caller's saved arguments.
+- **Replaying a user state.** `smoke_state.py ROM STATE TAG "10 2:SELECT 60 2:B 40"` takes
+  `frames[:KEYS]` tokens (KEYS joined with `+`). There is one screenshot per token longer than one
+  frame. Use one replay per item when sweeping a menu: moving onto an empty slot makes Select do
+  nothing, and B then closes the menu.
+- **CN-only stack layouts.** When CN's frame is larger than US's and the extra space is CN's own
+  buffer, `frame_port.py` cannot copy US. Use `frame_grow.py` with a reviewed map and edits (§5b).
+  Look for `adds rX,#0x28` strides, `lsls #2; add; lsls #3` (×0x28) indexing, and
+  `[rd,#0x28]` accesses through a pointer to the buffer.
 - **Stack frames.** `frame_scan.py` lists them; `func_pair_diff.py` diffs one pair;
   `frame_port.py` ports one once its `keep`/`blocks` are reviewed. Add a SPECS entry, run the
   tool alone until it stops refusing, then rebuild. The align file is
@@ -262,8 +348,9 @@ identifier window fix `user_accepted`, for that window only.
 
 ## Next
 
-1. Port the frame-changed functions above (with `frame_port.py` plus per-function review),
-   each with a scenario that reaches it. Find what draws BG0 row 11.
+1. Port the remaining frame-changed functions in the §5 table (with `frame_port.py` plus a
+   per-function review), each with a scenario that reaches it. Find what draws BG0 row 11.
+   Equipment detail view (§5b, not covered) needs a state with a weapon in the bag.
 2. More scenarios: new game intro dialogue, shop, equipment and status names, reload after save.
 3. Number glyphs: confirm `0x0805EAC4` at runtime (message with `0xFFF5`/`0xFFFB`), then find the
    HUD/shop digit code. Codes `0x741+` need a register constant, not an imm8.
