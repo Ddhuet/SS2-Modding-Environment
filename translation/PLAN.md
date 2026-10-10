@@ -56,8 +56,13 @@ The real work is in four places:
    - Extract US slot-1 messages and the `+0x3E` name fields.
    - Write them into a copy of JP in expansion space.
    - Repoint the JP slot-1 table, set the language word to 1, and port the renderer and font.
-   - Exact-input hash checks; never modify inputs; new output names only. Reuse `eu/ss2tools` patterns where they fit.
-4. **Test** in isolated mGBA runs (reuse the `eu/` harness approach): title, new game, dialogue, menus, item names, shop, save/load.
+   - Exact-input hash checks; never modify inputs; new output names only.
+   - Add a US ROM profile, e.g. `translation/profiles/ss2-us.json`, in the `eu/profiles/*.json` format.
+   - Prefer emitting a declarative patch that `eu/ss2tools build` applies to the CN baseline profile, so preimages are checked and IPS/BPS come for free. See the tooling section of the root `AGENTS.md`.
+4. **Test** in isolated runs of the native mGBA `Session` (`eu/emulator/`), with copies of the CN
+   save `workspace/input/光明之魂2.sav`, baseline vs translated. Check title, new game, dialogue,
+   menus, item names, shop and save/load. Put scenario scripts under `translation/` (adapt from
+   `eu/scripts/game_fixture.py`; the CN owner pointer is `0x03003580`).
 
 ## Phase 2: CN mod compatibility
 
