@@ -106,3 +106,8 @@ Thumbs.db
 
 # Personal helper scripts
 /push.sh
+
+
+# HugeApplePack: the CN modder's USA port pack. Local reference only, never tracked;
+# knowledge extracted from it lives in translation/docs/.
+/HugeApplePack/
