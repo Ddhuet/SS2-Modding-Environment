@@ -46,6 +46,11 @@ The real work is in four places:
 
 ## Phase 1: English text on the CN baseline (no CN mods yet)
 
+**Status (2026-10-10):** steps 1 and 2 (first pass) done; see
+[docs/PHASE1_SURVEY.md](docs/PHASE1_SURVEY.md). It gives the concrete change list (language
+word init, slot-1 table pointer, 14 name tables, font section relocation, `+0x700` glyph
+re-encode, renderer half-width branch) and the open runtime-glyph risks (names, numbers).
+
 1. **Survey, read-only:**
    - Where JP initializes the language word.
    - How the item/record name renderer chooses `+0x00` vs `+0x3E` (language-gated in JP already, or a US code change?).
@@ -74,7 +79,7 @@ The real work is in four places:
 ## Phase 3 (optional)
 
 Widen EU French/German/Italian/Spanish text to 16-bit and place it in JP slots 2–5. Record
-names would need extra fields, because JP records have only two name slots.
+names fit too: records have six name slots, and slots 2–5 are empty (PHASE1_SURVEY.md §2).
 
 ## Decisions (2026-10-10)
 

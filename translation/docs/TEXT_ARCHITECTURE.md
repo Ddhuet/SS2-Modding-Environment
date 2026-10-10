@@ -82,12 +82,17 @@ Language-table pointers:
 
 ## 4. Typed data tables (names inside records)
 
+> **Corrected 2026-10-10 by [PHASE1_SURVEY.md](PHASE1_SURVEY.md) §2:** records have **six**
+> 0x3E-byte name slots (`+0x00..+0x173`, one per language word value), not two; the 0x0F/0x10
+> strides were swapped in this table (fixed below; EU row not re-checked); and 14 tables, not
+> only the typed ones, carry names.
+
 Strides per resource type:
 
 | Type | 0x0B | 0x0C | 0x0D | 0x0E | 0x0F | 0x10 | 0x11 | 0x12 | 0x13 | 0x15 |
 |---|---|---|---|---|---|---|---|---|---|---|
-| JP | 0x19C | 0x194 | 0x194 | 0x198 | 0x184 | 0x18C | 0x188 | 0x17C | 0x188 | 0x180 |
-| US | 0x19C | 0x194 | 0x194 | 0x198 | 0x184 | 0x18C | 0x188 | 0x17C | 0x188 | 0x180 |
+| JP | 0x19C | 0x194 | 0x194 | 0x198 | 0x18C | 0x184 | 0x188 | 0x17C | 0x188 | 0x180 |
+| US | 0x19C | 0x194 | 0x194 | 0x198 | 0x18C | 0x184 | 0x188 | 0x17C | 0x188 | 0x180 |
 | EU | 0xC4 | 0xB8 | 0xB8 | 0xB8 | 0xB4 | 0xAC | 0xB0 | 0xA4 | 0xB0 | 0xA8 |
 
 Type 0x0B, record 0 (Short Sword), as an example:
@@ -111,7 +116,8 @@ not a ROM-table one.
   - Font banks are `0x08928E9C` and `0x08930E9C` (resource `0x40000+i`).
   - Only about 85 glyphs are defined; the kana slots are blank.
 - **EU:** the same Latin glyph bitmaps sit in its single bank, plus accented letters. Its text renderer contains the US instruction sequence (signature at EU `0x0801A4A4`), so EU inherited the US renderer changes.
-- **JP:** the renderer around `0x08019F90` differs structurally from US `0x08019F62` (US adds a cell-occupancy loop over RAM `0x03005D90` and changes the copy sizes). JP's exact glyph width has **not yet been confirmed**. Treat "US changed the renderer for half-width Latin" as the working hypothesis.
+- **Corrected by [PHASE1_SURVEY.md](PHASE1_SURVEY.md) §4:** the renderer is CN `0x08019F30` / US `0x08019F44`; CN draws 16×16 full-width cells, US 8×16; the occupancy loop is in both.
+- **JP (original note):** the renderer around `0x08019F90` differs structurally from US `0x08019F62` (US adds a cell-occupancy loop over RAM `0x03005D90` and changes the copy sizes). JP's exact glyph width has **not yet been confirmed**. Treat "US changed the renderer for half-width Latin" as the working hypothesis.
 - **Glyph-code collision:** English codes `0x01–0x51` index the same font slots that the JP/CN font uses for its own glyphs, and font banks are global, not per-language. US resolved this by replacing the font, which broke its own Japanese slot. A JP-base English build that must coexist with Chinese should instead put Latin glyphs in free code space (or a language-conditional bank) and re-encode the transplanted English. That is easy because the transplant is scripted.
 
 ## 6. Conclusions for the translation project

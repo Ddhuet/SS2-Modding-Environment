@@ -22,8 +22,12 @@ Research only. No translation build exists yet, and nothing has been tested in a
 - [docs/HUGEAPPLEPACK_FINDINGS.md](docs/HUGEAPPLEPACK_FINDINGS.md): what the CN modder's
   USA port pack teaches. The pack itself is a local-only, untracked `HugeApplePack/` folder. Version-tagged game internals,
   process lessons, and issues found in our own docs.
+- [docs/PHASE1_SURVEY.md](docs/PHASE1_SURVEY.md): phase-1 survey of the CN baseline vs US text
+  path: exact change list, name tables, renderer, font, code/resource inventory.
 - [tools/text_survey.py](tools/text_survey.py): read-only standard-library script that
   reproduces the text-architecture facts from the retail ROMs.
+- Other read-only tools in [tools/](tools/) (disassembly, xrefs, ROM alignment, function and
+  resource diffs, name-table check) are listed in PHASE1_SURVEY.md.
 
 ```sh
 python3 translation/tools/text_survey.py ROMs
