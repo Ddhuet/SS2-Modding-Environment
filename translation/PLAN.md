@@ -6,7 +6,11 @@ specific internal (RAM map, item format, hook lessons).
 
 ## Goal
 
-An English ROM built from the **JP ROM**, the baseline the Chinese mod chain patches. Gameplay
+An English ROM built from the **CN mod baseline**: `eu/inputs/ss2-cn-baseline.gba`
+(`SS2_SC_bug_fixed.GBA`, 32 MiB, SHA-256 `45ac38bb…`), the exact input every CN patch
+definition in `patches/definitions/` targets. It is the Chinese localization on the JP cartridge
+plus small fixes. `ROMs/Shining_Soul_II_JP.GBA` is the 16 MiB Chinese localization, not
+pristine Japanese; the repo has no pristine Japanese ROM, and none is needed. Gameplay
 code and data offsets then stay JP-identical, so CN mods apply with (near) binary
 compatibility. Mod-added Chinese strings are translated separately.
 
@@ -26,16 +30,21 @@ From TEXT_ARCHITECTURE.md (static facts, verified against the ROMs):
 So **phase 1 is mostly data copying, not porting.**
 
 The real work is in four places:
-1. **Font and glyph codes.** US English codes 0x01–0x51 are kana in the JP font.
-   - Phase 1 (English only): replace the font banks the way US did. Simplest.
-   - Phase 2 (coexist with Chinese): add Latin glyphs in free code space and re-encode.
+1. **Font and glyph codes (decided: keep the Chinese glyphs).** Space is not the problem;
+   **code space** is. A glyph code is an index, `bank[(code-1)>>8] + ((code-1)&255)*128`, so
+   US English codes 0x01–0x51 point at the same slots the CN font already uses. Plan:
+   - add Latin glyph bank(s) after the CN banks;
+   - re-encode the transplanted English into those new codes (scripted, so cheap);
+   - confirm the bank-pointer table and renderer accept more banks.
+   Do not replace the font the way US did.
 2. **Renderer.** The US text renderer code differs from JP; US draws 8×16 half-width glyphs.
-   That diff has to be ported into JP. It is the one real code port in phase 1.
-3. **Space.** English is about 2× longer than Japanese (mean 99 vs 53 code units). Place the
+   That diff has to be ported, and made conditional on the glyph code range, so Latin is
+   half-width while hanzi stay full-width. It is the one real code port in phase 1.
+3. **Space.** English is about 2× longer than the Chinese slot-0 text (mean 99 vs 53 code units). Place the
    new tables in expansion space and repoint the slot-1 table.
 4. **Baked-in graphics** (title, menus, banners) and anything US changed in code beyond text.
 
-## Phase 1: plain English JP ROM (no CN mods yet)
+## Phase 1: English text on the CN baseline (no CN mods yet)
 
 1. **Survey, read-only:**
    - Where JP initializes the language word.
@@ -62,7 +71,17 @@ The real work is in four places:
 Widen EU French/German/Italian/Spanish text to 16-bit and place it in JP slots 2–5. Record
 names would need extra fields, because JP records have only two name slots.
 
-## Open questions for the user
+## Decisions (2026-10-10)
 
-- Phase 1 target: English only (replace the font like US), or keep Japanese/Chinese glyphs from day one?
-- Which CN mod build or chain is the compatibility target (e.g. the `13243E94` final reference)?
+- **Keep Chinese glyphs from day one;** see "Font and glyph codes" above.
+- **Compatibility target:** the CN patch definitions in `patches/definitions/`, all built
+  against the `45ac38bb` baseline. Climb a ladder from no-text mods to text-heavy ones:
+  0. **Static conflict check first.** Intersect the translation's write set with each definition's
+     write ranges. Any overlap is a real incompatibility to resolve before testing.
+  1. **No text:** e.g. `status_resistance_overflow_fix`, `level_250`, `respec` (confirm respec
+     writes no strings). These should apply unchanged and act as the control group.
+  2. **Numerals / item-name path:** `stackable_consumables` (appends ` xN` in the item-name
+     renderer, the exact place where the `+0x00`/`+0x3E` name-field choice matters) and
+     `four_digit_ui_display` (HUD digits).
+  3. **Real Chinese strings:** `world_map_warehouse`, `soul_ring`, `shared_character_warehouses`;
+     then the `all_17_released` bundle. These exercise the string-extraction and translation workflow.

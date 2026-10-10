@@ -12,7 +12,7 @@ ROM in this repository.
 
 Every fact carries a version tag:
 - **[US]**: USA AU2E rev0.
-- **[CN]**: the JP-ROM-based CN chain. Its pristine baseline is the JP ROM.
+- **[CN]**: the CN chain on the JP cartridge. Its baseline is the 32 MiB `SS2_SC_bug_fixed.GBA` (`eu/inputs/ss2-cn-baseline.gba`, SHA-256 `45ac38bb…`). That is the 16 MiB Chinese localization (`ROMs/Shining_Soul_II_JP.GBA`) plus small fixes; the repo has no pristine Japanese ROM.
 - **[EU]**: from our own EU research, quoted only for contrast.
 - **[fmt]**: a format or rule that does not depend on addresses.
 

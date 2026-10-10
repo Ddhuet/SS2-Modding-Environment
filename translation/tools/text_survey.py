@@ -7,6 +7,8 @@ retail ROMs. Pure standard library; never writes a ROM.
     python3 translation/tools/text_survey.py [ROMS_DIR]
 
 ROMS_DIR defaults to ROMs/ and must hold the files named in ROMs/REQUIRED_ROMS.md.
+"JP" here is ROMs/Shining_Soul_II_JP.GBA, which is the Chinese localization on the JP
+cartridge, not pristine Japanese. The 32 MiB CN mod baseline has the same layout.
 """
 import hashlib
 import math
@@ -107,7 +109,7 @@ def main():
     print("item 0: US English name at +0x3E (empty in JP); JP/US data at +0x174 identical; "
           "EU has five inline 20-byte names")
 
-    # Message-ID alignment: JP Japanese vs US English (slot 1) vs EU English (slot 0).
+    # Message-ID alignment: CN-on-JP Chinese (slot 0) vs US English (slot 1) vs EU English (slot 0).
     jp = ptrlist(d["JP"], LAYOUT["JP"]["lang_tables"][0])
     en = ptrlist(d["US"], LAYOUT["US"]["lang_tables"][1])
     eu = ptrlist(d["EU"], LAYOUT["EU"]["lang_tables"][0])

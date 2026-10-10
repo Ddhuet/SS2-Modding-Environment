@@ -1,7 +1,9 @@
 # Translation workspace (JP/CN base → English)
 
-Planning and research for an English translation of the **JP ROM**: the same baseline the
-Chinese mod chain builds on. The goal is that CN mods apply with (near) binary compatibility,
+Planning and research for an English translation built on the **CN mod baseline**: the
+32 MiB Chinese-localized JP-cartridge ROM (`eu/inputs/ss2-cn-baseline.gba`) that the Chinese
+mod chain builds on. Note that `ROMs/Shining_Soul_II_JP.GBA` is also Chinese, not pristine
+Japanese. The goal is that CN mods apply with (near) binary compatibility,
 instead of being re-ported to the US or EU ROM one hook at a time.
 
 Work here is kept separate from [eu/](../eu/). EU facts stay in `eu/docs/`; this folder

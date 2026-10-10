@@ -12,8 +12,14 @@ spare slots, but EU's *structure* moves away from what the Chinese mods build on
 All facts below are static and were verified against the retail ROMs listed in
 [ROMs/REQUIRED_ROMS.md](../../ROMs/REQUIRED_ROMS.md). Run
 `python3 translation/tools/text_survey.py ROMs` to reproduce the tables and checks. "JP" means
-the pristine JP ROM, which is byte-identical to `eu/inputs/ss2-cn-source.gba`: the CN mods'
-baseline. Nothing here has been tested in an emulator yet.
+`ROMs/Shining_Soul_II_JP.GBA`. **Despite its name, that file is not pristine Japanese.** It is
+the 16 MiB Chinese localization on the JP cartridge (AU2J), byte-identical to
+`eu/inputs/ss2-cn-source.gba`, so its slot-0 text and font are Chinese. The CN mods' actual
+baseline is `eu/inputs/ss2-cn-baseline.gba` (`SS2_SC_bug_fixed.GBA`, 32 MiB, SHA-256
+`45ac38bb…`). It is the same ROM with about 100 small changes: a few code fixes, revised
+slot-0 text, and the upper 16 MiB zero-filled. Every address and table below is identical in
+both files (checked). A pristine Japanese ROM is not in the repo. Nothing here has been
+tested in an emulator yet.
 
 ## 1. Shared resource archive: SSDT
 
@@ -44,8 +50,8 @@ Each case selects a pointer table of messages.
 | US | `0x03003590` | 6 | `1493, 1493, stub, stub, stub, stub` |
 | EU | `0x03003470` | 5 | `1493 × 5` |
 
-- **JP was built for six languages.** Only slot 0 (Japanese) is filled; slots 1–5 are three-entry stubs.
-- **US keeps slot 0 and puts English in slot 1.** The US slot 0 still holds Japanese, re-encoded for a font that no longer contains kana; only 114 of 1493 strings are byte-equal to JP.
+- **The JP engine was built for six languages.** In the CN-on-JP ROM only slot 0 is filled, with Chinese that replaced the original Japanese. Slots 1–5 are three-entry stubs.
+- **US keeps slot 0 and puts English in slot 1.** The US slot 0 still holds the original Japanese, even though the US font no longer contains kana. Only 114 of 1493 strings are byte-equal to the CN slot 0, as expected, since CN replaced Japanese with Chinese.
 - **EU drops Japanese** and fills 5 slots. Slot 0 is English, slot 1 French; the remaining three are presumably German/Italian/Spanish, not individually checked.
 - **Message IDs line up.** For JP slot 0 vs US slot 1:
   - name-placeholder (`0xFFFC`) presence agrees in 1475/1493 messages;
@@ -86,8 +92,8 @@ Strides per resource type:
 
 Type 0x0B, record 0 (Short Sword), as an example:
 
-- **JP:** Japanese name (u16) at `+0x00`. A second 0x3E-byte name field at `+0x3E` is **present but empty**. Data from `+0x174`.
-- **US:** same layout. English name at `+0x3E`; data at `+0x174` is byte-identical to JP.
+- **CN-on-JP:** Chinese name (u16) at `+0x00`: two glyphs (`0x0190 0x0166`) and a `0x0000` terminator, followed by leftover bytes of the original Japanese 「ショートソード」. A second 0x3E-byte name field at `+0x3E` is **present but empty**. Data from `+0x174`.
+- **US:** same layout. Original Japanese name at `+0x00`, English name at `+0x3E`; data at `+0x174` is byte-identical to CN-on-JP.
 - **EU:** five inline 20-byte, 8-bit names (EN/FR/DE/IT/ES) at `+0x00..0x63`, then repacked data. Every typed table is shorter, so every record offset differs from JP.
 
 So the JP data format already reserves an English name field per record, and the US fills it
@@ -106,12 +112,12 @@ not a ROM-table one.
   - Only about 85 glyphs are defined; the kana slots are blank.
 - **EU:** the same Latin glyph bitmaps sit in its single bank, plus accented letters. Its text renderer contains the US instruction sequence (signature at EU `0x0801A4A4`), so EU inherited the US renderer changes.
 - **JP:** the renderer around `0x08019F90` differs structurally from US `0x08019F62` (US adds a cell-occupancy loop over RAM `0x03005D90` and changes the copy sizes). JP's exact glyph width has **not yet been confirmed**. Treat "US changed the renderer for half-width Latin" as the working hypothesis.
-- **Glyph-code collision:** English codes `0x01–0x51` are kana in the JP font, and font banks are global, not per-language. US resolved this by replacing the font, which broke its own Japanese slot. A JP-base English build that must coexist with Chinese should instead put Latin glyphs in free code space (or a language-conditional bank) and re-encode the transplanted English. That is easy because the transplant is scripted.
+- **Glyph-code collision:** English codes `0x01–0x51` index the same font slots that the JP/CN font uses for its own glyphs, and font banks are global, not per-language. US resolved this by replacing the font, which broke its own Japanese slot. A JP-base English build that must coexist with Chinese should instead put Latin glyphs in free code space (or a language-conditional bank) and re-encode the transplanted English. That is easy because the transplant is scripted.
 
 ## 6. Conclusions for the translation project
 
 1. **Use US English as the source text.** It matches JP's format, code unit width, control words and message IDs. EU English is the same text in a lossy 8-bit form.
-2. **Transplant into JP's language slot 1 instead of overwriting slot 0.** Japanese/Chinese stays in slot 0 and English goes in slot 1, selected by the language word (`0x03003510` in JP). A bilingual CN/EN ROM with a language toggle looks structurally possible. To verify: where JP initializes the language word and whether any code assumes slot 0.
+2. **Transplant into language slot 1 instead of overwriting slot 0.** Chinese stays in slot 0 and English goes in slot 1, selected by the language word (`0x03003510` in JP). A bilingual CN/EN ROM with a language toggle looks structurally possible. To verify: where JP initializes the language word and whether any code assumes slot 0.
 3. **Item and other record names:** copy the US `+0x3E` name fields into the empty JP fields. Also check how the name renderer picks `+0x00` vs `+0x3E`; probably by the language word.
 4. **Fonts:** port the US half-width renderer change and add Latin glyphs without destroying JP/CN glyphs (see §5).
 5. **EU stays useful for languages, not structure.** JP has 6 slots: JP/CN plus five more. EU's FR/DE/IT/ES text could be widened back to 16-bit and placed in slots 2–5 later. Record names would need extra fields, because JP records have only two name slots.
