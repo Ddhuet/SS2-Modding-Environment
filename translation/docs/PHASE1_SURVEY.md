@@ -168,6 +168,10 @@ These do not come from the message tables, so `+0x700` re-encoding does not reac
 - **Numbers** (`0xFFF5`, `0xFFFB`, HUD, shop prices): the digit-to-glyph code is not located.
   CN digits will render full-width until it is changed. `four_digit_ui_display` touches the
   HUD digits, so coordinate with phase 2.
+- **Dialogue numbers, `candidate` (PHASE1_BUILD.md §3):** `0x0805EAC4 ldrh; adds r0,#0xEF;
+  strh` in the dialogue function is `adds r0,#0x41` in US, which looks like digit → glyph.
+- **Dialogue line buffers** (found at runtime): 0x24-byte stack buffers per line in
+  `0x0805E8E4`; ported to US 0x3C in the phase-1 patch (PHASE1_BUILD.md §3).
 - Any other code that builds strings from constants (e.g. item-count suffixes in
   `stackable_consumables`).
 

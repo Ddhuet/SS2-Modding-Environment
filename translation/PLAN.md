@@ -51,6 +51,24 @@ The real work is in four places:
 word init, slot-1 table pointer, 14 name tables, font section relocation, `+0x700` glyph
 re-encode, renderer half-width branch) and the open runtime-glyph risks (names, numbers).
 
+**Status (2026-10-10, later):** step 3 done and step 4 started; see
+[docs/PHASE1_BUILD.md](docs/PHASE1_BUILD.md). `tools/make_english_patch.py` emits an ss2tools
+patch for the CN baseline. The built ROM `translation/build/ss2-en-phase1.gba` (git-ignored) boots,
+and English shows half-width in the file select, ring menu, save dialogue and an item name
+(`runtime_verified`, two scenarios). Testing found one more required port, the dialogue window's
+line buffers (0x24 → 0x3C), now in the patch. Open: baked-in title/menu graphics, player name,
+number glyphs (candidate site `0x0805EAC4`), centering of half-width labels, and the untested
+paths (new game, shop, status, reload). Not user-accepted.
+
+**Status (2026-10-10, build 1b):** the user played build 1: dialogue and item names fine,
+the identifier window garbled the screen and hard-locked. Cause: CN stack line buffers sized
+for Chinese, and centring `15 - count` going negative for English. Build 1b ports the identifier
+frames (`tools/frame_port.py`) and redirects 57 centring calls to a width-aware helper
+(`tools/centering.py`). The identifier flow from the user's state and the two smoke scenarios
+pass (`runtime_verified`), and labels are now centred. Eight more renderer callers have larger
+US frames and are suspects for the same class (PHASE1_BUILD.md §5). The user confirmed the
+identifier fix in play (`user_accepted` for that window only). Session notes: PHASE1_BUILD.md §6.
+
 1. **Survey, read-only:**
    - Where JP initializes the language word.
    - How the item/record name renderer chooses `+0x00` vs `+0x3E` (language-gated in JP already, or a US code change?).
