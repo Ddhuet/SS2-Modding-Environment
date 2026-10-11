@@ -24,6 +24,8 @@ What the patch does (see translation/docs/PHASE1_SURVEY.md and PHASE1_BUILD.md):
      layouts grown by reviewed spec (frame_grow.py: item detail description lines)
   8. centring: 57 calls of the glyph counter -> width-aware helper in the dead old glyph
      loop (centering.py, translation/asm/center_width.s)
+  9. equipment name bar (0x080606CC): enchant after the name, as US, rewritten in place
+     (translation/asm/name_suffix.s)
 
 Re-encoding (survey §3): glyph code c -> c + 0x700; 0xFFxx controls unchanged; the two
 parameter halfwords after 0xFFFE and the two header halfwords unchanged.
@@ -53,11 +55,17 @@ CN_PROFILE = ROOT / "eu/profiles/ss2-cn-baseline.json"
 US_PROFILE = ROOT / "translation/profiles/ss2-us.json"
 ASM = ROOT / "translation/asm/render_glyphs.s"
 ASM_CENTER = ROOT / "translation/asm/center_width.s"
+ASM_SUFFIX = ROOT / "translation/asm/name_suffix.s"
 
 GLYPH_SHIFT = 0x700
 MSG_COUNT = 1493
 
 # CN baseline sites (static_verified in PHASE1_SURVEY.md)
+# equipment name bar 0x080606CC: enchant-then-name copy (PHASE1_BUILD.md §5c)
+NAME_SUFFIX = 0x08060A20
+NAME_SUFFIX_BEFORE = ("189b002b1ed00024324801684801401a410058180088002813d00a1c601940006b4619186000"
+                      "8018189b181800880880601c0006040e60008018181800880028ecd12d1900243088002811d0"
+                      "601940006a4611186000801900880880601c0006040e600080190088002801d00f2cedd9")
 LANG_INIT = 0x08001BA4          # movs r0,#0 before str to 0x03003510
 SLOT1_POOL = 0x08006B8C         # type-0x14 case 1 literal (0x083931AC)
 SSDT_ROOT = 0x085286A0
@@ -132,7 +140,8 @@ def reencode_name(raw, where):
     return struct.pack(f"<{SLOT // 2}H", *([glyph(c, where) for c in v[:n]] + [0] * (SLOT // 2 - n)))
 
 
-def assemble(path=ASM, base=None):
+def assemble(path=ASM, base=None, code_end=None):
+    """code_end: byte length of the instructions when the code has no `bx` (in-place patch)."""
     base = ALLOC_CODE if base is None else base
     with tempfile.TemporaryDirectory() as tmp:
         obj, binf = Path(tmp) / "r.o", Path(tmp) / "r.bin"
@@ -142,8 +151,8 @@ def assemble(path=ASM, base=None):
         code = binf.read_bytes()
     # Defence in depth (llvm-mc already enforces v4t): only 16-bit Thumb encodings and BL.
     cs = Cs(CS_ARCH_ARM, CS_MODE_THUMB)
-    lits = max(i for i in range(0, len(code), 2)  # last `bx rN`; literal pool follows
-               if struct.unpack_from("<H", code, i)[0] & 0xFF87 == 0x4700)
+    lits = code_end - 2 if code_end else max(i for i in range(0, len(code), 2)  # last `bx rN`; pool follows
+                                             if struct.unpack_from("<H", code, i)[0] & 0xFF87 == 0x4700)
     for ins in cs.disasm(code[:lits + 2], base):
         if ins.size != 2 and ins.mnemonic != "bl":
             raise ValueError(f"non-ARMv4T instruction {ins.mnemonic} at {ins.address:#x}")
@@ -213,6 +222,13 @@ def main():
         write(writes, cn, a, after, note)
     stats["centering_redirects"] = len(cwrites)
 
+    # 9. equipment name bar: name, space, enchant (US order) in place of enchant + name
+    suffix = assemble(ASM_SUFFIX, NAME_SUFFIX, code_end=0x4C)
+    if cn[NAME_SUFFIX - BASE:NAME_SUFFIX - BASE + len(suffix)].hex() != NAME_SUFFIX_BEFORE:
+        raise ValueError("name bar enchant/name copy is not the reviewed CN code")
+    write(writes, cn, NAME_SUFFIX, suffix,
+          "equipment name bar: name + space + enchant, US order (translation/asm/name_suffix.s)")
+
     # 4. font section: count 9, offsets relative to the new section
     assert u32(cn, FONT_HDR) == CN_FONT - SSDT_ROOT and u32(cn, CN_FONT) == 7
     assert u32(us, US_FONT) == 2 and u32(us, US_FONT + 4) == 0xC and u32(us, US_FONT + 8) == 0x800C
@@ -276,6 +292,7 @@ def main():
             "renderer_code_sha256": hashlib.sha256(code).hexdigest(),
             "center_asm_sha256": hashlib.sha256(ASM_CENTER.read_bytes()).hexdigest(),
             "center_code_sha256": hashlib.sha256(helper).hexdigest(),
+            "name_suffix_asm_sha256": hashlib.sha256(ASM_SUFFIX.read_bytes()).hexdigest(),
         },
         "evidence": {"status": "experimental", "doc": "translation/docs/PHASE1_BUILD.md",
                      "user_acceptance": "not_run"},

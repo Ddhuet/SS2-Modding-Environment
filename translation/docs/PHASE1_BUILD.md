@@ -14,11 +14,13 @@ No user acceptance yet.
 | 1 | `translation/build/ss2-en-phase1.gba` | `123204b53ac417218959fb2d367c066d7827db91a1561b8bf20d9d94e69f7678` | `6c799e56…` |
 | 1b | `translation/build/ss2-en-phase1b.gba` | `f391f348f970fff7204ec0cdd25b0ce8194b1223a9c517d4060021b429d4c7c2` | `dd753a43…` |
 | 1c | `translation/build/ss2-en-phase1c.gba` | `0db73d94de4a1f0f5b58af2dd9e9a87a02c41c4798e109d223c10f8b0cc7bd3c` | `fb10e256…` |
+| 1d | `translation/build/ss2-en-phase1d.gba` | `4343a9c7fa9b6f9889a5fd9e334b807ebf98e200729810e92108b27d9bb953cb` | `eb35dd35…` |
 
 Build 1b adds §5 (identifier hard lock fix: frame port and centring). The user
 reported build 1 playable in dialogue and item names, and the identifier window
 garbling then hard-locking (2026-10-10). Build 1c adds §5b (item detail view, Select on an
-item: crash on the Valuing Scroll, overlapping text on other items).
+item: crash on the Valuing Scroll, overlapping text on other items). Build 1d adds §5c
+(enchanted equipment names showed the enchant first: "of FearBeret").
 
 ## Reproduce
 
@@ -27,17 +29,22 @@ item: crash on the Valuing Scroll, overlapping text on other items).
 eu/.venv/bin/python translation/tools/make_english_patch.py
 cd eu
 .venv/bin/python -m ss2tools build inputs/ss2-cn-baseline.gba \
-    ../translation/build/ss2-en-phase1.patch.json ../translation/build/ss2-en-phase1c.gba \
+    ../translation/build/ss2-en-phase1.patch.json ../translation/build/ss2-en-phase1d.gba \
     --profile profiles/ss2-cn-baseline.json --allow-static-candidate \
-    --bps ../translation/build/ss2-en-phase1c.bps
+    --bps ../translation/build/ss2-en-phase1d.bps
 .venv/bin/python ../translation/tools/smoke_phase1.py inputs/ss2-cn-baseline.gba base
-.venv/bin/python ../translation/tools/smoke_phase1.py ../translation/build/ss2-en-phase1c.gba en1c
-.venv/bin/python ../translation/tools/smoke_identifier.py ../translation/build/ss2-en-phase1c.gba en1c
+.venv/bin/python ../translation/tools/smoke_phase1.py ../translation/build/ss2-en-phase1d.gba en1d
+.venv/bin/python ../translation/tools/smoke_identifier.py ../translation/build/ss2-en-phase1d.gba en1d
 # item detail view (§5b): Valuing Scroll, then Force Ring
-.venv/bin/python ../translation/tools/smoke_state.py ../translation/build/ss2-en-phase1c.gba \
+.venv/bin/python ../translation/tools/smoke_state.py ../translation/build/ss2-en-phase1d.gba \
     ../translation/build/Valuing_Scroll_Crash.ss0 detail "10 2:SELECT 60 120 2:B 60"
-.venv/bin/python ../translation/tools/smoke_state.py ../translation/build/ss2-en-phase1c.gba \
+.venv/bin/python ../translation/tools/smoke_state.py ../translation/build/ss2-en-phase1d.gba \
     ../translation/build/Valuing_Scroll_Crash.ss0 ring "10 2:UP 15 2:RIGHT 15 2:SELECT 90 2:B 40"
+# enchanted names (§5c): Beret of Fear, then Light Flail of Bane+6 and its detail view
+.venv/bin/python ../translation/tools/smoke_state.py ../translation/build/ss2-en-phase1d.gba \
+    ../translation/build/beret.ss0 beret "10 2:SELECT 60 2:B 30"
+.venv/bin/python ../translation/tools/smoke_state.py ../translation/build/ss2-en-phase1d.gba \
+    ../translation/build/beret.ss0 flail "4 2:LEFT 12 2:LEFT 12 2:LEFT 12 2:UP 12 2:RIGHT 12 2:SELECT 60 2:B 30"
 ```
 
 `translation/build/` is git-ignored: the patch JSON (2.3 MB) and the BPS contain US text and
@@ -63,6 +70,7 @@ patch. Each build's manifest (`<output>.manifest.json`) records its patch SHA-25
 | `translation/tools/smoke_state.py` | Replays `frames[:KEYS]` tokens from any user desktop state on any build, with screenshots (§5b) |
 | `translation/tools/trace_renderer.py` | Lists every renderer call (caller, string, x, row, glyph count) after replaying input from a state (§5b) |
 | `translation/tools/disasm_addr.py` | Thumb disassembly by CPU address range, one or more ROMs |
+| `translation/asm/name_suffix.s` | Name bar: item name, space, enchant (US order), in place at CN `0x08060A20` (§5c) |
 
 ## 1. Patch contents (build 1: 1889 + 204 writes; build 1b adds 39 + 1 + 57, §5)
 
@@ -303,9 +311,43 @@ Runtime (`runtime_verified`, build 1c, the user's state):
 - `smoke_phase1.py` and `smoke_identifier.py` on build 1c: same results as 1b.
 - Screenshot: `translation/build/detail-view-fix.png`.
 
-Not covered: equipment detail views with stat lines (the user's sword screenshot). No weapon or
-armour sits in the bag in this state. The sword's cut-off lines suggest those lines are placed
-with CN positions. They need a state with a weapon in the bag.
+Not covered in 1c: equipment detail views with stat lines (the user's sword screenshot). No weapon
+or armour sits in the bag in this state. Covered in 1d from the beret state (§5c): the Light
+Flail view draws cleanly on build 1d, whose only change from 1c is the name bar.
+
+## 5c. Enchanted equipment names (build 1d)
+
+The user reported (2026-10-11, state `translation/build/beret.ss0`, made on build 1c) that an
+enchanted item shows as "of FearBeret" in the name bar (row 18; also the bar under the detail
+view).
+
+Cause (`static_verified`): the name bar builder CN `0x080606CC` (US `0x0805FFC0`) builds the line
+at `sp+0` as icon, marker, then **enchant, then name** (Chinese puts the modifier first). The
+enchant is a type-0x13 record (`[sp,#0x60]`, loaded through `bl 0x08006D98` with
+`(item[+4]-1) | 0x130000`); its string is `record + lang*0x3E`. US copies the **name, then a
+space (US code `0x51`), then the enchant** (US `0x08060314..0x08060391`). The US text for the
+enchant already starts with the "of" ligature (code `0x12E`, ours `0x82E`), so only the order and
+the space were missing.
+
+Fix (`static_verified`): `translation/asm/name_suffix.s` replaces CN `0x08060A20..0x08060A8F`
+(0x70 bytes, exactly the CN enchant copy plus the name copy) in place. The generator checks the
+CN preimage of the whole range. The only branches into the range come from inside it, plus
+`0x08060A12 beq 0x08060A20` to its start. It keeps the registers' meaning at the exit
+(`0x08060A90 adds r0,r4,r5` = total glyphs), CN's 16-glyph name cap, and reads the language word
+through CN's existing pool word `0x08060AF4`. Space is `0x751`, added only when the enchant
+string is not empty. Longest English enchant: 8 glyphs (type 0x13 slot 1), so the line stays
+within the 0x54-byte buffer (at most 1 + 1 + 16 + 1 + 8 + 3 + terminator = 31 glyphs). The
+`+N` part (CN plus glyph `0xA3`, CN digits `0xEF+`) is unchanged.
+
+Runtime (`runtime_verified`, build 1d, the user's beret state):
+- Beret: "Beret of Fear" in the bag bar and under the Select detail view; B returns.
+- Light Flail: "Light Flail of Bane+6" (20 glyphs, `x = 4`). Its detail view draws "Requires
+  Flail …" and "Critical hit +4" with sane x/rows, and B returns.
+- Other bag items (Shining Aura, Herb, empty slots) unchanged.
+- `smoke_phase1.py`, `smoke_identifier.py`, and the §5b Valuing Scroll replay on 1d: same as 1c.
+- Screenshot: `translation/build/name-suffix-fix.png`.
+
+US prints a space before `+N` in some places; CN draws "Bane+6". Left as CN.
 
 ## 6. Working notes for the next session
 
@@ -350,7 +392,7 @@ with CN positions. They need a state with a weapon in the bag.
 
 1. Port the remaining frame-changed functions in the §5 table (with `frame_port.py` plus a
    per-function review), each with a scenario that reaches it. Find what draws BG0 row 11.
-   Equipment detail view (§5b, not covered) needs a state with a weapon in the bag.
+   Equipment detail view: one weapon checked (§5c); armour and the user's sword not yet.
 2. More scenarios: new game intro dialogue, shop, equipment and status names, reload after save.
 3. Number glyphs: confirm `0x0805EAC4` at runtime (message with `0xFFF5`/`0xFFFB`), then find the
    HUD/shop digit code. Codes `0x741+` need a register constant, not an imm8.

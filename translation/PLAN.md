@@ -76,6 +76,11 @@ CN-only stack layout with a 0x28 stride, grown to US's 0x40 by the new `tools/fr
 `0x08082BF4` is also ported. Valuing Scroll and Force Ring views are correct from the user's
 state (`runtime_verified`, PHASE1_BUILD.md §5b). Equipment detail views are not yet covered.
 
+**Status (2026-10-11, build 1d):** enchanted names showed the enchant first ("of FearBeret").
+The name bar (CN `0x080606CC`) now copies name, space, enchant as US does
+(`asm/name_suffix.s`, in place). "Beret of Fear" and "Light Flail of Bane+6" are correct from the
+user's state, and one weapon detail view draws cleanly (`runtime_verified`, PHASE1_BUILD.md §5c).
+
 1. **Survey, read-only:**
    - Where JP initializes the language word.
    - How the item/record name renderer chooses `+0x00` vs `+0x3E` (language-gated in JP already, or a US code change?).
