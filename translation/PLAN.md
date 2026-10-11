@@ -80,6 +80,8 @@ state (`runtime_verified`, PHASE1_BUILD.md §5b). Equipment detail views are not
 The name bar (CN `0x080606CC`) now copies name, space, enchant as US does
 (`asm/name_suffix.s`, in place). "Beret of Fear" and "Light Flail of Bane+6" are correct from the
 user's state, and one weapon detail view draws cleanly (`runtime_verified`, PHASE1_BUILD.md §5c).
+The user confirmed it in play and saw no further bugs (`user_accepted` for the name bar);
+phase 2 (CN mod compatibility) is next.
 
 1. **Survey, read-only:**
    - Where JP initializes the language word.

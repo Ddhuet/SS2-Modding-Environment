@@ -349,6 +349,10 @@ Runtime (`runtime_verified`, build 1d, the user's beret state):
 
 US prints a space before `+N` in some places; CN draws "Bane+6". Left as CN.
 
+User (2026-10-11): confirmed the enchant order fix in play on build 1d and reported no remaining
+bugs in their playthrough (`user_accepted` for the §5c name bar; the user also saw some smaller,
+unreported issues disappear with the 1b–1d fixes).
+
 ## 6. Working notes for the next session
 
 - **Desktop states.** The user's desktop mGBA `.ss0` files are PNGs with a zlib `gbAs` chunk. The
