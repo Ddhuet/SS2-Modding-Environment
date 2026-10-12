@@ -103,6 +103,15 @@ phase 2 (CN mod compatibility) is next.
 
 ## Phase 2: CN mod compatibility
 
+**Status (2026-10-11):** step 0 and steps 1–3 done statically; see
+[docs/PHASE2_COMPAT.md](docs/PHASE2_COMPAT.md). No CN definition overlaps the translation's
+writes or allocations, and all 20 apply unchanged on build 1d. The released and beta mods add no
+Chinese messages, fonts or glyph codes. Their text effects are one rename (type 0x0B #255 →
+"Combat Knife", via `mods/ledger.json`), glyph-variant fixes that need no English change, and a
+full-width "×N" suffix. `tools/combine_patch.py` builds translation + bundle, and `all_17` and
+`all_18` pass the smoke scenarios (`runtime_verified`, named scenarios only). Open: mod-feature
+scenarios in English (stat-point screen, warehouse UI, stackable ≥ 10). Not user-accepted.
+
 1. Find how the CN chain inserts Chinese text and fonts. Does it overwrite slot 0 or add new tables and custom codes (e.g. `0x7F01`)? Is the font expanded? See `reference_data/汉字码表.txt` and the CN patch chain.
 2. Decide the glyph-code layout so Latin and Chinese coexist. Optionally build a bilingual ROM with a language toggle.
 3. Make a string-extraction workflow for each CN mod's custom text, plus an English terminology ledger. The pack's English feature guide and UI strings are a head start.

@@ -47,6 +47,11 @@ The useful material is in
 
 - **Signal:** roughly 5–15% of bytes per area carry reusable explanation. The rest is hashes, hex payloads, generated tables and receipts.
 - **Not standalone:** it rebuilds only with the private upstream repo, the CN baseline plus a CN final reference ROM, and a pinned toolchain (Python 3.12, Zig 0.13.0, armips 0.11.0, keystone 0.9.2, unicorn 2.1.4). Many scripts hardcode `/workspace/…` paths.
+- **CN mod source is not in the pack (checked 2026-10-11).** The CN chain lives in private `shiyi1133/SS2_GBA_HACK` @ `2a1adb43`; `PKG/base_source/workspace/abi_work/cn_rebuild/rebuild.py` only wraps it (materializes 1,013 files from that repo's git history, output CN final SHA-256 `96915425…`, CRC32 `13243E94`). Neither the repo nor that CN final ROM is bundled. CN-side fragments that are present:
+  - 19 headers (realm/boss/NPC/parent APIs) vendored under `*/workspace/SS2_GBA_HACK/research/native_feature_integration/`, copied 3× across joint/overlays.
+  - `PKG/base_source/workspace/resource_work/historical880/`: verbatim CN MiEMiE-class generators and ~19 `.s` files that still use CN addresses (e.g. `ldr r0,=0x03003580`). Marked "text-only review inputs".
+  - `cn_picker_disassembly.txt` and similar CN disassembly dumps in `mie_engine_work/`.
+  - Everything else (`joint/source`, overlays, `.c` files) is retargeted to US (`0x03003600`/`0x03003E00`; zero CN literals in `joint/source`).
 - **Status labels:** the pack is honest about candidate status overall. Stage labels such as `BUILD_ONLY_NOT_VALIDATED` sometimes contradict which output was delivered.
 
 Git note: `HugeApplePack/` is local reference material and is **not tracked** (whole folder in
