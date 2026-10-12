@@ -95,6 +95,13 @@ Both carry "Combat Knife" at `0x08403E2E` (checked by decoding the built ROM). F
 `translation/build/cn+all_17_released.gba` / `cn+all_18_beta.gba` are the CN bundles alone
 (registry hashes above).
 
+**Patch_Manager** (`Patch_Manager/`, tkinter GUI) applies any subset of the 18 single definitions,
+shipped as IPS files made against build 1d by `translation/tools/make_ips_set.py`. level_250 and
+shared_character_warehouses write above 16 MiB, so they are IPS32. The 18 definitions are pairwise
+disjoint, and their union equals the CN bundles byte for byte. The generator self-checks that the 17
+released IPS give `ss2-en+all_17_released.gba`. All 18 through the manager's `build()` give
+`8788645b…`, the same as `ss2-en+all_18_beta.gba`.
+
 ## 4. Runtime (`runtime_verified`, named scenarios only)
 
 Native Session, CN save copy (`workspace/input/光明之魂2.sav`). Contact sheets:

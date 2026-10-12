@@ -112,3 +112,10 @@ Thumbs.db
 # knowledge extracted from it lives in translation/docs/.
 /HugeApplePack/
 /translation/build/
+
+# Patch_Manager: ROMs and patches stay local (rebuild with translation/tools/make_ips_set.py).
+*.[iI][pP][sS]32
+/Patch_Manager/Input_ROM/*
+/Patch_Manager/Output_ROM/*
+/Patch_Manager/patches/*
+/Patch_Manager/__pycache__/
