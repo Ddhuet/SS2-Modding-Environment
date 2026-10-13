@@ -8,6 +8,13 @@ python3 patch_manager.py
 
 It needs tkinter. On Arch/Omarchy, install it with `sudo pacman -S tk`.
 
+**Windows:** `SS2_Patch_Manager.exe` is the same program with Python and Tk bundled (one file,
+about 10 MB, nothing to install). Put it in a folder with `patches/` and `Input_ROM/`. It creates
+any missing folders, including `Output_ROM/`, the first time it runs. Windows SmartScreen or an
+antivirus may warn about an unsigned PyInstaller exe; choose "More info → Run anyway".
+Rebuild it on Linux with `Patch_Manager/build_exe.sh`, which uses Steam Proton's Wine and Windows
+Python 3.12.10 + PyInstaller 6.11.1 in a private Wine prefix, and runs `selftest.py` first.
+
 - `patches/`: `.ips` and `.ips32` files. Add or remove files at any time; the list refreshes
   by itself. `base_rom.sha256` names the ROM the patches were made for, and the window warns
   when the input ROM differs.

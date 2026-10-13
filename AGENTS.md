@@ -17,6 +17,8 @@ Previous project phases have their own handoffs: the English translation is in
 | `ROMs/Shining Soul II (USA).gba` | US AU2E rev0, SHA-256 `b31c19d2…`, profile `translation/profiles/ss2-us.json`. Source for US→CN ports. Its code and RAM layout differ from CN (see "Porting US → CN"). |
 | `ROMs/Shining_Soul_II_JP.GBA` | 16 MiB Chinese localization (not pristine Japanese). Rarely needed. |
 
+When writing or porting a mod, ALWAYS use translation/build/ss2-en-phase1d.gba as the base ROM.
+
 Address rule: file offset = ROM address − `0x08000000`. Checklist of ROMs: `ROMs/REQUIRED_ROMS.md`.
 Save fixture (immutable; work on copies): `workspace/input/光明之魂2.sav` (CN/English save).
 The user's desktop mGBA states (`*.ss0`, e.g. under `translation/build/`, `ROMs/saves/`) can be
@@ -66,12 +68,13 @@ Record every allocation you make (address, length, fill, owner) in your definiti
 | `0x08F00060..0x08F0016F` | `soul_ring` |
 | `0x080BB120..0x080BB1EF`, `0x080BC000..0x080BC1B5` | `life_leech`, `money_drop_control`, warehouse stubs |
 | `0x08019FD8..0x0801A093` | translation (centring helper + reserved dead code) |
+| `0x080BB1F0..0x080BB21F` | `town_return_heal` (custom) stub |
 
 - **Free for new mods:** `0x09002000..0x093FFFFF` and `0x09500000..0x09FFFFFF`. The upper 16 MiB
   is **zero-filled** in this baseline (EU used 0xFF; don't assume either, check).
 - **Reach:** a Thumb `bl` reaches ±4 MiB, so code in `0x09xxxxxx` needs a small stub inside the first
   16 MiB near the hook (`ldr rX,=target|1; bx rX`). Known zero gaps near the end of code are
-  `0x080BB1F0..0x080BB400` and `0x080BC1B6..0x080BC48C`. They are candidates only: confirm they are
+  `0x080BB220..0x080BB400` and `0x080BC1B6..0x080BC48C`. They are candidates only: confirm they are
   zero and that nothing references them, then claim them in your doc. Zero runs elsewhere in
   `0x083xxxxx`+ are often real data (blank graphics, tables); don't treat them as free.
 

@@ -119,3 +119,4 @@ Thumbs.db
 /Patch_Manager/Output_ROM/*
 /Patch_Manager/patches/*
 /Patch_Manager/__pycache__/
+/Patch_Manager/*.exe

@@ -20,7 +20,8 @@ import hashlib
 import sys
 from pathlib import Path
 
-HERE = Path(__file__).resolve().parent
+# Frozen (PyInstaller .exe): the folders sit next to the executable, not in the unpack dir.
+HERE = Path(sys.executable if getattr(sys, "frozen", False) else __file__).resolve().parent
 PATCH_DIR = HERE / "patches"
 INPUT_DIR = HERE / "Input_ROM"
 OUTPUT_DIR = HERE / "Output_ROM"
@@ -151,6 +152,8 @@ def run_gui():
     except ImportError as e:
         sys.exit(f"tkinter is not available ({e}).\nInstall it, e.g. on Arch/Omarchy: sudo pacman -S tk")
 
+    for d in (PATCH_DIR, INPUT_DIR, OUTPUT_DIR):
+        d.mkdir(exist_ok=True)
     root = tk.Tk()
     root.title("Shining Soul II Patch Manager")
     root.minsize(460, 420)
