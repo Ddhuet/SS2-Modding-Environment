@@ -113,6 +113,9 @@ Thumbs.db
 /HugeApplePack/
 /translation/build/
 
+# HugeApplePack Chinese
+SS2_GBA_HACK
+
 # Patch_Manager: ROMs and patches stay local (rebuild with translation/tools/make_ips_set.py).
 *.[iI][pP][sS]32
 /Patch_Manager/Input_ROM/*

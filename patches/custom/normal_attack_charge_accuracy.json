@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "id": "normal_attack_charge_accuracy",
+  "name": "Normal attacks use the charge attack's accuracy (3x DEX)",
+  "stage": "static_candidate",
+  "profile_id": "ss2-cn-baseline",
+  "baseline": {
+    "filename": "SS2_SC_bug_fixed.GBA",
+    "size": 33554432,
+    "md5": "35eb6567d94f855480c5d7ba2dff4389",
+    "sha256": "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989",
+    "crc32": "AFCFC96D"
+  },
+  "source_provenance": {
+    "kind": "new",
+    "source": "translation/tools/make_normal_attack_charge_accuracy.py",
+    "notes": "docs/mods/normal_attack_charge_accuracy.md"
+  },
+  "evidence": {
+    "status": "runtime_verified (melee); static_verified (bow, spear, knife)",
+    "semantics": "Player normal attacks use A = 3*DEX in the hit roll floor(125*(A+10)/(A+D+20)) >= rand%100, the same A every charge attack already uses. Weapon skill level is not part of the vanilla accuracy formula at any level, so nothing else from the charge attack carries over.",
+    "static_audit": "docs/mods/normal_attack_charge_accuracy.md",
+    "user_acceptance": "not_run",
+    "runtime": "user state Dragonute_Axe.ss0 (Dragonute, axe, DEX 14, target D 7), visible input only (UP 25f, then A taps or A held 70f), break at 0x08020192/0x080201D4. English: tap A=14 thr=73, charge A=42 thr=94. English+mod: tap A=42 thr=94, charge A=42 thr=94. Diagnostic RAM write (axe skill slots 1->5) left charge A=42 on English."
+  },
+  "writes": [
+    {
+      "address": "0x0801FCF2",
+      "offset": "0x0001FCF2",
+      "before_hex": "404642300024035f0893f8e10000",
+      "after_hex": "40464224035f58001b180893f7e1",
+      "mode": "thumb",
+      "note": "Melee normal attack (actor+0x26 == 2): A = 3*DEX instead of DEX. Uses the zero pad 0x0801FCFE for the `b 0x080200F0`."
+    },
+    {
+      "address": "0x08075FF0",
+      "offset": "0x00075FF0",
+      "before_hex": "10d0",
+      "after_hex": "c046",
+      "mode": "thumb",
+      "note": "bow ([sp+0x204] flag): NOP the `beq` to the A=DEX branch, so normal shots also take A = 3*DEX."
+    },
+    {
+      "address": "0x08076A1A",
+      "offset": "0x00076A1A",
+      "before_hex": "0dd0",
+      "after_hex": "c046",
+      "mode": "thumb",
+      "note": "spear ([sp+0x214] flag): NOP the `beq` to the A=DEX branch, so normal shots also take A = 3*DEX."
+    },
+    {
+      "address": "0x0807743C",
+      "offset": "0x0007743C",
+      "before_hex": "10d0",
+      "after_hex": "c046",
+      "mode": "thumb",
+      "note": "knife ([sp+0x20C] flag): NOP the `beq` to the A=DEX branch, so normal shots also take A = 3*DEX."
+    }
+  ]
+}

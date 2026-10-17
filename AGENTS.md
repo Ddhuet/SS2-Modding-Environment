@@ -8,6 +8,10 @@ out of its bytes (see "Living with the translation").
 Previous project phases have their own handoffs: the English translation is in
 `AGENTS_Translation.md` and `translation/`; the EU port is in `eu/`. Don't continue those unless asked.
 
+## VERY IMPORTANT GIT THING
+
+The guy who made SS2_GBA_HACK was nice enough to let me into his private repo as a contributor so I could see it. For the love of god and all that is holy, unholy, and anything else, do not push to his repo or do ANYTHING that changes ANYTHING on his end. No branches, no tags, no pushes, nothing. You can (and probably should at times) change things inside the folder, they just must stay local.
+
 ## The ROMs (filenames mislead; ROMs are never tracked)
 
 | File | What it is |
@@ -69,6 +73,7 @@ Record every allocation you make (address, length, fill, owner) in your definiti
 | `0x080BB120..0x080BB1EF`, `0x080BC000..0x080BC1B5` | `life_leech`, `money_drop_control`, warehouse stubs |
 | `0x08019FD8..0x0801A093` | translation (centring helper + reserved dead code) |
 | `0x080BB1F0..0x080BB21F` | `town_return_heal` (custom) stub |
+| `0x080BC300..0x080BC31F`, `0x09004400..0x09004BFF`, `0x09A00000..0x09A0007F` | `enemy_hp_bars` (custom, CN modder's code); `0x09009BF0..0x09009BFF` must stay zero |
 
 - **Free for new mods:** `0x09002000..0x093FFFFF` and `0x09500000..0x09FFFFFF`. The upper 16 MiB
   is **zero-filled** in this baseline (EU used 0xFF; don't assume either, check).
