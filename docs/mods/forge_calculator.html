@@ -1,0 +1,400 @@
+<title>Shining Soul II Forge Odds</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one narrow forge-ledger column; inputs flow top to bottom in the order the smith uses them,
+   results sit on an inset "anvil" panel. Palette: tempered steel neutrals with a bronze accent. */
+:root {
+  --bg: #eef0f2;
+  --panel: #ffffff;
+  --inset: #e3e7eb;
+  --line: #c9cfd6;
+  --fg: #1d2329;
+  --muted: #5a6570;
+  --accent: #9a5b1e;
+  --accent-fg: #ffffff;
+  --bar: #c58a45;
+  --good: #2f7a4b;
+  --warn: #a4471f;
+  --font-display: "Cinzel", "Trajan Pro", Georgia, serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #14181d; --panel: #1c2128; --inset: #232a32; --line: #343d47; --fg: #e4e8ec;
+    --muted: #96a1ac; --accent: #d79a55; --accent-fg: #1a1208; --bar: #b97a38; --good: #6cc08c; --warn: #f08a5d;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14181d; --panel: #1c2128; --inset: #232a32; --line: #343d47; --fg: #e4e8ec;
+  --muted: #96a1ac; --accent: #d79a55; --accent-fg: #1a1208; --bar: #b97a38; --good: #6cc08c; --warn: #f08a5d;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 15px; line-height: 1.5; }
+.wrap { max-width: 720px; margin: 0 auto; padding-inline: 16px; padding-block: 28px 48px; display: grid; gap: 20px; }
+header h1 { font-family: var(--font-display); font-size: 1.7rem; letter-spacing: 0.04em; margin: 0; text-wrap: balance; }
+header p { margin: 4px 0 0; color: var(--muted); max-width: 62ch; }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 18px; display: grid; gap: 14px; }
+h2 { font-family: var(--font-display); font-size: 1rem; letter-spacing: 0.08em; margin: 0; text-transform: uppercase; }
+label, .lbl { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+input[type=number], select {
+  width: 100%; font: 500 1rem var(--font-mono); color: var(--fg); background: var(--bg);
+  border: 1px solid var(--line); border-radius: 4px; padding: 8px 10px; font-variant-numeric: tabular-nums;
+}
+select { font-family: var(--font-body); }
+input:focus-visible, select:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.field { display: grid; gap: 4px; min-width: 0; }
+.hint { font-size: 0.8rem; color: var(--muted); }
+.goodwill { display: grid; grid-template-columns: 1fr auto; gap: 10px 14px; align-items: end; }
+.goodwill .meter { grid-column: 1 / -1; height: 6px; background: var(--inset); border-radius: 3px; overflow: hidden; }
+.goodwill .meter span { display: block; height: 100%; background: var(--accent); }
+.row { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; }
+.check { display: flex; gap: 8px; align-items: center; font-size: 0.9rem; color: var(--fg); text-transform: none; letter-spacing: 0; font-weight: 400; }
+.pick { border: 0; margin: 0; padding: 0; display: grid; gap: 6px; }
+.pick legend { padding: 0; margin-bottom: 4px; }
+.pick .opts { display: flex; flex-wrap: wrap; gap: 6px 22px; }
+.pick .pts { color: var(--muted); font-size: 0.85rem; }
+.slots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.slot { display: grid; gap: 8px; padding: 12px; background: var(--inset); border-radius: 4px; }
+.slot .num { font-family: var(--font-display); font-size: 0.85rem; letter-spacing: 0.08em; }
+@media (max-width: 560px) { .slots { grid-template-columns: 1fr; } }
+button {
+  font: 600 1rem var(--font-body); letter-spacing: 0.04em; cursor: pointer; border-radius: 4px; padding: 10px 22px;
+  border: 1px solid var(--accent); background: var(--accent); color: var(--accent-fg);
+}
+button.ghost { background: transparent; color: var(--accent); padding: 6px 12px; font-size: 0.85rem; }
+button:hover { filter: brightness(1.08); }
+.result { display: grid; gap: 16px; }
+.recipe { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; }
+.big { font: 600 2rem var(--font-mono); font-variant-numeric: tabular-nums; }
+.pill { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; border: 1px solid currentColor; }
+.pill.ok { color: var(--good); } .pill.no { color: var(--warn); }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+th { text-align: left; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 600; padding: 4px 8px; border-bottom: 1px solid var(--line); }
+td { padding: 5px 8px; border-bottom: 1px solid var(--inset); font-family: var(--font-mono); font-size: 0.92rem; white-space: nowrap; }
+td.plus { font-weight: 500; color: var(--accent); }
+td.barcell { width: 45%; }
+.bar { height: 10px; background: var(--bar); border-radius: 2px; min-width: 1px; }
+.summary { display: flex; flex-wrap: wrap; gap: 6px 22px; color: var(--muted); font-size: 0.9rem; }
+.summary b { color: var(--fg); font-family: var(--font-mono); font-weight: 500; }
+.delta { font: 500 1.1rem var(--font-mono); }
+.delta.up { color: var(--good); } .delta.down { color: var(--warn); }
+details { color: var(--muted); font-size: 0.88rem; }
+details summary { cursor: pointer; color: var(--fg); font-weight: 500; }
+details ul { padding-left: 1.2em; margin: 8px 0 0; display: grid; gap: 4px; }
+code { font-family: var(--font-mono); font-size: 0.85em; }
+@media (prefers-reduced-motion: no-preference) { .bar, .goodwill .meter span { transition: width 0.25s ease; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Forge Odds</h1>
+    <p>Shining Soul II blacksmith: recipe chance, +X odds and smith goodwill, from the game's own formula. These are exact probabilities, not a simulated roll.</p>
+  </header>
+
+  <section class="panel" aria-labelledby="gw-h">
+    <h2 id="gw-h">Smith goodwill</h2>
+    <div class="goodwill">
+      <div class="field">
+        <label for="goodwill">Goodwill (0 – 65,535, each character starts at 20,000)</label>
+        <input type="number" id="goodwill" min="0" max="65535" step="1" value="20000">
+      </div>
+      <button type="button" class="ghost" id="gw-reset">Reset to 20,000</button>
+      <div class="meter" aria-hidden="true"><span id="gw-meter"></span></div>
+    </div>
+    <div class="row">
+      <label class="check"><input type="checkbox" id="guaranteed"> Guaranteed-fusing patch installed (recipes always work)</label>
+    </div>
+  </section>
+
+  <section class="panel" aria-labelledby="mat-h">
+    <h2 id="mat-h">Materials</h2>
+    <div class="slots" id="slots"></div>
+    <fieldset class="pick">
+      <legend class="lbl">Which slot the game picks to set the points divisor</legend>
+      <span class="hint">Each forge, the game picks one slot at random (equal odds). That slot's material decides how all three forge values turn into points for the +X roll. Grade and recipe chance are not affected.</span>
+      <div class="opts" id="pick-opts">
+        <label class="check"><input type="radio" name="pick" id="pick1" value="0" checked> Slot 1 <span class="pts" id="pts1"></span></label>
+        <label class="check"><input type="radio" name="pick" id="pick2" value="1"> Slot 2 <span class="pts" id="pts2"></span></label>
+        <label class="check"><input type="radio" name="pick" id="pick3" value="2"> Slot 3 <span class="pts" id="pts3"></span></label>
+      </div>
+    </fieldset>
+    <p class="hint">Value is the number the forge shows for the material. Slot order matters for some recipes.</p>
+    <div class="field">
+      <label for="gold">Gold you give the smith</label>
+      <input type="number" id="gold" min="0" max="4294767295" step="1" value="1">
+    </div>
+    <div class="row"><button type="button" id="forge">Forge</button></div>
+  </section>
+
+  <section class="panel result" aria-labelledby="res-h" aria-live="polite">
+    <h2 id="res-h">Result odds</h2>
+    <div>
+      <div class="lbl">Recipe</div>
+      <div class="recipe"><span class="big" id="recipe-p">–</span><span id="recipe-pill" class="pill"></span><span id="recipe-name"></span></div>
+      <div class="hint" id="recipe-note"></div>
+    </div>
+    <div>
+      <div class="lbl">+X modifier</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Modifier</th><th>Chance</th><th>This or better</th><th class="barcell" aria-label="Chart"></th></tr></thead>
+          <tbody id="plus-body"></tbody>
+        </table>
+      </div>
+      <div class="summary" id="plus-summary"></div>
+    </div>
+  </section>
+
+  <section class="panel" aria-labelledby="up-h">
+    <h2 id="up-h">Goodwill after the fuse</h2>
+    <div class="field">
+      <label for="result-value">Value of the item you got (as shown in game)</label>
+      <input type="number" id="result-value" min="0" step="1" value="300">
+    </div>
+    <div class="row">
+      <button type="button" id="gw-apply">Good Will</button>
+      <span class="delta" id="gw-delta"></span>
+    </div>
+    <div class="hint" id="gw-explain"></div>
+  </section>
+
+  <details>
+    <summary>How the numbers work</summary>
+    <ul>
+      <li>Recipe chance = (goodwill + 1) / 65,536. Combinations with no recipe, and Mithril/Orihalcon/Dark Matter recipes whose forge values add up to less than 100, always give a random item.</li>
+      <li>+X is two rolls added together. Base roll: points = material points + gold ÷ 10,000 + 1, and the roll widens by (points × goodwill) ÷ 262,144. Gold roll: gold + a random 0–199,999, which gives +1 from 99,999, +2 from 188,506, +3 from 243,823, +4 from 278,396, and nothing at 300,000 or more.</li>
+      <li>Forge value = shown value ÷ 10 (Mithril), 25 (Orihalcon), 20 (Dark Matter), 1 (Bone) or 2 (Scale). Grade comes from the sum of the three forge values: under 100 is grade 0, then 100, 300 and 500. Material points: forge value ÷20 (Mithril), ×8÷100 (Orihalcon), ÷10 (Dark Matter), ÷100 (Bone, Scale), but the game uses the divisor of one randomly picked slot's material for all three slots. Pick that slot above to see each case.</li>
+      <li>Goodwill change = the three material values + gold ÷ 10 − the result's value, then clamped to 0 – 65,535. It never resets.</li>
+      <li>The result is capped at +20. A few weapon types always come out +0.</li>
+    </ul>
+  </details>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  // Tables from the ROM (CN/English 0x084FA6AC, 0x084FA700; identical in EU and US).
+  var T1 = [24325, 39528, 49030, 54969, 58681, 61001, 62451, 63357, 63923, 64277, 64498, 64636,
+            64722, 64776, 64810, 64831, 64844, 64852, 64857, 64860, 64862, 99999];
+  var T2 = [99999, 188506, 243823, 278396, 300000];
+  var SPAN = 200000;
+  var MATS = [
+    { id: "mithril",   name: "Mithril",     mult: 10, pts: function (s) { return Math.floor(s / 20); } },
+    { id: "orihalcon", name: "Orihalcon",   mult: 25, pts: function (s) { return Math.floor(s * 8 / 100); } },
+    { id: "dark",      name: "Dark Matter", mult: 20, pts: function (s) { return Math.floor(s / 10); } },
+    { id: "bone",      name: "Bone",        mult: 1,  pts: function (s) { return Math.floor(s / 100); } },
+    { id: "scale",     name: "Scale",       mult: 2,  pts: function (s) { return Math.floor(s / 100); } }
+  ];
+  var BY_ID = {}; MATS.forEach(function (m) { BY_ID[m.id] = m; });
+  // Recipes: [slot materials, order matters, grades with outputs]. Source: fusing.json (24 recipes).
+  var M = "mithril", O = "orihalcon", D = "dark", B = "bone", S = "scale";
+  var RECIPES = [
+    [[M, M, M], false, [1, 2, 3]], [[O, O, O], false, [1, 2, 3]], [[D, D, D], false, [1, 2, 3]],
+    [[M, O, D], false, [1, 2, 3]],
+    [[M, D, M], true, [1, 2, 3]], [[M, M, D], true, [1, 2, 3]], [[D, M, M], true, [1, 2, 3]],
+    [[O, M, O], true, [1, 2, 3]], [[O, O, M], true, [1, 2, 3]], [[M, O, O], true, [1, 2, 3]],
+    [[M, O, M], true, [1, 2, 3]], [[M, M, O], true, [1, 2, 3]], [[O, M, M], true, [1, 2, 3]],
+    [[O, D, O], true, [1, 2, 3]], [[O, O, D], true, [1, 2, 3]], [[D, O, O], true, [1, 2, 3]],
+    [[D, O, D], true, [1, 2, 3]], [[D, D, O], true, [1, 2, 3]], [[O, D, D], true, [1, 2, 3]],
+    [[D, M, D], true, [1, 2, 3]], [[D, D, M], true, [1, 2, 3]], [[M, D, D], true, [1, 2, 3]],
+    [[B, B, B], false, [0, 1, 2, 3]], [[S, S, S], false, [0, 1, 2, 3]]
+  ];
+  var DEFAULTS = [{ mat: "scale", value: 6 }, { mat: "scale", value: 100 }, { mat: "scale", value: 110 }];
+
+  var $ = function (id) { return document.getElementById(id); };
+  var fmt = function (n) { return n.toLocaleString("en-US"); };
+  var pct = function (p) { return (p * 100).toFixed(p < 0.001 && p > 0 ? 2 : 1) + "%"; };
+
+  function intVal(el, lo, hi) {
+    var v = Math.floor(Number(el.value));
+    if (!isFinite(v)) v = lo;
+    return Math.min(hi, Math.max(lo, v));
+  }
+
+  // Build the three slots: value field above the material picker.
+  var slotsEl = $("slots");
+  DEFAULTS.forEach(function (d, i) {
+    var n = i + 1;
+    var div = document.createElement("div");
+    div.className = "slot";
+    var opts = MATS.map(function (m) {
+      return '<option value="' + m.id + '"' + (m.id === d.mat ? " selected" : "") + ">" + m.name + "</option>";
+    }).join("");
+    div.innerHTML =
+      '<span class="num">Slot ' + n + "</span>" +
+      '<div class="field"><label for="val' + n + '">Value</label>' +
+      '<input type="number" id="val' + n + '" min="0" step="1" value="' + d.value + '"></div>' +
+      '<div class="field"><label for="mat' + n + '">Material</label>' +
+      '<select id="mat' + n + '">' + opts + "</select></div>" +
+      '<span class="hint" id="stored' + n + '"></span>';
+    slotsEl.appendChild(div);
+  });
+
+  function readSlots() {
+    var out = [];
+    for (var n = 1; n <= 3; n++) {
+      var m = BY_ID[$("mat" + n).value];
+      var shown = intVal($("val" + n), 0, 65535 * m.mult);
+      var stored = Math.min(65535, Math.floor(shown / m.mult));
+      out.push({ mat: m, stored: stored, shown: stored * m.mult });
+    }
+    return out;
+  }
+
+  function baseDist(points, gold, L) {
+    var P = points + Math.floor(gold / 10000) + 1;
+    var prod = (P * L) % 4294967296;          // the game multiplies in 32 bits
+    var n = Math.min(Math.floor(prod / 262144) + 3, 20);
+    var total = T1[n] + 1, d = [];
+    d[0] = T1[0];
+    for (var i = 1; i < n; i++) d[i] = T1[i] - T1[i - 1];
+    d[0] += T1[n] - T1[n - 1] + 1;           // top slice stores nothing, so the item stays +0
+    return d.map(function (c) { return c / total; });
+  }
+
+  function goldDist(gold) {
+    var d = [0, 0, 0, 0, 0];
+    for (var i = 0; i < 5; i++) {
+      var lo = i === 0 ? 0 : T2[i - 1], hi = T2[i];
+      d[i] += Math.max(0, Math.min(hi, gold + SPAN) - Math.max(lo, gold));
+    }
+    d[0] += Math.max(0, gold + SPAN - Math.max(T2[4], gold));   // 300,000 or more adds nothing
+    return d.map(function (c) { return c / SPAN; });
+  }
+
+  // Points for the base roll when the game picks slot `pick`: that slot's material divides all three.
+  function pointsFor(slots, pick) {
+    var first = slots[pick];
+    return slots.reduce(function (sum, s) { return sum + first.mat.pts(s.stored); }, 0);
+  }
+
+  function pickedSlot() {
+    var el = document.querySelector('input[name="pick"]:checked');
+    return el ? Number(el.value) : 0;
+  }
+
+  function plusDist(slots, gold, L, pick) {
+    var out = new Array(21).fill(0);
+    var g = goldDist(gold);
+    var b = baseDist(pointsFor(slots, pick), gold, L);
+    b.forEach(function (p, i) {
+      g.forEach(function (q, j) { out[Math.min(i + j, 20)] += p * q; });
+    });
+    return out;
+  }
+
+  function findRecipe(ids) {
+    var sorted = ids.slice().sort().join();
+    for (var r = 0; r < RECIPES.length; r++) {
+      var rec = RECIPES[r];
+      if (rec[1] ? rec[0].join() === ids.join() : rec[0].slice().sort().join() === sorted) return rec;
+    }
+    return null;
+  }
+
+  function renderStored() {
+    var slots = readSlots();
+    slots.forEach(function (s, i) {
+      $("stored" + (i + 1)).textContent = "Forge value " + fmt(s.stored) +
+        (s.shown !== Number($("val" + (i + 1)).value) ? " (game shows " + fmt(s.shown) + ")" : "");
+      var pts = pointsFor(slots, i);
+      $("pts" + (i + 1)).textContent = "(" + s.mat.name + ": " + pts + (pts === 1 ? " point)" : " points)");
+    });
+    return slots;
+  }
+
+  function grade(sum) { return sum < 100 ? 0 : sum < 300 ? 1 : sum < 500 ? 2 : 3; }
+
+  function renderGoodwillMeter() {
+    var L = intVal($("goodwill"), 0, 65535);
+    $("gw-meter").style.width = (L / 65535 * 100).toFixed(1) + "%";
+  }
+
+  function forge() {
+    var L = intVal($("goodwill"), 0, 65535);
+    var gold = intVal($("gold"), 0, 4294767295);
+    var slots = renderStored();
+
+    // Recipe chance
+    var ids = slots.map(function (s) { return s.mat.id; });
+    var rec = findRecipe(ids);
+    var forgeSum = slots.reduce(function (a, s) { return a + s.stored; }, 0);
+    var gr = grade(forgeSum);
+    var pGate = $("guaranteed").checked ? 1 : Math.min(L + 1, 65536) / 65536;
+    var p = 0, note = "";
+    if (!rec) {
+      note = "No recipe uses these materials in this order. The smith makes a random item.";
+    } else if (rec[2].indexOf(gr) < 0) {
+      note = "Recipe found, but the forge values add up to " + fmt(forgeSum) +
+        " (grade 0). Only Bone and Scale recipes have grade 0 items, so this gives a random item. Reach a forge value total of 100 to make it grade 1.";
+    } else {
+      p = pGate;
+      note = "Grade " + gr + " (forge value total " + fmt(forgeSum) + "). If the roll fails, you get a random item instead.";
+    }
+    $("recipe-p").textContent = pct(p);
+    $("recipe-name").textContent = rec ? rec[0].map(function (id) { return BY_ID[id].name; }).join(" · ") : ids.map(function (id) { return BY_ID[id].name; }).join(" · ");
+    var pill = $("recipe-pill");
+    pill.textContent = rec && p > 0 ? "Recipe" : "No recipe";
+    pill.className = "pill " + (rec && p > 0 ? "ok" : "no");
+    $("recipe-note").textContent = note;
+
+    // +X table
+    var d = plusDist(slots, gold, L, pickedSlot());
+    var last = 0;
+    d.forEach(function (v, i) { if (v >= 0.0005) last = i; });
+    var max = Math.max.apply(null, d);
+    var rows = "", tail = 1, mean = 0;
+    for (var i = 0; i <= 20; i++) mean += i * d[i];
+    for (var k = 0; k <= last; k++) {
+      rows += "<tr><td class=\"plus\">+" + k + "</td><td>" + pct(d[k]) + "</td><td>" + pct(Math.max(0, tail)) +
+        "</td><td class=\"barcell\"><div class=\"bar\" style=\"width:" + (d[k] / max * 100).toFixed(1) + "%\"></div></td></tr>";
+      tail -= d[k];
+    }
+    $("plus-body").innerHTML = rows;
+    $("plus-summary").innerHTML = "<span>Average <b>+" + mean.toFixed(2) + "</b></span>" +
+      (last < 20 && tail >= 0.00005 ? "<span>+" + (last + 1) + " or higher: <b>" + pct(Math.max(0, tail)) + "</b></span>" : "");
+    updateDelta();
+  }
+
+  function goodwillDelta() {
+    var gold = intVal($("gold"), 0, 4294767295);
+    var res = intVal($("result-value"), 0, 429496729);
+    var mats = readSlots().reduce(function (a, s) { return a + s.shown; }, 0);
+    return { delta: mats + Math.floor(gold / 10) - res, mats: mats, gold: Math.floor(gold / 10), res: res };
+  }
+
+  function updateDelta() {
+    var L = intVal($("goodwill"), 0, 65535);
+    var g = goodwillDelta();
+    var next = Math.min(65535, Math.max(0, L + g.delta));
+    var el = $("gw-delta");
+    el.textContent = (g.delta >= 0 ? "+" : "−") + fmt(Math.abs(g.delta)) + "  →  " + fmt(next);
+    el.className = "delta " + (g.delta >= 0 ? "up" : "down");
+    $("gw-explain").textContent = "Materials " + fmt(g.mats) + " + gold ÷ 10 (" + fmt(g.gold) + ") − result " + fmt(g.res) +
+      (next !== L + g.delta ? ". Capped at " + (next === 0 ? "0" : "65,535") + "." : ".");
+  }
+
+  $("forge").addEventListener("click", forge);
+  $("gw-apply").addEventListener("click", function () {
+    var L = intVal($("goodwill"), 0, 65535);
+    $("goodwill").value = Math.min(65535, Math.max(0, L + goodwillDelta().delta));
+    renderGoodwillMeter();
+    forge();
+  });
+  $("gw-reset").addEventListener("click", function () { $("goodwill").value = 20000; renderGoodwillMeter(); forge(); });
+  $("goodwill").addEventListener("input", function () { renderGoodwillMeter(); updateDelta(); });
+  ["gold", "result-value", "val1", "val2", "val3", "mat1", "mat2", "mat3"].forEach(function (id) {
+    $(id).addEventListener("input", function () { renderStored(); updateDelta(); });
+  });
+  ["pick1", "pick2", "pick3"].forEach(function (id) { $(id).addEventListener("change", forge); });
+
+  renderGoodwillMeter();
+  forge();
+})();
+</script>

@@ -1,0 +1,125 @@
+{
+ "base_rom": {
+  "path": "../translation/build/ss2-en-phase1d.gba",
+  "sha256": "4343a9c7fa9b6f9889a5fd9e334b807ebf98e200729810e92108b27d9bb953cb"
+ },
+ "mod_rom": {
+  "path": "../translation/build/ss2-en+town_return_heal.gba",
+  "sha256": "71c04db73140f32fe538e6bb80cac77c763ef052e5e6d78e1ccbd7e87f760019"
+ },
+ "states": {
+  "Post_Boss": "c9fd4dee187493e2b2417326f8e15e7a1bf0a7f6edf9c01f6484a9d5b3329624",
+  "Angel_Wing": "b74c9bd80d5d03c3e9eb73dada60027b254a92551904fadbd3ab1a30c459a997",
+  "Post_Arena": "61551d99346c6cc80073acf0f0dd464d8795248188486a351161816f88c8153d"
+ },
+ "cases": {
+  "Post_Boss": {
+   "english": {
+    "start": {
+     "area": 1,
+     "hp": 49,
+     "max_hp": 66,
+     "sp10": 560,
+     "max_sp10": 860
+    },
+    "end": {
+     "area": 0,
+     "hp": 49,
+     "max_hp": 66,
+     "sp10": 640,
+     "max_sp10": 860
+    },
+    "screenshot": "/home/david/Documents/SS2_Modding/translation/build/runs/base-Post_Boss-1791811972074038465/screenshots/final.png"
+   },
+   "english+mod": {
+    "start": {
+     "area": 1,
+     "hp": 49,
+     "max_hp": 66,
+     "sp10": 560,
+     "max_sp10": 860
+    },
+    "end": {
+     "area": 0,
+     "hp": 66,
+     "max_hp": 66,
+     "sp10": 860,
+     "max_sp10": 860
+    },
+    "screenshot": "/home/david/Documents/SS2_Modding/translation/build/runs/mod-Post_Boss-1791811972514802994/screenshots/final.png"
+   }
+  },
+  "Angel_Wing": {
+   "english": {
+    "start": {
+     "area": 4,
+     "hp": 49,
+     "max_hp": 66,
+     "sp10": 860,
+     "max_sp10": 860
+    },
+    "end": {
+     "area": 0,
+     "hp": 49,
+     "max_hp": 66,
+     "sp10": 860,
+     "max_sp10": 860
+    },
+    "screenshot": "/home/david/Documents/SS2_Modding/translation/build/runs/base-Angel_Wing-1791811972937057865/screenshots/final.png"
+   },
+   "english+mod": {
+    "start": {
+     "area": 4,
+     "hp": 49,
+     "max_hp": 66,
+     "sp10": 860,
+     "max_sp10": 860
+    },
+    "end": {
+     "area": 0,
+     "hp": 66,
+     "max_hp": 66,
+     "sp10": 860,
+     "max_sp10": 860
+    },
+    "screenshot": "/home/david/Documents/SS2_Modding/translation/build/runs/mod-Angel_Wing-1791811973363539186/screenshots/final.png"
+   }
+  },
+  "Post_Arena": {
+   "english": {
+    "start": {
+     "area": 11,
+     "hp": 58,
+     "max_hp": 66,
+     "sp10": 590,
+     "max_sp10": 860
+    },
+    "end": {
+     "area": 11,
+     "hp": 66,
+     "max_hp": 66,
+     "sp10": 860,
+     "max_sp10": 860
+    },
+    "screenshot": "/home/david/Documents/SS2_Modding/translation/build/runs/base-Post_Arena-1791811973781855389/screenshots/final.png"
+   },
+   "english+mod": {
+    "start": {
+     "area": 11,
+     "hp": 58,
+     "max_hp": 66,
+     "sp10": 590,
+     "max_sp10": 860
+    },
+    "end": {
+     "area": 11,
+     "hp": 66,
+     "max_hp": 66,
+     "sp10": 860,
+     "max_sp10": 860
+    },
+    "screenshot": "/home/david/Documents/SS2_Modding/translation/build/runs/mod-Post_Arena-1791811974223719679/screenshots/final.png"
+   }
+  }
+ }
+}

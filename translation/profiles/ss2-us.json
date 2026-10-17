@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "id": "ss2-us",
+  "name": "Shining Soul II (USA) rev0",
+  "role": "English text, record names and Latin font source for the CN-baseline translation (read-only)",
+  "identity": {
+    "size": 16777216,
+    "md5": "f4a655e23638e79eacf44a456faee6a4",
+    "sha256": "b31c19d2d25683a0941d5d501912b5f21d4590cd7071fa01882e62aa5227a7c9",
+    "crc32": "4038E282"
+  },
+  "gba_header": {
+    "title": "SHININGSOUL2",
+    "game_code": "AU2E",
+    "maker_code": "EB",
+    "revision": 0,
+    "checksum_valid": true
+  },
+  "provenance": {
+    "kind": "local_file_hash_verification",
+    "filename_hint": "Shining Soul II (USA).gba",
+    "verified_utc": "2026-10-10",
+    "note": "Hashes computed with `python -m ss2tools identify`; source only, never a build input."
+  }
+}

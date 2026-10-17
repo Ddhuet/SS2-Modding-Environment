@@ -1,0 +1,20 @@
+{
+ "about": "English terminology ledger for CN mod definitions (patches/definitions). Read by translation/tools/combine_patch.py. A 'names' entry replaces the translation's slot-1 name (record + 0x3E) when the combined mod writes change that record's slot-0 (Chinese) name bytes, so bundles that include the mod pick it up automatically. Text is ASCII, encoded to US codes + 0x700.",
+ "names": [
+  {
+   "table": "type 0x0B",
+   "record": 255,
+   "mod": "weapon_balance_rework",
+   "cn_before": "斗魂之爪",
+   "cn_after": "斗魂之刀",
+   "us": "Combat Claw",
+   "en": "Combat Knife",
+   "why": "The mod changes the name's last glyph from claw (爪) to blade (刀) and the record's class byte +0x174 from 6 (claw) to 8 (knife, US 'Knife' class; CN 小刀). Other knives are 'X Knife' in US."
+  }
+ ],
+ "no_english_change": [
+  {"mod": "equipment_set_balance_rework", "what": "Slot-0 glyph-variant fix 0x0653 -> 0x046C (both 待, in 侍从/待从 names) and zeroing of leftover bytes after the terminator, in 15 records. Decoded Chinese is unchanged; the US English slot-1 names stand."},
+  {"mod": "stackable_consumables", "what": "Appends CN full-width 'Ｘ' (0x00C8) and CN digits (0x00EF+n) after the item name in the name bar (hook CN 0x08060D04, code at 0x0833CEEC). Renders as 'Herb×1' with a full-width ×1; same style as the CN '+N' the translation keeps. Cosmetic only."},
+  {"mod": "shared_character_warehouses", "what": "Its own 4bpp tiles at 0x09001958..0x09001EB7 are Latin/digits ('P', 'W1'..'W8', arrow), not Chinese."}
+ ]
+}

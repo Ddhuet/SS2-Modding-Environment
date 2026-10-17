@@ -106,3 +106,20 @@ Thumbs.db
 
 # Personal helper scripts
 /push.sh
+
+
+# HugeApplePack: the CN modder's USA port pack. Local reference only, never tracked;
+# knowledge extracted from it lives in translation/docs/.
+/HugeApplePack/
+/translation/build/
+
+# HugeApplePack Chinese
+SS2_GBA_HACK
+
+# Patch_Manager: ROMs and patches stay local (rebuild with translation/tools/make_ips_set.py).
+*.[iI][pP][sS]32
+/Patch_Manager/Input_ROM/*
+/Patch_Manager/Output_ROM/*
+/Patch_Manager/patches/*
+/Patch_Manager/__pycache__/
+/Patch_Manager/*.exe

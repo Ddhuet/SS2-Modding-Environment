@@ -1,0 +1,1416 @@
+{
+ "schema_version": 1,
+ "id": "stackable_consumables_104b1",
+ "name": "stackable_consumables_104b1",
+ "stage": "candidate",
+ "baseline": {
+  "sha256": "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989",
+  "size": 33554432
+ },
+ "source_provenance": {
+  "kind": "rebuilt_from_SS2_GBA_HACK_source",
+  "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+ },
+ "writes": [
+  {
+   "address": "0x0805B11C",
+   "offset": "0x5B11C",
+   "before_hex": "f0b5071c38880349",
+   "after_hex": "004b1847bbcf3308",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0805B696",
+   "offset": "0x5B696",
+   "before_hex": "051c05e0",
+   "after_hex": "e1f273fd",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0805BD32",
+   "offset": "0x5BD32",
+   "before_hex": "80204003",
+   "after_hex": "e1f20ffb",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0805DC50",
+   "offset": "0x5DC50",
+   "before_hex": "011c",
+   "after_hex": "004b",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0805DC53",
+   "offset": "0x5DC53",
+   "before_hex": "2908d80548",
+   "after_hex": "4741cd3308",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x080606DC",
+   "offset": "0x606DC",
+   "before_hex": "151c1693",
+   "after_hex": "dcf23afc",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x08060D04",
+   "offset": "0x60D04",
+   "before_hex": "08800020",
+   "after_hex": "dcf22af9",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x08061910",
+   "offset": "0x61910",
+   "before_hex": "38048023",
+   "after_hex": "dbf2c1fc",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0807CED8",
+   "offset": "0x7CED8",
+   "before_hex": "0a2a11d0",
+   "after_hex": "bff267ff",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0807CF7A",
+   "offset": "0x7CF7A",
+   "before_hex": "0a284ed0",
+   "after_hex": "bff226ff",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0807D110",
+   "offset": "0x7D110",
+   "before_hex": "0a2800d1",
+   "after_hex": "bff266fe",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0807D42E",
+   "offset": "0x7D42E",
+   "before_hex": "0a284cd1",
+   "after_hex": "bff20ffd",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0807D43A",
+   "offset": "0x7D43A",
+   "before_hex": "0e4b9842",
+   "after_hex": "bff245fd",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0807D484",
+   "offset": "0x7D484",
+   "before_hex": "0e4e8019",
+   "after_hex": "bff234fd",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0807D51A",
+   "offset": "0x7D51A",
+   "before_hex": "0a2801d0",
+   "after_hex": "bff2befc",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0807D52C",
+   "offset": "0x7D52C",
+   "before_hex": "03488142",
+   "after_hex": "bff2d3fc",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0807D5E0",
+   "offset": "0x7D5E0",
+   "before_hex": "03480d18",
+   "after_hex": "bff290fc",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0807EC16",
+   "offset": "0x7EC16",
+   "before_hex": "fdf761fc",
+   "after_hex": "bef280f9",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0807F242",
+   "offset": "0x7F242",
+   "before_hex": "fdf74bf9",
+   "after_hex": "bef28cf8",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x08081632",
+   "offset": "0x81632",
+   "before_hex": "00220023",
+   "after_hex": "bbf265fe",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CD40",
+   "offset": "0x33CD40",
+   "before_hex": "00000000000000000000000000000000000000",
+   "after_hex": "70b5041c182c13d80b48056820012d18ac2040",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CD54",
+   "offset": "0x33CD54",
+   "before_hex": "00000000",
+   "after_hex": "2d18281c",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CD59",
+   "offset": "0x33CD59",
+   "before_hex": "000000",
+   "after_hex": "f010f8",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CD5D",
+   "offset": "0x33CD5D",
+   "before_hex": "000000000000000000000000000000",
+   "after_hex": "2805d0a888012802d90138a88001e0",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CD6D",
+   "offset": "0x33CD6D",
+   "before_hex": "00000000000000",
+   "after_hex": "20288070bc01bc",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CD75",
+   "offset": "0x33CD75",
+   "before_hex": "00",
+   "after_hex": "47",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CD78",
+   "offset": "0x33CD78",
+   "before_hex": "0000",
+   "after_hex": "8035",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CD7B",
+   "offset": "0x33CD7B",
+   "before_hex": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+   "after_hex": "0345e2018801290fd14188132909d915290ad31d2905d9242903d0542904d3582902d8012002bc7047",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CDA5",
+   "offset": "0x33CDA5",
+   "before_hex": "000000000000000000000000000000",
+   "after_hex": "2002bc70470a2a09d0201cfff7e4ff",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CDB5",
+   "offset": "0x33CDB5",
+   "before_hex": "0000000000",
+   "after_hex": "2806d0a088",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CDBB",
+   "offset": "0x33CDBB",
+   "before_hex": "00000000000000",
+   "after_hex": "2801d10120a080",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CDC3",
+   "offset": "0x33CDC3",
+   "before_hex": "0000000000",
+   "after_hex": "f082f9c648",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CDC9",
+   "offset": "0x33CDC9",
+   "before_hex": "0000000000000000000000",
+   "after_hex": "470a2804d0081cfff7d4ff",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CDD5",
+   "offset": "0x33CDD5",
+   "before_hex": "000000",
+   "after_hex": "2801d0",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CDD9",
+   "offset": "0x33CDD9",
+   "before_hex": "0000000000",
+   "after_hex": "f05ff9c148",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CDDF",
+   "offset": "0x33CDDF",
+   "before_hex": "00",
+   "after_hex": "47",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CDE1",
+   "offset": "0x33CDE1",
+   "before_hex": "00",
+   "after_hex": "48",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CDE3",
+   "offset": "0x33CDE3",
+   "before_hex": "000000",
+   "after_hex": "47193d",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CDE7",
+   "offset": "0x33CDE7",
+   "before_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000",
+   "after_hex": "0909882a1cf43212880a2902d10a2a0ed101e00a2a0bd006bc0a2805d0281cf430fff7b8ff",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CE0D",
+   "offset": "0x33CE0D",
+   "before_hex": "000000",
+   "after_hex": "281bd0",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CE11",
+   "offset": "0x33CE11",
+   "before_hex": "000000000000000000000000000000",
+   "after_hex": "f052f918e006bc281cf430fff7aeff",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CE21",
+   "offset": "0x33CE21",
+   "before_hex": "00000000000000",
+   "after_hex": "2811d0281cf030",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CE29",
+   "offset": "0x33CE29",
+   "before_hex": "0000000000000000000000000000000000000000000000",
+   "after_hex": "68296a6a68891a090140188088291cf4318988884203d0",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CE41",
+   "offset": "0x33CE41",
+   "before_hex": "0000000000",
+   "after_hex": "f004f8a848",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CE47",
+   "offset": "0x33CE47",
+   "before_hex": "000000",
+   "after_hex": "47a848",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CE4B",
+   "offset": "0x33CE4B",
+   "before_hex": "000000",
+   "after_hex": "47a848",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CE4F",
+   "offset": "0x33CE4F",
+   "before_hex": "000000000000000000",
+   "after_hex": "470a2805d1281cf430",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CE59",
+   "offset": "0x33CE59",
+   "before_hex": "0000000000000000000000000000000000",
+   "after_hex": "880a2818d01ae00eb4281cf430fff789ff",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CE6B",
+   "offset": "0x33CE6B",
+   "before_hex": "000000000000000000",
+   "after_hex": "2812d0101cfff784ff",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CE75",
+   "offset": "0x33CE75",
+   "before_hex": "0000000000000000000000000000000000",
+   "after_hex": "280dd05088291cf4314988884207d19088",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CE87",
+   "offset": "0x33CE87",
+   "before_hex": "0000000000000000000000",
+   "after_hex": "2801d1012090800ebc9848",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CE93",
+   "offset": "0x33CE93",
+   "before_hex": "0000000000",
+   "after_hex": "470ebc9848",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CE99",
+   "offset": "0x33CE99",
+   "before_hex": "000000",
+   "after_hex": "470148",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CE9D",
+   "offset": "0x33CE9D",
+   "before_hex": "0000000000",
+   "after_hex": "47c046813c",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CEA3",
+   "offset": "0x33CEA3",
+   "before_hex": "00",
+   "after_hex": "09",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CEBE",
+   "offset": "0x33CEBE",
+   "before_hex": "0000",
+   "after_hex": "8f48",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CEC1",
+   "offset": "0x33CEC1",
+   "before_hex": "0000000000",
+   "after_hex": "470cbc8e48",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CEC7",
+   "offset": "0x33CEC7",
+   "before_hex": "000000",
+   "after_hex": "4707b5",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CECB",
+   "offset": "0x33CECB",
+   "before_hex": "000000000000000000",
+   "after_hex": "f00af8031c07bc9842",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CED5",
+   "offset": "0x33CED5",
+   "before_hex": "000000",
+   "after_hex": "bd0eb5",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CED9",
+   "offset": "0x33CED9",
+   "before_hex": "00000000000000",
+   "after_hex": "f003f80ebc8142",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CEE1",
+   "offset": "0x33CEE1",
+   "before_hex": "0000000000000000000000000000000000000000000000000000000000000000000000",
+   "after_hex": "bd4846012801d086487047642070474e46012e02d0844ec018704764267642c01a7047",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CF05",
+   "offset": "0x33CF05",
+   "before_hex": "0000000000",
+   "after_hex": "4b1847a93d",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CF0B",
+   "offset": "0x33CF0B",
+   "before_hex": "0000000000",
+   "after_hex": "0901d16420",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CF11",
+   "offset": "0x33CF11",
+   "before_hex": "000000000000000000000000000000000000000000000000000000",
+   "after_hex": "e07c4840420d18704770b5041c0d1c7a4e3668f436301cfff728ff",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CF2D",
+   "offset": "0x33CF2D",
+   "before_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000",
+   "after_hex": "280ad0b088012807d90138b080201c291c321c3ff560fb03e0201c291c3ff5c7fa70bc01bc",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CF53",
+   "offset": "0x33CF53",
+   "before_hex": "000000000000000000000000000000",
+   "after_hex": "47151c92461693704710b5041c5046",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CF63",
+   "offset": "0x33CF63",
+   "before_hex": "000000",
+   "after_hex": "f020f9",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CF67",
+   "offset": "0x33CF67",
+   "before_hex": "00000000000000",
+   "after_hex": "2820d052469288",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CF6F",
+   "offset": "0x33CF6F",
+   "before_hex": "00",
+   "after_hex": "2a",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CF71",
+   "offset": "0x33CF71",
+   "before_hex": "000000000000000000000000000000000000000000000000000000",
+   "after_hex": "d10122c8230b800231642a06d1f0230b80ef234b808b8006310de0",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CF8D",
+   "offset": "0x33CF8D",
+   "before_hex": "0000000000000000000000",
+   "after_hex": "230a2a02d30a3a0133fae7",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CF99",
+   "offset": "0x33CF99",
+   "before_hex": "0000000000000000000000000000000000",
+   "after_hex": "2b02d0ef330b800231ef320a800231201c",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CFAB",
+   "offset": "0x33CFAB",
+   "before_hex": "0000000000000000000000",
+   "after_hex": "e0201c088010bc01bc8446",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CFB7",
+   "offset": "0x33CFB7",
+   "before_hex": "0000000000000000000000",
+   "after_hex": "206047f0b5071cfff7ddfe",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CFC3",
+   "offset": "0x33CFC3",
+   "before_hex": "00000000000000000000000000",
+   "after_hex": "2803d138885149524b1847be88",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CFD1",
+   "offset": "0x33CFD1",
+   "before_hex": "00",
+   "after_hex": "2e",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CFD3",
+   "offset": "0x33CFD3",
+   "before_hex": "000000000000000000000000",
+   "after_hex": "d101267a884d480568ac2040",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CFE0",
+   "offset": "0x33CFE0",
+   "before_hex": "0000",
+   "after_hex": "2d18",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CFE3",
+   "offset": "0x33CFE3",
+   "before_hex": "00",
+   "after_hex": "24",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CFE5",
+   "offset": "0x33CFE5",
+   "before_hex": "000000",
+   "after_hex": "232888",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CFE9",
+   "offset": "0x33CFE9",
+   "before_hex": "000000000000000000000000000000",
+   "after_hex": "280ed001280fd1688890420cd1a888",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CFF9",
+   "offset": "0x33CFF9",
+   "before_hex": "00",
+   "after_hex": "28",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833CFFB",
+   "offset": "0x33CFFB",
+   "before_hex": "00000000000000000000000000",
+   "after_hex": "d10120642806d26421091a5b18",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D009",
+   "offset": "0x33D009",
+   "before_hex": "000000000000000000000000000000",
+   "after_hex": "e06433b34205d210350134192ce6d3",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D019",
+   "offset": "0x33D019",
+   "before_hex": "00000000000000",
+   "after_hex": "203be020012d1a",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D021",
+   "offset": "0x33D021",
+   "before_hex": "000000000000000000000000000000",
+   "after_hex": "242888012814d16888904211d1a888",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D031",
+   "offset": "0x33D031",
+   "before_hex": "00",
+   "after_hex": "28",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D033",
+   "offset": "0x33D033",
+   "before_hex": "000000000000000000000000000000000000000000000000000000",
+   "after_hex": "d1012064280bd26421091a8e4203d94018a880761a03e08019a880",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D04F",
+   "offset": "0x33D04F",
+   "before_hex": "000000000000000000000000000000",
+   "after_hex": "261fe010350134192ce3d320012d1a",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D05F",
+   "offset": "0x33D05F",
+   "before_hex": "000000",
+   "after_hex": "242888",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D063",
+   "offset": "0x33D063",
+   "before_hex": "0000000000000000000000",
+   "after_hex": "2805d010350134192cf8d3",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D06F",
+   "offset": "0x33D06F",
+   "before_hex": "000000000000000000000000000000000000000000000000000000000000000000",
+   "after_hex": "2010e0642e07d96420b880201c391c20f515fb643eefe7be80201c391c20f50efb",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D091",
+   "offset": "0x33D091",
+   "before_hex": "0000000000000000000000000000000000",
+   "after_hex": "260120f0bc02bc08470888012809d18888",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D0A3",
+   "offset": "0x33D0A3",
+   "before_hex": "000000000000000000000000000000",
+   "after_hex": "2806d1012088802868032801d10c48",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D0B3",
+   "offset": "0x33D0B3",
+   "before_hex": "000000",
+   "after_hex": "471848",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D0B7",
+   "offset": "0x33D0B7",
+   "before_hex": "000000000000000000000000000000000000000000000000000000000000000000000000000000",
+   "after_hex": "4798e0c046c046c046c046c046c046c046c04602b42088012803d16188281cf430418002bc0f48",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D0DF",
+   "offset": "0x33D0DF",
+   "before_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000",
+   "after_hex": "47ddce07087fcf0708c3d6070817d10708fdfe070833d40708cdd4070823d507081fd50708a08601",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D108",
+   "offset": "0x33D108",
+   "before_hex": "00000000",
+   "after_hex": "6079feff",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D10D",
+   "offset": "0x33D10D",
+   "before_hex": "00",
+   "after_hex": "65",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D10F",
+   "offset": "0x33D10F",
+   "before_hex": "000000",
+   "after_hex": "038035",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D113",
+   "offset": "0x33D113",
+   "before_hex": "0000000000000000000000000000000000",
+   "after_hex": "0325b105081dd0070801cf07080eb5021c",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D125",
+   "offset": "0x33D125",
+   "before_hex": "000000",
+   "after_hex": "f04cf8",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D129",
+   "offset": "0x33D129",
+   "before_hex": "000000",
+   "after_hex": "281cd1",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D12D",
+   "offset": "0x33D12D",
+   "before_hex": "00",
+   "after_hex": "48",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D12F",
+   "offset": "0x33D12F",
+   "before_hex": "000000",
+   "after_hex": "47d53c",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D133",
+   "offset": "0x33D133",
+   "before_hex": "00",
+   "after_hex": "09",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D13A",
+   "offset": "0x33D13A",
+   "before_hex": "00000000",
+   "after_hex": "0e490968",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D13F",
+   "offset": "0x33D13F",
+   "before_hex": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+   "after_hex": "2913d010318a4210d3101c401a1f2108420bd10f214901884207d8101c103840890121084201d00120",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D169",
+   "offset": "0x33D169",
+   "before_hex": "00",
+   "after_hex": "e0",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D16B",
+   "offset": "0x33D16B",
+   "before_hex": "000000",
+   "after_hex": "200ebc",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D16F",
+   "offset": "0x33D16F",
+   "before_hex": "00",
+   "after_hex": "bd",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D171",
+   "offset": "0x33D171",
+   "before_hex": "00",
+   "after_hex": "65",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D173",
+   "offset": "0x33D173",
+   "before_hex": "000000",
+   "after_hex": "03185e",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D177",
+   "offset": "0x33D177",
+   "before_hex": "00",
+   "after_hex": "03",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D180",
+   "offset": "0x33D180",
+   "before_hex": "00000000",
+   "after_hex": "051c201c",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D185",
+   "offset": "0x33D185",
+   "before_hex": "000000",
+   "after_hex": "f01cf8",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D189",
+   "offset": "0x33D189",
+   "before_hex": "000000000000000000",
+   "after_hex": "2809d0201cfff7f5fd",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D193",
+   "offset": "0x33D193",
+   "before_hex": "0000000000",
+   "after_hex": "2804d0a088",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D199",
+   "offset": "0x33D199",
+   "before_hex": "00",
+   "after_hex": "28",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D19B",
+   "offset": "0x33D19B",
+   "before_hex": "0000000000000000000000000000000000",
+   "after_hex": "d101204543281c4949084702b5fff7baff",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D1AD",
+   "offset": "0x33D1AD",
+   "before_hex": "000000000000000000",
+   "after_hex": "2803d05046fff7e3fd",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D1B7",
+   "offset": "0x33D1B7",
+   "before_hex": "00",
+   "after_hex": "e0",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D1B9",
+   "offset": "0x33D1B9",
+   "before_hex": "00000000000000000000000000000000",
+   "after_hex": "2002bc04bc104706b442490968ac2252",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D1CA",
+   "offset": "0x33D1CA",
+   "before_hex": "000000000000000000",
+   "after_hex": "891888420ad3c822d2",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D1D4",
+   "offset": "0x33D1D4",
+   "before_hex": "00000000000000000000000000000000",
+   "after_hex": "5218904205d2401a0f22104201d10120",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D1E5",
+   "offset": "0x33D1E5",
+   "before_hex": "00",
+   "after_hex": "e0",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D1E7",
+   "offset": "0x33D1E7",
+   "before_hex": "0000000000000000000000000000000000",
+   "after_hex": "2006bc7047281cf4300188012904d18188",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D1F9",
+   "offset": "0x33D1F9",
+   "before_hex": "00000000000000000000000000",
+   "after_hex": "2901d1012181800b2e01d03248",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D207",
+   "offset": "0x33D207",
+   "before_hex": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+   "after_hex": "471ae002b40188012913d14188072910d00c290ed0132909d915290ad31d2905d9242903d0542904d3582902d8012002bc7047",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D23B",
+   "offset": "0x33D23B",
+   "before_hex": "000000000000000000",
+   "after_hex": "2002bc7047281cf030",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D245",
+   "offset": "0x33D245",
+   "before_hex": "000000000000000000000000000000000000000000",
+   "after_hex": "680188012921d141882a1cf432538899421bd18188",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D25B",
+   "offset": "0x33D25B",
+   "before_hex": "00",
+   "after_hex": "29",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D25D",
+   "offset": "0x33D25D",
+   "before_hex": "00000000000000000000000000000000000000",
+   "after_hex": "d1012193885b18642b13d8d0b5041c1e1c0f1c",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D271",
+   "offset": "0x33D271",
+   "before_hex": "00000000000000",
+   "after_hex": "212180101c174b",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D279",
+   "offset": "0x33D279",
+   "before_hex": "0000000000000000000000",
+   "after_hex": "f00cf82a1cf4329680154b",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D285",
+   "offset": "0x33D285",
+   "before_hex": "000000000000000000",
+   "after_hex": "f006f8d0bc01bc1348",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D28F",
+   "offset": "0x33D28F",
+   "before_hex": "000000",
+   "after_hex": "471348",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D293",
+   "offset": "0x33D293",
+   "before_hex": "00000000000000000000",
+   "after_hex": "4718470fb5201cac2149",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D29E",
+   "offset": "0x33D29E",
+   "before_hex": "000000000000",
+   "after_hex": "4018fff76cfd",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D2A5",
+   "offset": "0x33D2A5",
+   "before_hex": "0000000000000000",
+   "after_hex": "2809d0201cac2149",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D2AE",
+   "offset": "0x33D2AE",
+   "before_hex": "00000000",
+   "after_hex": "40188088",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D2B3",
+   "offset": "0x33D2B3",
+   "before_hex": "00",
+   "after_hex": "28",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D2B5",
+   "offset": "0x33D2B5",
+   "before_hex": "0000000000",
+   "after_hex": "d101203f18",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D2BB",
+   "offset": "0x33D2BB",
+   "before_hex": "000000000000000000",
+   "after_hex": "e001370fbc01bc0848",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D2C5",
+   "offset": "0x33D2C5",
+   "before_hex": "00",
+   "after_hex": "47",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D2C8",
+   "offset": "0x33D2C8",
+   "before_hex": "000000000000",
+   "after_hex": "a7b605088035",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D2CF",
+   "offset": "0x33D2CF",
+   "before_hex": "00000000000000000000000000000000000000000000000000",
+   "after_hex": "03f9d30708c1b4050879c70708cfcf070817d1070825190608",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D300",
+   "offset": "0x33D300",
+   "before_hex": "000000000000000000000000000000000000000000",
+   "after_hex": "f0b5301cfff73afd071c358876880f4c2468ac2040",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D316",
+   "offset": "0x33D316",
+   "before_hex": "0000",
+   "after_hex": "2418",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D319",
+   "offset": "0x33D319",
+   "before_hex": "00",
+   "after_hex": "22",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D31B",
+   "offset": "0x33D31B",
+   "before_hex": "00000000000000000000000000",
+   "after_hex": "232088a8420bd16088b04208d1",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D329",
+   "offset": "0x33D329",
+   "before_hex": "0000000000",
+   "after_hex": "2f05d0a088",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D32F",
+   "offset": "0x33D32F",
+   "before_hex": "00",
+   "after_hex": "28",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D331",
+   "offset": "0x33D331",
+   "before_hex": "0000000000",
+   "after_hex": "d101201218",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D337",
+   "offset": "0x33D337",
+   "before_hex": "00000000000000000000000000000000000000",
+   "after_hex": "e0013210340133192becd3f0bc01bc02490847",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D34C",
+   "offset": "0x33D34C",
+   "before_hex": "0000",
+   "after_hex": "8035",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D34F",
+   "offset": "0x33D34F",
+   "before_hex": "00000000000000000000000000000000000000",
+   "after_hex": "03591608080120a080802040037047014b1847",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D364",
+   "offset": "0x33D364",
+   "before_hex": "0000",
+   "after_hex": "013c",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D367",
+   "offset": "0x33D367",
+   "before_hex": "00000000000000000000000000",
+   "after_hex": "091fbc04bc04b43ff5b5f801bc",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x0833D375",
+   "offset": "0x33D375",
+   "before_hex": "00",
+   "after_hex": "47",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003C00",
+   "offset": "0x1003C00",
+   "before_hex": "000000000000",
+   "after_hex": "1fb5041c0a1c",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003C07",
+   "offset": "0x1003C07",
+   "before_hex": "000000000000000000000000000000000000",
+   "after_hex": "2c09d00d2c2dd14a2a2bd817490968822040",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003C1A",
+   "offset": "0x1003C1A",
+   "before_hex": "000000000000000000000000000000",
+   "after_hex": "091806e0182a23d814490968ac2040",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003C2A",
+   "offset": "0x1003C2A",
+   "before_hex": "000000000000000000000000",
+   "after_hex": "0918120189180c1c201c104b",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003C37",
+   "offset": "0x1003C37",
+   "before_hex": "000000",
+   "after_hex": "f01af8",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003C3B",
+   "offset": "0x1003C3B",
+   "before_hex": "00000000000000000000000000000000000000",
+   "after_hex": "2815d00c4a1268f4322068136898420ed1a088",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003C4F",
+   "offset": "0x1003C4F",
+   "before_hex": "00",
+   "after_hex": "28",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003C51",
+   "offset": "0x1003C51",
+   "before_hex": "0000000000",
+   "after_hex": "d101209388",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003C57",
+   "offset": "0x1003C57",
+   "before_hex": "00",
+   "after_hex": "2b",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003C59",
+   "offset": "0x1003C59",
+   "before_hex": "0000000000000000000000000000000000000000000000",
+   "after_hex": "d10123984204d9c01aa0801fbc08bc1847044b18471847",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003C71",
+   "offset": "0x1003C71",
+   "before_hex": "00",
+   "after_hex": "65",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003C73",
+   "offset": "0x1003C73",
+   "before_hex": "000000",
+   "after_hex": "038035",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003C77",
+   "offset": "0x1003C77",
+   "before_hex": "0000000000000000000000000000000000000000000000000000000000000000000000",
+   "after_hex": "037dcd330869d333080cb4291cf03109680a88281cf43003889a4214d10a2b0fd00b4b",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003C9B",
+   "offset": "0x1003C9B",
+   "before_hex": "000000",
+   "after_hex": "f013f8",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003C9F",
+   "offset": "0x1003C9F",
+   "before_hex": "0000000000000000000000000000000000",
+   "after_hex": "280dd048882b1cf4335b88984207d18888",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003CB1",
+   "offset": "0x1003CB1",
+   "before_hex": "0000000000000000000000",
+   "after_hex": "2801d1012088800cbc0448",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003CBD",
+   "offset": "0x1003CBD",
+   "before_hex": "0000000000",
+   "after_hex": "470cbc0348",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003CC3",
+   "offset": "0x1003CC3",
+   "before_hex": "000000",
+   "after_hex": "471847",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003CC8",
+   "offset": "0x1003CC8",
+   "before_hex": "00000000000000000000000000000000",
+   "after_hex": "7dcd330823d507081fd507080d490968",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003CD9",
+   "offset": "0x1003CD9",
+   "before_hex": "0000000000000000000000000000000000000000",
+   "after_hex": "2912d0081cf430824210d0086804280bd1822040",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003CEE",
+   "offset": "0x1003CEE",
+   "before_hex": "00000000000000000000000000000000000000000000",
+   "after_hex": "0918101c401a4b210901884202d20f21084201d00348",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003D05",
+   "offset": "0x1003D05",
+   "before_hex": "000000",
+   "after_hex": "470348",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003D09",
+   "offset": "0x1003D09",
+   "before_hex": "00",
+   "after_hex": "47",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003D0D",
+   "offset": "0x1003D0D",
+   "before_hex": "00",
+   "after_hex": "65",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003D0F",
+   "offset": "0x1003D0F",
+   "before_hex": "00000000000000000000000000000000000000000000000000000000000000",
+   "after_hex": "033bd1330867d133081eb42c1cf434291cf031096820880a280dd0201c194b",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003D2F",
+   "offset": "0x1003D2F",
+   "before_hex": "000000",
+   "after_hex": "f030f8",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003D33",
+   "offset": "0x1003D33",
+   "before_hex": "00000000000000000000000000000000000000000000000000000000000000",
+   "after_hex": "2824d00888012807d148886288904220d002e008880a281cd00b2e17d02a6a",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003D53",
+   "offset": "0x1003D53",
+   "before_hex": "000000000000",
+   "after_hex": "2e03d0822149",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003D5A",
+   "offset": "0x1003D5A",
+   "before_hex": "0000000000000000000000",
+   "after_hex": "491904e00e490968ac2040",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003D66",
+   "offset": "0x1003D66",
+   "before_hex": "000000000000000000000000000000000000000000000000000000000000",
+   "after_hex": "09181201891820880a2802d08888a28801e048686268904205d11ebc0648",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003D85",
+   "offset": "0x1003D85",
+   "before_hex": "0000000000",
+   "after_hex": "471ebc0548",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003D8B",
+   "offset": "0x1003D8B",
+   "before_hex": "0000000000",
+   "after_hex": "471ebc0548",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003D91",
+   "offset": "0x1003D91",
+   "before_hex": "000000000000000000",
+   "after_hex": "4718477dcd33088035",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003D9B",
+   "offset": "0x1003D9B",
+   "before_hex": "00000000000000000000000000000000000000",
+   "after_hex": "0317d10708b9d03308fdfe07081eb4296a0901",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003DAF",
+   "offset": "0x1003DAF",
+   "before_hex": "0000000000000000",
+   "after_hex": "2e04d02a1c82235b",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003DB8",
+   "offset": "0x1003DB8",
+   "before_hex": "0000000000000000000000",
+   "after_hex": "d21804e00d4a1268ac235b",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003DC4",
+   "offset": "0x1003DC4",
+   "before_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+   "after_hex": "d21889182a1cf03212680c880a2c06d09388c31a8c88e41a8c80908005e05368c31a4c68e41a4c6050601ebc0148",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003DF3",
+   "offset": "0x1003DF3",
+   "before_hex": "000000",
+   "after_hex": "478035",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  },
+  {
+   "address": "0x09003DF7",
+   "offset": "0x1003DF7",
+   "before_hex": "0000000000",
+   "after_hex": "033fd60708",
+   "note": "shiyi1133 SS2_GBA_HACK legacy_issue_repairs/1d391fd6 patch.asm (1.0.4-beta1)"
+  }
+ ]
+}

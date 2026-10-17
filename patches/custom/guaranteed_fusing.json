@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "id": "guaranteed_fusing",
+  "name": "Guaranteed fusing (blacksmith recipes always succeed)",
+  "stage": "static_candidate",
+  "profile_id": "ss2-cn-baseline",
+  "baseline": {
+    "filename": "SS2_SC_bug_fixed.GBA",
+    "size": 33554432,
+    "md5": "35eb6567d94f855480c5d7ba2dff4389",
+    "sha256": "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989",
+    "crc32": "AFCFC96D"
+  },
+  "source_provenance": {
+    "kind": "port_from_eu",
+    "source": "eu/patches/guaranteed-fusing-recipes.json (EU 0x080844E5)",
+    "notes": "docs/mods/guaranteed_fusing.md"
+  },
+  "evidence": {
+    "status": "static_verified",
+    "semantics": "When the recipe matcher 0x080843C0 returns a recipe, the fuse always uses that recipe's grade table instead of rolling (rng & 0xFFFF) <= [0x03003580]+0x74 and falling through to the random generator 0x080849DC. No-recipe combinations are unchanged.",
+    "static_audit": "docs/mods/guaranteed_fusing.md",
+    "user_acceptance": "not_run",
+    "runtime": "runtime_verified (synthetic call of 0x080845DC, 300 seeds, English vs English+mod): three Scales 100/300 -> 300/300 Lizard; no-recipe identical 300/300. docs/mods/evidence/guaranteed_fusing_ab.json"
+  },
+  "writes": [
+    {
+      "address": "0x080846A5",
+      "offset": "0x000846A5",
+      "before_hex": "d9",
+      "after_hex": "e0",
+      "mode": "thumb",
+      "note": "bls #0x080846A8 -> b #0x080846A8: recipe-table gate always passes. The RNG draw before it is kept, so later draws are unchanged. EU equivalent 0x080844E5 (+0x1C0)."
+    }
+  ]
+}

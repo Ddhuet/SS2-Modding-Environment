@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "id": "town_return_heal",
+  "name": "Full heal on return to town (boss teleporter, Angel Wing)",
+  "stage": "static_candidate",
+  "profile_id": "ss2-cn-baseline",
+  "baseline": {
+    "filename": "SS2_SC_bug_fixed.GBA",
+    "size": 33554432,
+    "md5": "35eb6567d94f855480c5d7ba2dff4389",
+    "sha256": "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989",
+    "crc32": "AFCFC96D"
+  },
+  "source_provenance": {
+    "kind": "new",
+    "source": "translation/tools/make_town_return_heal.py",
+    "notes": "docs/mods/town_return_heal.md"
+  },
+  "evidence": {
+    "status": "runtime_verified",
+    "semantics": "Any warp() 0x0805847C to area 0 (town) refills the local player's HP (+0xCC = +0x6A) and SP (+0xCA = +0x68) before the map loader runs. Covers all 13 boss teleporters and the Angel Wing.",
+    "static_audit": "docs/mods/town_return_heal.md",
+    "user_acceptance": "not_run",
+    "runtime": "runtime_verified (user states Post_Boss/Angel_Wing/Post_Arena, visible input only, English vs English+mod): boss teleporter 49/66 -> 66/66 HP and SP 56 -> 86/86; Angel Wing 49/66 -> 66/66; arena exit unchanged (heals in both). docs/mods/evidence/town_return_heal_ab.json"
+  },
+  "writes": [
+    {
+      "address": "0x08058488",
+      "offset": "0x00058488",
+      "before_hex": "cef7c0fb",
+      "after_hex": "62f0b2fe",
+      "mode": "thumb",
+      "note": "warp() 0x0805847C: `bl 0x08026C0C` -> `bl 0x080BB1F0` (heal stub, then tail-calls 0x08026C0C)."
+    },
+    {
+      "address": "0x080BB1F0",
+      "offset": "0x000BB1F0",
+      "before_hex": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "00280fd107b546f77dff552189004843054940186830418802886230028041800fbc9e46014b1847803d00030d6c0208",
+      "mode": "thumb",
+      "note": "Allocation 0x080bb1f0..0x080bb21f (48 B, was zero; owner town_return_heal): if area == 0, actor[0x080020F4()] +0xCC = +0x6A (HP) and +0xCA = +0x68 (SP), as the arena exit 0x0808FAF4 does; then `ldr r3,=0x08026C0D; bx r3`."
+    }
+  ]
+}
