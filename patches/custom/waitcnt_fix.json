@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "id": "waitcnt_fix",
+  "name": "ROM wait-state fix (restore the developers' intended WAITCNT 0x4014)",
+  "stage": "static_candidate",
+  "profile_id": "ss2-cn-baseline",
+  "baseline": {
+    "filename": "SS2_SC_bug_fixed.GBA",
+    "size": 33554432,
+    "md5": "35eb6567d94f855480c5d7ba2dff4389",
+    "sha256": "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989",
+    "crc32": "AFCFC96D"
+  },
+  "source_provenance": {
+    "kind": "new",
+    "source": "hand-assembled; see docs/mods/waitcnt_fix.md",
+    "notes": "GAME_PERFORMANCE.md R1"
+  },
+  "evidence": {
+    "status": "runtime_verified",
+    "semantics": "Boot init 0x08000618 wrote WAITCNT=0x4014 (ROM 3/1 waits + prefetch) and then called RegisterRamReset(0xE0), which clears WAITCNT back to 0 (4/2 waits, no prefetch). The flash library later ORs in SRAM bits, so the game ran with 0x0003 forever. The fix calls RegisterRamReset first and writes 0x4014 after it; the flash library then turns it into 0x4017.",
+    "static_audit": "docs/mods/waitcnt_fix.md",
+    "user_acceptance": "not_run",
+    "runtime": "runtime_verified (mGBA 0.10.5 HLE BIOS, cold boot from workspace/input/光明之魂2.sav, visible input only; English phase1d vs English+waitcnt_fix sha256 86400c4a…7576): WAITCNT 0x0003 vs 0x4017 at every checkpoint, from frame 540 onward; title -> file select -> inn -> Save -> exported saves byte-identical (sha256 5afaf155…, differs from the fixture so the flash write happened); reboot from the exported save reaches the inn on both, WAITCNT 0x4017 on the fix. Screens differ only by animation phase (loads finish in fewer frames). Modpack (9 patches) + fix, same cold boot: average busy 104,909 -> 81,338 cycles/frame, lagged frames 31 -> 24. 5_mobs.ss0 combat what-if (WAITCNT poked to 0x4017): 194,651 -> 128,430 average, peak 230,661 -> 154,817. Real hardware / flash cart: not_run."
+  },
+  "writes": [
+    {
+      "address": "0x0800061C",
+      "offset": "0x0000061C",
+      "before_hex": "3d493e4a101c0880e020b9f037fa",
+      "after_hex": "e020b9f03bfa3c493c4a0a80c046",
+      "mode": "thumb",
+      "note": "Boot init 0x08000618: `ldr r1,=0x04000204; ldr r2,=0x4014; adds r0,r2,#0; strh r0,[r1]; movs r0,#0xE0; bl 0x080B9A98` -> `movs r0,#0xE0; bl 0x080B9A98 (RegisterRamReset); ldr r1,=0x04000204; ldr r2,=0x4014; strh r2,[r1]; nop`. Same literals (0x08000714, 0x08000718). r1/r2 are overwritten at 0x0800062E/0x08000632 before any use; r0 is overwritten at 0x08000634."
+    }
+  ]
+}
