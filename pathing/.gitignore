@@ -1,0 +1,3 @@
+# emulator run outputs (logs, screenshots, profiles); regenerate with the scripts here
+runs/
+__pycache__/

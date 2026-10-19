@@ -74,6 +74,7 @@ Record every allocation you make (address, length, fill, owner) in your definiti
 | `0x08019FD8..0x0801A093` | translation (centring helper + reserved dead code) |
 | `0x080BB1F0..0x080BB21F` | `town_return_heal` (custom) stub |
 | `0x080BC300..0x080BC31F`, `0x09004400..0x09004BFF`, `0x09A00000..0x09A0007F` | `enemy_hp_bars` (custom, CN modder's code); `0x09009BF0..0x09009BFF` must stay zero |
+| `0x080BB220..0x080BB237`, `0x09010000..0x09010FFF`; RAM: EWRAM `0x0203D000..0x0203FFFF` (heap end lowered to `0x0203CFF0`), IWRAM `0x03007800..0x0300791F` | `enemy_pathing` (custom); see `docs/mods/enemy_pathing.md` |
 
 - **Free for new mods:** `0x09002000..0x093FFFFF` and `0x09500000..0x09FFFFFF`. The upper 16 MiB
   is **zero-filled** in this baseline (EU used 0xFF; don't assume either, check).

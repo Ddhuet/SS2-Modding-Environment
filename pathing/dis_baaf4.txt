@@ -1,0 +1,87 @@
+080BAAF4  0029      cmp    r1, #0
+080BAAF6  58d0      beq    #0x80babaa
+080BAAF8  0123      movs   r3, #1
+080BAAFA  8842      cmp    r0, r1
+080BAAFC  00d2      bhs    #0x80bab00
+080BAAFE  f746      mov    pc, lr
+080BAB00  10b4      push   {r4}
+080BAB02  0124      movs   r4, #1
+080BAB04  2407      lsls   r4, r4, #0x1c
+080BAB06  a142      cmp    r1, r4
+080BAB08  04d2      bhs    #0x80bab14
+080BAB0A  8142      cmp    r1, r0
+080BAB0C  02d2      bhs    #0x80bab14
+080BAB0E  0901      lsls   r1, r1, #4
+080BAB10  1b01      lsls   r3, r3, #4
+080BAB12  f8e7      b      #0x80bab06
+080BAB14  e400      lsls   r4, r4, #3
+080BAB16  a142      cmp    r1, r4
+080BAB18  04d2      bhs    #0x80bab24
+080BAB1A  8142      cmp    r1, r0
+080BAB1C  02d2      bhs    #0x80bab24
+080BAB1E  4900      lsls   r1, r1, #1
+080BAB20  5b00      lsls   r3, r3, #1
+080BAB22  f8e7      b      #0x80bab16
+080BAB24  0022      movs   r2, #0
+080BAB26  8842      cmp    r0, r1
+080BAB28  00d3      blo    #0x80bab2c
+080BAB2A  401a      subs   r0, r0, r1
+080BAB2C  4c08      lsrs   r4, r1, #1
+080BAB2E  a042      cmp    r0, r4
+080BAB30  05d3      blo    #0x80bab3e
+080BAB32  001b      subs   r0, r0, r4
+080BAB34  9c46      mov    ip, r3
+080BAB36  0124      movs   r4, #1
+080BAB38  e341      rors   r3, r4
+080BAB3A  1a43      orrs   r2, r3
+080BAB3C  6346      mov    r3, ip
+080BAB3E  8c08      lsrs   r4, r1, #2
+080BAB40  a042      cmp    r0, r4
+080BAB42  05d3      blo    #0x80bab50
+080BAB44  001b      subs   r0, r0, r4
+080BAB46  9c46      mov    ip, r3
+080BAB48  0224      movs   r4, #2
+080BAB4A  e341      rors   r3, r4
+080BAB4C  1a43      orrs   r2, r3
+080BAB4E  6346      mov    r3, ip
+080BAB50  cc08      lsrs   r4, r1, #3
+080BAB52  a042      cmp    r0, r4
+080BAB54  05d3      blo    #0x80bab62
+080BAB56  001b      subs   r0, r0, r4
+080BAB58  9c46      mov    ip, r3
+080BAB5A  0324      movs   r4, #3
+080BAB5C  e341      rors   r3, r4
+080BAB5E  1a43      orrs   r2, r3
+080BAB60  6346      mov    r3, ip
+080BAB62  9c46      mov    ip, r3
+080BAB64  0028      cmp    r0, #0
+080BAB66  03d0      beq    #0x80bab70
+080BAB68  1b09      lsrs   r3, r3, #4
+080BAB6A  01d0      beq    #0x80bab70
+080BAB6C  0909      lsrs   r1, r1, #4
+080BAB6E  d9e7      b      #0x80bab24
+080BAB70  0e24      movs   r4, #0xe
+080BAB72  2407      lsls   r4, r4, #0x1c
+080BAB74  2240      ands   r2, r4
+080BAB76  01d1      bne    #0x80bab7c
+080BAB78  10bc      pop    {r4}
+080BAB7A  f746      mov    pc, lr
+080BAB7C  6346      mov    r3, ip
+080BAB7E  0324      movs   r4, #3
+080BAB80  e341      rors   r3, r4
+080BAB82  1a42      tst    r2, r3
+080BAB84  01d0      beq    #0x80bab8a
+080BAB86  cc08      lsrs   r4, r1, #3
+080BAB88  0019      adds   r0, r0, r4
+080BAB8A  6346      mov    r3, ip
+080BAB8C  0224      movs   r4, #2
+080BAB8E  e341      rors   r3, r4
+080BAB90  1a42      tst    r2, r3
+080BAB92  01d0      beq    #0x80bab98
+080BAB94  8c08      lsrs   r4, r1, #2
+080BAB96  0019      adds   r0, r0, r4
+080BAB98  6346      mov    r3, ip
+080BAB9A  0124      movs   r4, #1
+080BAB9C  e341      rors   r3, r4
+080BAB9E  1a42      tst    r2, r3
+----------------------------------------
