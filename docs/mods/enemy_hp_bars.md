@@ -1,7 +1,9 @@
 # enemy_hp_bars: the CN modder's enemy HP bars, standalone
 
-Definition: `patches/custom/enemy_hp_bars.json`. Shipped as `Patch_Manager/patches/enemy_hp_bars.ips32`
-(sha256 `c761bbec…`, made against the English ROM `ss2-en-phase1d.gba`; result ROM `96ac676f…`).
+Definition: `patches/custom/enemy_hp_bars.json`. Shipped as `../SS2_Web_Patcher/patches/enemy_hp_bars.bps`
+(made with `translation/tools/make_bps.py enemy_hp_bars` against the English ROM `ss2-en-phase1d.gba`;
+patch sha256 `3ac534da…`, result ROM `2b22a323…` = `translation/build/ss2-en+enemy_hp_bars.gba`).
+Before fix 3: `.bps` `24791e5c…`, ROM `96ac676f…`. The retired `Patch_Manager/patches/enemy_hp_bars.ips32` gives the same ROM.
 The definition is generated: `python3 translation/tools/make_enemy_hp_bars.py` (modder bytes + our fixes).
 
 ## Source (CN baseline, not a port)
@@ -29,6 +31,7 @@ His baseline is our CN baseline (sha256 `45ac38bb…c989`), so no conversion was
 | `0x080BC300..0x080BC31F` | near stub `push {r0-r7,lr}; ldr r3,=0x09004401; bx r3` + zero pad |
 | `0x09004400..0x09004BFF` | Thumb code + literals (2048 B incl. zero tail) |
 | `0x09004B00..0x09004B1B` | fix 1 helper (inside the owned 2 KiB) |
+| `0x09004B20..0x09004B43` | fix 3 town gate helper + literals (inside the owned 2 KiB) |
 | `0x09A00000..0x09A0007F` | Boss label 4bpp tiles 32×8 |
 | `0x09009BF0..0x09009BFF` | read-only probe; keep zero (or put his menu entry here) |
 
@@ -78,3 +81,33 @@ is compared to 2 as a byte. The US port handoff (`hp_bar/HANDOFF_enemy_hp_bars.m
 Evidence: static only for the bug case. Scanning ~3000 frames of combat in Angel_Wing, TinyBoss and
 Boss_HP_bar_no_boss (`scan_1dc.py`, scratch) never saw a flagged value on CN, so the before/after
 of the bug itself is not_run. Regression: the fix-1 screenshots are byte-identical with fix 2.
+
+### Fix 3: bars drawn over the town after an Angel Wing
+
+**Symptom (user):** Angel Wing out of a dungeon early, and the hostiles' bars still show in the
+castle courtyard. The battle pool keeps the dungeon's hostiles (with their positions) while you
+are in town, so the bar routine kept drawing them wherever those coordinates land on screen.
+
+**Patch:** the routine's first gate at `0x0900440A` (`ldr r0,=0x03002960; ldr r0,[r0]; cmp r0,#0;
+beq exit`, 8 B) → `bl 0x09004B20; beq 0x090044A8; nop`. The helper at `0x09004B20` keeps that
+original check and also returns Z=1 (skip drawing) when the current area id, u16 at
+`[[0x03005DB4]]+0`, is 0 (town; same field `town_return_heal` uses, and the game reads it with
+`ldrh`). A null world pointer keeps the original behaviour. Clobbers r0 only; r0 is reloaded
+right after. The exit path is the one the routine already takes when it has nothing to draw.
+
+No warp hook is needed: the check runs every frame, so bars stop as soon as the area becomes
+town and come back as soon as the angel ("Shall I take you back?") returns you to the dungeon.
+Other non-town areas (arena etc.) are unchanged. The indoor town rooms are area 0 too (user
+states `In_Bar.ss0`, `In_Castle.ss0`: `[[0x03005DB4]]+0` = 0), so they are covered; in those two
+states the battle pool is empty (enabled mask `0x030057BC` = 0), so the old build drew nothing there either.
+
+**Evidence (`runtime_verified`):** user state `translation/build/HP_Bar_Bug.ss0`
+(`3021918e…`, jungle, enemies close by). Visible input only: START, A (Item), RIGHT×5, DOWN×4,
+A (pick Angel Wing), LEFT×5 (onto the character), A (use), then 700 frames. Old build `96ac676f…`:
+two bars float at the top-left of the courtyard (`evidence/enemy_hp_bars_fix3_town_before.png`).
+New build `2b22a323…`: none (`…_fix3_town_after.png`). Continuing on the new build: DOWN 30, UP 40
+into the angel, A×3 (Yes), 400 frames → back in the jungle with bars drawn again
+(`…_fix3_back_in_dungeon.png`). Checks: `mod_conflicts.py` ok; `combine_patch.py` with all 18
+official singles + every custom mod: no overlap; the IPS applied to `ss2-en-phase1d.gba` reproduces
+the build byte for byte, and `SS2_Web_Patcher/patcher.js` (Node, `buildRom`) gives the same ROM
+from the JP ROM + translation and from the English ROM, and applies all 25 mods together without conflict. not_run: Angel Wing from the arena, save/load in town.

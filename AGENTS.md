@@ -17,7 +17,7 @@ The guy who made SS2_GBA_HACK was nice enough to let me into his private repo as
 | File | What it is |
 |---|---|
 | `eu/inputs/ss2-cn-baseline.gba` (= `workspace/input/光明之魂2.gba`) | **CN mod baseline**, `SS2_SC_bug_fixed`, 32 MiB, AU2J, SHA-256 `45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989`, profile `eu/profiles/ss2-cn-baseline.json`. **Write every mod against this file.** |
-| `translation/build/ss2-en-phase1d.gba` (copy in `Patch_Manager/Input_ROM/`) | **The English ROM players use**: CN baseline + the translation patch, SHA-256 `4343a9c7…53cb`. Gameplay code and data are at the same addresses as the CN baseline. |
+| `translation/build/ss2-en-phase1d.gba` | **The English ROM players use**: CN baseline + the translation patch, SHA-256 `4343a9c7…53cb`. Gameplay code and data are at the same addresses as the CN baseline. |
 | `ROMs/Shining Soul II (USA).gba` | US AU2E rev0, SHA-256 `b31c19d2…`, profile `translation/profiles/ss2-us.json`. Source for US→CN ports. Its code and RAM layout differ from CN (see "Porting US → CN"). |
 | `ROMs/Shining_Soul_II_JP.GBA` | 16 MiB Chinese localization (not pristine Japanese). Rarely needed. |
 
@@ -47,13 +47,17 @@ replayed headlessly (see Testing).
    `cd eu && .venv/bin/python -m ss2tools build inputs/ss2-cn-baseline.gba ../translation/build/ss2-en+<id>.patch.json ../translation/build/ss2-en+<id>.gba --profile profiles/ss2-cn-baseline.json --allow-static-candidate`
    (`ss2tools build` refuses to overwrite; delete old outputs first).
 4. **Test** in the emulator (below), baseline vs patched.
-5. **Ship** as IPS for `Patch_Manager/`: `python3 translation/tools/make_ips_set.py --defs patches/custom`
-   writes one `.ips` per definition, made against the English ROM. It uses `.ips32` when a mod
-   writes above 16 MiB, where standard IPS can't reach. Run it without `--defs` to regenerate
-   the 18 official ones. `Patch_Manager/patch_manager.py` is the user's tkinter GUI: tick
-   patches, Apply, output in `Patch_Manager/Output_ROM/`. It lists whatever is in `patches/`
-   and refuses selected patches that write different bytes to the same offset. Its README:
-   `Patch_Manager/README.md`.
+5. **Ship as `.bps`** (not `.ips`/`.ips32`) to the web patcher, the sibling repo
+   `../SS2_Web_Patcher/` (the user's own; players use it). `python3 translation/tools/make_bps.py <id> [<id> ...]`
+   (default `--defs patches/custom`) writes `../SS2_Web_Patcher/patches/<id>.bps`, an English ROM →
+   English+mod diff, round-trip checked, and removes a stale `<id>.ips`/`.ips32` there. Then run
+   `python3 tools/make_index.py` in `SS2_Web_Patcher/` (it updates `patches/index.json` sizes and
+   hashes) and add/keep `patches/<id>.txt` (`Title:` line + description) for a new mod. The page
+   decodes a mod `.bps` into changed bytes, so it still stacks and is conflict-checked; its README
+   covers formats. To check the page's result headlessly, `require()` `patcher.js` in Node
+   (it exports `parseBps`, `parsePatch`, `buildRom`) and compare against your build's SHA-256.
+   Commit/push in `SS2_Web_Patcher` only when the user asks.
+   `Patch_Manager/` (tkinter GUI, `make_ips_set.py`) is **retired**; don't ship there.
 
 The 18 official CN singles are pairwise disjoint and stack in any combination (verified
 2026-10-11). A new mod should keep that property.
@@ -102,7 +106,7 @@ Record every allocation you make (address, length, fill, owner) in your definiti
   - Glyph codes: CN full-width glyphs are `0x0001..0x0700` (CN digits `0x00EF`+n, `Ｘ` `0x00C8`, `＋` `0x00A3`); half-width English is US code + `0x700` (`A`=`0x701`, `a`=`0x721`, `0`=`0x741`, space `0x751`). Mixed strings render fine.
   - English lines are about twice as many glyphs as Chinese; size buffers for 30+ glyphs.
   - To centre, call the width-aware helper `0x08019FD8` (returns tiles/2) rather than the raw count `0x0801A1F4`.
-  - If a mod renames a record, add an English name to `translation/mods/ledger.json`; `combine_patch.py` and `make_ips_set.py` apply it.
+  - If a mod renames a record, add an English name to `translation/mods/ledger.json`; `combine_patch.py` and `make_bps.py` apply it.
 
 ## Where the knowledge is
 
