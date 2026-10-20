@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "walk_angles",
+  "name": "True 45-degree diagonal movement (8-way walk angles)",
+  "stage": "static_candidate",
+  "profile_id": "ss2-cn-baseline",
+  "baseline": {
+    "filename": "SS2_SC_bug_fixed.GBA",
+    "size": 33554432,
+    "md5": "35eb6567d94f855480c5d7ba2dff4389",
+    "sha256": "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989",
+    "crc32": "AFCFC96D"
+  },
+  "source_provenance": {
+    "kind": "port_from_us",
+    "source": "Nell_Stuff/ss2-usa-walk-angles.ips (US AU2E rev0)",
+    "notes": "docs/mods/walk_angles.md"
+  },
+  "evidence": {
+    "status": "runtime_verified",
+    "semantics": "The shared step routine (CN 0x08013864 = US 0x08013900) converts direction 0-7 to an angle via a u16 table; diagonals were 109/147/237/19 (~26.7 deg off horizontal). Repointing its 4 literals to a 45-degree table changes player walking, enemy movement and knock-back that go through it.",
+    "static_audit": "docs/mods/walk_angles.md",
+    "user_acceptance": "not_run",
+    "runtime": "runtime_verified (headless mGBA, user states, English phase1d vs English+walk_angles, step routine entry/return traced): Post_Boss.ss0 player walking (caller 0x0800F90A) DOWN+RIGHT step (356,179)=27deg -> (282,282)=45deg, UP+LEFT likewise, same step length; 5_Mobs.ss0 300 frames no input: main enemy movement (caller 0x080181DA) (-142,71)=27deg -> (-113,113)=45deg, knock-back (caller 0x08013AE4) 27deg -> 45deg; straight moves unchanged. Also with enemy_pathing+waitcnt_fix: enemies 45deg. docs/mods/walk_angles.md"
+  },
+  "writes": [
+    {
+      "address": "0x080138CC",
+      "offset": "0x000138CC",
+      "before_hex": "260b4408",
+      "after_hex": "00300009",
+      "mode": "data",
+      "note": "Step routine 0x08013864 literal #1 (US 0x08013968): angle table 0x08440B26 -> 0x09003000. The other 26 readers of 0x08440B26 are untouched, as in the US patch."
+    },
+    {
+      "address": "0x08013978",
+      "offset": "0x00013978",
+      "before_hex": "260b4408",
+      "after_hex": "00300009",
+      "mode": "data",
+      "note": "Step routine 0x08013864 literal #2 (US 0x08013A14): angle table 0x08440B26 -> 0x09003000. The other 26 readers of 0x08440B26 are untouched, as in the US patch."
+    },
+    {
+      "address": "0x08013A14",
+      "offset": "0x00013A14",
+      "before_hex": "260b4408",
+      "after_hex": "00300009",
+      "mode": "data",
+      "note": "Step routine 0x08013864 literal #3 (US 0x08013AB0): angle table 0x08440B26 -> 0x09003000. The other 26 readers of 0x08440B26 are untouched, as in the US patch."
+    },
+    {
+      "address": "0x08013A7C",
+      "offset": "0x00013A7C",
+      "before_hex": "260b4408",
+      "after_hex": "00300009",
+      "mode": "data",
+      "note": "Step routine 0x08013864 literal #4 (US 0x08013B18): angle table 0x08440B26 -> 0x09003000. The other 26 readers of 0x08440B26 are untouched, as in the US patch."
+    },
+    {
+      "address": "0x09003000",
+      "offset": "0x01003000",
+      "before_hex": "00000000000000000000000000000000",
+      "after_hex": "400060008000a000c000e00000002000",
+      "mode": "data",
+      "note": "New walk-angle table, u16 per direction 0-7 (down, down-left, left, up-left, up, up-right, right, down-right), 256 = full turn: 64,96,128,160,192,224,0,32 (true 45 degree diagonals). Original at 0x08440B26: 64,109,128,147,192,237,0,19. Allocation 0x09003000..0x0900300F, owner walk_angles."
+    }
+  ]
+}
