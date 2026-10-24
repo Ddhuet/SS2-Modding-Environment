@@ -2,22 +2,27 @@
 """Shining Soul II patch manager: tick patches, press Apply, get a patched ROM.
 
 Folders next to this script:
-    patches/     .ips and .ips32 files; add or remove files at any time, the list follows
-    Input_ROM/   the ROM to patch (the English CN-baseline build); first .gba found is used,
-                 or pick one from the menu when there are several
+    patches/     .ips, .ips32 and .bps files; add or remove files at any time, the list follows
+    Input_ROM/   the ROM to patch: Shining Soul II (Japan).gba, or the English ROM ss2-en-phase1d.gba;
+                 first .gba found is used, or pick one from the menu when there are several
     Output_ROM/  patched ROMs are written here (never overwritten: names carry a timestamp)
 
 Run:  python3 patch_manager.py
 Needs Python 3 with tkinter (Arch/Omarchy: `sudo pacman -S tk`). Standard library only.
 
 Formats: IPS ("PATCH" ... "EOF", 24-bit offsets, RLE records, optional truncate size) and
-IPS32 ("IPS32" ... "EEOF", 32-bit offsets) for patches that write above 16 MiB.
+IPS32 ("IPS32" ... "EEOF", 32-bit offsets) for patches that write above 16 MiB, and BPS ("BPS1").
+english_translation.bps (Japanese -> English ROM) is applied first when the input is the Japanese
+ROM. Every other .bps is made against the English ROM: it is decoded there and turned into a list
+of changed bytes, so it stacks with the others like an IPS. Same rules as the web patcher's
+patcher.js (buildRom), so both give byte-identical ROMs.
 Before writing, the selected patches are checked against each other: two patches that write
 different bytes to the same offset are refused (identical bytes are allowed).
 """
 import datetime
 import hashlib
 import sys
+import zlib
 from pathlib import Path
 
 # Frozen (PyInstaller .exe): the folders sit next to the executable, not in the unpack dir.
@@ -25,7 +30,9 @@ HERE = Path(sys.executable if getattr(sys, "frozen", False) else __file__).resol
 PATCH_DIR = HERE / "patches"
 INPUT_DIR = HERE / "Input_ROM"
 OUTPUT_DIR = HERE / "Output_ROM"
-EXTS = (".ips", ".ips32")
+EXTS = (".ips", ".ips32", ".bps")
+TRANSLATION = "english_translation"   # stem of the Japanese -> English BPS, applied first
+MIB16, MIB32 = 1 << 24, 1 << 25
 ROM_EXTS = (".gba", ".bin")
 
 
@@ -36,8 +43,12 @@ class PatchError(Exception):
 
 
 def load_patch(path):
-    """Parse an IPS/IPS32 file into {"name", "path", "writes": [(offset, bytes)], "truncate"}."""
+    """Parse an IPS/IPS32 file into {"name", "path", "writes": [(offset, bytes)], "truncate"}.
+    A BPS gives {"name", "path", "bps": {...}}; its writes are filled in by build()."""
     data = Path(path).read_bytes()
+    if data.startswith(b"BPS1"):
+        return {"name": Path(path).stem, "path": Path(path), "bps": parse_bps(Path(path).name, data),
+                "writes": None, "truncate": None}
     if data.startswith(b"IPS32"):
         pos, width, eof = 5, 4, b"EEOF"
     elif data.startswith(b"PATCH"):
@@ -64,6 +75,98 @@ def load_patch(path):
             writes.append((off, data[pos:pos + size]))
             pos += size
     return {"name": Path(path).stem, "path": Path(path), "writes": writes, "truncate": truncate}
+
+
+def parse_bps(name, data):
+    """BPS header and footer: {"data", "start", "source_size", "target_size", "source_crc", "target_crc"}."""
+    if len(data) < 19 or not data.startswith(b"BPS1"):
+        raise PatchError(f"{name}: not a BPS file")
+    if zlib.crc32(data[:-4]) != int.from_bytes(data[-4:], "little"):
+        raise PatchError(f"{name}: the patch file is damaged (checksum mismatch)")
+    bps = {"name": name, "data": data}
+    pos = 4
+    bps["source_size"], pos = bps_number(data, pos, name)
+    bps["target_size"], pos = bps_number(data, pos, name)
+    meta, pos = bps_number(data, pos, name)
+    bps["start"] = pos + meta
+    bps["source_crc"] = int.from_bytes(data[-12:-8], "little")
+    bps["target_crc"] = int.from_bytes(data[-8:-4], "little")
+    return bps
+
+
+def bps_number(data, pos, name):
+    value, shift = 0, 1
+    while True:
+        if pos >= len(data) - 12:
+            raise PatchError(f"{name}: truncated")
+        b = data[pos]
+        pos += 1
+        value += (b & 0x7F) * shift
+        if b & 0x80:
+            return value, pos
+        shift <<= 7
+        value += shift
+
+
+def apply_bps(source, bps, crc=None):
+    """Decode a BPS against source; checks source and result size/CRC32."""
+    name, d = bps["name"], bps["data"]
+    crc = zlib.crc32(source) if crc is None else crc
+    if len(source) != bps["source_size"] or crc != bps["source_crc"]:
+        raise PatchError(f"{name} was made for a different ROM (expected CRC32 {bps['source_crc']:08X}, "
+                         f"size {bps['source_size']}; this one is {crc:08X}, size {len(source)}).")
+    out = bytearray(bps["target_size"])
+    pos, end, o, src_rel, tgt_rel = bps["start"], len(d) - 12, 0, 0, 0
+    while pos < end:
+        cmd, pos = bps_number(d, pos, name)
+        n, action = (cmd >> 2) + 1, cmd & 3
+        if o + n > len(out):
+            raise PatchError(f"{name}: writes past the end of the ROM")
+        if action == 0:            # SourceRead
+            out[o:o + n] = source[o:o + n]
+        elif action == 1:          # TargetRead
+            out[o:o + n] = d[pos:pos + n]
+            pos += n
+        else:                      # SourceCopy / TargetCopy
+            r, pos = bps_number(d, pos, name)
+            delta = -(r >> 1) if r & 1 else r >> 1
+            if action == 2:
+                src_rel += delta
+                out[o:o + n] = source[src_rel:src_rel + n]
+                src_rel += n
+            else:
+                tgt_rel += delta
+                for i in range(n):  # may overlap
+                    out[o + i] = out[tgt_rel]
+                    tgt_rel += 1
+        o += n
+    if o != len(out) or zlib.crc32(out) != bps["target_crc"]:
+        raise PatchError(f"{name}: the result failed its checksum")
+    return bytes(out)
+
+
+def bps_writes(base, bps, crc=None):
+    """The bytes a BPS changes in base, as IPS-style writes."""
+    target = apply_bps(base, bps, crc)
+    writes, i, n = [], 0, len(target)
+    while i < n:
+        if i < len(base) and target[i] == base[i]:
+            i += 1
+            continue
+        start = i
+        while i < n and not (i < len(base) and target[i] == base[i]):
+            i += 1
+        writes.append((start, target[start:i]))
+    return writes
+
+
+def is_translation(p):
+    return p["name"].lower() == TRANSLATION and "bps" in p
+
+
+def pad_rom(rom):
+    """Pad output that went past 16 MiB to the full 32 MiB a GBA cartridge maps."""
+    return rom + bytes(MIB32 - len(rom)) if MIB16 < len(rom) < MIB32 else rom
 
 
 def conflicts(patches):
@@ -95,7 +198,7 @@ def apply_patches(rom, patches):
 def list_patches():
     PATCH_DIR.mkdir(exist_ok=True)
     return sorted((p for p in PATCH_DIR.iterdir() if p.suffix.lower() in EXTS and p.is_file()),
-                  key=lambda p: p.name.lower())
+                  key=lambda p: (p.stem.lower() != TRANSLATION, p.name.lower()))
 
 
 def list_roms():
@@ -121,22 +224,52 @@ def output_name(rom_path, names):
     return OUTPUT_DIR / f"{rom_path.stem}+{tag}_{stamp}{rom_path.suffix}"
 
 
+def find_translation():
+    p = PATCH_DIR / f"{TRANSLATION}.bps"
+    return load_patch(p) if p.is_file() else None
+
+
+def build_rom(rom, patches, tr=None):
+    """Translation first (if chosen), then the mods as one conflict-checked set of writes, then padding.
+    tr is the translation patch (chosen or not), used to spot a Japanese ROM without it.
+    Returns (rom bytes, translated, mods)."""
+    mods = [p for p in patches if not is_translation(p)]
+    chosen_tr = next((p for p in patches if is_translation(p)), None)
+    tr = chosen_tr or tr
+    crc, translated = zlib.crc32(rom), False
+    if chosen_tr:
+        b = tr["bps"]
+        if not (len(rom) == b["target_size"] and crc == b["target_crc"]):  # not English yet
+            if crc != b["source_crc"]:
+                raise PatchError(f"{tr['path'].name} needs the Japanese ROM, Shining Soul II (Japan).gba "
+                                 f"(CRC32 {b['source_crc']:08X}). Your ROM's CRC32 is {crc:08X}.")
+            rom, crc, translated = apply_bps(rom, b, crc), b["target_crc"], True
+    elif tr and mods and crc == tr["bps"]["source_crc"]:
+        raise PatchError(f"This is the Japanese ROM; the patches are made for the English one. "
+                         f"Tick {pretty(TRANSLATION)}.")
+    for p in mods:
+        if "bps" in p:
+            p["writes"] = bps_writes(rom, p["bps"], crc)
+    clash = conflicts(mods)
+    if clash:
+        raise PatchError("These patches write different bytes to the same place:\n" +
+                         "\n".join(f"  {a} / {b} at 0x{o:08X}" for a, b, o in clash))
+    return pad_rom(apply_patches(rom, mods)), translated, mods
+
+
 def build(rom_path, patch_paths):
     """Apply patches to the ROM; return (output path, sha256). Raises PatchError."""
     rom = rom_path.read_bytes()
     patches = [load_patch(p) for p in patch_paths]
-    clash = conflicts(patches)
-    if clash:
-        raise PatchError("These patches write different bytes to the same place:\n" +
-                         "\n".join(f"  {a} / {b} at 0x{o:08X}" for a, b, o in clash))
-    out = apply_patches(rom, patches)
+    out, translated, mods = build_rom(rom, patches, find_translation())
     OUTPUT_DIR.mkdir(exist_ok=True)
-    path = output_name(rom_path, [p["name"] for p in patches])
+    path = output_name(rom_path, [p["name"] for p in mods] or [TRANSLATION])
     path.write_bytes(out)
     sha = hashlib.sha256(out).hexdigest()
     path.with_suffix(".txt").write_text(
         f"input   {rom_path.name}  sha256 {hashlib.sha256(rom).hexdigest()}\n"
-        f"output  {path.name}  sha256 {sha}\n"
+        f"output  {path.name}  sha256 {sha}\n" +
+        ("translated with english_translation.bps first\n" if translated else "") +
         "patches (applied in this order):\n" +
         "".join(f"  {p['path'].name}  sha256 {hashlib.sha256(p['path'].read_bytes()).hexdigest()}\n"
                 for p in patches))
@@ -234,9 +367,10 @@ def run_gui():
             old = {k: v.get() for k, v in state["vars"].items()}
             state["vars"] = {}
             for p in patches:
-                v = tk.BooleanVar(value=old.get(p.name, False))
+                v = tk.BooleanVar(value=old.get(p.name, p.stem.lower() == TRANSLATION))
                 state["vars"][p.name] = v
-                label = pretty(p.stem) + ("  (IPS32)" if p.suffix.lower() == ".ips32" else "")
+                kind = {".ips32": "  (IPS32)", ".bps": "  (BPS)"}.get(p.suffix.lower(), "")
+                label = pretty(p.stem) + ("  (applied first)" if p.stem.lower() == TRANSLATION else kind)
                 cb = ttk.Checkbutton(inner, text=label, variable=v, command=update_status)
                 cb.pack(anchor="w", padx=4, pady=1)
                 cb.bind("<Button-4>", lambda e: canvas.yview_scroll(-1, "units"))

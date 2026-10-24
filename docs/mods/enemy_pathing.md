@@ -171,8 +171,18 @@ Profiles: `tools/perf/build/ss2prof --waitcnt 0x4017` (the desktop `.ss0` loads 
 - Static: `mod_conflicts.py --defs patches/custom` ok (code:6, expansion:1); all preimages checked by
   `build.py` and ss2tools.
 
-not_run: real hardware; multiplayer; summons; boss fights; long play sessions across many maps
+not_run: real hardware; multiplayer; summons (see summon_ai); boss fights; long play sessions across many maps
 (heap headroom in the biggest maps); soft reset.
+
+## Shared core (2026-10-21)
+
+Everything except the three entry points moved to `pathing/src/pf_core.h`, which `summon_ai`
+(`docs/mods/summon_ai.md`) also includes. Under the same compiler the split is byte-identical to
+the old single file. Note: the committed source no longer reproduces the shipped blob with the
+current clang (23.1.3: 3,854 B vs the shipped 3,916 B); the shipped definition was not rebuilt.
+Rebuilding `enemy_pathing` would change its bytes (and summon/build.py's check of the 72 IWRAM
+words would then need the new trailing words). summon_ai uses `PF_BASE + 0xC0..0xFF` of the
+control block (`struct pf` ends at 0x74) and drives the same field while a summon is out.
 
 ## Tuning knobs (`pathing/src/enemy_pathing.c`)
 

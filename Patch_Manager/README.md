@@ -1,6 +1,10 @@
 # Patch Manager
 
-Tick the CN mod patches you want, press **Apply**, and get a patched English ROM.
+Tick the patches you want, press **Apply**, and get a patched English ROM. Start from the Japanese
+ROM `Shining Soul II (Japan).gba` (SHA-256 `9f3e0d06…d17a`) with **English translation** ticked
+(it is ticked by default and applied first), or from the English ROM `ss2-en-phase1d.gba`
+(the translation is then skipped). Same rules and byte-identical output as the web patcher
+(`../SS2_Web_Patcher`), so a patch tested here works there.
 
 ```sh
 python3 patch_manager.py
@@ -15,9 +19,11 @@ antivirus may warn about an unsigned PyInstaller exe; choose "More info → Run 
 Rebuild it on Linux with `Patch_Manager/build_exe.sh`, which uses Steam Proton's Wine and Windows
 Python 3.12.10 + PyInstaller 6.11.1 in a private Wine prefix, and runs `selftest.py` first.
 
-- `patches/`: `.ips` and `.ips32` files. Add or remove files at any time; the list refreshes
-  by itself. `base_rom.sha256` names the ROM the patches were made for, and the window warns
-  when the input ROM differs.
+- `patches/`: `.ips`, `.ips32` and `.bps` files. Add or remove files at any time; the list refreshes
+  by itself. `english_translation.bps` turns the Japanese ROM into the English one. Every other
+  patch is made against the English ROM; a mod `.bps` is decoded there and turned into a list of
+  changed bytes, so it stacks and is conflict-checked like an IPS. `base_rom.sha256` lists the
+  accepted input ROMs (Japanese, English), and the window warns when the input ROM is neither.
 - `Input_ROM/`: the ROM to patch. The first `.gba` file is used, or pick one from the menu when
   there are several.
 - `Output_ROM/`: results, named `<input>+<patches>_<timestamp>.gba`, each with a `.txt` that lists
@@ -28,12 +34,10 @@ address. They are **IPS32** files (32-bit offsets). Flips and most other IPS too
 them; this manager can. Any combination of the 18 patches is safe: none of them overlap. If two
 selected patches ever write different bytes to the same place, Apply refuses and names them.
 
-To regenerate the folder from the repo (English ROM, 18 patches, self-check against the
-combined builds), run:
+New mods arrive here as `.bps` from `translation/tools/make_bps.py` (see `AGENTS.md`). Test them
+here, then copy them to the web patcher. `make_ips_set.py` (the old IPS set) is retired.
 
-```sh
-python3 translation/tools/make_ips_set.py
-```
+The Windows `.exe` predates BPS support; rebuild it with `build_exe.sh` before using it.
 
 `weapon_balance_rework.ips` also renames "Combat Claw" to "Combat Knife", from
 `translation/mods/ledger.json`.

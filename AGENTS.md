@@ -16,12 +16,17 @@ The guy who made SS2_GBA_HACK was nice enough to let me into his private repo as
 
 | File | What it is |
 |---|---|
-| `eu/inputs/ss2-cn-baseline.gba` (= `workspace/input/光明之魂2.gba`) | **CN mod baseline**, `SS2_SC_bug_fixed`, 32 MiB, AU2J, SHA-256 `45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989`, profile `eu/profiles/ss2-cn-baseline.json`. **Write every mod against this file.** |
-| `translation/build/ss2-en-phase1d.gba` | **The English ROM players use**: CN baseline + the translation patch, SHA-256 `4343a9c7…53cb`. Gameplay code and data are at the same addresses as the CN baseline. |
+| `ROMs/Shining Soul II (Japan).gba` | **The starting file.** Japanese retail ROM, 16 MiB, SHA-256 `9f3e0d0653de6504c1aeaf03de3cca06ae0c15a24089f0236398ec56d382d17a`, CRC32 `7B39A7B2`. Players start from it, so every tool and test starts from it too. |
+| `Patch_Manager/patches/english_translation.bps` | Japanese ROM → English ROM (SHA-256 of the patch `b0bf4f35…`). The same file is in `../SS2_Web_Patcher/patches/`. |
+| English ROM `ss2-en-phase1d.gba` (SHA-256 `4343a9c7…53cb`, 32 MiB) | **Temporary.** Made from the Japanese ROM with `english_translation.bps`. It is not just the text: it carries the CN community's code baseline (`SS2_SC_bug_fixed`) plus the translation, so **every** mod's code and addresses live in it, and every mod `.bps` is an English → English+mod diff. `make_bps.py` makes it in memory; `--english-out PATH` saves a copy (scratchpad or `translation/build/`) for the emulator or disassembly. Treat any copy as disposable. |
+| `eu/inputs/ss2-cn-baseline.gba` (= `workspace/input/光明之魂2.gba`) | CN mod baseline, 32 MiB, SHA-256 `45ac38bb…c989`, profile `eu/profiles/ss2-cn-baseline.json`. Same gameplay code and data addresses as the English ROM. Definitions' `before_hex` comes from it; only needed for `ss2tools`/`combine_patch.py`-style checks. |
 | `ROMs/Shining Soul II (USA).gba` | US AU2E rev0, SHA-256 `b31c19d2…`, profile `translation/profiles/ss2-us.json`. Source for US→CN ports. Its code and RAM layout differ from CN (see "Porting US → CN"). |
 | `ROMs/Shining_Soul_II_JP.GBA` | 16 MiB Chinese localization (not pristine Japanese). Rarely needed. |
 
-When writing or porting a mod, ALWAYS use translation/build/ss2-en-phase1d.gba as the base ROM.
+When writing or porting a mod, ALWAYS start from `ROMs/Shining Soul II (Japan).gba`: make the
+temporary English ROM from it with `english_translation.bps` and work against that.
+**The deliverable is always a `.bps` in `Patch_Manager/patches/`**, not a patched `.gba` or source
+alone (see step 5 below).
 
 Address rule: file offset = ROM address − `0x08000000`. Checklist of ROMs: `ROMs/REQUIRED_ROMS.md`.
 Save fixture (immutable; work on copies): `workspace/input/光明之魂2.sav` (CN/English save).
@@ -43,21 +48,32 @@ replayed headlessly (see Testing).
      mods into one ss2tools patch and refuses any byte overlap between all inputs. Run it with
      your mod and the official singles too, to catch clashes with CN mods. It reads a single
      `--defs` folder, so copy or symlink the singles if needed.
-3. **Build** with the hash-checked builder (refuses wrong input, bad preimages, overlaps):
-   `cd eu && .venv/bin/python -m ss2tools build inputs/ss2-cn-baseline.gba ../translation/build/ss2-en+<id>.patch.json ../translation/build/ss2-en+<id>.gba --profile profiles/ss2-cn-baseline.json --allow-static-candidate`
-   (`ss2tools build` refuses to overwrite; delete old outputs first).
-4. **Test** in the emulator (below), baseline vs patched.
-5. **Ship as `.bps`** (not `.ips`/`.ips32`) to the web patcher, the sibling repo
-   `../SS2_Web_Patcher/` (the user's own; players use it). `python3 translation/tools/make_bps.py <id> [<id> ...]`
-   (default `--defs patches/custom`) writes `../SS2_Web_Patcher/patches/<id>.bps`, an English ROM →
-   English+mod diff, round-trip checked, and removes a stale `<id>.ips`/`.ips32` there. Then run
-   `python3 tools/make_index.py` in `SS2_Web_Patcher/` (it updates `patches/index.json` sizes and
-   hashes) and add/keep `patches/<id>.txt` (`Title:` line + description) for a new mod. The page
-   decodes a mod `.bps` into changed bytes, so it still stacks and is conflict-checked; its README
-   covers formats. To check the page's result headlessly, `require()` `patcher.js` in Node
-   (it exports `parseBps`, `parsePatch`, `buildRom`) and compare against your build's SHA-256.
-   Commit/push in `SS2_Web_Patcher` only when the user asks.
-   `Patch_Manager/` (tkinter GUI, `make_ips_set.py`) is **retired**; don't ship there.
+3. **Build the patch and a test ROM** from the Japanese ROM:
+   `python3 translation/tools/make_bps.py <id> [<id> ...] --rom-out <scratch dir> [--english-out <scratch>/en.gba]`
+   It checks the Japanese ROM's hash, applies `english_translation.bps` in memory, checks the
+   English hash, applies the definition (every preimage asserted, ledger names included), writes
+   `Patch_Manager/patches/<id>.bps` (English → English+mod, round-trip checked; a stale
+   `<id>.ips`/`.ips32` there is removed) and, with `--rom-out`, `<dir>/ss2-en+<id>.gba` to test.
+4. **Test** in the emulator (below), English vs English+mod. To test it **stacked with other
+   patches** (e.g. `respec` to learn a skill the savestate lacks), build the combination the same
+   way the user will: `Patch_Manager/patch_manager.py`'s `build(rom_path, [patch paths])` with the
+   Japanese ROM and `english_translation.bps` + the patches (headless, no GUI needed). Output goes
+   to `Patch_Manager/Output_ROM/` unless you point `pm.OUTPUT_DIR` at a scratch folder.
+5. **Deliver the `.bps` in `Patch_Manager/patches/`** and tell the user its path. That is the
+   hand-off: the user tests it in Patch_Manager (Japanese ROM in `Input_ROM/`, tick the
+   translation + patches, Apply) and then copies it to the web patcher themselves. **Don't write
+   to `../SS2_Web_Patcher/`** unless the user asks. For reference, when they do: a patch shows on
+   the page only once it is listed in `patches/index.json` (`python3 tools/make_index.py` there,
+   plus `patches/<id>.txt` with a `Title:` line), and the page must be served over HTTP
+   (`python3 -m http.server` in that folder), since `fetch` doesn't work from `file://`.
+   Patch_Manager and the web page use the same rules (translation first; a mod `.bps` is decoded
+   against the English ROM into changed bytes, so it stacks with `.ips` and is conflict-checked)
+   and give byte-identical ROMs. To check, `require()` `../SS2_Web_Patcher/patcher.js` in Node
+   (`parseBps`, `parsePatch`, `buildRom`) and compare SHA-256s with Patch_Manager's result.
+   Run `python3 Patch_Manager/selftest.py` after changing `patch_manager.py`. The Windows `.exe`
+   in `Patch_Manager/Windows/` needs `build_exe.sh` to pick up changes.
+   `ss2tools build` from the CN baseline (`eu/`) still works for extra hash/profile checks but is
+   optional.
 
 The 18 official CN singles are pairwise disjoint and stack in any combination (verified
 2026-10-11). A new mod should keep that property.
@@ -79,6 +95,8 @@ Record every allocation you make (address, length, fill, owner) in your definiti
 | `0x080BB1F0..0x080BB21F` | `town_return_heal` (custom) stub |
 | `0x080BC300..0x080BC31F`, `0x09004400..0x09004BFF`, `0x09A00000..0x09A0007F` | `enemy_hp_bars` (custom, CN modder's code); `0x09009BF0..0x09009BFF` must stay zero |
 | `0x080BB220..0x080BB237`, `0x09010000..0x09010FFF`; RAM: EWRAM `0x0203D000..0x0203FFFF` (heap end lowered to `0x0203CFF0`), IWRAM `0x03007800..0x0300791F` | `enemy_pathing` (custom); see `docs/mods/enemy_pathing.md` |
+| `0x080BB238..0x080BB267`, `0x09011000..0x09012FFF`; RAM: EWRAM `0x0203D0C0..0x0203D0FF` (inside enemy_pathing's control block) | `summon_ai` (custom, needs enemy_pathing); see `docs/mods/summon_ai.md` |
+| `0x080BB268..0x080BB3B3`, `0x09013000..0x090131FF`; RAM: IWRAM `0x03007920..0x03007927`; OBJ palette 15 colour 1 | `counter_fix_slash` (custom test variant of `counter_fix`; don't stack the two); see `docs/mods/counter_fix_slash.md` |
 
 - **Free for new mods:** `0x09002000..0x093FFFFF` and `0x09500000..0x09FFFFFF`. The upper 16 MiB
   is **zero-filled** in this baseline (EU used 0xFF; don't assume either, check).
