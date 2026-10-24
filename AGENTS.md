@@ -10,9 +10,13 @@ base: `Docs/INDEX.md`. Scripts: `Tools/Scripts/SCRIPTS_INDEX.md`. Previous proje
 finished: the translation's handoff is `Docs/Old_Docs/AGENTS_Translation.md`, the EU port is in
 `Archive/EU_Port/`. Don't continue those unless asked.
 
-## VERY IMPORTANT GIT THING
+## Local instructions: read `LOCAL.md` first
 
-The guy who made SS2_GBA_HACK (`Other_Modders/SS2_GBA_HACK/`, git-ignored) was nice enough to let me into his private repo as a contributor so I could see it. For the love of god and all that is holy, unholy, and anything else, do not push to his repo or do ANYTHING that changes ANYTHING on his end. No branches, no tags, no pushes, nothing. You can (and probably should at times) change things inside the folder, they just must stay local.
+If `LOCAL.md` exists in the repo root, read it before doing anything else. It is git-ignored and
+holds instructions for this particular checkout: private material on this machine, repos you must
+never push to, the owner's working preferences. Where it disagrees with this file, `LOCAL.md` wins.
+Never commit it, and never copy its contents into tracked files. If it doesn't exist, there are no
+local rules.
 
 ## The ROMs (`ROMs/`, never tracked)
 
@@ -20,7 +24,7 @@ The guy who made SS2_GBA_HACK (`Other_Modders/SS2_GBA_HACK/`, git-ignored) was n
 |---|---|
 | `ROMs/Shining_Soul_II_JP.gba` | **The starting file.** Japanese retail ROM, 16 MiB, SHA-256 `9f3e0d0653de6504c1aeaf03de3cca06ae0c15a24089f0236398ec56d382d17a`, CRC32 `7B39A7B2`. Players start from it, so every tool and test starts from it too. Same file as `Patch_Manager/Input_ROM/Shining_Soul_II_JP.gba` (never modify that folder). |
 | `Patch_Manager/patches/english_translation.bps` | Japanese ROM → English ROM (SHA-256 of the patch `b0bf4f35…`). The same file is in `../SS2_Web_Patcher/patches/`. |
-| English ROM `ss2-en-phase1d.gba` (SHA-256 `4343a9c7…53cb`, 32 MiB) | **Temporary.** Made from the Japanese ROM with `english_translation.bps`. It is not just the text: it carries the CN community's code baseline (`SS2_SC_bug_fixed`) plus the translation, so **every** mod's code and addresses live in it, and every mod `.bps` is an English → English+mod diff. `make_bps.py` makes it in memory; `--english-out PATH` saves a copy (scratchpad or `Build/`) for the emulator or disassembly. Treat any copy as disposable. |
+| English ROM `ss2-en-phase1d.gba` (SHA-256 `4343a9c7…53cb`, 32 MiB) | **Temporary.** Made from the Japanese ROM with `english_translation.bps`. It is not just the text: it carries the CN community's code baseline (`SS2_SC_bug_fixed`) plus the translation, so **every** mod's code and addresses live in it, and every mod `.bps` is an English → English+mod diff. `make_bps.py` makes it in memory; `--english-out PATH` saves a copy (scratchpad or the git-ignored `Build/`) for the emulator or disassembly. Treat any copy as disposable. |
 | `ROMs/Shining_Soul_II_CN_Baseline.gba` | CN mod baseline, 32 MiB, SHA-256 `45ac38bb…c989`, profile `Tools/profiles/ss2-cn-baseline.json`. Same gameplay code and data addresses as the English ROM. Definitions' `before_hex` comes from it; mod build scripts and `mod_conflicts.py`/`combine_patch.py` read it. |
 | `ROMs/Shining_Soul_II_USA.gba` | US AU2E rev0, SHA-256 `b31c19d2…`, profile `Tools/profiles/ss2-us.json`. Source for US→CN ports. Its code and RAM layout differ from CN (see "Porting US → CN"). |
 | `ROMs/Shining_Soul_II_CN.gba` | 16 MiB Chinese localization (not pristine Japanese). Rarely needed. `ROMs/Shining_Soul_II_EU.gba`: archived EU port only. |
@@ -113,8 +117,8 @@ Record every allocation you make (address, length, fill, owner) in your definiti
 
 ## Living with the translation (only what affects mods)
 
-- The translation's write set is in `Build/ss2-en-phase1.patch.json` (git-ignored;
-  regenerate with `Tools/.venv/bin/python Tools/Scripts/make_english_patch.py`). Don't patch its bytes;
+- The translation's write set is in `Build/ss2-en-phase1.patch.json` (generated, git-ignored, so
+  absent in a fresh clone; `mod_conflicts.py` and `combine_patch.py` need it. Generate it with `Tools/.venv/bin/python Tools/Scripts/make_english_patch.py`). Don't patch its bytes;
   `mod_conflicts.py` checks this.
 - **Functions the translation rewrote** (stack frames grown for longer lines; hooks inside them must
   use the new sp offsets, so read them from the English ROM, not the CN baseline):
@@ -149,10 +153,9 @@ Full map: `Docs/INDEX.md`. The essentials:
   - Our own mods: `Docs/mods/<id>.md`.
 - **US internals and US mods:**
   - `Docs/Porting/HUGEAPPLEPACK_FINDINGS.md`: US RAM map with CN equivalents, item format, hook lessons, what was tested.
-  - `Other_Modders/HugeApplePack/`: local, **untracked**, read-only US port pack from a Chinese modder. Never edit or commit it.
-  - `Other_Modders/Nell/`: Nell's US mods and handoffs (walk angles, archer summon, evade, break armor, sound fix, squirrel/pig).
+  - `Other_Modders/`: other modders' material, read-only (`Other_Modders/README.md`). Some of it is private and only exists in some checkouts; never edit, commit or share it.
+  - `Other_Modders/Nell/`: Nell's US mod handoffs (walk angles, archer summon, evade, break armor, sound fix, squirrel/pig).
   - `Docs/Porting/Chinese_and_US_ROM_differences.md`: a CN→US port of respec, the resistance fix and the counter fix. It is the same method in reverse and shows per-site shifts.
-  - `Other_Modders/Chinese_Misc_Mods/orb_clarity__purpose_unknown.ips`: an unidentified CN mod (local, untracked).
 
 ## Porting US → CN
 
@@ -185,7 +188,7 @@ needing Capstone or the emulator. One line per script: `Tools/Scripts/SCRIPTS_IN
   - Session gotcha: `run_until` also stops on its instruction budget, so check `r["hit"]`.
 - **Profiler:** `Tools/perf/` (`ss2prof` + `perfreport.py`); findings in `GAME_PERFORMANCE.md`.
 - **Unit tests:** `cd Tools && .venv/bin/python -m unittest discover -s tests` (set `TMPDIR` to a folder on the repo's disk; some tests hard-link).
-- Old Windows tooling is in `Archive/Windows_mGBA/`; the desktop emulator is `Tools/mGBA-0.10.5-win64/`.
+- Old Windows tooling is in `Archive/Windows_mGBA/`.
 
 ## Working rules
 
@@ -195,8 +198,7 @@ needing Capstone or the emulator. One line per script: `Tools/Scripts/SCRIPTS_IN
 - Injected code must be ARMv4T Thumb/ARM (no Thumb-2; NOP `0x46C0`), keep the ABI (registers, flags, SP alignment) and have documented allocations.
 - Test real behaviour through visible game input on the **English ROM + your mod**, against English without it. Cover normal-save persistence when the mod touches saved state. Label diagnostic RAM writes separately.
 - Record findings, commands and allocations in `Docs/` (e.g. `Docs/mods/<id>.md`, linked from `Docs/INDEX.md`) so the next session doesn't rediscover them. New reusable scripts go in `Tools/Scripts/` with a line in `SCRIPTS_INDEX.md`. Follow `REPO_INDEX.md` "Where things go".
-- **Subagents:** delegate bulk skimming of many files to Haiku (x-high effort) subagents with scoped folders, then spot-check their key claims.
-- Don't push, publish or share ROMs, saves, IPS/BPS outputs or anything in `Other_Modders/` without the user's explicit request.
+- Don't push, publish or share ROMs, saves, IPS/BPS outputs or anything in `Other_Modders/` without the user's explicit request. Git-ignored files stay that way (ROMs, patches, `Build/`, `LOCAL.md`, private `Other_Modders/` folders).
 
 ## Evidence vocabulary
 

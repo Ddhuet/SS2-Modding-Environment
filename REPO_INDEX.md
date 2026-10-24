@@ -5,6 +5,7 @@ The repo's skeleton: what lives where, and where new things go. Rules and workfl
 
 ```
 AGENTS.md            agent instructions (read first)
+LOCAL.md             this checkout's private instructions (git-ignored; may not exist)
 REPO_INDEX.md        this map
 GAME_PERFORMANCE.md  frame budget / profiling findings
 push.sh              commit + push helper (local, git-ignored)
@@ -67,7 +68,7 @@ where builds land.
 - `.venv/`: Python with Capstone (`Tools/.venv/bin/python`). Recreate with
   `python3 -m venv Tools/.venv && Tools/.venv/bin/pip install -r Tools/requirements-dev.txt`.
 - `profiles/`: ROM identity profiles. `tests/`: unit tests. `perf/`: cycle profiler (`ss2prof`).
-  `mGBA-0.10.5-win64/`: desktop mGBA (untracked).
+  A desktop mGBA may sit in `Tools/` locally (untracked).
 
 **`Docs/`**: start at `Docs/INDEX.md`. Mods in `Docs/mods/`, official-mod audits in
 `Docs/code_audits/`, RE package in `Docs/Analysis/`, text/translation in `Docs/Translation/`,
@@ -75,8 +76,8 @@ US porting in `Docs/Porting/`, lookup data in `Docs/Reference_Data/`, history in
 
 **`Savestates/`**: see `Savestates/README.md`.
 
-**`Other_Modders/`**: see `Other_Modders/README.md`. `HugeApplePack/` and `SS2_GBA_HACK/` are
-private and git-ignored; `SS2_GBA_HACK/` is someone else's git clone: never push or change its remote.
+**`Other_Modders/`**: see `Other_Modders/README.md`. Some folders are private and git-ignored, so
+they exist only in some checkouts.
 
 **`Archive/`**: see `Archive/README.md`.
 
