@@ -11,7 +11,7 @@ These cases demonstrate how to step-by-step trace from an external phenomenon, r
  | RAM addresses cannot be directly converted into ROM offsets
 
  |
-| [02_ITEM_CHEAT_TO_RECORD_LAYOUT.md]<br> | First inventory slot cheat code
+| ~~02_ITEM_CHEAT_TO_RECORD_LAYOUT.md~~ (removed 2026-10-23: the file was a byte copy of case 01; the item-record trace was lost. Item layout: `Docs/ITEM_AND_WAREHOUSE.md`)<br> | First inventory slot cheat code
 
  | 16-byte item record and type dispatch
 

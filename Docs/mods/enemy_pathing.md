@@ -1,8 +1,9 @@
 # enemy_pathing: enemies path around walls (flow field)
 
 Definition `Patches/Definitions/Custom/enemy_pathing.json` (7 writes, built by `Patches/enemy_pathing/build.py` from
-`Patches/enemy_pathing/src/enemy_pathing.c`). Shipped as `Patch_Manager/patches/enemy_pathing.ips32` (348 records,
-3576 B, against the English ROM). English + waitcnt_fix + enemy_pathing:
+`Patches/enemy_pathing/src/enemy_pathing.c`). Shipped as `Patch_Manager/patches/enemy_pathing.bps` (3,951 B, English → English+mod;
+rebuilt 2026-10-23 with clang 23.1.3, see the end of this doc). The original 2026-10-17 build was
+`enemy_pathing.ips32` (348 records, 3576 B), kept in `Patches/enemy_pathing/backup_2026-10-17_old_clang/`. English + waitcnt_fix + enemy_pathing:
 `Build/ss2-en+waitcnt_fix+enemy_pathing.gba`, sha256 `a3b5d716…601d79` (ss2tools build from
 the CN baseline; byte-identical to the test ROM).
 
@@ -179,7 +180,7 @@ not_run: real hardware; multiplayer; summons (see summon_ai); boss fights; long 
 Everything except the three entry points moved to `Patches/enemy_pathing/src/pf_core.h`, which `summon_ai`
 (`Docs/mods/summon_ai.md`) also includes. Under the same compiler the split is byte-identical to
 the old single file. Note: the committed source no longer reproduces the shipped blob with the
-current clang (23.1.3: 3,854 B vs the shipped 3,916 B); the shipped definition was not rebuilt.
+current clang (23.1.3: 3,854 B vs the 3,916 B built by an older clang). Rebuilt and reshipped as `enemy_pathing.bps` on 2026-10-23; an A/B against the old `.ips32` (backup in `Patches/enemy_pathing/backup_2026-10-17_old_clang/`) gave identical enemy tracks and pf state on Warrior_Pathing and Slime_Pathing over 1800 frames.
 Rebuilding `enemy_pathing` would change its bytes (and Patches/summon_ai/build.py's check of the 72 IWRAM
 words would then need the new trailing words). summon_ai uses `PF_BASE + 0xC0..0xFF` of the
 control block (`struct pf` ends at 0x74) and drives the same field while a summon is out.

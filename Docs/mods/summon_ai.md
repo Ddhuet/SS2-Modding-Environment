@@ -197,5 +197,5 @@ then `python3 Tools/Scripts/make_bps.py summon_ai` and `python3 Tools/Scripts/ma
 - "On screen" by the feet with an 8 px margin dropped targets whose sprite was still visible at the
   bottom edge (sprites stand ~24 px tall; the camera keeps the player 96 px from the top).
 - `Patches/enemy_pathing/src/enemy_pathing.c` at HEAD no longer compiles to the shipped blob (clang 23.1.3 gives
-  3,854 B vs the shipped 3,916 B). The pf_core.h split is identical to HEAD under the same compiler;
-  enemy_pathing was not rebuilt or reshipped.
+  3,854 B vs the 3,916 B from an older clang). The pf_core.h split is identical under the same compiler.
+  Rebuilt and reshipped as `enemy_pathing.bps` on 2026-10-23 (A/B identical; see `enemy_pathing.md`).

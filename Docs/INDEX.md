@@ -54,7 +54,7 @@ One doc per mod: what it changes, hooks, allocations, tests, evidence. Definitio
 | [`Analysis/STRUCTURE_FIELDS.md`](Analysis/STRUCTURE_FIELDS.md) | Player and battle-struct fields (item record type is u16, not u8, see errata). |
 | [`Analysis/PSEUDOCODE_CORE.md`](Analysis/PSEUDOCODE_CORE.md) | Hand pseudocode: damage, lethal, COUNTER, level-up, Soul Return. |
 | [`Analysis/DISCOVERY_GUIDE.md`](Analysis/DISCOVERY_GUIDE.md) | Method for tracing an unknown mechanism. |
-| [`Analysis/tracing_cases/`](Analysis/tracing_cases/README.md) | Worked traces from patches to fields/functions (case 02 is a duplicate of 01). |
+| [`Analysis/tracing_cases/`](Analysis/tracing_cases/README.md) | Worked traces from patches to fields/functions (case 02 was lost; see its README). |
 | `Analysis/historical_decompilation/` | Old Ghidra output from older ROMs: leads only. |
 | [`RESEARCH_TOPICS.md`](RESEARCH_TOPICS.md) | Open topics (dynamic monster scaling, weapon skill hit rate, archer piercing, …). |
 | [`RANDOM_MAP.md`](RANDOM_MAP.md) | Random-map hook research. |
