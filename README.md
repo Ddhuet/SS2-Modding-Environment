@@ -11,9 +11,10 @@ mods on it, as well as porting fixes from the US version.
 
 ## Just want to play?
 
-Use the browser patcher: **[Ddhuet/SS2-Patcher](https://github.com/Ddhuet/SS2-Patcher)**. Start
-from the Japanese ROM, apply the English translation, tick the mods you want, and download the
-patched ROM. Everything runs locally in your browser.
+Use the browser patcher: **[gentlebox.org/ss2-patcher](https://gentlebox.org/ss2-patcher/)**
+(source: [Ddhuet/SS2-Patcher](https://github.com/Ddhuet/SS2-Patcher)). Start from the Japanese
+ROM, apply the English translation, tick the mods you want, and download the patched ROM.
+Everything runs locally in your browser.
 
 Japanese ROM: SHA-256 `9f3e0d0653de6504c1aeaf03de3cca06ae0c15a24089f0236398ec56d382d17a`,
 CRC32 `7B39A7B2`.
