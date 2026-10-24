@@ -1,4 +1,4 @@
-import sys; sys.path.insert(0, "/home/david/Documents/SS2_Modding/summon/tools")
+import sys; sys.path.insert(0, "/home/david/Documents/SS2_Modding/Patches/summon_ai/tools")
 from scommon import *
 rom = sys.argv[1] if len(sys.argv) > 1 else str(ROM)
 for hold in (40, 70, 100, 130):

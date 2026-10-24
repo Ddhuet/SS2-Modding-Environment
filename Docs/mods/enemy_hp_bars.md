@@ -1,17 +1,17 @@
 # enemy_hp_bars: the CN modder's enemy HP bars, standalone
 
-Definition: `patches/custom/enemy_hp_bars.json`. Shipped as `../SS2_Web_Patcher/patches/enemy_hp_bars.bps`
-(made with `translation/tools/make_bps.py enemy_hp_bars` against the English ROM `ss2-en-phase1d.gba`;
-patch sha256 `3ac534da…`, result ROM `2b22a323…` = `translation/build/ss2-en+enemy_hp_bars.gba`).
+Definition: `Patches/Definitions/Custom/enemy_hp_bars.json`. Shipped as `../SS2_Web_Patcher/patches/enemy_hp_bars.bps`
+(made with `Tools/Scripts/make_bps.py enemy_hp_bars` against the English ROM `ss2-en-phase1d.gba`;
+patch sha256 `3ac534da…`, result ROM `2b22a323…` = `Build/ss2-en+enemy_hp_bars.gba`).
 Before fix 3: `.bps` `24791e5c…`, ROM `96ac676f…`. The retired `Patch_Manager/patches/enemy_hp_bars.ips32` gives the same ROM.
-The definition is generated: `python3 translation/tools/make_enemy_hp_bars.py` (modder bytes + our fixes).
+The definition is generated: `python3 Patches/enemy_hp_bars/make_enemy_hp_bars.py` (modder bytes + our fixes).
 
 ## Source (CN baseline, not a port)
 
-This is the modder's `field_living_character_hp_display`, taken from his repo `SS2_GBA_HACK/`.
+This is the modder's `field_living_character_hp_display`, taken from his repo `Other_Modders/SS2_GBA_HACK/`.
 His baseline is our CN baseline (sha256 `45ac38bb…c989`), so no conversion was needed.
 
-- Code writes: `SS2_GBA_HACK/rom/tools/current_optional_menu_builder_payloads.json`, feature
+- Code writes: `Other_Modders/SS2_GBA_HACK/rom/tools/current_optional_menu_builder_payloads.json`, feature
   `field_living_character_hp_display` (implementation `a4d6624c`, payload `2026-09-14.1`,
   condition `enhanced_edition=false`, `requires=[]`). Bytes are copied verbatim, not re-assembled.
   Source: `rom/mods/features/field_living_character_hp_display/optional_menu_builder/` (base.asm +
@@ -42,10 +42,10 @@ RAM: no fixed allocation. It reads battle pool `0x030057B4` (5 records, stride `
 ## Checks
 
 - Preimages are all zero / the original BL on both the CN baseline and English phase1d.
-- `mod_conflicts.py --defs patches/custom`: ok. `combine_patch.py` with all 18 official singles
+- `mod_conflicts.py --defs Patches/Definitions/Custom`: ok. `combine_patch.py` with all 18 official singles
   + `guaranteed_fusing` + `town_return_heal`: no overlap.
 - Runtime: `Angel_Wing.ss0`, sequence `4:B 40 4:B 60 90:LEFT 90:LEFT 90:UP 90:UP 90:RIGHT 90:RIGHT 90:DOWN 90:DOWN`.
-  Bars appear over the enemies and shrink with damage (evidence `docs/mods/evidence/enemy_hp_bars_*.png`).
+  Bars appear over the enemies and shrink with damage (evidence `Docs/mods/evidence/enemy_hp_bars_*.png`).
 - not_run: boss bottom bar, save/load, long sessions, stacking with other mods at runtime.
   His records list known risks: OAM/VRAM pressure with many objects, and heap growth.
 
@@ -54,7 +54,7 @@ RAM: no fixed allocation. It reads battle pool `0x030057B4` (5 records, stride `
 ### Fix 1: Boss bar on normal enemies
 
 **Symptom (user):** the bottom "Boss" bar appears in normal fights, e.g. the first enemy of a new
-game (state `translation/build/TinyBoss.ss0`) and the jungle after Angel_Wing (`Boss_HP_bar_no_boss.ss0`).
+game (state `Savestates/TinyBoss.ss0`) and the jungle after Angel_Wing (`Boss_HP_bar_no_boss.ss0`).
 
 **Cause:** the payload's `display_rules.py` picks the Boss layout from entity `+0x7A` bit1 alone
 ("native leader flag"). Ordinary enemies carry it: the tutorial slime has `0x46`, a jungle enemy
@@ -69,7 +69,7 @@ both `+0x39A==3` and `+0x7A` bit1. His own comment says `+0x39A==3` alone also h
 it touches only r4 and flags (r0–r3, r5–r7 hold coordinates/HP/loop state).
 
 **Result:** both user states now show ordinary bars and no bottom bar
-(`docs/mods/evidence/enemy_hp_bars_fix1_*.png`). A real CN boss is not_run.
+(`Docs/mods/evidence/enemy_hp_bars_fix1_*.png`). A real CN boss is not_run.
 
 ### Fix 2: some enemies get no bar
 
@@ -101,7 +101,7 @@ Other non-town areas (arena etc.) are unchanged. The indoor town rooms are area 
 states `In_Bar.ss0`, `In_Castle.ss0`: `[[0x03005DB4]]+0` = 0), so they are covered; in those two
 states the battle pool is empty (enabled mask `0x030057BC` = 0), so the old build drew nothing there either.
 
-**Evidence (`runtime_verified`):** user state `translation/build/HP_Bar_Bug.ss0`
+**Evidence (`runtime_verified`):** user state `Savestates/HP_Bar_Bug.ss0`
 (`3021918e…`, jungle, enemies close by). Visible input only: START, A (Item), RIGHT×5, DOWN×4,
 A (pick Angel Wing), LEFT×5 (onto the character), A (use), then 700 frames. Old build `96ac676f…`:
 two bars float at the top-left of the courtyard (`evidence/enemy_hp_bars_fix3_town_before.png`).

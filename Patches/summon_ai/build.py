@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Build summon_ai: compile src/summon_ai.c to a Thumb blob and write patches/custom/summon_ai.json
+"""Build summon_ai: compile src/summon_ai.c to a Thumb blob and write Patches/Definitions/Custom/summon_ai.json
 (CN-baseline-bound write list).
 
-    python3 summon/build.py            # writes the definition
-    python3 summon/build.py --rom OUT  # also writes a test ROM on the user's Summons/ test ROM
+    python3 Patches/summon_ai/build.py            # writes the definition
+    python3 Patches/summon_ai/build.py --rom OUT  # also writes a test ROM on the user's Patches/summon_ai/Starting_Info/ test ROM
                                        # (English + waitcnt_fix + walk_angles + enemy_pathing + persistent summons)
 
 Needs clang (armv4t target), llvm-objcopy, llvm-nm, llvm-readelf. Requires enemy_pathing at runtime
@@ -12,12 +12,12 @@ Needs clang (armv4t target), llvm-objcopy, llvm-nm, llvm-readelf. Requires enemy
 import argparse, json, struct, subprocess, sys, tempfile
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-SRC = ROOT / "summon/src/summon_ai.c"
-CN = ROOT / "eu/inputs/ss2-cn-baseline.gba"
-TEST_BASE = ROOT / "Summons/Shining Soul II (English)+4_patches.gba"
-OUT_DEF = ROOT / "patches/custom/summon_ai.json"
-PATHING_DEF = ROOT / "patches/custom/enemy_pathing.json"
+ROOT = Path(__file__).resolve().parents[2]
+SRC = ROOT / "Patches/summon_ai/src/summon_ai.c"
+CN = ROOT / "ROMs/Shining_Soul_II_CN_Baseline.gba"
+TEST_BASE = ROOT / "Patches/summon_ai/Starting_Info/Shining Soul II (English)+4_patches.gba"
+OUT_DEF = ROOT / "Patches/Definitions/Custom/summon_ai.json"
+PATHING_DEF = ROOT / "Patches/Definitions/Custom/enemy_pathing.json"
 
 CODE_BASE = 0x09011000          # free range 0x09002000..0x093FFFFF; owned 0x09011000..0x09012FFF
 CODE_MAX = 0x2000
@@ -73,7 +73,7 @@ def compile_blob():
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--rom", help="also write a test ROM built on the Summons/ test ROM")
+    ap.add_argument("--rom", help="also write a test ROM built on the Patches/summon_ai/Starting_Info/ test ROM")
     a = ap.parse_args()
     blob, syms = compile_blob()
     cn = CN.read_bytes()
@@ -99,8 +99,8 @@ def main():
             f"(hook {n}, sm_hook decides where to resume; vanilla code path when inactive).")
     pad = blob + b"\x00" * ((-len(blob)) % 4)
     add(CODE_BASE, pad, f"Allocation 0x{CODE_BASE:08X}..0x{CODE_BASE + len(pad) - 1:08X} ({len(pad)} B, was zero; "
-        f"owner summon_ai, owns to 0x{CODE_BASE + CODE_MAX - 1:08X}): Thumb code from summon/src/summon_ai.c "
-        f"(includes pathing/src/pf_core.h). Trampolines: "
+        f"owner summon_ai, owns to 0x{CODE_BASE + CODE_MAX - 1:08X}): Thumb code from Patches/summon_ai/src/summon_ai.c "
+        f"(includes Patches/enemy_pathing/src/pf_core.h). Trampolines: "
         + ", ".join(f"{k}=0x{CODE_BASE + v:08X}" for k, v in sorted(syms.items(), key=lambda kv: kv[1]) if k.startswith("sm_tramp")) + ".")
     for w in writes:
         if w["address"].startswith("0x09") or w["address"] == f"0x{STUB_BASE:08X}":
@@ -114,8 +114,8 @@ def main():
         "profile_id": "ss2-cn-baseline",
         "baseline": json.loads(PATHING_DEF.read_text())["baseline"],
         "requires": ["enemy_pathing"],
-        "source_provenance": {"kind": "new", "source": "summon/src/summon_ai.c, summon/build.py",
-                              "notes": "docs/mods/summon_ai.md"},
+        "source_provenance": {"kind": "new", "source": "Patches/summon_ai/src/summon_ai.c, Patches/summon_ai/build.py",
+                              "notes": "Docs/mods/summon_ai.md"},
         "evidence": {
             "status": "runtime_verified",
             "user_acceptance": "not_run",
@@ -124,12 +124,12 @@ def main():
                          "per second until it dies, leaves the screen or is unreachable (or the owner is hurt while another "
                          "enemy is closer), then walks back to the owner by the field instead of through walls. "
                          "Single-player only; the vanilla code runs otherwise and when enemy_pathing is absent.",
-            "static_audit": "docs/mods/summon_ai.md",
-            "runtime": "runtime_verified (mGBA 0.10.5 headless; user's Summons/ ROM (English+waitcnt_fix+walk_angles+"
+            "static_audit": "Docs/mods/summon_ai.md",
+            "runtime": "runtime_verified (mGBA 0.10.5 headless; user's Patches/summon_ai/Starting_Info/ ROM (English+waitcnt_fix+walk_angles+"
                        "enemy_pathing+persistent summons) vs that + summon_ai; 8 user states x 900 frames idle and scripted "
                        "walking, no RAM writes): pet never stands in a closed cell (vanilla up to 454 frames), 1.3-7x vanilla's "
                        "damage, returns on kill/rescue as designed, ignores enemies behind a closed door (Ready_To_Cast); "
-                       "2.7-4.8k cycles/frame, no lag frames. See docs/mods/summon_ai.md.",
+                       "2.7-4.8k cycles/frame, no lag frames. See Docs/mods/summon_ai.md.",
         },
         "writes": writes,
     }

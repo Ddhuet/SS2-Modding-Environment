@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Static conflict check: English translation patch vs the CN mod definitions (read-only).
 
-    python3 translation/tools/mod_conflicts.py [PATCH.json] [--defs patches/definitions] [--json OUT]
+    python3 Tools/Scripts/mod_conflicts.py [PATCH.json] [--defs Patches/Definitions/Official] [--json OUT]
 
-PATCH defaults to translation/build/ss2-en-phase1.patch.json (make_english_patch.py output).
+PATCH defaults to Build/ss2-en-phase1.patch.json (make_english_patch.py output).
 Both sides are ss2tools-style write lists bound to the CN baseline (SHA-256 45ac38bb...);
 the binding is asserted. Three levels, strongest first:
 
@@ -33,11 +33,11 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "translation/tools"))
+sys.path.insert(0, str(ROOT / "Tools/Scripts"))
 from name_tables import TABLES, SLOT, DATA  # noqa: E402
 
 BASE = 0x08000000
-CN_ROM = ROOT / "eu/inputs/ss2-cn-baseline.gba"
+CN_ROM = ROOT / "ROMs/Shining_Soul_II_CN_Baseline.gba"
 SHA = "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989"
 CODE_END = 0x080C0000
 SLOT0_TABLE = 0x08391260
@@ -103,8 +103,8 @@ def region(a, funcs, msg_lo, msg_hi):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("patch", nargs="?", default=str(ROOT / "translation/build/ss2-en-phase1.patch.json"))
-    ap.add_argument("--defs", default=str(ROOT / "patches/definitions"))
+    ap.add_argument("patch", nargs="?", default=str(ROOT / "Build/ss2-en-phase1.patch.json"))
+    ap.add_argument("--defs", default=str(ROOT / "Patches/Definitions/Official"))
     ap.add_argument("--json")
     args = ap.parse_args()
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Build patches/custom/normal_attack_charge_accuracy.json (CN baseline / English ROM).
+"""Build Patches/Definitions/Custom/normal_attack_charge_accuracy.json (CN baseline / English ROM).
 
-    eu/.venv/bin/python translation/tools/make_normal_attack_charge_accuracy.py
+    Tools/.venv/bin/python Patches/normal_attack_charge_accuracy/make_normal_attack_charge_accuracy.py
 
 The player's physical hit roll is threshold = floor(125*(A+10)/(A+D+20)), hit if rand%100 <= it
 (inline in melee 0x0801FC14, shared 0x080222B4 for projectiles). A is the attacker's DEX
@@ -17,17 +17,17 @@ sites where the game picks A:
 Projectile sites: NOP the beq so the 3*DEX branch always runs (flag registers are untouched,
 later uses re-load the flag). Melee: rewrite the 10-byte A=DEX block in place, using the
 2-byte alignment pad at 0x0801FCFE (pool starts 0x0801FD00) for the relocated `b`.
-docs/mods/normal_attack_charge_accuracy.md has the evidence.
+Docs/mods/normal_attack_charge_accuracy.md has the evidence.
 """
 import hashlib, json, sys
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "translation/tools"))
+sys.path.insert(0, str(ROOT / "Tools/Scripts"))
 from make_english_patch import assemble  # noqa: E402
 
-CN = ROOT / "eu/inputs/ss2-cn-baseline.gba"
+CN = ROOT / "ROMs/Shining_Soul_II_CN_Baseline.gba"
 CN_SHA = "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989"
-OUT = ROOT / "patches/custom/normal_attack_charge_accuracy.json"
+OUT = ROOT / "Patches/Definitions/Custom/normal_attack_charge_accuracy.json"
 MELEE, MELEE_JOIN = 0x0801FCF2, 0x080200F0
 
 
@@ -56,7 +56,7 @@ MELEE_ASM = f"""
 def main():
     rom = CN.read_bytes()
     assert hashlib.sha256(rom).hexdigest() == CN_SHA, "wrong CN baseline"
-    asm = ROOT / "translation/build/normal_attack_charge_accuracy_melee.s"
+    asm = ROOT / "Patches/normal_attack_charge_accuracy/normal_attack_charge_accuracy_melee.s"
     asm.write_text(MELEE_ASM)
     melee = assemble(asm, base=MELEE, code_end=14)
     assert len(melee) == 14, melee.hex()
@@ -83,8 +83,8 @@ def main():
         "profile_id": "ss2-cn-baseline",
         "baseline": {"filename": "SS2_SC_bug_fixed.GBA", "size": 33554432,
                      "md5": "35eb6567d94f855480c5d7ba2dff4389", "sha256": CN_SHA, "crc32": "AFCFC96D"},
-        "source_provenance": {"kind": "new", "source": "translation/tools/make_normal_attack_charge_accuracy.py",
-                              "notes": "docs/mods/normal_attack_charge_accuracy.md"},
+        "source_provenance": {"kind": "new", "source": "Patches/normal_attack_charge_accuracy/make_normal_attack_charge_accuracy.py",
+                              "notes": "Docs/mods/normal_attack_charge_accuracy.md"},
         "evidence": old.get("evidence", {"status": "static_verified"}),
         "writes": out,
     }

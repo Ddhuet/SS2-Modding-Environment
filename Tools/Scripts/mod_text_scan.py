@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """Find the Chinese text each CN mod definition adds or edits (read-only).
 
-    python3 translation/tools/mod_text_scan.py [DEF_ID ...] [--defs patches/definitions] [--min 2]
+    python3 Tools/Scripts/mod_text_scan.py [DEF_ID ...] [--defs Patches/Definitions/Official] [--min 2]
 
 Applies each definition in memory to the CN baseline (preimages asserted) and reports:
 
 - **name slots**: records whose slot-0 name (Chinese, `record + 0x00`) the mod changes,
-  decoded before -> after with reference_data/汉字码表.txt. The translation needs the English
+  decoded before -> after with Docs/Reference_Data/汉字码表.txt. The translation needs the English
   name in slot 1 (`record + 0x3E`) for each.
 - **strings in written blocks**: a mod's writes merged into blocks (gaps <= 8 equal bytes),
   each block scanned at both 2-byte phases for runs of CN glyph codes 0x0001..0x06FF (the
@@ -26,13 +26,13 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "translation/tools"))
+sys.path.insert(0, str(ROOT / "Tools/Scripts"))
 from name_tables import TABLES, SLOT  # noqa: E402
 
 BASE = 0x08000000
-CN_ROM = ROOT / "eu/inputs/ss2-cn-baseline.gba"
+CN_ROM = ROOT / "ROMs/Shining_Soul_II_CN_Baseline.gba"
 SHA = "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989"
-CODES = ROOT / "reference_data/汉字码表.txt"
+CODES = ROOT / "Docs/Reference_Data/汉字码表.txt"
 MAX_GLYPH = 0x6FF
 
 
@@ -97,7 +97,7 @@ def runs(r, a, b, minlen):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("ids", nargs="*")
-    ap.add_argument("--defs", default=str(ROOT / "patches/definitions"))
+    ap.add_argument("--defs", default=str(ROOT / "Patches/Definitions/Official"))
     ap.add_argument("--min", type=int, default=2)
     args = ap.parse_args()
     rom = CN_ROM.read_bytes()

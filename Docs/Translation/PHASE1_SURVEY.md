@@ -1,8 +1,8 @@
 # Phase 1 survey: CN baseline vs US, text path (2026-10-10)
 
 Phase 1 steps 1 and 2 of [../PLAN.md](../PLAN.md). Everything here is **`static_verified`**:
-it comes from byte and disassembly checks against `eu/inputs/ss2-cn-baseline.gba`
-(SHA-256 `45ac38bb…`, "CN") and `ROMs/Shining Soul II (USA).gba` (SHA-256 `b31c19d2…`,
+it comes from byte and disassembly checks against `ROMs/Shining_Soul_II_CN_Baseline.gba`
+(SHA-256 `45ac38bb…`, "CN") and `ROMs/Shining_Soul_II_USA.gba` (SHA-256 `b31c19d2…`,
 "US"). Nothing has run in an emulator yet. Addresses are CPU addresses; each fact is tagged
 with its ROM.
 
@@ -26,22 +26,22 @@ Runtime-generated glyph codes (player names, numbers) are the main open risk; se
 
 | Tool | Purpose |
 |---|---|
-| `translation/tools/thumbdis.py` | Thumb disassembly by CPU address; continues past data; annotates literal-pool loads |
-| `translation/tools/xref.py` | Finds `ldr rX,=VALUE` loads of a 32-bit literal, with context |
-| `translation/tools/align.py` | Anchor alignment of two ROMs → matched runs + gaps (JSON) |
-| `translation/tools/classify_gaps.py` | Splits gaps into relocation-only vs real changes |
-| `translation/tools/func_diff.py` | Function-level comparison (BL-target functions, mnemonic shapes, pointer words masked) |
-| `translation/tools/func_pair_diff.py` | Unified diff of one CN/US function pair |
-| `translation/tools/resource_diff.py` | Per-entry SSDT resource comparison |
-| `translation/tools/name_tables.py` | Verified inventory of name-slotted record tables (`0 problems` expected) |
+| `Tools/Scripts/thumbdis.py` | Thumb disassembly by CPU address; continues past data; annotates literal-pool loads |
+| `Tools/Scripts/xref.py` | Finds `ldr rX,=VALUE` loads of a 32-bit literal, with context |
+| `Tools/Scripts/align.py` | Anchor alignment of two ROMs → matched runs + gaps (JSON) |
+| `Tools/Scripts/classify_gaps.py` | Splits gaps into relocation-only vs real changes |
+| `Tools/Scripts/func_diff.py` | Function-level comparison (BL-target functions, mnemonic shapes, pointer words masked) |
+| `Tools/Scripts/func_pair_diff.py` | Unified diff of one CN/US function pair |
+| `Tools/Scripts/resource_diff.py` | Per-entry SSDT resource comparison |
+| `Tools/Scripts/name_tables.py` | Verified inventory of name-slotted record tables (`0 problems` expected) |
 
-Reproduce (from the repo root; `eu/.venv` has Capstone):
+Reproduce (from the repo root; `Tools/.venv` has Capstone):
 
 ```sh
-python3 translation/tools/align.py eu/inputs/ss2-cn-baseline.gba "ROMs/Shining Soul II (USA).gba" --json /tmp/align.json --min-gap 0x10
-eu/.venv/bin/python translation/tools/func_diff.py eu/inputs/ss2-cn-baseline.gba "ROMs/Shining Soul II (USA).gba" /tmp/align.json --tsv /tmp/funcs.tsv
-python3 translation/tools/resource_diff.py
-python3 translation/tools/name_tables.py
+python3 Tools/Scripts/align.py ROMs/Shining_Soul_II_CN_Baseline.gba "ROMs/Shining_Soul_II_USA.gba" --json /tmp/align.json --min-gap 0x10
+Tools/.venv/bin/python Tools/Scripts/func_diff.py ROMs/Shining_Soul_II_CN_Baseline.gba "ROMs/Shining_Soul_II_USA.gba" /tmp/align.json --tsv /tmp/funcs.tsv
+python3 Tools/Scripts/resource_diff.py
+python3 Tools/Scripts/name_tables.py
 ```
 
 ## 1. Language word (CN `0x03003510`, US `0x03003590`)
@@ -192,7 +192,7 @@ These do not come from the message tables, so `+0x700` re-encoding does not reac
 - Noise sources to expect in the rest: register allocation, stack-frame constants, actor and
   owner struct strides, and jump tables decoded as code.
 - Caveat: CN baseline = JP + CN localization + CN fixes. Without a pristine JP ROM, a CN↔US
-  difference cannot be attributed to US or to CN. `eu/inputs/ss2-cn-source.gba` vs the
+  difference cannot be attributed to US or to CN. `ROMs/Shining_Soul_II_CN.gba` vs the
   baseline isolates the CN fixes.
 
 ## 9. Expansion space and CN mod overlap
@@ -210,7 +210,7 @@ These do not come from the message tables, so `+0x700` re-encoding does not reac
 ## Next steps
 
 1. Build tool: emit a declarative `ss2tools` patch for the CN baseline profile (items in the
-   summary table), with a US profile under `translation/profiles/`.
+   summary table), with a US profile under `Tools/profiles/`.
 2. Write the renderer half-width branch (ARMv4T Thumb, hook or in-place rewrite; the US
    function is 64 bytes shorter, so an in-place rewrite may fit).
 3. Runtime: confirm the font RAM table capacity, then boot, title, dialogue, menus and item

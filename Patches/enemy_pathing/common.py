@@ -2,11 +2,11 @@
 import sys, json, shutil, time, struct
 from pathlib import Path
 ROOT = Path("/home/david/Documents/SS2_Modding")
-sys.path.insert(0, str(ROOT / "eu"))
+sys.path.insert(0, str(ROOT / "Tools"))
 from emulator import Session, sha256
 
-ROM = ROOT / "translation/build/ss2-en+waitcnt_fix.gba"
-STATE = ROOT / "translation/build/Warrior_Pathing.ss0"
+ROM = ROOT / "Build/ss2-en+waitcnt_fix.gba"
+STATE = ROOT / "Savestates/Warrior_Pathing.ss0"
 KEYS = {"A": 1, "B": 2, "SELECT": 4, "START": 8, "RIGHT": 16, "LEFT": 32, "UP": 64, "DOWN": 128,
         "R": 256, "L": 512}
 
@@ -25,9 +25,9 @@ def _cleanup():
             except FileNotFoundError: pass
 
 def open_state(tag, rom=ROM, state=STATE):
-    folder = ROOT / f"pathing/runs/{tag}-{time.time_ns()}"
+    folder = ROOT / f"Patches/enemy_pathing/runs/{tag}-{time.time_ns()}"
     _RUN_DIRS.append(folder)
-    s = Session(Path(rom).resolve(), save=ROOT / "workspace/input/光明之魂2.sav", run_dir=folder)
+    s = Session(Path(rom).resolve(), save=ROOT / "Savestates/Fixture_CN_English.sav", run_dir=folder)
     s.__enter__()
     st = folder / "user.ss0"; shutil.copyfile(state, st)
     (folder / "user.ss0.json").write_text(json.dumps({"format": "ss2-mgba-state-v1", "rom_sha256": s.rom_sha256,
@@ -74,7 +74,7 @@ def pf_region_free(s):
         if a <= PF_LO and PF_HI <= b: return not used
     return False
 
-LAYOUT = json.loads((ROOT / "pathing/pf_layout.json").read_text())
+LAYOUT = json.loads((ROOT / "Patches/enemy_pathing/pf_layout.json").read_text())
 
 def pf_state(s):
     """Read the mod's control block (test RAM base PFB) into a dict of the fields useful in logs."""

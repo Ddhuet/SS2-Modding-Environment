@@ -1,9 +1,9 @@
 # Phase 2: CN mod compatibility (2026-10-11)
 
-Phase 2 from [../PLAN.md](../PLAN.md): do the CN mod definitions in `patches/definitions/` apply
+Phase 2 from [../PLAN.md](../PLAN.md): do the CN mod definitions in `Patches/Definitions/Official/` apply
 to the English build, and what Chinese text do they bring? All facts are **CN baseline**
-(`eu/inputs/ss2-cn-baseline.gba`, SHA-256 `45ac38bb…`) unless tagged otherwise. The
-translation side is build 1d (`translation/build/ss2-en-phase1.patch.json`, SHA-256 `eb35dd35…`).
+(`ROMs/Shining_Soul_II_CN_Baseline.gba`, SHA-256 `45ac38bb…`) unless tagged otherwise. The
+translation side is build 1d (`Build/ss2-en-phase1.patch.json`, SHA-256 `eb35dd35…`).
 
 **Summary.** No mod writes a byte the translation writes or allocates. Every mod's preimages hold
 on build 1d. The released and beta mods add **no Chinese messages, no font changes and no new glyph
@@ -15,7 +15,7 @@ expected text-heavy ladder rungs (`world_map_warehouse`, `soul_ring`,
 
 ## 1. Static conflict check (`static_verified`)
 
-`python3 translation/tools/mod_conflicts.py [--json translation/build/mod_conflicts.json]`
+`python3 Tools/Scripts/mod_conflicts.py [--json Build/mod_conflicts.json]`
 
 The tool works at three levels:
 1. **Byte level.** It intersects each definition's write ranges with the translation's writes, its
@@ -51,8 +51,8 @@ bundles applied to the baseline reproduce the CN registry hashes (`dcdb1e04…`,
 
 ## 2. Chinese text the mods bring (`static_verified`)
 
-`python3 translation/tools/mod_text_scan.py [DEF_ID ...] [--min 3]` applies each definition in
-memory. It decodes changed slot-0 names with `reference_data/汉字码表.txt` and scans the written
+`python3 Tools/Scripts/mod_text_scan.py [DEF_ID ...] [--min 3]` applies each definition in
+memory. It decodes changed slot-0 names with `Docs/Reference_Data/汉字码表.txt` and scans the written
 blocks for glyph-code runs. Most runs it prints are numeric data that decode as surname glyphs
 (codes 2–0x51); judge each one by its decode.
 
@@ -68,19 +68,19 @@ The "custom codes (`0x7F01`)" in the old plan come from the HugeApplePack's **US
 not in these CN definitions. No CN mod here expands the font, so step 2 of the phase (glyph-code
 layout) needs nothing beyond the phase-1 layout: CN glyphs `0x001..0x700`, Latin `0x701+`.
 
-## 3. Building translation + mod (`translation/tools/combine_patch.py`)
+## 3. Building translation + mod (`Tools/Scripts/combine_patch.py`)
 
 ```sh
-python3 translation/tools/combine_patch.py all_17_released     # or all_18_beta, or one id
-cd eu && .venv/bin/python -m ss2tools build inputs/ss2-cn-baseline.gba \
-    ../translation/build/ss2-en+all_17_released.patch.json ../translation/build/ss2-en+all_17_released.gba \
+python3 Tools/Scripts/combine_patch.py all_17_released     # or all_18_beta, or one id
+cd Tools && .venv/bin/python -m ss2tools build ../ROMs/Shining_Soul_II_CN_Baseline.gba \
+    ../Build/ss2-en+all_17_released.patch.json ../Build/ss2-en+all_17_released.gba \
     --profile profiles/ss2-cn-baseline.json --allow-static-candidate \
-    --bps ../translation/build/ss2-en+all_17_released.bps
+    --bps ../Build/ss2-en+all_17_released.bps
 ```
 
 The combiner merges the translation patch with the definitions unchanged (same addresses,
 preimages and bytes), refuses any overlap, and records both inputs' SHA-256 in
-`source_provenance`. **Terminology ledger:** [`translation/mods/ledger.json`](../mods/ledger.json).
+`source_provenance`. **Terminology ledger:** [`Patches/Definitions/ledger.json`](../mods/ledger.json).
 A `names` entry replaces the translation's slot-1 write for a record when the combined mod writes
 change that record's slot-0 bytes, so bundles that include the mod pick it up automatically. The
 ledger also lists the reviewed "no English change" items. Follow the CN README: build bundles from
@@ -92,11 +92,11 @@ the baseline, and don't stack single definitions.
 | `ss2-en+all_18_beta.gba` | `8788645bfdfbd25131ead2ba00451d57a00c17cec29ef670f67330d835d61de6` |
 
 Both carry "Combat Knife" at `0x08403E2E` (checked by decoding the built ROM). For comparison runs,
-`translation/build/cn+all_17_released.gba` / `cn+all_18_beta.gba` are the CN bundles alone
+`Build/cn+all_17_released.gba` / `cn+all_18_beta.gba` are the CN bundles alone
 (registry hashes above).
 
 **Patch_Manager** (`Patch_Manager/`, tkinter GUI) applies any subset of the 18 single definitions,
-shipped as IPS files made against build 1d by `translation/tools/make_ips_set.py`. level_250 and
+shipped as IPS files made against build 1d by `Tools/Scripts/make_ips_set.py`. level_250 and
 shared_character_warehouses write above 16 MiB, so they are IPS32. The 18 definitions are pairwise
 disjoint, and their union equals the CN bundles byte for byte. The generator self-checks that the 17
 released IPS give `ss2-en+all_17_released.gba`. All 18 through the manager's `build()` give
@@ -104,8 +104,8 @@ released IPS give `ss2-en+all_17_released.gba`. All 18 through the manager's `bu
 
 ## 4. Runtime (`runtime_verified`, named scenarios only)
 
-Native Session, CN save copy (`workspace/input/光明之魂2.sav`). Contact sheets:
-`translation/build/phase2-smoke.png` and `translation/build/phase2-namebar.png`.
+Native Session, CN save copy (`Savestates/Fixture_CN_English.sav`). Contact sheets:
+`Build/phase2-smoke.png` and `Build/phase2-namebar.png`.
 
 - `smoke_phase1.py` on `cn+all_17`, `en+all_17` and `en+all_18`. English boots and shows the file
   select, ring menu, save dialogue (message 982, both pages) and item menu. The language word is 1

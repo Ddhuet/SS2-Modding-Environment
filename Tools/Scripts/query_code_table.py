@@ -9,7 +9,7 @@ from pathlib import Path
 
 
 def load_table() -> tuple[dict[int, list[str]], dict[str, list[int]]]:
-    path = Path(__file__).resolve().parent.parent / "reference_data" / "汉字码表.txt"
+    path = Path(__file__).resolve().parents[2] / "Docs/Reference_Data" / "汉字码表.txt"
     forward: dict[int, list[str]] = {}
     reverse: dict[str, list[int]] = {}
     for line_number, raw in enumerate(path.read_text(encoding="utf-8-sig").splitlines(), 1):

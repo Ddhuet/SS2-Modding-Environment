@@ -10,12 +10,12 @@ English with about six wording edits. EU's extra languages could later be conver
 spare slots, but EU's *structure* moves away from what the Chinese mods build on.
 
 All facts below are static and were verified against the retail ROMs listed in
-[ROMs/REQUIRED_ROMS.md](../../ROMs/REQUIRED_ROMS.md). Run
-`python3 translation/tools/text_survey.py ROMs` to reproduce the tables and checks. "JP" means
-`ROMs/Shining_Soul_II_JP.GBA`. **Despite its name, that file is not pristine Japanese.** It is
+the ROMs table in [REPO_INDEX.md](../../REPO_INDEX.md). Run
+`python3 Tools/Scripts/text_survey.py ROMs` to reproduce the tables and checks. "JP" means
+`ROMs/Shining_Soul_II_CN.gba`. **Despite its name, that file is not pristine Japanese.** It is
 the 16 MiB Chinese localization on the JP cartridge (AU2J), byte-identical to
-`eu/inputs/ss2-cn-source.gba`, so its slot-0 text and font are Chinese. The CN mods' actual
-baseline is `eu/inputs/ss2-cn-baseline.gba` (`SS2_SC_bug_fixed.GBA`, 32 MiB, SHA-256
+`ROMs/Shining_Soul_II_CN.gba`, so its slot-0 text and font are Chinese. The CN mods' actual
+baseline is `ROMs/Shining_Soul_II_CN_Baseline.gba` (`SS2_SC_bug_fixed.GBA`, 32 MiB, SHA-256
 `45ac38bb…`). It is the same ROM with about 100 small changes: a few code fixes, revised
 slot-0 text, and the upper 16 MiB zero-filled. Every address and table below is identical in
 both files (checked). A pristine Japanese ROM is not in the repo. Nothing here has been
@@ -130,5 +130,5 @@ not a ROM-table one.
 6. **Not yet checked:**
    - graphics with baked-in text (title, menus);
    - the second SSDT archive;
-   - how the CN mod chain inserts Chinese text and font: slot 0 overwrite vs new tables (see `reference_data/汉字码表.txt` and the CN build chain);
+   - how the CN mod chain inserts Chinese text and font: slot 0 overwrite vs new tables (see `Docs/Reference_Data/汉字码表.txt` and the CN build chain);
    - US/JP gameplay code differences outside text.

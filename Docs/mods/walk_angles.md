@@ -1,7 +1,7 @@
 # walk_angles: true 45° diagonals (US → CN port)
 
-Source: Nell's US patch `Nell_Stuff/ss2-usa-walk-angles.ips` and `Nell_Stuff/ANGLES_HANDOFF.md`.
-Definition: `patches/custom/walk_angles.json`. Status: `runtime_verified` (not yet `user_accepted`).
+Source: Nell's US patch `Other_Modders/Nell/ss2-usa-walk-angles.ips` and `Other_Modders/Nell/ANGLES_HANDOFF.md`.
+Definition: `Patches/Definitions/Custom/walk_angles.json`. Status: `runtime_verified` (not yet `user_accepted`).
 
 ## What it does
 The shared step routine `step(speed, pos*, dir 0-7, flags)` turns a direction into an angle
@@ -10,7 +10,7 @@ from horizontal instead of 45°. The patch points the routine's 4 table literals
 `64, 96, 128, 160, 192, 224, 0, 32`. Straight directions are unchanged, and so is the step length.
 
 Everything that moves through that routine is affected: player walking, the main enemy movement,
-two other enemy kinds, and knock-back (caller list in `Nell_Stuff/ANGLES_HANDOFF.md`). The other
+two other enemy kinds, and knock-back (caller list in `Other_Modders/Nell/ANGLES_HANDOFF.md`). The other
 26 readers of the original table (`0x08440B26`, mostly in `0x0806A000..0x0809A000`, probably
 skills/projectiles) are left alone, as in the US patch.
 
@@ -31,9 +31,9 @@ BL/literal differences.
 `0x09003000..0x0900300F` (16 B, was zero, no aligned pointer to it anywhere), owner `walk_angles`.
 
 ## Checks
-- `mod_conflicts.py --defs patches/custom`: ok.
+- `mod_conflicts.py --defs Patches/Definitions/Custom`: ok.
 - `combine_patch.py` with all 18 official singles + all custom mods: no overlap.
-- Build: `translation/build/ss2-en+walk_angles.gba`, SHA-256 `df6cb706…72f7`.
+- Build: `Build/ss2-en+walk_angles.gba`, SHA-256 `df6cb706…72f7`.
 
 ## Runtime (headless mGBA, entry/return of `0x08013864` traced, pos delta per call)
 Test script: scratch `angles.py` (runs `run_until 0x08013864`, reads `r1` = pos, `r2` = dir, then

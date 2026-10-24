@@ -1,5 +1,5 @@
 {
- "about": "English terminology ledger for CN mod definitions (patches/definitions). Read by translation/tools/combine_patch.py. A 'names' entry replaces the translation's slot-1 name (record + 0x3E) when the combined mod writes change that record's slot-0 (Chinese) name bytes, so bundles that include the mod pick it up automatically. Text is ASCII, encoded to US codes + 0x700.",
+ "about": "English terminology ledger for CN mod definitions (Patches/Definitions/Official). Read by Tools/Scripts/combine_patch.py. A 'names' entry replaces the translation's slot-1 name (record + 0x3E) when the combined mod writes change that record's slot-0 (Chinese) name bytes, so bundles that include the mod pick it up automatically. Text is ASCII, encoded to US codes + 0x700.",
  "names": [
   {
    "table": "type 0x0B",

@@ -1,6 +1,6 @@
 ## Debugging and Failure Criteria
 
-If unfamiliar with debugging, read `DEBUG_THINKING_GUIDE.md` first. It provides layered decision-making, minimal reproduction steps, single-variable controls, symptom classification, and halt conditions. This page contains a quick checklist.
+If unfamiliar with debugging, read `Docs/Old_Docs/DEBUG_THINKING_GUIDE.md` first. It provides layered decision-making, minimal reproduction steps, single-variable controls, symptom classification, and halt conditions. This page contains a quick checklist.
 
 ### Black Screen / Crash Minimal Reporting Checklist
 

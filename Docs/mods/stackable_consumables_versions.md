@@ -1,12 +1,12 @@
 # stackable_consumables: versions in shiyi1133's SS2_GBA_HACK vs ours (2026-10-13)
 
-Source repo: `SS2_GBA_HACK/` (local clone of github.com/shiyi1133/SS2_GBA_HACK, HEAD `e9e72e10`).
+Source repo: `Other_Modders/SS2_GBA_HACK/` (local clone of github.com/shiyi1133/SS2_GBA_HACK, HEAD `e9e72e10`).
 All builds are against the CN baseline `45ac38bb…` (same as ours), built with armips
 (Kingcom/armips master, built in the session scratchpad). `static_verified` only: no emulator runs yet.
 
 ## Ours = 1.0.0
 
-`patches/definitions/stackable_consumables.json` / `Patch_Manager/patches/stackable_consumables.ips`
+`Patches/Definitions/Official/stackable_consumables.json` / `Patch_Manager/patches/stackable_consumables.ips`
 came from his `光明之魂2_离线补丁构建器_0830.html`. Its whitelist has no `cmp r1,#0x0C`, so it still
 stacks Identify Scrolls: it is **1.0.0** (2026-08-29), before every fix below.
 
@@ -26,7 +26,7 @@ Other copies are not separate versions: `research/stackables/analysis/occupied_g
 
 ## Builds made (all IPS32 against the English ROM `4343a9c7…`)
 
-`Patch_Manager/candidates/stackable_consumables/` (definitions JSON + `patches/*.ips32`):
+`Patches/stackable_consumables/candidates/` (definitions JSON + `patches/*.ips32`):
 `stackable_consumables_103b2`, `_104b1`, `_104b1_consumefix`. Preimages verified on the English ROM.
 
 New allocations beyond ours (all zero in the baseline, free per AGENTS.md):
@@ -36,7 +36,7 @@ New allocations beyond ours (all zero in the baseline, free per AGENTS.md):
 
 Checks: `mod_conflicts.py` finds no byte overlap with the translation (only the known shared
 name-bar function `0x080606CC`, same hooks as 1.0.0). No overlap with any other definition in
-`patches/definitions` or `patches/custom`.
+`Patches/Definitions/Official` or `Patches/Definitions/Custom`.
 
 Rebuild: copy the asm, replace every `/home/app/...光明之魂2.gba` path (`.open` and the `readu32`
 preimage checks) with the CN baseline, run `armips`. The consume fix asm has no `.open`; wrap it

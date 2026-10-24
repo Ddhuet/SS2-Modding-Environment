@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Make one BPS patch that turns the retail Japanese ROM into the English ROM players use.
 
-    python3 translation/tools/make_base_bps.py [--jp "ROMs/Shining Soul II (Japan).gba"]
-        [--en translation/build/ss2-en-phase1d.gba] [--out translation/build/ss2-en-from-jp.bps]
+    python3 Tools/Scripts/make_base_bps.py [--jp "ROMs/Shining_Soul_II_JP.gba"]
+        [--en Build/ss2-en-phase1d.gba] [--out Build/ss2-en-from-jp.bps]
 
 The result is a plain diff JP -> English (CN baseline + translation), not a chain of patches;
 applying it gives a ROM byte-identical to ss2-en-phase1d.gba, so every Patch_Manager mod
@@ -10,7 +10,7 @@ applying it gives a ROM byte-identical to ss2-en-phase1d.gba, so every Patch_Man
 and standard IPS cannot address past 16 MiB; BPS also stores CRC32s of source and target, so
 patchers (Flips, Rom Patcher JS) reject a wrong JP dump instead of producing a broken ROM.
 
-Both inputs are hash-checked, and the patch is decoded with eu/ss2tools/bps.py and compared to
+Both inputs are hash-checked, and the patch is decoded with Tools/ss2tools/bps.py and compared to
 the English ROM before it is written. Standard library only.
 """
 import argparse
@@ -20,7 +20,7 @@ import zlib
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "eu"))
+sys.path.insert(0, str(ROOT / "Tools"))
 from ss2tools.bps import decode_bps, encode_number  # noqa: E402
 
 JP_SHA = "9f3e0d0653de6504c1aeaf03de3cca06ae0c15a24089f0236398ec56d382d17a"
@@ -93,9 +93,9 @@ def encode(src, tgt):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--jp", default=str(ROOT / "ROMs/Shining Soul II (Japan).gba"))
-    ap.add_argument("--en", default=str(ROOT / "translation/build/ss2-en-phase1d.gba"))
-    ap.add_argument("--out", default=str(ROOT / "translation/build/ss2-en-from-jp.bps"))
+    ap.add_argument("--jp", default=str(ROOT / "ROMs/Shining_Soul_II_JP.gba"))
+    ap.add_argument("--en", default=str(ROOT / "Build/ss2-en-phase1d.gba"))
+    ap.add_argument("--out", default=str(ROOT / "Build/ss2-en-from-jp.bps"))
     a = ap.parse_args()
     jp, en = Path(a.jp).read_bytes(), Path(a.en).read_bytes()
     for name, data, want in (("JP", jp, JP_SHA), ("English", en, EN_SHA)):

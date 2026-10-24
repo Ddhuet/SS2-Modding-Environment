@@ -15,9 +15,9 @@ Image files themselves were not extracted. The `DISPIMG(...)` formulas and image
 To query the data, use:
 
 ```text
-python tools/query_reference_data.py --list-sheets
-python tools/query_reference_data.py --query 短剑
-python tools/query_reference_data.py --sheet 剑 --query 000
+python Tools/Scripts/query_reference_data.py --list-sheets
+python Tools/Scripts/query_reference_data.py --query 短剑
+python Tools/Scripts/query_reference_data.py --sheet 剑 --query 000
 
 ```
 

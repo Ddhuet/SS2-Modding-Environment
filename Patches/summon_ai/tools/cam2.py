@@ -1,4 +1,4 @@
-import sys; sys.path.insert(0, "/home/david/Documents/SS2_Modding/summon/tools")
+import sys; sys.path.insert(0, "/home/david/Documents/SS2_Modding/Patches/summon_ai/tools")
 from scommon import *
 for st in ("Open_Area_One_Enemy_Squirrel.ss0", "Corridor_Two_Enemies_Squirrel.ss0", "Stuck_Wall_2.ss0"):
     s, f = open_state("cam", st)

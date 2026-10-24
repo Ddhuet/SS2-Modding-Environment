@@ -1,16 +1,16 @@
 # summon_ai: the Archer's pet hunts with the enemy_pathing field
 
-Definition `patches/custom/summon_ai.json` (8 writes, built by `summon/build.py` from
-`summon/src/summon_ai.c`, which includes `pathing/src/pf_core.h`). Shipped as
+Definition `Patches/Definitions/Custom/summon_ai.json` (8 writes, built by `Patches/summon_ai/build.py` from
+`Patches/summon_ai/src/summon_ai.c`, which includes `Patches/enemy_pathing/src/pf_core.h`). Shipped as
 `../SS2_Web_Patcher/patches/summon_ai.bps` (English ROM → English+summon_ai, 7,714 B) with
 `summon_ai.txt`. **Requires `enemy_pathing`**: without it every hook resumes the vanilla code.
 
 Status: `runtime_verified` for the scenarios below. `user_accepted`: not yet.
 
-Test ROM (the user's `Summons/` ROM + summon_ai) = `ss2tools build` of CN baseline + translation +
+Test ROM (the user's `Patches/summon_ai/Starting_Info/` ROM + summon_ai) = `ss2tools build` of CN baseline + translation +
 waitcnt_fix + walk_angles + enemy_pathing + persistent_archer_and_dark_mage_summons + summon_ai =
 the web patcher stacking those five files (checked with `patcher.js` in Node). All three give
-sha256 `900bba3738db77dcd1bb2d5e…` (`summon/test.gba`).
+sha256 `900bba3738db77dcd1bb2d5e…` (`Patches/summon_ai/test.gba`).
 
 ## What changes for the player
 
@@ -43,7 +43,7 @@ Single player, owner = the local player, enemy targets only; everything else is 
 Coroutine `0x080717B4..0x08072AA6`, one task per summon. It is spawned at `0x0807438A` with a
 `0xC00` B heap block as its stack (`malloc 0x08001494`, sp = base + `0xBFC`). It yields with
 `0x080003F0`, which saves lr to task `+0xC`, so the resume address tells the phase
-(`summon/tools/scommon.py summon_tasks`). The task list head is `[0x030012D8]`, linked by `+0`.
+(`Patches/summon_ai/tools/scommon.py summon_tasks`). The task list head is `[0x030012D8]`, linked by `+0`.
 
 | Phase | Yield | Loop | Notes |
 |---|---|---|---|
@@ -74,9 +74,9 @@ passable if `(f & 0xF) == 0` or `f & 0x10`. Other facts used: BIOS ArcTan2 `0x08
 `[0x03002870] & 2`; camera (screen top-left px) map struct `0x03003210 + 0x7C/+0x7E`; player HP
 actor `+0xCC`.
 
-The US handoff (`Nell_Stuff/HANDOFF_ARCHER_SUMMON.md`) maps cleanly: US `0x08070EC8` = CN
+The US handoff (`Other_Modders/Nell/HANDOFF_ARCHER_SUMMON.md`) maps cleanly: US `0x08070EC8` = CN
 `0x080717B4` (+0x8EC there), US persist byte `0x71E70` = CN `0x08072788`. Note the CN
-`analysis/FUNCTION_INDEX.md` names this "type 20"; it is the Archer's.
+`Docs/Analysis/FUNCTION_INDEX.md` names this "type 20"; it is the Archer's.
 
 ## Design
 
@@ -134,14 +134,14 @@ Stack: `sm_hook` + callees use ~200 B of the summon task's 3 KB stack (no large 
 
 ## Evidence
 
-Tools (`summon/tools/`): `scommon.py` (state loading, task walk), `run_summon.py` (per-frame log of
+Tools (`Patches/summon_ai/tools/`): `scommon.py` (state loading, task walk), `run_summon.py` (per-frame log of
 phase, pet, wall test, target, HP; `--keys` schedule; `--png` track), `events.py` (attacks, returns
 with reason, owner hits), `batch.sh` / `walk.sh` (all states, vanilla vs mod), `dbg_hook.py`
-(break at a stub), `tdis.py` (annotated disassembly; `summon/dis_717b4.txt` is the routine),
+(break at a stub), `tdis.py` (annotated disassembly; `Patches/summon_ai/dis_717b4.txt` is the routine),
 `cast_probe*.py`, `find_camera.py`.
 
-Runs: mGBA 0.10.5 headless, user states from `Summons/` (squirrel, level 1). Vanilla = the user's
-`Summons/Shining Soul II (English)+4_patches.gba` (sha256 `5d5151ca…`); mod = that + summon_ai
+Runs: mGBA 0.10.5 headless, user states from `Patches/summon_ai/Starting_Info/` (squirrel, level 1). Vanilla = the user's
+`Patches/summon_ai/Starting_Info/Shining Soul II (English)+4_patches.gba` (sha256 `5d5151ca…`); mod = that + summon_ai
 (`900bba37…`). 900 frames each, no RAM writes. Cells: attacks / total enemy damage / frames the pet
 stood in a closed cell.
 
@@ -166,12 +166,12 @@ The 3 wall frames are the last-cell move onto a target standing on a slope cell.
 - **Ready_To_Cast.ss0** (hold A 100 frames = squirrel; 160+ = the next summon, same routine): vanilla
   stands on the steps hitting the enemies behind the closed door (59 damage in 1000 frames); the mod
   ignores them (unreachable) and circles the player.
-- **Through_Wall track** (`summon/runs/through_wall_*.png` from an earlier build): the pet goes down
+- **Through_Wall track** (`Patches/summon_ai/runs/through_wall_*.png` from an earlier build): the pet goes down
   the corridor, round the bottom and up to the enemies, then walks back the same way.
-- **Cost** (`tools/perf/build/ss2prof`, 900 frames): summon_ai code 2.7–4.8k cycles/frame average
+- **Cost** (`Tools/perf/build/ss2prof`, 900 frames): summon_ai code 2.7–4.8k cycles/frame average
   (≤ 1.7% of 280,896), extra BFS 0.1–0.8k; busiest frame 231k (vanilla 215k) in Through_Wall;
   no lag frames.
-- Static: `mod_conflicts.py --defs patches/custom` ok (code:7, expansion:1); `combine_patch.py` with
+- Static: `mod_conflicts.py --defs Patches/Definitions/Custom` ok (code:7, expansion:1); `combine_patch.py` with
   all 18 official singles + 8 custom mods: no overlap, ss2tools build ok.
 
 not_run: real hardware; multiplayer (the mod is off when the link flag is set); an enemy-owned
@@ -179,12 +179,12 @@ summon; boss fights; map changes / town / death while a summon is out (vanilla e
 untouched); summon levels above 2; cold boot with summon_ai but without enemy_pathing (static:
 `active()` only reads `PF->magic`).
 
-## Tuning knobs (`summon/src/summon_ai.c`)
+## Tuning knobs (`Patches/summon_ai/src/summon_ai.c`)
 
 `ORBIT_WAIT`, `ORBIT_LEASH`, `ATTACK_EVERY`, `CONTACT`, `CHASE_SPEED`, `HOME_SPEED`, `CHASE_STUCK`,
 `SKIP_FRAMES`, `HOME_STUCK`, `AIM_EVERY`, `CHAIN_MAX`, `LOOK`, `MAX_PATH`, `SCREEN_SIDE`,
-`SCREEN_BELOW`. Rebuild: `python3 summon/build.py --rom summon/test.gba` (writes the definition),
-then `python3 translation/tools/make_bps.py summon_ai` and `python3 tools/make_index.py` in
+`SCREEN_BELOW`. Rebuild: `python3 Patches/summon_ai/build.py --rom Patches/summon_ai/test.gba` (writes the definition),
+then `python3 Tools/Scripts/make_bps.py summon_ai` and `python3 Tools/Scripts/make_index.py` in
 `SS2_Web_Patcher/`.
 
 ## Dead ends and lessons (so nobody repeats them)
@@ -196,6 +196,6 @@ then `python3 translation/tools/make_bps.py summon_ai` and `python3 tools/make_i
   chain cell measured *through a wall* gave a bogus short path length; only a seen chain cell counts.
 - "On screen" by the feet with an 8 px margin dropped targets whose sprite was still visible at the
   bottom edge (sprites stand ~24 px tall; the camera keeps the player 96 px from the top).
-- `pathing/src/enemy_pathing.c` at HEAD no longer compiles to the shipped blob (clang 23.1.3 gives
+- `Patches/enemy_pathing/src/enemy_pathing.c` at HEAD no longer compiles to the shipped blob (clang 23.1.3 gives
   3,854 B vs the shipped 3,916 B). The pf_core.h split is identical to HEAD under the same compiler;
   enemy_pathing was not rebuilt or reshipped.

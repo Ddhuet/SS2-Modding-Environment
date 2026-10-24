@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Read-only Thumb disassembly by CPU address, continuing past undecodable halfwords.
 
-    eu/.venv/bin/python translation/tools/thumbdis.py ROM ADDR [LENGTH]
+    Tools/.venv/bin/python Tools/Scripts/thumbdis.py ROM ADDR [LENGTH]
 
-Unlike eu/scripts/disassemble.py this takes CPU addresses (0x08xxxxxx) and uses
+Unlike Tools/Scripts/disassemble.py this takes CPU addresses (0x08xxxxxx) and uses
 Capstone SKIPDATA, so a literal pool or a misaligned start does not stop output.
 Literal-pool words are annotated where an `ldr rX, [pc, #imm]` points at them.
 """

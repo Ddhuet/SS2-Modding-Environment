@@ -2,7 +2,7 @@
  * English ROM). Requires enemy_pathing (its RAM block, field and boot hook); without it the
  * PF magic is never written and every hook runs the vanilla code.
  *
- * Compiled as ONE freestanding Thumb blob at CODE_BASE by summon/build.py, with the same rules
+ * Compiled as ONE freestanding Thumb blob at CODE_BASE by Patches/summon_ai/build.py, with the same rules
  * as enemy_pathing (no relocations, no .rodata, no division). The pathing core is included, so
  * bfs_arm is the first code here too; it is byte-identical to enemy_pathing's copy, so both
  * blobs share the IWRAM copy of the BFS loop.
@@ -15,7 +15,7 @@
  *   F+0x90/0x94 orbit centre (24.8), F+0x9C/0xA0 -> s16 dx/dy at F+0x48/0x4A;
  *   r8 heading 0..255, r9 owner*5, r10 y (24.8).
  * Vanilla phases: orbit (yield 0x08071F32), chase (0x08072592), hit (0x080726B4), return
- * (0x08072A02). See docs/mods/summon_ai.md.
+ * (0x08072A02). See Docs/mods/summon_ai.md.
  *
  * Each hook site is `bl stub` (0x080BB238+) -> sm_trampN (here) -> sm_hook(N, F, R). R holds
  * r0..r3, r8, r10, r9 in and out; sm_hook returns the address to resume at (Thumb, |1). Every
@@ -36,7 +36,7 @@
  *  - return: by the owner's field (like an enemy), not through walls; if that makes no
  *    progress for RET_STUCK frames it flies straight as vanilla.
  */
-#include "../../pathing/src/pf_core.h"
+#include "../../enemy_pathing/src/pf_core.h"
 
 /* Trampolines: the stub loads r3 = &sm_trampN; sm_trampN puts N in r3; sm_tramp saves r0-r3, r8, r10,
  * r9 in R[0..6] on the stack, calls sm_hook(N, F = sp at the hook, R), restores them and jumps to the
@@ -44,7 +44,7 @@
 asm(".text\n.syntax unified\n.thumb\n.align 2\n"
     /* bfs_run copies 72 words (bfs_arm is 68) and checks words 0, 36, 71 against its own blob. These
      * 4 words are the ones that follow bfs_arm in enemy_pathing's shipped blob (never executed), so both
-     * mods leave the same IWRAM copy and neither keeps recopying it. summon/build.py checks them. */
+     * mods leave the same IWRAM copy and neither keeps recopying it. Patches/summon_ai/build.py checks them. */
     ".word 0x4813b580, 0xf82af000, 0x21004812, 0x66416601\n"
     ".global sm_tramp0\n.thumb_func\nsm_tramp0:\n  movs r3, #0\n  b sm_tramp\n"
     ".global sm_tramp1\n.thumb_func\nsm_tramp1:\n  movs r3, #1\n  b sm_tramp\n"
@@ -59,7 +59,7 @@ asm(".text\n.syntax unified\n.thumb\n.align 2\n"
     "  ldr r0, [sp, #16]\n  mov r8, r0\n  ldr r0, [sp, #20]\n  mov sl, r0\n  ldr r0, [sp, #24]\n  mov sb, r0\n"
     "  ldr r0, [sp, #0]\n  ldr r1, [sp, #4]\n  ldr r2, [sp, #8]\n  ldr r3, [sp, #12]\n  add sp, #28\n  bx ip\n");
 
-/* Hook numbers (summon/build.py has the sites) and resume addresses (Thumb |1). */
+/* Hook numbers (Patches/summon_ai/build.py has the sites) and resume addresses (Thumb |1). */
 enum { H_ORBIT, H_SEARCH, H_CONTACT, H_CHASE, H_AFTER, H_HOME };
 #define AT(a) ((a) | 1u)
 #define ORBIT_CONT AT(0x08071B8A)   /* after `ldr r0,[sp,#0x88]; adds r3,r0,#0` (wants r0 = r3 = counter) */

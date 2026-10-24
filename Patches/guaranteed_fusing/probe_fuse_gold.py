@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Probe how forge gold and smith goodwill ([player]+0x74) affect fusing. DIAGNOSTIC, synthetic.
 
-    cd eu && .venv/bin/python ../translation/tools/probe_fuse_gold.py ROM STATE.ss0 OUT.json [SEEDS]
+    Tools/.venv/bin/python Tools/Scripts/probe_fuse_gold.py ROM STATE.ss0 OUT.json [SEEDS]
 
 Same synthetic call as test_guaranteed_fusing.py (real fuse routine 0x080845DC, CN/English),
 plus two diagnostic writes per call: the gold field at materials+0x34 (= forge UI 0x138) and

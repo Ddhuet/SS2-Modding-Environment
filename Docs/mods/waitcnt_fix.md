@@ -1,6 +1,6 @@
 # waitcnt_fix: run the cartridge at the wait states the developers chose
 
-Definition: `patches/custom/waitcnt_fix.json`. Shipped as `Patch_Manager/patches/waitcnt_fix.ips`
+Definition: `Patches/Definitions/Custom/waitcnt_fix.json`. Shipped as `Patch_Manager/patches/waitcnt_fix.ips`
 (27 B, sha256 `0f985881…73ce4`, made against the English ROM `ss2-en-phase1d.gba`).
 English + fix ROM: sha256 `86400c4a1563306df814352e41ece947e6b3a871ad61cba2fe00cfc660c37576`
 (differs from English phase1d in 14 bytes, `0x61C..0x629`). Background and measurements:
@@ -49,7 +49,7 @@ One write of 14 bytes at `0x0800061C`, which swaps the order:
 ## Checks
 
 * Preimage matches on the CN baseline and English phase1d.
-* `mod_conflicts.py --defs patches/custom`: ok (code:1).
+* `mod_conflicts.py --defs Patches/Definitions/Custom`: ok (code:1).
 * `combine_patch.py` with all 18 official singles + every custom mod: no overlap.
 * `ss2tools build` from the CN baseline: ok, 14 bytes differ from English.
 
@@ -57,7 +57,7 @@ One write of 14 bytes at `0x0800061C`, which swaps the order:
 
 | Scenario | English | English + fix |
 |---|---|---|
-| Cold boot from `workspace/input/光明之魂2.sav` → title → file select → inn → ring menu → Save (spam A) | WAITCNT `0x0003` at every checkpoint | `0x4017` at every checkpoint (frame 540 on) |
+| Cold boot from `Savestates/Fixture_CN_English.sav` → title → file select → inn → ring menu → Save (spam A) | WAITCNT `0x0003` at every checkpoint | `0x4017` at every checkpoint (frame 540 on) |
 | Exported save after that run | sha256 `5afaf155…` | **byte-identical** (`5afaf155…`); differs from the fixture, so the flash write happened |
 | Reboot from the exported save → inn | loads | loads, WAITCNT `0x4017` |
 
@@ -65,7 +65,7 @@ Screens differ only in animation phase: loads finish in fewer frames, so later a
 frames ahead. Script: `save_ab.py` (session scratch; the sequence is `smoke_phase1.py`'s boot +
 `START RIGHT RIGHT A DOWN A` + 14× `A` every 90 frames).
 
-Performance (`tools/perf/ss2prof`):
+Performance (`Tools/perf/ss2prof`):
 
 | Run | Average busy | Peak | Lagged frames |
 |---|---|---|---|

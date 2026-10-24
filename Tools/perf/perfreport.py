@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Read ss2prof output directories. See tools/perf/README.md.
+"""Read ss2prof output directories. See Tools/perf/README.md.
 
     perfreport.py summary RUN [RUN ...]       category table (cycles/frame), side by side
     perfreport.py top RUN [N]                 functions by inclusive cycles
@@ -185,7 +185,7 @@ def static_self(rom, r, n):
         op = h16(a)
         if a < 0x08000000 or (op is not None and ((op & 0xFF00) in (0xB500, 0xB400) or rets > 0)):
             starts.add(a)
-    hist = ROOT / "analysis/historical_decompilation/functions.txt"
+    hist = ROOT / "Docs/Analysis/historical_decompilation/functions.txt"
     if hist.exists():
         for l in hist.read_text().splitlines():
             a = int(l.split("\t")[0], 16)

@@ -3,7 +3,7 @@
 
 Folders next to this script:
     patches/     .ips, .ips32 and .bps files; add or remove files at any time, the list follows
-    Input_ROM/   the ROM to patch: Shining Soul II (Japan).gba, or the English ROM ss2-en-phase1d.gba;
+    Input_ROM/   the ROM to patch: Shining_Soul_II_JP.gba, or the English ROM ss2-en-phase1d.gba;
                  first .gba found is used, or pick one from the menu when there are several
     Output_ROM/  patched ROMs are written here (never overwritten: names carry a timestamp)
 
@@ -241,7 +241,7 @@ def build_rom(rom, patches, tr=None):
         b = tr["bps"]
         if not (len(rom) == b["target_size"] and crc == b["target_crc"]):  # not English yet
             if crc != b["source_crc"]:
-                raise PatchError(f"{tr['path'].name} needs the Japanese ROM, Shining Soul II (Japan).gba "
+                raise PatchError(f"{tr['path'].name} needs the Japanese ROM, Shining_Soul_II_JP.gba "
                                  f"(CRC32 {b['source_crc']:08X}). Your ROM's CRC32 is {crc:08X}.")
             rom, crc, translated = apply_bps(rom, b, crc), b["target_crc"], True
     elif tr and mods and crc == tr["bps"]["source_crc"]:

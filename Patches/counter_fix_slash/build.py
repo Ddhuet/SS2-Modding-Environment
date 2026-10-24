@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
 """Build counter_fix_slash: counter_fix + a red diagonal slash OBJ over the countered enemy for 6 frames.
 
-    python3 slash/build.py      # writes patches/custom/counter_fix_slash.json
+    python3 Patches/counter_fix_slash/build.py      # writes Patches/Definitions/Custom/counter_fix_slash.json
 
-Needs llvm-mc and llvm-objcopy. See docs/mods/counter_fix_slash.md.
+Needs llvm-mc and llvm-objcopy. See Docs/mods/counter_fix_slash.md.
 """
 import json, struct, subprocess, tempfile
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-SRC = ROOT / "slash/src/counter_slash.s"
-CN = ROOT / "eu/inputs/ss2-cn-baseline.gba"
-COUNTER_DEF = ROOT / "patches/definitions/counter_fix.json"
-OUT_DEF = ROOT / "patches/custom/counter_fix_slash.json"
+ROOT = Path(__file__).resolve().parents[2]
+SRC = ROOT / "Patches/counter_fix_slash/src/counter_slash.s"
+CN = ROOT / "ROMs/Shining_Soul_II_CN_Baseline.gba"
+COUNTER_DEF = ROOT / "Patches/Definitions/Official/counter_fix.json"
+OUT_DEF = ROOT / "Patches/Definitions/Custom/counter_fix_slash.json"
 
 STUB_BASE, STUB_END = 0x080BB268, 0x080BB400   # free gap after summon_ai's stubs
 TILES = 0x09013000                              # 512 B, owned 0x09013000..0x090131FF
@@ -87,7 +87,7 @@ def main():
         "Field sprite builder 0x08008B18 epilogue: `pop {r4}; pop {r0}` -> `bl frame_hook` "
         "(frame_hook draws the slash while the timer runs, then does the pops and returns).")
     add(STUB_BASE, code, f"Allocation 0x{STUB_BASE:08X}..0x{STUB_BASE + len(code) - 1:08X} ({len(code)} B, "
-        f"was zero; owner counter_fix_slash): Thumb code from slash/src/counter_slash.s.")
+        f"was zero; owner counter_fix_slash): Thumb code from Patches/counter_fix_slash/src/counter_slash.s.")
     add(TILES, tiles, f"Allocation 0x{TILES:08X}..0x{TILES + len(tiles) - 1:08X} ({len(tiles)} B, was zero; "
         "owner counter_fix_slash): 32x32 4bpp slash tiles (colour 1 of OBJ palette 15).")
 
@@ -99,8 +99,8 @@ def main():
         "profile_id": "ss2-cn-baseline",
         "baseline": json.loads(COUNTER_DEF.read_text())["baseline"],
         "conflicts": ["counter_fix"],
-        "source_provenance": {"kind": "new", "source": "slash/src/counter_slash.s, slash/build.py",
-                              "notes": "docs/mods/counter_fix_slash.md"},
+        "source_provenance": {"kind": "new", "source": "Patches/counter_fix_slash/src/counter_slash.s, Patches/counter_fix_slash/build.py",
+                              "notes": "Docs/mods/counter_fix_slash.md"},
         "allocations": [
             {"range": f"0x{STUB_BASE:08X}..0x{STUB_BASE + len(code) - 1:08X}", "fill": "zero", "what": "code"},
             {"range": f"0x{TILES:08X}..0x{TILES + len(tiles) - 1:08X}", "fill": "zero", "what": "tiles"},

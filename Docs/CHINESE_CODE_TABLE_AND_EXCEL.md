@@ -2,7 +2,7 @@
 
 ### 1. Chinese Character Code Table
 
-File: `reference_data/汉字码表.txt`
+File: `Docs/Reference_Data/汉字码表.txt`
 
 Format:
 
@@ -37,15 +37,15 @@ Critical Boundaries:
 Read-only Queries:
 
 ```text
-python tools/query_code_table.py --code 0x0160
-python tools/query_code_table.py --char 魂
-python tools/query_code_table.py --decode "60 01 61 01 00 00"
+python Tools/Scripts/query_code_table.py --code 0x0160
+python Tools/Scripts/query_code_table.py --char 魂
+python Tools/Scripts/query_code_table.py --decode "60 01 61 01 00 00"
 
 ```
 
 ### 2. Extracted Excel AI Query Data
 
-Directory: `reference_data/excel_extracted/README.md`
+Directory: `Docs/Reference_Data/excel_extracted/README.md`
 
 The package does not deliver the raw Excel file. The original workbook was extracted into read-only UTF-8 JSON/JSONL, preserving worksheets, line numbers, cell coordinates, display values, formulas, and merged cell metadata. Image binaries are not included in the extraction output.
 
@@ -61,10 +61,10 @@ Images in the original workbook used the `DISPIMG(...)` formula. Extracted resul
 Searchable without opening Excel software:
 
 ```text
-python tools/query_reference_data.py --list-sheets
-python tools/query_reference_data.py --query 短剑
-python tools/query_reference_data.py --sheet 剑 --query 000
-python tools/query_reference_data.py --sheet NOR怪物 --query 史莱姆 --max-results 20
+python Tools/Scripts/query_reference_data.py --list-sheets
+python Tools/Scripts/query_reference_data.py --query 短剑
+python Tools/Scripts/query_reference_data.py --sheet 剑 --query 000
+python Tools/Scripts/query_reference_data.py --sheet NOR怪物 --query 史莱姆 --max-results 20
 
 ```
 

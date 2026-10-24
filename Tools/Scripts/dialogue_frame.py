@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """In-place port of the US dialogue-window line-buffer enlargement to the CN baseline.
 
-    eu/.venv/bin/python translation/tools/dialogue_frame.py [CN.gba] [US.gba]   # report only
+    Tools/.venv/bin/python Tools/Scripts/dialogue_frame.py [CN.gba] [US.gba]   # report only
 
 The dialogue window function (CN 0x0805E8E4, US 0x0805E1DC) keeps the two visible lines
 in stack buffers of 0x24 bytes (17 glyphs + 0xFFFD) in CN and 0x3C bytes (29 glyphs) in
@@ -20,7 +20,7 @@ differences only:
     draw order: kept CN.
 
 Every byte difference between aligned instructions must fall in one of these classes or
-the port refuses. Static only; see translation/docs/PHASE1_BUILD.md for runtime checks.
+the port refuses. Static only; see Docs/Translation/PHASE1_BUILD.md for runtime checks.
 """
 import difflib
 import re
@@ -151,8 +151,8 @@ def port(cn, us):
 
 
 def main():
-    cn = Path(sys.argv[1] if len(sys.argv) > 1 else "eu/inputs/ss2-cn-baseline.gba").read_bytes()
-    us = Path(sys.argv[2] if len(sys.argv) > 2 else "ROMs/Shining Soul II (USA).gba").read_bytes()
+    cn = Path(sys.argv[1] if len(sys.argv) > 1 else "ROMs/Shining_Soul_II_CN_Baseline.gba").read_bytes()
+    us = Path(sys.argv[2] if len(sys.argv) > 2 else "ROMs/Shining_Soul_II_USA.gba").read_bytes()
     writes, report = port(cn, us)
     for a, b, n, note in writes:
         print(f"{a:08X}  {b.hex()} -> {n.hex()}  {note}")

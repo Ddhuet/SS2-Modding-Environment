@@ -11,7 +11,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("query")
     args = parser.parse_args()
-    index = Path(__file__).resolve().parent.parent / "analysis" / "FUNCTION_INDEX.json"
+    index = Path(__file__).resolve().parents[2] / "Docs/Analysis" / "FUNCTION_INDEX.json"
     document = json.loads(index.read_text(encoding="utf-8"))
     query = args.query.casefold()
     results = []

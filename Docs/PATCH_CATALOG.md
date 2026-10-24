@@ -1,6 +1,6 @@
 ## Feature Catalog (2026-08-30)
 
-The standardized rollback method is to re-generate from the single SS2_SC baseline without selecting the target feature; do not apply reverse patches to the compiled ROM. Machine definitions are located in `patches/definitions`. Address ranges are subject to item-by-item writes specified in the definitions.
+The standardized rollback method is to re-generate from the single SS2_SC baseline without selecting the target feature; do not apply reverse patches to the compiled ROM. Machine definitions are located in `Patches/Definitions/Official`. Address ranges are subject to item-by-item writes specified in the definitions.
 
 ### released (17)
 

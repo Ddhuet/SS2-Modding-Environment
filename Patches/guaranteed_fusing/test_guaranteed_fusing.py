@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Synthetic A/B of the forge recipe gate (guaranteed_fusing), CN/English ROMs. DIAGNOSTIC.
 
-    cd eu && .venv/bin/python ../translation/tools/test_guaranteed_fusing.py BASE_ROM PATCHED_ROM STATE.ss0 OUT.json [N]
+    Tools/.venv/bin/python Tools/Scripts/test_guaranteed_fusing.py BASE_ROM PATCHED_ROM STATE.ss0 OUT.json [N]
 
 From a user desktop state, runs to 0x080002F2 (System-mode Thumb in a running task, not
 BIOS IntrWait), saves that point, then per case and seed: plants three 16-byte material
@@ -14,7 +14,7 @@ All RAM/register writes are synthetic; this is not a played fuse.
 import sys, json, random
 from pathlib import Path
 ROOT = Path("/home/david/Documents/SS2_Modding")
-sys.path.insert(0, str(ROOT / "translation/tools"))
+sys.path.insert(0, str(ROOT / "Tools/Scripts"))
 from smoke_state import open_state
 
 ENTRY, AFTER_MATCH, GATE, RECIPE, RANDOM = 0x080845DC, 0x0808468E, 0x080846A4, 0x080846A8, 0x080849DC

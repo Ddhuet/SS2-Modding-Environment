@@ -1,6 +1,6 @@
 # HugeApplePack: what it teaches
 
-Evaluation (2026-10-10) of `HugeApplePack/`, a USA-English port of the CN
+Evaluation (2026-10-10) of `Other_Modders/HugeApplePack/`, a USA-English port of the CN
 "MIE" mod chain received from one of the Chinese modders. It is the USA candidate `3D2356A8`,
 built from frozen upstream `shiyi1133/SS2_GBA_HACK` commit `2a1adb43`, and needs the USA AU2E
 rev0 ROM (SHA-256 `b31c19d2…`).
@@ -12,12 +12,12 @@ ROM in this repository.
 
 Every fact carries a version tag:
 - **[US]**: USA AU2E rev0.
-- **[CN]**: the CN chain on the JP cartridge. Its baseline is the 32 MiB `SS2_SC_bug_fixed.GBA` (`eu/inputs/ss2-cn-baseline.gba`, SHA-256 `45ac38bb…`). That is the 16 MiB Chinese localization (`ROMs/Shining_Soul_II_JP.GBA`) plus small fixes; the repo has no pristine Japanese ROM.
+- **[CN]**: the CN chain on the JP cartridge. Its baseline is the 32 MiB `SS2_SC_bug_fixed.GBA` (`ROMs/Shining_Soul_II_CN_Baseline.gba`, SHA-256 `45ac38bb…`). That is the 16 MiB Chinese localization (`ROMs/Shining_Soul_II_CN.gba`) plus small fixes; the repo has no pristine Japanese ROM.
 - **[EU]**: from our own EU research, quoted only for contrast.
 - **[fmt]**: a format or rule that does not depend on addresses.
 
 Do not move an address between versions without re-proving it. EU facts live in
-[eu/docs/](../../eu/docs/); reconcile the two only when needed.
+[Archive/EU_Port/docs/](../../Archive/EU_Port/docs/); reconcile the two only when needed.
 
 Trust levels:
 - **Verified here**: checked against retail ROM bytes during this evaluation.
@@ -26,7 +26,7 @@ Trust levels:
 ## 1. Pack layout and signal-to-noise
 
 The useful material is in
-`HugeApplePack/Source/SS2_USA_MIE_3D2356A8_Source/portable-3D2356A8/`, referred to as `PKG` below.
+`Other_Modders/HugeApplePack/Source/SS2_USA_MIE_3D2356A8_Source/portable-3D2356A8/`, referred to as `PKG` below.
 
 | Path | What it is | Worth reading? |
 |---|---|---|
@@ -54,7 +54,7 @@ The useful material is in
   - Everything else (`joint/source`, overlays, `.c` files) is retargeted to US (`0x03003600`/`0x03003E00`; zero CN literals in `joint/source`).
 - **Status labels:** the pack is honest about candidate status overall. Stage labels such as `BUILD_ONLY_NOT_VALIDATED` sometimes contradict which output was delivered.
 
-Git note: `HugeApplePack/` is local reference material and is **not tracked** (whole folder in
+Git note: `Other_Modders/HugeApplePack/` is local reference material and is **not tracked** (whole folder in
 `.gitignore`). Treat it as read-only; write extracted knowledge here instead. A fresh clone
 will not have it, so ask the user for the pack.
 
@@ -148,7 +148,7 @@ its state literal differs. Verified here.
   - Quality tier = `min(4, ((grade+2n)*171)>>9)`.
 - **Temple fusion table:** `0x08540820` (1040 B) [US]. Final bytes: four equal souls become two equal souls plus two Angel Feathers. The release prose says the reverse; trust the bytes.
 - **World-map warehouse count:** immediate at `0x08058094` (0x18→0x63); count function `0x08058064` [US] (CN `0x08059610`).
-- **Stacking difference to check:** the pack excludes consumable code 0x0C from stacking, but our CN `docs/ITEM_AND_WAREHOUSE.md` includes it.
+- **Stacking difference to check:** the pack excludes consumable code 0x0C from stacking, but our CN `Docs/ITEM_AND_WAREHOUSE.md` includes it.
 
 ## 4. Game internals: classes, skills, combat
 
@@ -173,7 +173,7 @@ its state literal differs. Verified here.
   - 300 s timer, −30 s per death, and the timer keeps running in town.
   - Angel return at world (184,312).
   - Boss maps are index 14 (area 10, floor 14) and 17 (area 13, floor 0).
-- **Dynamic monster scaling (mod):** 10 levels, HP `100+50(n-1)%`, ATK `100+10(n-1)%`. Our `docs/PATCH_CATALOG.md` lists this as research only.
+- **Dynamic monster scaling (mod):** 10 levels, HP `100+50(n-1)%`, ATK `100+10(n-1)%`. Our `Docs/PATCH_CATALOG.md` lists this as research only.
 
 ## 5. Save, text, graphics, native services
 
@@ -226,6 +226,6 @@ Secret Realm in-game runs were on the earlier `833b4059` build. Everything else 
 
 ## 8. Issues found in our own docs (not yet fixed)
 
-- `analysis/STRUCTURE_FIELDS.md:15-16` says the item record has a u8 type at `+0x00` and a u8 code at `+0x01`. The pack, `docs/ITEM_AND_WAREHOUSE.md` and `docs/ROM_STRUCTURE.md` all say u16 at `+0` and u16 at `+2`, and starter ids reach 407. STRUCTURE_FIELDS is very likely wrong.
+- `Docs/Analysis/STRUCTURE_FIELDS.md:15-16` says the item record has a u8 type at `+0x00` and a u8 code at `+0x01`. The pack, `Docs/ITEM_AND_WAREHOUSE.md` and `Docs/ROM_STRUCTURE.md` all say u16 at `+0` and u16 at `+2`, and starter ids reach 407. STRUCTURE_FIELDS is very likely wrong.
 - The base-folder CN docs call `[0x03003580]` "current PLAYER". That is correct for CN/JP only; EU has no such literal.
 - Expansion fill differs: the pack pads to 32 MiB with 0x00, our EU tooling with 0xFF. Free-space claims depend on the fill.

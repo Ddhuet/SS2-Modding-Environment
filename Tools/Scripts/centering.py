@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Redirect CN centring calls of the glyph counter to a width-aware helper.
 
-    eu/.venv/bin/python translation/tools/centering.py [CN.gba] [US.gba]   # report only
+    Tools/.venv/bin/python Tools/Scripts/centering.py [CN.gba] [US.gba]   # report only
 
 CN centres text with `x = C - count(str)` where count = 0x0801A1F4 (glyphs up to the
 first control code) and every glyph is 2 tiles wide. US has the same counter (0x0801A1C8)
@@ -11,7 +11,7 @@ negative for strings longer than C: the renderer then writes outside the tilemap
 (identifier window, CN 0x08083B50: garbled screen and hard lock).
 
 The CN code has no room for an extra `lsrs`, so each listed `bl 0x0801A1F4` becomes
-`bl CENTER_HELPER` (translation/asm/center_width.s): tiles/2 for any mix of CN full-width
+`bl CENTER_HELPER` (Tools/Scripts/asm/center_width.s): tiles/2 for any mix of CN full-width
 (2) and US half-width (1) codes. For pure English that is US's `count >> 1`.
 
 HALVE lists every CN call site whose US partner halves; each pair was reviewed by hand
@@ -117,8 +117,8 @@ def redirect(cn, us):
 
 
 def main():
-    cn = Path(sys.argv[1] if len(sys.argv) > 1 else "eu/inputs/ss2-cn-baseline.gba").read_bytes()
-    us = Path(sys.argv[2] if len(sys.argv) > 2 else "ROMs/Shining Soul II (USA).gba").read_bytes()
+    cn = Path(sys.argv[1] if len(sys.argv) > 1 else "ROMs/Shining_Soul_II_CN_Baseline.gba").read_bytes()
+    us = Path(sys.argv[2] if len(sys.argv) > 2 else "ROMs/Shining_Soul_II_USA.gba").read_bytes()
     writes = redirect(cn, us)
     for a, b, n, note in writes:
         print(f"{a:08X}  {b.hex()} -> {n.hex()}  {note}")

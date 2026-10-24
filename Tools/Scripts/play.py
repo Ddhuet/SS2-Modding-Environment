@@ -18,8 +18,8 @@ def digest(path):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--rom', type=Path, default=ROOT / 'artifacts/ss2-eu-skill-refund.gba')
-    parser.add_argument('--save', type=Path, default=ROOT / 'inputs/ss2-eu.sav')
+    parser.add_argument('--rom', type=Path, required=True)
+    parser.add_argument('--save', type=Path, default=ROOT.parent / 'Savestates/Fixture_CN_English.sav')
     parser.add_argument('--run-dir', type=Path, help='Must not exist; generated under runs/ by default')
     parser.add_argument('--prepare-only', action='store_true', help='Prepare copies and print command without opening a window')
     args = parser.parse_args()
@@ -29,7 +29,7 @@ def main():
     rom, save = args.rom.resolve(strict=True), args.save.resolve(strict=True)
     source_hashes = {str(path): digest(path) for path in (rom, save)}
     stamp = datetime.datetime.now().strftime('%Y%m%d-%H%M%S-%f')
-    folder = (args.run_dir or ROOT / 'runs' / ('manual-' + stamp)).resolve()
+    folder = (args.run_dir or ROOT.parent / 'Build/runs' / ('manual-' + stamp)).resolve()
     folder.mkdir(parents=True, exist_ok=False)
     for source, name in [(rom, 'game.gba'), (save, 'game.sav')]:
         with source.open('rb') as src, (folder / name).open('xb') as dest:

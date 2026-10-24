@@ -1,5 +1,5 @@
 /* pf_core.h: the enemy_pathing flow field (RAM block, BFS, line of sight, steering helpers).
- * Shared by enemy_pathing.c and summon/src/summon_ai.c; each includes it once into its own blob.
+ * Shared by enemy_pathing.c and Patches/summon_ai/src/summon_ai.c; each includes it once into its own blob.
  * bfs_arm must stay the first code in the including file (build scripts check). */
 typedef unsigned char u8;
 typedef unsigned short u16;

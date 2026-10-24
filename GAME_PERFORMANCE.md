@@ -1,7 +1,7 @@
 # Game performance notes (Shining Soul II, CN baseline / English ROM)
 
 Started 2026-10-17. Measurement only; nothing in the ROMs or the existing project was changed.
-The profiler lives in [`tools/perf/`](tools/perf/README.md).
+The profiler lives in [`Tools/perf/`](Tools/perf/README.md).
 
 **Units.** Everything is in **CPU cycles per frame**. One frame is **280,896 cycles**. The
 percentage after a figure is its share of that frame budget, so "10,000 (3.6%)" means 3.6% of a
@@ -51,8 +51,8 @@ frame. If the total for a frame exceeds 280,896, the game drops that frame (slow
 | Item | Value |
 |---|---|
 | ROM under test | `Patch_Manager/Output_ROM/ss2-en-phase1d_9_patches_20261013-105606.gba`, sha256 `7af8d637…b74b7e` (English phase1d + counter_fix, enemy_hp_bars, guaranteed_fusing, normal_attack_charge_accuracy, persistent summons, respec, stackable_consumables_104b1_consumefix, status_resistance_overflow_fix, town_return_heal) |
-| Control ROM | `translation/build/ss2-en-phase1d.gba`, sha256 `4343a9c7…53cb` (no mods) |
-| State | `translation/build/5_mobs.ss0`, sha256 `96a8e959…624c`: jungle, 5 hostiles closing in. No input. |
+| Control ROM | `Build/ss2-en-phase1d.gba`, sha256 `4343a9c7…53cb` (no mods) |
+| State | `Savestates/5_mobs.ss0`, sha256 `96a8e959…624c`: jungle, 5 hostiles closing in. No input. |
 | Emulator | the project's mGBA 0.10.5 core, HLE BIOS, `idleOptimization=ignore` |
 | Window | load state, 2 unprofiled frames, 298 profiled frames |
 
@@ -154,7 +154,7 @@ Per-enemy cost over time, shipped WAITCNT (`perfreport.py timeline`):
   * `0x08007378`;
   * record lookups `0x08006D98 → 0x080069C0` (about 250 each).
 * **Walking adds about 7,000 per enemy.** That is `0x08013864`, *move actor with terrain
-  collision*, about 5,700 per call (decompiled: `analysis/historical_decompilation/decompiled/08013864_FUN_08013864.c`).
+  collision*, about 5,700 per call (decompiled: `Docs/Analysis/historical_decompilation/decompiled/08013864_FUN_08013864.c`).
   * It turns speed + direction into dx/dy from tables, with y scaled by `__divsi3(…, 0x130)`.
   * It then calls **`0x0800AC18`, a terrain probe (about 2,200 per call)**. The probe reads the
     3×3 map tiles around the target into a stack array, then dispatches on the tile type via a
@@ -324,7 +324,7 @@ It can be ignored for R1.
 
 ## Recommendations (ranked by value for risk)
 
-1. **R1: Fix WAITCNT.** **Done: `patches/custom/waitcnt_fix.json`, `docs/mods/waitcnt_fix.md`
+1. **R1: Fix WAITCNT.** **Done: `Patches/Definitions/Custom/waitcnt_fix.json`, `Docs/mods/waitcnt_fix.md`
    (runtime_verified in mGBA, hardware not_run).** Measured −66,221 average (−23.6% of a frame), −75,844 at the peak.
    * **Bytes (CN = English = modpack):** at `0x0800061C` the code is
      `ldr r1,=0x04000204; ldr r2,=0x4014; adds r0,r2,#0; strh r0,[r1]; movs r0,#0xE0; bl 0x080B9A98`
@@ -411,16 +411,16 @@ It can be ignored for R1.
 ## Reproduce
 
 ```sh
-tools/perf/build.sh
+Tools/perf/build.sh
 ROM=Patch_Manager/Output_ROM/ss2-en-phase1d_9_patches_20261013-105606.gba
-tools/perf/build/ss2prof --state translation/build/5_mobs.ss0 $ROM tools/perf/runs/mod
-tools/perf/build/ss2prof --state translation/build/5_mobs.ss0 --waitcnt 0x4017 $ROM tools/perf/runs/mod-wc
-tools/perf/build/ss2prof --state translation/build/5_mobs.ss0 --poke 0x03006545=0 $ROM tools/perf/runs/mod-noreverb
-tools/perf/build/ss2prof --state translation/build/5_mobs.ss0 translation/build/ss2-en-phase1d.gba tools/perf/runs/en
-python3 tools/perf/perfreport.py summary tools/perf/runs/mod tools/perf/runs/mod-wc tools/perf/runs/en
-python3 tools/perf/perfreport.py timeline tools/perf/runs/mod 60
-python3 tools/perf/perfreport.py copies tools/perf/runs/mod
-# 0x08FE check: cold boot through a save (see tools/perf/README.md for --save/--seq)
+Tools/perf/build/ss2prof --state Savestates/5_mobs.ss0 $ROM Tools/perf/runs/mod
+Tools/perf/build/ss2prof --state Savestates/5_mobs.ss0 --waitcnt 0x4017 $ROM Tools/perf/runs/mod-wc
+Tools/perf/build/ss2prof --state Savestates/5_mobs.ss0 --poke 0x03006545=0 $ROM Tools/perf/runs/mod-noreverb
+Tools/perf/build/ss2prof --state Savestates/5_mobs.ss0 Build/ss2-en-phase1d.gba Tools/perf/runs/en
+python3 Tools/perf/perfreport.py summary Tools/perf/runs/mod Tools/perf/runs/mod-wc Tools/perf/runs/en
+python3 Tools/perf/perfreport.py timeline Tools/perf/runs/mod 60
+python3 Tools/perf/perfreport.py copies Tools/perf/runs/mod
+# 0x08FE check: cold boot through a save (see Tools/perf/README.md for --save/--seq)
 ```
 
 Evidence:

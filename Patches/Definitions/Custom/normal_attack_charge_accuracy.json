@@ -13,13 +13,13 @@
   },
   "source_provenance": {
     "kind": "new",
-    "source": "translation/tools/make_normal_attack_charge_accuracy.py",
-    "notes": "docs/mods/normal_attack_charge_accuracy.md"
+    "source": "Patches/normal_attack_charge_accuracy/make_normal_attack_charge_accuracy.py",
+    "notes": "Docs/mods/normal_attack_charge_accuracy.md"
   },
   "evidence": {
     "status": "runtime_verified (melee); static_verified (bow, spear, knife)",
     "semantics": "Player normal attacks use A = 3*DEX in the hit roll floor(125*(A+10)/(A+D+20)) >= rand%100, the same A every charge attack already uses. Weapon skill level is not part of the vanilla accuracy formula at any level, so nothing else from the charge attack carries over.",
-    "static_audit": "docs/mods/normal_attack_charge_accuracy.md",
+    "static_audit": "Docs/mods/normal_attack_charge_accuracy.md",
     "user_acceptance": "not_run",
     "runtime": "user state Dragonute_Axe.ss0 (Dragonute, axe, DEX 14, target D 7), visible input only (UP 25f, then A taps or A held 70f), break at 0x08020192/0x080201D4. English: tap A=14 thr=73, charge A=42 thr=94. English+mod: tap A=42 thr=94, charge A=42 thr=94. Diagnostic RAM write (axe skill slots 1->5) left charge A=42 on English."
   },

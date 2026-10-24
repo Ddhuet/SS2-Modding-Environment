@@ -6,8 +6,8 @@ in this code. The tables are byte-identical in EU (`0x084ECB30`/`0x084ECB84`) an
 
 Evidence: `static_verified` (disassembly of the fuse routine `0x080845DC..0x080850B0`) and
 `runtime_verified` for the formula. That means 32 synthetic configurations × 2000 seeds of the
-real routine: `translation/tools/probe_fuse_gold.py`, results in
-`docs/mods/evidence/fuse_gold_probe.json`. The exact model `translation/tools/fuse_plus_model.py`
+real routine: `Patches/guaranteed_fusing/probe_fuse_gold.py`, results in
+`Docs/mods/evidence/fuse_gold_probe.json`. The exact model `Patches/guaranteed_fusing/fuse_plus_model.py`
 matches every measured distribution to within sampling noise (total variation 0.01–0.03).
 **Not verified:** that the field the probe writes (materials block `+0x34` = forge UI `[0x03006500]+0x138`)
 is the gold typed at the blacksmith. The code uses it as gold (it is added to the item worths and
@@ -84,4 +84,4 @@ byte `+7` and its special field `+4` (better table when the roll passes). These 
 | 300,000 | +1.10 | +1.57 |
 | 1,000,000 | +1.57 | +1.66 |
 
-Run `python3 translation/tools/fuse_plus_model.py [L]` for full distributions.
+Run `python3 Patches/guaranteed_fusing/fuse_plus_model.py [L]` for full distributions.

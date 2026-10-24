@@ -1,10 +1,10 @@
 # guaranteed_fusing (CN baseline / English ROM)
 
-Port of the EU mod `eu/patches/guaranteed-fusing-recipes.json` (audit: `eu/docs/fusing-audit.md`).
+Port of the EU mod `Archive/EU_Port/patches/guaranteed-fusing-recipes.json` (audit: `Archive/EU_Port/docs/fusing-audit.md`).
 When the blacksmith's three materials match a recipe, the fuse always uses that recipe's table
 instead of passing a ~30% roll first. Combinations with no recipe are unchanged.
 
-- Definition: `patches/custom/guaranteed_fusing.json` (stage `static_candidate`).
+- Definition: `Patches/Definitions/Custom/guaranteed_fusing.json` (stage `static_candidate`).
 - One write: `0x080846A5` `D9` → `E0` (`bls 0x080846A8` → `b 0x080846A8`).
 - Allocations: none.
 - Ship: `Patch_Manager/patches/guaranteed_fusing.ips` (made against the English ROM, 1 byte).
@@ -31,20 +31,20 @@ writes only data at `0x084F95xx..0x084F98xx` and does not touch this code.
 
 ## Runtime A/B (`runtime_verified`, synthetic call)
 
-Script: `translation/tools/test_guaranteed_fusing.py`; results in `docs/mods/evidence/guaranteed_fusing_ab.json`.
+Script: `Patches/guaranteed_fusing/test_guaranteed_fusing.py`; results in `Docs/mods/evidence/guaranteed_fusing_ab.json`.
 
 ```
-cd eu && .venv/bin/python ../translation/tools/test_guaranteed_fusing.py ../translation/build/ss2-en-phase1d.gba ../translation/build/ss2-en+guaranteed_fusing.gba ../translation/build/Dragon_JIC.ss0 ../docs/mods/evidence/guaranteed_fusing_ab.json 300
+Tools/.venv/bin/python Tools/Scripts/test_guaranteed_fusing.py ../Build/ss2-en-phase1d.gba ../Build/ss2-en+guaranteed_fusing.gba ../Savestates/Dragon_JIC.ss0 ../Docs/mods/evidence/guaranteed_fusing_ab.json 300
 ```
 
 - ROMs: English `ss2-en-phase1d.gba` (SHA-256 `4343a9c7…53cb`) vs English + mod
-  `translation/build/ss2-en+guaranteed_fusing.gba` (SHA-256 `cf829625…b4e5`). The two differ only at `0x846A5`.
-- Start state: user state `translation/build/Dragon_JIC.ss0`. It runs to `0x080002F2` (System-mode Thumb, a running
+  `Build/ss2-en+guaranteed_fusing.gba` (SHA-256 `cf829625…b4e5`). The two differ only at `0x846A5`.
+- Start state: user state `Savestates/Dragon_JIC.ss0`. It runs to `0x080002F2` (System-mode Thumb, a running
   task). From there it calls the real `0x080845DC` with diagnostic RAM/CPU writes: material records at EWRAM
   `0x0203F100`, output at `0x0203F200`, stack `0x0203F000`, CPSR `0xFF`, and the RNG state seeded
   from `random.Random(1234)`. The inputs are the stored records captured at the EU fuse entry from the
   user's EU fixtures `three_scales` (Scale ×3, values 3/50/55) and `dm_scale_scale`.
-- The gate threshold `[0x03003580]+0x74` was 20000 (30.5%) at every call. It is the smith goodwill value; the routine raises it after each fuse, see `docs/mods/fusing_gold.md`.
+- The gate threshold `[0x03003580]+0x74` was 20000 (30.5%) at every call. It is the smith goodwill value; the routine raises it after each fuse, see `Docs/mods/fusing_gold.md`.
 
 | Case | English | English + mod |
 | --- | --- | --- |

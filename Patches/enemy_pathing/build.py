@@ -1,20 +1,20 @@
 #!/usr/bin/env python3
 """Build enemy_pathing: compile src/enemy_pathing.c to a Thumb blob and write
-patches/custom/enemy_pathing.json (CN-baseline-bound write list).
+Patches/Definitions/Custom/enemy_pathing.json (CN-baseline-bound write list).
 
-    python3 pathing/build.py            # writes the definition
-    python3 pathing/build.py --rom OUT  # also writes English+waitcnt+mod ROM for quick tests
+    python3 Patches/enemy_pathing/build.py            # writes the definition
+    python3 Patches/enemy_pathing/build.py --rom OUT  # also writes English+waitcnt+mod ROM for quick tests
 
 Needs clang (armv4t target), llvm-objcopy, llvm-nm, llvm-readelf.
 """
 import argparse, json, struct, subprocess, sys, tempfile
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-SRC = ROOT / "pathing/src/enemy_pathing.c"
-CN = ROOT / "eu/inputs/ss2-cn-baseline.gba"
-TEST_BASE = ROOT / "translation/build/ss2-en+waitcnt_fix.gba"
-OUT_DEF = ROOT / "patches/custom/enemy_pathing.json"
+ROOT = Path(__file__).resolve().parents[2]
+SRC = ROOT / "Patches/enemy_pathing/src/enemy_pathing.c"
+CN = ROOT / "ROMs/Shining_Soul_II_CN_Baseline.gba"
+TEST_BASE = ROOT / "Build/ss2-en+waitcnt_fix.gba"
+OUT_DEF = ROOT / "Patches/Definitions/Custom/enemy_pathing.json"
 
 CODE_BASE = 0x09010000          # free range 0x09002000..0x093FFFFF
 CODE_MAX = 0x1000               # owned: 0x09010000..0x09010FFF
@@ -71,7 +71,7 @@ def compile_blob(pf_base=None):
 
 
 def dump_layout():
-    """Write pathing/pf_layout.json {field: offset} for the test harness."""
+    """Write Patches/enemy_pathing/pf_layout.json {field: offset} for the test harness."""
     out = subprocess.run(["clang", *CFLAGS[:2], f"-DCODE_BASE=0x{CODE_BASE:08X}u", "-Xclang", "-fdump-record-layouts",
                           "-fsyntax-only", str(SRC)], capture_output=True, text=True, check=True).stdout
     lay = {}
@@ -79,7 +79,7 @@ def dump_layout():
         parts = line.split("|")
         if len(parts) == 2 and parts[0].strip().isdigit():
             lay[parts[1].split()[-1]] = int(parts[0])
-    (ROOT / "pathing/pf_layout.json").write_text(json.dumps(lay, indent=1) + "\n")
+    (ROOT / "Patches/enemy_pathing/pf_layout.json").write_text(json.dumps(lay, indent=1) + "\n")
 
 
 def main():
@@ -122,7 +122,7 @@ def main():
         "1024-entry u16 queue).", mode="data")
     pad = blob + b"\x00" * ((-len(blob)) % 4)
     add(CODE_BASE, pad, f"Allocation 0x{CODE_BASE:08X}..0x{CODE_BASE + len(pad) - 1:08X} ({len(pad)} B, was zero; "
-        f"owner enemy_pathing): Thumb code from pathing/src/enemy_pathing.c. Entries: "
+        f"owner enemy_pathing): Thumb code from Patches/enemy_pathing/src/enemy_pathing.c. Entries: "
         + ", ".join(f"{k}=0x{CODE_BASE + v:08X}" for k, v in sorted(syms.items(), key=lambda kv: kv[1]) if k.startswith("pf_")) + ".")
     for w in writes:
         off = int(w["offset"], 16)
@@ -135,9 +135,9 @@ def main():
         "name": "Enemy pathfinding (flow field around walls; no attacks without line of sight)",
         "stage": "static_candidate",
         "profile_id": "ss2-cn-baseline",
-        "baseline": json.loads((ROOT / "patches/custom/town_return_heal.json").read_text())["baseline"],
-        "source_provenance": {"kind": "new", "source": "pathing/src/enemy_pathing.c, pathing/build.py",
-                              "notes": "docs/mods/enemy_pathing.md"},
+        "baseline": json.loads((ROOT / "Patches/Definitions/Custom/town_return_heal.json").read_text())["baseline"],
+        "source_provenance": {"kind": "new", "source": "Patches/enemy_pathing/src/enemy_pathing.c, Patches/enemy_pathing/build.py",
+                              "notes": "Docs/mods/enemy_pathing.md"},
         "evidence": {
             "status": "runtime_verified",
             "user_acceptance": "not_run",
@@ -145,13 +145,13 @@ def main():
                          "steer by a BFS distance field seeded at the player, aiming at the farthest visible cell up to 6 "
                          "steps down the field; with line of sight the game's own chase/attack runs untouched, so they "
                          "no longer attack through walls. Path-following enemies get a longer cull leash.",
-            "static_audit": "docs/mods/enemy_pathing.md",
+            "static_audit": "Docs/mods/enemy_pathing.md",
             "runtime": "runtime_verified (mGBA 0.10.5 headless; English+waitcnt+mod vs English+waitcnt; user states, "
                        "no diagnostic writes): Warrior_Pathing.ss0 - three casters stuck behind the hall lip walk round "
                        "by the stairs and reach the player (vanilla: never in 1500 frames); 16 user states x 900 frames "
                        "scripted walk: no crash, heap chain intact, mod dormant in towns; cold boot from the save: "
                        "boot/menus pixel-identical to vanilla, heap ends 0x0203CFF0. Cost: 1-4.8k cycles/frame average, "
-                       "~28k on field-build frames. See docs/mods/enemy_pathing.md.",
+                       "~28k on field-build frames. See Docs/mods/enemy_pathing.md.",
         },
         "writes": writes,
     }

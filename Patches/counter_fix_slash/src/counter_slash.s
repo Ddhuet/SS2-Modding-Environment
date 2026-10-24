@@ -1,5 +1,5 @@
 @ counter_fix_slash: counter_fix + a red diagonal slash OBJ over the countered enemy for 6 frames.
-@ Assembled at STUB_BASE (0x080BB268) by slash/build.py. ARMv4T Thumb only.
+@ Assembled at STUB_BASE (0x080BB268) by Patches/counter_fix_slash/build.py. ARMv4T Thumb only.
 @
 @ RAM: STATE (IWRAM 0x03007920, 8 B)
 @   +0 u32  0x534C0000 | frames left (1..6); anything else = idle

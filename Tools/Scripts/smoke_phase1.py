@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Phase-1 smoke scenarios in the native headless mGBA, from the CN baseline save.
 
-    cd eu && .venv/bin/python ../translation/tools/smoke_phase1.py ROM TAG
+    Tools/.venv/bin/python Tools/Scripts/smoke_phase1.py ROM TAG
 
-Runs two cold-boot scenarios on a copy of workspace/input/光明之魂2.sav, each in a new
-run directory under translation/build/runs/, and writes screenshots plus a JSON of RAM
+Runs two cold-boot scenarios on a copy of Savestates/Fixture_CN_English.sav, each in a new
+run directory under Build/runs/, and writes screenshots plus a JSON of RAM
 checks (language word 0x03003510, font bank table 0x03005D60..0x03005D9F).
 
   save-dialogue: title -> file select -> Normal Mode -> inn bed -> ring menu ->
@@ -20,10 +20,10 @@ import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "eu"))
+sys.path.insert(0, str(ROOT / "Tools"))
 from emulator import Session  # noqa: E402
 
-SAVE = ROOT / "workspace/input/光明之魂2.sav"
+SAVE = ROOT / "Savestates/Fixture_CN_English.sav"
 BOOT = "540 1:START 120 1:A 120 1:A 180 1:A 240 1:A 120 1:A 600"
 SCENARIOS = {
     "save-dialogue": BOOT + " 1:START 60 1:RIGHT 40 1:RIGHT 40 1:A 60 1:DOWN 40 1:A 120 120 1:A 90 1:A 90 1:A 90",
@@ -32,7 +32,7 @@ SCENARIOS = {
 
 
 def run(rom, tag, name, seq):
-    folder = ROOT / f"translation/build/runs/{tag}-{name}-{time.time_ns()}"
+    folder = ROOT / f"Build/runs/{tag}-{name}-{time.time_ns()}"
     with Session(rom, save=SAVE, run_dir=folder) as s:
         for i, tok in enumerate(seq.split()):
             n, _, keys = tok.partition(":")

@@ -1,4 +1,4 @@
-import sys, struct; sys.path.insert(0, "/home/david/Documents/SS2_Modding/summon/tools")
+import sys, struct; sys.path.insert(0, "/home/david/Documents/SS2_Modding/Patches/summon_ai/tools")
 from scommon import *
 s, f = open_state("cam", "Open_Area_One_Enemy_Squirrel.ss0")
 def snap():

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Build patches/custom/town_return_heal.json (CN baseline / English ROM).
+"""Build Patches/Definitions/Custom/town_return_heal.json (CN baseline / English ROM).
 
-    eu/.venv/bin/python translation/tools/make_town_return_heal.py
+    Tools/.venv/bin/python Patches/town_return_heal/make_town_return_heal.py
 
 Every scripted return to town goes through warp(area, entry) at 0x0805847C, which calls the map
 loader 0x08026C0C(area, entry, 0). Callers: the 13 per-level boss teleporters warp(0,2), the
@@ -9,15 +9,15 @@ Angel Wing beam-out 0x08063xxx..0x08064130 warp(0,0)/(0,4)/stored, and a few lev
 (arena exit included) warp(0,0). This retargets that one BL at 0x08058488 to a stub that, when
 area == 0 (town), refills the local player's HP and SP exactly like the arena exit script at
 0x0808FAF4 (actor +0xCC = +0x6A, +0xCA = +0x68), then tail-calls 0x08026C0C unchanged.
-docs/mods/town_return_heal.md has the evidence.
+Docs/mods/town_return_heal.md has the evidence.
 """
 import json, struct, subprocess, sys, tempfile
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "translation/tools"))
+sys.path.insert(0, str(ROOT / "Tools/Scripts"))
 from make_english_patch import assemble  # noqa: E402
 
-CN = ROOT / "eu/inputs/ss2-cn-baseline.gba"
+CN = ROOT / "ROMs/Shining_Soul_II_CN_Baseline.gba"
 CN_SHA = "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989"
 HOOK, LOADER, LOCAL_INDEX, STUB = 0x08058488, 0x08026C0C, 0x080020F4, 0x080BB1F0
 
@@ -87,7 +87,7 @@ def main():
                  "if area == 0, actor[0x080020F4()] +0xCC = +0x6A (HP) and +0xCA = +0x68 (SP), as the arena exit "
                  "0x0808FAF4 does; then `ldr r3,=0x08026C0D; bx r3`."},
     ]
-    out = ROOT / "patches/custom/town_return_heal.json"
+    out = ROOT / "Patches/Definitions/Custom/town_return_heal.json"
     old = json.loads(out.read_text()) if out.exists() else {}
     d = {
         "schema_version": 1,
@@ -97,12 +97,12 @@ def main():
         "profile_id": "ss2-cn-baseline",
         "baseline": {"filename": "SS2_SC_bug_fixed.GBA", "size": 33554432,
                      "md5": "35eb6567d94f855480c5d7ba2dff4389", "sha256": CN_SHA, "crc32": "AFCFC96D"},
-        "source_provenance": {"kind": "new", "source": "translation/tools/make_town_return_heal.py",
-                              "notes": "docs/mods/town_return_heal.md"},
+        "source_provenance": {"kind": "new", "source": "Patches/town_return_heal/make_town_return_heal.py",
+                              "notes": "Docs/mods/town_return_heal.md"},
         "evidence": old.get("evidence", {
             "status": "static_verified",
             "semantics": "Any warp() to area 0 (town) refills the local player's HP and SP to max before the map loads.",
-            "static_audit": "docs/mods/town_return_heal.md",
+            "static_audit": "Docs/mods/town_return_heal.md",
             "user_acceptance": "not_run",
             "runtime": "not_run"}),
         "writes": writes,

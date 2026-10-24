@@ -12,7 +12,7 @@ import uuid
 KEYS = {"A": 1, "B": 2, "SELECT": 4, "START": 8, "RIGHT": 16,
         "LEFT": 32, "UP": 64, "DOWN": 128, "R": 256, "L": 512}
 
-# Directional, exact-hash exception verified by docs/rom-expansion-test.md.
+# Directional, exact-hash exception verified by Archive/EU_Port/docs/rom-expansion-test.md.
 # Original EU states work on this append-only FF expansion. Reverse loading
 # and other expanded/modded ROMs have not been approved or tested here.
 SAVESTATE_ROM_COMPATIBILITY = {
@@ -40,7 +40,7 @@ def sha256(path):
 def _library():
     path = Path(__file__).parent / "build" / "libss2_mgba.so"
     if not path.is_file():
-        raise RuntimeError("Native harness missing: run python eu/scripts/build_emulator.py")
+        raise RuntimeError("Native harness missing: run python Tools/Scripts/build_emulator.py")
     lib = C.CDLL(str(path))
     signatures = {
         "open": ([C.c_char_p, C.c_char_p], C.c_void_p),

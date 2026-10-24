@@ -13,15 +13,15 @@
   },
   "source_provenance": {
     "kind": "port_from_eu",
-    "source": "eu/patches/guaranteed-fusing-recipes.json (EU 0x080844E5)",
-    "notes": "docs/mods/guaranteed_fusing.md"
+    "source": "Archive/EU_Port/patches/guaranteed-fusing-recipes.json (EU 0x080844E5)",
+    "notes": "Docs/mods/guaranteed_fusing.md"
   },
   "evidence": {
     "status": "static_verified",
     "semantics": "When the recipe matcher 0x080843C0 returns a recipe, the fuse always uses that recipe's grade table instead of rolling (rng & 0xFFFF) <= [0x03003580]+0x74 and falling through to the random generator 0x080849DC. No-recipe combinations are unchanged.",
-    "static_audit": "docs/mods/guaranteed_fusing.md",
+    "static_audit": "Docs/mods/guaranteed_fusing.md",
     "user_acceptance": "not_run",
-    "runtime": "runtime_verified (synthetic call of 0x080845DC, 300 seeds, English vs English+mod): three Scales 100/300 -> 300/300 Lizard; no-recipe identical 300/300. docs/mods/evidence/guaranteed_fusing_ab.json"
+    "runtime": "runtime_verified (synthetic call of 0x080845DC, 300 seeds, English vs English+mod): three Scales 100/300 -> 300/300 Lizard; no-recipe identical 300/300. Docs/mods/evidence/guaranteed_fusing_ab.json"
   },
   "writes": [
     {

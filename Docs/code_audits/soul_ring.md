@@ -15,7 +15,7 @@ Conclusion: Currently, the write range, several original branch contexts, and in
 | `0x0807E43A-0x0807E442` | `0x0007E43A` | Similar type `0x16` check/call, modified to NOPs[cite: 2] |
 | `0x080F0060-0x08F00170` | `0x00F00060` | Exclusive Thumb injection code and embedded constants; baseline area consists mainly of padding values[cite: 2] |
 
-All actual fragment writes and `before_hex/after_hex` can be found in [`../../patches/definitions/soul_ring.json`][cite: 2]. Do not treat unfilled gaps as available space based on the table above[cite: 2].
+All actual fragment writes and `before_hex/after_hex` can be found in [`../../Patches/Definitions/Official/soul_ring.json`][cite: 2]. Do not treat unfilled gaps as available space based on the table above[cite: 2].
 
 ## Unclosed Audit Questions[cite: 2]
 

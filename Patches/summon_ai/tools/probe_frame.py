@@ -1,4 +1,4 @@
-import sys; sys.path.insert(0, "/home/david/Documents/SS2_Modding/summon/tools")
+import sys; sys.path.insert(0, "/home/david/Documents/SS2_Modding/Patches/summon_ai/tools")
 from scommon import *
 state = sys.argv[1]; n = int(sys.argv[2])
 s, f = open_state("frame", state)

@@ -18,7 +18,7 @@
   },
   "provenance": {
     "kind": "local_file_hash_verification",
-    "filename_hint": "Shining Soul II (USA).gba",
+    "filename_hint": "Shining_Soul_II_USA.gba",
     "verified_utc": "2026-10-10",
     "note": "Hashes computed with `python -m ss2tools identify`; source only, never a build input."
   }

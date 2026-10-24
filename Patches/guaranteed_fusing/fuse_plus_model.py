@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Exact model of the forge +X roll (CN/English ROM fuse routine 0x080845DC), and helpers.
 
-    python3 translation/tools/fuse_plus_model.py [L]     # table of expected +X vs gold
+    python3 Patches/guaranteed_fusing/fuse_plus_model.py [L]     # table of expected +X vs gold
 
-See docs/mods/fusing_gold.md. points = sum of per-input points (see input_points); L = smith
+See Docs/mods/fusing_gold.md. points = sum of per-input points (see input_points); L = smith
 goodwill [player]+0x74 (starts 20000, max 65535).
 """
 import sys

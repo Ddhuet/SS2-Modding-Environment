@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """In-place port of US stack-frame enlargements (text line buffers) to CN baseline functions.
 
-    eu/.venv/bin/python translation/tools/frame_port.py [CN.gba] [US.gba]   # report only
+    Tools/.venv/bin/python Tools/Scripts/frame_port.py [CN.gba] [US.gba]   # report only
 
 Several text functions keep lines of glyph codes in stack buffers. CN sized them for
 full-width Chinese; US enlarged them for English (more, narrower glyphs). The English
@@ -215,8 +215,8 @@ def port(cn, us):
 
 
 def main():
-    cn = Path(sys.argv[1] if len(sys.argv) > 1 else "eu/inputs/ss2-cn-baseline.gba").read_bytes()
-    us = Path(sys.argv[2] if len(sys.argv) > 2 else "ROMs/Shining Soul II (USA).gba").read_bytes()
+    cn = Path(sys.argv[1] if len(sys.argv) > 1 else "ROMs/Shining_Soul_II_CN_Baseline.gba").read_bytes()
+    us = Path(sys.argv[2] if len(sys.argv) > 2 else "ROMs/Shining_Soul_II_USA.gba").read_bytes()
     writes, report = port(cn, us)
     for a, b, n, note in writes:
         print(f"{a:08X}  {b.hex()} -> {n.hex()}  {note}")

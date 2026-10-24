@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """List CN functions that call a given function and compare their stack frame with the US pair.
 
-    eu/.venv/bin/python translation/tools/frame_scan.py ALIGN.json 0x08019F30 [...]
+    Tools/.venv/bin/python Tools/Scripts/frame_scan.py ALIGN.json 0x08019F30 [...]
 
 ALIGN.json comes from align.py (CN baseline vs US). Function starts are found by
 scanning back to `push {.., lr}`; the US partner is located through the align runs and
@@ -11,8 +11,8 @@ so confirm each flagged pair with func_pair_diff.py.
 """
 import json, struct, bisect, sys
 from pathlib import Path
-cn = Path("eu/inputs/ss2-cn-baseline.gba").read_bytes()
-us = Path("ROMs/Shining Soul II (USA).gba").read_bytes()
+cn = Path("ROMs/Shining_Soul_II_CN_Baseline.gba").read_bytes()
+us = Path("ROMs/Shining_Soul_II_USA.gba").read_bytes()
 al = json.load(open(sys.argv[1]))
 runs = sorted(al["runs"]); starts = [r[0] for r in runs]
 B = 0x08000000

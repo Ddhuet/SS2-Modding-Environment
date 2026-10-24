@@ -13,15 +13,15 @@
   },
   "source_provenance": {
     "kind": "port_from_us",
-    "source": "Nell_Stuff/ss2-usa-walk-angles.ips (US AU2E rev0)",
-    "notes": "docs/mods/walk_angles.md"
+    "source": "Other_Modders/Nell/ss2-usa-walk-angles.ips (US AU2E rev0)",
+    "notes": "Docs/mods/walk_angles.md"
   },
   "evidence": {
     "status": "runtime_verified",
     "semantics": "The shared step routine (CN 0x08013864 = US 0x08013900) converts direction 0-7 to an angle via a u16 table; diagonals were 109/147/237/19 (~26.7 deg off horizontal). Repointing its 4 literals to a 45-degree table changes player walking, enemy movement and knock-back that go through it.",
-    "static_audit": "docs/mods/walk_angles.md",
+    "static_audit": "Docs/mods/walk_angles.md",
     "user_acceptance": "not_run",
-    "runtime": "runtime_verified (headless mGBA, user states, English phase1d vs English+walk_angles, step routine entry/return traced): Post_Boss.ss0 player walking (caller 0x0800F90A) DOWN+RIGHT step (356,179)=27deg -> (282,282)=45deg, UP+LEFT likewise, same step length; 5_Mobs.ss0 300 frames no input: main enemy movement (caller 0x080181DA) (-142,71)=27deg -> (-113,113)=45deg, knock-back (caller 0x08013AE4) 27deg -> 45deg; straight moves unchanged. Also with enemy_pathing+waitcnt_fix: enemies 45deg. docs/mods/walk_angles.md"
+    "runtime": "runtime_verified (headless mGBA, user states, English phase1d vs English+walk_angles, step routine entry/return traced): Post_Boss.ss0 player walking (caller 0x0800F90A) DOWN+RIGHT step (356,179)=27deg -> (282,282)=45deg, UP+LEFT likewise, same step length; 5_Mobs.ss0 300 frames no input: main enemy movement (caller 0x080181DA) (-142,71)=27deg -> (-113,113)=45deg, knock-back (caller 0x08013AE4) 27deg -> 45deg; straight moves unchanged. Also with enemy_pathing+waitcnt_fix: enemies 45deg. Docs/mods/walk_angles.md"
   },
   "writes": [
     {

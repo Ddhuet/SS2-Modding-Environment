@@ -1,13 +1,28 @@
 {
   "schema_version": 1,
   "id": "replace_me",
-  "name": "请填写一个小功能",
-  "stage": "research",
+  "name": "Short English description of the mod",
+  "stage": "static_candidate",
+  "profile_id": "ss2-cn-baseline",
   "baseline": {
     "filename": "SS2_SC_bug_fixed.GBA",
     "size": 33554432,
     "md5": "35eb6567d94f855480c5d7ba2dff4389",
-    "sha256": "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989"
+    "sha256": "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989",
+    "crc32": "AFCFC96D"
+  },
+  "source_provenance": {
+    "kind": "new",
+    "source": "Patches/replace_me/build.py; see Docs/mods/replace_me.md",
+    "notes": ""
+  },
+  "allocations": [],
+  "evidence": {
+    "status": "candidate",
+    "semantics": "",
+    "static_audit": "Docs/mods/replace_me.md",
+    "user_acceptance": "not_run",
+    "runtime": "not_run"
   },
   "writes": []
 }

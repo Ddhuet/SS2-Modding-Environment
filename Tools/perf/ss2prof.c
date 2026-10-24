@@ -1,5 +1,5 @@
 /* ss2prof: cycle-exact profiler for Shining Soul II (CN baseline / English ROM family)
- * on the project's mGBA 0.10.5 core. See tools/perf/README.md.
+ * on the project's mGBA 0.10.5 core. See Tools/perf/README.md.
  *
  * Every instruction's cost in bus cycles (wait states included) is charged to its PC
  * (self) and to every function on a shadow call stack (inclusive). The game runs

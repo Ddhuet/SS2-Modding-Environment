@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Function-level comparison of the code regions of two ROMs (read-only).
 
-    eu/.venv/bin/python translation/tools/func_diff.py A.gba B.gba ALIGN.json \
+    Tools/.venv/bin/python Tools/Scripts/func_diff.py A.gba B.gba ALIGN.json \
         [--code-end 0x080C0000] [--tsv OUT]
 
 Function starts are the Thumb BL targets inside the code region of each ROM. Each A

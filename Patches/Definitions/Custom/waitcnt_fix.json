@@ -13,15 +13,15 @@
   },
   "source_provenance": {
     "kind": "new",
-    "source": "hand-assembled; see docs/mods/waitcnt_fix.md",
+    "source": "hand-assembled; see Docs/mods/waitcnt_fix.md",
     "notes": "GAME_PERFORMANCE.md R1"
   },
   "evidence": {
     "status": "runtime_verified",
     "semantics": "Boot init 0x08000618 wrote WAITCNT=0x4014 (ROM 3/1 waits + prefetch) and then called RegisterRamReset(0xE0), which clears WAITCNT back to 0 (4/2 waits, no prefetch). The flash library later ORs in SRAM bits, so the game ran with 0x0003 forever. The fix calls RegisterRamReset first and writes 0x4014 after it; the flash library then turns it into 0x4017.",
-    "static_audit": "docs/mods/waitcnt_fix.md",
+    "static_audit": "Docs/mods/waitcnt_fix.md",
     "user_acceptance": "not_run",
-    "runtime": "runtime_verified (mGBA 0.10.5 HLE BIOS, cold boot from workspace/input/光明之魂2.sav, visible input only; English phase1d vs English+waitcnt_fix sha256 86400c4a…7576): WAITCNT 0x0003 vs 0x4017 at every checkpoint, from frame 540 onward; title -> file select -> inn -> Save -> exported saves byte-identical (sha256 5afaf155…, differs from the fixture so the flash write happened); reboot from the exported save reaches the inn on both, WAITCNT 0x4017 on the fix. Screens differ only by animation phase (loads finish in fewer frames). Modpack (9 patches) + fix, same cold boot: average busy 104,909 -> 81,338 cycles/frame, lagged frames 31 -> 24. 5_mobs.ss0 combat what-if (WAITCNT poked to 0x4017): 194,651 -> 128,430 average, peak 230,661 -> 154,817. Real hardware / flash cart: not_run."
+    "runtime": "runtime_verified (mGBA 0.10.5 HLE BIOS, cold boot from Savestates/Fixture_CN_English.sav, visible input only; English phase1d vs English+waitcnt_fix sha256 86400c4a…7576): WAITCNT 0x0003 vs 0x4017 at every checkpoint, from frame 540 onward; title -> file select -> inn -> Save -> exported saves byte-identical (sha256 5afaf155…, differs from the fixture so the flash write happened); reboot from the exported save reaches the inn on both, WAITCNT 0x4017 on the fix. Screens differ only by animation phase (loads finish in fewer frames). Modpack (9 patches) + fix, same cold boot: average busy 104,909 -> 81,338 cycles/frame, lagged frames 31 -> 24. 5_mobs.ss0 combat what-if (WAITCNT poked to 0x4017): 194,651 -> 128,430 average, peak 230,661 -> 154,817. Real hardware / flash cart: not_run."
   },
   "writes": [
     {

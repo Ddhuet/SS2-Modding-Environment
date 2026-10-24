@@ -9,7 +9,7 @@ from pathlib import Path
 
 
 def data_root() -> Path:
-    return Path(__file__).resolve().parent.parent / "reference_data" / "excel_extracted"
+    return Path(__file__).resolve().parents[2] / "Docs/Reference_Data" / "excel_extracted"
 
 
 def main() -> int:

@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
 """Emit the phase-1 English patch for the CN baseline, as a declarative ss2tools patch.
 
-    eu/.venv/bin/python translation/tools/make_english_patch.py [--out translation/build/ss2-en-phase1.patch.json]
-    cd eu && .venv/bin/python -m ss2tools build inputs/ss2-cn-baseline.gba \
-        ../translation/build/ss2-en-phase1.patch.json ../translation/build/ss2-en-phase1.gba \
+    Tools/.venv/bin/python Tools/Scripts/make_english_patch.py [--out Build/ss2-en-phase1.patch.json]
+    cd Tools && .venv/bin/python -m ss2tools build ../ROMs/Shining_Soul_II_CN_Baseline.gba \
+        ../Build/ss2-en-phase1.patch.json ../Build/ss2-en-phase1.gba \
         --profile profiles/ss2-cn-baseline.json --allow-static-candidate
 
 Reads the CN baseline and the US ROM (both hash-checked against their profiles) and
 writes nothing else. Needs `llvm-mc` and `llvm-objcopy` to assemble
-translation/asm/render_glyphs.s. The output holds US text and font bytes, so it lives
-in the git-ignored translation/build/.
+Tools/Scripts/asm/render_glyphs.s. The output holds US text and font bytes, so it lives
+in the git-ignored Build/.
 
-What the patch does (see translation/docs/PHASE1_SURVEY.md and PHASE1_BUILD.md):
+What the patch does (see Docs/Translation/PHASE1_SURVEY.md and PHASE1_BUILD.md):
   1. language word init 0x08001BA4: movs r0,#0 -> movs r0,#1
   2. slot-1 message table: 1493 US slot-1 messages, re-encoded, in expansion space;
      pool word 0x08006B8C repointed to it
@@ -23,9 +23,9 @@ What the patch does (see translation/docs/PHASE1_SURVEY.md and PHASE1_BUILD.md):
   7. other text line buffers enlarged as in US, in place (frame_port.py); CN-only stack
      layouts grown by reviewed spec (frame_grow.py: item detail description lines)
   8. centring: 57 calls of the glyph counter -> width-aware helper in the dead old glyph
-     loop (centering.py, translation/asm/center_width.s)
+     loop (centering.py, Tools/Scripts/asm/center_width.s)
   9. equipment name bar (0x080606CC): enchant after the name, as US, rewritten in place
-     (translation/asm/name_suffix.s)
+     (Tools/Scripts/asm/name_suffix.s)
 
 Re-encoding (survey §3): glyph code c -> c + 0x700; 0xFFxx controls unchanged; the two
 parameter halfwords after 0xFFFE and the two header halfwords unchanged.
@@ -49,13 +49,13 @@ import centering  # noqa: E402
 from capstone import Cs, CS_ARCH_ARM, CS_MODE_THUMB  # noqa: E402
 
 BASE = 0x08000000
-CN_ROM = ROOT / "eu/inputs/ss2-cn-baseline.gba"
-US_ROM = ROOT / "ROMs/Shining Soul II (USA).gba"
-CN_PROFILE = ROOT / "eu/profiles/ss2-cn-baseline.json"
-US_PROFILE = ROOT / "translation/profiles/ss2-us.json"
-ASM = ROOT / "translation/asm/render_glyphs.s"
-ASM_CENTER = ROOT / "translation/asm/center_width.s"
-ASM_SUFFIX = ROOT / "translation/asm/name_suffix.s"
+CN_ROM = ROOT / "ROMs/Shining_Soul_II_CN_Baseline.gba"
+US_ROM = ROOT / "ROMs/Shining_Soul_II_USA.gba"
+CN_PROFILE = ROOT / "Tools/profiles/ss2-cn-baseline.json"
+US_PROFILE = ROOT / "Tools/profiles/ss2-us.json"
+ASM = ROOT / "Tools/Scripts/asm/render_glyphs.s"
+ASM_CENTER = ROOT / "Tools/Scripts/asm/center_width.s"
+ASM_SUFFIX = ROOT / "Tools/Scripts/asm/name_suffix.s"
 
 GLYPH_SHIFT = 0x700
 MSG_COUNT = 1493
@@ -172,7 +172,7 @@ def write(writes, cn, addr, after, note, expansion=False):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--out", type=Path, default=ROOT / "translation/build/ss2-en-phase1.patch.json")
+    ap.add_argument("--out", type=Path, default=ROOT / "Build/ss2-en-phase1.patch.json")
     args = ap.parse_args()
     cn = load(CN_ROM, CN_PROFILE)
     us = load(US_ROM, US_PROFILE)
@@ -187,14 +187,14 @@ def main():
     code = assemble()
     if len(code) > ALLOC_FONT - ALLOC_CODE:
         raise ValueError("renderer code overflows its allocation")
-    write(writes, cn, ALLOC_CODE, code, "renderer glyph loop with half-width cell (translation/asm/render_glyphs.s)", True)
+    write(writes, cn, ALLOC_CODE, code, "renderer glyph loop with half-width cell (Tools/Scripts/asm/render_glyphs.s)", True)
     allocations.append({"address": f"0x{ALLOC_CODE:08X}", "length": len(code), "fill": "00",
                         "what": "renderer glyph loop (Thumb)"})
     hook = bytes.fromhex("014b1847c046") + struct.pack("<I", ALLOC_CODE | 1)
     assert cn[RENDER_HOOK - BASE:RENDER_HOOK - BASE + 10].hex() == RENDER_HOOK_BEFORE
     write(writes, cn, RENDER_HOOK, hook, "renderer hook: ldr r3,=0x09400001; bx r3; nop; literal (old loop body becomes dead)")
 
-    # 6. dialogue window frame (needs Capstone: run with eu/.venv/bin/python)
+    # 6. dialogue window frame (needs Capstone: run with Tools/.venv/bin/python)
     dwrites, dreport = dialogue_frame.port(cn, us)
     for a, before, after, note in dwrites:
         write(writes, cn, a, after, "dialogue frame: " + note)
@@ -216,7 +216,7 @@ def main():
     if centering.CENTER_HELPER + len(helper) > centering.DEAD_END:
         raise ValueError("centring helper overflows the dead glyph-loop bytes")
     write(writes, cn, centering.CENTER_HELPER, helper,
-          "centring helper (translation/asm/center_width.s) over dead old glyph loop bytes")
+          "centring helper (Tools/Scripts/asm/center_width.s) over dead old glyph loop bytes")
     cwrites = centering.redirect(cn, us)
     for a, before, after, note in cwrites:
         write(writes, cn, a, after, note)
@@ -227,7 +227,7 @@ def main():
     if cn[NAME_SUFFIX - BASE:NAME_SUFFIX - BASE + len(suffix)].hex() != NAME_SUFFIX_BEFORE:
         raise ValueError("name bar enchant/name copy is not the reviewed CN code")
     write(writes, cn, NAME_SUFFIX, suffix,
-          "equipment name bar: name + space + enchant, US order (translation/asm/name_suffix.s)")
+          "equipment name bar: name + space + enchant, US order (Tools/Scripts/asm/name_suffix.s)")
 
     # 4. font section: count 9, offsets relative to the new section
     assert u32(cn, FONT_HDR) == CN_FONT - SSDT_ROOT and u32(cn, CN_FONT) == 7
@@ -285,7 +285,7 @@ def main():
         "profile_id": "ss2-cn-baseline",
         "baseline": json.loads(CN_PROFILE.read_text())["identity"],
         "source_provenance": {
-            "generator": "translation/tools/make_english_patch.py",
+            "generator": "Tools/Scripts/make_english_patch.py",
             "us_profile_id": "ss2-us",
             "us_sha256": hashlib.sha256(us).hexdigest(),
             "renderer_asm_sha256": hashlib.sha256(ASM.read_bytes()).hexdigest(),
@@ -294,7 +294,7 @@ def main():
             "center_code_sha256": hashlib.sha256(helper).hexdigest(),
             "name_suffix_asm_sha256": hashlib.sha256(ASM_SUFFIX.read_bytes()).hexdigest(),
         },
-        "evidence": {"status": "experimental", "doc": "translation/docs/PHASE1_BUILD.md",
+        "evidence": {"status": "experimental", "doc": "Docs/Translation/PHASE1_BUILD.md",
                      "user_acceptance": "not_run"},
         "allocations": {"range": "0x09400000..0x094FFFFF", "owner": "ss2_en_phase1",
                         "baseline_fill": "00", "blocks": allocations,

@@ -1,7 +1,7 @@
 """Load many .ss0 states, run a few frames, record EWRAM/IWRAM; report runs that are zero in all."""
 import glob, sys
 from common import *
-states = sorted(glob.glob(str(ROOT / "translation/build/*.ss0")) + glob.glob(str(ROOT / "ROMs/saves/*.ss0")))
+states = sorted(glob.glob(str(ROOT / "Build/*.ss0")) + glob.glob(str(ROOT / "Savestates/*.ss0")))
 ew = None; iw = None; used = []
 for st in states:
     try:
@@ -27,4 +27,4 @@ def runs(buf, base, minlen):
     return out
 print("EWRAM zero runs >= 2048:", runs(ew, 0x02000000, 2048))
 print("IWRAM zero runs >= 256:", runs(iw, 0x03000000, 256))
-open(ROOT/"pathing/ew_or.bin","wb").write(ew); open(ROOT/"pathing/iw_or.bin","wb").write(iw)
+open(ROOT/"Patches/enemy_pathing/ew_or.bin","wb").write(ew); open(ROOT/"Patches/enemy_pathing/iw_or.bin","wb").write(iw)

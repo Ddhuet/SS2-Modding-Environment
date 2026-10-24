@@ -34,4 +34,4 @@ ABI review must also prove that:[cite: 2]
 * `strh` does not destroy the `r0` return value[cite: 2].
 * Subsequent code at `0x0801F1D0` continues to consume the correct return value[cite: 2].
 
-For the full instruction table, see [`../../docs/code_audits/counter_fix.md`][cite: 2]. This case demonstrates that having no injection, no change in jump target, and identical length does not mean independent control flow review is unnecessary[cite: 2].
+For the full instruction table, see [`../../Docs/code_audits/counter_fix.md`][cite: 2]. This case demonstrates that having no injection, no change in jump target, and identical length does not mean independent control flow review is unnecessary[cite: 2].

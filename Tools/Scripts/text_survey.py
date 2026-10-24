@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """Read-only survey of the JP, US and EU text/resource layouts.
 
-Reproduces the facts in translation/docs/TEXT_ARCHITECTURE.md from the three
+Reproduces the facts in Docs/Translation/TEXT_ARCHITECTURE.md from the three
 retail ROMs. Pure standard library; never writes a ROM.
 
-    python3 translation/tools/text_survey.py [ROMS_DIR]
+    python3 Tools/Scripts/text_survey.py [ROMS_DIR]
 
-ROMS_DIR defaults to ROMs/ and must hold the files named in ROMs/REQUIRED_ROMS.md.
-"JP" here is ROMs/Shining_Soul_II_JP.GBA, which is the Chinese localization on the JP
+ROMS_DIR defaults to ROMs/ and must hold the files named in REPO_INDEX.md (ROMs section).
+"JP" here is ROMs/Shining_Soul_II_CN.gba, which is the Chinese localization on the JP
 cartridge, not pristine Japanese. The 32 MiB CN mod baseline has the same layout.
 """
 import hashlib
@@ -17,8 +17,8 @@ import sys
 from pathlib import Path
 
 ROMS = {
-    "JP": ("Shining_Soul_II_JP.GBA", None),
-    "US": ("Shining Soul II (USA).gba",
+    "JP": ("Shining_Soul_II_CN.gba", None),
+    "US": ("Shining_Soul_II_USA.gba",
            "b31c19d2d25683a0941d5d501912b5f21d4590cd7071fa01882e62aa5227a7c9"),
     "EU": ("Shining_Soul_II_EU.gba", None),
 }

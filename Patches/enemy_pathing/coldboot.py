@@ -6,9 +6,9 @@ rom, tag = sys.argv[1], sys.argv[2]
 extra = sys.argv[3] if len(sys.argv) > 3 else ""
 BOOT = "540 1:START 120 1:A 120 1:A 180 1:A 240 1:A 120 1:A 600"
 MENUS = "1:START 60 1:A 90 1:A 90 1:RIGHT 60 1:RIGHT 60 1:DOWN 60 1:B 60 1:B 60 1:B 60"
-folder = ROOT / f"pathing/runs/{tag}-{time.time_ns()}"
+folder = ROOT / f"Patches/enemy_pathing/runs/{tag}-{time.time_ns()}"
 import common; common._RUN_DIRS.append(folder)
-s = Session(Path(rom).resolve(), save=ROOT / "workspace/input/光明之魂2.sav", run_dir=folder); s.__enter__()
+s = Session(Path(rom).resolve(), save=ROOT / "Savestates/Fixture_CN_English.sav", run_dir=folder); s.__enter__()
 def play(seq, shot):
     for i, tok in enumerate(seq.split()):
         n, _, keys = tok.partition(":")

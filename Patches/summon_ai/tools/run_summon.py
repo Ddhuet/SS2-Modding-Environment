@@ -8,7 +8,7 @@ target id, hits, owner HP, enemy HPs, mod state (hurt, stuck). Writes log.json (
 No RAM writes.
 """
 import sys, json, argparse
-sys.path.insert(0, "/home/david/Documents/SS2_Modding/summon/tools")
+sys.path.insert(0, "/home/david/Documents/SS2_Modding/Patches/summon_ai/tools")
 from scommon import *
 
 PH = {0x08071F32: "orbit", 0x08072592: "chase", 0x080726B4: "hit", 0x08072A02: "home", 0x0807189C: "init"}

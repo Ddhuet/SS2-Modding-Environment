@@ -1,9 +1,9 @@
 # enemy_pathing: enemies path around walls (flow field)
 
-Definition `patches/custom/enemy_pathing.json` (7 writes, built by `pathing/build.py` from
-`pathing/src/enemy_pathing.c`). Shipped as `Patch_Manager/patches/enemy_pathing.ips32` (348 records,
+Definition `Patches/Definitions/Custom/enemy_pathing.json` (7 writes, built by `Patches/enemy_pathing/build.py` from
+`Patches/enemy_pathing/src/enemy_pathing.c`). Shipped as `Patch_Manager/patches/enemy_pathing.ips32` (348 records,
 3576 B, against the English ROM). English + waitcnt_fix + enemy_pathing:
-`translation/build/ss2-en+waitcnt_fix+enemy_pathing.gba`, sha256 `a3b5d716…601d79` (ss2tools build from
+`Build/ss2-en+waitcnt_fix+enemy_pathing.gba`, sha256 `a3b5d716…601d79` (ss2tools build from
 the CN baseline; byte-identical to the test ROM).
 
 Status: `runtime_verified` for the scenarios below. `user_accepted`: not yet.
@@ -146,20 +146,20 @@ Heap budget: the free heap at the top was ~50 KB in every user state; the reserv
 
 ## Evidence
 
-Tools (`pathing/`, scratch): `common.py` (state loading, heap walker), `run_mod.py` (tracks + mod
+Tools (`Patches/enemy_pathing/`, scratch): `common.py` (state loading, heap walker), `run_mod.py` (tracks + mod
 state log + heap check), `render_track.py`, `dirlog.py`, `states.py`, `coldboot.py`, `iwcheck.py`,
 `calltrace.py`, `watch*.py`, `jumps.py`, `find_bl.py`, `proto.py` (the Python prototype).
-Profiles: `tools/perf/build/ss2prof --waitcnt 0x4017` (the desktop `.ss0` loads with WAITCNT 3).
+Profiles: `Tools/perf/build/ss2prof --waitcnt 0x4017` (the desktop `.ss0` loads with WAITCNT 3).
 
 - **Warrior_Pathing.ss0, 600 frames, no input** (English+waitcnt vs +mod, no diagnostic writes):
   vanilla: the three casters walk into the hall lip forever and the spider sticks on a corner
   (none reach the player in 1500 frames). Mod: all five reach the player; casters go left along the
   lip, down the stairs, along the corridor; no culls (leash peaks 20-31 frames); they cast only once
-  in line of sight. Track images: `pathing/runs/mod*/track.png`.
+  in line of sight. Track images: `Patches/enemy_pathing/runs/mod*/track.png`.
 - **16 user states × 900 frames** (scripted walk L/U/R/D + attack): no crash; heap chain intact; the
   mod adopts and builds fields in the 6 dungeon states and stays dormant in towns. Boss_HP_bar_no_boss
   (jungle): the knight paths round trees and reaches the player at f60 (vanilla: stuck).
-- **Cold boot** from `workspace/input/光明之魂2.sav` (`pathing/coldboot.py`): magic written, heap ends at
+- **Cold boot** from `Savestates/Fixture_CN_English.sav` (`Patches/enemy_pathing/coldboot.py`): magic written, heap ends at
   `0x0203CFF0`, same 59 heap blocks and highest used address as vanilla; 16 screenshots through boot,
   ring menu and item menu byte-identical to vanilla.
 - **All 18 official + 6 custom mods stacked** (`combine_patch.py`, no overlap; ss2tools build):
@@ -168,7 +168,7 @@ Profiles: `tools/perf/build/ss2prof --waitcnt 0x4017` (the desktop `.ss0` loads 
   states (≤ 1.7%); a field build adds ~28k on its frames (~5 frames for the 90×60 map); the BFS runs
   ~100 cycles/cell from IWRAM. No lag frame came from mod code (the ones seen are player death and
   map loads, which also lag in vanilla).
-- Static: `mod_conflicts.py --defs patches/custom` ok (code:6, expansion:1); all preimages checked by
+- Static: `mod_conflicts.py --defs Patches/Definitions/Custom` ok (code:6, expansion:1); all preimages checked by
   `build.py` and ss2tools.
 
 not_run: real hardware; multiplayer; summons (see summon_ai); boss fights; long play sessions across many maps
@@ -176,20 +176,20 @@ not_run: real hardware; multiplayer; summons (see summon_ai); boss fights; long 
 
 ## Shared core (2026-10-21)
 
-Everything except the three entry points moved to `pathing/src/pf_core.h`, which `summon_ai`
-(`docs/mods/summon_ai.md`) also includes. Under the same compiler the split is byte-identical to
+Everything except the three entry points moved to `Patches/enemy_pathing/src/pf_core.h`, which `summon_ai`
+(`Docs/mods/summon_ai.md`) also includes. Under the same compiler the split is byte-identical to
 the old single file. Note: the committed source no longer reproduces the shipped blob with the
 current clang (23.1.3: 3,854 B vs the shipped 3,916 B); the shipped definition was not rebuilt.
-Rebuilding `enemy_pathing` would change its bytes (and summon/build.py's check of the 72 IWRAM
+Rebuilding `enemy_pathing` would change its bytes (and Patches/summon_ai/build.py's check of the 72 IWRAM
 words would then need the new trailing words). summon_ai uses `PF_BASE + 0xC0..0xFF` of the
 control block (`struct pf` ends at 0x74) and drives the same field while a summon is out.
 
-## Tuning knobs (`pathing/src/enemy_pathing.c`)
+## Tuning knobs (`Patches/enemy_pathing/src/enemy_pathing.c`)
 
 `BFS_CELLS` (cost per frame vs build time), `LOOKAHEAD`, `LOS_EVERY`, `REBUILD_MOVE`,
 `SEED_SLACK`, `FIELD_MAX_AGE`, `LEASH_CELLS`, `LEASH_FRAMES`, `STEER_FRESH`. Rebuild with
-`python3 pathing/build.py --rom pathing/test.gba` (writes the definition too), then
-`python3 translation/tools/make_ips_set.py --defs <folder with only enemy_pathing.json>`.
+`python3 Patches/enemy_pathing/build.py --rom Patches/enemy_pathing/test.gba` (writes the definition too), then
+`python3 Tools/Scripts/make_ips_set.py --defs <folder with only enemy_pathing.json>`.
 
 ## History of this session's dead ends (so nobody repeats them)
 

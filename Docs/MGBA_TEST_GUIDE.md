@@ -6,7 +6,7 @@
 
 
 
-This distribution package now includes native headless mGBA for Windows: Python can launch it in a paused state on an isolated copy, advance natively frame-by-frame, run with frame limiting, send keypresses via an authenticated protocol, read ROM/RAM/registers, perform batch read-only/restricted dumps, take screenshots, save/load savestates, execute bounded PC tracking, and switch to GDB remote stub mode. See `tools/windows_mgba/README.md` for usage instructions and limitations.
+This distribution package now includes native headless mGBA for Windows: Python can launch it in a paused state on an isolated copy, advance natively frame-by-frame, run with frame limiting, send keypresses via an authenticated protocol, read ROM/RAM/registers, perform batch read-only/restricted dumps, take screenshots, save/load savestates, execute bounded PC tracking, and switch to GDB remote stub mode. See `Archive/Windows_mGBA/README.md` for usage instructions and limitations.
 
 These capabilities are suitable for infrastructure self-checks, precise observation of known addresses, and reproducible scripts. They do not include reliable screen semantic recognition, nor can they replace manual character control and functional judgment. When an AI runs a script, it must log the ROM/SAV hashes, instance, commands, addresses, expected, and actual results; `PING`, launching, taking screenshots, or having no crash still do not equal completed functional testing.
 

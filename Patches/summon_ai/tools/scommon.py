@@ -1,16 +1,16 @@
-"""Shared helpers for the summon investigation (Summons/ test ROM = English + waitcnt + walk_angles
+"""Shared helpers for the summon investigation (Patches/summon_ai/Starting_Info/ test ROM = English + waitcnt + walk_angles
 + enemy_pathing + persistent summons)."""
 import sys, json, shutil, time
 from pathlib import Path
 ROOT = Path("/home/david/Documents/SS2_Modding")
-sys.path.insert(0, str(ROOT / "eu")); sys.path.insert(0, str(ROOT / "pathing"))
+sys.path.insert(0, str(ROOT / "Tools")); sys.path.insert(0, str(ROOT / "Patches/enemy_pathing"))
 from emulator import Session, sha256
 import common as pc  # pathing helpers (pool, heap, pf_state)
 
-ROM = ROOT / "Summons/Shining Soul II (English)+4_patches.gba"
-SAV = ROOT / "Summons/Shining Soul II (English)+4_patches.sav"
+ROM = ROOT / "Patches/summon_ai/Starting_Info/Shining Soul II (English)+4_patches.gba"
+SAV = ROOT / "Patches/summon_ai/Starting_Info/Shining Soul II (English)+4_patches.sav"
 STATES = ROOT / "Summons"
-RUNS = ROOT / "summon/runs"
+RUNS = ROOT / "Patches/summon_ai/runs"
 keymask = pc.keymask; s32 = pc.s32; pool = pc.pool
 
 _RUN_DIRS = []

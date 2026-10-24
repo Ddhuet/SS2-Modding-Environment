@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Read-only anchor alignment of two GBA ROMs; reports matched runs and changed gaps.
 
-    python3 translation/tools/align.py A.gba B.gba [--size 0x1000000] [--win 24] [--json OUT]
+    python3 Tools/Scripts/align.py A.gba B.gba [--size 0x1000000] [--win 24] [--json OUT]
 
 Indexes every 2-aligned WIN-byte window of B that occurs exactly once, looks up each
 2-aligned window of A, keeps anchors that are unique in both, chains them into a

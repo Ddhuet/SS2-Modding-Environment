@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Merge the English translation patch with CN mod definitions into one ss2tools patch.
 
-    python3 translation/tools/combine_patch.py DEF_ID [DEF_ID ...] \
-        [--patch translation/build/ss2-en-phase1.patch.json] [--out translation/build/ss2-en+ID.patch.json]
-    cd eu && .venv/bin/python -m ss2tools build inputs/ss2-cn-baseline.gba \
-        ../translation/build/ss2-en+ID.patch.json ../translation/build/ss2-en+ID.gba \
+    python3 Tools/Scripts/combine_patch.py DEF_ID [DEF_ID ...] \
+        [--patch Build/ss2-en-phase1.patch.json] [--out Build/ss2-en+ID.patch.json]
+    cd Tools && .venv/bin/python -m ss2tools build ../ROMs/Shining_Soul_II_CN_Baseline.gba \
+        ../Build/ss2-en+ID.patch.json ../Build/ss2-en+ID.gba \
         --profile profiles/ss2-cn-baseline.json --allow-static-candidate
 
 Both inputs are write lists against the CN baseline (SHA-256 45ac38bb...); the binding is
@@ -13,7 +13,7 @@ combined ROM is "translation + mod applied as published". Any byte overlap betwe
 inputs is refused here (and again by ss2tools, which rejects overlapping writes). Pass
 several ids only when the CN README allows combining them (it says to use the
 `all_17_released` / `all_18_beta` bundles instead of stacking single definitions).
-English names for records a mod renames come from translation/mods/ledger.json: an entry
+English names for records a mod renames come from Patches/Definitions/ledger.json: an entry
 applies when the combined mod writes change the record's slot-0 bytes, and it replaces the
 translation's slot-1 write for that record (same preimage: CN slot 1 is empty).
 The output is a `static_candidate`; it is not tracked (it contains US text).
@@ -26,8 +26,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 SHA = "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989"
-LEDGER = ROOT / "translation/mods/ledger.json"
-sys.path.insert(0, str(ROOT / "translation/tools"))
+LEDGER = ROOT / "Patches/Definitions/ledger.json"
+sys.path.insert(0, str(ROOT / "Tools/Scripts"))
 from name_tables import TABLES, SLOT  # noqa: E402
 
 GLYPH_SHIFT = 0x700
@@ -66,8 +66,8 @@ def spans(writes, tag):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("ids", nargs="+")
-    ap.add_argument("--patch", default=str(ROOT / "translation/build/ss2-en-phase1.patch.json"))
-    ap.add_argument("--defs", default=str(ROOT / "patches/definitions"))
+    ap.add_argument("--patch", default=str(ROOT / "Build/ss2-en-phase1.patch.json"))
+    ap.add_argument("--defs", default=str(ROOT / "Patches/Definitions/Official"))
     ap.add_argument("--out")
     args = ap.parse_args()
 
@@ -110,7 +110,7 @@ def main():
             raise SystemExit(f"overlap: {t} 0x{a:08X}..0x{b:08X} and {u} 0x{c:08X}..0x{e:08X}")
 
     tag = "+".join(args.ids)
-    out = Path(args.out or ROOT / f"translation/build/ss2-en+{tag}.patch.json")
+    out = Path(args.out or ROOT / f"Build/ss2-en+{tag}.patch.json")
     combined = {k: base[k] for k in ("schema_version", "profile_id", "baseline")}
     combined |= {
         "id": f"{base['id']}+{tag}",
@@ -120,10 +120,10 @@ def main():
                               "translation_patch_sha256": hashlib.sha256(base_bytes).hexdigest(),
                               "translation_generator": base["source_provenance"],
                               "cn_definitions": mods,
-                              "combiner": "translation/tools/combine_patch.py",
+                              "combiner": "Tools/Scripts/combine_patch.py",
                               "ledger_sha256": hashlib.sha256(LEDGER.read_bytes()).hexdigest(),
                               "ledger_applied": applied},
-        "evidence": {"status": "experimental", "doc": "translation/docs/PHASE2_COMPAT.md"},
+        "evidence": {"status": "experimental", "doc": "Docs/Translation/PHASE2_COMPAT.md"},
         "allocations": base["allocations"],
         "writes": writes,
     }

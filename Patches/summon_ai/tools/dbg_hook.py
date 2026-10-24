@@ -1,7 +1,7 @@
-import sys; sys.path.insert(0, "/home/david/Documents/SS2_Modding/summon/tools")
+import sys; sys.path.insert(0, "/home/david/Documents/SS2_Modding/Patches/summon_ai/tools")
 from scommon import *
 st, frames, addr = sys.argv[1], int(sys.argv[2]), int(sys.argv[3], 0)
-s, f = open_state("dbg", st, rom=ROOT / "summon/test.gba")
+s, f = open_state("dbg", st, rom=ROOT / "Patches/summon_ai/test.gba")
 s.run_frames(frames)
 for k in range(4):
     r = s.run_until(addr, frames=3)

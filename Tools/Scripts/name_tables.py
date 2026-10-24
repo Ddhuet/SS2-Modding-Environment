@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Record tables with per-language name slots, CN baseline vs US (read-only check).
 
-    python3 translation/tools/name_tables.py [CN.gba] [US.gba]
+    python3 Tools/Scripts/name_tables.py [CN.gba] [US.gba]
 
 Every record in these tables starts with six 0x3E-byte name slots (u16 glyph codes,
 0x0000-terminated, zero-padded), one per language word value, followed by data at
@@ -13,7 +13,7 @@ US: slot 0 is the original Japanese, slot 1 English, slots 2-5 identical to CN.
 
 The check asserts, per record: data from +0x174 to the stride is byte-identical between
 CN and US (proves the pairing), and CN slots 1-5 equal US slots 2-5 layout (empty).
-How each table was found is in translation/docs/PHASE1_SURVEY.md.
+How each table was found is in Docs/Translation/PHASE1_SURVEY.md.
 """
 import struct
 import sys
@@ -84,8 +84,8 @@ def check(cn, us):
 
 
 def main():
-    cn = Path(sys.argv[1] if len(sys.argv) > 1 else "eu/inputs/ss2-cn-baseline.gba").read_bytes()
-    us = Path(sys.argv[2] if len(sys.argv) > 2 else "ROMs/Shining Soul II (USA).gba").read_bytes()
+    cn = Path(sys.argv[1] if len(sys.argv) > 1 else "ROMs/Shining_Soul_II_CN_Baseline.gba").read_bytes()
+    us = Path(sys.argv[2] if len(sys.argv) > 2 else "ROMs/Shining_Soul_II_USA.gba").read_bytes()
     problems = list(check(cn, us))
     for t in TABLES:
         named = sum(any(slot(us, u, 1)) for _, _, u in records(t))

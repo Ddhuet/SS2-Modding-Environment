@@ -1,7 +1,7 @@
 # Patch Manager
 
 Tick the patches you want, press **Apply**, and get a patched English ROM. Start from the Japanese
-ROM `Shining Soul II (Japan).gba` (SHA-256 `9f3e0d06…d17a`) with **English translation** ticked
+ROM `Shining_Soul_II_JP.gba` (SHA-256 `9f3e0d06…d17a`) with **English translation** ticked
 (it is ticked by default and applied first), or from the English ROM `ss2-en-phase1d.gba`
 (the translation is then skipped). Same rules and byte-identical output as the web patcher
 (`../SS2_Web_Patcher`), so a patch tested here works there.
@@ -34,10 +34,10 @@ address. They are **IPS32** files (32-bit offsets). Flips and most other IPS too
 them; this manager can. Any combination of the 18 patches is safe: none of them overlap. If two
 selected patches ever write different bytes to the same place, Apply refuses and names them.
 
-New mods arrive here as `.bps` from `translation/tools/make_bps.py` (see `AGENTS.md`). Test them
+New mods arrive here as `.bps` from `Tools/Scripts/make_bps.py` (see `AGENTS.md`). Test them
 here, then copy them to the web patcher. `make_ips_set.py` (the old IPS set) is retired.
 
 The Windows `.exe` predates BPS support; rebuild it with `build_exe.sh` before using it.
 
 `weapon_balance_rework.ips` also renames "Combat Claw" to "Combat Knife", from
-`translation/mods/ledger.json`.
+`Patches/Definitions/ledger.json`.

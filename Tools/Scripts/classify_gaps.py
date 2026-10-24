@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Classify the alignment gaps from align.py: relocation-only versus real changes.
 
-    python3 translation/tools/classify_gaps.py A.gba B.gba ALIGN.json [--code-end 0x080C0000]
+    python3 Tools/Scripts/classify_gaps.py A.gba B.gba ALIGN.json [--code-end 0x080C0000]
 
 A gap is "reloc" when both sides have equal length and every differing 4-aligned word
 is a ROM pointer whose A value maps to the B value through the alignment, and every

@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """Fill Patch_Manager/ with the English ROM and one IPS patch per CN mod definition.
 
-    python3 translation/tools/make_ips_set.py [--rom translation/build/ss2-en-phase1d.gba] [--out Patch_Manager]
+    python3 Tools/Scripts/make_ips_set.py [--rom Build/ss2-en-phase1d.gba] [--out Patch_Manager]
 
 Writes:
 - OUT/Input_ROM/<rom name>: a copy of the English build (hash-checked against its ss2tools manifest).
-- OUT/patches/<id>.ips (`<id>_beta` for beta definitions): for every single definition in patches/definitions/ (bundles skipped),
+- OUT/patches/<id>.ips (`<id>_beta` for beta definitions): for every single definition in Patches/Definitions/Official/ (bundles skipped),
   the bytes that change from the English ROM to English ROM + mod, plus the English name from
-  translation/mods/ledger.json when the mod renames a record (same rule as combine_patch.py).
+  Patches/Definitions/ledger.json when the mod renames a record (same rule as combine_patch.py).
   Definitions that write above 16 MiB (offset >= 0x01000000) cannot be expressed in standard
   IPS (24-bit offsets); they are written as `<id>.ips32` (header "IPS32", 32-bit offsets,
   footer "EEOF"), which Patch_Manager/patch_manager.py reads.
@@ -15,9 +15,9 @@ Writes:
 
 Every definition's preimage is asserted on the English ROM. The 18 definitions are pairwise
 disjoint and their union equals the CN bundles (checked 2026-10-11), so any subset can be
-applied in any order. With `--defs DIR` (e.g. patches/custom for new mods) only DIR's
+applied in any order. With `--defs DIR` (e.g. Patches/Definitions/Custom for new mods) only DIR's
 definitions are written; the other files in OUT/patches stay. Self-check (official folder only): applying every patch except the beta one must give exactly
-translation/build/ss2-en+all_17_released.gba when that build exists.
+Build/ss2-en+all_17_released.gba when that build exists.
 Standard library only.
 """
 import argparse
@@ -29,7 +29,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "translation/tools"))
+sys.path.insert(0, str(ROOT / "Tools/Scripts"))
 sys.path.insert(0, str(ROOT / "Patch_Manager"))
 from combine_patch import ledger_overrides  # noqa: E402
 
@@ -64,9 +64,9 @@ def write_ips(path, recs, wide):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--rom", default=str(ROOT / "translation/build/ss2-en-phase1d.gba"))
+    ap.add_argument("--rom", default=str(ROOT / "Build/ss2-en-phase1d.gba"))
     ap.add_argument("--out", default=str(ROOT / "Patch_Manager"))
-    ap.add_argument("--defs", default=str(ROOT / "patches/definitions"))
+    ap.add_argument("--defs", default=str(ROOT / "Patches/Definitions/Official"))
     args = ap.parse_args()
 
     rom_path, out = Path(args.rom), Path(args.out)
@@ -105,8 +105,8 @@ def main():
         made.append((d["id"], name, recs))
         print(f"{name:48s} {len(recs):4d} records {sum(len(x) for _, x in recs):6d} bytes")
 
-    ref = ROOT / "translation/build/ss2-en+all_17_released.gba"
-    official = Path(args.defs).resolve() == (ROOT / "patches/definitions").resolve()
+    ref = ROOT / "Build/ss2-en+all_17_released.gba"
+    official = Path(args.defs).resolve() == (ROOT / "Patches/Definitions/Official").resolve()
     if official and ref.exists():
         from patch_manager import load_patch, apply_patches, conflicts
         patches = [load_patch(out / "patches" / n) for i, n, _ in made if i not in BETA]

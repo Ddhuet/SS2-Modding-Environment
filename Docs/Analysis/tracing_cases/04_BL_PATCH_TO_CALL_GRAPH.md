@@ -35,7 +35,7 @@ after : 00 F0 DB FE
 ## 可复现只读命令
 
 ```text
-python tools/disassemble_rom.py <ROM> --address 0x0805CCE0 --length 32 --mode thumb
-python tools/find_thumb_bl_references.py <ROM> --target 0x080008C8
-python tools/find_thumb_bl_references.py <ROM> --target 0x0805DAA4
+python Tools/Scripts/disassemble_rom.py <ROM> --address 0x0805CCE0 --length 32 --mode thumb
+python Tools/Scripts/find_thumb_bl_references.py <ROM> --target 0x080008C8
+python Tools/Scripts/find_thumb_bl_references.py <ROM> --target 0x0805DAA4
 ```

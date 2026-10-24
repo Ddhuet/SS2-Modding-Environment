@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Read-only Thumb cross-references: find code that loads a 32-bit literal.
 
-    eu/.venv/bin/python translation/tools/xref.py ROM VALUE [--limit 0x200000] [--context 24]
+    Tools/.venv/bin/python Tools/Scripts/xref.py ROM VALUE [--limit 0x200000] [--context 24]
 
 Scans aligned literal-pool words equal to VALUE inside the first LIMIT bytes, then
 finds Thumb `ldr rX, [pc, #imm]` instructions (up to 1020 bytes before the pool word)

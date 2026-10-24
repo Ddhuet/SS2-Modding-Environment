@@ -13,15 +13,15 @@
   },
   "source_provenance": {
     "kind": "new",
-    "source": "translation/tools/make_town_return_heal.py",
-    "notes": "docs/mods/town_return_heal.md"
+    "source": "Patches/town_return_heal/make_town_return_heal.py",
+    "notes": "Docs/mods/town_return_heal.md"
   },
   "evidence": {
     "status": "runtime_verified",
     "semantics": "Any warp() 0x0805847C to area 0 (town) refills the local player's HP (+0xCC = +0x6A) and SP (+0xCA = +0x68) before the map loader runs. Covers all 13 boss teleporters and the Angel Wing.",
-    "static_audit": "docs/mods/town_return_heal.md",
+    "static_audit": "Docs/mods/town_return_heal.md",
     "user_acceptance": "not_run",
-    "runtime": "runtime_verified (user states Post_Boss/Angel_Wing/Post_Arena, visible input only, English vs English+mod): boss teleporter 49/66 -> 66/66 HP and SP 56 -> 86/86; Angel Wing 49/66 -> 66/66; arena exit unchanged (heals in both). docs/mods/evidence/town_return_heal_ab.json"
+    "runtime": "runtime_verified (user states Post_Boss/Angel_Wing/Post_Arena, visible input only, English vs English+mod): boss teleporter 49/66 -> 66/66 HP and SP 56 -> 86/86; Angel Wing 49/66 -> 66/66; arena exit unchanged (heals in both). Docs/mods/evidence/town_return_heal_ab.json"
   },
   "writes": [
     {

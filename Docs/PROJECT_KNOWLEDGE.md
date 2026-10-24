@@ -37,6 +37,6 @@ These addresses mainly originate from historical decompilation and existing audi
 
 ## How to Think and Debug
 
-Do not treat "keyword not found" as non-existence of a mechanism, nor name a function based solely on a single constant match. First distinguish between input identity, data tables, control flow, runtime state, UI, save files, and combination conflicts; establish minimal reproduction cases and single-variable controls. Once a candidate match is found, downstream and upstream logic as well as data flow must be inspected. For details, see [DEBUG_THINKING_GUIDE.md].
+Do not treat "keyword not found" as non-existence of a mechanism, nor name a function based solely on a single constant match. First distinguish between input identity, data tables, control flow, runtime state, UI, save files, and combination conflicts; establish minimal reproduction cases and single-variable controls. Once a candidate match is found, downstream and upstream logic as well as data flow must be inspected. For details, see [Docs/Old_Docs/DEBUG_THINKING_GUIDE.md].
 
-For historical pseudocode, see [analysis/README.md]; for code patch audits, see [docs/code_audits/README.md]; for evidence labels, see [EVIDENCE_BOUNDARY.md].
+For historical pseudocode, see [Docs/Analysis/README.md]; for code patch audits, see [Docs/code_audits/README.md]; for evidence labels, see [Docs/EVIDENCE_BOUNDARY.md].

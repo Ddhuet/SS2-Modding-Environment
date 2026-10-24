@@ -19,9 +19,9 @@ This directory provides the disassembly context, cross-references, instruction s
 
  | [soul_ring.md] |
 
-Machine-executable byte-by-byte ground truth remains subject to [`../../patches/definitions/`]. This directory explains "what code these bytes reside in, why they are dangerous, and what evidence is still missing," and cannot replace raw byte verification or owner acceptance.
+Machine-executable byte-by-byte ground truth remains subject to [`../../Patches/Definitions/Official/`]. This directory explains "what code these bytes reside in, why they are dangerous, and what evidence is still missing," and cannot replace raw byte verification or owner acceptance.
 
-Evidence tags follow [`../../EVIDENCE_BOUNDARY.md`]. Legacy ROM hashes from historical reports are not inherited as dynamic evidence for the current baseline; they are used as current static context only when their disassembly matches the current definition's `before_hex`.
+Evidence tags follow [`../../Docs/EVIDENCE_BOUNDARY.md`]. Legacy ROM hashes from historical reports are not inherited as dynamic evidence for the current baseline; they are used as current static context only when their disassembly matches the current definition's `before_hex`.
 
 See also [INJECTION_OWNERSHIP.md].
 

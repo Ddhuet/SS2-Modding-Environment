@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Read-only SSDT resource comparison between the CN baseline and the US ROM.
 
-    python3 translation/tools/resource_diff.py [CN.gba] [US.gba]
+    python3 Tools/Scripts/resource_diff.py [CN.gba] [US.gba]
 
 For both SSDT archives and each archive section (types 0-6), lists the CN entries that
 have no byte-identical entry anywhere in the same US section (matched by content hash),
@@ -39,8 +39,8 @@ def digest(d, a, n):
 
 
 def main():
-    cn = open(sys.argv[1] if len(sys.argv) > 1 else "eu/inputs/ss2-cn-baseline.gba", "rb").read()
-    us = open(sys.argv[2] if len(sys.argv) > 2 else "ROMs/Shining Soul II (USA).gba", "rb").read()
+    cn = open(sys.argv[1] if len(sys.argv) > 1 else "ROMs/Shining_Soul_II_CN_Baseline.gba", "rb").read()
+    us = open(sys.argv[2] if len(sys.argv) > 2 else "ROMs/Shining_Soul_II_USA.gba", "rb").read()
     for label, rc, ru in ARCHIVES:
         for t in range(7):
             ec, eu = entries(cn, rc, t), entries(us, ru, t)

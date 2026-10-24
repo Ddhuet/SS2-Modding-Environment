@@ -8,8 +8,8 @@ Wine, server, or socket is needed.
 Build from the repository root:
 
 ```sh
-python scripts/build_emulator.py
-python scripts/test_emulator.py --rom inputs/ss2-eu.gba --save inputs/ss2-eu.sav
+Tools/.venv/bin/python Tools/Scripts/build_emulator.py
+Tools/.venv/bin/python Tools/Scripts/test_emulator.py --rom Build/en.gba --save Savestates/Fixture_CN_English.sav
 ```
 
 The build needs Git, C/C++ compilers, CMake, and optionally Ninja. libpng/zlib
@@ -22,8 +22,8 @@ upstream source. All libraries/build files remain local under `build/`.
 ```python
 from emulator import Session
 
-with Session("inputs/ss2-eu.gba", save="inputs/ss2-eu.sav",
-             run_dir="runs/manual-001") as s:
+with Session("Build/en.gba", save="Savestates/Fixture_CN_English.sav",
+             run_dir="Build/runs/manual-001") as s:
     s.run_frames(180)
     s.press("START", frames=2, release_frames=60)
     s.screenshot("screenshots/title.png")
@@ -46,7 +46,7 @@ state SHA-256, and backend revision. Loading requires that sidecar and verifies
 all three before touching the core. One tested, directional exception accepts
 original clean EU states (`e5c64a17…467e0b2`) on the exact append-only 32 MiB FF
 ROM (`085009a8…5d632b`), as documented in
-[the expansion test](../docs/rom-expansion-test.md). Its original sidecar stays
+[the expansion test](../Docs/rom-expansion-test.md). Its original sidecar stays
 unchanged. Reverse loading and other cross-ROM states are rejected, as are
 altered states or states without metadata. Keep the sidecar with the state file.
 
@@ -123,7 +123,7 @@ verifies the pause by executing the real scheduler's `movs r0,#1` next.
 Direct synthetic calls must start from a running task rather than a halted
 BIOS IntrWait state, and disclose CPSR/IRQ and stack changes.
 
-Use the [Goblin Fort fixture](../docs/fixtures/README.md) for immediate combat
-research and [the resistance audit](../docs/status-resistance-audit.md) for
+Use the [Goblin Fort fixture](../Docs/fixtures/README.md) for immediate combat
+research and [the resistance audit](../Docs/status-resistance-audit.md) for
 reproducible examples. A bounded miss is useful evidence; do not replace it
 with unlimited Python instruction polling.

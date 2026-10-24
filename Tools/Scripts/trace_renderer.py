@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """List renderer calls (CN 0x08019F30) after replaying input from a user state (diagnostic).
 
-    cd eu && .venv/bin/python ../translation/tools/trace_renderer.py ROM STATE.ss0 "PRE-SEQ" FRAMES
+    Tools/.venv/bin/python Tools/Scripts/trace_renderer.py ROM STATE.ss0 "PRE-SEQ" FRAMES
 
 Prints, per call: frame, caller (lr), sp, string address, x, row, glyph count and the
 terminating control code. Run after the pre-sequence, for FRAMES frames.

@@ -5,16 +5,16 @@ Phase 1 step 3 (build tooling) and a first pass of step 4 (smoke test) from
 One addition: the dialogue-window frame port (§3), found when the first build was tested.
 
 **Status:** `runtime_verified` for the named scenarios below only. Input is
-`eu/inputs/ss2-cn-baseline.gba` (SHA-256 `45ac38bb…`) and the source is
-`ROMs/Shining Soul II (USA).gba` (`b31c19d2…`). Save copy: `workspace/input/光明之魂2.sav`.
+`ROMs/Shining_Soul_II_CN_Baseline.gba` (SHA-256 `45ac38bb…`) and the source is
+`ROMs/Shining_Soul_II_USA.gba` (`b31c19d2…`). Save copy: `Savestates/Fixture_CN_English.sav`.
 No user acceptance yet.
 
 | Build | Output | SHA-256 | Patch SHA-256 |
 |---|---|---|---|
-| 1 | `translation/build/ss2-en-phase1.gba` | `123204b53ac417218959fb2d367c066d7827db91a1561b8bf20d9d94e69f7678` | `6c799e56…` |
-| 1b | `translation/build/ss2-en-phase1b.gba` | `f391f348f970fff7204ec0cdd25b0ce8194b1223a9c517d4060021b429d4c7c2` | `dd753a43…` |
-| 1c | `translation/build/ss2-en-phase1c.gba` | `0db73d94de4a1f0f5b58af2dd9e9a87a02c41c4798e109d223c10f8b0cc7bd3c` | `fb10e256…` |
-| 1d | `translation/build/ss2-en-phase1d.gba` | `4343a9c7fa9b6f9889a5fd9e334b807ebf98e200729810e92108b27d9bb953cb` | `eb35dd35…` |
+| 1 | `Build/ss2-en-phase1.gba` | `123204b53ac417218959fb2d367c066d7827db91a1561b8bf20d9d94e69f7678` | `6c799e56…` |
+| 1b | `Build/ss2-en-phase1b.gba` | `f391f348f970fff7204ec0cdd25b0ce8194b1223a9c517d4060021b429d4c7c2` | `dd753a43…` |
+| 1c | `Build/ss2-en-phase1c.gba` | `0db73d94de4a1f0f5b58af2dd9e9a87a02c41c4798e109d223c10f8b0cc7bd3c` | `fb10e256…` |
+| 1d | `Build/ss2-en-phase1d.gba` | `4343a9c7fa9b6f9889a5fd9e334b807ebf98e200729810e92108b27d9bb953cb` | `eb35dd35…` |
 
 Build 1b adds §5 (identifier hard lock fix: frame port and centring). The user
 reported build 1 playable in dialogue and item names, and the identifier window
@@ -25,29 +25,29 @@ item: crash on the Valuing Scroll, overlapping text on other items). Build 1d ad
 ## Reproduce
 
 ```sh
-# from the repo root; needs llvm-mc + llvm-objcopy (system LLVM) and Capstone (eu/.venv)
-eu/.venv/bin/python translation/tools/make_english_patch.py
-cd eu
-.venv/bin/python -m ss2tools build inputs/ss2-cn-baseline.gba \
-    ../translation/build/ss2-en-phase1.patch.json ../translation/build/ss2-en-phase1d.gba \
+# from the repo root; needs llvm-mc + llvm-objcopy (system LLVM) and Capstone (Tools/.venv)
+Tools/.venv/bin/python Tools/Scripts/make_english_patch.py
+cd Tools
+.venv/bin/python -m ss2tools build ../ROMs/Shining_Soul_II_CN_Baseline.gba \
+    ../Build/ss2-en-phase1.patch.json ../Build/ss2-en-phase1d.gba \
     --profile profiles/ss2-cn-baseline.json --allow-static-candidate \
-    --bps ../translation/build/ss2-en-phase1d.bps
-.venv/bin/python ../translation/tools/smoke_phase1.py inputs/ss2-cn-baseline.gba base
-.venv/bin/python ../translation/tools/smoke_phase1.py ../translation/build/ss2-en-phase1d.gba en1d
-.venv/bin/python ../translation/tools/smoke_identifier.py ../translation/build/ss2-en-phase1d.gba en1d
+    --bps ../Build/ss2-en-phase1d.bps
+.venv/bin/python ../Tools/Scripts/smoke_phase1.py ../ROMs/Shining_Soul_II_CN_Baseline.gba base
+.venv/bin/python ../Tools/Scripts/smoke_phase1.py ../Build/ss2-en-phase1d.gba en1d
+.venv/bin/python ../Tools/Scripts/smoke_identifier.py ../Build/ss2-en-phase1d.gba en1d
 # item detail view (§5b): Valuing Scroll, then Force Ring
-.venv/bin/python ../translation/tools/smoke_state.py ../translation/build/ss2-en-phase1d.gba \
-    ../translation/build/Valuing_Scroll_Crash.ss0 detail "10 2:SELECT 60 120 2:B 60"
-.venv/bin/python ../translation/tools/smoke_state.py ../translation/build/ss2-en-phase1d.gba \
-    ../translation/build/Valuing_Scroll_Crash.ss0 ring "10 2:UP 15 2:RIGHT 15 2:SELECT 90 2:B 40"
+.venv/bin/python ../Tools/Scripts/smoke_state.py ../Build/ss2-en-phase1d.gba \
+    ../Savestates/Valuing_Scroll_Crash.ss0 detail "10 2:SELECT 60 120 2:B 60"
+.venv/bin/python ../Tools/Scripts/smoke_state.py ../Build/ss2-en-phase1d.gba \
+    ../Savestates/Valuing_Scroll_Crash.ss0 ring "10 2:UP 15 2:RIGHT 15 2:SELECT 90 2:B 40"
 # enchanted names (§5c): Beret of Fear, then Light Flail of Bane+6 and its detail view
-.venv/bin/python ../translation/tools/smoke_state.py ../translation/build/ss2-en-phase1d.gba \
-    ../translation/build/beret.ss0 beret "10 2:SELECT 60 2:B 30"
-.venv/bin/python ../translation/tools/smoke_state.py ../translation/build/ss2-en-phase1d.gba \
-    ../translation/build/beret.ss0 flail "4 2:LEFT 12 2:LEFT 12 2:LEFT 12 2:UP 12 2:RIGHT 12 2:SELECT 60 2:B 30"
+.venv/bin/python ../Tools/Scripts/smoke_state.py ../Build/ss2-en-phase1d.gba \
+    ../Savestates/beret.ss0 beret "10 2:SELECT 60 2:B 30"
+.venv/bin/python ../Tools/Scripts/smoke_state.py ../Build/ss2-en-phase1d.gba \
+    ../Savestates/beret.ss0 flail "4 2:LEFT 12 2:LEFT 12 2:LEFT 12 2:UP 12 2:RIGHT 12 2:SELECT 60 2:B 30"
 ```
 
-`translation/build/` is git-ignored: the patch JSON (2.3 MB) and the BPS contain US text and
+`Build/` is git-ignored: the patch JSON (2.3 MB) and the BPS contain US text and
 font bytes. Track the generator, not its output. `ss2tools build` refuses to overwrite, so
 delete old outputs first. The generator is deterministic: same inputs and same `.s` give the same
 patch. Each build's manifest (`<output>.manifest.json`) records its patch SHA-256.
@@ -56,21 +56,21 @@ patch. Each build's manifest (`<output>.manifest.json`) records its patch SHA-25
 
 | Path | What |
 |---|---|
-| `translation/profiles/ss2-us.json` | US ROM profile (`eu/profiles` format; identity from `ss2tools identify`) |
-| `translation/tools/make_english_patch.py` | Generator. Hash-checks both ROMs and emits a `static_candidate` ss2tools patch for profile `ss2-cn-baseline`. |
-| `translation/asm/render_glyphs.s` | New renderer glyph loop (ARMv4T Thumb; assembled with `llvm-mc -triple=thumbv4t-none-eabi`) |
-| `translation/tools/dialogue_frame.py` | In-place port of the US dialogue line-buffer enlargement. Run alone for a classification report. |
-| `translation/tools/smoke_phase1.py` | Two emulator scenarios. Writes screenshots and `checks.json` per run. |
-| `translation/asm/center_width.s` | Centring width helper (tiles/2 for mixed CN/US codes), ARMv4T Thumb (§5) |
-| `translation/tools/frame_port.py` | Generic in-place port of US stack-frame enlargements; sp map derived from aligned code (§5) |
-| `translation/tools/centering.py` | Reviewed table of glyph-count call sites: 57 redirected, 13 kept (§5) |
-| `translation/tools/frame_scan.py` | Lists callers of a function whose CN and US stack frames differ (§5) |
-| `translation/tools/smoke_identifier.py` | Identifier scenario from the user's desktop state (§5) |
-| `translation/tools/frame_grow.py` | Reviewed growth of a CN-only stack layout (no US frame to copy); used for the item detail view (§5b) |
-| `translation/tools/smoke_state.py` | Replays `frames[:KEYS]` tokens from any user desktop state on any build, with screenshots (§5b) |
-| `translation/tools/trace_renderer.py` | Lists every renderer call (caller, string, x, row, glyph count) after replaying input from a state (§5b) |
-| `translation/tools/disasm_addr.py` | Thumb disassembly by CPU address range, one or more ROMs |
-| `translation/asm/name_suffix.s` | Name bar: item name, space, enchant (US order), in place at CN `0x08060A20` (§5c) |
+| `Tools/profiles/ss2-us.json` | US ROM profile (`Archive/EU_Port/profiles` format; identity from `ss2tools identify`) |
+| `Tools/Scripts/make_english_patch.py` | Generator. Hash-checks both ROMs and emits a `static_candidate` ss2tools patch for profile `ss2-cn-baseline`. |
+| `Tools/Scripts/asm/render_glyphs.s` | New renderer glyph loop (ARMv4T Thumb; assembled with `llvm-mc -triple=thumbv4t-none-eabi`) |
+| `Tools/Scripts/dialogue_frame.py` | In-place port of the US dialogue line-buffer enlargement. Run alone for a classification report. |
+| `Tools/Scripts/smoke_phase1.py` | Two emulator scenarios. Writes screenshots and `checks.json` per run. |
+| `Tools/Scripts/asm/center_width.s` | Centring width helper (tiles/2 for mixed CN/US codes), ARMv4T Thumb (§5) |
+| `Tools/Scripts/frame_port.py` | Generic in-place port of US stack-frame enlargements; sp map derived from aligned code (§5) |
+| `Tools/Scripts/centering.py` | Reviewed table of glyph-count call sites: 57 redirected, 13 kept (§5) |
+| `Tools/Scripts/frame_scan.py` | Lists callers of a function whose CN and US stack frames differ (§5) |
+| `Tools/Scripts/smoke_identifier.py` | Identifier scenario from the user's desktop state (§5) |
+| `Tools/Scripts/frame_grow.py` | Reviewed growth of a CN-only stack layout (no US frame to copy); used for the item detail view (§5b) |
+| `Tools/Scripts/smoke_state.py` | Replays `frames[:KEYS]` tokens from any user desktop state on any build, with screenshots (§5b) |
+| `Tools/Scripts/trace_renderer.py` | Lists every renderer call (caller, string, x, row, glyph count) after replaying input from a state (§5b) |
+| `Tools/Scripts/disasm_addr.py` | Thumb disassembly by CPU address range, one or more ROMs |
+| `Tools/Scripts/asm/name_suffix.s` | Name bar: item name, space, enchant (US order), in place at CN `0x08060A20` (§5c) |
 
 ## 1. Patch contents (build 1: 1889 + 204 writes; build 1b adds 39 + 1 + 57, §5)
 
@@ -148,8 +148,8 @@ Kept CN on purpose:
 
 ## 4. Smoke test (`runtime_verified`, scenarios as named)
 
-Run directories are under `translation/build/runs/` (`base-*`/`en-*`, scenario `save-dialogue` and
-`item-menu`). Contact sheet: `translation/build/phase1-smoke.png` (top baseline, bottom
+Run directories are under `Build/runs/` (`base-*`/`en-*`, scenario `save-dialogue` and
+`item-menu`). Contact sheet: `Build/phase1-smoke.png` (top baseline, bottom
 English): file select, ring menu, two save-dialogue pages, item menu.
 
 | Check | Baseline | English |
@@ -179,7 +179,7 @@ Seen but not fixed:
 
 ## 5. Identifier window hard lock (build 1b)
 
-User report on build 1, with a desktop mGBA state `ROMs/saves/Pre_Identifier_Woman.ss0` (untracked,
+User report on build 1, with a desktop mGBA state `Savestates/Pre_Identifier_Woman.ss0` (untracked,
 local) taken below the item identifier in town: talking to her garbles the screen and hard-locks
 the game (music continues, no input). Reproduced in the native Session from that state
 (`smoke_identifier.py`, sidecar written by the script; state romCrc32 `0xA7B2D640` = build 1).
@@ -233,7 +233,7 @@ expecting" behind the identifier grid) and were drawn before the talk, by build 
 VRAM came from build 1, so the source is unknown. It is likely the "VRAM bleed" the user plans to
 report, and possibly one of the functions below.
 
-Other renderer callers whose US stack frame is larger (`frame_scan.py translation/build/align_cn_us.json
+Other renderer callers whose US stack frame is larger (`frame_scan.py Build/align_cn_us.json
 0x08019F30`, heuristic pairing). These are suspects for the same overflow class, not yet ported.
 Their diffs also show text-layout changes (line limit `cmp #0xf` → `#0x1f`, row stride
 `lsls #5` → `#6`, digit glyph constants), so each needs a per-function review:
@@ -255,7 +255,7 @@ identifier window fix `user_accepted`, for that window only.
 
 User report (build 1b): Select on the Valuing Scroll crashes. Other items' detail views show
 overlapping or cut-off lines (a WindLong Sword+1: "e to flying" cut at the left, "+1 50% Dam" past
-the right edge). State: `translation/build/Valuing_Scroll_Crash.ss0` (user-made, desktop mGBA,
+the right edge). State: `Savestates/Valuing_Scroll_Crash.ss0` (user-made, desktop mGBA,
 romCrc32 `0xA2FE09B2` = build 1b, cursor on the Valuing Scroll in the item menu; untracked).
 
 Headless replay of that state on build 1b did **not** hard-lock: B still left the view. But
@@ -309,7 +309,7 @@ Runtime (`runtime_verified`, build 1c, the user's state):
   (24 and 28 glyphs, `x = 3` and `x = 1`). B returns.
 - Angel Wing, Prison Key, Red Shoe views open and close normally.
 - `smoke_phase1.py` and `smoke_identifier.py` on build 1c: same results as 1b.
-- Screenshot: `translation/build/detail-view-fix.png`.
+- Screenshot: `Build/detail-view-fix.png`.
 
 Not covered in 1c: equipment detail views with stat lines (the user's sword screenshot). No weapon
 or armour sits in the bag in this state. Covered in 1d from the beret state (§5c): the Light
@@ -317,7 +317,7 @@ Flail view draws cleanly on build 1d, whose only change from 1c is the name bar.
 
 ## 5c. Enchanted equipment names (build 1d)
 
-The user reported (2026-10-11, state `translation/build/beret.ss0`, made on build 1c) that an
+The user reported (2026-10-11, state `Savestates/beret.ss0`, made on build 1c) that an
 enchanted item shows as "of FearBeret" in the name bar (row 18; also the bar under the detail
 view).
 
@@ -329,7 +329,7 @@ space (US code `0x51`), then the enchant** (US `0x08060314..0x08060391`). The US
 enchant already starts with the "of" ligature (code `0x12E`, ours `0x82E`), so only the order and
 the space were missing.
 
-Fix (`static_verified`): `translation/asm/name_suffix.s` replaces CN `0x08060A20..0x08060A8F`
+Fix (`static_verified`): `Tools/Scripts/asm/name_suffix.s` replaces CN `0x08060A20..0x08060A8F`
 (0x70 bytes, exactly the CN enchant copy plus the name copy) in place. The generator checks the
 CN preimage of the whole range. The only branches into the range come from inside it, plus
 `0x08060A12 beq 0x08060A20` to its start. It keeps the registers' meaning at the exit
@@ -345,7 +345,7 @@ Runtime (`runtime_verified`, build 1d, the user's beret state):
   Flail …" and "Critical hit +4" with sane x/rows, and B returns.
 - Other bag items (Shining Aura, Herb, empty slots) unchanged.
 - `smoke_phase1.py`, `smoke_identifier.py`, and the §5b Valuing Scroll replay on 1d: same as 1c.
-- Screenshot: `translation/build/name-suffix-fix.png`.
+- Screenshot: `Build/name-suffix-fix.png`.
 
 US prints a space before `+N` in some places; CN draws "Bane+6". Left as CN.
 
@@ -375,8 +375,8 @@ unreported issues disappear with the 1b–1d fixes).
 - **Stack frames.** `frame_scan.py` lists them; `func_pair_diff.py` diffs one pair;
   `frame_port.py` ports one once its `keep`/`blocks` are reviewed. Add a SPECS entry, run the
   tool alone until it stops refusing, then rebuild. The align file is
-  `translation/build/align_cn_us.json` (git-ignored). To regenerate it:
-  `python3 translation/tools/align.py eu/inputs/ss2-cn-baseline.gba "ROMs/Shining Soul II (USA).gba" --json translation/build/align_cn_us.json`.
+  `Build/align_cn_us.json` (git-ignored). To regenerate it:
+  `python3 Tools/Scripts/align.py ROMs/Shining_Soul_II_CN_Baseline.gba "ROMs/Shining_Soul_II_USA.gba" --json Build/align_cn_us.json`.
 - **Glyph-count call sites.** These are `bl 0x0801A1F4` in CN and `bl 0x0801A1C8` in US. Order-based
   pairing went wrong in `0x08004B08..0x0800C0EC` and `0x08026xxx..0x08066xxx`, so those pairs
   were fixed by hand in `centering.py`. A new CN site makes the tool refuse.
@@ -390,7 +390,7 @@ unreported issues disappear with the 1b–1d fixes).
     corrupts game state.
 - **Dead code.** `0x08019FD8..0x0801A093` holds the centring helper (0x20 bytes). The rest, up to
   `0x0801A093`, is still free code space within BL range of the main code.
-- **Scratch.** Session scratch scripts are not needed. Everything reusable is in `translation/tools`.
+- **Scratch.** Session scratch scripts are not needed. Everything reusable is in `Tools/Scripts`.
 
 ## Next
 

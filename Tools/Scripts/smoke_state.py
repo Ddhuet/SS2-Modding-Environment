@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Replay input from a user's desktop mGBA state on any build (diagnostic).
 
-    cd eu && .venv/bin/python ../translation/tools/smoke_state.py ROM STATE.ss0 TAG "SEQUENCE"
+    Tools/.venv/bin/python Tools/Scripts/smoke_state.py ROM STATE.ss0 TAG "SEQUENCE"
 
 SEQUENCE tokens are `frames[:KEYS]` (KEYS like A, B, SELECT, A+B; none = no input). A
 screenshot is taken after every token longer than one frame. The state is copied into a new
@@ -11,7 +11,7 @@ a different build; only CPU/RAM/VRAM come from the state, the ROM code is what i
 import sys, json, shutil, time
 from pathlib import Path
 ROOT = Path("/home/david/Documents/SS2_Modding")
-sys.path.insert(0, str(ROOT / "eu"))
+sys.path.insert(0, str(ROOT / "Tools"))
 from emulator import Session, sha256
 
 KEYS = {"A": 1, "B": 2, "SELECT": 4, "START": 8, "RIGHT": 16, "LEFT": 32, "UP": 64, "DOWN": 128,
@@ -23,8 +23,8 @@ def keymask(s):
 
 
 def open_state(rom, state, tag):
-    folder = ROOT / f"translation/build/runs/{tag}-{time.time_ns()}"
-    s = Session(Path(rom).resolve(), save=ROOT / "workspace/input/光明之魂2.sav", run_dir=folder)
+    folder = ROOT / f"Build/runs/{tag}-{time.time_ns()}"
+    s = Session(Path(rom).resolve(), save=ROOT / "Savestates/Fixture_CN_English.sav", run_dir=folder)
     s.__enter__()
     st = folder / "user.ss0"; shutil.copyfile(state, st)
     (folder / "user.ss0.json").write_text(json.dumps({"format": "ss2-mgba-state-v1", "rom_sha256": s.rom_sha256,

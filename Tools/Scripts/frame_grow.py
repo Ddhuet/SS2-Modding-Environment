@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Grow a stack area inside a CN baseline function whose layout has no US partner (reviewed spec).
 
-    eu/.venv/bin/python translation/tools/frame_grow.py [CN.gba]   # report only
+    Tools/.venv/bin/python Tools/Scripts/frame_grow.py [CN.gba]   # report only
 
 frame_port.py copies a US frame layout. Some CN functions have a layout US does not have: the
 item detail view (CN 0x08081EC8) keeps its two description lines on the stack (CN-only;
@@ -130,7 +130,7 @@ def grow(cn):
 
 
 def main():
-    cn = Path(sys.argv[1] if len(sys.argv) > 1 else "eu/inputs/ss2-cn-baseline.gba").read_bytes()
+    cn = Path(sys.argv[1] if len(sys.argv) > 1 else "ROMs/Shining_Soul_II_CN_Baseline.gba").read_bytes()
     writes, report = grow(cn)
     for a, b, n, note in writes:
         print(f"{a:08X}  {b.hex()} -> {n.hex()}  {note}")
