@@ -4,6 +4,7 @@ The repo's skeleton: what lives where, and where new things go. Rules and workfl
 `AGENTS.md`; this file is the map.
 
 ```
+README.md            public overview
 AGENTS.md            agent instructions (read first)
 LOCAL.md             this checkout's private instructions (git-ignored; may not exist)
 REPO_INDEX.md        this map
