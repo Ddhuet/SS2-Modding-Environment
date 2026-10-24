@@ -1,9 +1,15 @@
 # Patch Manager
 
-Tick the patches you want, press **Apply**, and get a patched English ROM. Start from the Japanese
-ROM `Shining_Soul_II_JP.gba` (SHA-256 `9f3e0d06…d17a`) with **English translation** ticked
-(it is ticked by default and applied first), or from the English ROM `ss2-en-phase1d.gba`
-(the translation is then skipped). Same rules and byte-identical output as the web patcher
+Tick the patches you want, press **Apply**, and get a patched ROM. Start from the Japanese ROM
+`Shining_Soul_II_JP.gba` (SHA-256 `9f3e0d06…d17a`) and tick one base patch, which is applied first:
+
+- **English translation** (ticked by default) for the English game, or
+- **Chinese (CN community ROM)** for the Chinese community's bug-fixed ROM (`SS2_SC_bug_fixed`).
+
+Ticking one unticks the other. You can also start from the English ROM `ss2-en-phase1d.gba` or the
+Chinese community ROM directly; the base patches are then greyed out. For the Chinese game, every
+mod is swapped for its Chinese version (`patches/cn/<name>.bps`), and mods that need English text
+are greyed out ("English only"). Same rules and byte-identical output as the web patcher
 (`../SS2_Web_Patcher`), so a patch tested here works there.
 
 ```sh
@@ -20,10 +26,13 @@ Rebuild it on Linux with `Patch_Manager/build_exe.sh`, which uses Steam Proton's
 Python 3.12.10 + PyInstaller 6.11.1 in a private Wine prefix, and runs `selftest.py` first.
 
 - `patches/`: `.ips`, `.ips32` and `.bps` files. Add or remove files at any time; the list refreshes
-  by itself. `english_translation.bps` turns the Japanese ROM into the English one. Every other
-  patch is made against the English ROM; a mod `.bps` is decoded there and turned into a list of
-  changed bytes, so it stacks and is conflict-checked like an IPS. `base_rom.sha256` lists the
-  accepted input ROMs (Japanese, English), and the window warns when the input ROM is neither.
+  by itself. `english_translation.bps` turns the Japanese ROM into the English one and
+  `cn_baseline.bps` into the Chinese community ROM. Every other patch is made against the English
+  ROM; a mod `.bps` is decoded there and turned into a list of changed bytes, so it stacks and is
+  conflict-checked like an IPS. `cn/` holds the Chinese versions and `compat.json` (made by
+  `Tools/Scripts/make_cn_set.py`; a Chinese version counts as missing once its English file
+  changes). `base_rom.sha256` lists the accepted input ROMs (`<sha256>  <jp|en|cn>  <label>`), and
+  the window warns when the input ROM is none of them.
 - `Input_ROM/`: the ROM to patch. The first `.gba` file is used, or pick one from the menu when
   there are several.
 - `Output_ROM/`: results, named `<input>+<patches>_<timestamp>.gba`, each with a `.txt` that lists
@@ -34,10 +43,11 @@ address. They are **IPS32** files (32-bit offsets). Flips and most other IPS too
 them; this manager can. Any combination of the 18 patches is safe: none of them overlap. If two
 selected patches ever write different bytes to the same place, Apply refuses and names them.
 
-New mods arrive here as `.bps` from `Tools/Scripts/make_bps.py` (see `AGENTS.md`). Test them
-here, then copy them to the web patcher. `make_ips_set.py` (the old IPS set) is retired.
+New mods arrive here as `.bps` from `Tools/Scripts/make_bps.py`, with their Chinese version from
+`make_cn_set.py` (see `AGENTS.md`). Test them here, then copy them to the web patcher.
+`make_ips_set.py` (the old IPS set) is retired.
 
-The Windows `.exe` predates BPS support; rebuild it with `build_exe.sh` before using it.
+The Windows `.exe` predates BPS and Chinese support; rebuild it with `build_exe.sh` before using it.
 
 `weapon_balance_rework.ips` also renames "Combat Claw" to "Combat Knife", from
-`Patches/Definitions/ledger.json`.
+`Patches/Definitions/ledger.json` (English only; its Chinese version leaves the name alone).

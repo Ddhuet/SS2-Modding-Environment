@@ -118,6 +118,42 @@ def main():
             raise AssertionError("BPS/IPS clash was not refused")
         except pm.PatchError:
             pass
+
+        # Chinese: "Japanese" ROM -> cn_baseline.bps -> "Chinese" ROM; mods swap to patches/cn/<name>.bps.
+        cn = bytearray(jp)
+        cn[10:14] = b"CHIN"
+        cn = bytes(cn)
+        cn_mod = bytearray(cn)
+        cn_mod[0x300:0x302] = b"\x55\x66"
+        (t / "patches/cn").mkdir()
+        (t / "patches/cn_baseline.bps").write_bytes(bps(jp, cn))
+        (t / "patches/cn/m.bps").write_bytes(bps(cn, bytes(cn_mod)))
+        sha = lambda f: hashlib.sha256((t / "patches" / f).read_bytes()).hexdigest()  # noqa: E731
+        compat = {"m": {"file": "m.bps", "en_sha256": sha("m.bps"), "cn": True, "reason": ""},
+                  "d": {"file": "d.ips", "en_sha256": sha("d.ips"), "cn": False, "reason": "TEST reason"}}
+        import json
+        (t / "patches/cn/compat.json").write_text(json.dumps(compat))
+        cnb = t / "patches/cn_baseline.bps"
+        assert [p.name for p in pm.list_patches()[:2]] == ["english_translation.bps", "cn_baseline.bps"]
+        out, _ = pm.build(t / "Input_ROM/jp.gba", [cnb, m])
+        assert out.read_bytes() == cn_mod, "JP + cn_baseline + mod uses the cn/ version"
+        (t / "Input_ROM/cn.gba").write_bytes(cn)
+        out, _ = pm.build(t / "Input_ROM/cn.gba", [m])
+        assert out.read_bytes() == cn_mod, "Chinese input + mod uses the cn/ version"
+        for rom, sel, why in (("jp.gba", [tr, cnb], "both bases"), ("cn.gba", [m, d], "English-only mod"),
+                              ("cn.gba", [tr, m], "English translation on the Chinese ROM")):
+            try:
+                pm.build(t / "Input_ROM" / rom, sel)
+                raise AssertionError(f"{why} was not refused")
+            except pm.PatchError as e:
+                assert why != "English-only mod" or "TEST reason" in str(e), e
+        compat["m"]["en_sha256"] = "0" * 64  # English m.bps replaced since: its cn/ version is stale
+        (t / "patches/cn/compat.json").write_text(json.dumps(compat))
+        try:
+            pm.build(t / "Input_ROM/cn.gba", [m])
+            raise AssertionError("stale Chinese version was used")
+        except pm.PatchError as e:
+            assert "out of date" in str(e), e
     print("selftest ok")
 
 

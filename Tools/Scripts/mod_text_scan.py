@@ -28,10 +28,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "Tools/Scripts"))
 from name_tables import TABLES, SLOT  # noqa: E402
+from base_roms import cn_baseline  # noqa: E402
 
 BASE = 0x08000000
-CN_ROM = ROOT / "ROMs/Shining_Soul_II_CN_Baseline.gba"
-SHA = "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989"
 CODES = ROOT / "Docs/Reference_Data/汉字码表.txt"
 MAX_GLYPH = 0x6FF
 
@@ -100,8 +99,7 @@ def main():
     ap.add_argument("--defs", default=str(ROOT / "Patches/Definitions/Official"))
     ap.add_argument("--min", type=int, default=2)
     args = ap.parse_args()
-    rom = CN_ROM.read_bytes()
-    assert hashlib.sha256(rom).hexdigest() == SHA
+    rom = cn_baseline()
     t = code_table()
     for f in sorted(glob.glob(f"{args.defs}/*.json")):
         d = json.load(open(f))

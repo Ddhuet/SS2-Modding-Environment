@@ -11,8 +11,9 @@ import argparse, json, struct, subprocess, sys, tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "Tools/Scripts"))
+from base_roms import cn_baseline  # noqa: E402  (CN baseline, built from the JP ROM if needed)
 SRC = ROOT / "Patches/enemy_pathing/src/enemy_pathing.c"
-CN = ROOT / "ROMs/Shining_Soul_II_CN_Baseline.gba"
 TEST_BASE = ROOT / "Build/ss2-en+waitcnt_fix.gba"
 OUT_DEF = ROOT / "Patches/Definitions/Custom/enemy_pathing.json"
 
@@ -90,7 +91,7 @@ def main():
     a = ap.parse_args()
     blob, syms = compile_blob()
     dump_layout()
-    cn = CN.read_bytes()
+    cn = cn_baseline()
     writes = []
 
     def add(addr, after, note, mode="thumb"):
@@ -151,7 +152,8 @@ def main():
                        "by the stairs and reach the player (vanilla: never in 1500 frames); 16 user states x 900 frames "
                        "scripted walk: no crash, heap chain intact, mod dormant in towns; cold boot from the save: "
                        "boot/menus pixel-identical to vanilla, heap ends 0x0203CFF0. Cost: 1-4.8k cycles/frame average, "
-                       "~28k on field-build frames. See Docs/mods/enemy_pathing.md.",
+                       "~28k on field-build frames. See Docs/mods/enemy_pathing.md."
+                       " | 2026-10-23 rebuild with clang 23.1.3 (3,856 B blob, was 3,916 B from an older clang; source unchanged): A/B vs the old .ips32 (kept in Patches/enemy_pathing/backup_2026-10-17_old_clang/), both on English+waitcnt_fix, Warrior_Pathing.ss0 and Slime_Pathing.ss0, 1800 frames with LEFT/UP/RIGHT/DOWN input: enemy tracks and pf state identical at all 300 samples. Shipped as Patch_Manager/patches/enemy_pathing.bps.",
         },
         "writes": writes,
     }

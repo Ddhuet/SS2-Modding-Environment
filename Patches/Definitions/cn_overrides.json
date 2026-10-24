@@ -1,0 +1,3 @@
+{
+ "_about": "Patches that must be English-only even though make_cn_set.py's byte scan passes them, e.g. a mod that draws English glyph codes (0x701+) the CN font doesn't have. Format: \"<patch stem>\": {\"en_only\": \"reason shown to players\"}. Keys starting with _ are ignored."
+}

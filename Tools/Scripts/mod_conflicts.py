@@ -1,11 +1,17 @@
 #!/usr/bin/env python3
 """Static conflict check: English translation patch vs the CN mod definitions (read-only).
 
-    python3 Tools/Scripts/mod_conflicts.py [PATCH.json] [--defs Patches/Definitions/Official] [--json OUT]
+    python3 Tools/Scripts/mod_conflicts.py [SPANS.json] [--defs DIR [DIR ...]] [--json OUT]
+    python3 Tools/Scripts/mod_conflicts.py --defs Patches/Definitions/Custom Patches/Definitions/Official
 
-PATCH defaults to Build/ss2-en-phase1.patch.json (make_english_patch.py output).
-Both sides are ss2tools-style write lists bound to the CN baseline (SHA-256 45ac38bb...);
-the binding is asserted. Three levels, strongest first:
+SPANS defaults to Tools/profiles/translation_spans.json (tracked, byte-free ranges written by
+make_english_patch.py); a full translation write list (Build/ss2-en-phase1.patch.json) also works.
+--defs defaults to Patches/Definitions/Official; give several folders to check them together.
+Needs only the JP ROM: the CN baseline comes from base_roms.py. Both sides are bound to the CN
+baseline (SHA-256 45ac38bb...); the binding is asserted. Bundle definitions (all_17_released,
+all_18_beta) are skipped in the mod-vs-mod check. Four levels, strongest first:
+
+0. **mod vs mod**: two definitions write the same byte. They can't be stacked.
 
 1. **byte**: a mod write overlaps a translation write, allocation block or reused dead code.
    A real incompatibility (one side's bytes are lost).
@@ -35,10 +41,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "Tools/Scripts"))
 from name_tables import TABLES, SLOT, DATA  # noqa: E402
+from base_roms import CN_SHA as SHA, cn_baseline, is_reservation  # noqa: E402
 
 BASE = 0x08000000
-CN_ROM = ROOT / "ROMs/Shining_Soul_II_CN_Baseline.gba"
-SHA = "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989"
 CODE_END = 0x080C0000
 SLOT0_TABLE = 0x08391260
 MSG_COUNT = 1493
@@ -103,25 +108,28 @@ def region(a, funcs, msg_lo, msg_hi):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("patch", nargs="?", default=str(ROOT / "Build/ss2-en-phase1.patch.json"))
-    ap.add_argument("--defs", default=str(ROOT / "Patches/Definitions/Official"))
+    ap.add_argument("patch", nargs="?", default=str(ROOT / "Tools/profiles/translation_spans.json"))
+    ap.add_argument("--defs", nargs="+", default=[str(ROOT / "Patches/Definitions/Official")])
     ap.add_argument("--json")
     args = ap.parse_args()
 
-    rom = CN_ROM.read_bytes()
-    import hashlib
-    assert hashlib.sha256(rom).hexdigest() == SHA, "CN baseline hash mismatch"
+    rom = cn_baseline()
     patch = json.load(open(args.patch))
     assert patch["baseline"]["sha256"] == SHA
 
-    tr = ranges_of(patch["writes"])
-    blocks = [(int(b["address"], 16), int(b["address"], 16) + b["length"], "alloc: " + b["what"])
-              for b in patch["allocations"]["blocks"]]
-    blocks += [(int(b["address"], 16), int(b["address"], 16) + b["length"], "dead code: " + b["what"])
-               for b in patch["allocations"].get("reused_dead_code", [])]
-    # the whole translation-owned expansion range counts as reserved
-    lo, hi = (int(x, 16) for x in patch["allocations"]["range"].split(".."))
-    blocks.append((lo, hi + 1, "translation-owned range"))
+    if "spans" in patch:
+        spans = [(int(x["address"], 16), int(x["address"], 16) + x["length"], x["what"]) for x in patch["spans"]]
+        tr = sorted(x for x in spans if not is_reservation(x[2]))
+        blocks = [x for x in spans if is_reservation(x[2])]
+    else:
+        tr = ranges_of(patch["writes"])
+        blocks = [(int(b["address"], 16), int(b["address"], 16) + b["length"], "alloc: " + b["what"])
+                  for b in patch["allocations"]["blocks"]]
+        blocks += [(int(b["address"], 16), int(b["address"], 16) + b["length"], "dead code: " + b["what"])
+                   for b in patch["allocations"].get("reused_dead_code", [])]
+        # the whole translation-owned expansion range counts as reserved
+        lo, hi = (int(x, 16) for x in patch["allocations"]["range"].split(".."))
+        blocks.append((lo, hi + 1, "translation-owned range"))
     tr_all = sorted(tr + blocks)
 
     funcs = func_starts(rom)
@@ -132,10 +140,16 @@ def main():
             tr_funcs.setdefault(region(a, funcs, msg_lo, msg_hi)[1], []).append((a, note))
 
     report = {}
-    for f in sorted(glob.glob(f"{args.defs}/*.json")):
+    owners = []  # (lo, hi, mod id) of every single (non-bundle) definition, for the mod-vs-mod check
+    files = sorted(f for folder in args.defs for f in glob.glob(f"{folder}/*.json"))
+    for f in files:
         d = json.load(open(f))
+        if "writes" not in d:
+            continue
         assert d["baseline"]["sha256"] == SHA, f
         mr = ranges_of(d["writes"])
+        if not d["id"].startswith("all_"):
+            owners += [(a, b, d["id"]) for a, b, _ in mr]
         byte, near, func, cls = [], [], {}, {}
         for a, b, _ in mr:
             for ta, tb, tn in tr_all:
@@ -176,6 +190,21 @@ def main():
         for k, v in r["shared_functions"].items():
             print(f"    func  {k}: mod {', '.join(v['mod_writes'][:6])}{' ...' if len(v['mod_writes']) > 6 else ''}"
                   f" | translation: {'; '.join(v['translation'])[:120]}")
+    owners.sort()
+    clashes = set()
+    for i, (a, b, m) in enumerate(owners):
+        for a2, b2, m2 in owners[i + 1:]:
+            if a2 >= b:
+                break
+            if m2 != m:
+                clashes.add((min(m, m2), max(m, m2), max(a, a2)))
+    pairs = {}
+    for m, m2, at in sorted(clashes):
+        pairs.setdefault((m, m2), at)
+    for (m, m2), at in pairs.items():
+        print(f"MOD CLASH  {m} x {m2}  first shared byte 0x{at:08X}")
+    if not pairs:
+        print(f"mod vs mod: no shared bytes among {len({o[2] for o in owners})} definitions")
     if args.json:
         Path(args.json).write_text(json.dumps(report, indent=1, ensure_ascii=False))
 

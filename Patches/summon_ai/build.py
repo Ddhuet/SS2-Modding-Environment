@@ -13,8 +13,9 @@ import argparse, json, struct, subprocess, sys, tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "Tools/Scripts"))
+from base_roms import cn_baseline  # noqa: E402  (CN baseline, built from the JP ROM if needed)
 SRC = ROOT / "Patches/summon_ai/src/summon_ai.c"
-CN = ROOT / "ROMs/Shining_Soul_II_CN_Baseline.gba"
 TEST_BASE = ROOT / "Patches/summon_ai/Starting_Info/Shining Soul II (English)+4_patches.gba"
 OUT_DEF = ROOT / "Patches/Definitions/Custom/summon_ai.json"
 PATHING_DEF = ROOT / "Patches/Definitions/Custom/enemy_pathing.json"
@@ -76,7 +77,7 @@ def main():
     ap.add_argument("--rom", help="also write a test ROM built on the Patches/summon_ai/Starting_Info/ test ROM")
     a = ap.parse_args()
     blob, syms = compile_blob()
-    cn = CN.read_bytes()
+    cn = cn_baseline()
     writes = []
 
     def add(addr, after, note, mode="thumb"):

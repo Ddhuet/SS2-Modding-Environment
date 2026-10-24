@@ -3,7 +3,8 @@
 
 Folders next to this script:
     patches/     .ips, .ips32 and .bps files; add or remove files at any time, the list follows
-    Input_ROM/   the ROM to patch: Shining_Soul_II_JP.gba, or the English ROM ss2-en-phase1d.gba;
+    Input_ROM/   the ROM to patch: Shining_Soul_II_JP.gba, the English ROM ss2-en-phase1d.gba, or the
+                 Chinese community ROM (SS2_SC_bug_fixed);
                  first .gba found is used, or pick one from the menu when there are several
     Output_ROM/  patched ROMs are written here (never overwritten: names carry a timestamp)
 
@@ -12,10 +13,13 @@ Needs Python 3 with tkinter (Arch/Omarchy: `sudo pacman -S tk`). Standard librar
 
 Formats: IPS ("PATCH" ... "EOF", 24-bit offsets, RLE records, optional truncate size) and
 IPS32 ("IPS32" ... "EEOF", 32-bit offsets) for patches that write above 16 MiB, and BPS ("BPS1").
-english_translation.bps (Japanese -> English ROM) is applied first when the input is the Japanese
-ROM. Every other .bps is made against the English ROM: it is decoded there and turned into a list
-of changed bytes, so it stacks with the others like an IPS. Same rules as the web patcher's
-patcher.js (buildRom), so both give byte-identical ROMs.
+Two base patches turn the Japanese ROM into a playable base and are applied first; tick one:
+english_translation.bps (Japanese -> English ROM) or cn_baseline.bps (Japanese -> the Chinese
+community ROM). Every mod is made against the English ROM: a .bps is decoded there and turned into
+a list of changed bytes, so it stacks with the others like an IPS. On the Chinese ROM each mod is
+replaced by its Chinese version patches/cn/<name>.bps (made by Tools/Scripts/make_cn_set.py);
+mods without one are English-only (patches/cn/compat.json says why) and are refused there.
+Same rules as the web patcher's patcher.js (buildRom), so both give byte-identical ROMs.
 Before writing, the selected patches are checked against each other: two patches that write
 different bytes to the same offset are refused (identical bytes are allowed).
 """
@@ -32,6 +36,9 @@ INPUT_DIR = HERE / "Input_ROM"
 OUTPUT_DIR = HERE / "Output_ROM"
 EXTS = (".ips", ".ips32", ".bps")
 TRANSLATION = "english_translation"   # stem of the Japanese -> English BPS, applied first
+CN_BASE = "cn_baseline"               # stem of the Japanese -> Chinese community ROM BPS
+BASES = (TRANSLATION, CN_BASE)
+CN_DIR_NAME = "cn"                    # patches/cn/<name>.bps: Chinese versions of the mods
 MIB16, MIB32 = 1 << 24, 1 << 25
 ROM_EXTS = (".gba", ".bin")
 
@@ -164,6 +171,27 @@ def is_translation(p):
     return p["name"].lower() == TRANSLATION and "bps" in p
 
 
+def is_base(p):
+    return p["name"].lower() in BASES and "bps" in p
+
+
+def cn_version(name):
+    """(path of the Chinese version of a mod or None, reason it has none)."""
+    import json
+    d = PATCH_DIR / CN_DIR_NAME
+    try:
+        entry = json.loads((d / "compat.json").read_text(encoding="utf-8"))[name]
+    except (OSError, ValueError, KeyError):
+        return None, "it has no Chinese version"
+    english = PATCH_DIR / entry.get("file", "")
+    if not english.is_file() or hashlib.sha256(english.read_bytes()).hexdigest() != entry.get("en_sha256"):
+        return None, "its Chinese version is out of date (run Tools/Scripts/make_cn_set.py)"
+    path = d / f"{name}.bps"
+    if entry.get("cn") and path.is_file():
+        return path, ""
+    return None, entry.get("reason", "it has no Chinese version")
+
+
 def pad_rom(rom):
     """Pad output that went past 16 MiB to the full 32 MiB a GBA cartridge maps."""
     return rom + bytes(MIB32 - len(rom)) if MIB16 < len(rom) < MIB32 else rom
@@ -198,7 +226,7 @@ def apply_patches(rom, patches):
 def list_patches():
     PATCH_DIR.mkdir(exist_ok=True)
     return sorted((p for p in PATCH_DIR.iterdir() if p.suffix.lower() in EXTS and p.is_file()),
-                  key=lambda p: (p.stem.lower() != TRANSLATION, p.name.lower()))
+                  key=lambda p: (p.stem.lower() not in BASES, p.stem.lower() != TRANSLATION, p.name.lower()))
 
 
 def list_roms():
@@ -215,7 +243,8 @@ def expected_base():
 
 
 def pretty(stem):
-    return stem.replace("_", " ").capitalize()
+    names = {TRANSLATION: "English translation", CN_BASE: "Chinese (CN community ROM)"}
+    return names.get(stem.lower(), stem.replace("_", " ").capitalize())
 
 
 def output_name(rom_path, names):
@@ -229,24 +258,60 @@ def find_translation():
     return load_patch(p) if p.is_file() else None
 
 
-def build_rom(rom, patches, tr=None):
-    """Translation first (if chosen), then the mods as one conflict-checked set of writes, then padding.
-    tr is the translation patch (chosen or not), used to spot a Japanese ROM without it.
-    Returns (rom bytes, translated, mods)."""
-    mods = [p for p in patches if not is_translation(p)]
-    chosen_tr = next((p for p in patches if is_translation(p)), None)
-    tr = chosen_tr or tr
-    crc, translated = zlib.crc32(rom), False
-    if chosen_tr:
-        b = tr["bps"]
-        if not (len(rom) == b["target_size"] and crc == b["target_crc"]):  # not English yet
+def find_cn_base():
+    p = PATCH_DIR / f"{CN_BASE}.bps"
+    return load_patch(p) if p.is_file() else None
+
+
+def rom_kind(crc, tr=None, cnb=None):
+    """'jp', 'en', 'cn' or None, from the base patches' source/target CRC32s."""
+    if tr and crc == tr["bps"]["source_crc"] or cnb and crc == cnb["bps"]["source_crc"]:
+        return "jp"
+    if tr and crc == tr["bps"]["target_crc"]:
+        return "en"
+    if cnb and crc == cnb["bps"]["target_crc"]:
+        return "cn"
+    return None
+
+
+def build_rom(rom, patches, tr=None, cnb=None):
+    """Base patch first (if chosen), then the mods as one conflict-checked set of writes, then padding.
+    tr / cnb are the English / Chinese base patches (chosen or not), used to recognise the input ROM.
+    On the Chinese ROM every mod is swapped for its patches/cn/ version.
+    Returns (rom bytes, base patch applied or None, mods)."""
+    bases = [p for p in patches if is_base(p)]
+    mods = [p for p in patches if not is_base(p)]
+    if len(bases) > 1:
+        raise PatchError(f"Tick only one of {pretty(TRANSLATION)} and {pretty(CN_BASE)}.")
+    chosen = bases[0] if bases else None
+    if chosen and chosen["name"].lower() == TRANSLATION:
+        tr = chosen
+    elif chosen:
+        cnb = chosen
+    crc, applied = zlib.crc32(rom), None
+    kind = rom_kind(crc, tr, cnb)
+    if chosen:
+        b = chosen["bps"]
+        if not (len(rom) == b["target_size"] and crc == b["target_crc"]):  # not that base yet
             if crc != b["source_crc"]:
-                raise PatchError(f"{tr['path'].name} needs the Japanese ROM, Shining_Soul_II_JP.gba "
-                                 f"(CRC32 {b['source_crc']:08X}). Your ROM's CRC32 is {crc:08X}.")
-            rom, crc, translated = apply_bps(rom, b, crc), b["target_crc"], True
-    elif tr and mods and crc == tr["bps"]["source_crc"]:
-        raise PatchError(f"This is the Japanese ROM; the patches are made for the English one. "
-                         f"Tick {pretty(TRANSLATION)}.")
+                other = {"en": "English", "cn": "Chinese"}.get(kind)
+                raise PatchError(f"{chosen['path'].name} needs the Japanese ROM, Shining_Soul_II_JP.gba "
+                                 f"(CRC32 {b['source_crc']:08X}). " +
+                                 (f"This is already the {other} ROM: untick {pretty(chosen['name'])}."
+                                  if other else f"Your ROM's CRC32 is {crc:08X}."))
+            rom, crc, applied = apply_bps(rom, b, crc), b["target_crc"], chosen["name"]
+            kind = rom_kind(crc, tr, cnb)
+    elif mods and kind == "jp":
+        raise PatchError(f"This is the Japanese ROM; tick {pretty(TRANSLATION)} (or {pretty(CN_BASE)} "
+                         f"for the Chinese game) first.")
+    if kind == "cn":
+        swapped = []
+        for p in mods:
+            path, why = cn_version(p["name"])
+            if path is None:
+                raise PatchError(f"{p['path'].name} only works on the English ROM: {why}.")
+            swapped.append(load_patch(path))
+        mods = swapped
     for p in mods:
         if "bps" in p:
             p["writes"] = bps_writes(rom, p["bps"], crc)
@@ -254,22 +319,24 @@ def build_rom(rom, patches, tr=None):
     if clash:
         raise PatchError("These patches write different bytes to the same place:\n" +
                          "\n".join(f"  {a} / {b} at 0x{o:08X}" for a, b, o in clash))
-    return pad_rom(apply_patches(rom, mods)), translated, mods
+    return pad_rom(apply_patches(rom, mods)), applied, mods
 
 
 def build(rom_path, patch_paths):
     """Apply patches to the ROM; return (output path, sha256). Raises PatchError."""
     rom = rom_path.read_bytes()
     patches = [load_patch(p) for p in patch_paths]
-    out, translated, mods = build_rom(rom, patches, find_translation())
+    out, applied, mods = build_rom(rom, patches, find_translation(), find_cn_base())
     OUTPUT_DIR.mkdir(exist_ok=True)
-    path = output_name(rom_path, [p["name"] for p in mods] or [TRANSLATION])
+    path = output_name(rom_path, [p["name"] for p in mods] or [applied or TRANSLATION])
     path.write_bytes(out)
     sha = hashlib.sha256(out).hexdigest()
     path.with_suffix(".txt").write_text(
         f"input   {rom_path.name}  sha256 {hashlib.sha256(rom).hexdigest()}\n"
         f"output  {path.name}  sha256 {sha}\n" +
-        ("translated with english_translation.bps first\n" if translated else "") +
+        (f"base patch {applied}.bps applied first\n" if applied else "") +
+        "".join(f"  {p['name']} -> {p['path'].relative_to(PATCH_DIR)}\n" for p in mods
+                if p["path"].parent.name == CN_DIR_NAME) +
         "patches (applied in this order):\n" +
         "".join(f"  {p['path'].name}  sha256 {hashlib.sha256(p['path'].read_bytes()).hexdigest()}\n"
                 for p in patches))
@@ -327,11 +394,47 @@ def run_gui():
     apply_btn = ttk.Button(top, text="Apply")
     apply_btn.pack(fill="x")
 
-    state = {"patches": [], "roms": [], "vars": {}, "rom_sha": {}}
+    state = {"patches": [], "roms": [], "vars": {}, "rom_sha": {}, "rom_crc": {}, "cbs": {}, "kind": None}
+    bases = {"tr": find_translation(), "cnb": find_cn_base()}
+
+    def language():
+        """'cn' when the output will be the Chinese game, else 'en'."""
+        v = state["vars"]
+        if v.get(f"{CN_BASE}.bps") and v[f"{CN_BASE}.bps"].get():
+            return "cn"
+        if v.get(f"{TRANSLATION}.bps") and v[f"{TRANSLATION}.bps"].get():
+            return "en"
+        return "cn" if state["kind"] == "cn" else "en"
+
+    def refresh_available():
+        """Grey out what can't apply: English-only mods on the Chinese game, bases on a non-JP ROM."""
+        def mark(p, ok, why):
+            cb = state["cbs"][p.name]
+            if not ok:
+                state["vars"][p.name].set(False)
+            cb.state(["!disabled"] if ok else ["disabled"])
+            cb.config(text=cb.base_text + ("" if ok else why))
+        base_ok = state["kind"] in (None, "jp")
+        for p in state["patches"]:  # bases first: unticking them can change the language
+            if p.stem.lower() in BASES:
+                mark(p, base_ok, "  (your ROM is already patched)")
+        lang = language()
+        for p in state["patches"]:
+            if p.stem.lower() not in BASES:
+                mark(p, lang == "en" or cn_version(p.stem)[0] is not None, "  (English only)")
+        update_status()
+
+    def base_ticked(name):
+        if state["vars"][name].get():
+            for other in (f"{b}.bps" for b in BASES):
+                if other != name and other in state["vars"]:
+                    state["vars"][other].set(False)
+        refresh_available()
 
     def set_all(on):
-        for v in state["vars"].values():
-            v.set(on)
+        for name, v in state["vars"].items():
+            if Path(name).stem.lower() not in BASES and "disabled" not in state["cbs"][name].state():
+                v.set(on)
         update_status()
 
     def selected():
@@ -349,8 +452,16 @@ def run_gui():
             return
         key = (p.name, p.stat().st_mtime, p.stat().st_size)
         if key not in state["rom_sha"]:
-            state["rom_sha"][key] = hashlib.sha256(p.read_bytes()).hexdigest()
+            data = p.read_bytes()
+            state["rom_sha"][key] = hashlib.sha256(data).hexdigest()
+            state["rom_crc"][key] = zlib.crc32(data)
         sha = state["rom_sha"][key]
+        was, state["kind"] = state["kind"], rom_kind(state["rom_crc"][key], bases["tr"], bases["cnb"])
+        tr_var = state["vars"].get(f"{TRANSLATION}.bps")
+        if (state["kind"] == "jp" and was not in (None, "jp") and tr_var is not None
+                and not any(state["vars"][f"{b}.bps"].get() for b in BASES if f"{b}.bps" in state["vars"])):
+            tr_var.set(True)  # back on the Japanese ROM: default to English again
+        refresh_available()
         known = expected_base()
         if known and sha not in known:
             rom_info.config(text=f"SHA-256 {sha[:16]}…  (not the ROM these patches were made for)",
@@ -370,13 +481,17 @@ def run_gui():
                 v = tk.BooleanVar(value=old.get(p.name, p.stem.lower() == TRANSLATION))
                 state["vars"][p.name] = v
                 kind = {".ips32": "  (IPS32)", ".bps": "  (BPS)"}.get(p.suffix.lower(), "")
-                label = pretty(p.stem) + ("  (applied first)" if p.stem.lower() == TRANSLATION else kind)
-                cb = ttk.Checkbutton(inner, text=label, variable=v, command=update_status)
+                label = pretty(p.stem) + ("  (base, applied first)" if p.stem.lower() in BASES else kind)
+                cmd = (lambda n=p.name: base_ticked(n)) if p.stem.lower() in BASES else update_status
+                cb = ttk.Checkbutton(inner, text=label, variable=v, command=cmd)
+                cb.base_text = label
+                state["cbs"][p.name] = cb
                 cb.pack(anchor="w", padx=4, pady=1)
                 cb.bind("<Button-4>", lambda e: canvas.yview_scroll(-1, "units"))
                 cb.bind("<Button-5>", lambda e: canvas.yview_scroll(1, "units"))
             state["patches"] = patches
-            update_status()
+            bases.update(tr=find_translation(), cnb=find_cn_base())
+            refresh_available()
         if [p.name for p in roms] != [p.name for p in state["roms"]]:
             state["roms"] = roms
             rom_box["values"] = [p.name for p in roms]

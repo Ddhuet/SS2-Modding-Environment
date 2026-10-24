@@ -5,12 +5,13 @@
 
 Needs llvm-mc and llvm-objcopy. See Docs/mods/counter_fix_slash.md.
 """
-import json, struct, subprocess, tempfile
+import json, struct, subprocess, tempfile, sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "Tools/Scripts"))
+from base_roms import cn_baseline  # noqa: E402  (CN baseline, built from the JP ROM if needed)
 SRC = ROOT / "Patches/counter_fix_slash/src/counter_slash.s"
-CN = ROOT / "ROMs/Shining_Soul_II_CN_Baseline.gba"
 COUNTER_DEF = ROOT / "Patches/Definitions/Official/counter_fix.json"
 OUT_DEF = ROOT / "Patches/Definitions/Custom/counter_fix_slash.json"
 
@@ -62,7 +63,7 @@ def slash_tiles():
 def main():
     code, syms = assemble()
     assert STUB_BASE + len(code) <= STUB_END, len(code)
-    cn = CN.read_bytes()
+    cn = cn_baseline()
     writes = json.loads(COUNTER_DEF.read_text())["writes"]
     for w in writes:
         w["note"] = "counter_fix (official, unchanged): " + w["note"]

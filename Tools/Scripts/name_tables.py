@@ -84,7 +84,11 @@ def check(cn, us):
 
 
 def main():
-    cn = Path(sys.argv[1] if len(sys.argv) > 1 else "ROMs/Shining_Soul_II_CN_Baseline.gba").read_bytes()
+    if len(sys.argv) > 1:
+        cn = Path(sys.argv[1]).read_bytes()
+    else:
+        from base_roms import cn_baseline
+        cn = cn_baseline()
     us = Path(sys.argv[2] if len(sys.argv) > 2 else "ROMs/Shining_Soul_II_USA.gba").read_bytes()
     problems = list(check(cn, us))
     for t in TABLES:

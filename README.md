@@ -16,6 +16,9 @@ Use the browser patcher: **[gentlebox.org/ss2-patcher](https://gentlebox.org/ss2
 ROM, apply the English translation, tick the mods you want, and download the patched ROM.
 Everything runs locally in your browser.
 
+Chinese players can do the same with the Chinese community ROM (or make it from the Japanese ROM on
+the same page): every mod that doesn't need English text is also available in a Chinese version.
+
 Japanese ROM: SHA-256 `9f3e0d0653de6504c1aeaf03de3cca06ae0c15a24089f0236398ec56d382d17a`,
 CRC32 `7B39A7B2`.
 
@@ -25,6 +28,8 @@ CRC32 `7B39A7B2`.
 - **The official Chinese community mods:** level cap 250, respec, stackable consumables, shared
   warehouses, balance reworks and more. They are re-checked against the translation, and all of
   them stack.
+- **Chinese versions of every mod** that doesn't need English text, so our mods also run on the
+  Chinese community ROM.
 - **Our own mods**, each with source, a build script and a write-up:
 
   | Mod | What it does |
@@ -66,8 +71,10 @@ builds it into a `.bps` that applies on top of the English ROM, in `Patch_Manage
   Then build the headless emulator with
   `Tools/.venv/bin/python Tools/Scripts/build_emulator.py` (needs git, CMake and a C compiler).
 - **LLVM** (`clang`, `llvm-mc`, `llvm-objcopy`) to assemble or compile injected code.
-- **Your own ROMs in `ROMs/`.** File names and hashes are in `REPO_INDEX.md`. Mod builds need the
-  Japanese ROM and the CN baseline ROM.
+- **Your own Japanese ROM** as `ROMs/Shining_Soul_II_JP.gba`. That's the only ROM mod work needs:
+  the English ROM and the Chinese community ROM are both made from it by the patches in
+  `Patch_Manager/patches/`. The US ROM is only needed for porting US mods. Hashes are in
+  `REPO_INDEX.md`.
 
 ## Credits
 

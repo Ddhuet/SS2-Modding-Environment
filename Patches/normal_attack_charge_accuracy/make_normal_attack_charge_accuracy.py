@@ -23,9 +23,9 @@ import hashlib, json, sys
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "Tools/Scripts"))
+from base_roms import cn_baseline  # noqa: E402  (CN baseline, built from the JP ROM if needed)
 from make_english_patch import assemble  # noqa: E402
 
-CN = ROOT / "ROMs/Shining_Soul_II_CN_Baseline.gba"
 CN_SHA = "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989"
 OUT = ROOT / "Patches/Definitions/Custom/normal_attack_charge_accuracy.json"
 MELEE, MELEE_JOIN = 0x0801FCF2, 0x080200F0
@@ -54,7 +54,7 @@ MELEE_ASM = f"""
 
 
 def main():
-    rom = CN.read_bytes()
+    rom = cn_baseline()
     assert hashlib.sha256(rom).hexdigest() == CN_SHA, "wrong CN baseline"
     asm = ROOT / "Patches/normal_attack_charge_accuracy/normal_attack_charge_accuracy_melee.s"
     asm.write_text(MELEE_ASM)

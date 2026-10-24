@@ -15,9 +15,9 @@ import json, struct, subprocess, sys, tempfile
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "Tools/Scripts"))
+from base_roms import cn_baseline  # noqa: E402  (CN baseline, built from the JP ROM if needed)
 from make_english_patch import assemble  # noqa: E402
 
-CN = ROOT / "ROMs/Shining_Soul_II_CN_Baseline.gba"
 CN_SHA = "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989"
 HOOK, LOADER, LOCAL_INDEX, STUB = 0x08058488, 0x08026C0C, 0x080020F4, 0x080BB1F0
 
@@ -65,7 +65,7 @@ go:
 
 
 def main():
-    cn = CN.read_bytes()
+    cn = cn_baseline()
     import hashlib
     assert hashlib.sha256(cn).hexdigest() == CN_SHA, "wrong CN baseline"
     with tempfile.TemporaryDirectory() as tmp:

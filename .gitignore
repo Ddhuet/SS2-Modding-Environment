@@ -100,10 +100,14 @@ Thumbs.db
 /Other_Modders/HugeApplePack/
 /Other_Modders/SS2_GBA_HACK/
 
-# Patch_Manager: ROMs and patches stay local (build mods with Tools/Scripts/make_bps.py).
+# Patch_Manager: ROMs stay local. Its patches/ folder IS tracked (see the end of this file).
 *.[iI][pP][sS]32
 /Patch_Manager/Input_ROM/*
 /Patch_Manager/Output_ROM/*
-/Patch_Manager/patches/*
 /Patch_Manager/__pycache__/
 /Patch_Manager/*.exe
+
+# Shipped patches are tracked: the tools need the two base patches (english_translation.bps,
+# cn_baseline.bps) to make the English ROM and the CN baseline from the JP ROM, and every patch here
+# is already public through the web patcher. Must stay after the *.ips / *.bps rules above.
+!/Patch_Manager/patches/**

@@ -41,6 +41,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from base_roms import write_spans  # noqa: E402
 from name_tables import TABLES, SLOT, records  # noqa: E402
 import dialogue_frame  # noqa: E402
 import frame_port  # noqa: E402
@@ -306,6 +307,7 @@ def main():
     }
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(patch, indent=1) + "\n")
+    write_spans(patch)  # byte-free, tracked copy for mod_conflicts.py / base_roms.py
     print(json.dumps({"out": str(args.out), "writes": len(writes), "allocations": allocations, **stats}, indent=1))
 
 

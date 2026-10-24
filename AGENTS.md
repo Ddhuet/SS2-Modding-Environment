@@ -2,8 +2,9 @@
 
 **Mission:** make gameplay mods for Shining Soul II (GBA). Either write **new CN-format mods**, or
 **port US-ROM mods/fixes to the CN baseline**. The target players run the **English translation of
-the CN mod baseline**. The translation is finished and is not your job; you only need to stay
-out of its bytes (see "Living with the translation").
+the CN mod baseline**, and Chinese players can run the same mods on the CN baseline itself (see
+"Chinese players"). The translation is finished and is not your job; you only need to stay out of
+its bytes (see "Living with the translation").
 
 **Where everything is: `REPO_INDEX.md`** (folder map, ROM table, where new files go). Knowledge
 base: `Docs/INDEX.md`. Scripts: `Tools/Scripts/SCRIPTS_INDEX.md`. Previous project phases are
@@ -25,12 +26,14 @@ local rules.
 | `ROMs/Shining_Soul_II_JP.gba` | **The starting file.** Japanese retail ROM, 16 MiB, SHA-256 `9f3e0d0653de6504c1aeaf03de3cca06ae0c15a24089f0236398ec56d382d17a`, CRC32 `7B39A7B2`. Players start from it, so every tool and test starts from it too. Same file as `Patch_Manager/Input_ROM/Shining_Soul_II_JP.gba` (never modify that folder). |
 | `Patch_Manager/patches/english_translation.bps` | Japanese ROM → English ROM (SHA-256 of the patch `b0bf4f35…`). The same file is in `../SS2_Web_Patcher/patches/`. |
 | English ROM `ss2-en-phase1d.gba` (SHA-256 `4343a9c7…53cb`, 32 MiB) | **Temporary.** Made from the Japanese ROM with `english_translation.bps`. It is not just the text: it carries the CN community's code baseline (`SS2_SC_bug_fixed`) plus the translation, so **every** mod's code and addresses live in it, and every mod `.bps` is an English → English+mod diff. `make_bps.py` makes it in memory; `--english-out PATH` saves a copy (scratchpad or the git-ignored `Build/`) for the emulator or disassembly. Treat any copy as disposable. |
-| `ROMs/Shining_Soul_II_CN_Baseline.gba` | CN mod baseline, 32 MiB, SHA-256 `45ac38bb…c989`, profile `Tools/profiles/ss2-cn-baseline.json`. Same gameplay code and data addresses as the English ROM. Definitions' `before_hex` comes from it; mod build scripts and `mod_conflicts.py`/`combine_patch.py` read it. |
-| `ROMs/Shining_Soul_II_USA.gba` | US AU2E rev0, SHA-256 `b31c19d2…`, profile `Tools/profiles/ss2-us.json`. Source for US→CN ports. Its code and RAM layout differ from CN (see "Porting US → CN"). |
+| CN baseline (optional file `ROMs/Shining_Soul_II_CN_Baseline.gba`) | The CN community's ROM (`SS2_SC_bug_fixed`: Chinese text + their fixes), 32 MiB, SHA-256 `45ac38bb…c989`, profile `Tools/profiles/ss2-cn-baseline.json`. Same code and data addresses as the English ROM; the two differ **only** inside the translation's spans (verified byte for byte). Definitions' `before_hex` comes from it. You don't need the file: `Patch_Manager/patches/cn_baseline.bps` makes it from the JP ROM. |
+| `ROMs/Shining_Soul_II_USA.gba` (optional) | US AU2E rev0, SHA-256 `b31c19d2…`, profile `Tools/profiles/ss2-us.json`. Only for US→CN ports and regenerating the translation. Its code and RAM layout differ from CN (see "Porting US → CN"). |
 | `ROMs/Shining_Soul_II_CN.gba` | 16 MiB Chinese localization (not pristine Japanese). Rarely needed. `ROMs/Shining_Soul_II_EU.gba`: archived EU port only. |
 
-When writing or porting a mod, ALWAYS start from `ROMs/Shining_Soul_II_JP.gba`: make the
-temporary English ROM from it with `english_translation.bps` and work against that.
+When writing or porting a mod, ALWAYS start from `ROMs/Shining_Soul_II_JP.gba`; it is the only ROM
+mod work needs. `Tools/Scripts/base_roms.py` gives scripts `jp_rom()`, `cn_baseline()` and
+`english_rom()` (the last two built from JP with the two base patches, cached in `Build/`, hash-checked).
+Work against the English ROM.
 **The deliverable is always a `.bps` in `Patch_Manager/patches/`**, not a patched `.gba` or source
 alone (see step 5 below).
 
@@ -49,30 +52,36 @@ replayed headlessly (see Testing).
    `Patches/Definitions/Custom/<id>.json` with `stage` set honestly and a `note` per write. Do the
    work (sources, `build.py`, probes, scratch ROMs, runs) in a working folder `Patches/<id>/`.
 2. **Static checks.**
-   - `python3 Tools/Scripts/mod_conflicts.py --defs Patches/Definitions/Custom`: byte overlap with the
-     translation's writes and allocations, mods writing into functions the translation changed,
-     and region classes. Any byte overlap must be resolved.
-   - `python3 Tools/Scripts/combine_patch.py <id> [<id> ...] --defs <dir>` merges translation +
-     mods into one ss2tools patch and refuses any byte overlap between all inputs. Run it with
-     your mod and the official singles too, to catch clashes with CN mods. It reads a single
-     `--defs` folder, so copy or symlink the singles if needed.
+   - `python3 Tools/Scripts/mod_conflicts.py --defs Patches/Definitions/Custom Patches/Definitions/Official`:
+     byte overlap with the translation's writes and allocations (from the tracked
+     `Tools/profiles/translation_spans.json`), mods writing into functions the translation changed,
+     region classes, and mod-vs-mod byte clashes across all the definitions given. Any byte overlap
+     must be resolved (the known `counter_fix` × `counter_fix_slash` clash is by design).
+   - Optional: `python3 Tools/Scripts/combine_patch.py <id> … --defs <dir>` merges translation + mods
+     into one ss2tools patch. It needs the full translation write list `Build/ss2-en-phase1.patch.json`,
+     which only `make_english_patch.py` can make (CN baseline + US ROM).
 3. **Build the patch and a test ROM** from the Japanese ROM:
    `python3 Tools/Scripts/make_bps.py <id> [<id> ...] --rom-out <scratch dir> [--english-out <scratch>/en.gba]`
    It checks the Japanese ROM's hash, applies `english_translation.bps` in memory, checks the
    English hash, applies the definition (every preimage asserted, ledger names included), writes
    `Patch_Manager/patches/<id>.bps` (English → English+mod, round-trip checked; a stale
    `<id>.ips`/`.ips32` there is removed) and, with `--rom-out`, `<dir>/ss2-en+<id>.gba` to test.
+   Then make its Chinese version: `python3 Tools/Scripts/make_cn_set.py <id>` writes
+   `Patch_Manager/patches/cn/<id>.bps` if the mod can work on the CN baseline, and records the
+   verdict in `cn/compat.json` (see "Chinese players").
 4. **Test** in the emulator (below), English vs English+mod. To test it **stacked with other
    patches** (e.g. `respec` to learn a skill the savestate lacks), build the combination the same
    way the user will: `Patch_Manager/patch_manager.py`'s `build(rom_path, [patch paths])` with the
    Japanese ROM and `english_translation.bps` + the patches (headless, no GUI needed). Output goes
    to `Patch_Manager/Output_ROM/` unless you point `pm.OUTPUT_DIR` at a scratch folder.
-5. **Deliver the `.bps` in `Patch_Manager/patches/`** and tell the user its path. That is the
-   hand-off: the user tests it in Patch_Manager (Japanese ROM in `Input_ROM/`, tick the
-   translation + patches, Apply) and then copies it to the web patcher themselves. **Don't write
-   to `../SS2_Web_Patcher/`** unless the user asks. For reference, when they do: a patch shows on
+5. **Deliver the `.bps` in `Patch_Manager/patches/`** (plus `cn/<id>.bps`) and tell the user its path.
+   That is the hand-off: the user tests it in Patch_Manager (Japanese ROM in `Input_ROM/`, tick the
+   translation + patches, Apply; or tick the Chinese base instead) and then copies it to the web
+   patcher themselves. **Don't write to `../SS2_Web_Patcher/`** unless the user asks. For
+   reference, when they do: the page's Chinese versions are made from *its* copies of the patches
+   (`python3 Tools/Scripts/make_cn_set.py --patches ../SS2_Web_Patcher/patches`), a patch shows on
    the page only once it is listed in `patches/index.json` (`python3 tools/make_index.py` there,
-   plus `patches/<id>.txt` with a `Title:` line), and the page must be served over HTTP
+   after make_cn_set; plus `patches/<id>.txt` with a `Title:` line), and the page must be served over HTTP
    (`python3 -m http.server` in that folder), since `fetch` doesn't work from `file://`.
    Patch_Manager and the web page use the same rules (translation first; a mod `.bps` is decoded
    against the English ROM into changed bytes, so it stacks with `.ips` and is conflict-checked)
@@ -115,11 +124,28 @@ Record every allocation you make (address, length, fill, owner) in your definiti
   zero and that nothing references them, then claim them in your doc. Zero runs elsewhere in
   `0x083xxxxx`+ are often real data (blank graphics, tables); don't treat them as free.
 
+## Chinese players (CN baseline)
+
+Every mod is made against the English ROM, but the English ROM equals the CN baseline outside the
+translation's spans, so a mod that stays out of them is the same mod on the Chinese game.
+`make_cn_set.py` decides per shipped patch and writes `cn/<name>.bps` (CN baseline → CN+mod).
+A mod is **English-only** when it writes translation-owned bytes, points or `bl`s into
+translation-only code/data (`0x094xxxxx`, the centring helper `0x08019FD8`), or is listed in
+`Patches/Definitions/cn_overrides.json` (use that for mods that draw English glyph codes `0x701`+,
+which the scan can't see). English item names (slot 1) are dropped from the CN version. Both
+patchers grey out English-only mods when the result is the Chinese game, and treat a CN version as
+missing if its English file changed since (`compat.json` stores the English file's SHA-256). Keep
+new mods CN-compatible unless they truly need English text. As of 2026-10-24 all 28 shipped
+patches are CN-compatible; the official CN mods' CN versions equal their own definitions on the
+CN baseline byte for byte, and enemy_pathing behaves identically on both ROMs (A/B, 2 states).
+
 ## Living with the translation (only what affects mods)
 
-- The translation's write set is in `Build/ss2-en-phase1.patch.json` (generated, git-ignored, so
-  absent in a fresh clone; `mod_conflicts.py` and `combine_patch.py` need it. Generate it with `Tools/.venv/bin/python Tools/Scripts/make_english_patch.py`). Don't patch its bytes;
-  `mod_conflicts.py` checks this.
+- The translation's spans (every address it writes or reserves, no bytes) are tracked in
+  `Tools/profiles/translation_spans.json`; `mod_conflicts.py` and `make_cn_set.py` read them. Don't
+  patch those bytes. The full write list `Build/ss2-en-phase1.patch.json` (git-ignored; holds the
+  English text) is regenerated with `Tools/.venv/bin/python Tools/Scripts/make_english_patch.py`,
+  which needs the CN baseline and US ROMs and also rewrites the spans file.
 - **Functions the translation rewrote** (stack frames grown for longer lines; hooks inside them must
   use the new sp offsets, so read them from the English ROM, not the CN baseline):
   - dialogue window `0x0805E8E4`;
@@ -198,7 +224,7 @@ needing Capstone or the emulator. One line per script: `Tools/Scripts/SCRIPTS_IN
 - Injected code must be ARMv4T Thumb/ARM (no Thumb-2; NOP `0x46C0`), keep the ABI (registers, flags, SP alignment) and have documented allocations.
 - Test real behaviour through visible game input on the **English ROM + your mod**, against English without it. Cover normal-save persistence when the mod touches saved state. Label diagnostic RAM writes separately.
 - Record findings, commands and allocations in `Docs/` (e.g. `Docs/mods/<id>.md`, linked from `Docs/INDEX.md`) so the next session doesn't rediscover them. New reusable scripts go in `Tools/Scripts/` with a line in `SCRIPTS_INDEX.md`. Follow `REPO_INDEX.md` "Where things go".
-- Don't push, publish or share ROMs, saves, IPS/BPS outputs or anything in `Other_Modders/` without the user's explicit request. Git-ignored files stay that way (ROMs, patches, `Build/`, `LOCAL.md`, private `Other_Modders/` folders).
+- Don't push, publish or share ROMs, patched ROMs, saves or anything in `Other_Modders/` without the user's explicit request. Git-ignored files stay that way (ROMs, `Build/`, `LOCAL.md`, private `Other_Modders/` folders). The patches in `Patch_Manager/patches/` are tracked on purpose (they are public through the web patcher).
 
 ## Evidence vocabulary
 

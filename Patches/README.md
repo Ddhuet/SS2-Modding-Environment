@@ -12,6 +12,7 @@ and shipped".
 | `Definitions/Custom/` | Our mods' definitions, one `<id>.json` each. `make_bps.py`, `mod_conflicts.py` and `combine_patch.py` read this folder (`--defs`). |
 | `Definitions/ledger.json` | English names for records a mod renames; applied by `combine_patch.py` and `make_bps.py`. |
 | `Definitions/patch-template.json` | Skeleton of the current definition schema. Copy it to start a new mod. |
+| `Definitions/cn_overrides.json` | Patches that must stay English-only even though `make_cn_set.py`'s byte scan passes them (e.g. they draw English glyph codes). |
 | `<mod_id>/` | Working folder for one mod: sources (`src/`), its `build.py` / `make_<id>.py` that writes `Definitions/Custom/<id>.json`, probes, tests, scratch ROMs, `runs/`. Messy is fine. Name it after the mod id. |
 
 Current working folders: `enemy_pathing/`, `summon_ai/` (`Starting_Info/` holds the user's test
