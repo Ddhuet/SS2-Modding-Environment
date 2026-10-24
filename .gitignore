@@ -7,37 +7,24 @@
 *.[iI][pP][sS]
 *.[bB][pP][sS]
 *.[uU][pP][sS]
-/workspace/input/*
-!/workspace/input/README.md
-!/workspace/input/*.[sS][aA][vV]
-!/workspace/input/*.[sS][rR][mM]
-!/workspace/input/*.[sS][sS][0-9]
-!/workspace/input/*.[sS][sS][0-9].json
-!/workspace/input/*.[sS][tT][aA][tT][eE]
-!/workspace/input/*.[sS][tT][aA][tT][eE].json
-/workspace/output/*
-!/workspace/output/README.md
-/workspace/runtime/
+# Generated builds, scratch ROMs and emulator runs (regenerate with Tools/Scripts).
+/Build/
 
-# EU ROM inputs/builds stay local; saves and ROM-bound states are test fixtures.
-/eu/inputs/*
-!/eu/inputs/README.md
-!/eu/inputs/*.[sS][aA][vV]
-!/eu/inputs/*.[sS][rR][mM]
-!/eu/inputs/*.[sS][sS][0-9]
-!/eu/inputs/*.[sS][sS][0-9].json
-!/eu/inputs/*.[sS][tT][aA][tT][eE]
-!/eu/inputs/*.[sS][tT][aA][tT][eE].json
-/eu/artifacts/
-/eu/runs/**
-!/eu/runs/**/
-!/eu/runs/**/*.[sS][aA][vV]
-!/eu/runs/**/*.[sS][rR][mM]
-!/eu/runs/**/*.[sS][sS][0-9]
-!/eu/runs/**/*.[sS][sS][0-9].json
-!/eu/runs/**/*.[sS][tT][aA][tT][eE]
-!/eu/runs/**/*.[sS][tT][aA][tT][eE].json
-/eu/reference/upstream/
+# EU port archive: ROM inputs/builds stay local; saves and ROM-bound states are test fixtures.
+/Archive/EU_Port/inputs/*
+!/Archive/EU_Port/inputs/README.md
+!/Archive/EU_Port/inputs/*.[sS][aA][vV]
+/Archive/EU_Port/artifacts/
+/Archive/EU_Port/runs/**
+!/Archive/EU_Port/runs/**/
+!/Archive/EU_Port/runs/**/*.[sS][aA][vV]
+!/Archive/EU_Port/runs/**/*.[sS][rR][mM]
+!/Archive/EU_Port/runs/**/*.[sS][sS][0-9]
+!/Archive/EU_Port/runs/**/*.[sS][sS][0-9].json
+!/Archive/EU_Port/runs/**/*.[sS][tT][aA][tT][eE]
+!/Archive/EU_Port/runs/**/*.[sS][tT][aA][tT][eE].json
+/Archive/EU_Port/reference/upstream/
+/Archive/Windows_mGBA/bin/
 
 # Installed Python packages, vendor clones, native build trees and caches.
 .venv/
@@ -61,9 +48,8 @@ dist/
 .ruff_cache/
 .tox/
 .nox/
-/eu/emulator/references/
-/mGBA-*-win*/
-/tools/windows_mgba/bin/
+/Tools/emulator/references/
+/Tools/mGBA-*-win*/
 
 # Compiled libraries, programs and packaged copies (which may contain ROMs).
 *.[eE][xX][eE]
@@ -108,15 +94,11 @@ Thumbs.db
 /push.sh
 
 
-# HugeApplePack: the CN modder's USA port pack. Local reference only, never tracked;
-# knowledge extracted from it lives in translation/docs/.
-/HugeApplePack/
-/translation/build/
+# Other modders' private material: never tracked (private repos / packs shared with us).
+/Other_Modders/HugeApplePack/
+/Other_Modders/SS2_GBA_HACK/
 
-# HugeApplePack Chinese
-SS2_GBA_HACK
-
-# Patch_Manager: ROMs and patches stay local (rebuild with translation/tools/make_ips_set.py).
+# Patch_Manager: ROMs and patches stay local (build mods with Tools/Scripts/make_bps.py).
 *.[iI][pP][sS]32
 /Patch_Manager/Input_ROM/*
 /Patch_Manager/Output_ROM/*
