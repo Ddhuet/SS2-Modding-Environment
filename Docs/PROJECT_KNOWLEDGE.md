@@ -29,6 +29,7 @@ The 17-item Release output is registered under SHA-256 `dcdb1e041eee3676c6398de6
 * Map: `0x08022D84` area/floor write; `0x08023EB0` monster group selection; `0x08024D4E` floor transition; `0x08026F88` initialization; `0x080008C8` RNG.
 * Player: `[0x03003580]` current PLAYER pointer; Inventory `PLAYER+0x158` (25 × 16 bytes); Character stash `PLAYER+0x2E8` (75 × 16 bytes).
 * Combat: `0x08019824` generic object damage taken; `0x0801F150` attack processing; `0x08013594` player death settlement; `0x08077374` hit/target loop.
+* Death/ground items: death drop `0x0800F4B2` (copy `0x0800FB0C`); ground-item spawn queue `0x08066A74`; ground-item list `[0x03005E18]` 16×0x20, persisted in map-state block `[0x030042D0]`+0x1DC (0x51C B, saved to the aux flash sector). Details: `mods/lose_all_on_death.md`.
 * Stats: `0x0801B690` equipment/status stat recalculation; `0x0801B18C` weapon skill attack power dispatch.
 * Items & Stash: `0x0807D268` item type dispatch; `0x080836FC` stash dispatch vicinity; Item records are 16 bytes, and type/code must be interpreted jointly.
 * Flash: `0x08001B14` 4 KiB main sector erase/write; `0x08001B54` read-back verification; `0x080B9CD8` low-level command primitive.

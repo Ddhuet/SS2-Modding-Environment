@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "id": "lose_all_on_death",
+  "name": "Dying destroys everything you carry except your soul",
+  "stage": "static_candidate",
+  "profile_id": "ss2-cn-baseline",
+  "baseline": {
+    "filename": "SS2_SC_bug_fixed.GBA",
+    "size": 33554432,
+    "md5": "35eb6567d94f855480c5d7ba2dff4389",
+    "sha256": "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989",
+    "crc32": "AFCFC96D"
+  },
+  "source_provenance": {
+    "kind": "new",
+    "source": "Patches/lose_all_on_death/build.py",
+    "notes": "Docs/mods/lose_all_on_death.md"
+  },
+  "allocations": [
+    {
+      "range": "0x080BB3B4..0x080BB3FF",
+      "fill": "zero",
+      "what": "code (48 B used)"
+    }
+  ],
+  "evidence": {
+    "status": "static_verified",
+    "semantics": "On death every equipped item except the soul and every bag item (gold included) is deleted; nothing is dropped. The bank is untouched.",
+    "static_audit": "Docs/mods/lose_all_on_death.md",
+    "user_acceptance": "not_run",
+    "runtime": "not_run"
+  },
+  "writes": [
+    {
+      "address": "0x0800F4B6",
+      "offset": "0x0000F4B6",
+      "before_hex": "02e04a980328",
+      "after_hex": "abf07dff48e0",
+      "mode": "thumb",
+      "note": "Death drop: the `b` into the random-armour loop becomes `bl 0x080bb3b4 (delete_all); b 0x0800f54e` (vanilla slot-flag refresh + gold drop, which then finds no gold)."
+    },
+    {
+      "address": "0x0800FB16",
+      "offset": "0x0000FB16",
+      "before_hex": "02e04a990329",
+      "after_hex": "abf04dfc48e0",
+      "mode": "thumb",
+      "note": "Death drop: the `b` into the random-armour loop becomes `bl 0x080bb3b4 (delete_all); b 0x0800fbae` (vanilla slot-flag refresh + gold drop, which then finds no gold)."
+    },
+    {
+      "address": "0x080BB3B4",
+      "offset": "0x000BB3B4",
+      "before_hex": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "0a48006801007831ba22920012189c235b001b18994204d00020086048608860c86010319142f5d37047000080350003",
+      "mode": "thumb",
+      "note": "Allocation 0x080bb3b4..0x080bb3e3 (48 B, was zero; owner lose_all_on_death): delete_all() zeroes owner +0x78..+0x2E7 except the soul record +0x138."
+    }
+  ]
+}

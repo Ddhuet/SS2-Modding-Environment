@@ -71,6 +71,14 @@
   "cn_file": "cn/life_leech.bps",
   "cn_sha256": "9872e9634796724cbc12cf484d23ed0a391da5a1a31a8514368019f120a444f1"
  },
+ "lose_all_on_death": {
+  "file": "lose_all_on_death.bps",
+  "en_sha256": "2a8e7c63d1de960cbc3f3cb6a1fb7eccde8af9275ca846b7d57a3b1d2c529fca",
+  "cn": true,
+  "reason": "52 bytes",
+  "cn_file": "cn/lose_all_on_death.bps",
+  "cn_sha256": "0d3d3f01e50e261924fef1e37360fd9e086de2510a159360460bfc541aa211da"
+ },
  "money_drop_control": {
   "file": "money_drop_control.ips",
   "en_sha256": "288f2a2e463ba1d617ff55a20ab1b252af7982b7bf21ae6f3ab60cb074149bd8",
