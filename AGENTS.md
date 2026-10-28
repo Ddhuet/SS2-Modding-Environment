@@ -41,6 +41,10 @@ Address rule: file offset = ROM address − `0x08000000`.
 Save fixture (immutable; work on copies): `Savestates/Fixture_CN_English.sav` (CN/English save).
 The user's desktop mGBA states (`Savestates/*.ss0`, and per-mod ones under `Patches/<id>/`) can be
 replayed headlessly (see Testing).
+**These states were made on the English ROM. Load them only into a temporary English-patched copy
+of the JP ROM** (`base_roms.english_rom()` / `make_bps.py --english-out`, optionally plus the mods
+under test). Loading one into the raw Japanese ROM (or the CN baseline) crashes the game, because
+the state's RAM and code pointers belong to the English build.
 
 ## How a mod is made and shipped
 
@@ -116,6 +120,7 @@ Record every allocation you make (address, length, fill, owner) in your definiti
 | `0x080BB238..0x080BB267`, `0x09011000..0x09012FFF`; RAM: EWRAM `0x0203D0C0..0x0203D0FF` (inside enemy_pathing's control block) | `summon_ai` (custom, needs enemy_pathing); see `Docs/mods/summon_ai.md` |
 | `0x080BB268..0x080BB3B3`, `0x09013000..0x090131FF`; RAM: IWRAM `0x03007920..0x03007927`; OBJ palette 15 colour 1 | `counter_fix_slash` (custom test variant of `counter_fix`; don't stack the two); see `Docs/mods/counter_fix_slash.md` |
 | `0x080BB3B4..0x080BB3FF` | `lose_all_on_death` (custom); see `Docs/mods/lose_all_on_death.md` |
+| `0x080BC1C0..0x080BC1DF` | `end_dungeon_on_death` (custom); see `Docs/mods/end_dungeon_on_death.md` |
 
 - **Free for new mods:** `0x09002000..0x093FFFFF` and `0x09500000..0x09FFFFFF`. The upper 16 MiB
   is **zero-filled** in this baseline (EU used 0xFF; don't assume either, check).
@@ -210,7 +215,7 @@ needing Capstone or the emulator. One line per script: `Tools/Scripts/SCRIPTS_IN
 - **Emulator:** native headless mGBA, Python `Session` (`Tools/emulator/`, `Tools/emulator/README.md`; build with `Tools/.venv/bin/python Tools/Scripts/build_emulator.py`). Import it after `sys.path.insert(0, str(ROOT / "Tools"))`. It gives frame-exact input, memory reads, screenshots and savestates. Each session needs a **new `run_dir`** (put runs under `Build/runs/` or `Patches/<id>/runs/`).
 - **Scenario helpers (CN/English ROMs):**
   - `Tools/Scripts/smoke_phase1.py ROM TAG`: cold boot from the CN save to the inn, ring menu, save dialogue, item menu.
-  - `Tools/Scripts/smoke_state.py ROM STATE.ss0 TAG "frames:KEYS …"`: replay input from a user desktop state.
+  - `Tools/Scripts/smoke_state.py ROM STATE.ss0 TAG "frames:KEYS …"`: replay input from a user desktop state. ROM must be an English-patched build (English ROM or English+mods), never the raw JP ROM.
   - `Tools/Scripts/trace_renderer.py`: lists renderer calls.
   - Session gotcha: `run_until` also stops on its instruction budget, so check `r["hit"]`.
 - **Profiler:** `Tools/perf/` (`ss2prof` + `perfreport.py`); findings in `GAME_PERFORMANCE.md`.
@@ -225,7 +230,7 @@ needing Capstone or the emulator. One line per script: `Tools/Scripts/SCRIPTS_IN
 - Injected code must be ARMv4T Thumb/ARM (no Thumb-2; NOP `0x46C0`), keep the ABI (registers, flags, SP alignment) and have documented allocations.
 - Test real behaviour through visible game input on the **English ROM + your mod**, against English without it. Cover normal-save persistence when the mod touches saved state. Label diagnostic RAM writes separately.
 - Record findings, commands and allocations in `Docs/` (e.g. `Docs/mods/<id>.md`, linked from `Docs/INDEX.md`) so the next session doesn't rediscover them. New reusable scripts go in `Tools/Scripts/` with a line in `SCRIPTS_INDEX.md`. Follow `REPO_INDEX.md` "Where things go".
-- Don't push, publish or share ROMs, patched ROMs, saves or anything in `Other_Modders/` without the user's explicit request. Git-ignored files stay that way (ROMs, `Build/`, `LOCAL.md`, private `Other_Modders/` folders). The patches in `Patch_Manager/patches/` are tracked on purpose (they are public through the web patcher).
+- Don't push, publish or share ROMs, patched ROMs or anything in `Other_Modders/` without the user's explicit request. **Savestates (`.ss0`, `.ss1`) and `.sav` saves are fine to commit and push**: the user wants them tracked (small, no private data), so commit any the user adds along with the work that uses them. Git-ignored files stay that way (ROMs, `Build/`, `LOCAL.md`, private `Other_Modders/` folders). The patches in `Patch_Manager/patches/` are tracked on purpose (they are public through the web patcher).
 
 ## Evidence vocabulary
 
