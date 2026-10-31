@@ -38,7 +38,7 @@ CRC32 `7B39A7B2`.
   | `summon_ai` | The Archer's summoned pet hunts enemies smartly (needs `enemy_pathing`). |
   | `enemy_hp_bars` | HP bars over enemies (a Chinese modder's code, with our fixes). |
   | `walk_angles` | True 45° diagonal movement (ported from a US patch by Nell). |
-  | `waitcnt_fix` | Runs the cartridge at the intended wait states, which cuts lag. |
+  | `waitcnt_performance_fix` | Runs the cartridge at the intended wait states, which cuts lag. |
   | `town_return_heal` | Returning to town refills HP and SP. |
   | `normal_attack_charge_accuracy` | Tap attacks get the charge attack's accuracy. |
   | `guaranteed_fusing` | A matching forge recipe always succeeds. |

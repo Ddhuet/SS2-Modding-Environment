@@ -1,10 +1,12 @@
 # waitcnt_fix: run the cartridge at the wait states the developers chose
 
-Definition: `Patches/Definitions/Custom/waitcnt_fix.json`. Shipped as `Patch_Manager/patches/waitcnt_fix.ips`
+Definition: `Patches/Definitions/Custom/waitcnt_fix.json`. Shipped as `Patch_Manager/patches/waitcnt_performance_fix.ips`
 (27 B, sha256 `0f985881…73ce4`, made against the English ROM `ss2-en-phase1d.gba`).
 English + fix ROM: sha256 `86400c4a1563306df814352e41ece947e6b3a871ad61cba2fe00cfc660c37576`
 (differs from English phase1d in 14 bytes, `0x61C..0x629`). Background and measurements:
 `GAME_PERFORMANCE.md` (R1).
+The shipped file keeps the web patcher's name: after `make_bps.py waitcnt_fix`, rename the output
+to `waitcnt_performance_fix.ips` (a byte-identical `waitcnt_fix.ips` was removed 2026-10-31).
 
 ## The bug (CN baseline = English = modpack; same bytes in all three)
 

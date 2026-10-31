@@ -207,14 +207,6 @@
   "cn_file": "cn/town_return_heal.bps",
   "cn_sha256": "836a1f47f002361b2d48116cde40aa3c644cbeb08a4ae4863a2003bf26f4ea17"
  },
- "waitcnt_fix": {
-  "file": "waitcnt_fix.ips",
-  "en_sha256": "0f9858816c3213ca489bf45790cf1ddf95e6444f15e98cb789bd5882a1573ce4",
-  "cn": true,
-  "reason": "14 bytes",
-  "cn_file": "cn/waitcnt_fix.bps",
-  "cn_sha256": "6c77e9d92e9e9078a110d1f6fcb84dea19489e64604d8f78948c9763beec7aa5"
- },
  "waitcnt_performance_fix": {
   "file": "waitcnt_performance_fix.ips",
   "en_sha256": "0f9858816c3213ca489bf45790cf1ddf95e6444f15e98cb789bd5882a1573ce4",
