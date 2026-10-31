@@ -32,6 +32,7 @@ One doc per mod: what it changes, hooks, allocations, tests, evidence. Definitio
 | [`mods/town_return_heal.md`](mods/town_return_heal.md) | Refill HP/SP on return to town. |
 | [`mods/lose_all_on_death.md`](mods/lose_all_on_death.md) | Death destroys everything but the soul; also maps the death drop, ground-item list, map-state block P and save layout. |
 | [`mods/end_dungeon_on_death.md`](mods/end_dungeon_on_death.md) | Death ends the dungeon run (no Angel); also maps the death flow, the Angel task, flags word `0x03003518` bits 3/7/14/21, transitions and the world-map forfeit cleanup. |
+| [`mods/loot_rebalance.md`](mods/loot_rebalance.md) | Crates never empty (gold/consumables 44 % each), no chest gold, wooden/iron chests 50 %/100 % unidentified, monsters drop 1 in 8 and only consumables (+ accessories/pastes). |
 | [`mods/normal_attack_charge_accuracy.md`](mods/normal_attack_charge_accuracy.md) | Tap attacks use charge-attack accuracy. |
 | [`mods/guaranteed_fusing.md`](mods/guaranteed_fusing.md) | Matching forge recipe skips the roll (EU port). |
 | [`mods/fusing_gold.md`](mods/fusing_gold.md), [`mods/forge_calculator.html`](mods/forge_calculator.html) | Forge gold / +X research and a calculator page. |

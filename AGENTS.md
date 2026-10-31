@@ -121,6 +121,7 @@ Record every allocation you make (address, length, fill, owner) in your definiti
 | `0x080BB268..0x080BB3B3`, `0x09013000..0x090131FF`; RAM: IWRAM `0x03007920..0x03007927`; OBJ palette 15 colour 1 | `counter_fix_slash` (custom test variant of `counter_fix`; don't stack the two); see `Docs/mods/counter_fix_slash.md` |
 | `0x080BB3B4..0x080BB3FF` | `lose_all_on_death` (custom); see `Docs/mods/lose_all_on_death.md` |
 | `0x080BC1C0..0x080BC1DF` | `end_dungeon_on_death` (custom); see `Docs/mods/end_dungeon_on_death.md` |
+| `0x09020000..0x0903668F` | `loot_rebalance` (custom): new loot item lists; see `Docs/mods/loot_rebalance.md` |
 
 - **Free for new mods:** `0x09002000..0x093FFFFF` and `0x09500000..0x09FFFFFF`. The upper 16 MiB
   is **zero-filled** in this baseline (EU used 0xFF; don't assume either, check).

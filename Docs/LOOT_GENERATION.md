@@ -54,7 +54,7 @@ u16 value), `+6` u8 +N, `+7` u8 element, `+8` u8 unidentified. Types: 1 consumab
 ```
 out = 0; if level == 0: return 0                     # "never drops"
 row = 0x084F4954 + (level-1)*36                       # 100 rows
-enchant = row.u16[0] >= (rand() & 0xFFFF) % 100       # 25/40/70/100 % (0 % on fixed rows)
+enchant = row.u16[0] >= (rand() & 0xFFFF) % 100       # value v -> (v+1) %: 26/41/71/100 % (0 on fixed rows)
 if class == 8: class = 6
 list = row.ptr[1+class]                               # 8 per-class lists (shared rows: 8 equal pointers)
 r = rand() % (list.total + 1)                         # total is 65535
@@ -64,6 +64,8 @@ if enchant: enchant(out, 0)
 if paste: out.u16[+4] = rand()%10 + 10*[0x0300329C] (+100 if hard)
 ```
 
+- The enchant percentages in the tables below are the row values; the real chance is one more
+  (`>=`): 26 %, 41 %, 71 %, 100 %.
 - A row entry of type 0 is "nothing" (crates have 75 % of it).
 - Gold: `code` is the row's gold base; the amount is uniform in `code/2 .. code*1.5-1` (the low
   third is clamped to `code/2`, so the minimum is about a third likely).
@@ -225,6 +227,11 @@ stated count (element 6 = poison, +9, +15, +4). The prefix and item-list loops u
   table, which was not mapped.
 - **Not established:** monster `+0x78` assignment per map, the player drop stat `+0x7C` source,
   the colours of sprites 3/4, and the bit-9 hard-mode flag's name.
+
+## Mods
+
+[`mods/loot_rebalance.md`](mods/loot_rebalance.md) rewrites the crate, wooden/iron chest and
+monster lists and doubles the monster drop chance.
 
 ## Tools
 

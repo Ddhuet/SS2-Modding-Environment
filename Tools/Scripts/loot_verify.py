@@ -6,9 +6,11 @@
 For each delay in FIRST..LAST-1: load the state on the English ROM, wait `delay` frames, tap A
 until the generator 0x0805CBA4 is entered, read (level, class) from r1/r2 and the RNG state
 0x030013B8, predict the item with loot_model.generate(), let the game finish, compare the
-16-byte record. Prints one line per break and a match count. Runs go to Build/runs/.
+16-byte record. The model reads its tables from --rom too, so a modded ROM is checked
+against its own lists. Prints one line per break and a match count. Runs go to Build/runs/.
 """
 import argparse
+import shutil
 import struct
 import sys
 from pathlib import Path
@@ -17,6 +19,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "Tools/Scripts"))
 sys.path.insert(0, str(ROOT / "Tools"))
 from smoke_state import open_state  # noqa: E402
+import loot_model  # noqa: E402
 from loot_model import RNG, generate, item_name  # noqa: E402
 
 GEN = 0x0805CBA4
@@ -39,9 +42,10 @@ def main():
     ap.add_argument("last", type=int)
     ap.add_argument("--rom", default=str(ROOT / "Build/en.gba"))
     a = ap.parse_args()
+    loot_model.ROM = Path(a.rom).read_bytes()   # the model reads its tables from the ROM under test
     ok = total = 0
     for d in range(a.first, a.last):
-        s, _ = open_state(a.rom, a.state, f"loot-verify-{Path(a.state).stem}-{d}")
+        s, folder = open_state(a.rom, a.state, f"loot-verify-{Path(a.state).stem}-{d}")
         try:
             s.run_frames(d)
             hit = None
@@ -65,6 +69,7 @@ def main():
                   item_name(act[0], act[1]), "OK" if pred == act else f"MISMATCH predicted {pred}", flush=True)
         finally:
             s.__exit__(None, None, None)
+            shutil.rmtree(folder, ignore_errors=True)   # each run copies the 32 MiB ROM
     print(f"match {ok}/{total}")
 
 

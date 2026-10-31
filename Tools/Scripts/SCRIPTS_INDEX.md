@@ -57,7 +57,7 @@ Per-mod builders and tests live with their mod in `Patches/<id>/`, not here.
 | `frame_scan.py` | Finds callers of given addresses and compares their stack frames CN vs US. | stdlib | analysis |
 | `resource_diff.py` | Compares SSDT resource archives CN vs US by content hash. | stdlib | analysis |
 | `loot_model.py` | Loot generation model (`Docs/LOOT_GENERATION.md`): `rows`, `list ROW [CLASS]`, `tiers`, `enchant`, `objects`; `generate()`/`monster_drop()` reproduce the game bit for bit from the RNG state. | stdlib | analysis |
-| `loot_verify.py` | Breaks a container from a savestate after N idle frames and compares the drop with `loot_model.py` (`STATE FIRST LAST`). | emulator | analysis |
+| `loot_verify.py` | Breaks a container from a savestate after N idle frames and compares the drop with `loot_model.py` (`STATE FIRST LAST [--rom]`; the model reads its tables from `--rom`, so modded lists are checked too). | emulator | analysis |
 | `query_code_table.py` | Chinese glyph table lookup (`--code`, `--char`, `--decode`); data in `Docs/Reference_Data/`. | stdlib | analysis |
 | `query_reference_data.py` | Searches the extracted reference workbook (names, stats, recipes). | stdlib | analysis |
 | `search_analysis_index.py` | Substring search over `Docs/Analysis/FUNCTION_INDEX.json`. | stdlib | analysis |
