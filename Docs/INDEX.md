@@ -58,6 +58,7 @@ One doc per mod: what it changes, hooks, allocations, tests, evidence. Definitio
 | [`Analysis/DISCOVERY_GUIDE.md`](Analysis/DISCOVERY_GUIDE.md) | Method for tracing an unknown mechanism. |
 | [`Analysis/tracing_cases/`](Analysis/tracing_cases/README.md) | Worked traces from patches to fields/functions (case 02 was lost; see its README). |
 | `Analysis/historical_decompilation/` | Old Ghidra output from older ROMs: leads only. |
+| [`LOOT_GENERATION.md`](LOOT_GENERATION.md) | Crate, chest and monster drops: loot rows, per-class lists, gold, enchant/unidentified rules, object HP; model `Tools/Scripts/loot_model.py` (runtime-verified). |
 | [`RESEARCH_TOPICS.md`](RESEARCH_TOPICS.md) | Open topics (dynamic monster scaling, weapon skill hit rate, archer piercing, …). |
 | [`RANDOM_MAP.md`](RANDOM_MAP.md) | Random-map hook research. |
 

@@ -17,7 +17,9 @@
 | `0x08023EB0` | Thumb | Map | `map_load_by_area` | Loads map via area jump table; confirmed/static |
 | `0x08024EAC` | Thumb | Player Life | `map_loop_party_wipe_check` | Party wipe check during map loop; confirmed/static |
 | `0x08026F88` | Thumb | Map | `map_init_after_entry` | Full initialization after entering map; confirmed/static |
-| `0x0805CCC8` | Thumb | Drops | `drop_roll` | 3-slot range drop check; confirmed/static |
+| `0x0805CCC8` | Thumb | Drops | `drop_roll` | 3-slot range drop check; then 6.25% generic roll into `0x0805CBA4`; runtime_verified, see `../LOOT_GENERATION.md` |
+| `0x0805CBA4` | Thumb | Drops | `loot_generate` | `(out, row, class)`: loot row table `0x084F4954`; chests, crates, monsters; runtime_verified |
+| `0x0805C884` | Thumb | Drops | `loot_enchant` | prefix/element/+N roll, sets unidentified; runtime_verified |
 | `0x0805DAA4` | Thumb | Items | `bag_money_count` | Scans 25-slot bag to tally gold; confirmed/static |
 | `0x0805DAD4` | Thumb | Storage | `warehouse_money_count` | Scans 75-slot storage to tally gold; confirmed/static |
 | `0x08066D04` | Thumb | Multiplayer Events | `transmit_and_compact_event_queue` | Sends and compacts 0x88-byte event queue; confirmed/static |
