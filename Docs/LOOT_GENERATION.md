@@ -231,7 +231,7 @@ stated count (element 6 = poison, +9, +15, +4). The prefix and item-list loops u
 ## Mods
 
 [`mods/loot_rebalance.md`](mods/loot_rebalance.md) rewrites the crate, wooden/iron chest and
-monster lists and doubles the monster drop chance.
+monster lists and raises the monster drop chance.
 
 ## Tools
 

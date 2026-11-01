@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """Kill the monster in Savestates/Easy_Kill.ss0 after N idle frames and check the drop roll.
 
-    Tools/.venv/bin/python Patches/loot_rebalance/test_monster.py ROM FIRST LAST
+    Tools/.venv/bin/python Patches/loot_rebalance/test_monster.py ROM FIRST LAST [--hard]
 
 For each delay: load the state, wait, tap A until 0x0805CCC8 (monster drop roll) is entered,
 predict the result with loot_model.monster_drop() using the ROM's own lists and drop-chance bytes,
 let the game finish and compare. Prints one line per kill and the drop count.
+--hard sets the hard-mode bit 9 of 0x03003518 after loading (a diagnostic RAM write: the
+state is a normal-mode game, so only the drop roll's row +50 path is exercised).
 """
 import shutil
 import struct
@@ -25,6 +27,7 @@ STATE = ROOT / "Savestates/Easy_Kill.ss0"
 
 def main():
     rom, first, last = sys.argv[1], int(sys.argv[2]), int(sys.argv[3])
+    force_hard = "--hard" in sys.argv[4:]
     loot_model.ROM = Path(rom).read_bytes()
     # `adds r0,#imm` bytes of the per-player-count bonus
     loot_model.MONSTER_BONUS = {n: loot_model.ROM[a - 0x08000000]
@@ -33,6 +36,8 @@ def main():
     for d in range(first, last):
         s, folder = open_state(rom, str(STATE), f"loot-rebalance-mon-{Path(rom).stem}-{d}")
         try:
+            if force_hard:
+                s.write32(0x03003518, s.read32(0x03003518) | 1 << 9)
             s.run_frames(d)
             for _ in range(100):
                 s.run_frames(3, 1)

@@ -13,10 +13,13 @@ the affected rows at them; the original lists stay untouched. Normal and hard ro
   spread like the consumables of the same tier's monster row (real consumables; the chest's
   novelty items keep their own weight). Enchant (= unidentified) chance: wooden 40 -> 49,
   iron 70 -> 100. The check is `value >= rand % 100`, so 49 is 50 % and 40 was 41 %.
-- Monsters: gold and equipment are removed and their weight goes to the consumables
-  (scaled proportionally); accessories and pastes keep theirs. The generic drop chance
-  (0x0805CCC8, by player count, out of 256) is doubled: 16/21/26/32 -> 32/42/52/64, so one player
-  has 1 in 8. The monsters' own drop slots (cards, Goblin Axe) are not touched.
+- Monsters: gold, equipment, Valuing Scroll, Angel Wing and Grenade are removed and their weight
+  goes to the other consumables (scaled proportionally); accessories and pastes keep theirs. That
+  is the "generic" drop, 4x vanilla: 1 player 64/256 = 1 in 4. On top of it the Valuing Scroll
+  gets its own 1/32: the chance (0x0805CCC8, by player count, out of 256) becomes 9/8 of the
+  generic one (72/94/117/144 for 1-4 players, vanilla 16/21/26/32) and the scroll is 1/9 of the
+  list, so for one player it is 8/256 = 1/32 and everything else 64/256. The monsters' own drop
+  slots (cards, Goblin Axe) are not touched.
 """
 import hashlib, json, struct, sys
 from pathlib import Path
@@ -36,7 +39,9 @@ CRATE = [4, 12]
 CRATE_TIER = {4: 1, 12: 9}   # crate row -> monster row of the same tier
 ENCHANT = {"wooden": (40, 49), "iron": (70, 100)}
 # monster generic drop bonus by player count: (address of the `adds r0,#imm` byte, old, new)
-BONUS = [(0x0805CDC0, 0x10, 0x20), (0x0805CDC6, 0x15, 0x2A), (0x0805CDCC, 0x1A, 0x34), (0x0805CDD2, 0x20, 0x40)]
+BONUS = [(0x0805CDC0, 0x10, 72), (0x0805CDC6, 0x15, 94), (0x0805CDCC, 0x1A, 117), (0x0805CDD2, 0x20, 144)]
+MONSTER_DROPPED = {6, 12, 13}   # consumable codes removed from monster drops: Angel Wing, Valuing Scroll, Grenade
+SCROLL = 12                     # Valuing Scroll: 1/9 of the monster list (its separate 1/32)
 
 
 def main():
@@ -90,8 +95,10 @@ def main():
 
     def monster(lst, mon):
         kept = [e for e in lst if e[0] in (6, 9)]
-        cons = scale(consumables(lst), TOTAL - sum(e[2] for e in kept))
-        return cons + kept
+        cons = [e for e in consumables(lst) if e[1] not in MONSTER_DROPPED]
+        generic = scale(cons, TOTAL - sum(e[2] for e in kept)) + kept   # the 1-in-4 part, sums to 65536
+        scroll = round(TOTAL / 9)
+        return [[1, SCROLL, scroll]] + scale(generic, TOTAL - scroll)
 
     def encode(entries, hdr_pad):
         entries = [e for e in entries if e[2] > 0]
@@ -136,7 +143,7 @@ def main():
     for row, fam, new in row_writes:
         ra = row_addr(row)
         old = cn[ra - BASE:ra - BASE + 36]
-        what = {"monster": "gold and equipment become consumables",
+        what = {"monster": "only consumables (no Valuing Scroll/Angel Wing/Grenade), accessories, pastes; Valuing Scroll 1/9 of the list",
                 "crate": "no empty result; gold and consumables ~44 % each",
                 "wooden": "gold becomes consumables; enchant (unidentified) 41 % -> 50 %",
                 "iron": "gold becomes consumables; enchant (unidentified) 71 % -> 100 %"}[fam]
