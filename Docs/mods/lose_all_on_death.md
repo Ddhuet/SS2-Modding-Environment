@@ -11,7 +11,7 @@ finds nothing to pick up. The bank (character storage) is untouched.
   `Patch_Manager/patches/cn/lose_all_on_death.bps` (52 B, CN-compatible).
 - Writes: `0x0800F4B6` (6 B), `0x0800FB16` (6 B), code `0x080BB3B4` (48 B).
 - **Allocation:** `0x080BB3B4..0x080BB3FF` (code uses 48 B; was zero, no literal references in
-  the ROM). Owner `lose_all_on_death`. Doesn't collide with the uncommitted
+  the ROM). Owner `lose_all_on_death`. Doesn't collide with
   `slash_shock_paralysis.bps` (`0x080BC321..`, `0x09014000..0x090163FF`).
 
 ## The patch

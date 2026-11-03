@@ -119,15 +119,19 @@ Record every allocation you make (address, length, fill, owner) in your definiti
 | `0x080BB220..0x080BB237`, `0x09010000..0x09010FFF`; RAM: EWRAM `0x0203D000..0x0203FFFF` (heap end lowered to `0x0203CFF0`), IWRAM `0x03007800..0x0300791F` | `enemy_pathing` (custom); see `Docs/mods/enemy_pathing.md` |
 | `0x080BB238..0x080BB267`, `0x09011000..0x09012FFF`; RAM: EWRAM `0x0203D0C0..0x0203D0FF` (inside enemy_pathing's control block) | `summon_ai` (custom, needs enemy_pathing); see `Docs/mods/summon_ai.md` |
 | `0x080BB268..0x080BB3B3`, `0x09013000..0x090131FF`; RAM: IWRAM `0x03007920..0x03007927`; OBJ palette 15 colour 1 | `counter_fix_slash` (custom test variant of `counter_fix`; don't stack the two); see `Docs/mods/counter_fix_slash.md` |
+| `0x080BC320..0x080BC337`, `0x09014000..0x090163FF` | `slash_shock_paralysis` (shipped `.bps` only, no definition or doc yet): hooks `0x08008B2E`, `0x08018FF0`, `0x0801E654`; shares hook bytes with `counter_fix_slash`, so don't stack the two |
 | `0x080BB3B4..0x080BB3FF` | `lose_all_on_death` (custom); see `Docs/mods/lose_all_on_death.md` |
 | `0x080BC1C0..0x080BC1DF` | `end_dungeon_on_death` (custom); see `Docs/mods/end_dungeon_on_death.md` |
 | `0x09020000..0x0903654F` | `loot_rebalance` (custom): new loot item lists; see `Docs/mods/loot_rebalance.md` |
+| `0x080BC340..0x080BC48B` | **Nelly's JP/CN ports** (external): near stubs / veneers |
+| `0x09040000..0x0904FFFF` | **Nelly's JP/CN ports** (external): far code / data (used as of 2026-11-02: `0x09040000..0x090400A7` `weapon_stat_scaling`, `0x09041000..0x09041ACB` ports 05-10); see `Other_Modders/Nell/11_Weapon_Stat_Scaling/FOR_GENTLEFOX.md` |
 
-- **Free for new mods:** `0x09002000..0x093FFFFF` and `0x09500000..0x09FFFFFF`. The upper 16 MiB
+- **Free for new mods:** `0x09002000..0x093FFFFF` and `0x09500000..0x09FFFFFF`, minus the claims
+  in the table above (including Nelly's `0x09040000..0x0904FFFF`). The upper 16 MiB
   is **zero-filled** in this baseline (EU used 0xFF; don't assume either, check).
 - **Reach:** a Thumb `bl` reaches ±4 MiB, so code in `0x09xxxxxx` needs a small stub inside the first
   16 MiB near the hook (`ldr rX,=target|1; bx rX`). Known zero gaps near the end of code are
-  `0x080BB220..0x080BB400` and `0x080BC1B6..0x080BC48C`. They are candidates only: confirm they are
+  `0x080BB220..0x080BB400` and `0x080BC1B6..0x080BC48C` (its tail `0x080BC340..` is Nelly's). They are candidates only: confirm they are
   zero and that nothing references them, then claim them in your doc. Zero runs elsewhere in
   `0x083xxxxx`+ are often real data (blank graphics, tables); don't treat them as free.
 

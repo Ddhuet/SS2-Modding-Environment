@@ -103,6 +103,14 @@
   "cn_file": "cn/money_drop_control.bps",
   "cn_sha256": "389a42825673e22897a60e4732fa8543d68e737c4a4d4fc42dfa6dfa6b2315bd"
  },
+ "no_sp_regen": {
+  "file": "no_sp_regen.bps",
+  "en_sha256": "b40c86e42dab4007dd45d8af4646fa3324da482601e45fc4f92bd66df0bb90e4",
+  "cn": true,
+  "reason": "1 bytes",
+  "cn_file": "cn/no_sp_regen.bps",
+  "cn_sha256": "cfc0b1a52b408dfb6c87f469a8690981def9b308323d6196a1d8613dd154e3b8"
+ },
  "normal_attack_charge_accuracy": {
   "file": "normal_attack_charge_accuracy.ips",
   "en_sha256": "79518d96af97eceeac8a0fecf00ac5932ed4cb28abe0c16ca29dcb8b7cbc54b1",
@@ -150,6 +158,14 @@
   "reason": "3080 bytes",
   "cn_file": "cn/shared_character_warehouses_beta.bps",
   "cn_sha256": "fb0c3c748e9baef0cf259468c0cef84a3b341d975d79d0c3c6ea559309a3a201"
+ },
+ "slash_shock_paralysis": {
+  "file": "slash_shock_paralysis.bps",
+  "en_sha256": "8d6ac1b1865b304b63a30abcce732f6f8c5e93d2efc7652a332932afa4a95813",
+  "cn": true,
+  "reason": "1544 bytes",
+  "cn_file": "cn/slash_shock_paralysis.bps",
+  "cn_sha256": "c10221b131fa666c8c4240c781c2da7500a85bfa1462621da6f2e1dba34ef443"
  },
  "soul_return_auto_revive": {
   "file": "soul_return_auto_revive.ips",
