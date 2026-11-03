@@ -118,8 +118,8 @@ Record every allocation you make (address, length, fill, owner) in your definiti
 | `0x080BC300..0x080BC31F`, `0x09004400..0x09004BFF`, `0x09A00000..0x09A0007F` | `enemy_hp_bars` (custom, CN modder's code); `0x09009BF0..0x09009BFF` must stay zero |
 | `0x080BB220..0x080BB237`, `0x09010000..0x09010FFF`; RAM: EWRAM `0x0203D000..0x0203FFFF` (heap end lowered to `0x0203CFF0`), IWRAM `0x03007800..0x0300791F` | `enemy_pathing` (custom); see `Docs/mods/enemy_pathing.md` |
 | `0x080BB238..0x080BB267`, `0x09011000..0x09012FFF`; RAM: EWRAM `0x0203D0C0..0x0203D0FF` (inside enemy_pathing's control block) | `summon_ai` (custom, needs enemy_pathing); see `Docs/mods/summon_ai.md` |
-| `0x080BB268..0x080BB3B3`, `0x09013000..0x090131FF`; RAM: IWRAM `0x03007920..0x03007927`; OBJ palette 15 colour 1 | `counter_fix_slash` (custom test variant of `counter_fix`; don't stack the two); see `Docs/mods/counter_fix_slash.md` |
-| `0x080BC320..0x080BC337`, `0x09014000..0x090163FF` | `slash_shock_paralysis` (shipped `.bps` only, no definition or doc yet): hooks `0x08008B2E`, `0x08018FF0`, `0x0801E654`; shares hook bytes with `counter_fix_slash`, so don't stack the two |
+| `0x080BB268..0x080BB3B3`, `0x09013000..0x090131FF`; RAM: IWRAM `0x03007920..0x03007927`; OBJ palette 15 colour 1 | `counter_fix_slash` (custom test variant of `counter_fix` that contains its writes: use it *instead of* `counter_fix`, not with it); see `Docs/mods/counter_fix_slash.md` |
+| `0x080BC320..0x080BC337`, `0x09014000..0x090163FF` | `slash_shock_paralysis` (Nelly's; shipped `.bps` only, no definition or doc here): hooks `0x08008B2E`, `0x08018FF0`, `0x0801E654`. Doesn't contain `counter_fix`'s writes: use it *with* `counter_fix`. Shares hook bytes with `counter_fix_slash`, so never stack those two |
 | `0x080BB3B4..0x080BB3FF` | `lose_all_on_death` (custom); see `Docs/mods/lose_all_on_death.md` |
 | `0x080BC1C0..0x080BC1DF` | `end_dungeon_on_death` (custom); see `Docs/mods/end_dungeon_on_death.md` |
 | `0x09020000..0x0903654F` | `loot_rebalance` (custom): new loot item lists; see `Docs/mods/loot_rebalance.md` |
@@ -191,7 +191,7 @@ Full map: `Docs/INDEX.md`. The essentials:
 - **US internals and US mods:**
   - `Docs/Porting/HUGEAPPLEPACK_FINDINGS.md`: US RAM map with CN equivalents, item format, hook lessons, what was tested.
   - `Other_Modders/`: other modders' material, read-only (`Other_Modders/README.md`). Some of it is private and only exists in some checkouts; never edit, commit or share it.
-  - `Other_Modders/Nell/`: Nell's US mod handoffs (walk angles, archer summon, evade, break armor, sound fix, squirrel/pig).
+  - `Other_Modders/Nell/`: Nell's US mod handoffs and patches (walk angles, archer summon, evade, break armor, sound fix, squirrel/pig), plus their JP/CN ports in numbered folders. Shareable (unlike `HugeApplePack/` and `SS2_GBA_HACK/`).
   - `Docs/Porting/Chinese_and_US_ROM_differences.md`: a CN→US port of respec, the resistance fix and the counter fix. It is the same method in reverse and shows per-site shifts.
 
 ## Porting US → CN

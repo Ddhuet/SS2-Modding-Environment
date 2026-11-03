@@ -113,3 +113,8 @@ Thumbs.db
 # cn_baseline.bps) to make the English ROM and the CN baseline from the JP ROM, and every patch here
 # is already public through the web patcher. Must stay after the *.ips / *.bps rules above.
 !/Patch_Manager/patches/**
+
+# Nell's material is shareable (the owner's word, 2026-11-02): track their patches too. ROMs stay out.
+!/Other_Modders/Nell/**/*.[iI][pP][sS]
+!/Other_Modders/Nell/**/*.[iI][pP][sS]32
+!/Other_Modders/Nell/**/*.[bB][pP][sS]

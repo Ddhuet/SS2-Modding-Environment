@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "id": "weapon_stat_scaling",
+  "name": "Weapon Stat Scaling (rod INT, bow DEX)",
+  "stage": "static_candidate",
+  "profile_id": "ss2-cn-baseline",
+  "baseline": {
+    "filename": "SS2_SC_bug_fixed.GBA",
+    "size": 33554432,
+    "md5": "35eb6567d94f855480c5d7ba2dff4389",
+    "sha256": "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989",
+    "crc32": "AFCFC96D"
+  },
+  "source_provenance": {
+    "kind": "port_from_us",
+    "source": "Nelly's USA mod (nelly builder)",
+    "notes": "credit Nelly"
+  },
+  "evidence": {
+    "status": "static_candidate",
+    "user_acceptance": "not_run",
+    "runtime": "not_run"
+  },
+  "writes": [
+    {
+      "address": "0x0801BFF6",
+      "offset": "0x0001BFF6",
+      "before_hex": "44462088318840183080",
+      "after_hex": "01480047c04601000409",
+      "mode": "thumb",
+      "note": "stat rebuild ATK += STR (US 0x0801BFCE) -> far ATK routine"
+    },
+    {
+      "address": "0x0801E49E",
+      "offset": "0x0001E49E",
+      "before_hex": "381c60300026815f1c38",
+      "after_hex": "01480047c04681000409",
+      "mode": "thumb",
+      "note": "charged attack type 1 (US 0x0801E3F6) -> far charge routine"
+    },
+    {
+      "address": "0x09040000",
+      "offset": "0x01040000",
+      "before_hex": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "0cb40a9844462288002815d0ba214900415a0d480068008a082800d10620052905d1012801d0062806d1a28804e0072902d1022800d16288318850183080034a94460cbc604700008035000301c00108",
+      "mode": "thumb",
+      "note": "ATK routine: rod + Sorceress / Dark Wizard -> INT, bow + Archer -> DEX, else STR"
+    },
+    {
+      "address": "0x09040080",
+      "offset": "0x01040080",
+      "before_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "00266022b95e4422f88a072800d14222b85a000480140918b88d123048431421004a104713e50108",
+      "mode": "thumb",
+      "note": "charge type 1: (ATK + stat / 4) x (charge + 18) / 20, stat = DEX for bows, else INT"
+    }
+  ]
+}
