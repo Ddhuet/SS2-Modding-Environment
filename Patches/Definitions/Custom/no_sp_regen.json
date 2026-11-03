@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "id": "no_sp_regen",
+  "name": "No passive SP regeneration",
+  "stage": "runtime_verified",
+  "profile_id": "ss2-cn-baseline",
+  "baseline": {
+    "filename": "SS2_SC_bug_fixed.GBA",
+    "size": 33554432,
+    "md5": "35eb6567d94f855480c5d7ba2dff4389",
+    "sha256": "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989",
+    "crc32": "AFCFC96D"
+  },
+  "source_provenance": {
+    "kind": "new",
+    "source": "Patches/no_sp_regen/",
+    "notes": "Docs/mods/no_sp_regen.md"
+  },
+  "allocations": [],
+  "evidence": {
+    "status": "runtime_verified",
+    "semantics": "The per-frame SP regen tick still runs and resets its timer, but adds 0 instead of 10 (1 SP; SP is stored x10 at actor +0xCA). SP only refills from items, level-ups and other explicit sources.",
+    "static_audit": "Docs/mods/no_sp_regen.md",
+    "user_acceptance": "not_run",
+    "runtime": "Savestates/SP_Regen.ss0: English ROM regains 1 SP at frame +21; English+no_sp_regen stays at 0 for 1200 frames."
+  },
+  "writes": [
+    {
+      "address": "0x0800D90C",
+      "offset": "0x0000D90C",
+      "before_hex": "0a30",
+      "after_hex": "0030",
+      "mode": "thumb",
+      "note": "SP regen tick: `adds r0,#0xa` (+1 SP, stored x10) becomes `adds r0,#0`; the strh and max-SP clamp after it are unchanged and harmless."
+    }
+  ]
+}
