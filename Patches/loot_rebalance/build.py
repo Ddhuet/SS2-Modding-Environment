@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build Patches/Definitions/Custom/loot_rebalance.json (CN baseline / English ROM).
 
-    python3 Patches/loot_rebalance/build.py
+    Tools/.venv/bin/python Patches/loot_rebalance/build.py
 
 Loot rows (0x084F4954, 100 x 36 B: u16 enchant %, u16 pad, 8 u32 per-class list pointers) are
 explained in Docs/LOOT_GENERATION.md. This mod writes new item lists into free space and points
@@ -20,12 +20,17 @@ the affected rows at them; the original lists stay untouched. Normal and hard ro
   generic one (72/94/117/144 for 1-4 players, vanilla 16/21/26/32) and the scroll is 1/9 of the
   list, so for one player it is 8/256 = 1/32 and everything else 64/256. The monsters' own drop
   slots (cards, Goblin Axe) are not touched.
+- Monster potions (potions.s, hooked on the roll's `bl gen` at 0x0805CE08): a generic drop of
+  Herb/Healing Drop/Healing Water is re-picked uniformly among the allowed ones (hard mode all
+  three; dungeons 1-5 and 18 Herb only; other maps Herb or Healing Drop), and Goddess Tear/Ray of
+  Hope among Goddess Tear (normal) or both (hard). Chests and crates are not affected.
 """
-import hashlib, json, struct, sys
+import hashlib, json, struct, sys, tempfile
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "Tools/Scripts"))
 from base_roms import cn_baseline  # noqa: E402
+from make_english_patch import assemble  # noqa: E402
 
 CN_SHA = "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989"
 BASE = 0x08000000
@@ -42,6 +47,16 @@ ENCHANT = {"wooden": (40, 49), "iron": (70, 100)}
 BONUS = [(0x0805CDC0, 0x10, 72), (0x0805CDC6, 0x15, 94), (0x0805CDCC, 0x1A, 117), (0x0805CDD2, 0x20, 144)]
 MONSTER_DROPPED = {6, 12, 13}   # consumable codes removed from monster drops: Angel Wing, Valuing Scroll, Grenade
 SCROLL = 12                     # Valuing Scroll: 1/9 of the monster list (its separate 1/32)
+CODE, CODE_END = 0x080BC1E0, 0x080BC300    # zero gap before enemy_hp_bars; potion re-pick code
+HOOK = 0x0805CE08               # monster drop roll: `bl 0x0805CBA4` (gen)
+SYMS = {"CODE": CODE, "GEN": 0x0805CBA4, "HARD": 0x0800C780, "RAND": 0x080008C8}
+
+
+def bl(src, dst):
+    off = dst - (src + 4)
+    assert -0x400000 <= off < 0x400000 and not off & 1
+    off &= 0x7FFFFF
+    return struct.pack("<HH", 0xF000 | off >> 12, 0xF800 | (off >> 1) & 0x7FF)
 
 
 def main():
@@ -158,6 +173,28 @@ def main():
                        "before_hex": pre.hex(), "after_hex": bytes([new, 0x30]).hex(), "mode": "thumb",
                        "note": f"Monster generic drop chance: `adds r0,#{old:#x}` -> `#{new:#x}` "
                                f"({old}/256 -> {new}/256 for that player count)."})
+    with tempfile.TemporaryDirectory() as tmp:
+        src = Path(tmp) / "a.s"
+        src.write_text("".join(f".equ {k}, {v:#x}\n" for k, v in SYMS.items())
+                       + (Path(__file__).parent / "potions.s").read_text())
+        code = assemble(src, base=CODE)
+    assert CODE + len(code) <= CODE_END, len(code)
+    for at, dst in ((0x04, "GEN"), (0x1A, "HARD"), (0x38, "HARD"), (0x4C, "RAND")):
+        assert code[at:at + 4] == bl(CODE + at, SYMS[dst]), (hex(at), dst)
+    pre = cn[HOOK - BASE:HOOK - BASE + 4]
+    assert pre == bl(HOOK, SYMS["GEN"]), pre.hex()
+    writes.append({"address": f"0x{HOOK:08X}", "offset": f"0x{HOOK - BASE:08X}",
+                   "before_hex": pre.hex(), "after_hex": bl(HOOK, CODE).hex(), "mode": "thumb",
+                   "note": f"Monster drop roll: `bl 0x0805cba4` (gen) becomes `bl {CODE:#010x}` (gen, then re-pick "
+                           "HP/SP potions by mode and dungeon)."})
+    pre = cn[CODE - BASE:CODE - BASE + len(code)]
+    assert not any(pre), "code area is not zero"
+    writes.append({"address": f"0x{CODE:08X}", "offset": f"0x{CODE - BASE:08X}",
+                   "before_hex": pre.hex(), "after_hex": code.hex(), "mode": "thumb",
+                   "note": f"Allocation {CODE:#010x}..{CODE + len(code) - 1:#010x} ({len(code)} B, was zero; owner "
+                           "loot_rebalance): potions.s wrap() calls gen, then a consumable 0-2 becomes Herb (dungeons "
+                           "1-5, 18) / Herb or Healing Drop (other maps) / any of the three (hard mode), and 3-4 "
+                           "becomes Goddess Tear (normal) / Goddess Tear or Ray of Hope (hard), uniformly."})
     writes.append({"address": f"0x{DATA:08X}", "offset": f"0x{DATA - BASE:08X}",
                    "before_hex": bytes(len(blob)).hex(), "after_hex": bytes(blob).hex(), "mode": "data",
                    "note": f"Allocation {DATA:#010x}..{end:#010x} ({len(blob)} B, was zero; owner loot_rebalance): "
@@ -176,7 +213,9 @@ def main():
                      "md5": "35eb6567d94f855480c5d7ba2dff4389", "sha256": CN_SHA, "crc32": "AFCFC96D"},
         "source_provenance": {"kind": "new", "source": "Patches/loot_rebalance/build.py",
                               "notes": "Docs/mods/loot_rebalance.md"},
-        "allocations": [{"range": f"0x{DATA:08X}..0x{end:08X}", "fill": "zero", "what": "item lists"}],
+        "allocations": [{"range": f"0x{DATA:08X}..0x{end:08X}", "fill": "zero", "what": "item lists"},
+                        {"range": f"0x{CODE:08X}..0x{CODE_END - 1:08X}", "fill": "zero",
+                         "what": f"potion re-pick code ({len(code)} B used)"}],
         "evidence": old.get("evidence", {
             "status": "static_verified",
             "semantics": "Crates never come up empty (gold/consumables ~44 % each), wooden and iron chests never "

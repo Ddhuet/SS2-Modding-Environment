@@ -201,9 +201,10 @@ def generate(level, cls, rng, hard=False, paste_base=0):
 MONSTER_BONUS = {1: 0x10, 2: 0x15, 3: 0x1A, 4: 0x20}   # by player count (0x08002164)
 
 
-def monster_drop(mon, rng, killer_drop=0, players=1, hard=False):
+def monster_drop(mon, rng, killer_drop=0, players=1, hard=False, post=None):
     """0x0805CCC8(monster, out). mon: dict with 'slots' [(type, code, cum)] x3 (monster +0x3A4,
     template +0x1A0), 'level' (+0x78), 'paste' (+0x388), 'gold_ok' (+0x39B bit 0).
+    post(rec, rng): applied right after the generator, e.g. loot_rebalance's potion re-pick.
     Returns (dropped, [type, code, value, plus, element, unid])."""
     rec = [0, 0, 0, 0, 0, 0]
     r = rng() & 0xFFFF
@@ -229,6 +230,8 @@ def monster_drop(mon, rng, killer_drop=0, players=1, hard=False):
             return False, rec
         level += 50
     rec = generate(level, 0, rng, hard)
+    if post:
+        post(rec, rng)
     if rec[0] == 9:
         rec[2] = mon["paste"]
     elif rec[0] == 10 and not mon["gold_ok"] or rec[0] > 10:

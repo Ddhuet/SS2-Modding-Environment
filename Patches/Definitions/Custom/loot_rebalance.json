@@ -21,14 +21,19 @@
       "range": "0x09020000..0x0903654F",
       "fill": "zero",
       "what": "item lists"
+    },
+    {
+      "range": "0x080BC1E0..0x080BC2FF",
+      "fill": "zero",
+      "what": "potion re-pick code (108 B used)"
     }
   ],
   "evidence": {
     "status": "runtime_verified",
-    "semantics": "Crates never come up empty (gold/consumables ~44 % each), wooden and iron chests never drop gold (that share becomes consumables) and enchant 50 % / 100 %, monsters (single player) drop from a consumable-only table (no Valuing Scroll, Angel Wing, Grenade; accessories and pastes kept) 1 in 4 plus a Valuing Scroll 1/32. Hard-mode rows likewise.",
+    "semantics": "Crates never come up empty (gold/consumables ~44 % each), wooden and iron chests never drop gold (that share becomes consumables) and enchant 50 % / 100 %, monsters (single player) drop from a consumable-only table (no Valuing Scroll, Angel Wing, Grenade; accessories and pastes kept) 1 in 4 plus a Valuing Scroll 1/32. Hard-mode rows likewise. Monster potions: Herb only (and Goddess Tear) in dungeons 1-5 and 18, Herb/Healing Drop elsewhere, Herb/Drop/Water and Goddess Tear/Ray of Hope in hard mode, uniformly.",
     "static_audit": "Docs/mods/loot_rebalance.md",
     "user_acceptance": "not_run",
-    "runtime": "runtime_verified (English ROM + mod, normal mode, single player, visible input only): loot_verify.py on Crate/Wooden_Chest/Iron_Chest.ss0 delays 0-24, 75/75 breaks match loot_model on the patched lists (crate never empty, all iron-chest gear unidentified); Patches/loot_rebalance/test_monster.py on Easy_Kill.ss0 delays 0-199, 200/200 kill rolls match, 50 generic drops, none an Angel Wing/Grenade; with --hard (diagnostic flag write) 200/200 match and the generator reads row 80. Real hard-mode game and multiplayer not tested."
+    "runtime": "runtime_verified (English ROM + mod, normal mode, single player, visible input only): loot_verify.py on Crate/Wooden_Chest/Iron_Chest.ss0 delays 0-24, 75/75 breaks match loot_model on the patched lists (crate never empty, all iron-chest gear unidentified); Patches/loot_rebalance/test_monster.py on Easy_Kill.ss0 delays 0-199, 200/200 kill rolls match, 50 generic drops, none an Angel Wing/Grenade; with --hard (diagnostic flag write) 200/200 match and the generator reads row 80. Real hard-mode game and multiplayer not tested. Potion re-pick: test_monster.py 600/600 (normal, --hard, vanilla) incl. the re-pick RNG; test_potions.py (diagnostic forced drops and injected codes) 720/720 allowed across dungeons 1-5, 18, 6, 7, 17, 19 and hard."
   },
   "writes": [
     {
@@ -574,6 +579,22 @@
       "after_hex": "9030",
       "mode": "thumb",
       "note": "Monster generic drop chance: `adds r0,#0x20` -> `#0x90` (32/256 -> 144/256 for that player count)."
+    },
+    {
+      "address": "0x0805CE08",
+      "offset": "0x0005CE08",
+      "before_hex": "fff7ccfe",
+      "after_hex": "5ff0eaf9",
+      "mode": "thumb",
+      "note": "Monster drop roll: `bl 0x0805cba4` (gen) becomes `bl 0x080bc1e0` (gen, then re-pick HP/SP potions by mode and dungeon)."
+    },
+    {
+      "address": "0x080BC1E0",
+      "offset": "0x000BC1E0",
+      "before_hex": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "30b50400a0f7defc05002088012826d16088042823d803280ed250f7c1fa0321002807d1104800880121052802d9122800d00221002006e050f7b2fa0121002800d002210320012908d003b444f74cfb0cbc0004000c5843000c80186080280030bc02bc084700009c320003",
+      "mode": "thumb",
+      "note": "Allocation 0x080bc1e0..0x080bc24b (108 B, was zero; owner loot_rebalance): potions.s wrap() calls gen, then a consumable 0-2 becomes Herb (dungeons 1-5, 18) / Herb or Healing Drop (other maps) / any of the three (hard mode), and 3-4 becomes Goddess Tear (normal) / Goddess Tear or Ray of Hope (hard), uniformly."
     },
     {
       "address": "0x09020000",
