@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check the monster-potion re-pick (potions.s) on the real kill in Savestates/Easy_Kill.ss0.
+"""Check the monster-potion re-pick (loot.s wrap()) on the real kill in Savestates/Easy_Kill.ss0.
 
     Tools/.venv/bin/python Patches/loot_rebalance/test_potions.py ROM [RUNS]
 

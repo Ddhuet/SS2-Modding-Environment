@@ -1,0 +1,123 @@
+{
+  "name": "Loot rebalance",
+  "description": "Crates are never empty, chests drop no gold (wooden: best HP/SP potion, iron: Angel Wing), more unidentified gear, monsters drop consumables.",
+  "options": [
+    {
+      "id": "drop_rate",
+      "type": "dropdown",
+      "label": "Monster drop rate",
+      "description": "Chance per kill with one player; more players raise it in proportion, as in vanilla (1 in 16). A monster's own drops, like cards, come on top.",
+      "default": "1 in 4",
+      "choices": [
+        {
+          "label": "1 in 4",
+          "writes": [
+            ["0x0805CDC0", 64, 1],
+            ["0x0805CDC6", 84, 1],
+            ["0x0805CDCC", 104, 1],
+            ["0x0805CDD2", 128, 1]
+          ]
+        },
+        {
+          "label": "1 in 6",
+          "writes": [
+            ["0x0805CDC0", 43, 1],
+            ["0x0805CDC6", 56, 1],
+            ["0x0805CDCC", 69, 1],
+            ["0x0805CDD2", 85, 1]
+          ]
+        },
+        {
+          "label": "1 in 8",
+          "writes": [
+            ["0x0805CDC0", 32, 1],
+            ["0x0805CDC6", 42, 1],
+            ["0x0805CDCC", 52, 1],
+            ["0x0805CDD2", 64, 1]
+          ]
+        },
+        {
+          "label": "1 in 10",
+          "writes": [
+            ["0x0805CDC0", 26, 1],
+            ["0x0805CDC6", 34, 1],
+            ["0x0805CDCC", 42, 1],
+            ["0x0805CDD2", 51, 1]
+          ]
+        },
+        {
+          "label": "1 in 12",
+          "writes": [
+            ["0x0805CDC0", 21, 1],
+            ["0x0805CDC6", 28, 1],
+            ["0x0805CDCC", 35, 1],
+            ["0x0805CDD2", 43, 1]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scroll_rate",
+      "type": "dropdown",
+      "label": "Valuing Scroll from monsters",
+      "description": "Its own chance per kill, on top of the drop rate.",
+      "default": "1 in 32",
+      "choices": [
+        {
+          "label": "1 in 32",
+          "writes": [
+            ["0x080BC2CC", 2048, 4]
+          ]
+        },
+        {
+          "label": "1 in 30",
+          "writes": [
+            ["0x080BC2CC", 2185, 4]
+          ]
+        },
+        {
+          "label": "1 in 28",
+          "writes": [
+            ["0x080BC2CC", 2341, 4]
+          ]
+        },
+        {
+          "label": "1 in 26",
+          "writes": [
+            ["0x080BC2CC", 2521, 4]
+          ]
+        },
+        {
+          "label": "1 in 24",
+          "writes": [
+            ["0x080BC2CC", 2731, 4]
+          ]
+        },
+        {
+          "label": "1 in 22",
+          "writes": [
+            ["0x080BC2CC", 2979, 4]
+          ]
+        },
+        {
+          "label": "1 in 20",
+          "writes": [
+            ["0x080BC2CC", 3277, 4]
+          ]
+        },
+        {
+          "label": "1 in 18",
+          "writes": [
+            ["0x080BC2CC", 3641, 4]
+          ]
+        },
+        {
+          "label": "1 in 16",
+          "writes": [
+            ["0x080BC2CC", 4096, 4]
+          ]
+        }
+      ]
+    }
+  ]
+}

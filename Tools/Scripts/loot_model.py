@@ -201,10 +201,11 @@ def generate(level, cls, rng, hard=False, paste_base=0):
 MONSTER_BONUS = {1: 0x10, 2: 0x15, 3: 0x1A, 4: 0x20}   # by player count (0x08002164)
 
 
-def monster_drop(mon, rng, killer_drop=0, players=1, hard=False, post=None):
+def monster_drop(mon, rng, killer_drop=0, players=1, hard=False, post=None, scroll=None):
     """0x0805CCC8(monster, out). mon: dict with 'slots' [(type, code, cum)] x3 (monster +0x3A4,
     template +0x1A0), 'level' (+0x78), 'paste' (+0x388), 'gold_ok' (+0x39B bit 0).
     post(rec, rng): applied right after the generator, e.g. loot_rebalance's potion re-pick.
+    scroll: loot_rebalance's Valuing Scroll threshold (out of 65536) when no generic drop happens.
     Returns (dropped, [type, code, value, plus, element, unid])."""
     rec = [0, 0, 0, 0, 0, 0]
     r = rng() & 0xFFFF
@@ -222,7 +223,10 @@ def monster_drop(mon, rng, killer_drop=0, players=1, hard=False, post=None):
         if rec[0] == 10 and not mon["gold_ok"]:
             return False, [0, 0, 0, 0, 0, 0]
         return True, rec
-    if killer_drop + MONSTER_BONUS.get(players, 0) <= (rng() & 0xFF):
+    chance, sb = killer_drop + MONSTER_BONUS.get(players, 0), rng() & 0xFF
+    if chance <= sb:
+        if scroll is not None and mon["level"] and (sb - chance) * 256 + (rng() & 0xFF) < scroll:
+            return True, [1, 12, 0, 0, 0, 0]
         return False, rec
     level = mon["level"]
     if hard:

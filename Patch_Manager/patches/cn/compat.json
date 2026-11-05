@@ -89,11 +89,11 @@
  },
  "loot_rebalance": {
   "file": "loot_rebalance.bps",
-  "en_sha256": "0938ac1dec06bdd1b11703fa9b080ddd4537b997128c0f4b7696f6ad18e89140",
+  "en_sha256": "2f08b26fba5b8ffc1fba522dd1275b2eaa072363ee85b1acfa5c92644fc48629",
   "cn": true,
-  "reason": "48673 bytes",
+  "reason": "72673 bytes",
   "cn_file": "cn/loot_rebalance.bps",
-  "cn_sha256": "2e439987a42e1c265749d1691194036f8a57f044df8afcae24cec91844a584eb"
+  "cn_sha256": "db53f71b90e2141555c7bfa069799c910f0d31e53169a69b67c99be64dc018cf"
  },
  "lose_all_on_death": {
   "file": "lose_all_on_death.bps",

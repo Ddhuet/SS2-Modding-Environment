@@ -123,7 +123,7 @@ Record every allocation you make (address, length, fill, owner) in your definiti
 | `0x080BB3B4..0x080BB3FF` | `lose_all_on_death` (custom); see `Docs/mods/lose_all_on_death.md` |
 | `0x080BC1C0..0x080BC1DF` | `end_dungeon_on_death` (custom); see `Docs/mods/end_dungeon_on_death.md` |
 | `0x09018000..0x090180FF`; in-place rewrite `0x0805C60E..0x0805C639`; entry hooks `0x08022D78`, `0x08026C0C` (8 B each) | `angel_wing_restore` (custom); see `Docs/mods/angel_wing_restore.md` |
-| `0x09020000..0x0903654F`, `0x080BC1E0..0x080BC2FF` | `loot_rebalance` (custom): new loot item lists; potion re-pick code; see `Docs/mods/loot_rebalance.md` |
+| `0x09060000..0x0909FFFF` (136,808 B used), `0x080BC1E0..0x080BC2FF` | `loot_rebalance` (custom): new loot item lists; loot code (potion re-pick, Valuing Scroll roll, wooden chest rule); see `Docs/mods/loot_rebalance.md` |
 | `0x080BC340..0x080BC48B` | **Nelly's JP/CN ports** (external): near stubs / veneers |
 | `0x09040000..0x0904FFFF` | **Nelly's JP/CN ports** (external): far code / data (used as of 2026-11-02: `0x09040000..0x090400A7` `weapon_stat_scaling`, `0x09041000..0x09041ACB` ports 05-10); see `Other_Modders/Nell/11_Weapon_Stat_Scaling/FOR_GENTLEFOX.md` |
 
