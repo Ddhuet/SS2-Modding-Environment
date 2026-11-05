@@ -114,7 +114,7 @@ with the default options:
 | Option | Choices | Writes |
 |---|---|---|
 | Monster drop rate | 1 in 4 (default), 6, 8, 10, 12 | the 4 bonus bytes `0x0805CDC0/C6/CC/D2` |
-| Valuing Scroll from monsters | 1 in 32 (default), 30, 28 … 16 | u32 `0x080BC2CC` = round(65536 / N) (2048 … 4096) |
+| Valuing Scroll from monsters | 1 in 16, 18 … 32 (default), then 36, 40 … 64 | u32 `0x080BC2CC` = round(65536 / N) (4096 … 1024) |
 
 The `.bps` carries the defaults, so it is the same ROM without the sidecar or in the web patcher
 (which ignores sidecars for now). The two options are independent: neither changes any list. On

@@ -53,7 +53,8 @@ ENCHANT = {"wooden": (40, 49), "iron": (70, 100)}
 # monster generic drop bonus by player count 1-4: address of the `adds r0,#imm` byte, vanilla value
 BONUS = [(0x0805CDC0, 0x10), (0x0805CDC6, 0x15), (0x0805CDCC, 0x1A), (0x0805CDD2, 0x20)]
 DROP_RATES = [4, 6, 8, 10, 12]              # "1 in N" choices; the first is the .bps default
-SCROLL_RATES = list(range(32, 15, -2))      # Valuing Scroll "1/N" choices; the first is the default
+SCROLL_RATES = list(range(16, 33, 2)) + list(range(36, 65, 4))   # Valuing Scroll "1 in N" choices
+SCROLL_DEFAULT = 32
 MONSTER_DROPPED = {6, 12, 13}   # consumable codes removed from monster drops: Angel Wing, Valuing Scroll, Grenade
 HP, SP = {0, 1, 2}, {3, 4}      # Herb, Healing Drop, Healing Water / Goddess Tear, Ray of Hope
 BEST = {0: (1, 3), 50: (2, 4)}  # wooden chest HP and SP item: normal rows (Drop, Tear), hard rows (Water, Hope)
@@ -232,7 +233,7 @@ def main():
                        "note": f"Monster generic drop chance: `adds r0,#{old:#x}` -> `#{new:#x}` "
                                f"({old}/256 -> {new}/256 for that player count; Patch Manager option)."})
     wood = sum(1 << r for r in WOODEN)
-    syms = dict(SYMS, SCROLL_T=scroll_t(SCROLL_RATES[0]), WOOD_LO=wood & 0xFFFFFFFF, WOOD_HI=wood >> 32)
+    syms = dict(SYMS, SCROLL_T=scroll_t(SCROLL_DEFAULT), WOOD_LO=wood & 0xFFFFFFFF, WOOD_HI=wood >> 32)
     code, lab = build_code(syms)
     assert CODE + len(code) <= CODE_END, len(code)
     assert lab["wrap"] == CODE
@@ -317,7 +318,7 @@ def main():
                          for n in DROP_RATES]},
             {"id": "scroll_rate", "type": "dropdown", "label": "Valuing Scroll from monsters",
              "description": "Its own chance per kill, on top of the drop rate.",
-             "default": f"1 in {SCROLL_RATES[0]}",
+             "default": f"1 in {SCROLL_DEFAULT}",
              "choices": [{"label": f"1 in {n}", "writes": [[f"0x{lab['scroll_t']:08X}", scroll_t(n), 4]]}
                          for n in SCROLL_RATES]},
         ],

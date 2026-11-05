@@ -64,45 +64,9 @@
       "default": "1 in 32",
       "choices": [
         {
-          "label": "1 in 32",
+          "label": "1 in 16",
           "writes": [
-            ["0x080BC2CC", 2048, 4]
-          ]
-        },
-        {
-          "label": "1 in 30",
-          "writes": [
-            ["0x080BC2CC", 2185, 4]
-          ]
-        },
-        {
-          "label": "1 in 28",
-          "writes": [
-            ["0x080BC2CC", 2341, 4]
-          ]
-        },
-        {
-          "label": "1 in 26",
-          "writes": [
-            ["0x080BC2CC", 2521, 4]
-          ]
-        },
-        {
-          "label": "1 in 24",
-          "writes": [
-            ["0x080BC2CC", 2731, 4]
-          ]
-        },
-        {
-          "label": "1 in 22",
-          "writes": [
-            ["0x080BC2CC", 2979, 4]
-          ]
-        },
-        {
-          "label": "1 in 20",
-          "writes": [
-            ["0x080BC2CC", 3277, 4]
+            ["0x080BC2CC", 4096, 4]
           ]
         },
         {
@@ -112,9 +76,93 @@
           ]
         },
         {
-          "label": "1 in 16",
+          "label": "1 in 20",
           "writes": [
-            ["0x080BC2CC", 4096, 4]
+            ["0x080BC2CC", 3277, 4]
+          ]
+        },
+        {
+          "label": "1 in 22",
+          "writes": [
+            ["0x080BC2CC", 2979, 4]
+          ]
+        },
+        {
+          "label": "1 in 24",
+          "writes": [
+            ["0x080BC2CC", 2731, 4]
+          ]
+        },
+        {
+          "label": "1 in 26",
+          "writes": [
+            ["0x080BC2CC", 2521, 4]
+          ]
+        },
+        {
+          "label": "1 in 28",
+          "writes": [
+            ["0x080BC2CC", 2341, 4]
+          ]
+        },
+        {
+          "label": "1 in 30",
+          "writes": [
+            ["0x080BC2CC", 2185, 4]
+          ]
+        },
+        {
+          "label": "1 in 32",
+          "writes": [
+            ["0x080BC2CC", 2048, 4]
+          ]
+        },
+        {
+          "label": "1 in 36",
+          "writes": [
+            ["0x080BC2CC", 1820, 4]
+          ]
+        },
+        {
+          "label": "1 in 40",
+          "writes": [
+            ["0x080BC2CC", 1638, 4]
+          ]
+        },
+        {
+          "label": "1 in 44",
+          "writes": [
+            ["0x080BC2CC", 1489, 4]
+          ]
+        },
+        {
+          "label": "1 in 48",
+          "writes": [
+            ["0x080BC2CC", 1365, 4]
+          ]
+        },
+        {
+          "label": "1 in 52",
+          "writes": [
+            ["0x080BC2CC", 1260, 4]
+          ]
+        },
+        {
+          "label": "1 in 56",
+          "writes": [
+            ["0x080BC2CC", 1170, 4]
+          ]
+        },
+        {
+          "label": "1 in 60",
+          "writes": [
+            ["0x080BC2CC", 1092, 4]
+          ]
+        },
+        {
+          "label": "1 in 64",
+          "writes": [
+            ["0x080BC2CC", 1024, 4]
           ]
         }
       ]
