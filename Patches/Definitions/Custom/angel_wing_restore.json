@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "id": "angel_wing_restore",
+  "name": "Angel Wing fully restores HP/SP; only one may leave town",
+  "stage": "runtime_verified",
+  "profile_id": "ss2-cn-baseline",
+  "baseline": {
+    "filename": "SS2_SC_bug_fixed.GBA",
+    "size": 33554432,
+    "md5": "35eb6567d94f855480c5d7ba2dff4389",
+    "sha256": "45ac38bb1bfba779592b5c79ce94982cf7c00fda5b3c5b84735e55c77d6fc989",
+    "crc32": "AFCFC96D"
+  },
+  "source_provenance": {
+    "kind": "new",
+    "source": "Patches/angel_wing_restore/build.py",
+    "notes": "Docs/mods/angel_wing_restore.md"
+  },
+  "allocations": [
+    {
+      "range": "0x09018000..0x090180FF",
+      "fill": "zero",
+      "what": "code (156 B used)"
+    }
+  ],
+  "evidence": {
+    "status": "runtime_verified",
+    "semantics": "Using an Angel Wing sets HP and SP to max (refused, item kept, when both are full) instead of returning to town. Leaving town for any area but the arena deletes every Angel Wing in the bag after the first.",
+    "static_audit": "Docs/mods/angel_wing_restore.md",
+    "user_acceptance": "not_run",
+    "runtime": "Patches/angel_wing_restore/test.py (English vs English+mod, user states): Angel_Wing HP 49->66 in place; Angel_Wing_2 HP 3->66, SP 24->86 in place; full HP/SP refused, wing kept [diag fill]; Leaving_Town -> world map -> area 3 with 3 wings (x3 stack + 2) -> one single wing; Post_Death_Angel Angel warp town -> area 6 -> one wing; Post_Boss teleporter -> town keeps all [diag wing inserts]. Also stacked with stackable_consumables 1.0.4b1: x3 -> x2 on use."
+  },
+  "writes": [
+    {
+      "address": "0x0805C60E",
+      "offset": "0x0005C60E",
+      "before_hex": "281c70300078002800d120e1fdf7e3fd002800d01be1b0f722fa002800d016e1aff7f5ff002800d011e1e88c",
+      "after_hex": "2e1cca362f1c683739887a88338874884b405440234300d119e131807280023602372888082118f0acfffae0",
+      "mode": "thumb",
+      "note": "Use-item 0x0805C3B8, effect 4 (Angel Wing only): beam-out checks replaced by a full restore. HP and SP full -> b 0x0805C85C (fail, item kept); else +0xCA = +0x68, +0xCC = +0x6A, bl 0x08075590(id, 8) sparkle, b 0x0805C830 (HP-heal tail: low-HP flag, sound, success). The rest of the old branch up to 0x0805C6D7 stays as dead bytes."
+    },
+    {
+      "address": "0x08026C0C",
+      "offset": "0x00026C0C",
+      "before_hex": "30b50004050c0904",
+      "after_hex": "004b184701800109",
+      "mode": "thumb",
+      "note": "Map loader 0x08026C0C entry -> `ldr r3,=0x09018001; bx r3` (stub replays the 4 overwritten instructions and returns to 0x08026C14). r3 is not an argument."
+    },
+    {
+      "address": "0x08022D78",
+      "offset": "0x00022D78",
+      "before_hex": "f0b5041c002900d1",
+      "after_hex": "004b184719800109",
+      "mode": "thumb",
+      "note": "area_change 0x08022D78 entry (world-map pick) -> `ldr r3,=0x09018019; bx r3` (stub replays push/adds/cmp/bne and resumes at 0x08022D82 or 0x080230BA)."
+    },
+    {
+      "address": "0x09018000",
+      "offset": "0x01018000",
+      "before_hex": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "after_hex": "07b500f017f807bc08bc9e4630b50004050c09041b4b184707b500f00bf807bc08bc9e46f0b5041c002901d1164b1847164b184770b50004000c00281fd00b281dd013490968090719d5124c24681249641819250026208801280dd1608806280ad1002e06d10126a088012804d90120a08001e0002020801034013debd170bc01bc0047156c0208bb300208832d0208183500038035000358010000",
+      "mode": "thumb",
+      "note": "Allocation 0x09018000..0x090180FF (zero; owner angel_wing_restore), 156 B used: the two entry stubs and purge(area): when 0x03003518 bit 3 (in town) is set and area is not 0 (town) or 0xB (arena), the first bag Angel Wing (type 1 code 6) stays (count +4 cut to 1) and the others get type 0."
+    }
+  ]
+}

@@ -1,4 +1,12 @@
 {
+ "angel_wing_restore": {
+  "file": "angel_wing_restore.bps",
+  "en_sha256": "c89240b0f2ba502e6e7bff9e0b4019e48af8460612edd1221eb6ea1eea8b4fca",
+  "cn": true,
+  "reason": "200 bytes",
+  "cn_file": "cn/angel_wing_restore.bps",
+  "cn_sha256": "6cc74200bf83e4c5c3569a4e990172c5264cfac66c19f962151a43ba24b0d6a4"
+ },
  "counter_fix": {
   "file": "counter_fix.ips",
   "en_sha256": "527baf2bade43478393be283630fc9b311402d3fa8c3c3f4b6fe213ad55436d0",

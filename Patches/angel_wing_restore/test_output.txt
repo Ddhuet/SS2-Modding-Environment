@@ -1,0 +1,38 @@
+== Build/en.gba
+  Angel_Wing (HP missing)
+    before ({'hp': 49, 'maxhp': 66, 'sp': 86, 'maxsp': 86, 'area': 4, 'town': 0}, [(24, 0)])
+    after  ({'hp': 49, 'maxhp': 66, 'sp': 86, 'maxsp': 86, 'area': 0, 'town': 1}, [])
+  Angel_Wing_2 (HP+SP missing)
+    before ({'hp': 3, 'maxhp': 66, 'sp': 24, 'maxsp': 86, 'area': 4, 'town': 0}, [(24, 0)])
+    after  ({'hp': 3, 'maxhp': 66, 'sp': 27, 'maxsp': 86, 'area': 0, 'town': 1}, [])
+  Angel_Wing, HP/SP full [diag write]
+    before ({'hp': 66, 'maxhp': 66, 'sp': 86, 'maxsp': 86, 'area': 4, 'town': 0}, [(24, 0)])
+    after  ({'hp': 66, 'maxhp': 66, 'sp': 86, 'maxsp': 86, 'area': 0, 'town': 1}, [])
+  Leaving_Town -> world map -> area 3 [diag: 3 wings]
+    before ({'hp': 49, 'maxhp': 66, 'sp': 86, 'maxsp': 86, 'area': 0, 'town': 1}, [(5, 3), (9, 0), (10, 0)])
+    after  ({'hp': 49, 'maxhp': 66, 'sp': 86, 'maxsp': 86, 'area': 3, 'town': 0}, [(5, 3), (9, 0), (10, 0)])
+  Post_Boss teleporter -> town [diag: 3 wings]
+    before ({'hp': 49, 'maxhp': 66, 'sp': 56, 'maxsp': 86, 'area': 1, 'town': 0}, [(9, 3), (10, 0), (15, 0)])
+    after  ({'hp': 49, 'maxhp': 66, 'sp': 64, 'maxsp': 86, 'area': 0, 'town': 1}, [(9, 3), (10, 0), (15, 0)])
+  Post_Death_Angel, A x8 [diag: 3 wings]
+    before ({'hp': 99, 'maxhp': 99, 'sp': 10, 'maxsp': 10, 'area': 0, 'town': 1}, [(0, 3), (1, 0), (2, 0)])
+    after  ({'hp': 99, 'maxhp': 99, 'sp': 10, 'maxsp': 10, 'area': 6, 'town': 0}, [(0, 3), (1, 0), (2, 0)])
+== Patches/angel_wing_restore/ss2-en+angel_wing_restore.gba
+  Angel_Wing (HP missing)
+    before ({'hp': 49, 'maxhp': 66, 'sp': 86, 'maxsp': 86, 'area': 4, 'town': 0}, [(24, 0)])
+    after  ({'hp': 66, 'maxhp': 66, 'sp': 86, 'maxsp': 86, 'area': 4, 'town': 0}, [])
+  Angel_Wing_2 (HP+SP missing)
+    before ({'hp': 3, 'maxhp': 66, 'sp': 24, 'maxsp': 86, 'area': 4, 'town': 0}, [(24, 0)])
+    after  ({'hp': 66, 'maxhp': 66, 'sp': 86, 'maxsp': 86, 'area': 4, 'town': 0}, [])
+  Angel_Wing, HP/SP full [diag write]
+    before ({'hp': 66, 'maxhp': 66, 'sp': 86, 'maxsp': 86, 'area': 4, 'town': 0}, [(24, 0)])
+    after  ({'hp': 66, 'maxhp': 66, 'sp': 86, 'maxsp': 86, 'area': 4, 'town': 0}, [(24, 0)])
+  Leaving_Town -> world map -> area 3 [diag: 3 wings]
+    before ({'hp': 49, 'maxhp': 66, 'sp': 86, 'maxsp': 86, 'area': 0, 'town': 1}, [(5, 3), (9, 0), (10, 0)])
+    after  ({'hp': 49, 'maxhp': 66, 'sp': 86, 'maxsp': 86, 'area': 3, 'town': 0}, [(5, 1)])
+  Post_Boss teleporter -> town [diag: 3 wings]
+    before ({'hp': 49, 'maxhp': 66, 'sp': 56, 'maxsp': 86, 'area': 1, 'town': 0}, [(9, 3), (10, 0), (15, 0)])
+    after  ({'hp': 49, 'maxhp': 66, 'sp': 64, 'maxsp': 86, 'area': 0, 'town': 1}, [(9, 3), (10, 0), (15, 0)])
+  Post_Death_Angel, A x8 [diag: 3 wings]
+    before ({'hp': 99, 'maxhp': 99, 'sp': 10, 'maxsp': 10, 'area': 0, 'town': 1}, [(0, 3), (1, 0), (2, 0)])
+    after  ({'hp': 99, 'maxhp': 99, 'sp': 10, 'maxsp': 10, 'area': 6, 'town': 0}, [(0, 1)])
